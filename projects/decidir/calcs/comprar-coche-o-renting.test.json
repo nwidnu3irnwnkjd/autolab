@@ -1,0 +1,11 @@
+{
+  "func": "calcular",
+  "cases": [
+    {"in": {"precio": 25000, "anos": 4, "reventa": 45, "seguro": 600, "mantenimiento": 500, "impuesto": 80, "tipo": 0, "cuota": 450, "entrada": 0},
+     "expect": {"costeCompra": 18470, "costeRenting": 21600, "mesCompra": 384.79, "mesRenting": 450, "cuotaEquilibrio": 384.79, "intereses": 0, "diferencia": 3130}, "tol": 1},
+    {"in": {"precio": 25000, "anos": 4, "reventa": 45, "seguro": 600, "mantenimiento": 500, "impuesto": 80, "tipo": 6, "cuota": 450, "entrada": 0},
+     "expect": {"costeCompra": 21652.03, "costeRenting": 21600, "cuotaEquilibrio": 451.08, "intereses": 3182.03, "diferencia": -52.03}, "tol": 1},
+    {"in": {"precio": 30000, "anos": 3, "reventa": 40, "seguro": 700, "mantenimiento": 600, "impuesto": 100, "tipo": 0, "cuota": 380, "entrada": 1500},
+     "expect": {"costeCompra": 22200, "costeRenting": 15180, "mesRenting": 421.67, "cuotaEquilibrio": 575, "diferencia": -7020}, "tol": 1}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "hipoteca-fija-o-variable",
+  "title": "Hipoteca fija o variable: calculadora con escenarios",
+  "description": "Compara hipoteca fija y variable con tus números: intereses totales según el Euríbor futuro y el Euríbor de equilibrio a partir del cual compensa la fija.",
+  "h1": "Hipoteca fija o variable: ¿cuál te sale más barata?",
+  "lead": "Nadie sabe dónde estará el Euríbor, pero sí puedes saber a partir de qué nivel te conviene la fija. Mete las dos ofertas y compara escenarios.",
+  "inputs": [
+    {"id": "capital", "label": "Capital de la hipoteca (€)", "default": 150000, "min": 1, "step": 1000},
+    {"id": "anos", "label": "Plazo (años)", "default": 25, "min": 2, "step": 1},
+    {"id": "fijo", "label": "Tipo fijo ofrecido (%)", "default": 2.8, "min": 0, "step": 0.01},
+    {"id": "dif", "label": "Diferencial de la variable (%)", "default": 0.8, "min": 0, "step": 0.01},
+    {"id": "euribor", "label": "Euríbor actual (%)", "default": 2.10, "min": -1, "step": 0.01},
+    {"id": "escenario", "label": "Euríbor medio futuro (tras el primer año)", "type": "select", "options": [
+      {"v": "0", "t": "Se mantiene"}, {"v": "1", "t": "Sube 1 punto"}, {"v": "2", "t": "Sube 2 puntos"}, {"v": "-1", "t": "Baja 1 punto"}]}
+  ],
+  "faqs": [
+    ["¿Qué es el Euríbor de equilibrio?", "Es el Euríbor medio, durante los años posteriores al primero, a partir del cual la hipoteca variable acaba pagando más intereses totales que la fija. Si esperas un Euríbor medio por encima, la fija sale más barata; si esperas uno por debajo, la variable."],
+    ["¿Cada cuánto se revisa una hipoteca variable?", "En España lo habitual es una revisión anual o semestral. En cada revisión el banco aplica el Euríbor del momento más tu diferencial y recalcula la cuota para el capital y los meses que quedan. Esta calculadora supone una revisión anual."],
+    ["¿Puedo prever el Euríbor?", "No. Los escenarios sirven para ver cuánto te afecta que suba o baje, no para adivinar. Conviene mirar también si podrías asumir una cuota bastante más alta, no solo qué opción sale más barata en promedio."],
+    ["¿Existen las hipotecas mixtas?", "Sí. Las mixtas combinan un periodo inicial a tipo fijo (por ejemplo, los primeros años) y después pasan a variable. Esta calculadora compara fija pura y variable pura; para una mixta puedes estimar el tramo fijo como una fija y el resto como una variable."],
+    ["¿Y si las bonificaciones son iguales en las dos ofertas?", "Entonces no cambian la comparación y puedes ignorarlas siempre que introduzcas los tipos ya con la bonificación aplicada. Si solo una oferta las exige (seguros, nómina, tarjeta), compara los tipos finales y suma el coste real de esos productos."]
+  ],
+  "sources": "Euríbor: valores oficiales publicados por el Banco de España (media mensual a 12 meses); el valor por defecto se actualiza cada mes. Cuotas con el sistema de amortización francesa. Modelo simplificado: revisión anual, un solo cambio de Euríbor tras el primer año que se mantiene hasta el final, sin comisiones, seguros ni bonificaciones."
+}

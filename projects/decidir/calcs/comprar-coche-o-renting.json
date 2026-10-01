@@ -1,0 +1,26 @@
+{
+  "slug": "comprar-coche-o-renting",
+  "title": "Comprar coche o renting: calculadora de coste total a 3-5 años",
+  "description": "Compara el coste real de comprar un coche (con o sin préstamo, seguro, mantenimiento y reventa) frente a un renting y descubre la cuota de renting de equilibrio.",
+  "h1": "Comprar coche o renting: ¿qué me sale más barato?",
+  "lead": "Compara el coste total de comprar el coche y venderlo al final con el de un renting a los mismos años, con tus propios números y para particulares.",
+  "inputs": [
+    {"id": "precio", "label": "Precio del coche al contado (€)", "default": 25000, "min": 1, "step": 100},
+    {"id": "anos", "label": "Años que lo tendrás", "type": "select", "options": [{"v": 3, "t": "3 años"}, {"v": 4, "t": "4 años"}, {"v": 5, "t": "5 años"}]},
+    {"id": "reventa", "label": "Valor de reventa estimado al final (% del precio)", "default": 45, "min": 0, "step": 1},
+    {"id": "seguro", "label": "Seguro anual si compras (€)", "default": 600, "min": 0, "step": 10},
+    {"id": "mantenimiento", "label": "Mantenimiento anual si compras (€)", "default": 500, "min": 0, "step": 10},
+    {"id": "impuesto", "label": "Impuesto de circulación anual (€)", "default": 80, "min": 0, "step": 1},
+    {"id": "tipo", "label": "Tipo de interés si financias la compra (% anual, 0 = al contado)", "default": 0, "min": 0, "step": 0.01},
+    {"id": "cuota", "label": "Cuota mensual de renting (€, todo incluido salvo combustible)", "default": 450, "min": 0, "step": 5},
+    {"id": "entrada", "label": "Entrada del renting (€)", "default": 0, "min": 0, "step": 100}
+  ],
+  "faqs": [
+    ["¿Qué sale más barato, comprar un coche o hacer renting?", "Depende de tus números: del precio, de cuánto valga el coche al venderlo, de lo que pagues de seguro y mantenimiento y de la cuota del renting. Esta calculadora suma todos los costes de cada opción durante los años que elijas y te dice cuál gana y por cuánto."],
+    ["¿Qué incluye normalmente la cuota de renting?", "Suele incluir el seguro, el mantenimiento, el impuesto de circulación y a veces neumáticos y asistencia, pero no el combustible. Las condiciones cambian según la empresa, así que comprueba el contrato y los kilómetros anuales permitidos."],
+    ["¿Qué es la cuota de renting de equilibrio?", "Es la cuota mensual a la que el renting y la compra te cuestan exactamente lo mismo en el periodo elegido, teniendo en cuenta la entrada. Si te ofrecen una cuota inferior, el renting te sale más barato; si es superior, compensa comprar."],
+    ["¿Cómo estimo el valor de reventa?", "Mira anuncios de segunda mano del mismo modelo con los años y kilómetros que tendrá el tuyo al venderlo. El 45 % para 4 años es un punto de partida orientativo, no un dato: cambia según marca, motor y uso, así que ajústalo."],
+    ["¿Sirve esta calculadora si soy autónomo o empresa?", "No, está pensada para particulares. Para autónomos y empresas la fiscalidad cambia la respuesta, porque las cuotas de renting pueden deducirse de forma distinta a la compra, y conviene consultarlo con tu gestor."]
+  ],
+  "sources": "Préstamo con sistema francés (cuota constante) para calcular los intereses de la financiación. Los valores de reventa son orientativos y los puedes contrastar con anuncios de segunda mano de tu modelo. Los costes de seguro, mantenimiento, impuesto y la cuota de renting los introduces tú, la calculadora no los inventa ni los consulta."
+}

@@ -1,0 +1,11 @@
+{
+  "func": "calcular",
+  "cases": [
+    {"in": {"capital": 150000, "anos": 25, "fijo": 2.8, "dif": 0.8, "euribor": 2.10, "escenario": 0},
+     "expect": {"cuotaFija": 695.81, "intFija": 58743.52, "cuotaVar1": 703.54, "cuotaVar2": 703.54, "intVar": 61061.92, "euriborEquilibrio": 1.992, "diferencia": 2318.40}, "tol": 1},
+    {"in": {"capital": 150000, "anos": 25, "fijo": 2.9, "dif": 0.8, "euribor": 2.10, "escenario": 0},
+     "expect": {"intFija": 61061.92, "intVar": 61061.92, "diferencia": 0, "euriborEquilibrio": 2.10}, "tol": 0.01},
+    {"in": {"capital": 200000, "anos": 30, "fijo": 3.0, "dif": 1.0, "euribor": 2.10, "escenario": 2},
+     "expect": {"cuotaFija": 843.21, "intFija": 103554.90, "cuotaVar1": 854.03, "cuotaVar2": 1079.24, "intVar": 185824.44, "euriborEquilibrio": 1.994, "diferencia": 82269.54}, "tol": 1}
+  ]
+}
