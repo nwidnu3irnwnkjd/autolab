@@ -2,7 +2,7 @@
 
 | Slug | Idea | Estado | Dominio | Hosting | Analítica | Search Console | Lanzado |
 |---|---|---|---|---|---|---|---|
-| decidir | Decisor financiero "¿qué me conviene?" (calculadoras X o Y) | construido en local, pendiente de dominio y hosting | pendiente | pendiente (Cloudflare Pages o GitHub Pages) | pendiente | pendiente | — |
+| decidir | Decisor financiero (calculadoras X o Y), marca "Entre Muchos" | construido, pendiente de publicar | entremuchos.com (GoDaddy, DNS pendiente) | pendiente (Cloudflare Pages o GitHub Pages) | pendiente | pendiente | — |
 
 ## Candidatos siguientes (por orden)
 1. alimentos — "¿cuánto dura / puedo comerlo?" (volumen alto, CPC bajo, sin competencia seria en ES)
