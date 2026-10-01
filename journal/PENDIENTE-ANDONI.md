@@ -11,3 +11,6 @@
 
 ## Más adelante
 - AdSense cuando haya >20–30 páginas y algo de tráfico. Afiliación (Awin/Tradedoubler) cuando haya tráfico medible.
+
+## Posicionamiento en IAs y buscadores (2 minutos, cuando puedas)
+- **Bing Webmaster Tools** (bing.com/webmasters): iniciar sesión con la cuenta de Workspace y "Importar desde Google Search Console". Bing alimenta a Copilot y a parte de ChatGPT; sin esto no nos ven.
