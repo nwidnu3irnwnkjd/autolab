@@ -43,17 +43,27 @@ function pintar() {
   var d = leer(); if (d.km <= 0 || d.anos <= 0) return;
   var r = calcular(d), tot = [r.costeDiesel, r.costeGasolina, r.costeHibrido, r.costeElectrico];
   var km = [r.costeKmDiesel, r.costeKmGasolina, r.costeKmHibrido, r.costeKmElectrico], mes = [r.mesDiesel, r.mesGasolina, r.mesHibrido, r.mesElectrico];
-  var g = NOMBRES[r.ganador], s = NOMBRES[r.segundo];
-  var h = '<div class="verdict">Con estos números, el ' + g.toLowerCase() + ' es el más barato en ' + d.anos + ' años: ' + eur(r.diferencia) + ' menos que el ' + s.toLowerCase() + ' (segundo).</div>';
-  h += '<table><tr><th></th><th class="n">Coste total</th><th class="n">€/km</th><th class="n">€/mes</th></tr>';
-  r.orden.forEach(function (i, pos) {
-    h += '<tr><td>' + (pos + 1) + '. ' + NOMBRES[i] + '</td><td class="n">' + eur(tot[i]) + '</td><td class="n">' + eur2(km[i]) + '</td><td class="n">' + eur2(mes[i]) + '</td></tr>';
+  var g = NOMBRES[r.ganador], s = NOMBRES[r.segundo], abs = r.diferencia;
+  var note = '<p><strong>Lectura:</strong> ';
+  if (r.hayEquilibrio) note += 'el orden entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' cambia a unos <strong>' + Math.round(r.kmEquilibrio).toLocaleString("es-ES") + ' km al año</strong> (tú has puesto ' + d.km.toLocaleString("es-ES") + '). ';
+  else note += 'entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' el orden no cambia con los kilómetros: el ganador es más barato tanto de compra como de uso. ';
+  note += 'El precio medio del kWh con tu reparto de carga es ' + r.precioKwh.toFixed(3).replace(".", ",") + ' €/kWh. El resultado depende mucho del valor residual y del precio de la energía: cámbialos y compara.</p>';
+  var colores = ["a", "b", "c", "d"];
+  EM.renderResult({
+    verdict: 'Con estos números, el ' + g.toLowerCase() + ' es el más barato en ' + d.anos + ' años: ' + eur(abs) + ' menos que el ' + s.toLowerCase() + ' (segundo).',
+    tone: abs < tot[r.ganador] * 0.03 ? "warn" : "ok",
+    bigNumber: tot[r.ganador], bigLabel: "de coste total en " + d.anos + " años con el " + g.toLowerCase() + " (el más barato)",
+    format: eur,
+    barsLabel: "Coste total en " + d.anos + " años",
+    bars: NOMBRES.map(function (n, i) { return { label: n + (i === r.ganador ? " (gana)" : ""), value: tot[i], color: colores[i] }; }),
+    cols: ["Coste total", "€/km", "€/mes"],
+    rows: r.orden.map(function (i, pos) {
+      var vals = [eur(tot[i]), eur2(km[i]), eur2(mes[i])];
+      return pos === 0 ? { label: "1. " + NOMBRES[i], values: vals, strong: true } : [(pos + 1) + ". " + NOMBRES[i]].concat(vals);
+    }),
+    note: note
   });
-  h += '</table><div class="box"><strong>Lectura:</strong> ';
-  if (r.hayEquilibrio) h += 'el orden entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' cambia a unos ' + Math.round(r.kmEquilibrio).toLocaleString("es-ES") + ' km al año (tú has puesto ' + d.km.toLocaleString("es-ES") + '). ';
-  else h += 'entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' el orden no cambia con los kilómetros: el ganador es más barato tanto de compra como de uso. ';
-  h += 'El precio medio del kWh con tu reparto de carga es ' + r.precioKwh.toFixed(3).replace(".", ",") + ' €/kWh. El resultado depende mucho del valor residual y del precio de la energía: cámbialos y compara.</div>';
-  var el = document.getElementById("r"); el.innerHTML = h; el.style.display = "block";
 }
 document.getElementById("go").addEventListener("click", pintar);
 document.getElementById("f").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); pintar(); } });
+EM.live(document.getElementById("f"), pintar);

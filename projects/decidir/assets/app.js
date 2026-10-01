@@ -6,6 +6,8 @@
   var ICON = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>',
     warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.6v.1"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg>',
+    share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>',
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.1"/></svg>'
   };
   function eur(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); }
@@ -71,6 +73,9 @@
     if (o.bars && o.bars.length) h += barsSvg(o.bars, fmt, o.barsLabel);
     if (o.rows && o.rows.length) h += table(o.cols || (o.bars || []).map(function (b) { return esc(b.label); }), o.rows);
     if (o.note) h += '<div class="em-note">' + o.note + '</div>';
+    h += '<div class="em-share"><button type="button" class="btn2" data-act="copy">' + ICON.copy + 'Copiar resultado</button>' +
+      (navigator.share ? '<button type="button" class="btn2" data-act="share">' + ICON.share + 'Compartir</button>' : '') +
+      '<span class="em-toast" role="status" aria-live="polite"></span></div>';
     h += '</div>';
     var animateIn = !el.firstChild;
     el.innerHTML = h;
@@ -86,6 +91,31 @@
     if (!reduced() && rects.length) {
       el.getBoundingClientRect();
       requestAnimationFrame(function () { for (var j = 0; j < rects.length; j++) rects[j].style.transform = "scaleX(" + nf[j] + ")"; });
+    }
+    var shareText = function () {
+      var tmp = document.createElement("div"); tmp.innerHTML = o.verdict;
+      var t = tmp.textContent.replace(/\s+/g, " ").trim();
+      if (hasBig && t.indexOf(fmt(o.bigNumber)) < 0 && t.replace(/\s/g, "").indexOf(fmt(o.bigNumber).replace(/\s/g, "")) < 0) { var l = document.createElement("div"); l.innerHTML = o.bigLabel || ""; t += " (" + fmt(o.bigNumber) + (l.textContent ? " " + l.textContent.trim() : "") + ")"; }
+      return t + "\n" + location.href.split("#")[0];
+    };
+    var box = el.querySelector(".em-share");
+    if (box && !box._b) {
+      box._b = 1;
+      var toast = box.querySelector(".em-toast");
+      var say = function (m) { toast.textContent = m; clearTimeout(box._t); box._t = setTimeout(function () { toast.textContent = ""; }, 2500); };
+      var copy = function (txt, msg) {
+        var done = function () { say(msg); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { fb(); });
+        else fb();
+        function fb() { var ta = document.createElement("textarea"); ta.value = txt; ta.style.cssText = "position:fixed;opacity:0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { say("No se pudo copiar"); } document.body.removeChild(ta); }
+      };
+      box.addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var txt = shareText();
+        if (b.getAttribute("data-act") === "share") {
+          navigator.share({ title: document.title, text: txt.split("\n")[0], url: location.href.split("#")[0] }).catch(function (err) { if (err && err.name !== "AbortError") copy(location.href.split("#")[0], "Enlace copiado"); });
+        } else copy(txt, "Resultado copiado");
+      });
     }
     state.set(el, { big: hasBig ? o.bigNumber : undefined, f: nf });
   }
@@ -116,18 +146,34 @@
       var list = document.querySelector(inp.getAttribute("data-filter"));
       var empty = document.querySelector(inp.getAttribute("data-empty"));
       var count = document.querySelector(inp.getAttribute("data-count"));
+      var chipBox = document.querySelector(inp.getAttribute("data-chips") || "x-none");
+      var always = inp.hasAttribute("data-always"), tema = "";
       if (!list) return;
+      var chips = chipBox ? Array.prototype.slice.call(chipBox.querySelectorAll("[data-t]")) : [];
+      function setTema(t, silent) {
+        tema = t;
+        chips.forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-t") === t ? "true" : "false"); });
+        if (!silent) { try { history.replaceState(null, "", t ? "#" + t : location.pathname + location.search); } catch (e) {} }
+      }
       function apply() {
         var q = norm(inp.value.trim()).split(/\s+/).filter(Boolean), shown = 0;
         Array.prototype.forEach.call(list.children, function (li) {
           var hay = norm(li.getAttribute("data-q") || li.textContent);
-          var ok = q.every(function (w) { return hay.indexOf(w) >= 0; });
+          var ok = q.every(function (w) { return hay.indexOf(w) >= 0; }) && (!tema || li.getAttribute("data-t") === tema);
           li.hidden = !ok; if (ok) shown++;
         });
+        list.hidden = shown === 0;
         if (empty) empty.hidden = shown > 0;
-        if (count) count.textContent = q.length ? shown + (shown === 1 ? " calculadora encontrada" : " calculadoras encontradas") : "";
+        if (count) count.textContent = (q.length || tema || always) ? (shown === 0 ? "Sin resultados" : shown + (shown === 1 ? " calculadora" : " calculadoras")) : "";
       }
+      chips.forEach(function (c) { c.addEventListener("click", function () { setTema(c.getAttribute("data-t")); apply(); }); });
+      var reset = document.getElementById("reset");
+      if (reset) reset.addEventListener("click", function () { inp.value = ""; setTema(""); apply(); inp.focus(); });
       inp.addEventListener("input", apply);
+      var m = /[?&]q=([^&]*)/.exec(location.search);
+      if (m) { try { inp.value = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) {} }
+      var h = location.hash.slice(1);
+      if (h && chips.some(function (c) { return c.getAttribute("data-t") === h; })) setTema(h, true);
       apply();
     });
   }

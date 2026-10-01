@@ -1,0 +1,22 @@
+{
+ "alquilar-o-comprar": [
+  "amortizar-plazo-o-cuota",
+  "hipoteca-fija-o-variable"
+ ],
+ "amortizar-plazo-o-cuota": [
+  "hipoteca-fija-o-variable",
+  "alquilar-o-comprar"
+ ],
+ "comprar-coche-o-renting": [
+  "diesel-gasolina-hibrido-electrico",
+  "alquilar-o-comprar"
+ ],
+ "diesel-gasolina-hibrido-electrico": [
+  "comprar-coche-o-renting",
+  "alquilar-o-comprar"
+ ],
+ "hipoteca-fija-o-variable": [
+  "amortizar-plazo-o-cuota",
+  "alquilar-o-comprar"
+ ]
+}

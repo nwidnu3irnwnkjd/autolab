@@ -17,6 +17,6 @@ Objetivo: que la gente diga "qué bien hecho está esto". Claridad primero, bell
 ## Tareas de diseño
 - [x] D1 (opus): rediseñar templates/base.html y el CSS global según estos principios: header con logo, hero de home con una frase y las calculadoras como tarjetas con icono SVG y micro-descripción; footer limpio.
 - [x] D2 (sonnet): componente de resultado reutilizable (veredicto + cifra grande + gráfico de barras SVG + tabla) y actualizar las 3 calculadoras existentes para usarlo con cálculo en vivo.
-- [ ] D3 (sonnet): página /decidir/ como catálogo filtrable por tema (hipoteca, coche, impuestos, energía, ahorro) y buscador instantáneo en cliente.
-- [ ] D4 (haiku): favicon SVG, og:image estática por defecto, meta theme-color, 404 bonita.
-- [ ] D5 (sonnet): revisión de accesibilidad y de la vista a 375 px en todas las páginas; corregir.
+- [x] D3 (sonnet): página /decidir/ como catálogo filtrable por tema (hipoteca, coche, impuestos, energía, ahorro) y buscador instantáneo en cliente.
+- [x] D4 (haiku): favicon SVG, og:image estática por defecto, meta theme-color, 404 bonita.
+- [x] D5 (sonnet): revisión de accesibilidad y de la vista a 375 px en todas las páginas; corregir.

@@ -1,0 +1,89 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 2,
+    "alquiler": 900,
+    "subida": 2,
+    "rentab": 4,
+    "venta": 3,
+    "horizonte": 15
+   },
+   "expect": {
+    "patrimonioComprar": 204271.93,
+    "patrimonioAlquilar": 171500.41,
+    "diferencia": 32771.52,
+    "anosEquilibrio": 9,
+    "cuotaHipoteca": 843.21,
+    "costeMensualCompra": 1143.21,
+    "costeMensualAlquiler": 900
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 0,
+    "alquiler": 800,
+    "subida": 2,
+    "rentab": 5,
+    "venta": 3,
+    "horizonte": 10
+   },
+   "expect": {
+    "patrimonioComprar": 90460.38,
+    "patrimonioAlquilar": 164488.79,
+    "diferencia": -74028.4,
+    "anosEquilibrio": 0,
+    "cuotaHipoteca": 843.21,
+    "costeMensualCompra": 1143.21,
+    "costeMensualAlquiler": 800
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 25,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 4,
+    "alquiler": 1100,
+    "subida": 3,
+    "rentab": 3,
+    "venta": 3,
+    "horizonte": 25
+   },
+   "expect": {
+    "patrimonioComprar": 732188.28,
+    "patrimonioAlquilar": 169004.48,
+    "diferencia": 563183.8,
+    "anosEquilibrio": 3,
+    "cuotaHipoteca": 948.42,
+    "costeMensualCompra": 1248.42,
+    "costeMensualAlquiler": 1100
+   },
+   "tol": 1
+  }
+ ]
+}

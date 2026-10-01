@@ -1,0 +1,131 @@
+{
+  "slug": "alquilar-o-comprar",
+  "title": "Alquilar o comprar vivienda: qué sale mejor a N años",
+  "description": "Compara el patrimonio que tendrías comprando o alquilando e invirtiendo la entrada, según tu horizonte, y descubre en qué año compensa comprar.",
+  "h1": "Alquilar o comprar vivienda: ¿qué sale mejor a N años?",
+  "lead": "Compara el patrimonio neto que te quedaría al cabo de los años que elijas si compras con hipoteca o si alquilas e inviertes la entrada y la diferencia mensual, con tus números y para España.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio de la vivienda (€)",
+      "default": 250000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "entrada",
+      "label": "Entrada (% del precio)",
+      "default": 20,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "interes",
+      "label": "Tipo de interés de la hipoteca (%)",
+      "default": 3.0,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "plazo",
+      "label": "Plazo de la hipoteca (años)",
+      "default": 30,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "gastos",
+      "label": "Gastos de compra (% del precio: ITP/AJD, notaría, registro)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "ibi",
+      "label": "IBI anual (€)",
+      "default": 400,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "comunidad",
+      "label": "Comunidad y seguro anuales (€)",
+      "default": 700,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "mant",
+      "label": "Mantenimiento (% del valor al año)",
+      "default": 1,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "revaloriza",
+      "label": "Revalorización anual esperada (%)",
+      "default": 2,
+      "min": -20,
+      "step": 0.1
+    },
+    {
+      "id": "alquiler",
+      "label": "Alquiler mensual equivalente (€)",
+      "default": 900,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "subida",
+      "label": "Subida anual del alquiler (%)",
+      "default": 2,
+      "min": -20,
+      "step": 0.1
+    },
+    {
+      "id": "rentab",
+      "label": "Rentabilidad anual esperada de invertir (%)",
+      "default": 4,
+      "min": -20,
+      "step": 0.1
+    },
+    {
+      "id": "venta",
+      "label": "Coste de venta de la vivienda (%)",
+      "default": 3,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "horizonte",
+      "label": "Horizonte de comparación (años)",
+      "default": 15,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué es mejor, alquilar o comprar una vivienda?",
+      "Depende de cuántos años vayas a quedarte y de cuánto se revalorice la vivienda frente a lo que rinda tu dinero invertido. Comprar suele compensar a horizontes largos; alquilar suele ganar si te mueves pronto o si la vivienda se revaloriza poco. Esta calculadora te da el año en que comprar empieza a superar a alquilar."
+    ],
+    [
+      "¿Qué gastos de compra debo incluir?",
+      "En una vivienda de segunda mano, el ITP de tu comunidad autónoma más notaría, registro y gestoría; en obra nueva, IVA y AJD en lugar del ITP. Por defecto usamos un 10 % del precio como cifra orientativa y puedes editarla con la de tu caso."
+    ],
+    [
+      "¿Por qué se invierte la entrada en el escenario de alquilar?",
+      "Porque el dinero que no destinas a la entrada y a los gastos de compra sigue siendo tuyo y puede rendir. Para comparar de forma justa, en ambos escenarios se invierte la diferencia: la entrada inicial y, cada mes, lo que cuesta de más la opción más cara."
+    ],
+    [
+      "¿Qué rentabilidad y revalorización debo poner?",
+      "Son los dos supuestos más inciertos y nadie puede predecirlos. Prueba valores prudentes y optimistas y observa si la respuesta cambia: si no cambia, la decisión es sólida; si cambia, depende de una apuesta."
+    ],
+    [
+      "¿Qué no incluye este cálculo?",
+      "No incluye desgravaciones fiscales, impuestos sobre la rentabilidad de las inversiones, posible plusvalía de la venta, comisiones de la hipoteca ni subidas del IBI o la comunidad. Tampoco valora aspectos no económicos como estabilidad, libertad de mudarte o el valor de vivir en casa propia."
+    ]
+  ],
+  "sources": "Modelo propio simplificado: hipoteca a tipo fijo con amortización francesa, gastos y alquiler iniciales introducidos por ti, revalorización y rentabilidad en tasa anual constante, IBI y comunidad constantes, mantenimiento sobre el valor de la vivienda. Los gastos de compra (ITP/AJD, notaría, registro) varían por comunidad autónoma: consulta la normativa de la tuya (Agencia Tributaria y hacienda autonómica). Sin impuestos sobre las inversiones."
+}
