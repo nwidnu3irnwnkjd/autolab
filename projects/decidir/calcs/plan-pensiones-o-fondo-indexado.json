@@ -1,0 +1,168 @@
+{
+  "slug": "plan-pensiones-o-fondo-indexado",
+  "title": "Plan de pensiones o fondo indexado: ¿cuál te deja más?",
+  "description": "Compara un plan de pensiones con un fondo indexado tras impuestos: IRPF al aportar, tributación del rescate, comisiones y tipo de equilibrio.",
+  "h1": "Plan de pensiones o fondo indexado: ¿qué te deja más dinero?",
+  "lead": "Un plan de pensiones solo gana a un fondo indexado si el tipo medio con el que tributes al rescatarlo queda por debajo de un punto de equilibrio que depende de tu tipo marginal de IRPF al aportar; si rescatas de golpe un capital grande o necesitas liquidez, suele salir mejor el fondo. Calcula el punto de equilibrio con tus datos.",
+  "veredicto": "El plan de pensiones compensa frente a un fondo indexado cuando el tipo medio de IRPF con el que tributará tu rescate es menor que el punto de equilibrio que calcula esta herramienta con tu tipo marginal actual, tus comisiones y los años hasta el rescate; el fondo indexado sale mejor si rescatas de una vez un capital grande o necesitas liquidez, porque el plan está bloqueado salvo supuestos de liquidez.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "aportacion",
+      "label": "Aportación anual al plan o al fondo (€)",
+      "default": 1500,
+      "min": 1,
+      "step": 100,
+      "default_from": "params.pensiones_2026.supuestos.aportacion"
+    },
+    {
+      "id": "anos",
+      "label": "Años hasta el rescate (1 a 60)",
+      "default": 25,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.pensiones_2026.supuestos.anos"
+    },
+    {
+      "id": "renta",
+      "label": "Rendimientos netos anuales del trabajo o de actividades, que es tu base imponible (€)",
+      "default": 35000,
+      "min": 1,
+      "step": 1000,
+      "default_from": "params.pensiones_2026.supuestos.renta_neta"
+    },
+    {
+      "id": "ccaa",
+      "label": "Comunidad autónoma donde resides (régimen común)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "canarias",
+          "t": "Canarias"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
+    },
+    {
+      "id": "rescate",
+      "label": "Tus otras rentas del año en que rescates el plan, respecto a las actuales",
+      "type": "select",
+      "options": [
+        {
+          "v": "1",
+          "t": "Parecidas a las actuales"
+        },
+        {
+          "v": "0.5",
+          "t": "La mitad (tipo menor)"
+        },
+        {
+          "v": "2",
+          "t": "El doble (tipo mayor)"
+        }
+      ]
+    },
+    {
+      "id": "rentab",
+      "label": "Rentabilidad anual esperada antes de comisiones (%; hipótesis, no previsión)",
+      "default": 4,
+      "min": -10,
+      "step": 0.5,
+      "default_from": "params.pensiones_2026.supuestos.rentabilidad_bruta_pct"
+    },
+    {
+      "id": "comPlan",
+      "label": "Comisión anual del plan de pensiones (% del patrimonio)",
+      "default": 1.0,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.pensiones_2026.supuestos.comision_plan_pct"
+    },
+    {
+      "id": "comFondo",
+      "label": "Comisión anual del fondo indexado (% del patrimonio)",
+      "default": 0.2,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.pensiones_2026.supuestos.comision_fondo_pct"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor un plan de pensiones o un fondo indexado?",
+      "Depende de tu tipo marginal de IRPF al aportar, del tipo con el que tributes al rescatar y de cuánto valores la liquidez. El plan te devuelve IRPF cada año, pero el rescate tributa como rendimiento del trabajo; el fondo no desgrava, pero solo tributa sus ganancias, entre el 19 % y el 30 %, y puedes reembolsarlo cuando quieras. La calculadora compara el patrimonio neto de ambos y te da el tipo medio de rescate por debajo del cual gana el plan."
+    ],
+    [
+      "¿Cuánto puedo aportar y reducir en el IRPF?",
+      "El límite general es el menor de estos dos importes: el 30 % de tus rendimientos netos del trabajo y de actividades o 1.500 € al año (art. 52 de la Ley del IRPF). Si aportas 1.500 € o menos pero superas el 30 %, el exceso puedes reducirlo en los 5 ejercicios siguientes (art. 52.2). Aportar más de 1.500 € a un plan individual no está permitido (art. 5.3 del texto refundido de la Ley de Planes y Fondos de Pensiones): el exceso debe retirarse antes del 30 de junio del año siguiente o se multa con el 50 % (art. 36.5). Con contribuciones de la empresa (o aportaciones del propio trabajador al mismo plan de empleo, según el cuadro del art. 52.1.1.º) el límite sube hasta 8.500 €, y 4.250 € más para autónomos en planes sectoriales o de empleo simplificados, pero el incremento conjunto no puede superar 8.500 €: tope total de 10.000 €, siempre dentro del 30 %. La calculadora aplica solo el límite general."
+    ],
+    [
+      "¿Cómo tributa el rescate de un plan de pensiones?",
+      "Como rendimiento del trabajo, en la base general y con la escala general del IRPF, tanto si lo cobras en forma de capital como de renta (art. 17.2.a de la Ley del IRPF). Cobrarlo de golpe suele subir el tipo medio porque el capital se suma a tus otras rentas del año; repartirlo en varios años lo suele reducir. La reducción del 40 % (disposición transitoria 12.ª) solo afecta a la parte de aportaciones hechas hasta 2006 cobrada en forma de capital, y exige cobrarla en el año de la contingencia o en los dos siguientes; esta calculadora no la incluye."
+    ],
+    [
+      "¿Puedo rescatar el plan antes de jubilarme?",
+      "Cuando llega una contingencia (jubilación, incapacidad, dependencia o fallecimiento) o en supuestos de liquidez: desempleo de larga duración, enfermedad grave o aportaciones con al menos diez años de antigüedad en planes individuales y asociados (art. 8.8 del texto refundido de la Ley de Regulación de los Planes y Fondos de Pensiones). Fuera de esos casos el dinero queda bloqueado. En el fondo indexado puedes reembolsar cuando quieras."
+    ],
+    [
+      "¿Cómo tributa el fondo indexado?",
+      "Las ganancias solo tributan cuando reembolsas, en la base del ahorro: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima, sumando la parte estatal y la autonómica (arts. 66 y 76 de la Ley del IRPF). Los traspasos entre fondos de inversión no tributan mientras no reembolses, salvo en los ETF o fondos cotizados (art. 94.1.a)."
+    ]
+  ],
+  "sources": "Modelo propio: aportaciones al inicio de cada año, rentabilidad neta = rentabilidad bruta menos comisión anual, tipo constante y sin inflación. Plan: la aportación reduce la base imponible general en el año (ahorro de IRPF igual a la diferencia de cuota con y sin la aportación, con tu escala estatal más autonómica y el mínimo personal); esa devolución se reinvierte cada año en el fondo; el rescate se cobra de una vez (o en 10 años, sin rentabilidad durante el cobro) sumado a tus otras rentas del año del rescate y tributa en la base general. Fondo: se reembolsa al final y sus ganancias tributan en la escala del ahorro (también la ganancia de lo reinvertido). Límite de reducción: menor del 30 % de los rendimientos netos del trabajo y de actividades o 1.500 € al año, con incrementos de 8.500 € (empresa) y 4.250 € (autónomos), como máximo 8.500 € entre ambos, que no se modelan; el 30 % se calcula sobre la cifra introducida, no sobre rendimientos netos previos a la reducción del art. 20, y el sobrante del mínimo personal no se aplica a la base del ahorro (art. 56.2). Fuentes: Ley 35/2006 del IRPF, arts. 51 y 52, art. 52.2 (arrastre del exceso a 5 años) y, en el texto refundido de la Ley de Planes y Fondos de Pensiones, arts. 5.3 y 36.5 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764, texto consolidado a 30/09/2026). Rescate como rendimiento del trabajo: art. 17.2.a.3.ª. Escalas general estatal (art. 63) y autonómicas de 2026 de las 15 comunidades de régimen común, escala del ahorro (arts. 66.1 y 76, Ley 7/2024) y traspasos entre fondos (art. 94): mismo texto de la Ley del IRPF y data/params.json (irpf_2026); Castilla y León, Murcia y La Rioja con cifras autonómicas orientativas; no cubre País Vasco ni Navarra. Liquidez: Real Decreto Legislativo 1/2002, art. 8.8 (https://www.boe.es/buscar/act.php?id=BOE-A-2002-24252). Reducción del 40 % en rescates en capital de aportaciones hasta 2006: disposición transitoria 12.ª de la Ley del IRPF y Manual de Renta 2025 de la AEAT (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-1-determinacion-rendimiento-integro-trabajo/reducciones-aplicables-sobre-determinados-rendimientos-integros/c-regimen-transitorio-reducciones-aplicable-prestaciones/prestaciones-percibidas-forma-capital-derivadas.html), no incluida. Hipótesis no oficiales y editables: aportación de 1.500 €, 25 años, 35.000 € de renta, rentabilidad bruta del 4 % (no es una previsión), comisión del plan del 1 % y del fondo del 0,2 %. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni financiero."
+}

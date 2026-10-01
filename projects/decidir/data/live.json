@@ -4,15 +4,21 @@
    "extra": {
     "detalle": "Media simple de 10742 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
-   "fecha_consulta": "2026-10-01",
+   "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
    },
+   "historial": [
+    [
+     "2026-10-02",
+     1.9271
+    ]
+   ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9272
+   "valor": 1.9271
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -22,12 +28,18 @@
     "periodo": "2026-09",
     "periodo_anterior": "2026-08"
    },
-   "fecha_consulta": "2026-10-01",
+   "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-09-30",
    "fuente": {
     "nombre": "Banco Central Europeo (Data Portal, serie Euribor 1 año, vía Refinitiv)",
     "url": "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"
    },
+   "historial": [
+    [
+     "2026-09-30",
+     3.247
+    ]
+   ],
    "max_edad_dias": 45,
    "ok": true,
    "unidad": "%",
@@ -39,15 +51,21 @@
    "extra": {
     "detalle": "Media simple de 10381 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
-   "fecha_consulta": "2026-10-01",
+   "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
    },
+   "historial": [
+    [
+     "2026-10-02",
+     1.8323
+    ]
+   ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8327
+   "valor": 1.8323
   },
   "luz_pvpc": {
    "anterior": 0.20613,
@@ -62,12 +80,18 @@
     "precio_hora_barata": 0.1297,
     "precio_hora_cara": 0.37978
    },
-   "fecha_consulta": "2026-10-01",
+   "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
    "fuente": {
     "nombre": "Red Eléctrica de España (REData)",
     "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real"
    },
+   "historial": [
+    [
+     "2026-10-02",
+     0.22065
+    ]
+   ],
    "ok": true,
    "unidad": "€/kWh",
    "valor": 0.22065,
@@ -84,18 +108,24 @@
     "min_hoy": 16.2,
     "min_semana": 13.7
    },
-   "fecha_consulta": "2026-10-01",
+   "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
    "fuente": {
     "nombre": "Open-Meteo (CC BY 4.0)",
     "url": "https://open-meteo.com/"
    },
+   "historial": [
+    [
+     "2026-10-02",
+     18.4
+    ]
+   ],
    "ok": true,
    "unidad": "°C",
-   "valor": 19.1
+   "valor": 18.4
   }
  },
  "esquema": 1,
- "generado": "2026-10-01",
+ "generado": "2026-10-02",
  "nota": "Datos públicos sin clave; cada dato lleva su fecha y fuente. Generado por ops/refresh_data.py"
 }

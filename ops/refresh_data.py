@@ -163,6 +163,10 @@ def merge(old, new, today_iso):
     else:
         for k in ("anterior", "anterior_fecha", "variacion_abs", "variacion_pct"): e.pop(k, None)
     e.update(ok=True, fecha_consulta=today_iso); e.pop("motivo", None)
+    # historial [[fecha_dato, valor], ...] (máx. 45): lo usan los disparadores semanales (ops/triggers.py)
+    h = {f: v for f, v in (old or {}).get("historial", [])}
+    h[new["fecha_dato"]] = new["valor"]
+    e["historial"] = [[f, h[f]] for f in sorted(h)[-45:]]
     return e
 
 

@@ -15,8 +15,8 @@
   "subrogar-hipoteca-merece-la-pena"
  ],
  "calefaccion-gas-aerotermia-electrica": [
-  "diesel-gasolina-hibrido-electrico",
-  "alquilar-o-comprar"
+  "luz-fija-o-indexada",
+  "diesel-gasolina-hibrido-electrico"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
@@ -24,7 +24,7 @@
  ],
  "contado-o-financiar": [
   "guarderia-cuidadora-o-reducir-jornada",
-  "alquilar-o-comprar"
+  "plan-pensiones-o-fondo-indexado"
  ],
  "declaracion-conjunta-o-individual": [
   "contado-o-financiar",
@@ -36,12 +36,20 @@
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
-  "alquilar-o-comprar"
+  "plan-pensiones-o-fondo-indexado"
  ],
  "hipoteca-fija-o-variable": [
   "amortizar-o-invertir",
   "amortizar-plazo-o-cuota",
   "subrogar-hipoteca-merece-la-pena"
+ ],
+ "luz-fija-o-indexada": [
+  "calefaccion-gas-aerotermia-electrica",
+  "hipoteca-fija-o-variable"
+ ],
+ "plan-pensiones-o-fondo-indexado": [
+  "contado-o-financiar",
+  "guarderia-cuidadora-o-reducir-jornada"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",

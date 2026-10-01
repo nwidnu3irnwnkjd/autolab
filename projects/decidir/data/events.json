@@ -1,0 +1,86 @@
+{
+ "esquema": 1,
+ "nota": "Calendario de eventos con fuente oficial. Ningún evento sin fuente ni sin fecha verificable: lo recurrente sin fecha oficial del próximo año se marca como periodo habitual. Lo consume seo.eventos_activos().",
+ "eventos": [
+  {
+   "id": "tur-gas-trimestral",
+   "titulo": "Revisión trimestral de la tarifa regulada del gas (TUR)",
+   "tipo": "fechas",
+   "fechas": ["2026-10-01", "2027-01-01", "2027-04-01"],
+   "antes": 7, "despues": 14,
+   "decision": "Calefacción: gas, aerotermia o eléctrica",
+   "que_hacer": "Si calientas tu casa con gas, mira cuánto cambia tu factura con el nuevo precio y compara con aerotermia o calefacción eléctrica con tus metros y tu zona.",
+   "calc": "calefaccion-gas-aerotermia-electrica",
+   "texto_antes": "Se acerca la revisión trimestral de la tarifa regulada del gas (TUR), que el BOE publica el último día del trimestre.",
+   "texto_despues": "La tarifa regulada del gas (TUR) se revisó el {fecha} (BOE): comprueba cuánto cambia tu calefacción.",
+   "fuente": {"nombre": "BOE: Resolución de 30 de septiembre de 2026 (TUR de gas natural)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389"},
+   "aviso": "La TUR se revisa cada trimestre (1 de enero, abril, julio y octubre). Las fechas de 2027 son las de revisión previstas; las nuevas cifras solo se conocen cuando el BOE publica la resolución."
+  },
+  {
+   "id": "euribor-mensual",
+   "titulo": "Nueva media mensual del Euríbor",
+   "tipo": "mensual",
+   "dia_desde": 1, "dia_hasta": 10,
+   "decision": "Hipoteca fija o variable",
+   "que_hacer": "Con la nueva media mensual del Euríbor a 12 meses, calcula cuánto cambiaría tu cuota en la próxima revisión y si ahora compensa una fija.",
+   "calc": "hipoteca-fija-o-variable",
+   "texto": "Ya se conoce la media mensual del Euríbor a 12 meses del mes anterior: calcula qué haría tu cuota variable.",
+   "fuente": {"nombre": "Banco Central Europeo (Data Portal): Euribor a 12 meses, media mensual", "url": "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"},
+   "aviso": "La media del mes se publica en los primeros días del mes siguiente; la fecha exacta puede variar unos días."
+  },
+  {
+   "id": "calefaccion-temporada",
+   "titulo": "Temporada de calefacción",
+   "tipo": "anual",
+   "desde": "10-01", "hasta": "11-30",
+   "periodo_habitual": "octubre a abril",
+   "decision": "Calefacción: gas, aerotermia o eléctrica",
+   "que_hacer": "Antes de encender la calefacción de forma continua, calcula qué sistema te sale más barato este invierno con tu vivienda y tarifas actuales.",
+   "calc": "calefaccion-gas-aerotermia-electrica",
+   "texto": "Empieza la temporada de calefacción (periodo habitual, sin fecha oficial): momento de comparar sistemas.",
+   "fuente": {"nombre": "IDAE: ahorro y eficiencia energética en el hogar", "url": "https://www.idae.es/"},
+   "aviso": "No existe una fecha oficial de inicio: es el periodo habitual en la mayor parte de España (octubre a abril); cada comunidad de vecinos decide la fecha de la calefacción central."
+  },
+  {
+   "id": "cambio-hora-octubre",
+   "titulo": "Cambio al horario de invierno",
+   "tipo": "fechas",
+   "fechas": ["2026-10-25"],
+   "antes": 14, "despues": 3,
+   "decision": "Calefacción: gas, aerotermia o eléctrica",
+   "que_hacer": "El último domingo de octubre a las 3:00 vuelven a ser las 2:00. Revisa el reloj del termostato programable y las horas en que enciendes la calefacción; con tarifa por horas, comprueba cuáles son las más baratas.",
+   "calc": "calefaccion-gas-aerotermia-electrica",
+   "texto_antes": "El {fecha} cambia la hora (a las 3:00 vuelven a ser las 2:00): revisa la programación de tu calefacción.",
+   "texto_despues": "El {fecha} cambió la hora al horario de invierno: revisa la programación de tu calefacción.",
+   "fuente": {"nombre": "Directiva 2000/84/CE sobre las disposiciones relativas a la hora de verano (EUR-Lex)", "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32001L0084"},
+   "aviso": "La directiva fija el cambio en el último domingo de octubre y de marzo. El de marzo de 2027 será el domingo 28."
+  },
+  {
+   "id": "black-friday",
+   "titulo": "Black Friday",
+   "tipo": "fechas",
+   "fechas": ["2026-11-27", "2027-11-26"],
+   "antes": 10, "despues": 3,
+   "decision": "Pagar al contado o financiar",
+   "que_hacer": "Antes de aceptar «paga en cómodas cuotas», calcula el coste real de la financiación frente a pagar al contado con el descuento.",
+   "calc": "contado-o-financiar",
+   "texto_antes": "El {fecha} es el Black Friday: antes de financiar una compra, compara con pagar al contado.",
+   "texto_despues": "Black Friday ({fecha}): si financiaste una compra, comprueba cuánto te cuesta realmente.",
+   "fuente": {"nombre": "BOE: Ley 16/2011, de contratos de crédito al consumo", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2011-10970"},
+   "aviso": "El Black Friday es el cuarto viernes de noviembre (fecha calculada, no oficial). La fuente enlazada regula el crédito al consumo, incluido el derecho de desistimiento de 14 días."
+  },
+  {
+   "id": "campana-renta",
+   "titulo": "Campaña de la Renta",
+   "tipo": "anual",
+   "desde": "04-01", "hasta": "06-30",
+   "periodo_habitual": "abril a junio",
+   "decision": "Declaración conjunta o individual",
+   "que_hacer": "Antes de confirmar el borrador, calcula si te sale mejor la declaración conjunta o la individual con tus ingresos.",
+   "calc": "declaracion-conjunta-o-individual",
+   "texto": "Campaña de la Renta (periodo habitual, abril a junio): compara declaración conjunta e individual antes de confirmar el borrador.",
+   "fuente": {"nombre": "Agencia Tributaria: inicio de la Campaña de Renta 2025 (8 de abril a 30 de junio de 2026)", "url": "https://sede.agenciatributaria.gob.es/Sede/todas-noticias/2026/abril/8/inicio-campana-renta-patrimonio-2025.html"},
+   "aviso": "La Agencia Tributaria aún no ha anunciado las fechas de la campaña de 2027: se muestra el periodo habitual. La última campaña fue del 8 de abril al 30 de junio de 2026."
+  }
+ ]
+}

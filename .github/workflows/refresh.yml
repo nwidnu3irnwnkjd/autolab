@@ -18,19 +18,22 @@ jobs:
           ref: main
       - name: Descargar datos (REE, MITECO, BCE, Open-Meteo)
         run: python3 ops/refresh_data.py
-      - name: Comprobar esquema y Pulso
+      - name: Disparadores de actualidad (notas solo si una regla objetiva se activa)
+        run: python3 ops/triggers.py
+      - name: Comprobar esquema, Pulso, disparadores y calendario
         run: python3 ops/check_live.py
       - name: Commit si cambió live.json
         id: commit
         run: |
           git config user.name "autolab-bot"
           git config user.email "autolab-bot@users.noreply.github.com"
-          if git diff --quiet -- projects/decidir/data/live.json; then
+          git add -N projects/decidir/content/actualidad 2>/dev/null || true
+          if git diff --quiet -- projects/decidir/data/live.json projects/decidir/content/actualidad; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "live.json sin cambios"
+            echo "live.json y actualidad sin cambios"
           else
-            git add projects/decidir/data/live.json
-            git commit -m "chore(data): datos vivos del $(date -u +%F) [skip refresh]"
+            git add projects/decidir/data/live.json projects/decidir/content/actualidad
+            git commit -m "chore(data): datos vivos y notas del $(date -u +%F) [skip refresh]"
             git push origin HEAD:main
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi

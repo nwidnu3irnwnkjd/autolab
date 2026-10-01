@@ -20,6 +20,7 @@ HOME = Template(open(os.path.join(ROOT, "templates/home.html")).read())
 pages = []  # (path, lastmod, priority)
 GUIDES = seo.load_guides(params)  # content/guias/*.html
 LIVE = seo.load_live()  # data/live.json (ops/refresh_data.py): Pulso / «Dato de hoy»
+NOTES = seo.load_actualidad()  # content/actualidad/*.html (ops/triggers.py): solo si hay notas
 BARO = None  # datos del Barómetro (main)
 
 def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None):
@@ -47,7 +48,7 @@ def render_calc(c, all_calcs):
 {ui.calc_header(c)}
 {ui.calc_form(c)}
 {c["content"]}
-{seo.pulso_html(LIVE, c["slug"])}
+{seo.ahora_html(c["slug"])}{seo.pulso_html(LIVE, c["slug"])}
 <h2>Preguntas frecuentes</h2>
 {faqs}
 <h2>Supuestos y fuentes</h2>
@@ -83,7 +84,7 @@ def main():
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(HOME.substitute(cards=cards), "<h2>Cómo funciona</h2>", seo.pulso_html(LIVE) + barometro.home_teaser(BARO)),
+          seo.insert_before(HOME.substitute(cards=cards), "<h2>Cómo funciona</h2>", seo.ahora_html() + seo.actualidad_link(NOTES) + seo.pulso_html(LIVE) + barometro.home_teaser(BARO)),
           priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
@@ -97,6 +98,16 @@ def main():
     if GUIDES:
         write("/guias/", "Guías para decidir mejor — Entre Muchos", "Guías cortas con datos y fuentes oficiales para entender tu hipoteca, el Euríbor y la amortización anticipada.",
               seo.guides_index(GUIDES), priority="0.5", lastmod=max(g["modified"] for g in GUIDES))
+    cbody, cld, cmod = seo.calendario_page(calcs, B)  # /calendario/: eventos con fuente oficial (Estratega)
+    cbody += seo.actualidad_link(NOTES)
+    write("/calendario/", "Calendario de decisiones — Entre Muchos", "Fechas que mueven una decisión de dinero en España: Euríbor, tarifa del gas, cambio de hora, Black Friday y Renta, con fuente oficial.",
+          cbody, jsonld=cld, priority="0.5", lastmod=cmod)
+    if NOTES:  # /actualidad/ solo existe si algún disparador ha generado una nota
+        for n in NOTES:
+            nbody, nld = seo.actualidad_page(n, calcs, card, B)
+            write(f"/actualidad/{n['slug']}/", n["title"], n["description"], nbody, jsonld=nld, priority="0.6", lastmod=n["modified"])
+        write("/actualidad/", "Actualidad: datos que cambian decisiones", "Notas breves con datos oficiales cuando el Euríbor, los carburantes, la luz o el tiempo se mueven lo bastante para cambiar una decisión.",
+              seo.actualidad_index(NOTES), priority="0.6", lastmod=max(n["modified"] for n in NOTES))
     for slug, title, desc in [("como-funciona", "Cómo funciona", "Qué hacemos, qué no, y cómo se calculan los resultados."),
                               ("aviso-legal", "Aviso legal", "Titular, condiciones de uso y limitación de responsabilidad."),
                               ("privacidad", "Política de privacidad", "Qué datos tratamos (casi ninguno) y con qué base legal."),
@@ -108,7 +119,7 @@ def main():
     open(os.path.join(DIST, "404.html"), "w").write(BASE.substitute(title="Página no encontrada", description="Esta página no existe. Busca una calculadora en el catálogo.", canonical=site["base_url"], head_extra='<meta name="robots" content="noindex">', body=notfound_body(), scripts="", site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#"))
     bundle.run(ROOT, DIST)  # minifica y recorta CSS/JS por tipo de página (Diseñador)
     seo.copy_static(DIST)  # static/ -> raíz: robots.txt (bots de IA permitidos), clave IndexNow
-    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B))  # llms.txt + llms-full.txt
+    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES)  # llms.txt + llms-full.txt
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"<url><loc>{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in pages) + "</urlset>\n"
     open(os.path.join(DIST, "sitemap.xml"), "w").write(sm)

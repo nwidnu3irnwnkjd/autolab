@@ -6,9 +6,9 @@
 - [x] declaracion-conjunta-o-individual — IRPF: conjunta o individual (tramos estatales 2026)
 - [x] alquilar-o-comprar — Alquilar o comprar vivienda
 - [x] amortizar-o-invertir — Amortizar hipoteca o invertir
-- [ ] luz-fija-o-indexada — Tarifa de luz fija o indexada
+- [x] luz-fija-o-indexada — Tarifa de luz fija o indexada
 - [x] contado-o-financiar — Pagar al contado o financiar
-- [ ] plan-pensiones-o-fondo-indexado — Plan de pensiones o fondo indexado
+- [x] plan-pensiones-o-fondo-indexado — Plan de pensiones o fondo indexado
 - [x] calefaccion-gas-aerotermia-electrica — Qué calefacción sale más barata: gas, aerotermia o eléctrica
 - [x] subrogar-hipoteca-merece-la-pena — Cambiar la hipoteca de banco o a tipo fijo: ¿compensa?
 - [ ] cuanto-ahorrar-para-comprar-casa — Cuánto dinero necesito para comprar casa (entrada + impuestos por comunidad)

@@ -1,0 +1,137 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "consumo": 3000,
+    "potencia": 4.6,
+    "pctPunta": 30,
+    "pctLlano": 30,
+    "precioFijo": 0.15,
+    "potFija": 0.0779,
+    "pvpc": 0.184,
+    "hip": 0
+   },
+   "expect": {
+    "costeFija": 738.69,
+    "costePvpc": 918.94,
+    "diferencia": -180.25,
+    "difMenos10": -106.81,
+    "difMas10": -253.69,
+    "difMedia12": -14.72,
+    "equilibrioMwh": 197.24
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "consumo": 0,
+    "potencia": 4.6,
+    "pctPunta": 30,
+    "pctLlano": 30,
+    "precioFijo": 0.15,
+    "potFija": 0.0779,
+    "pvpc": 0.184,
+    "hip": 0
+   },
+   "expect": {
+    "costeFija": 166.35,
+    "costePvpc": 184.54,
+    "diferencia": -18.19,
+    "difMenos10": -18.19,
+    "difMas10": -18.19,
+    "difMedia12": -18.19,
+    "equilibrioMwh": -1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "consumo": 4200,
+    "potencia": 5.5,
+    "pctPunta": 30,
+    "pctLlano": 30,
+    "precioFijo": 0.1,
+    "potFija": 0.0779,
+    "pvpc": 0.21339,
+    "hip": 10
+   },
+   "expect": {
+    "costeFija": 733.08,
+    "costePvpc": 1532.26,
+    "diferencia": -799.18,
+    "difMenos10": -560.71,
+    "difMas10": -799.18,
+    "difMedia12": -283.99,
+    "equilibrioMwh": 249.61
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "consumo": 2500,
+    "potencia": 3.45,
+    "pctPunta": 10,
+    "pctLlano": 10,
+    "precioFijo": 0.22,
+    "potFija": 0.0902,
+    "pvpc": 0.12,
+    "hip": -10
+   },
+   "expect": {
+    "costeFija": 843.99,
+    "costePvpc": 449.86,
+    "diferencia": 394.13,
+    "difMenos10": 394.13,
+    "difMas10": 324.92,
+    "difMedia12": 294.55,
+    "equilibrioMwh": 96.05
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "consumo": 3000,
+    "potencia": 4.6,
+    "pctPunta": 10,
+    "pctLlano": 10,
+    "precioFijo": 0.15,
+    "potFija": 0.0779,
+    "pvpc": 0.184,
+    "hip": -10
+   },
+   "expect": {
+    "costeFija": 738.69,
+    "costePvpc": 757.62,
+    "diferencia": -18.93,
+    "difMenos10": -18.93,
+    "difMas10": -146.28,
+    "difMedia12": 60.91,
+    "equilibrioMwh": 154.96
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "consumo": 3000,
+    "potencia": 4.6,
+    "pctPunta": 30,
+    "pctLlano": 30,
+    "precioFijo": 0.192458,
+    "potFija": 0.0779,
+    "pvpc": 0.184,
+    "hip": 0
+   },
+   "expect": {
+    "costeFija": 900.69,
+    "costePvpc": 918.94,
+    "diferencia": -18.24,
+    "difMenos10": 55.19,
+    "difMas10": -91.68,
+    "difMedia12": 147.28,
+    "equilibrioMwh": 197.24
+   },
+   "tol": 1
+  }
+ ]
+}

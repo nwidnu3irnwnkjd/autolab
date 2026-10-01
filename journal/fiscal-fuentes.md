@@ -194,13 +194,13 @@ El reparto de la financiación del bono social de 2026 se rehízo con la Orden T
 - Peso del mercado diario/intradiario **A = 0,45**; peso de la cesta de futuros **B = 0,55**.
 - Cesta de futuros: anual 0,54; trimestral 0,36; mensual 0,10.
 - Precios horarios: los publica REE (e·sios) cada día antes de las 20:15. **No hay un €/kWh fijo**: la calculadora debe pedir o cargar el precio medio del mes con fuente y fecha.
-- Margen de comercialización fijo (€/kW·año) y alquiler del contador: **NO VERIFICADO** (no está en el texto consolidado del RD 216/2014; buscar la orden que lo fija).
+- Margen de comercialización fijo (CCF): **3,113 €/kW·año**, Orden ETU/1948/2016, anexo II ([BOE-A-2016-12274](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2016-12274)); sin orden posterior, se sigue aplicando · A− (contrastar con factura PVPC actual). Alquiler del contador: no modelado. El PVPC solo existe hasta 10 kW.
 
 ### 2.4 Impuestos sobre la factura de luz — confianza A/B
 | Concepto | Valor vigente en octubre 2026 | Fuente | Nov-dic 2026 |
 |---|---|---|---|
 | Impuesto Especial sobre la Electricidad | **5,11269632 %** (mínimo 1 €/MWh uso doméstico) | Ley 38/1992, art. 99 — [BOE-A-1992-28741](https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741) | 0,5 % **solo si** IPC electricidad sept./oct. > +15 % interanual (RDL 25/2026, arts. 20-21) · B |
-| IVA electricidad (< 10 kW) | **21 %** | Ley 37/1992 (tipo general) | 10 % con la misma condición (RDL 25/2026, arts. 18-19) · B |
+| IVA electricidad (≤ 10 kW) | **21 %** | Ley 37/1992 (tipo general) | 10 % con la misma condición (RDL 25/2026, arts. 18-19) · B |
 | Historia 2026 | IEE 0,5 % e IVA 10 % del 22/3 al 30/6 (RDL 7/2026, arts. 40 y 42); agosto y septiembre condicionados (RDL 18/2026, arts. 10-13) | | |
 
 ### 2.5 Bono social eléctrico 2026 — confianza A

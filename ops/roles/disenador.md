@@ -10,6 +10,9 @@ Aplica ops/DESIGN.md, tarea por tarea. Objetivo: UI/UX espectacular, rápida, ac
 - **Opus solo** para escribir una dirección visual nueva (un sistema o una fase nueva de DESIGN.md), y el orquestador debe anotar el motivo en costes.md.
 ## Tope por ciclo (métrica: duración del ciclo, camino crítico ≤ 8 min)
 - Máximo 2 tareas de DESIGN.md o ~8 min por ciclo. Si una tarea es mayor, pártela en DESIGN.md y deja el resto para el siguiente ciclo.
+- (c8, medido) c4 incumplió el tope: 5 entregas, 9,5 min, 190k, y fue el camino crítico. Al llegar a 2 tareas, para y entrega aunque te sobre tiempo; métrica: tokens del Diseñador ≤ 100k/ciclo (c5 72k y c7 97k sí cumplen).
+## Archivos ajenos (c8; métrica: ediciones de archivo ajeno por ciclo → 0; c7: seo.pulso_html y ops/check_live.py editados por el Diseñador)
+- Si tu cambio de marcado exige tocar seo.py u ops/*.py, abre petición y deja el CSS listo para el marcado nuevo; no edites. Hasta que T11 mueva el marcado del Pulso a ui.py, el marcado de `seo.pulso_html` es del Estratega.
 - Captura de pantalla: solo las vistas que cambiaste (no todo el sitio) a 375 px claro y 1280 px oscuro; el resto, `read_page`/consola.
 ## Criterio de «hecho»
 - Build OK; sin errores de consola; sin scroll horizontal a 375 px; página más pesada < 60 KB; `[x]` en DESIGN.md con una línea de lo hecho; peticiones `-> Diseñador` abiertas resueltas o respondidas.

@@ -185,7 +185,7 @@ def html_to_md(h, base):
     h = re.sub(r"[ \t]+", " ", h); h = re.sub(r"\n\s*\n\s*\n+", "\n\n", h)
     return "\n".join(l.strip() for l in h.splitlines()).strip()
 
-def write_llms(dist, site, calcs, guides, params, tema, icons, extra=""):
+def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=()):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
             "con tus propios números (hipoteca, coche, impuestos, energía, ahorro) en España. Cada página da un veredicto, la cifra que lo justifica, "
@@ -201,6 +201,10 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra=""):
     if guides:
         lines.append("\n## Guías\n")
         lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']}" for g in guides]
+    lines.append(f"\n## Calendario\n\n- [Calendario de decisiones]({base}/calendario/): fechas que mueven una decisión de dinero (revisión de la TUR de gas, Euríbor mensual, cambio de hora, Black Friday, Renta) con su fuente oficial.")
+    if notes:
+        lines.append("\n## Actualidad\n")
+        lines += [f"- [{n['h1']}]({base}/actualidad/{n['slug']}/): {n['description']}" for n in notes[:10]]
     if extra:  # Barómetro: datos propios fechados
         lines.append("\n## Datos propios\n")
         lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json")
@@ -369,3 +373,149 @@ def pulso_html(live=None, slug=None, today=None):
     tag = "h2" if slug is None else "h3"
     nota = ' <span class="pulso-meta">Previsión del tiempo: <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> (CC BY 4.0).</span>' if any(i["id"] == "tiempo" for i in sel) else ""
     return f'<aside class="pulso box" aria-label="{h}"><{tag}>{h}</{tag}><ul>{"".join(li)}</ul>{nota}</aside>\n'
+
+
+# ---------- Calendario de eventos (data/events.json) y banner «Ahora» ----------
+EVENTS_PATH = os.path.join(ROOT, "data/events.json")
+
+def load_events(path=EVENTS_PATH):
+    """Eventos con fuente oficial. Descarta los que no tengan fuente https (regla: ninguno sin fuente)."""
+    try:
+        ev = json.load(open(path)).get("eventos", [])
+    except Exception:
+        return []
+    return [e for e in ev if str(e.get("fuente", {}).get("url", "")).startswith("https://") and e.get("calc") and e.get("titulo")]
+
+def _d(iso): return datetime.date.fromisoformat(iso)
+
+def _ocurrencias(e, hoy):
+    """Ocurrencias {inicio, fin, fecha} del evento alrededor de `hoy` (año anterior, actual y siguiente)."""
+    out = []
+    t = e.get("tipo")
+    if t == "fechas":
+        for f in e.get("fechas", []):
+            d = _d(f); out.append(dict(inicio=d - datetime.timedelta(days=e.get("antes", 7)), fin=d + datetime.timedelta(days=e.get("despues", 3)), fecha=d))
+    elif t == "anual":
+        mi, di = map(int, e["desde"].split("-")); mf, df = map(int, e["hasta"].split("-"))
+        for y in (hoy.year - 1, hoy.year, hoy.year + 1):
+            out.append(dict(inicio=datetime.date(y, mi, di), fin=datetime.date(y, mf, df), fecha=None))
+    elif t == "mensual":
+        for k in range(-1, 14):
+            y, m = divmod(hoy.year * 12 + hoy.month - 1 + k, 12)
+            out.append(dict(inicio=datetime.date(y, m + 1, e.get("dia_desde", 1)), fin=datetime.date(y, m + 1, e.get("dia_hasta", 10)), fecha=None))
+    return sorted(out, key=lambda o: o["inicio"])
+
+def eventos_estado(hoy=None, events=None):
+    """Para cada evento, su ocurrencia activa o la próxima: dict(evento, inicio, fin, fecha, activo). Activos primero."""
+    hoy = hoy or datetime.date.today()
+    res = []
+    for e in (load_events() if events is None else events):
+        occ = _ocurrencias(e, hoy)
+        act = [o for o in occ if o["inicio"] <= hoy <= o["fin"]]
+        nxt = [o for o in occ if o["inicio"] > hoy]
+        o = act[0] if act else (nxt[0] if nxt else None)
+        if o: res.append(dict(o, evento=e, activo=bool(act)))
+    return sorted(res, key=lambda r: (not r["activo"], r["inicio"]))
+
+def eventos_activos(fecha=None, events=None):
+    """Eventos cuya ventana de relevancia incluye `fecha` (date o 'YYYY-MM-DD'; por defecto hoy)."""
+    if isinstance(fecha, str): fecha = _d(fecha)
+    return [r for r in eventos_estado(fecha, events) if r["activo"]]
+
+def _texto_ahora(r, hoy):
+    e = r["evento"]
+    if r["fecha"] is None: return e["texto"]
+    k = "texto_antes" if r["fecha"] >= hoy else "texto_despues"
+    return e[k].replace("{fecha}", fecha_es(r["fecha"].isoformat()).rsplit(" de ", 1)[0])
+
+def ahora_html(slug=None, hoy=None, events=None):
+    """Banner discreto «Ahora: …» (home con slug=None, o calculadora afín). '' si no hay evento activo. Máx. 1."""
+    hoy = hoy or datetime.date.today()
+    act = eventos_activos(hoy, events)
+    if slug is not None: act = [r for r in act if r["evento"]["calc"] == slug]
+    if not act: return ""
+    r = act[0]; e = r["evento"]
+    link = f'<a href="/decidir/{e["calc"]}/">Calcula tu caso</a>' if slug is None else '<a href="/calendario/">Calendario</a>'
+    return (f'<p class="ahora note"><strong>Ahora:</strong> {html.escape(_texto_ahora(r, hoy))} {link}'
+            + (' · <a href="/calendario/">Calendario</a>' if slug is None else "")
+            + f' <span class="pulso-meta">Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</span></p>\n')
+
+def _rango_es(a, b):
+    if a.year == b.year: return f"{a.day} de {MESES_ES[a.month - 1]} al {b.day} de {MESES_ES[b.month - 1]} de {b.year}"
+    return f"{_fmt_fecha(a.isoformat())} al {_fmt_fecha(b.isoformat())}"
+
+def calendario_page(calcs, base, hoy=None, events=None):
+    """(body, jsonld, lastmod) de /calendario/. Event JSON-LD solo si la ocurrencia tiene fecha concreta."""
+    hoy = hoy or datetime.date.today()
+    est = eventos_estado(hoy, events)
+    names = {c["slug"]: c["h1"] for c in calcs}
+    items, ld = [], []
+    for r in est:
+        e = r["evento"]
+        if e["calc"] not in names: continue
+        if r["fecha"]:
+            cuando = f'<time datetime="{r["fecha"].isoformat()}">{fecha_es(r["fecha"].isoformat())}</time>'
+            if e.get("tipo") == "fechas" and len(e["fechas"]) > 1:
+                sig = [f for f in e["fechas"] if _d(f) > r["fecha"]][:1]
+                if sig: cuando += f' (siguiente: <time datetime="{sig[0]}">{fecha_es(sig[0])}</time>)'
+            ld.append({"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": r["fecha"].isoformat(),
+                       "endDate": r["fecha"].isoformat(), "eventStatus": "https://schema.org/EventScheduled",
+                       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+                       "location": {"@type": "VirtualLocation", "url": f'{base}/decidir/{e["calc"]}/'},
+                       "description": e["que_hacer"], "url": f"{base}/calendario/", "organizer": {"@type": "Organization", "name": "Entre Muchos", "url": base + "/"}})
+        else:
+            cuando = f'<time datetime="{r["inicio"].isoformat()}">{_rango_es(r["inicio"], r["fin"])}</time>'
+            if e.get("periodo_habitual"): cuando += f' · periodo habitual: {e["periodo_habitual"]}'
+        estado = '<span class="pulso-meta">Activo ahora</span>' if r["activo"] else ""
+        items.append(f'<article class="box"><h2>{html.escape(e["titulo"])}</h2><p class="note">{cuando} {estado}</p>'
+                     f'<p><strong>Decisión que toca:</strong> {html.escape(e["decision"])}.</p><p><strong>Qué hacer:</strong> {html.escape(e["que_hacer"])}</p>'
+                     f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a></p>'
+                     f'<p class="note">{html.escape(e["aviso"])} Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</p></article>')
+    body = ('<h1>Calendario de decisiones</h1><p class="lead">Fechas que mueven una decisión de dinero en España, con su fuente oficial: '
+            'cuándo mirar tu hipoteca, tu calefacción, tu declaración o una compra a plazos. Solo incluimos lo que podemos verificar; '
+            'lo recurrente sin fecha oficial se marca como periodo habitual.</p>' + "".join(items)
+            + '<p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a>.</p>')
+    jl = [breadcrumbs(base, [("Inicio", "/"), ("Calendario", None)])] + ld
+    return body, jl, lastmod("data/events.json", "seo.py")
+
+
+# ---------- Actualidad: notas por disparador (content/actualidad/*.html, generadas por ops/triggers.py) ----------
+def load_actualidad(path=os.path.join(ROOT, "content/actualidad")):
+    out = []
+    if not os.path.isdir(path): return out
+    for f in sorted(os.listdir(path), reverse=True):
+        if not f.endswith(".html"): continue
+        raw = open(os.path.join(path, f)).read()
+        m = re.match(r"\s*<!--meta\s*(\{.*?\})\s*-->", raw, re.S)
+        if not m: continue
+        n = json.loads(m.group(1)); n["slug"] = f[:-5]; n["body"] = raw[m.end():]
+        n.setdefault("modified", n["published"])
+        out.append(n)
+    return out
+
+def actualidad_index(notes):
+    return ('<h1>Actualidad</h1><p class="lead">Notas breves cuando un dato oficial se mueve lo bastante como para cambiar una decisión. '
+            'Cada nota sale de una regla objetiva y lleva su dato, su fecha y su fuente.</p><ul class="cards">' + "".join(
+        f'<li><a href="/actualidad/{n["slug"]}/">{n["h1"]}</a><p><time datetime="{n["published"]}">{fecha_es(n["published"])}</time> · {n["description"]}</p></li>' for n in notes) + "</ul>")
+
+def actualidad_page(n, calcs, card, base):
+    rel = [c for c in calcs if c["slug"] == n.get("calc")]
+    calc_block = ('<h2>Calcúlalo con tus números</h2><ul class="cards">' + "".join(card(c) for c in rel) + "</ul>") if rel else ""
+    body = f"""<article class="guide">
+<p class="kicker"><a href="/actualidad/">Actualidad</a></p>
+<h1>{n["h1"]}</h1>
+<p class="byline note">Por {AUTHOR} · <time datetime="{n["published"]}">{fecha_es(n["published"])}</time></p>
+{n["body"]}
+<p class="disclaimer">Nota generada a partir de datos oficiales con una regla objetiva ({html.escape(n.get("regla", ""))}); sin opinión. Información orientativa, no constituye asesoramiento financiero. Lee nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
+{calc_block}
+</article>"""
+    url = f"{base}/actualidad/{n['slug']}/"
+    art = article(n["h1"], n["description"], url, n["published"], n["modified"], base)
+    art["@type"] = "NewsArticle"
+    return body, [art, breadcrumbs(base, [("Inicio", "/"), ("Actualidad", "/actualidad/"), (n["h1"], None)])]
+
+def actualidad_link(notes):
+    """Enlace discreto a la última nota; '' si no hay notas (así /actualidad/ solo se enlaza si existe)."""
+    if not notes: return ""
+    n = notes[0]
+    return f'<p class="note actualidad-link">Actualidad: <a href="/actualidad/{n["slug"]}/">{n["h1"]}</a> (<time datetime="{n["published"]}">{fecha_es(n["published"])}</time>) · <a href="/actualidad/">Todas las notas</a></p>\n'

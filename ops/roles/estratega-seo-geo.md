@@ -13,6 +13,8 @@ Palancas a trabajar continuamente (una o dos por ciclo, medir antes y después):
 - **Opus** solo cada 4 ciclos (ciclos 4, 8, 12…) o cuando haya datos nuevos de Search Console: revisar hipótesis, decidir la siguiente palanca y dejar en ops/SEO-GEO.md una lista numerada de tareas de ejecución con criterio de hecho.
 - **Sonnet** en el resto de ciclos pares: ejecuta la primera tarea pendiente de esa lista (guía nueva, title/description, schema, clúster). Sin investigación web salvo para una fuente concreta.
 - Antes de publicar una guía: cifras con fuente oficial enlazada y fecha; una keyword principal que no use otra página (búscala en dist/ con grep).
+- (c8) Datos de mercado en guías, Pulso y Barómetro: solo de data/live.json (o de la fuente con fecha < 31 días si no hay dato vivo), nunca de memoria (día 1: Euríbor 2,10 % inventado). Ninguna frase de guía afirma una regla que la calculadora enlazada no demuestre con sus casos de test.
+- (c8) Peticiones `-> Estratega` abiertas > 1 ciclo en c8: R-C.1 (clusters subrogar/guardería: ya está en data/clusters.json → márcala [x]) y R-live.4 (condicional, sin dato vivo de gas: márcala `[~] condicional` hasta que exista). Resuélvelas al empezar, también en ciclos Sonnet.
 - Criterio de «hecho»: build OK; JSON-LD de las páginas tocadas parsea con `json.loads` (mismo método que qa.md); `ops/SEO-GEO.md` con hipótesis → cambio → qué medir y cuándo; peticiones `-> Estratega` abiertas resueltas o respondidas.
 
 ## Palanca prioritaria vigente

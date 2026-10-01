@@ -11,12 +11,21 @@ Construye calculadoras y páginas programáticas replicando el patrón de projec
 - Tardas ~2 min y el ciclo dura ~19 min porque espera a los roles lentos: haz **2 calculadoras por ciclo** de data/backlog.md (las 2 primeras [ ] no fiscales). Una fiscal/legal cuenta como lote completo (lleva verificación independiente).
 ## Criterio de «hecho» (todas, o no está hecha)
 - `python3 build.py` y `python3 ops/check.py` en verde; la página aparece en dist/ y en el sitemap.
-- Rúbrica de ops/roles/rubrica-calculadora.md ≥ 14/18 sin ceros en los puntos \*; pega la línea de rúbrica en tu informe.
+- Rúbrica de ops/roles/rubrica-calculadora.md (v2) ≥ 16/20 sin ceros en los puntos \*; pega la línea de rúbrica en tu informe.
 - `"tema"` y `"veredicto"` en el JSON; `[x]` en data/backlog.md.
 - Informe final: slugs, nº de tests, rúbrica, peticiones abiertas/resueltas. Sin volcar código.
 
 ## Calculadoras reguladas o fiscales (IRPF, pensiones, hipotecas, comisiones legales)
 Andoni NO las revisa: la verificación es nuestra. Antes de dar por buena una calculadora con parámetros legales o fiscales:
 1. Cada cifra legal (tramos, tipos, topes, plazos, porcentajes) sale de fuente oficial (BOE, AEAT, Banco de España, CNMC), citada con enlace y fecha de consulta en data/params.json y en la sección de fuentes.
-2. Un segundo agente independiente (Opus, sin ver tu código) recalcula 3 casos desde la norma y compara con los tests; las discrepancias se resuelven antes de publicar.
-3. Si una cifra no se puede verificar en fuente oficial, no se publica la calculadora: se aparca en el backlog con el motivo.
+2. **Primero tu oráculo** (2026-10-01T23:03Z, c8; métrica: tokens Opus de verificación por calculadora fiscal 484k → ≤ 150k): antes de escribir el .js, escribe `ops/verif/<slug>_oraculo.py`, implementación Python independiente desde la norma, y un barrido aleatorio ≥ 500 casos que ejecute el JS real con JavaScriptCore igual que ops/check.py (`osascript -l JavaScript`, funciones puras antes de `function eur(`) y lo compare con el Python: 0 discrepancias > 1 €. Escribe el oráculo desde la norma ANTES de abrir tu propio .js para que no copie sus errores. Esto encuentra los errores de fórmula (c7: DA 61.ª) con Sonnet, no con Opus.
+3. Después, la verificación de ops/roles/verificador-fiscal.md (Opus, solo aplicabilidad legal, texto ≤ cálculo, supuestos y bordes). Pásale tu lista de supuestos «no todos de ley». La re-verificación tras correcciones la hace Sonnet re-ejecutando los scripts.
+4. Si una cifra no se puede verificar en fuente oficial, no se publica la calculadora: se aparca en el backlog con el motivo.
+5. Alcance: modela solo lo que cambia el veredicto para la mayoría de usuarios; lo demás se declara como límite («no incluye…») en la página. Una fiscal por ciclo como máximo.
+
+## Checklist de calidad antes de entregar (2026-10-01T23:03Z, c8; métrica: errores hallados después del Constructor → 0)
+Lecciones: día 1, Euríbor 2,10 % escrito de memoria en params.json (real 3,247 %) y el Barómetro publicado desfasado; c7, el borrador IRPF prometía «conviene con sueldos desiguales», que el cálculo no demostraba.
+- [ ] Ningún dato de mercado escrito de memoria: Euríbor, carburantes, luz, IPC, tipos → `default_from: "live.<id>"`; si no hay dato vivo, fuente oficial con enlace y fecha de consulta < 31 días en params.json. Comprueba: `grep -n` del valor en live.json o en la fuente.
+- [ ] Cada frase con «conviene / sale mejor / ahorras / siempre / nunca» tiene un caso del test.json que la demuestra; si depende de condiciones, se escribe con el umbral calculado. Si no puedes señalar el caso, bórrala.
+- [ ] Combinaciones de inputs que la ley o la realidad no permiten: bloqueadas o avisadas.
+- [ ] Límites del modelo dichos en «Supuestos y fuentes».

@@ -1,0 +1,320 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 25,
+    "renta": 35000,
+    "ccaa": "madrid",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 417.0,
+    "patrimonioPlan": 49491.28,
+    "patrimonioFondo": 57862.54,
+    "diferencia": -8371.26,
+    "patrimonioPlan10": 52037.97,
+    "diferencia10": -5824.57,
+    "diferenciaSinReinvertir": -7983.75
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 25,
+    "renta": 35000,
+    "ccaa": "madrid",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoMarginal": 27.8,
+    "tipoMedioRescate": 39.949,
+    "tipoEquilibrio": 25.088
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 2000,
+    "anos": 10,
+    "renta": 3000,
+    "ccaa": "andalucia",
+    "rescate": 2,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 900.0,
+    "ahorroFiscalAnual": 0.0,
+    "patrimonioPlan": 8412.78,
+    "patrimonioFondo": 10711.23,
+    "diferencia": -2298.45,
+    "patrimonioPlan10": 8607.88,
+    "diferencia10": -2103.35,
+    "diferenciaSinReinvertir": -2298.45
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 2000,
+    "anos": 10,
+    "renta": 3000,
+    "ccaa": "andalucia",
+    "rescate": 2,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoMarginal": 19.0,
+    "tipoMedioRescate": 20.836,
+    "tipoEquilibrio": -0.792
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 30,
+    "renta": 60000,
+    "ccaa": "cataluna",
+    "rescate": 2,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 600.0,
+    "patrimonioPlan": 68385.39,
+    "patrimonioFondo": 76296.01,
+    "diferencia": -7910.62,
+    "patrimonioPlan10": 68570.43,
+    "diferencia10": -7725.58,
+    "diferenciaSinReinvertir": -7053.52
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 30,
+    "renta": 60000,
+    "ccaa": "cataluna",
+    "rescate": 2,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoMarginal": 40.0,
+    "tipoMedioRescate": 47.252,
+    "tipoEquilibrio": 36.49
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 20,
+    "renta": 60000,
+    "ccaa": "madrid",
+    "rescate": 0.5,
+    "rentab": 5,
+    "comPlan": 0.5,
+    "comFondo": 0.5
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 585.0,
+    "patrimonioPlan": 47583.4,
+    "patrimonioFondo": 45268.02,
+    "diferencia": 2315.38,
+    "patrimonioPlan10": 52579.44,
+    "diferencia10": 7311.42,
+    "diferenciaSinReinvertir": 2847.81
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 20,
+    "renta": 60000,
+    "ccaa": "madrid",
+    "rescate": 0.5,
+    "rentab": 5,
+    "comPlan": 0.5,
+    "comFondo": 0.5
+   },
+   "expect": {
+    "tipoMarginal": 39.0,
+    "tipoMedioRescate": 37.96,
+    "tipoEquilibrio": 42.668
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 5000,
+    "anos": 1,
+    "renta": 45000,
+    "ccaa": "cyl",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 1500.0,
+    "ahorroFiscalAnual": 555.0,
+    "patrimonioPlan": 1528.35,
+    "patrimonioFondo": 1546.17,
+    "diferencia": -17.82,
+    "patrimonioPlan10": 1528.35,
+    "diferencia10": -17.82,
+    "diferenciaSinReinvertir": -0.74
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 5000,
+    "anos": 1,
+    "renta": 45000,
+    "ccaa": "cyl",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoMarginal": 37.0,
+    "tipoMedioRescate": 37.0,
+    "tipoEquilibrio": 35.847
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 5750,
+    "anos": 25,
+    "renta": 40000,
+    "ccaa": "valencia",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 532.5,
+    "patrimonioPlan": 51165.91,
+    "patrimonioFondo": 57862.54,
+    "diferencia": -6696.63,
+    "diferencia10": -2431.37
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 30,
+    "renta": 20000,
+    "ccaa": "extremadura",
+    "rescate": 0.5,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 326.25,
+    "patrimonioPlan": 62113.38,
+    "patrimonioFondo": 76296.01,
+    "diferencia": -14182.63,
+    "diferencia10": -1519.64
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 15,
+    "renta": 150000,
+    "ccaa": "rioja",
+    "rescate": 1,
+    "rentab": 6,
+    "comPlan": 0.3,
+    "comFondo": 0.1
+   },
+   "expect": {
+    "aportacionEfectiva": 1500,
+    "ahorroFiscalAnual": 742.5,
+    "patrimonioPlan": 34224.67,
+    "patrimonioFondo": 33832.85,
+    "diferencia": 391.82
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "aportacion": 5750,
+    "anos": 25,
+    "renta": 40000,
+    "ccaa": "valencia",
+    "rescate": 1,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoEquilibrio": 32.73
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 30,
+    "renta": 20000,
+    "ccaa": "extremadura",
+    "rescate": 0.5,
+    "rentab": 4,
+    "comPlan": 1.0,
+    "comFondo": 0.2
+   },
+   "expect": {
+    "tipoEquilibrio": 18.18
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "aportacion": 1500,
+    "anos": 15,
+    "renta": 150000,
+    "ccaa": "rioja",
+    "rescate": 1,
+    "rentab": 6,
+    "comPlan": 0.3,
+    "comFondo": 0.1
+   },
+   "expect": {
+    "tipoEquilibrio": 50.59
+   },
+   "tol": 0.02
+  }
+ ]
+}

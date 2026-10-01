@@ -1,898 +1,986 @@
 {
-  "fecha": "2026-10-02",
-  "euribor_12m": 3.247,
-  "euribor_fuente": "Banco Central Europeo, media mensual de septiembre de 2026 (respaldo; el dato vivo está en data/live.json)",
-  "tipo_hipoteca_fija_medio": 2.6,
-  "deduccion_vivienda_pre2013": {
-    "porcentaje": 15,
-    "base_maxima_anual": 9040
+ "fecha": "2026-10-02",
+ "euribor_12m": 3.247,
+ "euribor_fuente": "Banco Central Europeo, media mensual de septiembre de 2026 (respaldo; el dato vivo está en data/live.json)",
+ "tipo_hipoteca_fija_medio": 2.6,
+ "deduccion_vivienda_pre2013": {
+  "porcentaje": 15,
+  "base_maxima_anual": 9040
+ },
+ "fecha_combustibles": "2026-10-02",
+ "diesel_eur_l": 1.927,
+ "gasolina_eur_l": 1.833,
+ "kwh_casa_eur": 0.17,
+ "kwh_publico_eur": 0.45,
+ "combustibles_fuente": "MITECO, Geoportal de gasolineras, media simple Península y Baleares (respaldo; el dato vivo está en data/live.json)",
+ "fecha_calefaccion": "2026-10-01",
+ "gas_eur_kwh": 0.064,
+ "electricidad_eur_kwh": 0.23,
+ "demanda_calefaccion_kwh_m2": {
+  "A": 25,
+  "B": 40,
+  "C": 55,
+  "D": 75,
+  "E": 100
+ },
+ "scop_aerotermia": 3.2,
+ "rendimiento_caldera_condensacion": 0.92,
+ "inst_gas_eur": 2500,
+ "inst_aerotermia_eur": 9000,
+ "inst_electrica_eur": 2000,
+ "mant_gas_eur": 100,
+ "mant_aerotermia_eur": 120,
+ "fijo_gas_eur_ano": 119,
+ "fuente": {
+  "gas_eur_kwh": {
+   "valor": "0,064 €/kWh con impuestos en octubre de 2026: TUR.2 (5.000-15.000 kWh/año) variable 5,042762 c€/kWh desde 1/10/2026 + Impuesto sobre Hidrocarburos 0,65 €/GJ (epígrafe 1.10.1, art. 13 del RDL 25/2026) = 0,00234 €/kWh + IVA 21 %. En noviembre y diciembre, solo si el IPC del gas natural supera el 15 % interanual (INE): IVA 10 % (arts. 18.2 y 19.2) e Impuesto sobre Hidrocarburos de 0,3 €/GJ (noviembre) o 0,3 / 0,42 €/GJ (diciembre, arts. 14 y 15), lo que dejaría el precio en torno a 0,057 €/kWh.",
+   "fuente": "BOE-A-2026-20389, Resolución de 30/9/2026 (TUR de gas)",
+   "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
+   "consulta": "consultado el 2/10/2026",
+   "estado": "verificado en BOE: término TUR (Resolución de 30/9/2026) e Impuesto sobre Hidrocarburos de octubre (RDL 25/2026, BOE-A-2026-20265); noviembre y diciembre, condicionados al IPC",
+   "url2": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265"
   },
-  "fecha_combustibles": "2026-10-02",
-  "diesel_eur_l": 1.927,
-  "gasolina_eur_l": 1.833,
-  "kwh_casa_eur": 0.17,
-  "kwh_publico_eur": 0.45,
-  "combustibles_fuente": "MITECO, Geoportal de gasolineras, media simple Península y Baleares (respaldo; el dato vivo está en data/live.json)",
-  "fecha_calefaccion": "2026-10-01",
-  "gas_eur_kwh": 0.064,
-  "electricidad_eur_kwh": 0.23,
+  "fijo_gas_eur_ano": {
+   "valor": "119 €/año = 8,17 €/mes (TUR.2) x 12 x 1,21 IVA",
+   "fuente": "BOE-A-2026-20389",
+   "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "verificado"
+  },
+  "electricidad_eur_kwh": {
+   "valor": "0,23 €/kWh: PVPC medio de septiembre 2026 0,184 €/kWh (sin IEE ni IVA) x 1,0511 x 1,21 = 0,234. Rango 0,18-0,30 según tarifa (Eurostat 2.º semestre 2025: 0,2975 €/kWh con todos los cargos)",
+   "fuente": "CostEEnergía (datos PVPC) y Eurostat, vía tarifasgasluz.com",
+   "url": "https://www.costeenergia.es/historico/pvpc-septiembre",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo; no contrastado directamente en REE/ESIOS"
+  },
   "demanda_calefaccion_kwh_m2": {
-    "A": 25,
-    "B": 40,
-    "C": 55,
-    "D": 75,
-    "E": 100
+   "valor": "A 25, B 40, C 55, D 75, E 100 kWh/m²·año",
+   "fuente": "IDAE SPAHOUSEC solo distingue zonas Atlántica/Continental/Mediterránea y señala que D y E pueden consumir hasta el doble que A y B; no publica kWh/m² por letra CTE",
+   "url": "https://www.idae.es/uploads/documentos/documentos_Informe_SPAHOUSEC_ACC_f68291a3.pdf",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo según IDAE SPAHOUSEC (no verificado por letra)"
   },
-  "scop_aerotermia": 3.2,
-  "rendimiento_caldera_condensacion": 0.92,
-  "inst_gas_eur": 2500,
-  "inst_aerotermia_eur": 9000,
-  "inst_electrica_eur": 2000,
-  "mant_gas_eur": 100,
-  "mant_aerotermia_eur": 120,
-  "fijo_gas_eur_ano": 119,
-  "fuente": {
-    "gas_eur_kwh": {
-      "valor": "0,064 €/kWh con impuestos en octubre de 2026: TUR.2 (5.000-15.000 kWh/año) variable 5,042762 c€/kWh desde 1/10/2026 + Impuesto sobre Hidrocarburos 0,65 €/GJ (epígrafe 1.10.1, art. 13 del RDL 25/2026) = 0,00234 €/kWh + IVA 21 %. En noviembre y diciembre, solo si el IPC del gas natural supera el 15 % interanual (INE): IVA 10 % (arts. 18.2 y 19.2) e Impuesto sobre Hidrocarburos de 0,3 €/GJ (noviembre) o 0,3 / 0,42 €/GJ (diciembre, arts. 14 y 15), lo que dejaría el precio en torno a 0,057 €/kWh.",
-      "fuente": "BOE-A-2026-20389, Resolución de 30/9/2026 (TUR de gas)",
-      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
-      "consulta": "consultado el 2/10/2026",
-      "estado": "verificado en BOE: término TUR (Resolución de 30/9/2026) e Impuesto sobre Hidrocarburos de octubre (RDL 25/2026, BOE-A-2026-20265); noviembre y diciembre, condicionados al IPC",
-      "url2": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265"
-    },
-    "fijo_gas_eur_ano": {
-      "valor": "119 €/año = 8,17 €/mes (TUR.2) x 12 x 1,21 IVA",
-      "fuente": "BOE-A-2026-20389",
-      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "verificado"
-    },
-    "electricidad_eur_kwh": {
-      "valor": "0,23 €/kWh: PVPC medio de septiembre 2026 0,184 €/kWh (sin IEE ni IVA) x 1,0511 x 1,21 = 0,234. Rango 0,18-0,30 según tarifa (Eurostat 2.º semestre 2025: 0,2975 €/kWh con todos los cargos)",
-      "fuente": "CostEEnergía (datos PVPC) y Eurostat, vía tarifasgasluz.com",
-      "url": "https://www.costeenergia.es/historico/pvpc-septiembre",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo; no contrastado directamente en REE/ESIOS"
-    },
-    "demanda_calefaccion_kwh_m2": {
-      "valor": "A 25, B 40, C 55, D 75, E 100 kWh/m²·año",
-      "fuente": "IDAE SPAHOUSEC solo distingue zonas Atlántica/Continental/Mediterránea y señala que D y E pueden consumir hasta el doble que A y B; no publica kWh/m² por letra CTE",
-      "url": "https://www.idae.es/uploads/documentos/documentos_Informe_SPAHOUSEC_ACC_f68291a3.pdf",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo según IDAE SPAHOUSEC (no verificado por letra)"
-    },
-    "scop_aerotermia": {
-      "valor": "3,2 (radiadores a 55 °C: típico 2,8-3,6; suelo radiante a 35 °C: 3,5-4,5)",
-      "fuente": "Autarc, valores típicos de SCOP aire-agua",
-      "url": "https://www.autarc.energy/global/knowledge/waermepumpe-wichtige-begriffe-cop-scop-jaz",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango con fuente secundaria; dato del fabricante/Eurovent del equipo concreto prevalece"
-    },
-    "rendimiento_caldera_condensacion": {
-      "valor": "0,92 (condensación: hasta 94 % clase A ErP; caldera antigua aprox. 81 %)",
-      "fuente": "caloryfrio.com, rendimiento estacional de calderas de condensación (ErP)",
-      "url": "https://www.caloryfrio.com/calefaccion/calderas/rendimiento-medio-estacional-de-las-calderas-de-condensacion.html",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango con fuente secundaria"
-    },
-    "inst_gas_eur": {
-      "valor": "2.500 €; rango 1.200-4.500 € caldera instalada",
-      "fuente": "Cronoshare / Tudegas, precios 2026",
-      "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-caldera-gas",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo"
-    },
-    "inst_aerotermia_eur": {
-      "valor": "9.000 €; rango 7.000-12.000 € en piso de 100 m², 12.000-18.000 € en unifamiliar",
-      "fuente": "Selectra / Natural Home, precios 2026",
-      "url": "https://climate.selectra.com/es/aerotermia/precio",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo"
-    },
-    "inst_electrica_eur": {
-      "valor": "2.000 €; rango 600-4.000 € (habitual 1.900-2.200 €)",
-      "fuente": "Cronoshare, calefacción eléctrica 2026",
-      "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-calefaccion-electrica",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo"
-    },
-    "mant_gas_eur": {
-      "valor": "100 €/año; rango 70-140 € (revisión obligatoria cada 2 años, anual en País Vasco)",
-      "fuente": "OCU / Papernest, revisión de caldera",
-      "url": "https://www.ocu.org/vivienda-y-energia/calderas/noticias/revisiones-calderas-de-gas",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo"
-    },
-    "mant_aerotermia_eur": {
-      "valor": "120 €/año; rango 80-150 € con técnico oficial (contratos 150-300 €)",
-      "fuente": "Guía Térmica / Hogarconfort, mantenimiento de aerotermia 2026",
-      "url": "https://guiatermica.com/mantenimiento-aerotermia-precio/",
-      "consulta": "consultado el 1/10/2026",
-      "estado": "rango orientativo"
-    }
+  "scop_aerotermia": {
+   "valor": "3,2 (radiadores a 55 °C: típico 2,8-3,6; suelo radiante a 35 °C: 3,5-4,5)",
+   "fuente": "Autarc, valores típicos de SCOP aire-agua",
+   "url": "https://www.autarc.energy/global/knowledge/waermepumpe-wichtige-begriffe-cop-scop-jaz",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango con fuente secundaria; dato del fabricante/Eurovent del equipo concreto prevalece"
   },
-  "ley_5_2019_art23": {
-    "valor": "Art. 23.6: subrogación/novación de variable a fijo (o primer periodo fijo ≥ 3 años): máx. 0,05 % del capital reembolsado en los 3 primeros años, nada después. Art. 23.7: tipo fijo, 2 % (10 primeros años) y 1,5 % (resto). Art. 23.5: variable, 0,15 % (5 años) o 0,25 % (3 años). DT 1ª: aplica a contratos anteriores si se novan o subrogan. Ley 41/2007 no verificada.",
-    "fuente": "Ley 5/2019, BOE-A-2019-3814",
-    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814",
-    "consulta": "consultado el 2/10/2026",
-    "estado": "verificado en texto consolidado del BOE"
+  "rendimiento_caldera_condensacion": {
+   "valor": "0,92 (condensación: hasta 94 % clase A ErP; caldera antigua aprox. 81 %)",
+   "fuente": "caloryfrio.com, rendimiento estacional de calderas de condensación (ErP)",
+   "url": "https://www.caloryfrio.com/calefaccion/calderas/rendimiento-medio-estacional-de-las-calderas-de-condensacion.html",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango con fuente secundaria"
   },
-  "irpf_2026": {
-    "ejercicio": 2026,
-    "consultado": "2026-10-02",
-    "base_legal": "Ley 35/2006 del IRPF, texto consolidado a 30/09/2026",
-    "escala_estatal_general": {
-      "fuente": "Ley 35/2006, art. 63.1 (redacción Ley 11/2020, vigente desde 1/1/2021)",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "tramos": [
-        [
-          0,
-          9.5
-        ],
-        [
-          12450,
-          12
-        ],
-        [
-          20200,
-          15
-        ],
-        [
-          35200,
-          18.5
-        ],
-        [
-          60000,
-          22.5
-        ],
-        [
-          300000,
-          24.5
-        ]
-      ]
-    },
-    "escala_ahorro_mitad": {
-      "fuente": "Ley 35/2006, arts. 66.1 (estatal) y 76 (autonómica, igual); redacción Ley 7/2024, vigente desde 1/1/2025. Cada mitad; el tipo total es el doble",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "tramos": [
-        [
-          0,
-          9.5
-        ],
-        [
-          6000,
-          10.5
-        ],
-        [
-          50000,
-          11.5
-        ],
-        [
-          200000,
-          13.5
-        ],
-        [
-          300000,
-          15
-        ]
-      ]
-    },
-    "conjunta": {
-      "fuente": "Ley 35/2006, art. 84.2.2.º a 4.º (texto vigente)",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "reduccion_matrimonio": 3400,
-      "reduccion_monoparental": 2150
-    },
-    "minimo_estatal": {
-      "fuente": "Ley 35/2006, arts. 57, 58 y 61.1.ª",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "contribuyente": 5550,
-      "descendientes": [
-        2400,
-        2700,
-        4000,
-        4500
-      ],
-      "menor3": 2800,
-      "descendiente_max_edad": 24,
-      "descendiente_renta_max": 8000
-    },
-    "trabajo": {
-      "fuente": "Ley 35/2006, arts. 19.2.f y 20 (redacción RDL 4/2024, efectos 1/1/2024)",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "otros_gastos": 2000,
-      "art20_limite_neto": 19747.5,
-      "art20_tramo1": 14852,
-      "art20_max": 7302,
-      "art20_pend1": 1.75,
-      "art20_tramo2": 17673.52,
-      "art20_base2": 2364.34,
-      "art20_pend2": 1.14,
-      "otras_rentas_max": 6500,
-      "otros_gastos_en_conjunta": "una sola vez por unidad familiar y reducción art. 20 sobre la suma de rendimientos netos, sin multiplicar (art. 84.2 y Manual práctico de Renta 2025, AEAT)",
-      "manual_aeat_url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html"
-    },
-    "deduccion_da61": {
-      "fuente": "Ley 35/2006, disposición adicional 61.ª (redacción RDL 5/2026, efectos 1/1/2026; BOE-A-2026-3810, convalidado)",
-      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
-      "consulta": "consultado el 2/10/2026",
-      "confianza": "A",
-      "importe": 590.89,
-      "tramo": 17094,
-      "limite": 20048.45,
-      "pendiente": 0.2,
-      "otras_rentas_max": 6500
-    },
-    "ccaa": {
-      "andalucia": {
-        "nombre": "Andalucía",
-        "escala_general": [
-          [
-            0,
-            9.5
-          ],
-          [
-            13000,
-            12
-          ],
-          [
-            21100,
-            15
-          ],
-          [
-            35200,
-            18.5
-          ],
-          [
-            60000,
-            22.5
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 5790,
-          "descendientes": [
-            2510,
-            2820,
-            4170,
-            4700
-          ],
-          "menor3": 2920
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "Ley 5/2021 (Andalucía), arts. 23 y 23 bis, redacción DL 7/2022",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "aragon": {
-        "nombre": "Aragón",
-        "escala_general": [
-          [
-            0,
-            9.5
-          ],
-          [
-            13072.5,
-            12
-          ],
-          [
-            21210,
-            15
-          ],
-          [
-            36960,
-            18.5
-          ],
-          [
-            52500,
-            20.5
-          ],
-          [
-            60000,
-            23
-          ],
-          [
-            80000,
-            24
-          ],
-          [
-            90000,
-            25
-          ],
-          [
-            130000,
-            25.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "DLeg 1/2005 (Aragón), art. 110-1, Ley 17/2023",
-        "url": "https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "asturias": {
-        "nombre": "Asturias",
-        "escala_general": [
-          [
-            0,
-            9
-          ],
-          [
-            12450,
-            12
-          ],
-          [
-            17707.2,
-            14
-          ],
-          [
-            33007.2,
-            19.2
-          ],
-          [
-            53407.2,
-            21.5
-          ],
-          [
-            70000,
-            22.5
-          ],
-          [
-            90000,
-            25
-          ],
-          [
-            175000,
-            26
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 6105,
-          "descendientes": [
-            2640,
-            2970,
-            4400,
-            4950
-          ],
-          "menor3": 3080
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "DLeg 2/2014 (Asturias), arts. 2 a 2 ter, Ley 3/2025",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-945",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "baleares": {
-        "nombre": "Illes Balears",
-        "escala_general": [
-          [
-            0,
-            9
-          ],
-          [
-            10000,
-            11.25
-          ],
-          [
-            18000,
-            14.25
-          ],
-          [
-            30000,
-            17.5
-          ],
-          [
-            48000,
-            19
-          ],
-          [
-            70000,
-            21.75
-          ],
-          [
-            90000,
-            22.75
-          ],
-          [
-            120000,
-            23.75
-          ],
-          [
-            175000,
-            24.75
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 5550,
-          "descendientes": [
-            2400,
-            2970,
-            4400,
-            4950
-          ],
-          "menor3": 2800
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "DLeg 1/2014 (Illes Balears), arts. 1 y 2, Ley 11/2023 y Ley 12/2023",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "canarias": {
-        "nombre": "Canarias",
-        "escala_general": [
-          [
-            0,
-            9
-          ],
-          [
-            13748,
-            11.5
-          ],
-          [
-            19422,
-            14
-          ],
-          [
-            35924,
-            18.5
-          ],
-          [
-            57566,
-            23.5
-          ],
-          [
-            93268,
-            25
-          ],
-          [
-            123745,
-            26
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 5606,
-          "descendientes": [
-            2424,
-            2727,
-            4040,
-            4545
-          ],
-          "menor3": 2828
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "DLeg 1/2009 (Canarias), arts. 18 bis y 18 quater, Ley 9/2025",
-        "url": "https://www.boe.es/buscar/act.php?id=BOC-j-2009-90008",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "cantabria": {
-        "nombre": "Cantabria",
-        "escala_general": [
-          [
-            0,
-            8.5
-          ],
-          [
-            13000,
-            11
-          ],
-          [
-            21000,
-            14.5
-          ],
-          [
-            35200,
-            18
-          ],
-          [
-            60000,
-            22.5
-          ],
-          [
-            90000,
-            24.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "DLeg 62/2008 (Cantabria), art. 1, Ley 3/2023",
-        "url": "https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "clm": {
-        "nombre": "Castilla-La Mancha",
-        "escala_general": [
-          [
-            0,
-            9.5
-          ],
-          [
-            12450,
-            12
-          ],
-          [
-            20200,
-            15
-          ],
-          [
-            35200,
-            18.5
-          ],
-          [
-            60000,
-            22.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "Ley 8/2013 (Castilla-La Mancha), art. 13 bis",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "cyl": {
-        "nombre": "Castilla y León",
-        "escala_general": [
-          [
-            0,
-            9
-          ],
-          [
-            12450,
-            12
-          ],
-          [
-            20200,
-            14
-          ],
-          [
-            35200,
-            18.5
-          ],
-          [
-            53407.2,
-            21.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "el art. 1 bis fija mínimos con las mismas cuantías que el Estado: se aplican los estatales",
-        "fuente": "DLeg 1/2013 (Castilla y León), arts. 1 y 1 bis, Ley 2/2022",
-        "url": "https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A−",
-        "orientativo": true,
-        "nota": "El art. 1 es de la Ley 2/2022 (consolidación del BOE actualizada el 17/07/2024); la rebaja del primer tramo anunciada es para 2027 (anteproyecto), no afecta a 2026. Confianza A−: el aviso orientativo se mantiene por prudencia"
-      },
-      "cataluna": {
-        "nombre": "Cataluña",
-        "escala_general": [
-          [
-            0,
-            9.5
-          ],
-          [
-            12500,
-            12.5
-          ],
-          [
-            22000,
-            16
-          ],
-          [
-            33000,
-            19
-          ],
-          [
-            53000,
-            21.5
-          ],
-          [
-            90000,
-            23.5
-          ],
-          [
-            120000,
-            24.5
-          ],
-          [
-            175000,
-            25.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "el art. 611-2 fija mínimos con las mismas cuantías que el Estado: se aplican los estatales",
-        "fuente": "DLeg 1/2024 (Cataluña), arts. 611-1 y 611-2, DL 5/2025",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "extremadura": {
-        "nombre": "Extremadura",
-        "escala_general": [
-          [
-            0,
-            7.75
-          ],
-          [
-            12450,
-            9.75
-          ],
-          [
-            20200,
-            16
-          ],
-          [
-            24200,
-            17.5
-          ],
-          [
-            35200,
-            21
-          ],
-          [
-            60000,
-            23.5
-          ],
-          [
-            80200,
-            24
-          ],
-          [
-            99200,
-            24.5
-          ],
-          [
-            120200,
-            25
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "DLeg 1/2018 (Extremadura), art. 1, Ley 2/2026 de 3 de agosto, efectos 1/1/2026",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "galicia": {
-        "nombre": "Galicia",
-        "escala_general": [
-          [
-            0,
-            9
-          ],
-          [
-            12985.35,
-            11.65
-          ],
-          [
-            21068.6,
-            14.9
-          ],
-          [
-            35200,
-            18.4
-          ],
-          [
-            60000,
-            22.5
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 5789,
-          "descendientes": [
-            2503,
-            2816,
-            4172,
-            4694
-          ],
-          "menor3": 2920
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "DLeg 1/2011 (Galicia), arts. 4 y 4 bis, Ley 7/2022",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "madrid": {
-        "nombre": "Comunidad de Madrid",
-        "escala_general": [
-          [
-            0,
-            8.5
-          ],
-          [
-            13362.22,
-            10.7
-          ],
-          [
-            19004.63,
-            12.8
-          ],
-          [
-            35425.68,
-            17.4
-          ],
-          [
-            57320.4,
-            20.5
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 5956.65,
-          "descendientes": [
-            2575.85,
-            2897.83,
-            4400,
-            4950
-          ],
-          "menor3": 3005.16
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "DLeg 1/2010 (Madrid), arts. 1, 2 y 2 bis, Ley 13/2023",
-        "url": "https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      },
-      "murcia": {
-        "nombre": "Región de Murcia",
-        "escala_general": [
-          [
-            0,
-            9.5
-          ],
-          [
-            12450,
-            11.2
-          ],
-          [
-            20200,
-            13.3
-          ],
-          [
-            34000,
-            17.9
-          ],
-          [
-            60000,
-            22.5
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "DLeg 1/2010 (Murcia), art. 2 (la DA 5.ª con escalas transitorias solo cubre 2019-2022)",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A−",
-        "orientativo": true,
-        "nota": "El art. 2 coincide con la escala del Manual de Renta 2025 de la AEAT; no se ha encontrado ninguna escala transitoria para 2026. Confianza A−: el aviso orientativo se mantiene por prudencia"
-      },
-      "rioja": {
-        "nombre": "La Rioja",
-        "escala_general": [
-          [
-            0,
-            8
-          ],
-          [
-            12450,
-            10.6
-          ],
-          [
-            20200,
-            13.6
-          ],
-          [
-            35200,
-            17.8
-          ],
-          [
-            40000,
-            18.3
-          ],
-          [
-            50000,
-            19
-          ],
-          [
-            60000,
-            24.5
-          ],
-          [
-            120000,
-            27
-          ]
-        ],
-        "minimo": null,
-        "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
-        "fuente": "Ley 10/2017 (La Rioja), art. 31 y 31 ter, Ley 13/2023",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A−",
-        "orientativo": true,
-        "nota": "El art. 31 ter solo obliga a deflactar si el IPC riojano de diciembre supera el 3 % y haría falta una ley, que no consta en el BOE (IPC de La Rioja en noviembre de 2025: 2,4 %). Confianza A−: el aviso orientativo se mantiene por prudencia"
-      },
-      "valencia": {
-        "nombre": "Comunitat Valenciana",
-        "escala_general": [
-          [
-            0,
-            8.8
-          ],
-          [
-            12000,
-            11.7
-          ],
-          [
-            22000,
-            14.6
-          ],
-          [
-            32000,
-            17
-          ],
-          [
-            42000,
-            19.4
-          ],
-          [
-            52000,
-            21.9
-          ],
-          [
-            62000,
-            24.4
-          ],
-          [
-            72000,
-            26.1
-          ],
-          [
-            100000,
-            27.35
-          ],
-          [
-            150000,
-            28.35
-          ],
-          [
-            200000,
-            29.35
-          ]
-        ],
-        "minimo": {
-          "contribuyente": 6105,
-          "descendientes": [
-            2640,
-            2970,
-            4400,
-            4950
-          ],
-          "menor3": 3080
-        },
-        "minimo_nota": "mínimos propios",
-        "fuente": "Ley 13/1997 (C. Valenciana), art. 2 y 2 bis; Ley 5/2026 de 31 de julio (efectos 1/1/2026)",
-        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202",
-        "consulta": "consultado el 2/10/2026",
-        "confianza": "A"
-      }
-    },
-    "excluidas": [
-      "País Vasco",
-      "Navarra"
-    ]
+  "inst_gas_eur": {
+   "valor": "2.500 €; rango 1.200-4.500 € caldera instalada",
+   "fuente": "Cronoshare / Tudegas, precios 2026",
+   "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-caldera-gas",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo"
+  },
+  "inst_aerotermia_eur": {
+   "valor": "9.000 €; rango 7.000-12.000 € en piso de 100 m², 12.000-18.000 € en unifamiliar",
+   "fuente": "Selectra / Natural Home, precios 2026",
+   "url": "https://climate.selectra.com/es/aerotermia/precio",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo"
+  },
+  "inst_electrica_eur": {
+   "valor": "2.000 €; rango 600-4.000 € (habitual 1.900-2.200 €)",
+   "fuente": "Cronoshare, calefacción eléctrica 2026",
+   "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-calefaccion-electrica",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo"
+  },
+  "mant_gas_eur": {
+   "valor": "100 €/año; rango 70-140 € (revisión obligatoria cada 2 años, anual en País Vasco)",
+   "fuente": "OCU / Papernest, revisión de caldera",
+   "url": "https://www.ocu.org/vivienda-y-energia/calderas/noticias/revisiones-calderas-de-gas",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo"
+  },
+  "mant_aerotermia_eur": {
+   "valor": "120 €/año; rango 80-150 € con técnico oficial (contratos 150-300 €)",
+   "fuente": "Guía Térmica / Hogarconfort, mantenimiento de aerotermia 2026",
+   "url": "https://guiatermica.com/mantenimiento-aerotermia-precio/",
+   "consulta": "consultado el 1/10/2026",
+   "estado": "rango orientativo"
   }
+ },
+ "ley_5_2019_art23": {
+  "valor": "Art. 23.6: subrogación/novación de variable a fijo (o primer periodo fijo ≥ 3 años): máx. 0,05 % del capital reembolsado en los 3 primeros años, nada después. Art. 23.7: tipo fijo, 2 % (10 primeros años) y 1,5 % (resto). Art. 23.5: variable, 0,15 % (5 años) o 0,25 % (3 años). DT 1ª: aplica a contratos anteriores si se novan o subrogan. Ley 41/2007 no verificada.",
+  "fuente": "Ley 5/2019, BOE-A-2019-3814",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814",
+  "consulta": "consultado el 2/10/2026",
+  "estado": "verificado en texto consolidado del BOE"
+ },
+ "irpf_2026": {
+  "ejercicio": 2026,
+  "consultado": "2026-10-02",
+  "base_legal": "Ley 35/2006 del IRPF, texto consolidado a 30/09/2026",
+  "escala_estatal_general": {
+   "fuente": "Ley 35/2006, art. 63.1 (redacción Ley 11/2020, vigente desde 1/1/2021)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "tramos": [
+    [
+     0,
+     9.5
+    ],
+    [
+     12450,
+     12
+    ],
+    [
+     20200,
+     15
+    ],
+    [
+     35200,
+     18.5
+    ],
+    [
+     60000,
+     22.5
+    ],
+    [
+     300000,
+     24.5
+    ]
+   ]
+  },
+  "escala_ahorro_mitad": {
+   "fuente": "Ley 35/2006, arts. 66.1 (estatal) y 76 (autonómica, igual); redacción Ley 7/2024, vigente desde 1/1/2025. Cada mitad; el tipo total es el doble",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "tramos": [
+    [
+     0,
+     9.5
+    ],
+    [
+     6000,
+     10.5
+    ],
+    [
+     50000,
+     11.5
+    ],
+    [
+     200000,
+     13.5
+    ],
+    [
+     300000,
+     15
+    ]
+   ]
+  },
+  "conjunta": {
+   "fuente": "Ley 35/2006, art. 84.2.2.º a 4.º (texto vigente)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "reduccion_matrimonio": 3400,
+   "reduccion_monoparental": 2150
+  },
+  "minimo_estatal": {
+   "fuente": "Ley 35/2006, arts. 57, 58 y 61.1.ª",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "contribuyente": 5550,
+   "descendientes": [
+    2400,
+    2700,
+    4000,
+    4500
+   ],
+   "menor3": 2800,
+   "descendiente_max_edad": 24,
+   "descendiente_renta_max": 8000
+  },
+  "trabajo": {
+   "fuente": "Ley 35/2006, arts. 19.2.f y 20 (redacción RDL 4/2024, efectos 1/1/2024)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "otros_gastos": 2000,
+   "art20_limite_neto": 19747.5,
+   "art20_tramo1": 14852,
+   "art20_max": 7302,
+   "art20_pend1": 1.75,
+   "art20_tramo2": 17673.52,
+   "art20_base2": 2364.34,
+   "art20_pend2": 1.14,
+   "otras_rentas_max": 6500,
+   "otros_gastos_en_conjunta": "una sola vez por unidad familiar y reducción art. 20 sobre la suma de rendimientos netos, sin multiplicar (art. 84.2 y Manual práctico de Renta 2025, AEAT)",
+   "manual_aeat_url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html"
+  },
+  "deduccion_da61": {
+   "fuente": "Ley 35/2006, disposición adicional 61.ª (redacción RDL 5/2026, efectos 1/1/2026; BOE-A-2026-3810, convalidado)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "importe": 590.89,
+   "tramo": 17094,
+   "limite": 20048.45,
+   "pendiente": 0.2,
+   "otras_rentas_max": 6500
+  },
+  "ccaa": {
+   "andalucia": {
+    "nombre": "Andalucía",
+    "escala_general": [
+     [
+      0,
+      9.5
+     ],
+     [
+      13000,
+      12
+     ],
+     [
+      21100,
+      15
+     ],
+     [
+      35200,
+      18.5
+     ],
+     [
+      60000,
+      22.5
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 5790,
+     "descendientes": [
+      2510,
+      2820,
+      4170,
+      4700
+     ],
+     "menor3": 2920
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "Ley 5/2021 (Andalucía), arts. 23 y 23 bis, redacción DL 7/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "aragon": {
+    "nombre": "Aragón",
+    "escala_general": [
+     [
+      0,
+      9.5
+     ],
+     [
+      13072.5,
+      12
+     ],
+     [
+      21210,
+      15
+     ],
+     [
+      36960,
+      18.5
+     ],
+     [
+      52500,
+      20.5
+     ],
+     [
+      60000,
+      23
+     ],
+     [
+      80000,
+      24
+     ],
+     [
+      90000,
+      25
+     ],
+     [
+      130000,
+      25.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "DLeg 1/2005 (Aragón), art. 110-1, Ley 17/2023",
+    "url": "https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "asturias": {
+    "nombre": "Asturias",
+    "escala_general": [
+     [
+      0,
+      9
+     ],
+     [
+      12450,
+      12
+     ],
+     [
+      17707.2,
+      14
+     ],
+     [
+      33007.2,
+      19.2
+     ],
+     [
+      53407.2,
+      21.5
+     ],
+     [
+      70000,
+      22.5
+     ],
+     [
+      90000,
+      25
+     ],
+     [
+      175000,
+      26
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 6105,
+     "descendientes": [
+      2640,
+      2970,
+      4400,
+      4950
+     ],
+     "menor3": 3080
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "DLeg 2/2014 (Asturias), arts. 2 a 2 ter, Ley 3/2025",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-945",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "baleares": {
+    "nombre": "Illes Balears",
+    "escala_general": [
+     [
+      0,
+      9
+     ],
+     [
+      10000,
+      11.25
+     ],
+     [
+      18000,
+      14.25
+     ],
+     [
+      30000,
+      17.5
+     ],
+     [
+      48000,
+      19
+     ],
+     [
+      70000,
+      21.75
+     ],
+     [
+      90000,
+      22.75
+     ],
+     [
+      120000,
+      23.75
+     ],
+     [
+      175000,
+      24.75
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 5550,
+     "descendientes": [
+      2400,
+      2970,
+      4400,
+      4950
+     ],
+     "menor3": 2800
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "DLeg 1/2014 (Illes Balears), arts. 1 y 2, Ley 11/2023 y Ley 12/2023",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "canarias": {
+    "nombre": "Canarias",
+    "escala_general": [
+     [
+      0,
+      9
+     ],
+     [
+      13748,
+      11.5
+     ],
+     [
+      19422,
+      14
+     ],
+     [
+      35924,
+      18.5
+     ],
+     [
+      57566,
+      23.5
+     ],
+     [
+      93268,
+      25
+     ],
+     [
+      123745,
+      26
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 5606,
+     "descendientes": [
+      2424,
+      2727,
+      4040,
+      4545
+     ],
+     "menor3": 2828
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "DLeg 1/2009 (Canarias), arts. 18 bis y 18 quater, Ley 9/2025",
+    "url": "https://www.boe.es/buscar/act.php?id=BOC-j-2009-90008",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "cantabria": {
+    "nombre": "Cantabria",
+    "escala_general": [
+     [
+      0,
+      8.5
+     ],
+     [
+      13000,
+      11
+     ],
+     [
+      21000,
+      14.5
+     ],
+     [
+      35200,
+      18
+     ],
+     [
+      60000,
+      22.5
+     ],
+     [
+      90000,
+      24.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "DLeg 62/2008 (Cantabria), art. 1, Ley 3/2023",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "clm": {
+    "nombre": "Castilla-La Mancha",
+    "escala_general": [
+     [
+      0,
+      9.5
+     ],
+     [
+      12450,
+      12
+     ],
+     [
+      20200,
+      15
+     ],
+     [
+      35200,
+      18.5
+     ],
+     [
+      60000,
+      22.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "Ley 8/2013 (Castilla-La Mancha), art. 13 bis",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "cyl": {
+    "nombre": "Castilla y León",
+    "escala_general": [
+     [
+      0,
+      9
+     ],
+     [
+      12450,
+      12
+     ],
+     [
+      20200,
+      14
+     ],
+     [
+      35200,
+      18.5
+     ],
+     [
+      53407.2,
+      21.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "el art. 1 bis fija mínimos con las mismas cuantías que el Estado: se aplican los estatales",
+    "fuente": "DLeg 1/2013 (Castilla y León), arts. 1 y 1 bis, Ley 2/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A−",
+    "orientativo": true,
+    "nota": "El art. 1 es de la Ley 2/2022 (consolidación del BOE actualizada el 17/07/2024); la rebaja del primer tramo anunciada es para 2027 (anteproyecto), no afecta a 2026. Confianza A−: el aviso orientativo se mantiene por prudencia"
+   },
+   "cataluna": {
+    "nombre": "Cataluña",
+    "escala_general": [
+     [
+      0,
+      9.5
+     ],
+     [
+      12500,
+      12.5
+     ],
+     [
+      22000,
+      16
+     ],
+     [
+      33000,
+      19
+     ],
+     [
+      53000,
+      21.5
+     ],
+     [
+      90000,
+      23.5
+     ],
+     [
+      120000,
+      24.5
+     ],
+     [
+      175000,
+      25.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "el art. 611-2 fija mínimos con las mismas cuantías que el Estado: se aplican los estatales",
+    "fuente": "DLeg 1/2024 (Cataluña), arts. 611-1 y 611-2, DL 5/2025",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "extremadura": {
+    "nombre": "Extremadura",
+    "escala_general": [
+     [
+      0,
+      7.75
+     ],
+     [
+      12450,
+      9.75
+     ],
+     [
+      20200,
+      16
+     ],
+     [
+      24200,
+      17.5
+     ],
+     [
+      35200,
+      21
+     ],
+     [
+      60000,
+      23.5
+     ],
+     [
+      80200,
+      24
+     ],
+     [
+      99200,
+      24.5
+     ],
+     [
+      120200,
+      25
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "DLeg 1/2018 (Extremadura), art. 1, Ley 2/2026 de 3 de agosto, efectos 1/1/2026",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "galicia": {
+    "nombre": "Galicia",
+    "escala_general": [
+     [
+      0,
+      9
+     ],
+     [
+      12985.35,
+      11.65
+     ],
+     [
+      21068.6,
+      14.9
+     ],
+     [
+      35200,
+      18.4
+     ],
+     [
+      60000,
+      22.5
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 5789,
+     "descendientes": [
+      2503,
+      2816,
+      4172,
+      4694
+     ],
+     "menor3": 2920
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "DLeg 1/2011 (Galicia), arts. 4 y 4 bis, Ley 7/2022",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "madrid": {
+    "nombre": "Comunidad de Madrid",
+    "escala_general": [
+     [
+      0,
+      8.5
+     ],
+     [
+      13362.22,
+      10.7
+     ],
+     [
+      19004.63,
+      12.8
+     ],
+     [
+      35425.68,
+      17.4
+     ],
+     [
+      57320.4,
+      20.5
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 5956.65,
+     "descendientes": [
+      2575.85,
+      2897.83,
+      4400,
+      4950
+     ],
+     "menor3": 3005.16
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "DLeg 1/2010 (Madrid), arts. 1, 2 y 2 bis, Ley 13/2023",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   },
+   "murcia": {
+    "nombre": "Región de Murcia",
+    "escala_general": [
+     [
+      0,
+      9.5
+     ],
+     [
+      12450,
+      11.2
+     ],
+     [
+      20200,
+      13.3
+     ],
+     [
+      34000,
+      17.9
+     ],
+     [
+      60000,
+      22.5
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "DLeg 1/2010 (Murcia), art. 2 (la DA 5.ª con escalas transitorias solo cubre 2019-2022)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A−",
+    "orientativo": true,
+    "nota": "El art. 2 coincide con la escala del Manual de Renta 2025 de la AEAT; no se ha encontrado ninguna escala transitoria para 2026. Confianza A−: el aviso orientativo se mantiene por prudencia"
+   },
+   "rioja": {
+    "nombre": "La Rioja",
+    "escala_general": [
+     [
+      0,
+      8
+     ],
+     [
+      12450,
+      10.6
+     ],
+     [
+      20200,
+      13.6
+     ],
+     [
+      35200,
+      17.8
+     ],
+     [
+      40000,
+      18.3
+     ],
+     [
+      50000,
+      19
+     ],
+     [
+      60000,
+      24.5
+     ],
+     [
+      120000,
+      27
+     ]
+    ],
+    "minimo": null,
+    "minimo_nota": "sin mínimos propios en el texto consolidado: se aplican los estatales",
+    "fuente": "Ley 10/2017 (La Rioja), art. 31 y 31 ter, Ley 13/2023",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A−",
+    "orientativo": true,
+    "nota": "El art. 31 ter solo obliga a deflactar si el IPC riojano de diciembre supera el 3 % y haría falta una ley, que no consta en el BOE (IPC de La Rioja en noviembre de 2025: 2,4 %). Confianza A−: el aviso orientativo se mantiene por prudencia"
+   },
+   "valencia": {
+    "nombre": "Comunitat Valenciana",
+    "escala_general": [
+     [
+      0,
+      8.8
+     ],
+     [
+      12000,
+      11.7
+     ],
+     [
+      22000,
+      14.6
+     ],
+     [
+      32000,
+      17
+     ],
+     [
+      42000,
+      19.4
+     ],
+     [
+      52000,
+      21.9
+     ],
+     [
+      62000,
+      24.4
+     ],
+     [
+      72000,
+      26.1
+     ],
+     [
+      100000,
+      27.35
+     ],
+     [
+      150000,
+      28.35
+     ],
+     [
+      200000,
+      29.35
+     ]
+    ],
+    "minimo": {
+     "contribuyente": 6105,
+     "descendientes": [
+      2640,
+      2970,
+      4400,
+      4950
+     ],
+     "menor3": 3080
+    },
+    "minimo_nota": "mínimos propios",
+    "fuente": "Ley 13/1997 (C. Valenciana), art. 2 y 2 bis; Ley 5/2026 de 31 de julio (efectos 1/1/2026)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A"
+   }
+  },
+  "excluidas": [
+   "País Vasco",
+   "Navarra"
+  ]
+ },
+ "pensiones_2026": {
+  "fuente": "Ley 35/2006 del IRPF, arts. 51 y 52.1 (límite del 30 % y 1.500 €), art. 17.2.a.3.ª (prestaciones como rendimiento del trabajo), arts. 66.1, 76 y 94 (ahorro y fondos); texto consolidado a 30/09/2026",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A",
+  "limite_euros": 1500,
+  "limite_pct_rendimientos": 30,
+  "incremento_empresa": 8500,
+  "incremento_autonomos": 4250,
+  "incremento_conjunto_max": 8500,
+  "limite_total_con_incrementos": 10000,
+  "arrastre_exceso_anos": 5,
+  "multa_exceso_pct": 50,
+  "liquidez": {
+   "fuente": "Real Decreto Legislativo 1/2002, art. 8.8 (desempleo de larga duración, enfermedad grave y aportaciones con al menos diez años de antigüedad en planes individuales y asociados)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-24252",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "anos_antiguedad": 10
+  },
+  "rescate_en_renta_anos": 10,
+  "supuestos": {
+   "nota": "Hipótesis del modelo (no son datos oficiales ni previsiones): se editan en la calculadora",
+   "aportacion": 1500,
+   "anos": 25,
+   "renta_neta": 35000,
+   "rentabilidad_bruta_pct": 4,
+   "comision_plan_pct": 1.0,
+   "comision_fondo_pct": 0.2
+  }
+ },
+ "luz_2026": {
+  "fecha": "2026-10-02",
+  "potencia_regulada_eur_kw_ano": {
+   "valor": 28.429836,
+   "desglose": "peaje de transporte y distribución 23,324952 + 0,443770 (Resolución de la CNMC de 18/12/2025, BOE-A-2025-26348) y cargos 4,379461 + 0,281653 (Orden TED/1524/2025, BOE-A-2025-26705), 2.0TD, periodos P1 y P2 con la misma potencia",
+   "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26348",
+   "url2": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26705",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A"
+  },
+  "potencia_regulada_eur_kw_dia": 0.07789,
+  "iee_pct": 5.11269632,
+  "iee_minimo_eur_kwh": 0.001,
+  "iva_pct": 21,
+  "impuestos_fuente": "Ley 38/1992, art. 99 (Impuesto Especial sobre la Electricidad: 5,11269632 % con mínimo de 1 €/MWh en uso doméstico) e IVA general del 21 % (Ley 37/1992), vigentes en octubre de 2026; noviembre y diciembre dependen del IPC (RDL 25/2026, BOE-A-2026-20265)",
+  "impuestos_url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741",
+  "confianza_impuestos": "A octubre; B noviembre-diciembre",
+  "pvpc_media_ref": {
+   "valor": 0.184,
+   "periodo": "2026-09",
+   "fuente": "Red Eléctrica de España, REData (precio del PVPC por hora, media de 720 h de septiembre de 2026)",
+   "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real",
+   "consulta": "consultado el 2/10/2026"
+  },
+  "pvpc_media_12m": {
+   "valor": 0.1425,
+   "periodo": "2025-10 a 2026-09",
+   "fuente": "Red Eléctrica de España, REData (media de 8.760 horas, calculada el 2/10/2026)",
+   "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real"
+  },
+  "pvpc_perfil_12m": {
+   "punta": 1.4366,
+   "llano": 0.9336,
+   "valle": 0.8374,
+   "nota": "Precio medio de cada periodo 2.0TD dividido por la media de todas las horas (REData, oct 2025-sep 2026; sábados, domingos y festivos nacionales de fecha fija como valle). Punta 0,2048, llano 0,1331, valle 0,1194 €/kWh",
+   "fuente": "Red Eléctrica de España, REData; horas de cada periodo: Circular 3/2020 de la CNMC (BOE-A-2020-1066)",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-1066"
+  },
+  "supuestos": {
+   "nota": "Hipótesis de ejemplo editables, no datos oficiales",
+   "consumo_kwh": 3000,
+   "potencia_kw": 4.6,
+   "pct_punta": 30,
+   "pct_llano": 30,
+   "precio_fijo_eur_kwh": 0.15,
+   "hipotesis_pvpc": "igual"
+  },
+  "margen_comercializacion_fijo_eur_kw_ano": {
+   "valor": 3.113,
+   "fuente": "Orden ETU/1948/2016, anexo II (margen de comercialización fijo del PVPC; RD 216/2014 lo remite a orden)",
+   "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2016-12274",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A-",
+   "nota": "Sin orden posterior que lo cambie; vigencia por prórroga, contrastar con una factura PVPC actual"
+  },
+  "ambito": "PVPC solo hasta 10 kW; Península y Baleares (Canarias IGIC, Ceuta y Melilla IPSI excluidos); el precio de REData es el peninsular"
+ }
 }
