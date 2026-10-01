@@ -1,0 +1,71 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 20000,
+    "entrada": 2000,
+    "tin": 7,
+    "comision": 1,
+    "plazo": 48,
+    "seguro": 0,
+    "rentab": 3,
+    "impuesto": 19,
+    "descuento": 0
+   },
+   "expect": {
+    "costeFinanciar": 2869.56,
+    "rendimientoNeto": 802.57,
+    "descuentoPerdido": 0.0,
+    "ventajaFinanciar": -2066.99,
+    "tae": 7.784,
+    "rentabilidadDeEquilibrio": 9.291
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "entrada": 0,
+    "tin": 0,
+    "comision": 0,
+    "plazo": 36,
+    "seguro": 0,
+    "rentab": 4,
+    "impuesto": 19,
+    "descuento": 0
+   },
+   "expect": {
+    "costeFinanciar": 0.0,
+    "rendimientoNeto": 794.48,
+    "descuentoPerdido": 0.0,
+    "ventajaFinanciar": 794.48,
+    "tae": 0.0,
+    "rentabilidadDeEquilibrio": -0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 30000,
+    "entrada": 5000,
+    "tin": 6,
+    "comision": 1.5,
+    "plazo": 60,
+    "seguro": 25,
+    "rentab": 6,
+    "impuesto": 21,
+    "descuento": 4
+   },
+   "expect": {
+    "costeFinanciar": 5874.2,
+    "rendimientoNeto": 2449.88,
+    "descuentoPerdido": 1200.0,
+    "ventajaFinanciar": -4624.32,
+    "tae": 9.121,
+    "rentabilidadDeEquilibrio": 13.602
+   },
+   "tol": 1
+  }
+ ]
+}

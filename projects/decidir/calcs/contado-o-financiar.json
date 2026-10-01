@@ -1,0 +1,97 @@
+{
+  "slug": "contado-o-financiar",
+  "title": "Pagar al contado o financiar: calculadora",
+  "description": "Compara el coste de financiar una compra con lo que rinde tu dinero si no lo gastas: TAE real, rentabilidad de equilibrio y qué opción sale mejor.",
+  "h1": "Pagar al contado o financiar: ¿qué te sale mejor?",
+  "lead": "Financiar compensa solo si tu dinero rinde, después de impuestos, más que la TAE real del préstamo; si no, pagar al contado sale mejor. Calcula el punto exacto con tus números.",
+  "veredicto": "Financiar solo compensa si tu dinero rinde, tras impuestos, más que la TAE real del préstamo (comisión y seguros incluidos) y no hay descuento por pagar al contado; con ofertas a interés bajo o cero es más probable.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio del bien (€)",
+      "default": 20000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "entrada",
+      "label": "Entrada que pagas hoy (€)",
+      "default": 2000,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "tin",
+      "label": "TIN del préstamo (%)",
+      "default": 7,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "comision",
+      "label": "Comisión de apertura (% del importe financiado)",
+      "default": 1,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "plazo",
+      "label": "Plazo (meses)",
+      "default": 48,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "seguro",
+      "label": "Seguro de pago protegido (€/mes, opcional)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "rentab",
+      "label": "Rentabilidad anual de tu dinero si no lo gastas (%). No está garantizada",
+      "default": 3,
+      "min": -20,
+      "step": 0.1
+    },
+    {
+      "id": "impuesto",
+      "label": "Tributación de las ganancias (% sobre el beneficio)",
+      "default": 19,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "descuento",
+      "label": "Descuento por pagar al contado (%)",
+      "default": 0,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor pagar al contado o financiar?",
+      "Pagar al contado sale mejor cuando el préstamo cuesta más (TAE real) de lo que rinde tu dinero después de impuestos, o cuando hay descuento por pagar de golpe. Financiar compensa con intereses muy bajos o nulos si de verdad mantienes el dinero rentando. La calculadora te da la rentabilidad de equilibrio con tus datos."
+    ],
+    [
+      "¿Qué es la TAE real del préstamo?",
+      "Es el coste anual efectivo de lo que pagas por el préstamo, incluyendo la comisión de apertura y, aquí, el seguro opcional. Suele ser mayor que el TIN porque la comisión y los seguros encarecen lo que recibes. Se calcula buscando el tipo que iguala las cuotas con el dinero neto que recibes."
+    ],
+    [
+      "¿Qué rentabilidad debo poner?",
+      "Una que consideres prudente después de comisiones, no la mejor de los últimos años. Un depósito o una cuenta remunerada rinden menos que un fondo, pero con menos riesgo. El 3 % por defecto es solo un valor de partida, no una previsión: prueba varios y mira cuánto cambia la conclusión."
+    ],
+    [
+      "¿Cuenta el descuento por pagar al contado?",
+      "Sí. Si el vendedor ofrece una rebaja por pagar de golpe, esa rebaja es un ahorro seguro que la financiación te hace perder. Ponlo en el último campo y verás cómo se desplaza el punto de equilibrio."
+    ],
+    [
+      "¿Y si necesito el dinero para imprevistos?",
+      "Entonces financiar puede darte liquidez aunque cueste algo más. Esta calculadora compara solo el dinero y no es asesoramiento financiero: valora también si podrás afrontar las cuotas con holgura durante todo el plazo."
+    ]
+  ],
+  "sources": "Modelo propio simplificado: préstamo de cuotas constantes (sistema francés) con comisión de apertura pagada al inicio, rentabilidad anual constante (en la realidad varía y puede ser negativa) y tributación aplicada una vez sobre la ganancia final. La TAE real incluye comisión y seguro opcional. Para cifras de tu oferta consulta la Ficha Europea de Información Normalizada (FEIN) del banco; la normativa de crédito al consumo es la Ley 16/2011 y el Banco de España publica información al cliente bancario. La tributación de rentas del ahorro está en la Agencia Tributaria. Información orientativa, no asesoramiento financiero."
+}

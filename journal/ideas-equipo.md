@@ -3,7 +3,7 @@ Estado: `[ ]` propuesta · `[>]` asignada a un ciclo · `[x]` hecha · `[~]` des
 
 ## Pasada 1 · 2026-10-01 (tras ciclos 1-3)
 
-### [>] T1 · Partir build.py por propiedad: `ui.py` + `calcs_loader.py` (CLARAMENTE RENTABLE → ciclo 5)
+### [x] T1 · Partir build.py por propiedad: `ui.py` + `calcs_loader.py` (HECHA ciclo 5: diff vacío salvo ?v=, check.py OK)
 - Problema: build.py (191 líneas) lo han editado Diseñador (c1 +36, c3 +16: ill/ILL/card/404), Estratega (c2 +73) y Orquestador; la petición `default_from` del Constructor lleva 3 ciclos parada porque build.py no es suyo; F8 (minificar) también está bloqueada ahí. Con agentes en paralelo editando el árbol de trabajo, dos Edit al mismo fichero en un ciclo se pisan sin aviso.
 - Tarea concreta (un solo agente Sonnet, ciclo en que NADIE más toca build.py/seo.py; ~6 min, ~60k tokens):
   1. `cd projects/decidir && python3 build.py && cp -r dist /tmp/dist-antes` (o en el scratchpad).

@@ -4,29 +4,35 @@ function cuotaFrancesa(P, i, n) { return i === 0 ? P / n : P * i / (1 - Math.pow
 // Amortizar: el importe (menos comisión) baja el capital; lo que ya no pagas de hipoteca cada mes se invierte.
 // Invertir: el importe se invierte hoy y la hipoteca sigue igual. La aportación mensual extra se invierte en ambas.
 // Al final se descuentan los impuestos sobre la ganancia (beneficio = valor final - dinero aportado).
-function simular(d, rentab) {
+// Patrimonio tras impuestos si liquidaras la cartera (beneficio = valor - aportado).
+function neto(car, apor, imp) { return car - Math.max(car - apor, 0) * imp / 100; }
+function simular(d, rentab, conSerie) {
   var n = Math.round(d.anos * 12), i = d.tipo / 1200, j = Math.pow(1 + rentab / 100, 1 / 12) - 1;
   var E = Math.min(d.importe, d.capital) / (1 + d.comision / 100), com = Math.min(d.importe, d.capital) - E;
   var cuota0 = cuotaFrancesa(d.capital, i, n), Pn = d.capital - E;
   var cuotaA = d.modo === 2 ? cuotaFrancesa(Pn, i, n) : cuota0;
-  var saldo = Pn, carA = 0, aporA = 0, carB = Math.min(d.importe, d.capital), aporB = carB, intA = 0, mesesA = 0;
+  var saldo = Pn, saldoB = d.capital, serie = [], carA = 0, aporA = 0, carB = Math.min(d.importe, d.capital), aporB = carB, intA = 0, mesesA = 0;
   for (var m = 0; m < n; m++) {
     var pago = 0;
     if (saldo > 0.005) { var im = saldo * i; pago = Math.min(cuotaA, saldo + im); saldo -= pago - im; intA += im; mesesA = m + 1; }
     var libre = cuota0 - pago + d.aporte;
     carA = carA * (1 + j) + libre; aporA += libre;
     carB = carB * (1 + j) + d.aporte; aporB += d.aporte;
+    if (conSerie) {
+      saldoB = Math.max(saldoB - (cuota0 - saldoB * i), 0);
+      if ((m + 1) % 12 === 0 || m === n - 1) serie.push({ anio: (m + 1) / 12, amortizar: neto(carA, aporA, d.impuesto) - saldo, invertir: neto(carB, aporB, d.impuesto) - saldoB });
+    }
   }
   var t = d.impuesto / 100;
   var netoA = carA - Math.max(carA - aporA, 0) * t, netoB = carB - Math.max(carB - aporB, 0) * t;
-  return { A: netoA, B: netoB, cuota0: cuota0, cuotaA: cuotaA, comision: com, mesesA: mesesA, n: n, intA: intA };
+  return { serie: serie, E: E, A: netoA, B: netoB, cuota0: cuota0, cuotaA: cuotaA, comision: com, mesesA: mesesA, n: n, intA: intA };
 }
 function intereses(d) {
   var n = Math.round(d.anos * 12), i = d.tipo / 1200, c = cuotaFrancesa(d.capital, i, n);
   return c * n - d.capital;
 }
 function calcular(d) {
-  var s = simular(d, d.rentab), dif = s.B - s.A;
+  var s = simular(d, d.rentab, true), dif = s.B - s.A;
   var lo = -20, hi = 60, eq = null;
   var flo = simular(d, lo), fhi = simular(d, hi);
   if ((flo.B - flo.A) * (fhi.B - fhi.A) <= 0) {
@@ -36,7 +42,10 @@ function calcular(d) {
     }
     eq = (lo + hi) / 2;
   }
+  // Serie anual para el gráfico: año 0 = hoy; después, patrimonio neto (cartera tras impuestos menos deuda pendiente) de cada estrategia.
+  var serieAnual = [{ anio: 0, amortizar: -(d.capital - s.E), invertir: Math.min(d.importe, d.capital) - d.capital }].concat(s.serie);
   return {
+    serieAnual: serieAnual,
     patrimonioAmortizar: s.A, patrimonioInvertir: s.B, diferencia: dif, rentabilidadDeEquilibrio: eq,
     ganador: Math.abs(dif) < 1 ? "empate" : (dif > 0 ? "invertir" : "amortizar"),
     cuotaActual: s.cuota0, cuotaTrasAmortizar: s.cuotaA, mesesTrasAmortizar: s.mesesA,
@@ -66,6 +75,9 @@ function pintar() {
     verdict: verdict,
     tone: abs < ref * 0.03 ? "warn" : "ok",
     bigNumber: abs, bigLabel: abs < 1 ? "de diferencia" : "más de patrimonio si " + (inv ? "inviertes" : "amortizas"), format: EM.eur,
+    line: { caption: "Patrimonio neto año a año (cartera tras impuestos menos deuda)", xLabel: "Años", xFormat: function (a) { return "año " + a; }, yFormat: EM.eur,
+      series: [{ label: "Amortizar", color: "a", points: r.serieAnual.map(function (v) { return [v.anio, v.amortizar]; }) },
+               { label: "Invertir", color: "b", points: r.serieAnual.map(function (v) { return [v.anio, v.invertir]; }) }] },
     barsLabel: "Patrimonio neto dentro de " + d.anos + " años",
     bars: [{ label: "Amortizar" + (!inv && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioAmortizar, 0), color: "a" },
            { label: "Invertir" + (inv && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioInvertir, 0), color: "b" }],

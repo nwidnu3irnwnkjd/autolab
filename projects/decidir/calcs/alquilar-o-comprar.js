@@ -31,7 +31,11 @@ function simular(d) {
 function calcular(d) {
   var s = simular(d), fin = s.porAno[s.porAno.length - 1], eq = 0;
   for (var k = 0; k < s.porAno.length; k++) { if (s.porAno[k].comprar > s.porAno[k].alquilar) { eq = k + 1; break; } }
+  // Serie anual para el gráfico: año 0 = recién comprado (si vendieras hoy: entrada menos gastos de venta) y al final de cada año.
+  var P0 = d.precio, d0 = P0 * d.entrada / 100, serie = [{ anio: 0, comprar: P0 * (1 - d.venta / 100) - (P0 - d0), alquilar: d0 + P0 * d.gastos / 100 }];
+  s.porAno.forEach(function (v, k) { serie.push({ anio: k + 1, comprar: v.comprar, alquilar: v.alquilar }); });
   return {
+    serieAnual: serie,
     patrimonioComprar: fin.comprar, patrimonioAlquilar: fin.alquilar, diferencia: fin.comprar - fin.alquilar,
     anosEquilibrio: eq, cuotaHipoteca: s.cuota, costeMensualCompra: s.costeMesCompra0, costeMensualAlquiler: d.alquiler
   };
@@ -59,6 +63,9 @@ function pintar() {
     tone: abs < ref * 0.03 ? "warn" : "ok",
     bigNumber: abs, bigLabel: abs < 1 ? "de diferencia" : "más de patrimonio con " + (comprar ? "comprar" : "alquilar e invertir"),
     format: EM.eur,
+    line: { caption: "Patrimonio neto año a año (comprar, tras gastos de venta)", xLabel: "Años", xFormat: function (a) { return "año " + a; }, yFormat: EM.eur,
+      series: [{ label: "Comprar", color: "a", points: r.serieAnual.map(function (v) { return [v.anio, v.comprar]; }) },
+               { label: "Alquilar", color: "b", points: r.serieAnual.map(function (v) { return [v.anio, v.alquilar]; }) }] },
     barsLabel: "Patrimonio neto dentro de " + d.horizonte + " años",
     bars: [{ label: "Comprar" + (comprar && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioComprar, 0), color: "a" },
            { label: "Alquilar" + (!comprar && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioAlquilar, 0), color: "b" }],

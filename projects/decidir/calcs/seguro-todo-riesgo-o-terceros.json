@@ -1,0 +1,90 @@
+{
+  "slug": "seguro-todo-riesgo-o-terceros",
+  "title": "Seguro de coche: todo riesgo o terceros",
+  "description": "Calcula si te compensa el todo riesgo o los terceros según el valor de tu coche, la diferencia de prima y la franquicia, y desde qué año deja de compensar.",
+  "h1": "Seguro de coche: ¿todo riesgo o terceros según lo que vale tu coche?",
+  "lead": "El todo riesgo compensa mientras la pérdida que te cubre supere la sobreprima que pagas; a medida que el coche se deprecia, deja de compensar. Calcula en qué año te pasa con tus números.",
+  "veredicto": "El todo riesgo compensa mientras el valor del coche sea varias veces la diferencia de prima con terceros; al depreciarse el coche, cuesta más de lo que recupera. Depende de tu perfil de conducción y de tu capacidad para asumir una reparación.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "valor",
+      "label": "Valor venal actual del coche (€)",
+      "default": 18000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "deprec",
+      "label": "Depreciación anual (%)",
+      "default": 12,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "primaTerceros",
+      "label": "Prima anual de terceros ampliado (€)",
+      "default": 380,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "primaTR",
+      "label": "Prima anual de todo riesgo con franquicia (€)",
+      "default": 720,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "franquicia",
+      "label": "Franquicia del todo riesgo (€)",
+      "default": 300,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "prob",
+      "label": "Probabilidad anual de siniestro con culpa propia (%)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "coste",
+      "label": "Coste medio de reparación de un daño propio parcial (€)",
+      "default": 3000,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "anos",
+      "label": "Años de comparación",
+      "default": 5,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo deja de compensar el todo riesgo?",
+      "Cuando la pérdida media que te cubre cada año es menor que la sobreprima que pagas por él. Como el coche se deprecia y el pago máximo no puede superar su valor, con los años el todo riesgo cubre menos. La calculadora te da el valor mínimo del coche y el año en que se cruza ese umbral."
+    ],
+    [
+      "¿Qué es el valor venal?",
+      "Es el valor de mercado de tu coche en este momento, el que suele usar la aseguradora para indemnizar si hay pérdida total. Puedes consultarlo en guías de precios de segunda mano y debes ponerlo tú: esta página no inventa cifras."
+    ],
+    [
+      "¿Qué probabilidad de siniestro debo poner?",
+      "La de un siniestro con culpa tuya en el que se dañe tu coche, no la de cualquier parte. Si no sabes, piensa en cuántos partes propios has tenido en los últimos años. Prueba valores distintos: el resultado cambia mucho con este dato."
+    ],
+    [
+      "¿Qué cubre el todo riesgo que no cubren los terceros?",
+      "Sobre todo los daños de tu propio vehículo en un siniestro con culpa tuya, además de lo que según contrato incluya cada póliza. Los terceros ampliados suelen cubrir robo, incendio o lunas según la póliza. Revisa las coberturas reales: aquí solo se compara el daño propio parcial."
+    ],
+    [
+      "¿Es una recomendación de contratación?",
+      "No. Es un cálculo orientativo con una pérdida esperada media: un solo siniestro grave puede superarla. Depende de tu perfil, de tu margen para asumir una reparación y de lo que ofrezca tu aseguradora. No es asesoramiento ni sustituye comparar presupuestos."
+    ]
+  ],
+  "sources": "Modelo propio simplificado: prima constante cada año, depreciación anual constante, probabilidad de siniestro constante e indemnización igual al menor entre el coste de reparación y el valor del coche, menos la franquicia. No incluye pérdidas totales, robo, bonificaciones por no siniestralidad ni recargos tras un parte. Las coberturas y exclusiones de tu póliza están en las condiciones particulares del contrato; consulta también la información de la Dirección General de Seguros y Fondos de Pensiones y el Consorcio de Compensación de Seguros. Información orientativa, no asesoramiento."
+}

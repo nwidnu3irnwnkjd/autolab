@@ -1,5 +1,5 @@
 # Peticiones cruzadas entre roles (quien necesite un cambio en un archivo ajeno lo anota aquí)
-- [Constructor -> Orquestador] build.py no inyecta data/params.json en los defaults de los inputs: precios de combustible y kWh de diesel-gasolina-hibrido-electrico están duplicados a mano en su .json. Propuesta: soportar "default_from": "params.clave" en inputs.
+- [x] (resuelta c5 por Diseñador: calcs_loader.py soporta default_from) [Constructor -> Orquestador] build.py no inyecta data/params.json en los defaults de los inputs: precios de combustible y kWh de diesel-gasolina-hibrido-electrico están duplicados a mano en su .json. Propuesta: soportar "default_from": "params.clave" en inputs.
 
 ## 2026-10-01 · Diseñador (D1/D2)
 - **Constructor**: `calcs/diesel-gasolina-hibrido-electrico.js` sigue pintando HTML a mano (funciona y se ve bien con estilos de compatibilidad). Migrar su `pintar()` a `EM.renderResult({verdict, tone, bigNumber, bigLabel, bars, barsLabel, cols, rows, note})` + `EM.live(document.getElementById("f"), pintar)`. Admite 4 barras (colores "a","b","c","d"). Ver ejemplos en las 3 calculadoras migradas. Para nuevas calculadoras, usar siempre EM.

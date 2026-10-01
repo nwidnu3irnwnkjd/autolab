@@ -19,7 +19,7 @@ Rúbrica común de calculadoras: ops/roles/rubrica-calculadora.md (Constructor s
 - Señal de modelo mal asignado: un Opus que tarda > 8 min haciendo lo que dice una lista ya escrita (ciclo 3: Diseñador Opus 14 min/200k ejecutando F1-F7).
 
 ## Propiedad de archivos compartidos
-- build.py está partido por funciones (ver tabla) hasta que exista ui.py / calcs_loader.py (tarea T1 en journal/ideas-equipo.md). Nadie edita una función ajena: petición.
+- build.py YA está partido (T1 hecha, c5): `ui.py` → Diseñador (asset_v, ill, ICONS, tema, card, catalog_body, notfound_body, head_extra, calc_header, calc_form); `calcs_loader.py` → Constructor (load_calcs, `default_from`); `build.py` → Orquestador (write, render_calc, main, sitemap); `seo.py` → Estratega. Nadie edita un archivo ajeno: petición.
 - Dos agentes del mismo ciclo nunca editan el mismo archivo. Si el Orquestador lanza una tarea que toca build.py, ese ciclo es el único que lo toca.
 
 ## Protocolo de peticiones cruzadas (ops/requests.md)

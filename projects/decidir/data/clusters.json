@@ -19,16 +19,24 @@
   "alquilar-o-comprar"
  ],
  "comprar-coche-o-renting": [
-  "diesel-gasolina-hibrido-electrico",
-  "calefaccion-gas-aerotermia-electrica"
+  "seguro-todo-riesgo-o-terceros",
+  "diesel-gasolina-hibrido-electrico"
+ ],
+ "contado-o-financiar": [
+  "alquilar-o-comprar",
+  "amortizar-o-invertir"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
-  "calefaccion-gas-aerotermia-electrica"
+  "seguro-todo-riesgo-o-terceros"
  ],
  "hipoteca-fija-o-variable": [
   "amortizar-o-invertir",
   "amortizar-plazo-o-cuota",
   "alquilar-o-comprar"
+ ],
+ "seguro-todo-riesgo-o-terceros": [
+  "comprar-coche-o-renting",
+  "diesel-gasolina-hibrido-electrico"
  ]
 }

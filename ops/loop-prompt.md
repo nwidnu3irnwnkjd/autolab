@@ -8,8 +8,8 @@ Llama a `get_usage` (mcp__ccd_session_mgmt__get_usage). Anota en journal/costes.
 
 ## 1. Cada ciclo: lanza EN PARALELO (un solo mensaje con varias llamadas Agent) los roles que toquen
 Roles en ops/roles/*.md; pásale a cada subagente la ruta de su archivo de rol y su tarea concreta. Respeta la propiedad de archivos para que no se pisen. Modelos: los que indica cada rol.
-- **Constructor** (siempre): siguiente calculadora/lote de data/backlog.md. Si el backlog está vacío, llama antes al Investigador.
-- **Diseñador** (siempre hasta completar ops/DESIGN.md; después, 1 de cada 3 ciclos): siguiente tarea [ ] de DESIGN.md.
+- **Constructor** (siempre): siguiente LOTE DE 2 calculadoras de data/backlog.md (rúbrica en ops/roles/rubrica-calculadora.md). Si el backlog está vacío, llama antes al Investigador.
+- **Diseñador** (Sonnet; 1 de cada 3 ciclos, o antes si hay peticiones de UI abiertas o una tarea de refactor): siguiente tarea [ ] de DESIGN.md, máx. 2 tareas u 8 min.
 - **Estratega SEO/GEO** (cada ciclo par): siguiente palanca de ops/roles/estratega-seo-geo.md; actualiza ops/SEO-GEO.md.
 - **Investigador** (cada 6 ciclos, o si el backlog tiene < 6 pendientes no fiscales). [cadencia cambiada 2026-10-01 por el Mejorador: backlog con 12 pendientes cubre ~6 ciclos; ahorra ~24k tokens Opus/ciclo]
 - **Mejorador del equipo** (cada 8 ciclos y siempre tras 2 ciclos consecutivos con fallos de QA). [cadencia cambiada 2026-10-01 por el Mejorador: con ciclos de ~20 min, 4 ciclos no dan datos nuevos suficientes; ahorra ~19k tokens Opus/ciclo]

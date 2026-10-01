@@ -1,0 +1,65 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "valor": 18000,
+    "deprec": 12,
+    "primaTerceros": 380,
+    "primaTR": 720,
+    "franquicia": 300,
+    "prob": 10,
+    "coste": 3000,
+    "anos": 5
+   },
+   "expect": {
+    "difPrimaAcum": 1700,
+    "cubiertoEsperado": 1350.0,
+    "saldoTodoRiesgo": -350.0,
+    "valorUmbral": 3700.0,
+    "anoLimite": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "valor": 25000,
+    "deprec": 15,
+    "primaTerceros": 300,
+    "primaTR": 520,
+    "franquicia": 250,
+    "prob": 15,
+    "coste": 4000,
+    "anos": 5
+   },
+   "expect": {
+    "difPrimaAcum": 1100,
+    "cubiertoEsperado": 2812.5,
+    "saldoTodoRiesgo": 1712.5,
+    "valorUmbral": 1716.67,
+    "anoLimite": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "valor": 6000,
+    "deprec": 20,
+    "primaTerceros": 250,
+    "primaTR": 520,
+    "franquicia": 200,
+    "prob": 12,
+    "coste": 3500,
+    "anos": 6
+   },
+   "expect": {
+    "difPrimaAcum": 1620,
+    "cubiertoEsperado": 2015.48,
+    "saldoTodoRiesgo": 395.48,
+    "valorUmbral": 2450.0,
+    "anoLimite": 6
+   },
+   "tol": 1
+  }
+ ]
+}
