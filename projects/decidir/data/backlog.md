@@ -9,7 +9,7 @@
 - [ ] luz-fija-o-indexada — Tarifa de luz fija o indexada
 - [ ] contado-o-financiar — Pagar al contado o financiar
 - [ ] plan-pensiones-o-fondo-indexado — Plan de pensiones o fondo indexado
-- [ ] calefaccion-gas-aerotermia-electrica — Qué calefacción sale más barata: gas, aerotermia o eléctrica
+- [x] calefaccion-gas-aerotermia-electrica — Qué calefacción sale más barata: gas, aerotermia o eléctrica
 - [ ] subrogar-hipoteca-merece-la-pena — Cambiar la hipoteca de banco o a tipo fijo: ¿compensa?
 - [ ] cuanto-ahorrar-para-comprar-casa — Cuánto dinero necesito para comprar casa (entrada + impuestos por comunidad)
 - [ ] guarderia-cuidadora-o-reducir-jornada — Guardería, cuidadora o reducir jornada: qué sale más barato

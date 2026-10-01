@@ -46,25 +46,26 @@ function pintar() {
   var d = leer(); if (d.capital <= 0 || d.anos < 2) return;
   var r = calcular(d), abs = Math.abs(r.diferencia), verdict, gana;
   if (abs < 1) verdict = 'En este escenario las dos opciones pagan los mismos intereses.';
-  else if (r.diferencia > 0) { gana = "fija"; verdict = 'En este escenario la fija te sale ' + eur(abs) + ' más barata en intereses.'; }
-  else { gana = "variable"; verdict = 'En este escenario la variable te sale ' + eur(abs) + ' más barata en intereses.'; }
+  else if (r.diferencia > 0) { gana = "fija"; verdict = 'En este escenario la fija te sale ' + EM.eur(abs) + ' más barata en intereses.'; }
+  else { gana = "variable"; verdict = 'En este escenario la variable te sale ' + EM.eur(abs) + ' más barata en intereses.'; }
   var note = '<p><strong>Lectura:</strong> el Euríbor de equilibrio es <strong>' + pct(r.euriborEquilibrio) + '</strong>. ';
   note += 'Si crees que el Euríbor medio de los próximos ' + r.anosRestantes + ' años estará por encima de ' + pct(r.euriborEquilibrio) + ', te conviene la fija; si crees que estará por debajo, la variable pagará menos intereses. ';
   note += 'Hoy el Euríbor está en ' + pct(d.euribor) + ' y en tu escenario lo usamos a ' + pct(r.euriborEsc) + '. ';
   note += 'Si el Euríbor se descontrola, tu cuota variable puede cambiar mucho en cada revisión; la fija no se mueve.</p>';
   EM.renderResult({
+    winner: gana || "empate",
     verdict: verdict,
     tone: !gana || abs < r.intFija * 0.03 ? "warn" : "ok",
     bigNumber: abs, bigLabel: gana ? "menos de intereses con la " + gana + " en tu escenario" : "de diferencia en intereses",
-    format: eur,
+    format: EM.eur,
     barsLabel: "Intereses totales que pagarías",
     bars: [{ label: "Fija", value: r.intFija, color: "a" }, { label: "Variable", value: r.intVar, color: "b" }],
     cols: ["Fija", "Variable"],
     rows: [
-      ["Cuota el primer año", eur2(r.cuotaFija), eur2(r.cuotaVar1)],
-      ["Cuota tras la primera revisión", eur2(r.cuotaFija), eur2(r.cuotaVar2)],
-      { label: "Intereses totales", values: [eur(r.intFija), eur(r.intVar)], strong: true },
-      ["Total a devolver", eur(r.totalFija), eur(r.totalVar)]
+      ["Cuota el primer año", EM.eur(r.cuotaFija, 2), EM.eur(r.cuotaVar1, 2)],
+      ["Cuota tras la primera revisión", EM.eur(r.cuotaFija, 2), EM.eur(r.cuotaVar2, 2)],
+      { label: "Intereses totales", values: [EM.eur(r.intFija), EM.eur(r.intVar)], strong: true },
+      ["Total a devolver", EM.eur(r.totalFija), EM.eur(r.totalVar)]
     ],
     note: note
   });

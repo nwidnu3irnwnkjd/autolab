@@ -48,19 +48,23 @@ def calc_lastmod(slug, params):
 
 
 # ---------- clústeres ----------
-_STOP = {"o", "y", "de", "la", "el", "los", "las", "con", "que", "cual", "para", "mas", "por", "una", "un", "tu", "tus", "sale"}
+_STOP = {"o", "y", "de", "la", "el", "los", "las", "con", "que", "cual", "para", "mas", "por", "una", "un", "tu", "tus", "sale", "barato", "barata", "mejor", "conviene", "anos", "dinero"}
 def _norm(s):
     s = unicodedata.normalize("NFD", s.lower())
     return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
 def _tokens(c):
     txt = _norm(c["slug"].replace("-", " ") + " " + c["h1"])
-    return {w for w in re.findall(r"[a-z]{3,}", txt) if w not in _STOP}
+    return {(w[:-1] if len(w) > 5 and w[-1] in "ao" else w) for w in re.findall(r"[a-z]{3,}", txt) if w not in _STOP}  # electrico ~ electrica
+
+# Temas vecinos (para completar enlaces entre temas con sentido: energía <-> coche eléctrico, vivienda <-> calefacción, hipoteca <-> ahorro)
+NEAR = {"energia": {"coche": 5, "hipoteca": 5}, "coche": {"energia": 5}, "hipoteca": {"ahorro": 5, "energia": 2},
+        "ahorro": {"hipoteca": 5}, "impuestos": {"ahorro": 3}}
 
 def build_clusters(calcs, tema, path=os.path.join(ROOT, "data/clusters.json"), k=3):
-    """Afinidad = 10 si comparten tema + nº de palabras clave compartidas. Top k (mín. 2)."""
+    """Afinidad = 10 si comparten tema + cercanía de temas (NEAR) + nº de palabras clave compartidas. Top k (mín. 2)."""
     out = {}
     for c in calcs:
-        scored = sorted(((10 * (tema(x) == tema(c)) + len(_tokens(x) & _tokens(c)), x["slug"])
+        scored = sorted(((10 * (tema(x) == tema(c)) + NEAR.get(tema(c), {}).get(tema(x), 0) + len(_tokens(x) & _tokens(c)), x["slug"])
                          for x in calcs if x["slug"] != c["slug"]), key=lambda t: (-t[0], t[1]))
         top = [s for sc, s in scored if sc >= 10][:k]
         for sc, s in scored:  # completa hasta 2 con los más cercanos de otros temas
@@ -177,7 +181,7 @@ def html_to_md(h, base):
     h = re.sub(r"[ \t]+", " ", h); h = re.sub(r"\n\s*\n\s*\n+", "\n\n", h)
     return "\n".join(l.strip() for l in h.splitlines()).strip()
 
-def write_llms(dist, site, calcs, guides, params, tema, icons):
+def write_llms(dist, site, calcs, guides, params, tema, icons, extra=""):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
             "con tus propios números (hipoteca, coche, impuestos, energía, ahorro) en España. Cada página da un veredicto, la cifra que lo justifica, "
@@ -193,6 +197,9 @@ def write_llms(dist, site, calcs, guides, params, tema, icons):
     if guides:
         lines.append("\n## Guías\n")
         lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']}" for g in guides]
+    if extra:  # Barómetro: datos propios fechados
+        lines.append("\n## Datos propios\n")
+        lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json")
     lines.append(f"\n## Optional\n\n- [Texto completo para LLMs]({base}/llms-full.txt): preguntas, criterios de decisión, parámetros y fuentes de cada calculadora.\n"
                  f"- [Catálogo]({base}/decidir/): todas las calculadoras por tema.\n")
     open(os.path.join(dist, "llms.txt"), "w").write("\n".join(lines))
@@ -207,10 +214,15 @@ def write_llms(dist, site, calcs, guides, params, tema, icons):
                     f"**Pregunta que responde:** {c['h1']}\n\n**Respuesta corta:** {html_to_md(c.get('veredicto') or c['lead'], base)}\n\n"
                     f"### Criterios de decisión\n{html_to_md(c['content'], base)}\n\n### Parámetros que introduce el usuario\n{ins}\n\n"
                     f"### Preguntas frecuentes\n{faqs}\n\n### Supuestos y fuentes\n{html_to_md(c['sources'], base)}\n")
+    if extra: full.append(extra)
     for g in guides:
         full.append(f"\n---\n\n## {g['h1']}\n\nURL: {base}/guias/{g['slug']}/\nActualizado: {g['modified']}\n\n{html_to_md(g['body'], base)}\n")
     open(os.path.join(dist, "llms-full.txt"), "w").write("\n".join(full))
 
+
+def insert_before(page, marker, block):
+    """Inserta block antes de la primera aparición de marker (o al final si no está). Evita tocar plantillas ajenas."""
+    return page.replace(marker, block + marker, 1) if marker in page else page + block
 
 def copy_static(dist):
     s = os.path.join(ROOT, "static")

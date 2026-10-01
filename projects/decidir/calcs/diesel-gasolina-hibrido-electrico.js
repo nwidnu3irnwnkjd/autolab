@@ -45,20 +45,20 @@ function pintar() {
   var km = [r.costeKmDiesel, r.costeKmGasolina, r.costeKmHibrido, r.costeKmElectrico], mes = [r.mesDiesel, r.mesGasolina, r.mesHibrido, r.mesElectrico];
   var g = NOMBRES[r.ganador], s = NOMBRES[r.segundo], abs = r.diferencia;
   var note = '<p><strong>Lectura:</strong> ';
-  if (r.hayEquilibrio) note += 'el orden entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' cambia a unos <strong>' + Math.round(r.kmEquilibrio).toLocaleString("es-ES") + ' km al año</strong> (tú has puesto ' + d.km.toLocaleString("es-ES") + '). ';
+  if (r.hayEquilibrio) note += 'el orden entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' cambia a unos <strong>' + EM.num(Math.round(r.kmEquilibrio)) + ' km al año</strong> (tú has puesto ' + EM.num(d.km) + '). ';
   else note += 'entre ' + g.toLowerCase() + ' y ' + s.toLowerCase() + ' el orden no cambia con los kilómetros: el ganador es más barato tanto de compra como de uso. ';
   note += 'El precio medio del kWh con tu reparto de carga es ' + r.precioKwh.toFixed(3).replace(".", ",") + ' €/kWh. El resultado depende mucho del valor residual y del precio de la energía: cámbialos y compara.</p>';
   var colores = ["a", "b", "c", "d"];
   EM.renderResult({
-    verdict: 'Con estos números, el ' + g.toLowerCase() + ' es el más barato en ' + d.anos + ' años: ' + eur(abs) + ' menos que el ' + s.toLowerCase() + ' (segundo).',
+    verdict: 'Con estos números, el ' + g.toLowerCase() + ' es el más barato en ' + d.anos + ' años: ' + EM.eur(abs) + ' menos que el ' + s.toLowerCase() + ' (segundo).',
     tone: abs < tot[r.ganador] * 0.03 ? "warn" : "ok",
     bigNumber: tot[r.ganador], bigLabel: "de coste total en " + d.anos + " años con el " + g.toLowerCase() + " (el más barato)",
-    format: eur,
+    format: EM.eur,
     barsLabel: "Coste total en " + d.anos + " años",
     bars: NOMBRES.map(function (n, i) { return { label: n + (i === r.ganador ? " (gana)" : ""), value: tot[i], color: colores[i] }; }),
     cols: ["Coste total", "€/km", "€/mes"],
     rows: r.orden.map(function (i, pos) {
-      var vals = [eur(tot[i]), eur2(km[i]), eur2(mes[i])];
+      var vals = [EM.eur(tot[i]), EM.eur(km[i], 2), EM.eur(mes[i], 2)];
       return pos === 0 ? { label: "1. " + NOMBRES[i], values: vals, strong: true } : [(pos + 1) + ". " + NOMBRES[i]].concat(vals);
     }),
     note: note

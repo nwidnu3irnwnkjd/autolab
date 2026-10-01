@@ -35,23 +35,23 @@ function pintar() {
   var r = calcular(d), dif = r.ahorroB - r.ahorroA, anos = Math.floor(r.mesesMenos / 12), mesesR = r.mesesMenos % 12;
   var plazoTxt = (anos ? anos + " año" + (anos > 1 ? "s" : "") : "") + (anos && mesesR ? " y " : "") + (mesesR ? mesesR + " mes" + (mesesR > 1 ? "es" : "") : "");
   var pequena = r.aliviomes * 12 * 3 > r.ahorroB;
-  var note = '<p><strong>Lectura:</strong> hoy pagas ' + eur2(r.cuota0) + ' al mes y te quedan ' + eur(r.intBase) + ' de intereses. ';
-  note += 'Si reduces cuota, cada mes te quedas ' + eur2(r.aliviomes) + ' más en el bolsillo. Si reduces plazo, terminas ' + plazoTxt + ' antes. ';
+  var note = '<p><strong>Lectura:</strong> hoy pagas ' + EM.eur(r.cuota0, 2) + ' al mes y te quedan ' + EM.eur(r.intBase) + ' de intereses. ';
+  note += 'Si reduces cuota, cada mes te quedas ' + EM.eur(r.aliviomes, 2) + ' más en el bolsillo. Si reduces plazo, terminas ' + plazoTxt + ' antes. ';
   if (pequena) note += 'La diferencia de ahorro es pequeña frente al alivio mensual: si vas justo, reducir cuota es razonable.';
   else note += 'La diferencia de ahorro es grande: salvo que necesites el alivio mensual, reducir plazo es la opción que más dinero te deja.';
   note += '</p>';
   EM.renderResult({
-    verdict: 'Reduciendo plazo ahorras ' + eur(r.ahorroB) + ' en intereses, ' + eur(dif) + ' más que reduciendo cuota.',
+    verdict: 'Reduciendo plazo ahorras ' + EM.eur(r.ahorroB) + ' en intereses, ' + EM.eur(dif) + ' más que reduciendo cuota.',
     tone: pequena ? "warn" : "ok",
-    bigNumber: r.ahorroB, bigLabel: "de ahorro en intereses si reduces plazo", format: eur,
+    bigNumber: r.ahorroB, bigLabel: "de ahorro en intereses si reduces plazo", format: EM.eur,
     barsLabel: "Ahorro de intereses" + (r.comision ? " (tras la comisión)" : ""),
     bars: [{ label: "Reducir cuota", value: r.ahorroA, color: "b" }, { label: "Reducir plazo", value: r.ahorroB, color: "a" }],
     cols: ["Reducir cuota", "Reducir plazo"],
     rows: [
-      ["Cuota mensual", eur2(r.cuotaA), eur2(r.cuotaB)],
+      ["Cuota mensual", EM.eur(r.cuotaA, 2), EM.eur(r.cuotaB, 2)],
       ["Meses restantes", r.mesesA, r.mesesB],
-      ["Intereses que pagarás", eur(r.intA), eur(r.intB)],
-      { label: "Ahorro de intereses" + (r.comision ? " (tras " + eur2(r.comision) + " de comisión)" : ""), values: [eur(r.ahorroA), eur(r.ahorroB)], strong: true }
+      ["Intereses que pagarás", EM.eur(r.intA), EM.eur(r.intB)],
+      { label: "Ahorro de intereses" + (r.comision ? " (tras " + EM.eur(r.comision, 2) + " de comisión)" : ""), values: [EM.eur(r.ahorroA), EM.eur(r.ahorroB)], strong: true }
     ],
     note: note
   });

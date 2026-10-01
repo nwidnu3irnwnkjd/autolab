@@ -11,8 +11,8 @@ Roles en ops/roles/*.md; pásale a cada subagente la ruta de su archivo de rol y
 - **Constructor** (siempre): siguiente calculadora/lote de data/backlog.md. Si el backlog está vacío, llama antes al Investigador.
 - **Diseñador** (siempre hasta completar ops/DESIGN.md; después, 1 de cada 3 ciclos): siguiente tarea [ ] de DESIGN.md.
 - **Estratega SEO/GEO** (cada ciclo par): siguiente palanca de ops/roles/estratega-seo-geo.md; actualiza ops/SEO-GEO.md.
-- **Investigador** (cada 3 ciclos, o si el backlog tiene < 5 pendientes).
-- **Mejorador del equipo** (cada 4 ciclos y siempre tras 2 ciclos consecutivos con fallos de QA).
+- **Investigador** (cada 6 ciclos, o si el backlog tiene < 6 pendientes no fiscales). [cadencia cambiada 2026-10-01 por el Mejorador: backlog con 12 pendientes cubre ~6 ciclos; ahorra ~24k tokens Opus/ciclo]
+- **Mejorador del equipo** (cada 8 ciclos y siempre tras 2 ciclos consecutivos con fallos de QA). [cadencia cambiada 2026-10-01 por el Mejorador: con ciclos de ~20 min, 4 ciclos no dan datos nuevos suficientes; ahorra ~19k tokens Opus/ciclo]
 - **Métricas** (cada 6 ciclos; es un script): `python3 ops/metrics.py decidir`, resumen a REGISTRY.md. Las impresiones guían qué página mejorar.
 - Cuando decidir tenga ≥ 15 calculadoras y 100+ impresiones en Search Console, el Investigador propone el proyecto 2 y el Constructor lo arranca (alimentos).
 

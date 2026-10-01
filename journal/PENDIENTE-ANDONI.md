@@ -14,3 +14,4 @@
 
 ## Posicionamiento en IAs y buscadores (2 minutos, cuando puedas)
 - **Bing Webmaster Tools** (bing.com/webmasters): iniciar sesión con la cuenta de Workspace y "Importar desde Google Search Console". Bing alimenta a Copilot y a parte de ChatGPT; sin esto no nos ven.
+- **Licencia de los datos del Barómetro** (`/barometro/`, `/barometro/datos.json`): propuesta CC BY 4.0 («puedes reutilizarlos citando entremuchos.com con enlace»). Facilita que prensa, blogs e IAs los citen y añade `license` al schema Dataset (Google Dataset Search lo recomienda). Es una concesión de derechos difícil de retirar, por eso no la he puesto sin tu OK. Responder «sí CC BY» basta.

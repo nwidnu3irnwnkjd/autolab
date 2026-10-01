@@ -14,13 +14,17 @@
   "hipoteca-fija-o-variable",
   "alquilar-o-comprar"
  ],
- "comprar-coche-o-renting": [
+ "calefaccion-gas-aerotermia-electrica": [
   "diesel-gasolina-hibrido-electrico",
   "alquilar-o-comprar"
  ],
+ "comprar-coche-o-renting": [
+  "diesel-gasolina-hibrido-electrico",
+  "calefaccion-gas-aerotermia-electrica"
+ ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
-  "alquilar-o-comprar"
+  "calefaccion-gas-aerotermia-electrica"
  ],
  "hipoteca-fija-o-variable": [
   "amortizar-o-invertir",

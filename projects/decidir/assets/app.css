@@ -260,3 +260,25 @@ article.guide tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,trans
 @keyframes em-up2{from{transform:translateY(10px)}to{transform:none}}
 @keyframes em-fade{from{opacity:0}to{opacity:1}}
 @keyframes em-float2{from{transform:translateY(-3px) rotate(-1deg)}to{transform:translateY(4px) rotate(1deg)}}
+/* Gráfico de línea (EM.lineChart) */
+.em-line{position:relative;margin:0 0 20px;padding:16px;background:var(--surface-2);border-radius:var(--r-sm)}
+.em-line figcaption{font-size:var(--t-sm);font-weight:600;color:var(--muted);margin:0 0 8px}
+.em-lg{display:flex;flex-wrap:wrap;gap:4px 16px;list-style:none;margin:0 0 6px;padding:0;font-size:14px;font-weight:600}
+.em-lg li{display:flex;align-items:center;gap:6px;margin:0}
+.em-lw svg{display:block;overflow:visible;touch-action:pan-y}
+.em-lw .gl{stroke:var(--line);stroke-width:1}
+.em-lw .ax{fill:var(--muted);font:500 12px var(--font);font-variant-numeric:tabular-nums}
+.em-lw .ll{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transition:stroke-dashoffset 1s var(--out)}
+.em-lw .cur{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
+.em-lw .dt{stroke:var(--surface-2);stroke-width:2}
+.em-lw .hit{fill:transparent;cursor:crosshair;outline:none}
+.em-lw .hit:focus-visible{stroke:var(--accent);stroke-width:2;rx:6}
+.em-tip{position:absolute;z-index:2;pointer-events:none;min-width:130px;padding:8px 10px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-lg);font-size:13px;line-height:1.5}
+.em-tip[hidden]{display:none}
+.em-tip b{display:block;margin-bottom:2px}
+.em-tip span{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.em-tip i{width:9px;height:9px;border-radius:50%;flex:none}
+.em-tip em{font-style:normal;font-weight:800;margin-left:auto;padding-left:10px;font-variant-numeric:tabular-nums}
+.em-line-slot:empty,.em-lw [hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.em-lw .ll{transition:none}}
+#em-pr-head,#em-pr-foot{display:none}

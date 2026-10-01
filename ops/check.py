@@ -22,5 +22,8 @@ for p in projs:
                 total += 1
                 if r.get(k) is None or abs(r[k] - v) > c.get("tol", 0.01):
                     print(f"✗ {p}/{slug} {c['in']} → {k}={r.get(k)} (esperado {v})"); fails += 1
+# Barómetro (Estratega): cada cifra de /barometro/ debe coincidir con la calculadora real
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_barometro.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_barometro.py")]).returncode != 0: fails += 1
 print(f"{'OK' if not fails else 'FALLOS'}: {total - fails}/{total} comprobaciones")
 sys.exit(1 if fails else 0)

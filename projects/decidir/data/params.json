@@ -12,5 +12,102 @@
   "gasolina_eur_l": 1.55,
   "kwh_casa_eur": 0.17,
   "kwh_publico_eur": 0.45,
-  "combustibles_fuente": "precio medio orientativo, actualizar"
+  "combustibles_fuente": "precio medio orientativo, actualizar",
+  "fecha_calefaccion": "2026-10-01",
+  "gas_eur_kwh": 0.064,
+  "electricidad_eur_kwh": 0.23,
+  "demanda_calefaccion_kwh_m2": {
+    "A": 25,
+    "B": 40,
+    "C": 55,
+    "D": 75,
+    "E": 100
+  },
+  "scop_aerotermia": 3.2,
+  "rendimiento_caldera_condensacion": 0.92,
+  "inst_gas_eur": 2500,
+  "inst_aerotermia_eur": 9000,
+  "inst_electrica_eur": 2000,
+  "mant_gas_eur": 100,
+  "mant_aerotermia_eur": 120,
+  "fijo_gas_eur_ano": 119,
+  "fuente": {
+    "gas_eur_kwh": {
+      "valor": "0,064 €/kWh con impuestos: TUR.2 (5.000-15.000 kWh/año) variable 5,042762 c€/kWh desde 1/10/2026 + impuesto de hidrocarburos aprox. 0,00234 €/kWh (cifra aproximada, no verificada en BOE) + IVA 21 %",
+      "fuente": "BOE-A-2026-20389, Resolución de 30/9/2026 (TUR de gas)",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "verificado (término TUR); impuestos calculados"
+    },
+    "fijo_gas_eur_ano": {
+      "valor": "119 €/año = 8,17 €/mes (TUR.2) x 12 x 1,21 IVA",
+      "fuente": "BOE-A-2026-20389",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "verificado"
+    },
+    "electricidad_eur_kwh": {
+      "valor": "0,23 €/kWh: PVPC medio de septiembre 2026 0,184 €/kWh (sin IEE ni IVA) x 1,0511 x 1,21 = 0,234. Rango 0,18-0,30 según tarifa (Eurostat 2.º semestre 2025: 0,2975 €/kWh con todos los cargos)",
+      "fuente": "CostEEnergía (datos PVPC) y Eurostat, vía tarifasgasluz.com",
+      "url": "https://www.costeenergia.es/historico/pvpc-septiembre",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo; no contrastado directamente en REE/ESIOS"
+    },
+    "demanda_calefaccion_kwh_m2": {
+      "valor": "A 25, B 40, C 55, D 75, E 100 kWh/m²·año",
+      "fuente": "IDAE SPAHOUSEC solo distingue zonas Atlántica/Continental/Mediterránea y señala que D y E pueden consumir hasta el doble que A y B; no publica kWh/m² por letra CTE",
+      "url": "https://www.idae.es/uploads/documentos/documentos_Informe_SPAHOUSEC_ACC_f68291a3.pdf",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo según IDAE SPAHOUSEC (no verificado por letra)"
+    },
+    "scop_aerotermia": {
+      "valor": "3,2 (radiadores a 55 °C: típico 2,8-3,6; suelo radiante a 35 °C: 3,5-4,5)",
+      "fuente": "Autarc, valores típicos de SCOP aire-agua",
+      "url": "https://www.autarc.energy/global/knowledge/waermepumpe-wichtige-begriffe-cop-scop-jaz",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango con fuente secundaria; dato del fabricante/Eurovent del equipo concreto prevalece"
+    },
+    "rendimiento_caldera_condensacion": {
+      "valor": "0,92 (condensación: hasta 94 % clase A ErP; caldera antigua aprox. 81 %)",
+      "fuente": "caloryfrio.com, rendimiento estacional de calderas de condensación (ErP)",
+      "url": "https://www.caloryfrio.com/calefaccion/calderas/rendimiento-medio-estacional-de-las-calderas-de-condensacion.html",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango con fuente secundaria"
+    },
+    "inst_gas_eur": {
+      "valor": "2.500 €; rango 1.200-4.500 € caldera instalada",
+      "fuente": "Cronoshare / Tudegas, precios 2026",
+      "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-caldera-gas",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo"
+    },
+    "inst_aerotermia_eur": {
+      "valor": "9.000 €; rango 7.000-12.000 € en piso de 100 m², 12.000-18.000 € en unifamiliar",
+      "fuente": "Selectra / Natural Home, precios 2026",
+      "url": "https://climate.selectra.com/es/aerotermia/precio",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo"
+    },
+    "inst_electrica_eur": {
+      "valor": "2.000 €; rango 600-4.000 € (habitual 1.900-2.200 €)",
+      "fuente": "Cronoshare, calefacción eléctrica 2026",
+      "url": "https://www.cronoshare.com/cuanto-cuesta/instalar-calefaccion-electrica",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo"
+    },
+    "mant_gas_eur": {
+      "valor": "100 €/año; rango 70-140 € (revisión obligatoria cada 2 años, anual en País Vasco)",
+      "fuente": "OCU / Papernest, revisión de caldera",
+      "url": "https://www.ocu.org/vivienda-y-energia/calderas/noticias/revisiones-calderas-de-gas",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo"
+    },
+    "mant_aerotermia_eur": {
+      "valor": "120 €/año; rango 80-150 € con técnico oficial (contratos 150-300 €)",
+      "fuente": "Guía Térmica / Hogarconfort, mantenimiento de aerotermia 2026",
+      "url": "https://guiatermica.com/mantenimiento-aerotermia-precio/",
+      "consulta": "consultado el 1/10/2026",
+      "estado": "rango orientativo"
+    }
+  }
 }

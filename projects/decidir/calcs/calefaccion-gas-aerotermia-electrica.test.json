@@ -1,0 +1,104 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "sup": 80,
+    "demanda": 75,
+    "anos": 10,
+    "instGas": 3500,
+    "instAero": 9000,
+    "instElec": 2500,
+    "pgas": 0.11,
+    "pelec": 0.17,
+    "rendGas": 0.92,
+    "scop": 3.2,
+    "rendElec": 1,
+    "mantGas": 150,
+    "mantAero": 120,
+    "mantElec": 0,
+    "ayuda": 0,
+    "fijoGas": 90,
+    "fijoAero": 0,
+    "fijoElec": 0,
+    "aisl": 1
+   },
+   "expect": {
+    "costeGas": 13073.91,
+    "costeAero": 13387.5,
+    "costeElec": 12700.0,
+    "anualGas": 957.39,
+    "anualAero": 438.75,
+    "anualElec": 1020.0,
+    "anosAmortizacionAero": 10.6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "sup": 120,
+    "demanda": 100,
+    "anos": 15,
+    "instGas": 3500,
+    "instAero": 9000,
+    "instElec": 2500,
+    "pgas": 0.09,
+    "pelec": 0.2,
+    "rendGas": 0.92,
+    "scop": 3.5,
+    "rendElec": 1,
+    "mantGas": 150,
+    "mantAero": 120,
+    "mantElec": 0,
+    "ayuda": 3000,
+    "fijoGas": 90,
+    "fijoAero": 0,
+    "fijoElec": 0,
+    "aisl": 1.4
+   },
+   "expect": {
+    "costeGas": 31752.17,
+    "costeAero": 22200.0,
+    "costeElec": 52900.0,
+    "anualGas": 1883.48,
+    "anualAero": 1080.0,
+    "anualElec": 3360.0,
+    "anosAmortizacionAero": 3.11
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "sup": 60,
+    "demanda": 40,
+    "anos": 8,
+    "instGas": 3500,
+    "instAero": 9000,
+    "instElec": 2500,
+    "pgas": 0.11,
+    "pelec": 0.25,
+    "rendGas": 0.92,
+    "scop": 2.8,
+    "rendElec": 1,
+    "mantGas": 150,
+    "mantAero": 120,
+    "mantElec": 0,
+    "ayuda": 0,
+    "fijoGas": 90,
+    "fijoAero": 40,
+    "fijoElec": 60,
+    "aisl": 0.7
+   },
+   "expect": {
+    "costeGas": 7026.96,
+    "costeAero": 11480.0,
+    "costeElec": 6340.0,
+    "anualGas": 440.87,
+    "anualAero": 310.0,
+    "anualElec": 480.0,
+    "anosAmortizacionAero": 42.03
+   },
+   "tol": 1
+  }
+ ]
+}

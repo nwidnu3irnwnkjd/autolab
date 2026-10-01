@@ -46,25 +46,26 @@ function leer() {
 function pintar() {
   var d = leer(); if (d.precio <= 0 || d.plazo < 1 || d.horizonte < 1 || d.entrada < 0 || d.entrada >= 100) return;
   var r = calcular(d), abs = Math.abs(r.diferencia), comprar = r.diferencia > 0, ref = Math.max(Math.abs(r.patrimonioComprar), Math.abs(r.patrimonioAlquilar), 1);
-  var verdict = (comprar ? 'Con estos supuestos, comprar te deja ' : 'Con estos supuestos, alquilar e invertir te deja ') + eur(abs) + ' más de patrimonio dentro de ' + d.horizonte + ' años.';
+  var verdict = (comprar ? 'Con estos supuestos, comprar te deja ' : 'Con estos supuestos, alquilar e invertir te deja ') + EM.eur(abs) + ' más de patrimonio dentro de ' + d.horizonte + ' años.';
   if (abs < 1) verdict = 'Con estos supuestos, comprar y alquilar te dejan el mismo patrimonio dentro de ' + d.horizonte + ' años.';
   var note = '<p><strong>Lectura:</strong> ';
   if (r.anosEquilibrio > 0) note += 'comprar empieza a superar a alquilar a partir del <strong>año ' + r.anosEquilibrio + '</strong>: si vas a vivir ahí menos tiempo, con estos supuestos alquilar sale mejor. ';
   else note += 'en estos ' + d.horizonte + ' años comprar no llega a superar a alquilar: necesitaría más años, más revalorización o menos rentabilidad en la inversión. ';
-  note += 'Comprar cuesta al mes ' + eur(r.costeMensualCompra) + ' (cuota de ' + eur(r.cuotaHipoteca) + ' más IBI, comunidad, seguro y mantenimiento) frente a ' + eur(r.costeMensualAlquiler) + ' de alquiler. ';
+  note += 'Comprar cuesta al mes ' + EM.eur(r.costeMensualCompra) + ' (cuota de ' + EM.eur(r.cuotaHipoteca) + ' más IBI, comunidad, seguro y mantenimiento) frente a ' + EM.eur(r.costeMensualAlquiler) + ' de alquiler. ';
   note += 'El resultado depende sobre todo del horizonte y de la revalorización que supongas: cambia esos dos datos antes de decidir.</p>';
   EM.renderResult({
+    winner: abs < 1 ? "empate" : (comprar ? "comprar" : "alquilar"),
     verdict: verdict,
     tone: abs < ref * 0.03 ? "warn" : "ok",
     bigNumber: abs, bigLabel: abs < 1 ? "de diferencia" : "más de patrimonio con " + (comprar ? "comprar" : "alquilar e invertir"),
-    format: eur,
+    format: EM.eur,
     barsLabel: "Patrimonio neto dentro de " + d.horizonte + " años",
     bars: [{ label: "Comprar" + (comprar && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioComprar, 0), color: "a" },
            { label: "Alquilar" + (!comprar && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioAlquilar, 0), color: "b" }],
     cols: ["Comprar", "Alquilar"],
     rows: [
-      ["Coste mensual al empezar", eur(r.costeMensualCompra), eur(r.costeMensualAlquiler)],
-      { label: "Patrimonio neto al final", values: [eur(r.patrimonioComprar), eur(r.patrimonioAlquilar)], strong: true }
+      ["Coste mensual al empezar", EM.eur(r.costeMensualCompra), EM.eur(r.costeMensualAlquiler)],
+      { label: "Patrimonio neto al final", values: [EM.eur(r.patrimonioComprar), EM.eur(r.patrimonioAlquilar)], strong: true }
     ],
     note: note
   });
