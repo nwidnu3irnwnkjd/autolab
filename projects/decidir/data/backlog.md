@@ -17,3 +17,9 @@
 - [ ] rescate-plan-pensiones-capital-o-renta — Rescatar el plan de pensiones: capital, renta o mixto
 - [ ] autonomo-o-asalariado — Autónomo o asalariado: cuánto facturar para cobrar lo mismo
 - [ ] placas-solares-merece-la-pena — Placas solares: ¿en cuántos años se amortizan?
+- nota Investigador 2026-10-02 (fuentes fiscales en journal/fiscal-fuentes.md): declaracion-conjunta-o-individual LISTA para construir con escalas estatal + 15 CCAA 2026 (BOE); falta verificar mínimos autonómicos de 7 CCAA y forales (excluir País Vasco/Navarra).
+- nota Investigador 2026-10-02: luz-fija-o-indexada LISTA (peajes BOE-A-2025-26348, cargos BOE-A-2025-26705); IVA/IEE de nov-dic 2026 condicionados al IPC (RDL 25/2026): no fijar 10 %/0,5 %.
+- nota Investigador 2026-10-02: plan-pensiones-o-fondo-indexado y rescate-plan-pensiones-capital-o-renta LISTAS (arts. 51-52, DT 12.ª LIRPF); confirmar art. 94 (traspasos) antes de publicar.
+- nota Investigador 2026-10-02: placas-solares-merece-la-pena parcial: deducción 10 % solo instalaciones terminadas en 2026; IBI/ICIO y precio de compensación sin dato oficial (entrada del usuario).
+- nota Investigador 2026-10-02: autonomo-o-asalariado LISTA (Orden PJC/297/2026); falta art. 308 LGSS (rendimiento computable) y tarifa plana. cuanto-ahorrar-para-comprar-casa parcial (ITP general 15 CCAA verificado; reducidos y forales no). guarderia-cuidadora parcial (estatal sí, autonómicas no).
+- nota Investigador 2026-10-02: AVISO calefaccion-gas-aerotermia-electrica: el IVA del gas en nov-dic 2026 y el Impuesto sobre Hidrocarburos de oct-dic 2026 (RDL 25/2026) pueden cambiar; revisar params.json.
