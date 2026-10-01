@@ -22,7 +22,7 @@ Roles en ops/roles/*.md; pásale a cada subagente la ruta de su archivo de rol y
 3. Nunca publiques con build o tests en rojo.
 
 ## 3. Cierre del ciclo (obligatorio)
-1. `git add -A && git commit` (mensaje claro) y push: `git -c credential.helper='!f(){ echo username=nwidnu3irnwnkjd; echo "password=$(cat ~/.config/autolab/github_token)"; }; f' push origin main`.
+1. `git add -A && git commit` (mensaje claro), luego integra el commit diario del bot de datos y empuja: `CH='!f(){ echo username=nwidnu3irnwnkjd; echo "password=$(cat ~/.config/autolab/github_token)"; }; f'; git -c credential.helper="$CH" pull --rebase origin main && git -c credential.helper="$CH" push origin main`. Tras un pull que traiga data/live.json nuevo, vuelve a ejecutar build + check antes de dar el ciclo por cerrado.
 2. Comprueba en ~2 min que las páginas nuevas de https://entremuchos.com responden 200.
 3. Reescribe journal/ESTADO.md (máx. 25 líneas, para ti como director del laboratorio, no para Andoni): nº de ciclos hechos, calculadoras y guías publicadas, cambios de diseño y SEO, métricas de Search Console/GA4, gasto, riesgos abiertos y próximas decisiones. Andoni solo pregunta cuando quiere: respóndele desde aquí, resumido.
    Entrada breve en journal/YYYY-MM-DD.md (qué, por qué, qué medir) y línea de resultado en journal/costes.md (roles lanzados, entregas, consumo antes/después).
