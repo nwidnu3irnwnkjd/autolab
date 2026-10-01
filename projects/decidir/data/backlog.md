@@ -2,7 +2,7 @@
 - [x] amortizar-plazo-o-cuota — Amortizar hipoteca: ¿reducir plazo o cuota?
 - [x] hipoteca-fija-o-variable — Hipoteca fija o variable (escenarios de Euríbor)
 - [x] comprar-coche-o-renting — Comprar coche o renting (coste total a N años)
-- [ ] diesel-gasolina-hibrido-electrico — Qué coche me sale más barato según km/año
+- [x] diesel-gasolina-hibrido-electrico — Qué coche me sale más barato según km/año
 - [ ] declaracion-conjunta-o-individual — IRPF: conjunta o individual (tramos estatales 2026)
 - [ ] alquilar-o-comprar — Alquilar o comprar vivienda
 - [ ] amortizar-o-invertir — Amortizar hipoteca o invertir

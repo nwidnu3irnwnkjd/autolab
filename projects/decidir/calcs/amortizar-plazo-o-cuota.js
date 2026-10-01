@@ -34,18 +34,28 @@ function pintar() {
   var d = leer(); if (d.capital <= 0 || d.meses <= 0 || d.extra <= 0) return;
   var r = calcular(d), dif = r.ahorroB - r.ahorroA, anos = Math.floor(r.mesesMenos / 12), mesesR = r.mesesMenos % 12;
   var plazoTxt = (anos ? anos + " año" + (anos > 1 ? "s" : "") : "") + (anos && mesesR ? " y " : "") + (mesesR ? mesesR + " mes" + (mesesR > 1 ? "es" : "") : "");
-  var h = '<div class="verdict">Reduciendo plazo ahorras ' + eur(r.ahorroB) + ' en intereses, ' + eur(dif) + ' más que reduciendo cuota.</div>';
-  h += '<table><tr><th></th><th class="n">Reducir cuota</th><th class="n">Reducir plazo</th></tr>';
-  h += '<tr><td>Cuota mensual</td><td class="n">' + eur2(r.cuotaA) + '</td><td class="n">' + eur2(r.cuotaB) + '</td></tr>';
-  h += '<tr><td>Meses restantes</td><td class="n">' + r.mesesA + '</td><td class="n">' + r.mesesB + '</td></tr>';
-  h += '<tr><td>Intereses que pagarás</td><td class="n">' + eur(r.intA) + '</td><td class="n">' + eur(r.intB) + '</td></tr>';
-  h += '<tr><td><strong>Ahorro de intereses</strong>' + (r.comision ? ' (tras ' + eur2(r.comision) + ' de comisión)' : '') + '</td><td class="n"><strong>' + eur(r.ahorroA) + '</strong></td><td class="n"><strong>' + eur(r.ahorroB) + '</strong></td></tr></table>';
-  h += '<div class="box"><strong>Lectura:</strong> hoy pagas ' + eur2(r.cuota0) + ' al mes y te quedan ' + eur(r.intBase) + ' de intereses. ';
-  h += 'Si reduces cuota, cada mes te quedas ' + eur2(r.aliviomes) + ' más en el bolsillo. Si reduces plazo, terminas ' + plazoTxt + ' antes. ';
-  if (r.aliviomes * 12 * 3 > r.ahorroB) h += 'La diferencia de ahorro es pequeña frente al alivio mensual: si vas justo, reducir cuota es razonable.';
-  else h += 'La diferencia de ahorro es grande: salvo que necesites el alivio mensual, reducir plazo es la opción que más dinero te deja.';
-  h += '</div>';
-  var el = document.getElementById("r"); el.innerHTML = h; el.style.display = "block";
+  var pequena = r.aliviomes * 12 * 3 > r.ahorroB;
+  var note = '<p><strong>Lectura:</strong> hoy pagas ' + eur2(r.cuota0) + ' al mes y te quedan ' + eur(r.intBase) + ' de intereses. ';
+  note += 'Si reduces cuota, cada mes te quedas ' + eur2(r.aliviomes) + ' más en el bolsillo. Si reduces plazo, terminas ' + plazoTxt + ' antes. ';
+  if (pequena) note += 'La diferencia de ahorro es pequeña frente al alivio mensual: si vas justo, reducir cuota es razonable.';
+  else note += 'La diferencia de ahorro es grande: salvo que necesites el alivio mensual, reducir plazo es la opción que más dinero te deja.';
+  note += '</p>';
+  EM.renderResult({
+    verdict: 'Reduciendo plazo ahorras ' + eur(r.ahorroB) + ' en intereses, ' + eur(dif) + ' más que reduciendo cuota.',
+    tone: pequena ? "warn" : "ok",
+    bigNumber: r.ahorroB, bigLabel: "de ahorro en intereses si reduces plazo", format: eur,
+    barsLabel: "Ahorro de intereses" + (r.comision ? " (tras la comisión)" : ""),
+    bars: [{ label: "Reducir cuota", value: r.ahorroA, color: "b" }, { label: "Reducir plazo", value: r.ahorroB, color: "a" }],
+    cols: ["Reducir cuota", "Reducir plazo"],
+    rows: [
+      ["Cuota mensual", eur2(r.cuotaA), eur2(r.cuotaB)],
+      ["Meses restantes", r.mesesA, r.mesesB],
+      ["Intereses que pagarás", eur(r.intA), eur(r.intB)],
+      { label: "Ahorro de intereses" + (r.comision ? " (tras " + eur2(r.comision) + " de comisión)" : ""), values: [eur(r.ahorroA), eur(r.ahorroB)], strong: true }
+    ],
+    note: note
+  });
 }
 document.getElementById("go").addEventListener("click", pintar);
 document.getElementById("f").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); pintar(); } });
+EM.live(document.getElementById("f"), pintar);

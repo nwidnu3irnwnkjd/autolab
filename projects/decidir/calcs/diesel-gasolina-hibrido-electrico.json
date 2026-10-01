@@ -1,0 +1,249 @@
+{
+  "slug": "diesel-gasolina-hibrido-electrico",
+  "title": "Diésel, gasolina, híbrido o eléctrico: cuál sale más barato",
+  "description": "Compara el coste total a varios años de un diésel, gasolina, híbrido y eléctrico según tus km al año, y descubre desde qué kilometraje cambia el orden.",
+  "h1": "Diésel, gasolina, híbrido o eléctrico: ¿cuál me sale más barato?",
+  "lead": "Compara el coste total de tener un coche diésel, gasolina, híbrido o eléctrico durante los años que lo vayas a usar, con tus kilómetros y tus precios, para particulares en España.",
+  "inputs": [
+    {
+      "id": "km",
+      "label": "Kilómetros al año",
+      "default": 15000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "anos",
+      "label": "Años de uso",
+      "default": 5,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "compraDiesel",
+      "label": "Precio de compra diésel (€)",
+      "default": 28000,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "compraGasolina",
+      "label": "Precio de compra gasolina (€)",
+      "default": 25000,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "compraHibrido",
+      "label": "Precio de compra híbrido (€)",
+      "default": 29000,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "compraElectrico",
+      "label": "Precio de compra eléctrico (€)",
+      "default": 35000,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "consDiesel",
+      "label": "Consumo diésel (l/100 km)",
+      "default": 5.5,
+      "min": 0.1,
+      "step": 0.1
+    },
+    {
+      "id": "consGasolina",
+      "label": "Consumo gasolina (l/100 km)",
+      "default": 6.5,
+      "min": 0.1,
+      "step": 0.1
+    },
+    {
+      "id": "consHibrido",
+      "label": "Consumo híbrido (l/100 km)",
+      "default": 4.8,
+      "min": 0.1,
+      "step": 0.1
+    },
+    {
+      "id": "consElectrico",
+      "label": "Consumo eléctrico (kWh/100 km)",
+      "default": 17,
+      "min": 0.1,
+      "step": 0.1
+    },
+    {
+      "id": "precioDiesel",
+      "label": "Precio del diésel (€/l)",
+      "default": 1.5,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "precioGasolina",
+      "label": "Precio de la gasolina (€/l), también para el híbrido",
+      "default": 1.55,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "kwhCasa",
+      "label": "Precio del kWh en casa (€/kWh)",
+      "default": 0.17,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "pctCasa",
+      "label": "% de la carga que haces en casa",
+      "default": 70,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "kwhPublico",
+      "label": "Precio del kWh en carga pública (€/kWh)",
+      "default": 0.45,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "seguroDiesel",
+      "label": "Seguro anual diésel (€)",
+      "default": 600,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "seguroGasolina",
+      "label": "Seguro anual gasolina (€)",
+      "default": 580,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "seguroHibrido",
+      "label": "Seguro anual híbrido (€)",
+      "default": 620,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "seguroElectrico",
+      "label": "Seguro anual eléctrico (€)",
+      "default": 650,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "mantDiesel",
+      "label": "Mantenimiento anual diésel (€)",
+      "default": 450,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "mantGasolina",
+      "label": "Mantenimiento anual gasolina (€)",
+      "default": 400,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "mantHibrido",
+      "label": "Mantenimiento anual híbrido (€)",
+      "default": 400,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "mantElectrico",
+      "label": "Mantenimiento anual eléctrico (€)",
+      "default": 300,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "impDiesel",
+      "label": "Impuesto de circulación anual diésel (€)",
+      "default": 80,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "impGasolina",
+      "label": "Impuesto de circulación anual gasolina (€)",
+      "default": 80,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "impHibrido",
+      "label": "Impuesto de circulación anual híbrido (€)",
+      "default": 70,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "impElectrico",
+      "label": "Impuesto de circulación anual eléctrico (€)",
+      "default": 40,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "resDiesel",
+      "label": "Valor residual diésel al final (% del precio)",
+      "default": 40,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "resGasolina",
+      "label": "Valor residual gasolina al final (% del precio)",
+      "default": 42,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "resHibrido",
+      "label": "Valor residual híbrido al final (% del precio)",
+      "default": 45,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "resElectrico",
+      "label": "Valor residual eléctrico al final (% del precio)",
+      "default": 40,
+      "min": 0,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué coche sale más barato, diésel, gasolina, híbrido o eléctrico?",
+      "Depende de cuántos kilómetros hagas y de lo que pagues por la energía. Con pocos kilómetros pesa más el precio de compra; con muchos, el coste por km. La calculadora suma compra menos valor residual, energía, seguro, mantenimiento e impuesto y te da el ranking."
+    ],
+    [
+      "¿Desde cuántos kilómetros compensa un eléctrico o un diésel?",
+      "Es el kilometraje anual en el que dos coches cuestan lo mismo en el periodo elegido. La calculadora te da ese punto entre el más barato y el segundo. Si haces más kilómetros que ese punto, gana el de menor coste por km; si haces menos, el de menor coste fijo."
+    ],
+    [
+      "¿Por qué importa dónde cargo el eléctrico?",
+      "Porque el kWh en casa y en carga pública pueden costar muy distinto. Por eso la calculadora usa el porcentaje de carga en casa y el resto a precio público. Si cargas casi todo en la calle, el eléctrico pierde parte de su ventaja."
+    ],
+    [
+      "¿Cómo estimo el valor residual?",
+      "Mira anuncios de segunda mano de modelos parecidos con los años y kilómetros que tendrá el tuyo al venderlo. Los porcentajes por defecto son orientativos, no datos: la depreciación varía mucho entre modelos y tecnologías, así que ajústalos."
+    ],
+    [
+      "¿Incluye ayudas, etiqueta ambiental o restricciones de acceso a ciudades?",
+      "No. No se incluyen ayudas ni subvenciones, y tampoco las restricciones de acceso a zonas de bajas emisiones. Consulta si siguen vigentes las ayudas Moves III y las normas de tu ayuntamiento antes de decidir."
+    ]
+  ],
+  "sources": "Coste total = (compra - valor residual) + energía + seguro + mantenimiento + impuesto de circulación durante los años elegidos. Los precios por defecto de combustibles y electricidad son un precio medio orientativo, actualizar (parámetros del 2026-10-01); los consumos, seguros, mantenimientos y valores residuales por defecto son supuestos editables, no datos oficiales. Todo lo que introduces tú; la calculadora no consulta precios en vivo ni incluye ayudas ni restricciones de acceso."
+}

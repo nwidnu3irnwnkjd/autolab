@@ -1,7 +1,16 @@
 {
   "fecha": "2026-10-01",
-  "euribor_12m": 2.10,
+  "euribor_12m": 2.1,
   "euribor_fuente": "Banco de España, media mensual (actualizar cada mes)",
-  "tipo_hipoteca_fija_medio": 2.60,
-  "deduccion_vivienda_pre2013": {"porcentaje": 15, "base_maxima_anual": 9040}
+  "tipo_hipoteca_fija_medio": 2.6,
+  "deduccion_vivienda_pre2013": {
+    "porcentaje": 15,
+    "base_maxima_anual": 9040
+  },
+  "fecha_combustibles": "2026-10-01",
+  "diesel_eur_l": 1.5,
+  "gasolina_eur_l": 1.55,
+  "kwh_casa_eur": 0.17,
+  "kwh_publico_eur": 0.45,
+  "combustibles_fuente": "precio medio orientativo, actualizar"
 }

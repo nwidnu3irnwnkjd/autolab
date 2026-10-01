@@ -24,19 +24,30 @@ function leer() {
 function pintar() {
   var d = leer(); if (d.precio <= 0 || d.anos <= 0) return;
   var r = calcular(d), n = d.anos * 12, gana = r.diferencia > 0 ? "Comprar" : "El renting", abs = Math.abs(r.diferencia);
-  var h;
-  if (Math.round(abs) === 0) h = '<div class="verdict">Con estos números, comprar y el renting cuestan prácticamente lo mismo.</div>';
-  else h = '<div class="verdict">' + gana + ' sale más barato: ' + eur(abs) + ' menos en ' + d.anos + ' años, unos ' + eur(abs / n) + ' al mes.</div>';
-  h += '<table><tr><th></th><th class="n">Comprar</th><th class="n">Renting</th></tr>';
-  h += '<tr><td>Coste total en ' + d.anos + ' años</td><td class="n">' + eur(r.costeCompra) + '</td><td class="n">' + eur(r.costeRenting) + '</td></tr>';
-  h += '<tr><td>Coste mensual equivalente</td><td class="n">' + eur2(r.mesCompra) + '</td><td class="n">' + eur2(r.mesRenting) + '</td></tr>';
-  h += '<tr><td>Intereses de la financiación</td><td class="n">' + eur(r.intereses) + '</td><td class="n">&mdash;</td></tr>';
-  h += '<tr><td>Valor del coche al final</td><td class="n">' + eur(r.reventa) + '</td><td class="n">No es tuyo</td></tr></table>';
-  h += '<div class="box"><strong>Lectura:</strong> el renting te costaría lo mismo que comprar con una cuota de ' + eur2(r.cuotaEquilibrio) + ' al mes (con tu entrada); la que has puesto es ' + eur2(d.cuota) + '. ';
-  h += 'El renting incluye seguro y mantenimiento y no asumes el riesgo de reventa, pero al final no tienes el coche. Comprar inmoviliza capital' + (d.tipo > 0 ? ' y te cuesta ' + eur(r.intereses) + ' en intereses' : '') + ' y depende de que el coche valga al final lo que estimas (' + eur(r.reventa) + '). ';
-  h += 'Si la diferencia es pequeña, pesan más tus preferencias que el número.</div>';
-  var el = document.getElementById("r"); el.innerHTML = h; el.style.display = "block";
+  var empate = Math.round(abs) === 0, verdict;
+  if (empate) verdict = 'Con estos números, comprar y el renting cuestan prácticamente lo mismo.';
+  else verdict = gana + ' sale más barato: ' + eur(abs) + ' menos en ' + d.anos + ' años, unos ' + eur(abs / n) + ' al mes.';
+  var note = '<p><strong>Lectura:</strong> el renting te costaría lo mismo que comprar con una cuota de ' + eur2(r.cuotaEquilibrio) + ' al mes (con tu entrada); la que has puesto es ' + eur2(d.cuota) + '. ';
+  note += 'El renting incluye seguro y mantenimiento y no asumes el riesgo de reventa, pero al final no tienes el coche. Comprar inmoviliza capital' + (d.tipo > 0 ? ' y te cuesta ' + eur(r.intereses) + ' en intereses' : '') + ' y depende de que el coche valga al final lo que estimas (' + eur(r.reventa) + '). ';
+  note += 'Si la diferencia es pequeña, pesan más tus preferencias que el número.</p>';
+  EM.renderResult({
+    verdict: verdict,
+    tone: empate || abs < r.costeCompra * 0.03 ? "warn" : "ok",
+    bigNumber: abs, bigLabel: empate ? "de diferencia" : "menos en " + d.anos + " años " + (r.diferencia > 0 ? "si compras" : "con renting"),
+    format: eur,
+    barsLabel: "Coste total en " + d.anos + " años",
+    bars: [{ label: "Comprar", value: r.costeCompra, color: "a" }, { label: "Renting", value: r.costeRenting, color: "b" }],
+    cols: ["Comprar", "Renting"],
+    rows: [
+      { label: "Coste total en " + d.anos + " años", values: [eur(r.costeCompra), eur(r.costeRenting)], strong: true },
+      ["Coste mensual equivalente", eur2(r.mesCompra), eur2(r.mesRenting)],
+      ["Intereses de la financiación", eur(r.intereses), "&mdash;"],
+      ["Valor del coche al final", eur(r.reventa), "No es tuyo"]
+    ],
+    note: note
+  });
 }
 document.getElementById("anos").value = "4";
 document.getElementById("go").addEventListener("click", pintar);
 document.getElementById("f").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); pintar(); } });
+EM.live(document.getElementById("f"), pintar);

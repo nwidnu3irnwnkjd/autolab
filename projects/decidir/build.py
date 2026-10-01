@@ -1,13 +1,40 @@
 #!/usr/bin/env python3
 """Generador estático de quemeconviene. Sin dependencias. Uso: python3 build.py"""
-import json, os, shutil, html, datetime
+import json, os, shutil, html, datetime, hashlib
 from string import Template
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
 site = json.load(open(os.path.join(ROOT, "data/site.json")))
 params = json.load(open(os.path.join(ROOT, "data/params.json")))
-BASE = Template(open(os.path.join(ROOT, "templates/base.html")).read())
+def asset_v(name):
+    return hashlib.sha1(open(os.path.join(ROOT, "assets", name), "rb").read()).hexdigest()[:10]
+BASE = Template(open(os.path.join(ROOT, "templates/base.html")).read()
+                .replace('/assets/app.css"', f'/assets/app.css?v={asset_v("app.css")}"')
+                .replace('/assets/app.js"', f'/assets/app.js?v={asset_v("app.js")}"'))
+HOME = Template(open(os.path.join(ROOT, "templates/home.html")).read())
+# Iconos por tema (D1). Si la calculadora no trae "tema" en su JSON, se deduce del slug.
+_S = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+ICONS = {
+    "hipoteca": ("Hipoteca y vivienda", _S + '<path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></svg>'),
+    "coche": ("Coche", _S + '<path d="M5 17H3v-4l2.2-5A2 2 0 0 1 7 7h10a2 2 0 0 1 1.8 1L21 13v4h-2"/><path d="M3 13h18"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5"/></svg>'),
+    "impuestos": ("Impuestos", _S + '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 16.5l5-6"/><circle cx="10" cy="11" r="1"/><circle cx="14" cy="16" r="1"/></svg>'),
+    "energia": ("Energía", _S + '<path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>'),
+    "ahorro": ("Ahorro e inversión", _S + '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>'),
+}
+def tema(c):
+    if c.get("tema") in ICONS: return c["tema"]
+    s = c["slug"]
+    for t, kws in [("coche", ["coche", "diesel", "gasolina", "electrico", "renting", "moto"]),
+                   ("hipoteca", ["hipoteca", "amortizar-plazo", "vivienda", "alquilar", "casa"]),
+                   ("impuestos", ["irpf", "declaracion", "renta", "impuesto", "autonomo", "iva"]),
+                   ("energia", ["luz", "energia", "solar", "placas", "gas", "tarifa", "bombona"])]:
+        if any(k in s for k in kws): return t
+    return "ahorro"
+def card(c):
+    t = tema(c); name, svg = ICONS[t]
+    q = html.escape(f'{c["h1"]} {c["description"]} {name} {c["slug"].replace("-", " ")}', quote=True)
+    return f'<li data-q="{q}"><span class="ico">{svg}</span><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
 pages = []  # (path, lastmod, priority)
 
 def head_extra():
@@ -87,12 +114,13 @@ def render_calc(c, all_calcs):
 
 def main():
     shutil.rmtree(DIST, ignore_errors=True); os.makedirs(DIST)
+    shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(DIST, "assets"))
     calcs = load_calcs()
     for c in calcs: render_calc(c, calcs)
-    cards = "".join(f'<li><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p></li>' for c in calcs)
+    cards = "".join(card(c) for c in calcs)
     write("/", f'{site["name"]} — {site["tagline"]}',
           "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro.",
-          f'<h1>{site["tagline"]}</h1><p class="lead">Google te da la respuesta genérica. Aquí metes <strong>tus</strong> números y ves cuál te conviene a ti, con el cálculo explicado.</p><h2>Calculadoras</h2><ul class="cards">{cards}</ul>',
+          HOME.substitute(cards=cards),
           priority="1.0")
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           f'<h1>Calculadoras de decisión</h1><ul class="cards">{cards}</ul>', priority="0.8")
