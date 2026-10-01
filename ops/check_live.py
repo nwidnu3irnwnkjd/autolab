@@ -33,7 +33,7 @@ SAMPLE = {"esquema": 1, "datos": {
 schema(SAMPLE, "muestra")
 
 h = seo.pulso_html(SAMPLE, None, TODAY)
-ok(h.startswith('<aside class="pulso') and "<time datetime=" in h and h.count("<li>") == 3, "home: 3 datos con <time>")
+ok(h.startswith('<aside class="pulso') and "<time datetime=" in h and h.count("<li ") == 3, "home: 3 datos con <time>")
 ok("5,0 % menos que ayer" in h and "0,10 puntos menos" in h, "textos calculados")
 ok("Open-Meteo" not in h, "home sin tiempo")
 ok("<time" in seo.pulso_html(SAMPLE, "calefaccion-gas-aerotermia-electrica", TODAY) and "Open-Meteo" in seo.pulso_html(SAMPLE, "calefaccion-gas-aerotermia-electrica", TODAY), "calefacción: luz + tiempo")

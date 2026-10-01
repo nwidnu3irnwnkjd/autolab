@@ -317,6 +317,34 @@ def live_date(slug, live=None, today=None):
 def _fmt_fecha(iso):
     d = datetime.date.fromisoformat(iso); return f"{d.day} de {MESES_ES[d.month - 1]} de {d.year}"
 
+PULSO_ICON = {
+    "luz": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+    "carburantes": '<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M14 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3M7 8h4"/>',
+    "euribor": '<path d="M3 10 12 4l9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/>',
+    "tiempo": '<path d="M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0z"/>',
+}
+
+def _pulso_valor(i, d):
+    v = d["valor"]
+    if i == "luz": return _eur(v, 3), "€/kWh"
+    if i == "carburantes": return _eur(v, 3), "€/l diésel"
+    if i == "euribor": return _eur(v, 3), "% a 12 meses"
+    return _num(v), "°C en Madrid"
+
+def _pulso_delta(i, d):
+    """Variación con flecha y color semántico: sube=ámbar, baja=verde, neutro=gris. '' si no hay referencia."""
+    if i == "euribor":
+        x = d.get("variacion_abs")
+        if x is None: return ""
+        txt = f"{_eur(abs(x), 2)} pts"; q = x
+    else:
+        x = d.get("variacion_pct")
+        if x is None: return ""
+        txt = f"{_num(abs(x))} %"; q = x if abs(x) >= 0.5 else 0
+    if abs(q) < 0.005: return '<span class="pk-d eq"><span aria-hidden="true">=</span> igual</span>'
+    up = q > 0
+    return f'<span class="pk-d {"up" if up else "dn"}"><span aria-hidden="true">{"▲" if up else "▼"}</span> {"+" if up else "−"}{txt}<span class="sr"> {"más" if up else "menos"} que antes</span></span>'
+
 def pulso_html(live=None, slug=None, today=None):
     """Bloque «Pulso: datos de hoy» (home, slug=None) o «Dato de hoy» (calculadora afín). '' si no hay datos frescos."""
     live = live if live is not None else load_live()
@@ -327,11 +355,16 @@ def pulso_html(live=None, slug=None, today=None):
     li = []
     for it in sel:
         calcs = PULSO_CALCS[it["id"]]
-        link = f'<a href="/decidir/{calcs[0]}/">{"Calcula tu caso" if slug is None else "Ver la calculadora"}</a>' if slug is None else ""
+        link = f'<a href="/decidir/{calcs[0]}/">{"Calcula tu caso" if slug is None else "Ver calculadora"}</a>'
         if slug is None and len(calcs) > 1: link += f' · <a href="/decidir/{calcs[1]}/">{PULSO_LABEL.get(calcs[1], "Otra calculadora")}</a>'
         fecha = it["fecha"]
         when = f'<time datetime="{fecha}">{it.get("fecha_txt") or _fmt_fecha(fecha)}</time>'
-        li.append(f'<li><strong>{it["titulo"]}.</strong> {html.escape(it["texto"])} <span class="pulso-meta">Dato de {when}. Fuente: <a href="{it["fuente"]["url"]}" rel="noopener">{html.escape(it["fuente"]["nombre"])}</a>.</span> {link}</li>')
+        d0 = it["datos"][0]; vt, un = _pulso_valor(it["id"], d0)
+        dl = _pulso_delta(it["id"], d0)
+        li.append(f'<li class="pk pk-{it["id"]}"><span class="pk-h"><svg class="pk-i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{PULSO_ICON[it["id"]]}</svg><strong>{it["titulo"]}</strong></span>'
+                  f'<span class="pk-v">{vt} <small>{un}</small></span>{dl}'
+                  f'<span class="pk-t">{html.escape(it["texto"])}</span>'
+                  f'<span class="pulso-meta">Dato de {when}. Fuente: <a href="{it["fuente"]["url"]}" rel="noopener">{html.escape(it["fuente"]["nombre"])}</a>.</span> <span class="pk-l">{link}</span></li>')
     h = "Pulso: datos de hoy" if slug is None else "Dato de hoy"
     tag = "h2" if slug is None else "h3"
     nota = ' <span class="pulso-meta">Previsión del tiempo: <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> (CC BY 4.0).</span>' if any(i["id"] == "tiempo" for i in sel) else ""

@@ -1,0 +1,473 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "un solo perceptor, Madrid",
+   "in": {
+    "tipo": "mat",
+    "b1": 42000,
+    "b2": 0,
+    "ss": 2730,
+    "ahorro": 0,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "cuotaIndividual": 7138.87,
+    "cuotaConjunta": 5252.17,
+    "diferencia": 1886.7,
+    "umbralSegundoSueldo": 5971.17,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "rentas parecidas, Madrid",
+   "in": {
+    "tipo": "mat",
+    "b1": 32000,
+    "b2": 30000,
+    "ss": 4030,
+    "ahorro": 800,
+    "hijosMenores": 0,
+    "hijosMayores": 2,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "cuotaIndividual": 8918.13,
+    "cuotaConjunta": 12569.4,
+    "diferencia": -3651.27,
+    "umbralSegundoSueldo": 5169.01,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "monoparental 2 hijos, Madrid",
+   "in": {
+    "tipo": "mono",
+    "b1": 28000,
+    "b2": 0,
+    "ss": 1820,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 2,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "cuotaIndividual": 3128.4,
+    "cuotaConjunta": 2530.7,
+    "diferencia": 597.7,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: rentas bajas, DA 61.ª y art. 20, Madrid",
+   "in": {
+    "tipo": "mat",
+    "b1": 15000,
+    "b2": 3000,
+    "ss": 1170,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 0,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "cuotaIndividual": 0.0,
+    "cuotaConjunta": 0.0,
+    "diferencia": 0.0,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: ahorro > 6.500 sin art. 20, Madrid",
+   "in": {
+    "tipo": "mat",
+    "b1": 18000,
+    "b2": 0,
+    "ss": 1170,
+    "ahorro": 9000,
+    "hijosMenores": 1,
+    "hijosMayores": 0,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "cuotaIndividual": 905.66,
+    "cuotaConjunta": 1824.37,
+    "diferencia": -918.71,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Andalucía",
+   "in": {
+    "tipo": "mat",
+    "b1": 38000,
+    "b2": 6000,
+    "ss": 2860,
+    "ahorro": 500,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "andalucia"
+   },
+   "expect": {
+    "cuotaIndividual": 6386.82,
+    "cuotaConjunta": 6317.0,
+    "diferencia": 69.83,
+    "umbralSegundoSueldo": 6200.39,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Aragón",
+   "in": {
+    "tipo": "mat",
+    "b1": 55000,
+    "b2": 20000,
+    "ss": 4875,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 3,
+    "ccaa": "aragon"
+   },
+   "expect": {
+    "cuotaIndividual": 13116.94,
+    "cuotaConjunta": 17215.97,
+    "diferencia": -4099.04,
+    "umbralSegundoSueldo": 6406.81,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Asturias",
+   "in": {
+    "tipo": "mono",
+    "b1": 34000,
+    "b2": 0,
+    "ss": 2210,
+    "ahorro": 300,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "asturias"
+   },
+   "expect": {
+    "cuotaIndividual": 4346.56,
+    "cuotaConjunta": 3723.06,
+    "diferencia": 623.5,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Illes Balears",
+   "in": {
+    "tipo": "mat",
+    "b1": 26000,
+    "b2": 24000,
+    "ss": 3250,
+    "ahorro": 1200,
+    "hijosMenores": 2,
+    "hijosMayores": 0,
+    "ccaa": "baleares"
+   },
+   "expect": {
+    "cuotaIndividual": 5264.0,
+    "cuotaConjunta": 7952.5,
+    "diferencia": -2688.5,
+    "umbralSegundoSueldo": 7679.74,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Canarias",
+   "in": {
+    "tipo": "mat",
+    "b1": 70000,
+    "b2": 0,
+    "ss": 4550,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 2,
+    "ccaa": "canarias"
+   },
+   "expect": {
+    "cuotaIndividual": 17807.78,
+    "cuotaConjunta": 15769.74,
+    "diferencia": 2038.04,
+    "umbralSegundoSueldo": 4737.38,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Cantabria",
+   "in": {
+    "tipo": "mat",
+    "b1": 45000,
+    "b2": 15000,
+    "ss": 3900,
+    "ahorro": 0,
+    "hijosMenores": 1,
+    "hijosMayores": 2,
+    "ccaa": "cantabria"
+   },
+   "expect": {
+    "cuotaIndividual": 8116.12,
+    "cuotaConjunta": 10687.0,
+    "diferencia": -2570.88,
+    "umbralSegundoSueldo": 7465.39,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Castilla-La Mancha",
+   "in": {
+    "tipo": "mat",
+    "b1": 38000,
+    "b2": 6000,
+    "ss": 2860,
+    "ahorro": 500,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "clm"
+   },
+   "expect": {
+    "cuotaIndividual": 6467.0,
+    "cuotaConjunta": 6414.8,
+    "diferencia": 52.2,
+    "umbralSegundoSueldo": 6149.44,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Castilla y León",
+   "in": {
+    "tipo": "mat",
+    "b1": 55000,
+    "b2": 20000,
+    "ss": 4875,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 3,
+    "ccaa": "cyl"
+   },
+   "expect": {
+    "cuotaIndividual": 13066.46,
+    "cuotaConjunta": 17134.78,
+    "diferencia": -4068.32,
+    "umbralSegundoSueldo": 6417.83,
+    "orientativo": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Cataluña",
+   "in": {
+    "tipo": "mono",
+    "b1": 34000,
+    "b2": 0,
+    "ss": 2210,
+    "ahorro": 300,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "cataluna"
+   },
+   "expect": {
+    "cuotaIndividual": 4620.65,
+    "cuotaConjunta": 3954.15,
+    "diferencia": 666.5,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Extremadura",
+   "in": {
+    "tipo": "mat",
+    "b1": 26000,
+    "b2": 24000,
+    "ss": 3250,
+    "ahorro": 1200,
+    "hijosMenores": 2,
+    "hijosMayores": 0,
+    "ccaa": "extremadura"
+   },
+   "expect": {
+    "cuotaIndividual": 4862.5,
+    "cuotaConjunta": 8331.38,
+    "diferencia": -3468.88,
+    "umbralSegundoSueldo": 6952.61,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Galicia",
+   "in": {
+    "tipo": "mat",
+    "b1": 70000,
+    "b2": 0,
+    "ss": 4550,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 2,
+    "ccaa": "galicia"
+   },
+   "expect": {
+    "cuotaIndividual": 17752.54,
+    "cuotaConjunta": 15740.94,
+    "diferencia": 2011.61,
+    "umbralSegundoSueldo": 4779.81,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA Región de Murcia",
+   "in": {
+    "tipo": "mat",
+    "b1": 45000,
+    "b2": 15000,
+    "ss": 3900,
+    "ahorro": 0,
+    "hijosMenores": 1,
+    "hijosMayores": 2,
+    "ccaa": "murcia"
+   },
+   "expect": {
+    "cuotaIndividual": 8053.2,
+    "cuotaConjunta": 10580.2,
+    "diferencia": -2527.0,
+    "umbralSegundoSueldo": 7573.6,
+    "orientativo": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA La Rioja",
+   "in": {
+    "tipo": "mat",
+    "b1": 38000,
+    "b2": 6000,
+    "ss": 2860,
+    "ahorro": 500,
+    "hijosMenores": 1,
+    "hijosMayores": 1,
+    "ccaa": "rioja"
+   },
+   "expect": {
+    "cuotaIndividual": 6127.63,
+    "cuotaConjunta": 6106.52,
+    "diferencia": 21.11,
+    "umbralSegundoSueldo": 6060.72,
+    "orientativo": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "CCAA C. Valenciana",
+   "in": {
+    "tipo": "mat",
+    "b1": 55000,
+    "b2": 20000,
+    "ss": 4875,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 3,
+    "ccaa": "valencia"
+   },
+   "expect": {
+    "cuotaIndividual": 12952.41,
+    "cuotaConjunta": 17210.57,
+    "diferencia": -4258.16,
+    "umbralSegundoSueldo": 6577.28,
+    "orientativo": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "regresión DA 61.ª conjunta con ahorro: monoparental Canarias",
+   "in": {
+    "tipo": "mono",
+    "b1": 17000,
+    "b2": 0,
+    "ss": 1080,
+    "ahorro": 6000,
+    "hijosMenores": 0,
+    "hijosMayores": 1,
+    "hijosAdultos": 0,
+    "ccaa": "canarias"
+   },
+   "expect": {
+    "cuotaConjunta": 401.68,
+    "cuotaIndividual": 641.25
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "regresión DA 61.ª conjunta con ahorro: matrimonio Canarias",
+   "in": {
+    "tipo": "mat",
+    "b1": 16500,
+    "b2": 0,
+    "ss": 1048,
+    "ahorro": 6000,
+    "hijosMenores": 0,
+    "hijosMayores": 0,
+    "hijosAdultos": 0,
+    "ccaa": "canarias"
+   },
+   "expect": {
+    "cuotaConjunta": 491.13
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "monoparental sin hijos menores de 18 (no válido)",
+   "in": {
+    "tipo": "mono",
+    "b1": 30000,
+    "b2": 0,
+    "ss": 1950,
+    "ahorro": 0,
+    "hijosMenores": 0,
+    "hijosMayores": 0,
+    "hijosAdultos": 2,
+    "ccaa": "madrid"
+   },
+   "expect": {
+    "invalido": 1,
+    "diferencia": 0
+   },
+   "tol": 0.01
+  },
+  {
+   "nombre": "individual gana con 55.000/12.000, Cataluña",
+   "in": {
+    "tipo": "mat",
+    "b1": 55000,
+    "b2": 12000,
+    "ss": 4255,
+    "ahorro": 2000,
+    "hijosMenores": 0,
+    "hijosMayores": 2,
+    "hijosAdultos": 0,
+    "ccaa": "cataluna"
+   },
+   "expect": {
+    "diferencia": -2753.34
+   },
+   "tol": 1
+  }
+ ]
+}

@@ -26,6 +26,10 @@
   "guarderia-cuidadora-o-reducir-jornada",
   "alquilar-o-comprar"
  ],
+ "declaracion-conjunta-o-individual": [
+  "contado-o-financiar",
+  "guarderia-cuidadora-o-reducir-jornada"
+ ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
   "seguro-todo-riesgo-o-terceros"

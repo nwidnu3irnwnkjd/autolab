@@ -1,0 +1,225 @@
+{
+  "slug": "declaracion-conjunta-o-individual",
+  "title": "Renta conjunta o individual 2026: ¿cuál te conviene?",
+  "description": "Calcula si te compensa la declaración de la renta conjunta o individual en 2026, según tus sueldos, hijos y comunidad autónoma, con la cuota de cada una.",
+  "h1": "Declaración de la renta conjunta o individual: ¿qué te conviene?",
+  "lead": "La declaración conjunta solo suele compensar cuando uno de los dos no tiene ingresos o gana muy poco (del orden de 2.000 a 10.000 € brutos al año, según tu caso); si los dos trabajan con sueldos normales, aunque sean distintos, casi siempre sale mejor declarar por separado. Calcula la cuota del IRPF 2026 de cada opción con tus datos.",
+  "veredicto": "La declaración conjunta conviene cuando un cónyuge no ingresa nada o muy poco (el umbral del segundo sueldo bruto ronda entre 2.000 y 10.000 € al año según el caso) y la individual en cuanto ambos tienen un sueldo normal, incluso muy desigual (con 55.000 y 12.000 € gana la individual); la calculadora compara la cuota del IRPF 2026 de ambas y te da tu umbral exacto.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "tipo",
+      "label": "Tu situación familiar",
+      "type": "select",
+      "options": [
+        {
+          "v": "mat",
+          "t": "Matrimonio (conjunta modalidad 1)"
+        },
+        {
+          "v": "mono",
+          "t": "Un solo progenitor con hijos menores (conjunta modalidad 2)"
+        }
+      ]
+    },
+    {
+      "id": "b1",
+      "label": "Sueldo bruto anual del primer cónyuge, o del progenitor (€)",
+      "default": 36000,
+      "min": 0,
+      "step": 500
+    },
+    {
+      "id": "b2",
+      "label": "Sueldo bruto anual del segundo cónyuge (€; 0 si no trabaja o si es monoparental)",
+      "default": 9000,
+      "min": 0,
+      "step": 500
+    },
+    {
+      "id": "ss",
+      "label": "Cotización a la Seguridad Social de los dos (€ al año; sale en la nómina)",
+      "default": 2900,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "ahorro",
+      "label": "Intereses y dividendos de los dos (€ al año)",
+      "default": 0,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "hijosMenores",
+      "label": "Hijos menores de 3 años",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "0"
+        },
+        {
+          "v": "1",
+          "t": "1"
+        },
+        {
+          "v": "2",
+          "t": "2"
+        },
+        {
+          "v": "3",
+          "t": "3"
+        },
+        {
+          "v": "4",
+          "t": "4"
+        }
+      ]
+    },
+    {
+      "id": "hijosMayores",
+      "label": "Hijos de 3 a 17 años que viven con vosotros y ganan menos de 8.000 €",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "0"
+        },
+        {
+          "v": "1",
+          "t": "1"
+        },
+        {
+          "v": "2",
+          "t": "2"
+        },
+        {
+          "v": "3",
+          "t": "3"
+        },
+        {
+          "v": "4",
+          "t": "4"
+        }
+      ]
+    },
+    {
+      "id": "hijosAdultos",
+      "label": "Hijos de 18 a 24 años que viven con vosotros y ganan menos de 8.000 €",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "0"
+        },
+        {
+          "v": "1",
+          "t": "1"
+        },
+        {
+          "v": "2",
+          "t": "2"
+        },
+        {
+          "v": "3",
+          "t": "3"
+        },
+        {
+          "v": "4",
+          "t": "4"
+        }
+      ]
+    },
+    {
+      "id": "ccaa",
+      "label": "Comunidad autónoma donde resides (régimen común)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "canarias",
+          "t": "Canarias"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo conviene la declaración conjunta?",
+      "Solo suele convenir cuando uno de los cónyuges no tiene ingresos o gana muy poco: el segundo sueldo bruto tiene que quedar por debajo de unos 2.000 a 10.000 € al año, según los hijos, la comunidad y el primer sueldo. La conjunta aplica una reducción de 3.400 € a la base y permite aprovechar la mitad del mínimo por hijos que el cónyuge sin ingresos no puede usar en la individual; el mínimo personal no se recupera, porque en la conjunta solo hay uno (art. 84.2.2.º). Con dos sueldos normales gana la individual aunque sean muy desiguales: por ejemplo, con 55.000 y 12.000 € la individual sale unos 2.700 € más barata, porque en la conjunta se suman las rentas, tributan por una escala progresiva y la reducción por rendimientos del trabajo se calcula una sola vez sobre el total."
+    ],
+    [
+      "¿Qué diferencia hay entre la modalidad 1 y la modalidad 2?",
+      "La modalidad 1 es la de los cónyuges no separados legalmente, con o sin hijos menores o mayores incapacitados judicialmente, y reduce la base en 3.400 € al año. La modalidad 2 es la de un solo progenitor con los hijos menores (o mayores incapacitados judicialmente) que conviven con él (separación legal o sin vínculo matrimonial; art. 82.1.2.ª) y reduce la base en 2.150 € al año; no se aplica si el progenitor convive con el otro progenitor de alguno de los hijos. Sin ningún hijo menor de 18 años no existe la modalidad 2."
+    ],
+    [
+      "¿Pueden hacer la conjunta las parejas de hecho?",
+      "No como pareja: la modalidad 1 es solo para cónyuges. Si hay hijos, uno de los dos progenitores puede formar con ellos una unidad familiar de modalidad 2, pero en ese caso la reducción de 2.150 € no se aplica cuando conviven con el otro progenitor. La composición de la unidad familiar se fija según la situación a 31 de diciembre."
+    ],
+    [
+      "¿Puedo cambiar de opción después de presentar la declaración?",
+      "La opción vale solo para ese año y no obliga en los siguientes. Según el artículo 83 de la Ley del IRPF, una vez terminado el plazo reglamentario de declaración ya no se puede modificar, y si uno de los miembros presenta individual, los demás deben usar el mismo régimen. La campaña de la renta se abre cada primavera: las fechas exactas de cada año las publica la Agencia Tributaria."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "Solo calcula la cuota del IRPF a partir de sueldos y rendimientos del ahorro (intereses y dividendos). No incluye deducciones autonómicas ni estatales (maternidad, familia numerosa, vivienda, alquiler, donativos), hijos o cónyuge con discapacidad, ascendientes a cargo, aportaciones a planes de pensiones, rentas inmobiliarias, de autónomos o ganancias patrimoniales, ni el País Vasco y Navarra. Tampoco tiene en cuenta las retenciones: la cuota es lo que corresponde pagar, y lo que ingreses o te devuelvan depende de lo ya retenido. Además, parte de supuestos: la cotización a la Seguridad Social se reparte entre los dos en proporción al sueldo, y los intereses y dividendos a partes iguales, lo que solo es correcto si las cuentas o acciones son gananciales o de titularidad compartida."
+    ]
+  ],
+  "sources": "Modelo propio simplificado de la cuota del IRPF del ejercicio 2026 (declaración a presentar en 2027), calculado con la Ley 35/2006 del IRPF en su texto consolidado a 30/9/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: escala estatal (art. 63), escala del ahorro (arts. 66 y 76), mínimo personal y familiar (arts. 56 a 58 y 61), reducciones por rendimientos del trabajo (arts. 19 y 20), tributación conjunta (arts. 82 a 84; reducciones de 3.400 y 2.150 euros) y deducción de la disposición adicional 61.ª (redacción del RDL 5/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-3810). En tributación conjunta, los 2.000 euros de otros gastos se aplican una vez y la reducción del art. 20 se calcula sobre la suma de rendimientos netos del trabajo, sin multiplicarse (Manual práctico de Renta 2025 de la AEAT: https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html). Escalas autonómicas y mínimos propios, en el BOE consolidado de cada comunidad: Andalucía (https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915), Aragón (https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006), Asturias (https://www.boe.es/buscar/act.php?id=BOE-A-2015-945), Illes Balears (https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925), Canarias (https://www.boe.es/buscar/act.php?id=BOC-j-2009-90008), Cantabria (https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028), Castilla-La Mancha (https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368), Castilla y León (https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254), Cataluña (https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951), Extremadura (https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159), Galicia (https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161), Madrid (https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068), Región de Murcia (https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542), La Rioja (https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750) y Comunitat Valenciana (https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202). Cifras autonómicas orientativas por prudencia: Castilla y León (art. 1 de la Ley 2/2022 y art. 1 bis; la rebaja anunciada es para 2027), Región de Murcia (art. 2; sin escala transitoria encontrada para 2026) y La Rioja (la deflactación del art. 31 ter exigiría una ley que no consta en el BOE). Supuestos: los sueldos son de relación laboral; la cotización se reparte entre los dos en proporción al sueldo; los intereses y dividendos se reparten a partes iguales; los mínimos por hijos se reparten por mitades en la declaración individual (art. 61.1.ª) y se aplican enteros en la conjunta; no se contemplan edades de los cónyuges ni gastos deducibles distintos de la cotización y los 2.000 euros. La deducción de la DA 61.ª se aplica a la suma de rendimientos en la conjunta, criterio no confirmado en la AEAT. Excluidos: País Vasco y Navarra (régimen foral), Ceuta y Melilla, deducciones autonómicas, hijos o cónyuge con discapacidad y ascendientes. Información orientativa, no asesoramiento fiscal."
+}
