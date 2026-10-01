@@ -5,6 +5,7 @@ el JS real de cada calculadora con las mismas entradas y exige que coincida con 
 Genera /barometro/ (respuesta primero, tablas, Dataset + Article) y /barometro/datos.json.
 Revertir: quitar la llamada a barometro.build(...) en build.py main() y los enlaces (footer, calc_link, home)."""
 import json, os, html
+import calcs_loader
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PATH = "/barometro/"
@@ -108,15 +109,20 @@ def r(x, d=4): return None if x is None else round(x, d)
 
 
 # ---------- datos ----------
-def defaults(slug):
+def defaults(slug, params=None, live=None):
+    """Valores por defecto de la calculadora, resueltos igual que el build (default_from live/params)."""
     c = json.load(open(os.path.join(ROOT, "calcs", slug + ".json")))
-    return {i["id"]: (float(i["options"][0]["v"]) if i.get("type") == "select" else i["default"]) for i in c["inputs"]}
+    return {i["id"]: (float(i["options"][0]["v"]) if i.get("type") == "select" else calcs_loader.resolve_default(i, params or {}, live)) for i in c["inputs"]}
 
-def compute(params, base):
+def compute(params, base, live=None):
+    """params de data/params.json; el mercado (Euríbor, combustibles) sale de data/live.json si está fresco (calcs_loader.merge_market)."""
+    live = calcs_loader.load_live() if live is None else live
+    params = calcs_loader.merge_market(params, live)
+    fecha_datos = max([params["fecha"]] + [params[k] for k in ("fecha_euribor", "fecha_combustibles") if params.get("mercado_vivo") and k in params])
     eurib, fija_ref = params["euribor_12m"], params["tipo_hipoteca_fija_medio"]
     checks = []  # (calc, func, args, salida) -> ops/check_barometro.py
     # 1) Hipoteca fija o variable
-    hb = dict(defaults("hipoteca-fija-o-variable"), capital=150000, anos=25, euribor=eurib, escenario=0, dif=0.8)
+    hb = dict(defaults("hipoteca-fija-o-variable", params, live), capital=150000, anos=25, euribor=eurib, escenario=0, dif=0.8)
     fijos, difs = [2.2, 2.4, 2.6, 2.8, 3.0], [0.6, 0.8, 1.0]
     if fija_ref not in fijos: fijos = sorted(fijos + [fija_ref])
     tabla_h = []
@@ -134,14 +140,14 @@ def compute(params, base):
         checks.append({"calc": "hipoteca-fija-o-variable", "func": "calcular", "args": [dd], "salida": {"diferencia": r(oo["diferencia"], 2), "cuotaVar2": r(oo["cuotaVar2"], 2)}})
     checks.append({"calc": "hipoteca-fija-o-variable", "func": "calcular", "args": [hd], "salida": {k: r(ho[k], 3) for k in ("cuotaFija", "cuotaVar1", "intFija", "intVar", "euriborEquilibrio")}})
     hip = {"pregunta": "¿A partir de qué Euríbor medio futuro compensa una hipoteca fija frente a una variable?",
-           "supuestos": {"capital_eur": 150000, "plazo_anos": 25, "euribor_12m_actual": eurib, "diferencial_variable_referencia": 0.8,
+           "supuestos": {"capital_eur": 150000, "plazo_anos": 25, "euribor_12m_actual": eurib, "euribor_fecha_dato": params.get("fecha_euribor"), "euribor_periodo": params.get("periodo_euribor", ""), "diferencial_variable_referencia": 0.8,
                          "tipo_fijo_referencia": fija_ref, "nota": "La variable aplica el Euríbor actual el primer año y el Euríbor medio indicado del año 2 en adelante. Sistema francés, sin comisiones ni bonificaciones."},
            "referencia": {"cuota_fija": r(ho["cuotaFija"], 2), "cuota_variable_ano1": r(ho["cuotaVar1"], 2), "intereses_fija": r(ho["intFija"], 2),
                           "intereses_variable_si_euribor_se_mantiene": r(ho["intVar"], 2), "euribor_equilibrio": r(ho["euriborEquilibrio"], 3),
                           "diferencia_intereses_variable_menos_fija_por_escenario": esc},
            "tabla": tabla_h, "calculadora": base + "/decidir/hipoteca-fija-o-variable/"}
     # 2) Coche: coste por motor
-    cb = dict(defaults("diesel-gasolina-hibrido-electrico"), precioDiesel=params["diesel_eur_l"], precioGasolina=params["gasolina_eur_l"],
+    cb = dict(defaults("diesel-gasolina-hibrido-electrico", params, live), precioDiesel=params["diesel_eur_l"], precioGasolina=params["gasolina_eur_l"],
               kwhCasa=params["kwh_casa_eur"], kwhPublico=params["kwh_publico_eur"], anos=5)
     tabla_c = []
     for km in [5000, 10000, 15000, 20000, 25000, 30000]:
@@ -175,7 +181,7 @@ def compute(params, base):
                           "km_ano_equilibrio_entre_ambos": r(o15["kmEquilibrio"], 3), "por_motor": energia},
            "tabla_por_km": tabla_c, "calculadora": base + "/decidir/diesel-gasolina-hibrido-electrico/"}
     # 3) Amortizar o invertir
-    ab = dict(defaults("amortizar-o-invertir"), capital=150000, anos=20, importe=30000, aporte=0, rentab=4, impuesto=19, comision=0)
+    ab = dict(defaults("amortizar-o-invertir", params, live), capital=150000, anos=20, importe=30000, aporte=0, rentab=4, impuesto=19, comision=0)
     tipos = sorted({1.5, 2.0, 2.5, 3.0, 3.5, 4.0, fija_ref, round(eurib + 0.8, 2)})
     tabla_a = []
     for tp in tipos:
@@ -190,10 +196,11 @@ def compute(params, base):
            "supuestos": {"capital_pendiente_eur": 150000, "anos_restantes": 20, "importe_disponible_eur": 30000, "tributacion_ganancias_pct": 19,
                          "comision_amortizacion_pct": 0, "nota": "Rentabilidad anual neta de comisiones, antes de impuestos; el 19 % se aplica a la ganancia al final. Al amortizar, el ahorro mensual de cuota (o el dinero liberado al acabar antes) se invierte a la misma rentabilidad."},
            "tabla": tabla_a, "calculadora": base + "/decidir/amortizar-o-invertir/"}
-    return {"nombre": "Barómetro Entre Muchos", "version": 1, "fecha_datos": params["fecha"], "url": base + PATH,
+    return {"nombre": "Barómetro Entre Muchos", "version": 1, "fecha_datos": fecha_datos, "url": base + PATH,
             "url_datos": base + PATH + "datos.json", "editor": "Entre Muchos (entremuchos.com)",
             "metodo": "Cálculo propio con las calculadoras de entremuchos.com (código abierto en la propia página) y los parámetros de mercado de la fecha. Cada cifra es reproducible introduciendo los supuestos en la calculadora enlazada.",
             "fuentes": {"euribor": params.get("euribor_fuente", ""), "combustibles": params.get("combustibles_fuente", "")},
+            "datos_vivos": params.get("mercado_vivo", []),
             "hipoteca_fija_o_variable": hip, "coche_coste_por_motor": car, "amortizar_o_invertir": amo, "comprobaciones": checks}
 
 
@@ -204,7 +211,7 @@ def _answers(D):
     a3 = next(f for f in a["tabla"] if f["tipo_hipoteca"] == 3.0)
     ganador = next(m for m in c15["por_motor"] if m["motor"] == c15["ganador"])
     return [
-        f"Con el Euríbor a {pct(s['euribor_12m_actual'])} y una hipoteca fija al {pct(s['tipo_fijo_referencia'])}, la fija de 150.000 € a 25 años sale más barata que una variable con diferencial del {pct(s['diferencial_variable_referencia'], 1)} si el Euríbor medio a partir del segundo año supera el <strong>{pct(ref['euribor_equilibrio'])}</strong>.",
+        f"Con el Euríbor a {pct(s['euribor_12m_actual'], 3)} y una hipoteca fija al {pct(s['tipo_fijo_referencia'])}, la fija de 150.000 € a 25 años sale más barata que una variable con diferencial del {pct(s['diferencial_variable_referencia'], 1)} si el Euríbor medio a partir del segundo año supera el <strong>{pct(ref['euribor_equilibrio'])}</strong>.",
         f"Recorriendo 15.000 km al año durante 5 años, el coche más barato en coste total es <strong>{el(c15['ganador'])}</strong>: {num(ganador['eur_km_total'], 2)} € por km ({eur(ganador['coste_mes'])} al mes), {eur(c15['diferencia_5_anos'])} menos que {el(c15['segundo'])} en 5 años.",
         f"Amortizar una hipoteca al 3 % reduciendo plazo equivale a una inversión que rinda un <strong>{pct(a3['reduciendo_plazo'])}</strong> anual antes de impuestos (con un 19 % de tributación sobre la ganancia): por debajo de eso, amortizar gana.",
     ]
@@ -224,9 +231,10 @@ def page(D, modified):
     def esc_txt(k):
         v = esc[k]; return f"la variable paga {eur(abs(v))} {'más' if v > 0 else 'menos'} de intereses que la fija"
     c15 = c["a_15000_km"]; cs = c["supuestos"]
-    rows_e = "".join(f'<tr><th scope="row">{m["motor"]}</th><td>{num(m["consumo"], 1)}&nbsp;{m["unidad"].replace(" ", "&nbsp;")}</td><td>{num(m["precio_energia"], 3 if m["motor"] == "Eléctrico" else 2)} €/{"kWh" if m["motor"] == "Eléctrico" else "l"}</td><td>{eur(m["energia_15000km"])}</td><td>{eur(m["coste_total_5_anos"])}</td><td>{eur(m["coste_mes"])}</td><td>{num(m["eur_km_total"], 2)} €</td></tr>' for m in c15["por_motor"])
+    rows_e = "".join(f'<tr><th scope="row">{m["motor"]}</th><td>{num(m["consumo"], 1)}&nbsp;{m["unidad"].replace(" ", "&nbsp;")}</td><td>{num(m["precio_energia"], 3)} €/{"kWh" if m["motor"] == "Eléctrico" else "l"}</td><td>{eur(m["energia_15000km"])}</td><td>{eur(m["coste_total_5_anos"])}</td><td>{eur(m["coste_mes"])}</td><td>{num(m["eur_km_total"], 2)} €</td></tr>' for m in c15["por_motor"])
     rows_k = "".join(f'<tr><th scope="row">{num(f["km_ano"])}&nbsp;km</th>' + "".join(f'<td>{num(f["eur_km_" + k.lower()], 2)} €</td>' for k, _ in MOTORES) + f'<td><strong>{f["ganador"]}</strong></td></tr>' for f in c["tabla_por_km"])
     rows_a = "".join(f'<tr><th scope="row">{pct(f["tipo_hipoteca"])}</th><td>{pct(f["reduciendo_plazo"])}</td><td>{pct(f["reduciendo_cuota"])}</td></tr>' for f in a["tabla"])
+    euro_per = f", media de {mes_es(hs['euribor_periodo'] + '-01')}, dato del {fecha_es(hs['euribor_fecha_dato'])}" if hs.get("euribor_periodo") else ""
     eq_txt = f" (por encima de unos {num(c15['km_ano_equilibrio_entre_ambos'])} km al año el orden entre ambos cambia)" if c15["km_ano_equilibrio_entre_ambos"] else ""
     return f"""<article class="guide barometro">
 <p class="kicker">Datos propios · {mes}</p>
@@ -236,7 +244,7 @@ def page(D, modified):
 <p>Cada mes calculamos estas cifras con nuestras propias calculadoras y los parámetros de mercado de la fecha. No son opiniones: puedes reproducir cualquier número poniendo los mismos supuestos en la calculadora enlazada.</p>
 
 <h2 id="hipoteca">Hipoteca fija o variable: el Euríbor de equilibrio</h2>
-<p>Si el Euríbor medio de los próximos años (del segundo en adelante) queda <strong>por encima</strong> de la cifra de la tabla, la hipoteca fija te sale más barata; si queda por debajo, gana la variable. Hipoteca de 150.000 € a 25 años, Euríbor actual {pct(hs["euribor_12m_actual"])} aplicado el primer año.</p>
+<p>Si el Euríbor medio de los próximos años (del segundo en adelante) queda <strong>por encima</strong> de la cifra de la tabla, la hipoteca fija te sale más barata; si queda por debajo, gana la variable. Hipoteca de 150.000 € a 25 años, Euríbor actual {pct(hs["euribor_12m_actual"], 3)} aplicado el primer año.</p>
 <div class="em-tw"><table>
 <thead><tr><th scope="col">Tipo fijo</th>{th}</tr></thead>
 <tbody>{rows_h}</tbody>
@@ -255,7 +263,7 @@ def page(D, modified):
 <thead><tr><th scope="col">Km al año</th>{"".join(f'<th scope="col">{n}</th>' for _, n in MOTORES)}<th scope="col">Más barato</th></tr></thead>
 <tbody>{rows_k}</tbody>
 </table></div>
-<p class="note">Precios de la energía del {fecha_es(cs["fecha_precios"])}: diésel {num(cs["precio_diesel_eur_l"], 2)} €/l, gasolina {num(cs["precio_gasolina_eur_l"], 2)} €/l (también para el híbrido), electricidad {num(cs["kwh_casa_eur"], 2)} €/kWh en casa y {num(cs["kwh_publico_eur"], 2)} €/kWh en carga pública, con un {num(cs["pct_carga_en_casa"])} % de la carga en casa ({num(cs["precio_kwh_mixto"], 3)} €/kWh de media). Precios de compra: diésel {eur(cs["vehiculos"]["Diésel"]["compra_eur"])}, gasolina {eur(cs["vehiculos"]["Gasolina"]["compra_eur"])}, híbrido {eur(cs["vehiculos"]["Híbrido"]["compra_eur"])}, eléctrico {eur(cs["vehiculos"]["Eléctrico"]["compra_eur"])}; seguro, mantenimiento, impuesto y valor residual: los valores por defecto de la calculadora.</p>
+<p class="note">Precios de la energía del {fecha_es(cs["fecha_precios"])}: diésel {num(cs["precio_diesel_eur_l"], 3)} €/l, gasolina {num(cs["precio_gasolina_eur_l"], 3)} €/l (también para el híbrido), electricidad {num(cs["kwh_casa_eur"], 2)} €/kWh en casa y {num(cs["kwh_publico_eur"], 2)} €/kWh en carga pública, con un {num(cs["pct_carga_en_casa"])} % de la carga en casa ({num(cs["precio_kwh_mixto"], 3)} €/kWh de media). Precios de compra: diésel {eur(cs["vehiculos"]["Diésel"]["compra_eur"])}, gasolina {eur(cs["vehiculos"]["Gasolina"]["compra_eur"])}, híbrido {eur(cs["vehiculos"]["Híbrido"]["compra_eur"])}, eléctrico {eur(cs["vehiculos"]["Eléctrico"]["compra_eur"])}; seguro, mantenimiento, impuesto y valor residual: los valores por defecto de la calculadora.</p>
 <p><a class="btn2" href="/decidir/diesel-gasolina-hibrido-electrico/">Calcúlalo con tu coche</a></p>
 
 <h2 id="amortizar">Amortizar la hipoteca o invertir: la rentabilidad que hay que batir</h2>
@@ -269,8 +277,8 @@ def page(D, modified):
 <h2>Metodología y fuentes</h2>
 <ul>
 <li><strong>Cálculo propio</strong> con las mismas fórmulas que nuestras calculadoras (sistema francés de amortización; coste total de propiedad del coche; simulación mensual de amortizar frente a invertir). Una comprobación automática verifica en cada actualización que cada cifra de esta página coincide con la calculadora.</li>
-<li><strong>Euríbor a 12 meses:</strong> {pct(hs["euribor_12m_actual"])} ({html.escape(D["fuentes"]["euribor"])}). Consulta el dato oficial en el <a href="https://www.bde.es/wbe/es/estadisticas/temas/tipos-interes.html" rel="noopener">Banco de España</a>.</li>
-<li><strong>Combustibles y electricidad:</strong> precios medios orientativos de la fecha indicada; consulta el precio en tu zona en el <a href="https://geoportalgasolineras.es/" rel="noopener">Geoportal de gasolineras del Ministerio</a>.</li>
+<li><strong>Euríbor a 12 meses:</strong> {pct(hs["euribor_12m_actual"], 3)}{euro_per} ({html.escape(D["fuentes"]["euribor"])}). Consulta el dato oficial en el <a href="https://www.bde.es/wbe/es/estadisticas/temas/tipos-interes.html" rel="noopener">Banco de España</a>.</li>
+<li><strong>Combustibles y electricidad:</strong> diésel y gasolina, media del {fecha_es(cs["fecha_precios"])} ({html.escape(D["fuentes"]["combustibles"])}); electricidad, precio orientativo de la calculadora; consulta el precio en tu zona en el <a href="https://geoportalgasolineras.es/" rel="noopener">Geoportal de gasolineras del Ministerio</a>.</li>
 <li><strong>Datos en formato máquina:</strong> <a href="{PATH}datos.json">{PATH}datos.json</a> (supuestos, tablas y fecha). Si citas estas cifras, enlaza a esta página e indica la fecha de los datos ({fecha_es(fd)}).</li>
 <li>Más contexto: <a href="/guias/euribor-hipoteca/">qué es el Euríbor y cómo afecta a tu hipoteca</a> y <a href="/guias/amortizacion-anticipada-comisiones/">comisiones por amortizar</a>.</li>
 </ul>

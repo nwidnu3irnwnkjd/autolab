@@ -1,0 +1,77 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "tipoActual": 3.5,
+    "anos": 20,
+    "tipoNuevo": 2.6,
+    "comision": 0.05,
+    "gastos": 1500,
+    "vinculacion": 300,
+    "horizonte": 10
+   },
+   "expect": {
+    "cuotaActual": 869.94,
+    "cuotaNueva": 802.18,
+    "ahorroCuota": 42.76,
+    "ahorroIntereses": 16261.8,
+    "costeCambio": 1575.0,
+    "mesesEquilibrio": 19,
+    "ahorroNeto5": 3220.31,
+    "ahorroNetoPlazo": 8686.8,
+    "ahorroNetoHorizonte": 6844.93
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 90000,
+    "tipoActual": 4.2,
+    "anos": 12,
+    "tipoNuevo": 2.9,
+    "comision": 0.5,
+    "gastos": 2200,
+    "vinculacion": 0,
+    "horizonte": 5
+   },
+   "expect": {
+    "cuotaActual": 796.74,
+    "cuotaNueva": 740.79,
+    "ahorroCuota": 55.95,
+    "ahorroIntereses": 8057.16,
+    "costeCambio": 2650.0,
+    "mesesEquilibrio": 30,
+    "ahorroNeto5": 2349.83,
+    "ahorroNetoPlazo": 5407.16,
+    "ahorroNetoHorizonte": 2349.83
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 120000,
+    "tipoActual": 0,
+    "anos": 10,
+    "tipoNuevo": 0,
+    "comision": 0.05,
+    "gastos": 1000,
+    "vinculacion": 0,
+    "horizonte": 10
+   },
+   "expect": {
+    "cuotaActual": 1000.0,
+    "cuotaNueva": 1000.0,
+    "ahorroCuota": 0.0,
+    "ahorroIntereses": 0.0,
+    "costeCambio": 1060.0,
+    "mesesEquilibrio": 0,
+    "ahorroNeto5": -1060.0,
+    "ahorroNetoPlazo": -1060.0,
+    "ahorroNetoHorizonte": -1060.0
+   },
+   "tol": 1
+  }
+ ]
+}

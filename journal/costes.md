@@ -10,3 +10,5 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-01T21:54Z | ~44 | ~20 | 0.55 | ciclo 4 cierre: Constructor(sonnet,2.6min,94k)+Diseñador(sonnet,9.5min,190k)+Estratega(opus,9min,153k)+Mejorador(opus,5min,98k)+Verificador(sonnet,3min,80k)+QA(haiku,3.8min,97k); falso positivo QA (lineChart: ruido de consola de página de prueba borrada) descartado
 2026-10-01T21:57Z | 44 | 18 | 0.55 | ciclo 5 inicio (refactor build.py T1 + lote de 2 calculadoras)
 2026-10-01T22:06Z | ~48 | ~21 | 0.55 | ciclo 5 cierre: Diseñador(sonnet,refactor,72k,0.8min)+Constructor(sonnet,2 calcs+lineChart,105k,4.2min)+QA(haiku,94k,3.6min); build.py partido en ui.py/calcs_loader.py sin cambio de salida
+2026-10-01T22:09Z | 45 | 19 | 0.55 | ciclo 6 inicio (Constructor lote 2 + Estratega frescura + Investigador fuentes fiscales); métricas SC: 0 indexadas/0 impresiones
+2026-10-01T22:20Z | ~48 | ~20 | 0.55 | ciclo 6 cierre: Constructor(sonnet,113k)+Estratega(sonnet,113k)+Ingeniero sync(sonnet,116k)+Investigador(opus,en curso)+QA(haiku,94k); datos vivos: luz/carburantes/Euríbor/tiempo; defaults y Barómetro sincronizados con live.json

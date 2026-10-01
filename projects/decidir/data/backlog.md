@@ -10,9 +10,9 @@
 - [x] contado-o-financiar — Pagar al contado o financiar
 - [ ] plan-pensiones-o-fondo-indexado — Plan de pensiones o fondo indexado
 - [x] calefaccion-gas-aerotermia-electrica — Qué calefacción sale más barata: gas, aerotermia o eléctrica
-- [ ] subrogar-hipoteca-merece-la-pena — Cambiar la hipoteca de banco o a tipo fijo: ¿compensa?
+- [x] subrogar-hipoteca-merece-la-pena — Cambiar la hipoteca de banco o a tipo fijo: ¿compensa?
 - [ ] cuanto-ahorrar-para-comprar-casa — Cuánto dinero necesito para comprar casa (entrada + impuestos por comunidad)
-- [ ] guarderia-cuidadora-o-reducir-jornada — Guardería, cuidadora o reducir jornada: qué sale más barato
+- [x] guarderia-cuidadora-o-reducir-jornada — Guardería, cuidadora o reducir jornada: qué sale más barato
 - [x] seguro-todo-riesgo-o-terceros — Seguro de coche: todo riesgo o terceros según el valor del coche
 - [ ] rescate-plan-pensiones-capital-o-renta — Rescatar el plan de pensiones: capital, renta o mixto
 - [ ] autonomo-o-asalariado — Autónomo o asalariado: cuánto facturar para cobrar lo mismo

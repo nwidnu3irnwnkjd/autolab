@@ -25,5 +25,8 @@ for p in projs:
 # Barómetro (Estratega): cada cifra de /barometro/ debe coincidir con la calculadora real
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_barometro.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_barometro.py")]).returncode != 0: fails += 1
+# Pulso / datos vivos (Estratega): sin red
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_live.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_live.py")]).returncode != 0: fails += 1
 print(f"{'OK' if not fails else 'FALLOS'}: {total - fails}/{total} comprobaciones")
 sys.exit(1 if fails else 0)

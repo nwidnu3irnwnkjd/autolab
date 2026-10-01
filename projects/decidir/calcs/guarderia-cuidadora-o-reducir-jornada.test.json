@@ -1,0 +1,77 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "guarderia": 350,
+    "ayuda": 0,
+    "cuidadora": 800,
+    "salario": 1500,
+    "reduccion": 50,
+    "perdidaNeta": 0,
+    "oportunidad": 0,
+    "meses": 30
+   },
+   "expect": {
+    "costeMesGuarderia": 350,
+    "costeMesCuidadora": 800,
+    "costeMesReducir": 750.0,
+    "totalGuarderia": 10500,
+    "totalCuidadora": 24000,
+    "totalReducir": 22500.0,
+    "ahorroVsSiguiente": 12000.0,
+    "salarioEquilibrio": 700.0,
+    "guarderiaEquilibrio": 750.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "guarderia": 420,
+    "ayuda": 100,
+    "cuidadora": 900,
+    "salario": 2400,
+    "reduccion": 40,
+    "perdidaNeta": 33,
+    "oportunidad": 15,
+    "meses": 24
+   },
+   "expect": {
+    "costeMesGuarderia": 320,
+    "costeMesCuidadora": 900,
+    "costeMesReducir": 910.8,
+    "totalGuarderia": 7680,
+    "totalCuidadora": 21600,
+    "totalReducir": 21859.2,
+    "ahorroVsSiguiente": 13920,
+    "salarioEquilibrio": 843.21,
+    "guarderiaEquilibrio": 1000
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "guarderia": 200,
+    "ayuda": 250,
+    "cuidadora": 700,
+    "salario": 1800,
+    "reduccion": 25,
+    "perdidaNeta": 0,
+    "oportunidad": 0,
+    "meses": 12
+   },
+   "expect": {
+    "costeMesGuarderia": 0,
+    "costeMesCuidadora": 700,
+    "costeMesReducir": 450.0,
+    "totalGuarderia": 0,
+    "totalCuidadora": 8400,
+    "totalReducir": 5400.0,
+    "ahorroVsSiguiente": 5400.0,
+    "salarioEquilibrio": 0.0,
+    "guarderiaEquilibrio": 700.0
+   },
+   "tol": 1
+  }
+ ]
+}

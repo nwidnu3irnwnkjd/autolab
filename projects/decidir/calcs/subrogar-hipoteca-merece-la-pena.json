@@ -1,0 +1,91 @@
+{
+  "slug": "subrogar-hipoteca-merece-la-pena",
+  "title": "Cambiar de hipoteca o subrogarla: ¿compensa?",
+  "description": "Calcula si compensa cambiar tu hipoteca de banco o a tipo fijo: coste del cambio, ahorro de cuota e intereses y en cuántos meses lo recuperas.",
+  "h1": "Cambiar la hipoteca de banco o a tipo fijo: ¿compensa?",
+  "lead": "Cambiar de hipoteca compensa si el ahorro de cuota recupera el coste del cambio (comisión y gastos) antes de que vendas o canceles; si no, mejor quedarte. Calcula en cuántos meses lo recuperas con tus datos.",
+  "veredicto": "Cambiar la hipoteca (subrogación o novación) compensa si el ahorro de cuota e intereses supera la comisión y los gastos del cambio dentro del tiempo que vas a conservar el préstamo; calcula el punto de equilibrio con tus condiciones.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "capital",
+      "label": "Capital pendiente (€)",
+      "default": 150000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "tipoActual",
+      "label": "Tipo de interés actual (%)",
+      "default": 3.5,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "anos",
+      "label": "Años restantes",
+      "default": 20,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tipoNuevo",
+      "label": "Tipo de interés de la oferta nueva (%)",
+      "default": null,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "params.tipo_hipoteca_fija_medio"
+    },
+    {
+      "id": "comision",
+      "label": "Comisión de cancelación o subrogación del banco actual (% del capital; según tu escritura)",
+      "default": 0.05,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "gastos",
+      "label": "Gastos de la operación: notaría, registro, gestoría, tasación (€ en total, según tus condiciones)",
+      "default": 1500,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "vinculacion",
+      "label": "Coste anual de seguros y vinculaciones de la nueva oferta (€/año)",
+      "default": 300,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "horizonte",
+      "label": "Horizonte: años que piensas conservar la hipoteca",
+      "default": 10,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa cambiar la hipoteca de banco?",
+      "Compensa cuando el ahorro mensual de cuota, descontadas las vinculaciones de la nueva oferta, recupera el coste del cambio (comisión más gastos) antes de que vendas la vivienda o canceles la hipoteca. Si el diferencial de tipos es pequeño o te quedan pocos años, normalmente no compensa. La calculadora te da los meses de equilibrio con tus cifras."
+    ],
+    [
+      "¿Qué es subrogar una hipoteca y en qué se diferencia de novar?",
+      "Subrogar es cambiar la hipoteca a otro banco, que paga la deuda al anterior. Novar es modificar las condiciones (tipo, plazo) con tu mismo banco. Ambas pueden tener coste en comisión y gastos, y renegociar con tu banco suele ser más barato que cambiar de entidad."
+    ],
+    [
+      "¿Cuánto puede cobrarme mi banco por cancelar o subrogar?",
+      "Depende de cuándo se firmó tu hipoteca y de si es fija o variable. Para contratos posteriores a la Ley 5/2019, el artículo 23 fija límites legales y, al pasar de variable a un tipo fijo, la comisión está más limitada; para contratos anteriores rige su escritura y la normativa que les aplicaba. Consulta tu escritura y el límite legal aplicable en el BOE; el banco debe darte por escrito el importe exacto."
+    ],
+    [
+      "¿Qué gastos tiene el cambio además de la comisión?",
+      "Según el caso, notaría, registro, gestoría y tasación, además de la comisión de cancelación. Algunos bancos asumen parte de esos gastos en su oferta: pídelos por escrito en la FEIN y escribe aquí el total. Cada oferta es distinta, por eso el campo es editable."
+    ],
+    [
+      "¿Valen las bonificaciones de la nueva oferta?",
+      "Solo si de verdad mantienes los productos vinculados (seguros, nómina, tarjetas) y te compensan por sí mismos. La calculadora resta su coste anual del ahorro de cuota; si ya ibas a contratarlos de todos modos, pon 0."
+    ]
+  ],
+  "sources": "Modelo propio: cuotas constantes (sistema francés) con el mismo plazo restante en ambas hipotecas; el coste del cambio (comisión sobre el capital y gastos) se paga al inicio; el ahorro neto suma las cuotas que dejas de pagar, menos las vinculaciones, más la menor deuda pendiente. No incluye cambios fiscales ni de tipo variable posteriores. Normativa verificada en el BOE: Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario (https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814), artículo 23 y disposición transitoria primera, consultada el 2/10/2026. La Ley 41/2007 no se ha verificado aquí: consulta tu escritura. Información orientativa, no asesoramiento financiero."
+}

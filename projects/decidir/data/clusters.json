@@ -7,12 +7,12 @@
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
   "hipoteca-fija-o-variable",
-  "alquilar-o-comprar"
+  "subrogar-hipoteca-merece-la-pena"
  ],
  "amortizar-plazo-o-cuota": [
   "amortizar-o-invertir",
   "hipoteca-fija-o-variable",
-  "alquilar-o-comprar"
+  "subrogar-hipoteca-merece-la-pena"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "diesel-gasolina-hibrido-electrico",
@@ -23,20 +23,29 @@
   "diesel-gasolina-hibrido-electrico"
  ],
  "contado-o-financiar": [
-  "alquilar-o-comprar",
-  "amortizar-o-invertir"
+  "guarderia-cuidadora-o-reducir-jornada",
+  "alquilar-o-comprar"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
   "seguro-todo-riesgo-o-terceros"
  ],
+ "guarderia-cuidadora-o-reducir-jornada": [
+  "contado-o-financiar",
+  "alquilar-o-comprar"
+ ],
  "hipoteca-fija-o-variable": [
   "amortizar-o-invertir",
   "amortizar-plazo-o-cuota",
-  "alquilar-o-comprar"
+  "subrogar-hipoteca-merece-la-pena"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
   "diesel-gasolina-hibrido-electrico"
+ ],
+ "subrogar-hipoteca-merece-la-pena": [
+  "amortizar-o-invertir",
+  "amortizar-plazo-o-cuota",
+  "hipoteca-fija-o-variable"
  ]
 }

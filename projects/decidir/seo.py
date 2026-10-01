@@ -44,7 +44,8 @@ def calc_files(slug):
 
 def calc_lastmod(slug, params):
     # La fecha de parámetros (p. ej. Euríbor) aparece en la página: es contenido.
-    return lastmod(*calc_files(slug), extra=[params.get("fecha", "")])
+    # También la fecha de los datos vivos (Pulso) que se muestran en esa página.
+    return lastmod(*calc_files(slug), extra=[params.get("fecha", ""), live_date(slug)])
 
 
 # ---------- clústeres ----------
@@ -82,6 +83,9 @@ def related_slugs(slug, path=os.path.join(ROOT, "data/clusters.json")):
 
 # ---------- guías ----------
 def load_guides(params):
+    import calcs_loader
+    pm = calcs_loader.merge_market(params)
+    if pm.get("periodo_euribor"): pm["periodo_euribor_es"] = _mes(pm["periodo_euribor"])
     gdir = os.path.join(ROOT, "content/guias"); out = []
     if not os.path.isdir(gdir): return out
     for f in sorted(os.listdir(gdir)):
@@ -91,8 +95,8 @@ def load_guides(params):
         if not m: continue
         g = json.loads(m.group(1)); g["slug"] = f[:-5]
         body = raw[m.end():]
-        for k, v in params.items():  # {{clave}} -> valor de data/params.json (cifras = datos)
-            if isinstance(v, (int, float)): v = f"{v:.2f}".replace(".", ",") if isinstance(v, float) else str(v)
+        for k, v in pm.items():  # {{clave}} -> valor de data/params.json con el mercado de data/live.json (cifras = datos)
+            if isinstance(v, (int, float)): v = (f"{v:.3f}".rstrip("0") + "0" * max(0, 2 - len(f"{v:.3f}".rstrip("0").split(".")[1]))).replace(".", ",") if isinstance(v, float) else str(v)
             if isinstance(v, str): body = body.replace("{{" + k + "}}", v)
         g["body"] = body
         rel = f"content/guias/{f}"
@@ -227,3 +231,108 @@ def insert_before(page, marker, block):
 def copy_static(dist):
     s = os.path.join(ROOT, "static")
     if os.path.isdir(s): shutil.copytree(s, dist, dirs_exist_ok=True)
+
+
+# ---------- Pulso: datos de hoy (data/live.json, generado por ops/refresh_data.py) ----------
+LIVE_PATH = os.path.join(ROOT, "data/live.json")
+MAX_EDAD = 7  # días; por encima, el dato no se muestra (nunca datos viejos como si fueran de hoy)
+# id del bloque -> calculadoras afines (la primera es el enlace principal)
+PULSO_CALCS = {
+    "luz": ["calefaccion-gas-aerotermia-electrica"],  # TODO: luz-fija-o-indexada cuando exista
+    "carburantes": ["diesel-gasolina-hibrido-electrico"],
+    "euribor": ["hipoteca-fija-o-variable", "amortizar-plazo-o-cuota"],
+    "tiempo": ["calefaccion-gas-aerotermia-electrica"],
+}
+PULSO_LABEL = {"amortizar-plazo-o-cuota": "¿Amortizar plazo o cuota?"}
+PULSO_HOME = ["luz", "carburantes", "euribor"]  # máx. 3 en la home
+_LIVE = {}
+
+def load_live(path=LIVE_PATH):
+    """live.json o {} si no existe / está roto."""
+    try:
+        with open(path) as f: d = json.load(f)
+        return d if isinstance(d.get("datos"), dict) else {}
+    except Exception:
+        return {}
+
+def _fresh(d, today):
+    """Dato utilizable: valor, ok, fecha_dato reciente."""
+    if not d or d.get("valor") is None or not d.get("fecha_dato"): return False
+    try: f = datetime.date.fromisoformat(d["fecha_dato"])
+    except ValueError: return False
+    return -1 <= (today - f).days <= d.get("max_edad_dias", MAX_EDAD)
+
+def _eur(x, dec=2): return f"{x:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+def _num(x, dec=1): return f"{x:.{dec}f}".replace(".", ",")
+def _mes(ym): return MESES_ES[int(ym[5:7]) - 1] + " de " + ym[:4]
+MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+def _var(d, unit_pct=True, ref="ayer"):
+    """'un 7,0 % más que ayer' / 'igual que ayer' / '' si no hay referencia."""
+    p = d.get("variacion_pct")
+    if p is None: return ""
+    if abs(p) < 0.5: return f"prácticamente igual que {ref}"
+    return f"un {_num(abs(p))} % {'más' if p > 0 else 'menos'} que {ref}"
+
+def pulso_items(live, today=None):
+    """Lista de bloques calculados: {id, texto, fecha, fuente, url_fuente, calc, titulo}. Solo con datos frescos."""
+    today = today or datetime.date.today()
+    D = live.get("datos", {}) if live else {}
+    out = []
+    luz = D.get("luz_pvpc")
+    if _fresh(luz, today):
+        x = luz["extra"]; v = _var(luz)
+        t = f"La luz (PVPC) cuesta de media {_eur(luz['valor'], 3)} €/kWh" + (f", {v}" if v else "") + "."
+        t += f" Hora más barata: {x['hora_barata']}-{(x['hora_barata'] + 1) % 24} h ({_eur(x['precio_hora_barata'], 3)} €/kWh); más cara: {x['hora_cara']}-{(x['hora_cara'] + 1) % 24} h ({_eur(x['precio_hora_cara'], 3)} €/kWh)."
+        out.append(dict(id="luz", titulo="Luz", texto=t, fecha=luz["fecha_dato"], fuente=luz["fuente"], datos=[luz]))
+    di, ga = D.get("diesel"), D.get("gasolina95")
+    if _fresh(di, today) and _fresh(ga, today):
+        vd = _var(di, ref="el dato anterior")
+        t = f"Diésel a {_eur(di['valor'], 3)} €/l y gasolina 95 a {_eur(ga['valor'], 3)} €/l de media en España"
+        t += f" (diésel {vd})." if vd else "."
+        t += f" La diferencia entre ambos es de {_eur(abs(ga['valor'] - di['valor']) * 100, 0)} céntimos por litro."
+        out.append(dict(id="carburantes", titulo="Carburantes", texto=t, fecha=min(di["fecha_dato"], ga["fecha_dato"]), fuente=di["fuente"], datos=[di, ga]))
+    eu = D.get("euribor12m")
+    if _fresh(eu, today):
+        x = eu["extra"]; t = f"A 12 meses está en el {_eur(eu['valor'], 3)} % de media en {_mes(x['periodo'])}"
+        if eu.get("variacion_abs") is not None:
+            dif = eu["variacion_abs"]
+            t += f", {_eur(abs(dif), 2)} puntos {'más' if dif > 0 else 'menos'} que en {_mes(eu['anterior_fecha']).split(' de ')[0]}" if abs(dif) >= 0.005 else ", igual que el mes anterior"
+        t += "."
+        out.append(dict(id="euribor", titulo="Euríbor", texto=t, fecha=eu["fecha_dato"], fuente=eu["fuente"], datos=[eu], fecha_txt=_mes(x["periodo"])))
+    tm = D.get("madrid_tiempo")
+    if _fresh(tm, today):
+        x = tm["extra"]
+        t = f"Madrid: {_num(tm['valor'])} °C ahora y mínima de {_num(x['min_semana'])} °C en los próximos {x['dias_prevision']} días."
+        out.append(dict(id="tiempo", titulo="Tiempo", texto=t, fecha=tm["fecha_dato"], fuente=tm["fuente"], datos=[tm]))
+    return out
+
+def live_date(slug, live=None, today=None):
+    """Fecha del dato fresco más reciente que se muestra en la página (para lastmod/dateModified). '' si no hay."""
+    live = live if live is not None else load_live()
+    ids = PULSO_HOME if slug == "/" else [i for i, cs in PULSO_CALCS.items() if slug in cs]
+    ds = [it["fecha"] for it in pulso_items(live, today) if it["id"] in ids]
+    return max(ds) if ds else ""
+
+def _fmt_fecha(iso):
+    d = datetime.date.fromisoformat(iso); return f"{d.day} de {MESES_ES[d.month - 1]} de {d.year}"
+
+def pulso_html(live=None, slug=None, today=None):
+    """Bloque «Pulso: datos de hoy» (home, slug=None) o «Dato de hoy» (calculadora afín). '' si no hay datos frescos."""
+    live = live if live is not None else load_live()
+    items = pulso_items(live, today)
+    if slug is None: sel = [i for i in items if i["id"] in PULSO_HOME][:3]
+    else: sel = [i for i in items if slug in PULSO_CALCS[i["id"]]][:3]
+    if not sel: return ""
+    li = []
+    for it in sel:
+        calcs = PULSO_CALCS[it["id"]]
+        link = f'<a href="/decidir/{calcs[0]}/">{"Calcula tu caso" if slug is None else "Ver la calculadora"}</a>' if slug is None else ""
+        if slug is None and len(calcs) > 1: link += f' · <a href="/decidir/{calcs[1]}/">{PULSO_LABEL.get(calcs[1], "Otra calculadora")}</a>'
+        fecha = it["fecha"]
+        when = f'<time datetime="{fecha}">{it.get("fecha_txt") or _fmt_fecha(fecha)}</time>'
+        li.append(f'<li><strong>{it["titulo"]}.</strong> {html.escape(it["texto"])} <span class="pulso-meta">Dato de {when}. Fuente: <a href="{it["fuente"]["url"]}" rel="noopener">{html.escape(it["fuente"]["nombre"])}</a>.</span> {link}</li>')
+    h = "Pulso: datos de hoy" if slug is None else "Dato de hoy"
+    tag = "h2" if slug is None else "h3"
+    nota = ' <span class="pulso-meta">Previsión del tiempo: <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> (CC BY 4.0).</span>' if any(i["id"] == "tiempo" for i in sel) else ""
+    return f'<aside class="pulso box" aria-label="{h}"><{tag}>{h}</{tag}><ul>{"".join(li)}</ul>{nota}</aside>\n'

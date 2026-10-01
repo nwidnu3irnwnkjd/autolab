@@ -19,6 +19,7 @@ BASE = Template(open(os.path.join(ROOT, "templates/base.html")).read()
 HOME = Template(open(os.path.join(ROOT, "templates/home.html")).read())
 pages = []  # (path, lastmod, priority)
 GUIDES = seo.load_guides(params)  # content/guias/*.html
+LIVE = seo.load_live()  # data/live.json (ops/refresh_data.py): Pulso / «Dato de hoy»
 BARO = None  # datos del Barómetro (main)
 
 def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None):
@@ -46,6 +47,7 @@ def render_calc(c, all_calcs):
 {ui.calc_header(c)}
 {ui.calc_form(c)}
 {c["content"]}
+{seo.pulso_html(LIVE, c["slug"])}
 <h2>Preguntas frecuentes</h2>
 {faqs}
 <h2>Supuestos y fuentes</h2>
@@ -81,16 +83,16 @@ def main():
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(HOME.substitute(cards=cards), "<h2>Cómo funciona</h2>", barometro.home_teaser(BARO)),
-          priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html")))
+          seo.insert_before(HOME.substitute(cards=cards), "<h2>Cómo funciona</h2>", seo.pulso_html(LIVE) + barometro.home_teaser(BARO)),
+          priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
     for g in GUIDES:  # guías de apoyo /guias/<slug>/ (Estratega)
         gbody, gld = seo.guide_page(g, calcs, card, B)
         write(f"/guias/{g['slug']}/", g["title"], g["description"], gbody, jsonld=gld, priority="0.7", lastmod=g["modified"])
-    bmod = seo.lastmod(*barometro.FILES, extra=[params["fecha"]])
-    bdesc = f"Datos propios de {barometro.mes_es(params['fecha'])}: Euríbor a partir del cual compensa la hipoteca fija, coste por km según motor y cuándo invertir antes que amortizar."
-    write(barometro.PATH, f"Barómetro de hipoteca, coche y ahorro ({barometro.mes_es(params['fecha'])})", bdesc, barometro.page(BARO, bmod),
+    bmod = seo.lastmod(*barometro.FILES, extra=[BARO["fecha_datos"]])
+    bdesc = f"Datos propios de {barometro.mes_es(BARO['fecha_datos'])}: Euríbor a partir del cual compensa la hipoteca fija, coste por km según motor y cuándo invertir antes que amortizar."
+    write(barometro.PATH, f"Barómetro de hipoteca, coche y ahorro ({barometro.mes_es(BARO['fecha_datos'])})", bdesc, barometro.page(BARO, bmod),
           jsonld=barometro.jsonld(BARO, B, bmod, seo.published("barometro.py"), bdesc, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=bmod)
     if GUIDES:
         write("/guias/", "Guías para decidir mejor — Entre Muchos", "Guías cortas con datos y fuentes oficiales para entender tu hipoteca, el Euríbor y la amortización anticipada.",

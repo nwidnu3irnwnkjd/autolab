@@ -37,9 +37,12 @@
     {
       "id": "euribor",
       "label": "Euríbor actual (%)",
-      "default": 2.1,
+      "default": 3.247,
       "min": -1,
-      "step": 0.01
+      "step": 0.001,
+      "default_from": "live.euribor12m",
+      "default_round": 3,
+      "default_fallback": "params.euribor_12m"
     },
     {
       "id": "escenario",
@@ -87,5 +90,5 @@
       "Entonces no cambian la comparación y puedes ignorarlas siempre que introduzcas los tipos ya con la bonificación aplicada. Si solo una oferta las exige (seguros, nómina, tarjeta), compara los tipos finales y suma el coste real de esos productos."
     ]
   ],
-  "sources": "Euríbor: valores oficiales publicados por el Banco de España (media mensual a 12 meses); el valor por defecto se actualiza cada mes. Cuotas con el sistema de amortización francesa. Modelo simplificado: revisión anual, un solo cambio de Euríbor tras el primer año que se mantiene hasta el final, sin comisiones, seguros ni bonificaciones."
+  "sources": "Euríbor: valores oficiales publicados por el Banco de España (media mensual a 12 meses); el valor por defecto es el último dato mensual publicado (BCE, el mismo que ves en «Dato de hoy») y puedes cambiarlo por el de tu oferta. Cuotas con el sistema de amortización francesa. Modelo simplificado: revisión anual, un solo cambio de Euríbor tras el primer año que se mantiene hasta el final, sin comisiones, seguros ni bonificaciones."
 }

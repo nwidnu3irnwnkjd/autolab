@@ -79,16 +79,22 @@
     {
       "id": "precioDiesel",
       "label": "Precio del diésel (€/l)",
-      "default": 1.5,
+      "default": 1.927,
       "min": 0,
-      "step": 0.01
+      "step": 0.001,
+      "default_from": "live.diesel",
+      "default_round": 3,
+      "default_fallback": "params.diesel_eur_l"
     },
     {
       "id": "precioGasolina",
       "label": "Precio de la gasolina (€/l), también para el híbrido",
-      "default": 1.55,
+      "default": 1.833,
       "min": 0,
-      "step": 0.01
+      "step": 0.001,
+      "default_from": "live.gasolina95",
+      "default_round": 3,
+      "default_fallback": "params.gasolina_eur_l"
     },
     {
       "id": "kwhCasa",
@@ -246,5 +252,5 @@
       "No. No se incluyen ayudas ni subvenciones, y tampoco las restricciones de acceso a zonas de bajas emisiones. Consulta si siguen vigentes las ayudas Moves III y las normas de tu ayuntamiento antes de decidir."
     ]
   ],
-  "sources": "Coste total = (compra - valor residual) + energía + seguro + mantenimiento + impuesto de circulación durante los años elegidos. Los precios por defecto de combustibles y electricidad son un precio medio orientativo, actualizar (parámetros del 2026-10-01); los consumos, seguros, mantenimientos y valores residuales por defecto son supuestos editables, no datos oficiales. Todo lo que introduces tú; la calculadora no consulta precios en vivo ni incluye ayudas ni restricciones de acceso."
+  "sources": "Coste total = (compra - valor residual) + energía + seguro + mantenimiento + impuesto de circulación durante los años elegidos. Los precios por defecto de diésel y gasolina son la media en España del día del último dato (MITECO, Geoportal de gasolineras, el mismo que ves en «Dato de hoy»); los precios de la electricidad (casa y carga pública) son orientativos; los consumos, seguros, mantenimientos y valores residuales por defecto son supuestos editables, no datos oficiales. Todo lo que introduces tú; la calculadora no consulta precios en vivo ni incluye ayudas ni restricciones de acceso."
 }

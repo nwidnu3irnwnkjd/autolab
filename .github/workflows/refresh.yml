@@ -1,0 +1,41 @@
+name: Refrescar datos vivos
+on:
+  schedule:
+    - cron: "15 7 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Descargar datos (REE, MITECO, BCE, Open-Meteo)
+        run: python3 ops/refresh_data.py
+      - name: Comprobar esquema y Pulso
+        run: python3 ops/check_live.py
+      - name: Commit si cambió live.json
+        id: commit
+        run: |
+          git config user.name "autolab-bot"
+          git config user.email "autolab-bot@users.noreply.github.com"
+          if git diff --quiet -- projects/decidir/data/live.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "live.json sin cambios"
+          else
+            git add projects/decidir/data/live.json
+            git commit -m "chore(data): datos vivos del $(date -u +%F) [skip refresh]"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Desplegar (los push con GITHUB_TOKEN no disparan pages.yml)
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main

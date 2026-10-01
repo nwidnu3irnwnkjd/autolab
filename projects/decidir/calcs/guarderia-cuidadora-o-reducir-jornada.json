@@ -1,0 +1,90 @@
+{
+  "slug": "guarderia-cuidadora-o-reducir-jornada",
+  "title": "Guardería, cuidadora o reducir jornada: qué sale mejor",
+  "description": "Compara el coste de guardería, cuidadora o reducir jornada con tus datos y mira en qué salario o precio cambia la decisión. Solo dinero.",
+  "h1": "Guardería, cuidadora o reducir jornada: ¿qué sale más barato?",
+  "lead": "Reducir jornada sale más barato que guardería o cuidadora solo si el sueldo neto que dejas de cobrar es menor que su coste mensual; si no, conviene pagar. Calcula el umbral con tus cifras.",
+  "veredicto": "Reducir jornada solo compensa si el ingreso neto que pierdes (más el coste de oportunidad que quieras sumar) es menor que lo que costaría la guardería o la cuidadora; la calculadora da el salario y el precio de equilibrio con tus datos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "guarderia",
+      "label": "Coste mensual de la guardería (€)",
+      "default": 350,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "ayuda",
+      "label": "Ayuda que solo recibes con guardería (€/mes)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "cuidadora",
+      "label": "Coste mensual de la cuidadora, incluida su cotización a la SS (€)",
+      "default": 800,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "salario",
+      "label": "Salario neto mensual de quien reduciría jornada (€)",
+      "default": 1500,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "reduccion",
+      "label": "Reducción de jornada (%)",
+      "default": 50,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "perdidaNeta",
+      "label": "Pérdida real de ingreso neto (%; 0 = igual que la reducción)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "oportunidad",
+      "label": "Coste de oportunidad: carrera y aportaciones perdidas (% extra sobre el ingreso perdido)",
+      "default": 0,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "meses",
+      "label": "Duración de la etapa (meses)",
+      "default": 30,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué sale más barato: guardería, cuidadora o reducir jornada?",
+      "Depende de cuánto cobra quien reduciría jornada. Reducir sale más barato mientras el ingreso neto perdido sea inferior al coste mensual de la guardería o de la cuidadora; con salarios altos suele ganar pagar. La calculadora te da el salario de equilibrio con tus cifras."
+    ],
+    [
+      "¿Cuánto pierdo realmente al reducir jornada?",
+      "Al reducir un porcentaje de jornada, el sueldo bruto baja en esa proporción, pero el neto suele bajar algo menos porque el IRPF y la cotización también bajan. Por defecto la calculadora usa la proporción directa, que es prudente; si conoces tu nómina tras reducir, escribe la pérdida neta real."
+    ],
+    [
+      "¿Qué es el coste de oportunidad de reducir jornada?",
+      "Es lo que pierdes más allá del sueldo de esos meses: menos aportaciones a la jubilación, menos opciones de ascenso o de aumento. No hay una cifra única: es un porcentaje opcional que tú eliges sumar al ingreso perdido."
+    ],
+    [
+      "¿Cómo cuento la cotización de la cuidadora?",
+      "Incluye en el coste mensual el sueldo más la cotización a la Seguridad Social a cargo de la familia que te corresponda. Pide la cifra exacta a tu gestoría o a la Tesorería General de la Seguridad Social; aquí no se estima."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "Solo cuenta dinero. No incluye conciliación, bienestar ni preferencias familiares, ni deducciones fiscales ni ayudas que no hayas escrito. Es información orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio y sin cifras fiscales: todos los datos los introduces tú. Reducir jornada = ingreso neto perdido (salario neto × % de pérdida) más el coste de oportunidad opcional; guardería = cuota menos las ayudas que indiques; cuidadora = coste mensual indicado, con su cotización. El salario y el precio de equilibrio son el punto donde la opción más barata cambia. Para cotizaciones y ayudas consulta la Seguridad Social (seg-social.es) y la Agencia Tributaria (agenciatributaria.es). Información orientativa, no asesoramiento."
+}

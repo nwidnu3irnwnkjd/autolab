@@ -1,18 +1,18 @@
 {
-  "fecha": "2026-10-01",
-  "euribor_12m": 2.1,
-  "euribor_fuente": "Banco de España, media mensual (actualizar cada mes)",
+  "fecha": "2026-10-02",
+  "euribor_12m": 3.247,
+  "euribor_fuente": "Banco Central Europeo, media mensual de septiembre de 2026 (respaldo; el dato vivo está en data/live.json)",
   "tipo_hipoteca_fija_medio": 2.6,
   "deduccion_vivienda_pre2013": {
     "porcentaje": 15,
     "base_maxima_anual": 9040
   },
-  "fecha_combustibles": "2026-10-01",
-  "diesel_eur_l": 1.5,
-  "gasolina_eur_l": 1.55,
+  "fecha_combustibles": "2026-10-02",
+  "diesel_eur_l": 1.927,
+  "gasolina_eur_l": 1.833,
   "kwh_casa_eur": 0.17,
   "kwh_publico_eur": 0.45,
-  "combustibles_fuente": "precio medio orientativo, actualizar",
+  "combustibles_fuente": "MITECO, Geoportal de gasolineras, media simple Península y Baleares (respaldo; el dato vivo está en data/live.json)",
   "fecha_calefaccion": "2026-10-01",
   "gas_eur_kwh": 0.064,
   "electricidad_eur_kwh": 0.23,
@@ -109,5 +109,12 @@
       "consulta": "consultado el 1/10/2026",
       "estado": "rango orientativo"
     }
+  },
+  "ley_5_2019_art23": {
+    "valor": "Art. 23.6: subrogación/novación de variable a fijo (o primer periodo fijo ≥ 3 años): máx. 0,05 % del capital reembolsado en los 3 primeros años, nada después. Art. 23.7: tipo fijo, 2 % (10 primeros años) y 1,5 % (resto). Art. 23.5: variable, 0,15 % (5 años) o 0,25 % (3 años). DT 1ª: aplica a contratos anteriores si se novan o subrogan. Ley 41/2007 no verificada.",
+    "fuente": "Ley 5/2019, BOE-A-2019-3814",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814",
+    "consulta": "consultado el 2/10/2026",
+    "estado": "verificado en texto consolidado del BOE"
   }
 }
