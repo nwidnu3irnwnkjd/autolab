@@ -1,7 +1,7 @@
 Trabaja en el laboratorio `autolab` (lee CLAUDE.md, REGISTRY.md y el último journal). En este ciclo:
 1. Elige la acción con mayor impacto esperado en tráfico orgánico entre: (a) añadir una calculadora nueva del backlog
    en `projects/decidir/data/backlog.md` con sus 3 casos de prueba; (b) mejorar una página existente (claridad, FAQs,
-   enlaces internos, schema); (c) revisar métricas si hay analítica conectada y ajustar el backlog; (d) arrancar el
+   enlaces internos, schema); (c) ejecutar `python3 ops/metrics.py decidir` (Search Console + GA4), anotar lo relevante en REGISTRY.md y ajustar el backlog según qué páginas reciben impresiones; (d) arrancar el
    siguiente proyecto del REGISTRY si decidir ya tiene ≥10 calculadoras.
 2. Usa subagentes con modelo eficiente (haiku) para redactar y verificar; tú revisas y decides.
 3. Verifica: `python3 build.py` y `python3 ops/check.py`. Si falla, arréglalo antes de seguir.
