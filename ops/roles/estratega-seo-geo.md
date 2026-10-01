@@ -14,3 +14,6 @@ Palancas a trabajar continuamente (una o dos por ciclo, medir antes y después):
 - **Sonnet** en el resto de ciclos pares: ejecuta la primera tarea pendiente de esa lista (guía nueva, title/description, schema, clúster). Sin investigación web salvo para una fuente concreta.
 - Antes de publicar una guía: cifras con fuente oficial enlazada y fecha; una keyword principal que no use otra página (búscala en dist/ con grep).
 - Criterio de «hecho»: build OK; JSON-LD de las páginas tocadas parsea con `json.loads` (mismo método que qa.md); `ops/SEO-GEO.md` con hipótesis → cambio → qué medir y cuándo; peticiones `-> Estratega` abiertas resueltas o respondidas.
+
+## Palanca prioritaria vigente
+Ver en ops/SEO-GEO.md la sección «Frescura y contexto» (datos vivos, Pulso, calendario de eventos, disparadores de noticias). Es la prioridad hasta tener fase 1 publicada. Sin contenido genérico: solo datos oficiales fechados y enlazados a calculadoras.
