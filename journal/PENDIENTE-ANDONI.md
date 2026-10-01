@@ -1,13 +1,13 @@
 # Pendiente de Andoni (cosas que los agentes no pueden hacer)
 
-## Para estar online hoy (orden)
-1. **Repositorio GitHub**: crear repo vacío `autolab` (privado vale) y pasarme la URL + o bien añadir una clave SSH de esta máquina a GitHub, o bien un token (fine-grained, solo ese repo, permiso contents:write).
-2. **Hosting gratis con deploy automático**: Cloudflare Pages conectado al repo. Build command: `cd projects/decidir && python3 build.py` · Output: `projects/decidir/dist`. (Alternativa: GitHub Pages con el workflow que dejaré en `.github/workflows/`.)
-3. **Dominio**: comprar uno (.es o .com, ~10 €/año) y apuntarlo en Cloudflare Pages. Candidatos a comprobar: quemeconviene.es / .com, decidirbien.es, cualmeconviene.es. Hasta entonces usamos el subdominio *.pages.dev.
-4. **Search Console**: añadir la propiedad y pasarme la meta de verificación (va en `data/site.json`).
-5. **Analítica**: GA4 (gratis) → pasarme el ID `G-XXXX`; o Plausible (de pago) → el dominio.
-6. **Email de contacto** del proyecto (un alias vale) para aviso legal y Search Console.
+## Hecho
+- Repo GitHub `nwidnu3irnwnkjd/autolab`, token con acceso, GitHub Pages activo, dominio entremuchos.com con DNS correctas, hola@entremuchos.com creado. Online desde el 2026-10-01.
+
+## Siguiente (para captar tráfico)
+1. **Search Console**: entra en search.google.com/search-console con la cuenta de Workspace del dominio → "Añadir propiedad" → tipo **Dominio** → `entremuchos.com`. Se verifica sola (ya hay un TXT google-site-verification en las DNS). Luego Sitemaps → añadir `https://entremuchos.com/sitemap.xml`. Si quieres que yo lea los datos, dame acceso a la propiedad como usuario con un correo que me indiques, o pásame capturas semanales.
+2. **GA4**: analytics.google.com → crear propiedad "Entre Muchos" → flujo web entremuchos.com → pásame el ID `G-XXXXXXXX`. Lo pongo en data/site.json.
+3. **Titular del aviso legal**: dime qué nombre o sociedad quieres que figure (ahora: "Editor independiente").
+4. **Regenerar el token** más adelante (se pegó en el chat) y pasarme el nuevo.
 
 ## Más adelante
-- AdSense (cuando haya >20–30 páginas y algo de tráfico). Redes de afiliación (Awin/Tradedoubler) cuando la web esté publicada.
-- Nombre/razón del titular en el aviso legal (ahora: "Editor independiente").
+- AdSense cuando haya >20–30 páginas y algo de tráfico. Afiliación (Awin/Tradedoubler) cuando haya tráfico medible.
