@@ -1,0 +1,58 @@
+# Competencia — hallazgos del Investigador
+Consulta: 2026-10-01 (búsqueda web desde EE. UU., resultados en español; el orden real de Google.es puede variar). Sin herramienta de volúmenes: las cifras de volumen quedan PENDIENTES de Keyword Planner / Search Console. No se inventan cifras; las que aparecen llevan fuente.
+
+## Resumen
+1. **Todas las consultas "X o Y" financieras ya tienen calculadora.** El SERP mezcla bancos (Bankinter, BBVA, CaixaBank), comparadores con captación de leads (iAhorro, HelpMyCash, Kelisto, Rastreator), OCU, y un enjambre de micro-sitios de calculadoras de 2025-2026 (calculates.es, simuloo, ibercalculo, calcoi, calculahogar, amortizahipoteca.es, javilinares.com, sinaverias, ritest...). "Poca competencia" ya no existe; hay que ganar por **calidad de decisión**, no por presencia.
+2. **Patrón común de lo que falta:** casi nadie da un **veredicto** con tus números; casi nadie muestra **escenarios** (euríbor alto/medio/bajo, rentabilidad pesimista/base); los datos de mercado vienen **sin fecha o desactualizados**; muchas páginas son muros de texto + formulario "te llamamos".
+3. **AI Overviews en finanzas España:** aparecen en el 80,9 % de 32.901 keywords financieras; en hipotecas los comparadores se llevan el 43,34 % de las citas; YouTube es el dominio más citado (12,42 %). Fuente: [SE Ranking, 29-jul-2026](https://seranking.com/es/blog/google-ai-overviews-estudio-finanzas-espana/).
+
+## Por calculadora (las que ya tenemos o están en backlog)
+
+### Amortizar hipoteca: plazo o cuota
+- Posicionan: [Bankinter blog + calculadora](https://www.bankinter.com/blog/finanzas-personales/calculadora-amortizacion-anticipada-hipoteca) (403 a bots, no se pudo leer), [javilinares.com](https://javilinares.com/calculadora/amortizacion-anticipada/), [INEAF](https://www.ineaf.es/calculadoras-financieras/calculadora-amortizacion-anticipada), [El Club de Inversión](https://www.elclubdeinversion.com/simulacion-amortizacion-anticipada/), [pablogiltrader](https://pablogiltrader.com/blog/calculadoras/amortizacion-anticipada/), [amortizahipoteca.es](https://amortizahipoteca.es/), [calculates.es](https://www.calculates.es/hipotecas/calculadora-amortizacion-hipoteca/), [simulatuhipoteca](https://www.simulatuhipoteca.com/).
+- Formato: calculadora + texto genérico "plazo ahorra más intereses, cuota da liquidez". Bankinter incluye comisión opcional.
+- Hueco: (a) ahorro de intereses **y** liquidez liberada lado a lado con un veredicto según colchón/objetivo; (b) estrategia mixta y "amortizar cada año X €"; (c) comisión Ley 5/2019 calculada sola según tipo y antigüedad; (d) enlace a "amortizar o invertir" como siguiente paso.
+
+### Hipoteca fija o variable
+- Posicionan: [iAhorro](https://www.iahorro.com/calculadoras/hipoteca-fija-vs-variable) (datos del 20-dic-2024, usa euríbor medio de 20 años, sin veredicto, formularios "te llamamos", ~2.500 palabras), [BBVA](https://www.bbva.es/personas/productos/hipotecas/simulador-hipoteca.html), [Finect](https://www.finect.com/usuario/maitelpz/articulos/simulador-hipoteca-calcular-cuota), [El Club de Inversión](https://www.elclubdeinversion.com/calculadora-hipoteca/), [Unicaja](https://www.unicajabanco.es/es/particulares/hipotecas-y-prestamos/simulador-hipotecas), [gestcredit](https://gestcredit.es/calculadora-hipoteca-fija-variable/), [calculahogar](https://calculahogar.com/hipoteca-fija-variable-mixta/).
+- Hueco: **euríbor de equilibrio** (el euríbor medio a partir del cual la fija gana) y escenarios fechados con el último dato del BdE. El líder tiene datos de hace casi 2 años. Ya lo hacemos: reforzar la fecha visible y el "euríbor de equilibrio" como titular citable.
+
+### Comprar coche o renting
+- Posicionan: [OCU](https://www.ocu.org/coches/coches/consejos/compra-o-renting) (17-feb-2026, **sin calculadora**: tabla de un Toyota Corolla a 4 años, de 17.519 € contado+reventa a 40.952 €), [HelpMyCash](https://www.helpmycash.com/blog/compro-un-coche-o-contrato-un-renting-estos-son-los-calculos-necesarios-para-decidir/), [Caetano Mobility](https://www.caetanomobility.es/renting-vs-compra-coche) (vendedor de renting), [driverevel](https://driverevel.com/es/es/blog/renting-vs-comprar-coche), [calculadoradecuota.com](https://www.calculadoradecuota.com/renting-o-comprar-coche-como-decidir/), [ibercalculo](https://ibercalculo.com/calculator/renting-vs-compra), [calcoi](https://calcoi.com/es/calculadoras/lease-vs-buy-car-calculator/).
+- Hueco: muchas fuentes son vendedores de renting con conclusiones sesgadas. Ganamos con **neutralidad + coste total con reventa + años de equilibrio**, y con la opción "financiar" como tercera vía.
+
+### Alquilar o comprar
+- Posicionan: [Finanzas para Todos (BdE/CNMV)](https://www.finanzasparatodos.es/es/secciones/herramientas/calculadoracomprar_o_alquilar.html) (500 al consultar), [Bankinter](https://www.bankinter.com/blog/finanzas-personales/que-es-mejor-comprar-o-alquilar), [Fotocasa](https://www.fotocasa.es/fotocasa-life/categoria/calculators/?lang=en), [La Hormiga Capitalista](https://lahormigacapitalista.com/comprar-o-alquilar-piso/), [Simuloo](https://www.simuloo.com/hipotecas-vivienda/calculadora-alquiler-vs-compra), [calculodehipoteca.net](https://www.calculodehipoteca.net/varios/alquilar-o-comprar-vivienda/), [Omnicalculator](https://www.omnicalculator.com/es/finanzas/calculadora-de-comprar-o-alquilar), [compraroalquilar.es](https://calculadora.compraroalquilar.es/), [javilinares](https://javilinares.com/calculadora/hipoteca-vs-alquiler/).
+- Idealista **no** tiene calculadora "alquilar o comprar" propia en los resultados; solo artículos de rentabilidad del alquiler ([idealista/news](https://www.idealista.com/news/finanzas/inversion/2022/02/24/794806-como-calcular-la-rentabilidad-de-un-alquiler)).
+- Hueco: ITP por comunidad precargado, coste de oportunidad de la entrada, año de equilibrio. Datos de alquiler/compra por capital (precio €/m²) serían foso.
+
+### Amortizar o invertir (backlog)
+- Posicionan: [OCU](https://www.ocu.org/dinero/deposito-inversion/calculadora/amortizar-el-prestamo-o-invertir-que-interesa) (calcula la rentabilidad mínima exigible; considera comisión y deducción por vivienda pre-2013; **sin escenarios ni riesgo**; empuja "Hazte socio"), [lasfinanzaspersonales.org](https://www.lasfinanzaspersonales.org/post/amortizar-hipoteca-vs-invertir-calculadora), [Hipotify](https://hipotify.es/biblioteca-financiera/simulador-de-cancelar-hipoteca-o-invertir/), [Brokers Finance](https://brokersfinance.es/amortizar-hipoteca-o-invertir/), [Busconómico](https://www.busconomico.com/simulador/calculadora-amortizar-hipoteca.aspx).
+- Hueco: **rentabilidad de equilibrio neta de impuestos del ahorro (tramos 19-30 %)** + 3 escenarios (pesimista/base/optimista) + aviso de riesgo. Es la mejora clara sobre OCU.
+
+### Diésel, gasolina, híbrido o eléctrico
+- Posicionan: [km77](https://www.km77.com/calculadora) (solo diésel vs gasolina; precios los mete el usuario, sin fecha), [Autopista](https://www.autopista.es/noticias-motor/calculadora-coste-total-propiedad-coche-hibrido-vs-electrico-comparativa-real_323166_102.html), [OCU vía Motor16](https://www.motor16.com/noticias/ocu-kilometros-compensa-gasolina-diesel/), [ritest.es](https://ritest.es/calculadora-coste-coche-electrico), [sinaverias](https://sinaverias.com/2026/06/29/calculadora-gasto-gasolina-diesel/), [lacasasostenible](https://www.lacasasostenible.com/comparador-de-vehiculos-electricos-precio/), [boadilladigital](https://boadilladigital.es/coste-gasolina-diesel-hibrido-o-electrico/).
+- Hueco: **precios de carburante y luz precargados y fechados** (Geoportal Ministerio / PVPC), 4 motorizaciones a la vez, km de equilibrio. km77, el referente, no cubre electrificados.
+
+### Declaración conjunta o individual (backlog)
+- Posicionan: Instituto Santalucía, [TaxDown](https://taxdown.es/blog/declaracion-conjunta-individual), portalprestaciones, [calculadorarenta.es](https://calculadorarenta.es/blog/declaracion-conjunta-o-individual-cuando-conviene/), asesorus, billeo, simulador.com. Casi todo artículos; la respuesta oficial es "Renta WEB calcula ambas". Pico estacional abril-junio.
+- Hueco: calculadora rápida de dos sueldos que dé el umbral (reducción 3.400 € vs mínimos personales). Construir antes de marzo 2027.
+
+### Luz fija o indexada (backlog)
+- Posicionan: [apaga-luz](https://www.apaga-luz.com/noticias/guia-tipos-tarifas-electricas-2026/), lumio.solar, aholuz, pimenergia, comparaleon, voltiva (comercializadoras con sesgo), [guiaenergia.online](https://guiaenergia.online/calculadoras/tarifa-luz/) (datos CNMC).
+- Hueco: simular el último año real de precios PVPC/OMIE con tu consumo y % en valle. Dato propio fechado = foso.
+
+## Mapa de competidores por tipo
+| Tipo | Ejemplos | Fuerza | Debilidad explotable |
+|---|---|---|---|
+| Bancos | Bankinter, BBVA, CaixaBank, Unicaja | Autoridad YMYL, citados en AIO (25 % de citas en finanzas) | Sesgo comercial, calculadoras básicas, bloquean bots |
+| Comparadores | iAhorro, HelpMyCash, Kelisto, Rastreator | 43 % de citas AIO en hipotecas | Captación de leads, datos viejos, sin veredicto |
+| Consumo | OCU | Neutralidad y marca | Pocas calculadoras, sin escenarios, empuja a socio |
+| Micro-sitios 2025-26 | simuloo, calculates, ibercalculo, calcoi, calculahogar | Amplitud (cientos de calculadoras) | Genéricos, sin datos propios ni autoría; riesgo de contenido escalado |
+| Blogs personales | javilinares, La Hormiga Capitalista, pablogiltrader | Enlaces y confianza | Una calculadora por tema, poca actualización |
+
+## Proyecto 2 — competencia (consultas de muestra)
+- **Alimentos** ("cuánto dura el pollo cocinado en la nevera", "se puede congelar el queso fresco"): SERP de medios (El Español, eldiario.es), fabricantes (Beko, Samsung), blogs (nutrir.es, manipulador-alimentos.net) y tablas únicas: [OCU](https://www.ocu.org/alimentacion/seguridad-alimentaria/informe/conservacion-alimentos) (~20 alimentos, 1-abr-2024), [meskeia](https://meskeia.com/calculadora-caducidad/) (~25 alimentos en una sola página, datos USDA), [SAIA](https://www.saia.es/cuanto-duran-los-alimentos-en-el-congelador-consultalos-uno-a-uno-en-nuestra-tabla). **Nadie tiene una página por alimento × estado** en español con fuente oficial. Datos: [USDA FoodKeeper](https://catalog.data.gov/dataset/fsis-foodkeeper-data) (JSON en inglés, **español** y portugués, actualizado 22-ene-2025; la descarga directa por script devolvió 403, bajarlo a mano) y [AESAN](https://www.aesan.gob.es/AECOSAN/web/noticias_y_actualizaciones/noticias/2025/alimentos_refrigerados.htm).
+- **Mascotas** ("puede comer mi perro uvas", "puede mi gato comer atún"): tiendas y marcas (Rover, Kiwoko-tipo, Hill's, Purina, Wakyma, Wamiz, Happydog) + clínicas; muy trabajado. YMYL de salud animal más sensible (toxicidad).
+- **Clima por mes** ("qué tiempo hace en Lisboa en noviembre"): ya saturado en español por programáticos: [WeatherSpark ES](https://es.weatherspark.com/m/32022/11/Tiempo-promedio-en-noviembre-en-Lisboa-Portugal), [Avionero](https://avionero.es/Madrid_MAD-Lisboa_LIS/tiempo/noviembre), [climate-data](https://en.climate-data.org/europe/portugal/lisbon/lisbon-3308/t/november-11/), ViajaTiempo, tiempo3, hikersbay, adonde-y-cuando. Contradice la hipótesis del brief de que "en español está mucho más libre".
+- **Festivos/puentes** ("calendario laboral 2027 Madrid"): medios (eldiario.es, Time Out) + programáticos por municipio ya existentes: [calendariosnacionales.com](https://calendariosnacionales.com/es/2027/festivos/mad/madrid/), misfestivos, micalendariolaboral, calendario-laboral.org; y "cazadores de puentes" (WeRoad, paraviajarporelmundo). Pico ahora (oct-ene), calendarios 2027 publicándose ya.

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<!-- Entre Muchos: sistema de ilustracion. Colores por tokens CSS i1 (acento), i2 (calido), i3 (verde azulado), i1s, ib (fondo), is (superficie), il (trazo), con fallback claro. Uso: svg viewBox 0 0 160 120 + use href=/assets/illustrations.svg#tema -->
+<symbol id="hipoteca" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<path d="M24 98h112" fill="none"/>
+<rect x="94" y="30" width="9" height="18" style="fill:var(--is,#fff)"/>
+<rect x="52" y="54" width="56" height="44" style="fill:var(--is,#fff)"/>
+<path d="M44 58 80 28l36 30z" style="fill:var(--i1,#2548f0)"/>
+<rect x="72" y="74" width="16" height="24" rx="2" style="fill:var(--i2,#f08a4b)"/>
+<rect x="58" y="64" width="10" height="10" rx="1.5" style="fill:var(--i1s,#b9c7ff)"/>
+<rect x="93" y="64" width="10" height="10" rx="1.5" style="fill:var(--i1s,#b9c7ff)"/>
+<circle cx="127" cy="82" r="13" style="fill:var(--i3,#14a394)"/>
+<path d="M121.5 87.5l11-11" style="stroke:var(--is,#fff)"/>
+</g>
+<circle cx="122" cy="77" r="2.2" style="fill:var(--is,#fff)"/><circle cx="132" cy="87" r="2.2" style="fill:var(--is,#fff)"/>
+<path d="M33 32v9M28.5 36.5h9" style="fill:none;stroke:var(--i2,#f08a4b);stroke-width:2.5;stroke-linecap:round"/>
+<circle cx="134" cy="34" r="3.5" style="fill:var(--i3,#14a394)"/>
+</symbol>
+<symbol id="coche" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<path d="M34 108h14M66 108h14M98 108h14" style="fill:none;stroke:var(--i1s,#b9c7ff);stroke-width:3;stroke-linecap:round"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<path d="M16 100h128" fill="none"/>
+<path d="M28 90V77c0-4 3-7 7-8l10-2 12-14c2-2.5 4.5-3.5 7.5-3.5h25c3 0 5.5 1 7.5 3.5L110 67l9 1.5c4 .7 7 4 7 8V90z" style="fill:var(--i3,#14a394)"/>
+<path d="M55 67l9-10c1-1 2-1.5 3.5-1.5H78V67z" style="fill:var(--is,#fff)"/>
+<path d="M84 55.5h7c1.5 0 2.5.5 3.5 1.5l9 10H84z" style="fill:var(--is,#fff)"/>
+<path d="M81 70v14" fill="none"/>
+<rect x="117" y="73" width="7" height="5" rx="2" style="fill:var(--i2,#f08a4b)"/>
+<circle cx="50" cy="89" r="11" style="fill:var(--is,#fff)"/><circle cx="104" cy="89" r="11" style="fill:var(--is,#fff)"/>
+<circle cx="50" cy="89" r="3.5" style="fill:var(--i1,#2548f0)"/><circle cx="104" cy="89" r="3.5" style="fill:var(--i1,#2548f0)"/>
+<circle cx="132" cy="36" r="12" style="fill:var(--i2,#f08a4b)"/>
+<path d="M134 27.5l-7 10h5.5l-2.5 8.5 7.5-11H132z" style="fill:var(--is,#fff);stroke-width:1.6"/>
+</g>
+<path d="M32 36v9M27.5 40.5h9" style="fill:none;stroke:var(--i1,#2548f0);stroke-width:2.5;stroke-linecap:round"/>
+</symbol>
+<symbol id="impuestos" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<path d="M40 18h40l16 16v68H40z" style="fill:var(--is,#fff)"/>
+<path d="M80 18v16h16z" style="fill:var(--i1s,#b9c7ff)"/>
+<path d="M50 46h30M50 56h34M50 66h20" style="fill:none;stroke:var(--i1s,#b9c7ff);stroke-width:4"/>
+<circle cx="60" cy="84" r="10" style="fill:var(--i2,#f08a4b)"/>
+<path d="M55.5 88.5l9-9" style="stroke:var(--is,#fff)"/>
+<rect x="88" y="50" width="42" height="54" rx="7" style="fill:var(--i1,#2548f0)"/>
+<rect x="95" y="57" width="28" height="12" rx="2.5" style="fill:var(--is,#fff)"/>
+</g>
+<circle cx="56" cy="80" r="1.9" style="fill:var(--is,#fff)"/><circle cx="64" cy="88" r="1.9" style="fill:var(--is,#fff)"/>
+<g style="fill:var(--is,#fff)"><rect x="96" y="75" width="7" height="7" rx="2"/><rect x="105.5" y="75" width="7" height="7" rx="2"/><rect x="96" y="86" width="7" height="7" rx="2"/><rect x="105.5" y="86" width="7" height="7" rx="2"/></g>
+<rect x="115" y="75" width="7" height="18" rx="2" style="fill:var(--i2,#f08a4b)"/>
+<circle cx="132" cy="30" r="3.5" style="fill:var(--i3,#14a394)"/>
+<path d="M120 26v9M115.5 30.5h9" style="fill:none;stroke:var(--i2,#f08a4b);stroke-width:2.5;stroke-linecap:round"/>
+</symbol>
+<symbol id="energia" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<path d="M48 20v-6M48 64v6M26 42h-6M70 42h6M32.5 26.5l-4-4M63.5 26.5l4-4M32.5 57.5l-4 4M63.5 57.5l4 4" style="fill:none;stroke:var(--i2,#f08a4b);stroke-width:3;stroke-linecap:round"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<circle cx="48" cy="42" r="13" style="fill:var(--i2,#f08a4b)"/>
+<path d="M24 100h112" fill="none"/>
+<path d="M28 92l12-24h50l-12 24z" style="fill:var(--i3,#14a394)"/>
+<path d="M57 68 45 92M73 68 61 92M34 80h50" style="fill:none;stroke:var(--is,#fff);stroke-width:2"/>
+<path d="M58 92v8" fill="none"/>
+<path d="M114 86c0 9-6 14-16 14" fill="none"/>
+<circle cx="114" cy="60" r="25" style="fill:var(--i1,#2548f0)"/>
+<path d="M119 42l-15 21h10l-4 16 15-22h-10z" style="fill:var(--is,#fff);stroke-width:2"/>
+</g>
+<circle cx="140" cy="30" r="3.5" style="fill:var(--i3,#14a394)"/>
+</symbol>
+<symbol id="ahorro" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<path d="M22 100h116" fill="none"/>
+<g style="fill:var(--i2,#f08a4b)">
+<path d="M36 84v8c0 3.3 8 6 18 6s18-2.7 18-6v-8"/><ellipse cx="54" cy="84" rx="18" ry="6"/>
+<path d="M36 74v8c0 3.3 8 6 18 6s18-2.7 18-6v-8"/><ellipse cx="54" cy="74" rx="18" ry="6"/>
+<path d="M36 64v8c0 3.3 8 6 18 6s18-2.7 18-6v-8"/><ellipse cx="54" cy="64" rx="18" ry="6"/>
+</g>
+<ellipse cx="54" cy="64" rx="9" ry="2.6" style="fill:none;stroke-width:1.8"/>
+<path d="M110 82V54" style="fill:none;stroke:var(--i3,#14a394);stroke-width:3.5"/>
+<path d="M110 68c-12 0-18-8-18-18 12 0 18 8 18 18zM110 60c0-12 8-18 18-18 0 12-8 18-18 18z" style="fill:var(--i3,#14a394)"/>
+<path d="M95 82h30l-4 18H99z" style="fill:var(--i1,#2548f0)"/>
+<circle cx="80" cy="36" r="8" style="fill:var(--i2,#f08a4b)"/>
+</g>
+<path d="M138 74v9M133.5 78.5h9" style="fill:none;stroke:var(--i1,#2548f0);stroke-width:2.5;stroke-linecap:round"/>
+<circle cx="36" cy="36" r="3.5" style="fill:var(--i3,#14a394)"/>
+</symbol>
+<symbol id="perdido" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<path d="M80 100c-16 5-38 7-60 3M80 100c18 5 40 6 60 1" style="fill:none;stroke:var(--i1s,#b9c7ff);stroke-width:3;stroke-linecap:round;stroke-dasharray:2 7"/>
+<g style="stroke:var(--il,#1b2340);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round">
+<path d="M28 100h104" fill="none"/>
+<rect x="76" y="26" width="8" height="74" rx="2" style="fill:var(--is,#fff)"/>
+<path d="M40 34h36v16H40l-9-8z" style="fill:var(--i1,#2548f0)"/>
+<path d="M84 56h36l9 8-9 8H84z" style="fill:var(--i2,#f08a4b)"/>
+<circle cx="126" cy="30" r="13" style="fill:var(--i3,#14a394)"/>
+<path d="M121.5 27a4.5 4.5 0 1 1 6.3 4.1c-1.1.5-1.8 1.4-1.8 2.6v.8" style="fill:none;stroke:var(--is,#fff)"/>
+</g>
+<circle cx="126" cy="38.6" r="1.8" style="fill:var(--is,#fff)"/>
+<path d="M30 70v9M25.5 74.5h9" style="fill:none;stroke:var(--i2,#f08a4b);stroke-width:2.5;stroke-linecap:round"/>
+</symbol>
+<symbol id="vacio" viewBox="0 0 160 120">
+<path d="M18 66C12 36 42 12 82 14c38 2 64 22 60 54-4 30-32 42-66 40-30-2-52-14-58-42z" style="fill:var(--ib,#e6ebff)"/>
+<g style="stroke:var(--il,#1b2340);stroke-linejoin:round;stroke-linecap:round">
+<path d="M90 74l20 20" style="fill:none;stroke-width:9"/>
+<path d="M90 74l20 20" style="fill:none;stroke:var(--i2,#f08a4b);stroke-width:4"/>
+<circle cx="72" cy="56" r="25" style="fill:var(--is,#fff);stroke-width:3"/>
+<path d="M62 56h20" style="fill:none;stroke:var(--i1s,#b9c7ff);stroke-width:4"/>
+</g>
+<path d="M124 30v9M119.5 34.5h9" style="fill:none;stroke:var(--i1,#2548f0);stroke-width:2.5;stroke-linecap:round"/>
+<circle cx="36" cy="88" r="3.5" style="fill:var(--i3,#14a394)"/>
+</symbol>
+</svg>

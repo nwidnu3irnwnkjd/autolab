@@ -15,6 +15,9 @@ BASE = Template(open(os.path.join(ROOT, "templates/base.html")).read()
                 .replace('/assets/app.js"', f'/assets/app.js?v={asset_v("app.js")}"')
                 .replace('__BASE__', site["base_url"].rstrip("/")))
 HOME = Template(open(os.path.join(ROOT, "templates/home.html")).read())
+ILL = f'/assets/illustrations.svg?v={asset_v("illustrations.svg")}'  # sprite de ilustraciones (Diseñador, fase 2)
+def ill(sym, cls, w, h):
+    return f'<svg class="{cls}" viewBox="0 0 160 120" width="{w}" height="{h}" aria-hidden="true" focusable="false"><use href="/assets/illustrations.svg#{sym}"/></svg>'
 # Iconos por tema (D1). Si la calculadora no trae "tema" en su JSON, se deduce del slug.
 _S = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
 ICONS = {
@@ -36,7 +39,7 @@ def tema(c):
 def card(c):
     t = tema(c); name, svg = ICONS[t]
     q = html.escape(f'{c["h1"]} {c["description"]} {name} {c["slug"].replace("-", " ")}', quote=True)
-    return f'<li data-q="{q}" data-t="{t}"><span class="ico">{svg}</span><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
+    return f'<li data-q="{q}" data-t="{t}">{ill(t, "ill-s", 88, 66)}<a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
 
 def catalog_body(calcs):
     """Cuerpo de /decidir/ (D3): buscador + chips por tema + contador + estado vacío."""
@@ -53,12 +56,12 @@ def catalog_body(calcs):
 <div class="chips" id="chips" role="group" aria-label="Filtrar por tema">{chips}</div>
 <p class="cat-count" id="count" role="status" aria-live="polite">{len(calcs)} calculadoras</p></section>
 <ul class="cards" id="calcs">{"".join(card(c) for c in calcs)}</ul>
-<div class="empty-state" id="empty" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8.5 11h5"/></svg>
+<div class="empty-state" id="empty" hidden>{ill("vacio", "ill-e", 160, 120)}
 <h2>No hemos encontrado esa calculadora</h2><p>Prueba con otra palabra (por ejemplo «hipoteca» o «coche») o quita el filtro de tema.</p>
 <p><button type="button" id="reset" class="btn2">Ver todas las calculadoras</button></p><p class="note">¿Te falta alguna? <a href="/contacto/">Cuéntanoslo</a> y la preparamos.</p></div>"""
 
 def notfound_body():
-    return """<section class="nf"><p class="nf-code" aria-hidden="true">404</p><h1>No encontramos esa página</h1>
+    return """<section class="nf">""" + ill("perdido", "nf-i", 240, 180) + """<p class="nf-code">Error 404</p><h1>No encontramos esa página</h1>
 <p class="lead">Puede que el enlace haya cambiado o esté mal escrito. Busca la calculadora que necesitas:</p>
 <form class="search" role="search" action="/decidir/" method="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
 <label for="q" class="sr-only">Buscar calculadora</label><input id="q" name="q" type="search" placeholder="Busca: hipoteca, renting, Euríbor…" autocomplete="off"></form>
@@ -86,7 +89,7 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     if jsonld:
         extra += "\n" + "\n".join(f'<script type="application/ld+json">{json.dumps(j, ensure_ascii=False)}</script>' for j in jsonld)
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical,
-                          head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"])
+                          head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#")
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w").write(out)
@@ -116,8 +119,9 @@ def render_calc(c, all_calcs):
     if _aff: related = [x for s in _aff for x in all_calcs if x["slug"] == s]
     rel_html = seo.guides_html(c["slug"], GUIDES) + (("<h2>Otras decisiones relacionadas</h2><ul class=\"cards\">" + "".join(card(x) for x in related) + "</ul>") if related else "")
     body = f"""
+<header class="ph ph-{tema(c)}"><p class="kicker"><a href="/decidir/#{tema(c)}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
 <h1>{c["h1"]}</h1>
-<p class="lead">{c["lead"]}</p>
+<p class="lead">{c["lead"]}</p></header>
 <div class="calc">
 <form id="f" onsubmit="return false"><div class="grid">{inputs}</div><button id="go" type="button">Calcular con mis números</button></form>
 <div class="result" id="r"></div>
@@ -172,7 +176,7 @@ def main():
                               ("contacto", "Contacto", "Cómo contactar con el editor del sitio.")]:
         body = open(os.path.join(ROOT, "content", f"{slug}.html")).read().replace("$site_name", site["name"]).replace("$owner", site["owner"]).replace("$email", site["contact_email"])
         write(f"/{slug}/", f'{title} — {site["name"]}', desc, body, priority="0.2", lastmod=seo.lastmod(f"content/{slug}.html"))
-    open(os.path.join(DIST, "404.html"), "w").write(BASE.substitute(title="Página no encontrada", description="Esta página no existe. Busca una calculadora en el catálogo.", canonical=site["base_url"], head_extra='<meta name="robots" content="noindex">', body=notfound_body(), scripts="", site_name=site["name"], year=site["year"]))
+    open(os.path.join(DIST, "404.html"), "w").write(BASE.substitute(title="Página no encontrada", description="Esta página no existe. Busca una calculadora en el catálogo.", canonical=site["base_url"], head_extra='<meta name="robots" content="noindex">', body=notfound_body(), scripts="", site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#"))
     seo.copy_static(DIST)  # static/ -> raíz: robots.txt (bots de IA permitidos), clave IndexNow
     seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS)  # llms.txt + llms-full.txt
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(

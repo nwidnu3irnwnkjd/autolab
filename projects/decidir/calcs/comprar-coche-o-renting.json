@@ -4,6 +4,7 @@
   "description": "Compara el coste real de comprar un coche (préstamo, seguro, mantenimiento y reventa) con un renting y descubre la cuota de equilibrio.",
   "h1": "Comprar coche o renting: ¿qué me sale más barato?",
   "lead": "Compara el coste total de comprar el coche y venderlo al final con el de un renting a los mismos años, con tus propios números y para particulares.",
+  "veredicto": "Comprar suele salir más barato si conservas el coche muchos años; el renting compensa si cambias a menudo y valoras la cuota cerrada.",
   "inputs": [
     {
       "id": "precio",

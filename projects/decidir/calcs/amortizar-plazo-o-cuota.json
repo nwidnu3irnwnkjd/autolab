@@ -4,6 +4,7 @@
   "description": "Calcula cuántos intereses ahorras al amortizar hipoteca reduciendo plazo o cuota, con tus números, y cuándo conviene cada opción.",
   "h1": "Amortizar hipoteca: ¿reduzco plazo o cuota?",
   "lead": "Con la misma amortización anticipada, reducir plazo ahorra más intereses; reducir cuota te da aire cada mes. Calcula cuánto es cada cosa en tu caso.",
+  "veredicto": "Con la misma amortización, reducir plazo ahorra más intereses; reducir cuota solo compensa si necesitas el alivio mensual.",
   "inputs": [
     {
       "id": "capital",

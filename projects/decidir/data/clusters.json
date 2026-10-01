@@ -1,9 +1,16 @@
 {
  "alquilar-o-comprar": [
+  "amortizar-o-invertir",
   "amortizar-plazo-o-cuota",
   "hipoteca-fija-o-variable"
  ],
+ "amortizar-o-invertir": [
+  "amortizar-plazo-o-cuota",
+  "hipoteca-fija-o-variable",
+  "alquilar-o-comprar"
+ ],
  "amortizar-plazo-o-cuota": [
+  "amortizar-o-invertir",
   "hipoteca-fija-o-variable",
   "alquilar-o-comprar"
  ],
@@ -16,6 +23,7 @@
   "alquilar-o-comprar"
  ],
  "hipoteca-fija-o-variable": [
+  "amortizar-o-invertir",
   "amortizar-plazo-o-cuota",
   "alquilar-o-comprar"
  ]

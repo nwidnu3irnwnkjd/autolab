@@ -1,0 +1,82 @@
+// Amortización francesa. Cuota mensual para capital P, tipo mensual i y n meses.
+function cuotaFrancesa(P, i, n) { return i === 0 ? P / n : P * i / (1 - Math.pow(1 + i, -n)); }
+// Simula n meses. d.modo: 1 = al amortizar se reduce el plazo, 2 = se reduce la cuota.
+// Amortizar: el importe (menos comisión) baja el capital; lo que ya no pagas de hipoteca cada mes se invierte.
+// Invertir: el importe se invierte hoy y la hipoteca sigue igual. La aportación mensual extra se invierte en ambas.
+// Al final se descuentan los impuestos sobre la ganancia (beneficio = valor final - dinero aportado).
+function simular(d, rentab) {
+  var n = Math.round(d.anos * 12), i = d.tipo / 1200, j = Math.pow(1 + rentab / 100, 1 / 12) - 1;
+  var E = Math.min(d.importe, d.capital) / (1 + d.comision / 100), com = Math.min(d.importe, d.capital) - E;
+  var cuota0 = cuotaFrancesa(d.capital, i, n), Pn = d.capital - E;
+  var cuotaA = d.modo === 2 ? cuotaFrancesa(Pn, i, n) : cuota0;
+  var saldo = Pn, carA = 0, aporA = 0, carB = Math.min(d.importe, d.capital), aporB = carB, intA = 0, mesesA = 0;
+  for (var m = 0; m < n; m++) {
+    var pago = 0;
+    if (saldo > 0.005) { var im = saldo * i; pago = Math.min(cuotaA, saldo + im); saldo -= pago - im; intA += im; mesesA = m + 1; }
+    var libre = cuota0 - pago + d.aporte;
+    carA = carA * (1 + j) + libre; aporA += libre;
+    carB = carB * (1 + j) + d.aporte; aporB += d.aporte;
+  }
+  var t = d.impuesto / 100;
+  var netoA = carA - Math.max(carA - aporA, 0) * t, netoB = carB - Math.max(carB - aporB, 0) * t;
+  return { A: netoA, B: netoB, cuota0: cuota0, cuotaA: cuotaA, comision: com, mesesA: mesesA, n: n, intA: intA };
+}
+function intereses(d) {
+  var n = Math.round(d.anos * 12), i = d.tipo / 1200, c = cuotaFrancesa(d.capital, i, n);
+  return c * n - d.capital;
+}
+function calcular(d) {
+  var s = simular(d, d.rentab), dif = s.B - s.A;
+  var lo = -20, hi = 60, eq = null;
+  var flo = simular(d, lo), fhi = simular(d, hi);
+  if ((flo.B - flo.A) * (fhi.B - fhi.A) <= 0) {
+    for (var k = 0; k < 80; k++) {
+      var mid = (lo + hi) / 2, sm = simular(d, mid), fm = sm.B - sm.A;
+      if ((flo.B - flo.A) * fm <= 0) hi = mid; else { lo = mid; flo = sm; }
+    }
+    eq = (lo + hi) / 2;
+  }
+  return {
+    patrimonioAmortizar: s.A, patrimonioInvertir: s.B, diferencia: dif, rentabilidadDeEquilibrio: eq,
+    ganador: Math.abs(dif) < 1 ? "empate" : (dif > 0 ? "invertir" : "amortizar"),
+    cuotaActual: s.cuota0, cuotaTrasAmortizar: s.cuotaA, mesesTrasAmortizar: s.mesesA,
+    interesesAhorrados: intereses(d) - s.intA, comision: s.comision
+  };
+}
+function eur(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); }
+function eur2(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function pct(x) { return x.toLocaleString("es-ES", { maximumFractionDigits: 2 }) + " %"; }
+function leer() {
+  var d = {}; ["capital", "tipo", "anos", "importe", "aporte", "rentab", "impuesto", "comision", "modo"].forEach(function (k) { d[k] = parseFloat(document.getElementById(k).value) || 0; });
+  d.rentab = parseFloat(document.getElementById("rentab").value); if (isNaN(d.rentab)) d.rentab = 0;
+  return d;
+}
+function pintar() {
+  var d = leer(); if (d.capital <= 0 || d.anos < 1 || d.importe <= 0 || d.tipo < 0 || d.aporte < 0) return;
+  var r = calcular(d), abs = Math.abs(r.diferencia), inv = r.diferencia > 0, ref = Math.max(Math.abs(r.patrimonioAmortizar), Math.abs(r.patrimonioInvertir), 1);
+  var verdict = abs < 1 ? 'Con estos supuestos, amortizar e invertir te dejan el mismo patrimonio dentro de ' + d.anos + ' años.'
+    : 'Con estos supuestos, ' + (inv ? 'invertir' : 'amortizar') + ' te deja ' + eur(abs) + ' más de patrimonio dentro de ' + d.anos + ' años.';
+  var note = '<p><strong>Lectura:</strong> amortizar equivale a una inversión sin riesgo que rinde el tipo de tu hipoteca (' + pct(d.tipo) + ' al año, sin impuestos sobre esa ganancia). ';
+  if (r.rentabilidadDeEquilibrio !== null) note += 'Invertir solo sale mejor si tu inversión rinde más de un <strong>' + pct(r.rentabilidadDeEquilibrio) + ' anual</strong> (antes de impuestos sobre ganancias), y esa rentabilidad no está garantizada: has supuesto ' + pct(d.rentab) + '. ';
+  else note += 'En el rango de rentabilidades probado, una de las dos opciones gana siempre. ';
+  note += 'Amortizar te ahorra ' + eur(r.interesesAhorrados) + ' de intereses y ' + (d.modo === 2 ? 'baja tu cuota a ' + eur2(r.cuotaTrasAmortizar) : 'termina la hipoteca ' + Math.max(Math.round(d.anos * 12) - r.mesesTrasAmortizar, 0) + ' meses antes') + '. ';
+  note += 'Antes de decidir, conserva un colchón de liquidez: el dinero amortizado no se recupera, el invertido sí.</p>';
+  EM.renderResult({
+    verdict: verdict,
+    tone: abs < ref * 0.03 ? "warn" : "ok",
+    bigNumber: abs, bigLabel: abs < 1 ? "de diferencia" : "más de patrimonio si " + (inv ? "inviertes" : "amortizas"), format: eur,
+    barsLabel: "Patrimonio neto dentro de " + d.anos + " años",
+    bars: [{ label: "Amortizar" + (!inv && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioAmortizar, 0), color: "a" },
+           { label: "Invertir" + (inv && abs >= 1 ? " (gana)" : ""), value: Math.max(r.patrimonioInvertir, 0), color: "b" }],
+    cols: ["Amortizar", "Invertir"],
+    rows: [
+      ["Cuota de la hipoteca", eur2(r.cuotaTrasAmortizar), eur2(r.cuotaActual)],
+      ["Rentabilidad asumida", pct(d.tipo) + " (el tipo)", pct(d.rentab) + " (no garantizada)"],
+      { label: "Patrimonio neto al final", values: [eur(r.patrimonioAmortizar), eur(r.patrimonioInvertir)], strong: true }
+    ],
+    note: note
+  });
+}
+document.getElementById("go").addEventListener("click", pintar);
+document.getElementById("f").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); pintar(); } });
+EM.live(document.getElementById("f"), pintar);

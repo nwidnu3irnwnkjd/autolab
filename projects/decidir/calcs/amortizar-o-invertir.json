@@ -1,0 +1,105 @@
+{
+  "slug": "amortizar-o-invertir",
+  "title": "Amortizar hipoteca o invertir: calculadora",
+  "description": "Compara cuánto patrimonio te deja amortizar la hipoteca frente a invertir ese dinero, y a qué rentabilidad empatan. Con tus números.",
+  "h1": "Amortizar hipoteca o invertir: ¿qué te deja más dinero?",
+  "lead": "Amortizar equivale a una inversión sin riesgo que rinde el tipo de tu hipoteca. Calcula si invertir esa cantidad puede superarlo de forma realista, con impuestos y sin garantías.",
+  "veredicto": "Amortizar equivale a invertir sin riesgo al tipo de tu hipoteca: solo compensa invertir si esperas una rentabilidad neta claramente superior a ese tipo y aceptas el riesgo de que no llegue.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "capital",
+      "label": "Capital pendiente de la hipoteca (€)",
+      "default": 150000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo de interés de la hipoteca (%)",
+      "default": 3.0,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "anos",
+      "label": "Años restantes",
+      "default": 20,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "importe",
+      "label": "Importe disponible, cantidad única (€)",
+      "default": 30000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "aporte",
+      "label": "Aportación mensual extra a invertir (€, opcional)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "rentab",
+      "label": "Rentabilidad anual esperada neta de la inversión (%). No está garantizada",
+      "default": 4,
+      "min": -20,
+      "step": 0.1
+    },
+    {
+      "id": "impuesto",
+      "label": "Tributación de las ganancias (% sobre el beneficio)",
+      "default": 19,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "comision",
+      "label": "Comisión de amortización anticipada (%)",
+      "default": 0,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "modo",
+      "label": "Al amortizar, ¿qué reduces?",
+      "type": "select",
+      "options": [
+        {
+          "v": 1,
+          "t": "Plazo (misma cuota)"
+        },
+        {
+          "v": 2,
+          "t": "Cuota (mismo plazo)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor amortizar la hipoteca o invertir?",
+      "Depende de si esperas que tu inversión rinda, después de impuestos y comisiones, más que el tipo de tu hipoteca. Amortizar es un ahorro de intereses seguro; invertir puede rendir más, pero no está garantizado y puede dar pérdidas. Esta calculadora te da la rentabilidad de equilibrio con tus datos."
+    ],
+    [
+      "¿Por qué amortizar equivale a una inversión sin riesgo?",
+      "Cada euro que amortizas deja de generar intereses al tipo de tu hipoteca, así que \"ganas\" ese tipo con certeza (si es fijo). Para que invertir compense, debe superar ese tipo después de impuestos, y con un riesgo que la hipoteca no tiene."
+    ],
+    [
+      "¿Qué rentabilidad debo poner?",
+      "Una que consideres prudente después de comisiones, no la mejor de los últimos años. El 4 % por defecto es solo un valor de partida, no una previsión ni una promesa. Prueba varios valores y mira cuánto cambia la conclusión."
+    ],
+    [
+      "¿Qué pasa con los impuestos de la inversión?",
+      "Las ganancias de fondos, acciones o depósitos tributan en el IRPF como rentas del ahorro, con tramos que dependen del importe. Puedes cambiar el porcentaje por el que corresponda a tu caso. Amortizar no tributa."
+    ],
+    [
+      "¿Debo amortizar si me quedo sin liquidez?",
+      "No conviene quedarte sin un colchón para imprevistos: el dinero amortizado no se recupera, mientras que el invertido normalmente sí, aunque con riesgo de mercado. Esta calculadora no es asesoramiento financiero; para decidir, valora tu situación completa."
+    ]
+  ],
+  "sources": "Modelo propio simplificado: hipoteca a tipo constante con amortización francesa, rentabilidad anual constante (en la realidad varía y puede ser negativa), impuestos aplicados una sola vez sobre el beneficio final y comisión de amortización sobre el importe amortizado. Consulta el tipo y las condiciones de tu escritura y la tributación de las rentas del ahorro en la Agencia Tributaria. La comisión máxima de amortización anticipada la regula la Ley 5/2019 de contratos de crédito inmobiliario. Información orientativa, no asesoramiento financiero."
+}

@@ -4,6 +4,7 @@
   "description": "Compara el patrimonio que tendrías comprando o alquilando e invirtiendo la entrada, según tu horizonte, y descubre en qué año compensa comprar.",
   "h1": "Alquilar o comprar vivienda: ¿qué sale mejor a N años?",
   "lead": "Compara el patrimonio neto que te quedaría al cabo de los años que elijas si compras con hipoteca o si alquilas e inviertes la entrada y la diferencia mensual, con tus números y para España.",
+  "veredicto": "Comprar suele compensar si te quedas muchos años y la vivienda se revaloriza; alquilar e invertir suele ganar si te mudas pronto o el precio apenas sube.",
   "tema": "hipoteca",
   "inputs": [
     {

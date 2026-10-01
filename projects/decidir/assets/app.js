@@ -10,7 +10,14 @@
     share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>',
     info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.1"/></svg>'
   };
-  function eur(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); }
+  /* EM.num / EM.eur: agrupan miles siempre ("1.143 €"; toLocaleString es-ES no agrupa 4 cifras). d = decimales (0 por defecto). */
+  function num(x, d) {
+    d = d || 0; x = +x;
+    if (!isFinite(x)) return "–";
+    var s = Math.abs(x).toFixed(d), neg = x < 0 && /[1-9]/.test(s), p = s.split(".");
+    return (neg ? "-" : "") + p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (p[1] ? "," + p[1] : "");
+  }
+  function eur(x, d) { return num(x, d) + "\u00a0€"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function reduced() { return !!(RM && RM.matches); }
   var state = new WeakMap();
@@ -77,9 +84,12 @@
       (navigator.share ? '<button type="button" class="btn2" data-act="share">' + ICON.share + 'Compartir</button>' : '') +
       '<span class="em-toast" role="status" aria-live="polite"></span></div>';
     h += '</div>';
+    var tmpV = document.createElement("div"); tmpV.innerHTML = o.verdict;
+    var key = o.winner !== undefined ? String(o.winner) : tone + "|" + tmpV.textContent.replace(/[\d.,%€\s\u00a0+\-−]+/g, " ").trim();
     var animateIn = !el.firstChild;
     el.innerHTML = h;
     if (!animateIn) { var res = el.firstChild; res.style.animation = "none"; }
+    if (prev.key !== undefined && prev.key !== key && !reduced()) el.querySelector(".em-verdict").classList.add("em-win");
     el.style.display = "block";
     if (hasBig) countTo(el.querySelector(".em-big .num"), prev.big === undefined ? 0 : prev.big, o.bigNumber, fmt);
     var rects = el.querySelectorAll(".br"), pf = prev.f || [], nf = [];
@@ -87,6 +97,7 @@
       var f = parseFloat(rects[i].getAttribute("data-f")); nf.push(f);
       if (reduced()) { rects[i].style.transform = "scaleX(" + f + ")"; continue; }
       rects[i].style.transform = "scaleX(" + (pf[i] !== undefined ? pf[i] : 0) + ")";
+      rects[i].style.transitionDelay = (pf[i] !== undefined ? 0 : i * 90) + "ms";
     }
     if (!reduced() && rects.length) {
       el.getBoundingClientRect();
@@ -117,7 +128,7 @@
         } else copy(txt, "Resultado copiado");
       });
     }
-    state.set(el, { big: hasBig ? o.bigNumber : undefined, f: nf });
+    state.set(el, { big: hasBig ? o.bigNumber : undefined, f: nf, key: key });
   }
 
   /* EM.live(inputs, fn, wait): recalcula al cambiar cualquier input (debounce). inputs: selector, formulario, o lista. */
@@ -177,7 +188,50 @@
       apply();
     });
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initFilters); else initFilters();
+  /* Movimiento: revelado al hacer scroll, parallax del hero, pulsación de botones, nav activa */
+  function initMotion() {
+    var path = location.pathname;
+    Array.prototype.forEach.call(document.querySelectorAll(".site-h nav a"), function (a) {
+      var h = a.getAttribute("href"); if (h !== "/" && path.indexOf(h) === 0) a.setAttribute("aria-current", "page");
+    });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest && e.target.closest("button:not(.chip),.btn"); if (!b || reduced()) return;
+      b.classList.remove("tap"); void b.offsetWidth; b.classList.add("tap");
+    });
+    if (reduced()) return;
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var t = en.target; io.unobserve(t); t.classList.add("in");
+          setTimeout(function () { t.classList.remove("rv", "in"); t.style.removeProperty("--rd"); }, 1100);
+        });
+      }, { rootMargin: "0px 0px -24px 0px" });
+      var vh = window.innerHeight;
+      Array.prototype.forEach.call(document.querySelectorAll("main h2, ul.cards>li, ul.guides>li, .steps>li, .trust>div, main details, article.guide table"), function (n) {
+        if (n.getBoundingClientRect().top < vh * 0.95) return;
+        var sib = n.parentNode ? Array.prototype.indexOf.call(n.parentNode.children, n) : 0;
+        n.classList.add("rv"); n.style.setProperty("--rd", (/^(LI|DIV)$/.test(n.tagName) ? (sib % 4) * 70 : 0) + "ms"); io.observe(n);
+      });
+    }
+    var ill = document.querySelector(".hero-ill");
+    if (ill) {
+      var mo = ill.querySelector("animateMotion");
+      setTimeout(function () { if (mo && mo.beginElement) { try { mo.beginElement(); ill.classList.add("run"); } catch (e) {} } }, 1700);
+      if ("IntersectionObserver" in window && ill.pauseAnimations) new IntersectionObserver(function (es) { if (es[0].isIntersecting) ill.unpauseAnimations(); else ill.pauseAnimations(); }).observe(ill);
+      if (window.matchMedia("(pointer:fine)").matches) {
+        var hero = ill.closest(".hero") || ill, raf = 0, mx = 0, my = 0;
+        hero.addEventListener("pointermove", function (e) {
+          var r = hero.getBoundingClientRect();
+          mx = ((e.clientX - r.left) / r.width - 0.5) * 2; my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+          if (!raf) raf = requestAnimationFrame(function () { raf = 0; ill.style.setProperty("--mx", mx.toFixed(3)); ill.style.setProperty("--my", my.toFixed(3)); });
+        });
+        hero.addEventListener("pointerleave", function () { ill.style.setProperty("--mx", 0); ill.style.setProperty("--my", 0); });
+      }
+    }
+  }
+  function init() { initFilters(); initMotion(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 
-  window.EM = { renderResult: renderResult, live: live, eur: eur };
+  window.EM = { renderResult: renderResult, live: live, eur: eur, num: num };
 })();

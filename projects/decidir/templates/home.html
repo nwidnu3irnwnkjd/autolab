@@ -1,4 +1,51 @@
+<style>
+/* Home: hero con ilustración y malla */
+.hero{position:relative;isolation:isolate;display:grid;gap:8px;align-items:center}
+.hero::before{content:"";position:absolute;z-index:-1;top:-90px;bottom:-30px;left:50%;width:100vw;margin-left:-50vw;pointer-events:none;
+  background:radial-gradient(38% 55% at 18% 30%,color-mix(in srgb,var(--c1) 17%,transparent),transparent 70%),radial-gradient(30% 45% at 82% 22%,color-mix(in srgb,var(--mesh2,var(--c2)) 15%,transparent),transparent 70%),radial-gradient(36% 50% at 64% 88%,color-mix(in srgb,var(--c3) 15%,transparent),transparent 70%);
+  -webkit-mask-image:linear-gradient(#000 65%,transparent);mask-image:linear-gradient(#000 65%,transparent)}
+.hero-ill{display:block;width:100%;max-width:270px;height:auto;aspect-ratio:420/380;margin:4px auto -12px;overflow:visible}
+@media (min-width:880px){.hero{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px}.hero h1{font-size:56px}.hero-ill{max-width:none;margin:0}}
+.hero-ill .h-bg{fill:var(--ib)}.hero-ill .h-bg2{fill:var(--i1s);opacity:.5}
+.hero-ill .rt{stroke:var(--il);stroke-opacity:.3;stroke-width:3;stroke-dasharray:1 9}
+.hero-ill .trunk{stroke-dasharray:none}
+.hero-ill .win{stroke:var(--i1);stroke-width:5}
+.hero-ill .node{fill:var(--is);stroke:var(--il);stroke-width:2.5}
+.hero-ill .dot{fill:var(--is);stroke:var(--i1);stroke-width:2.5;opacity:0}
+.hero-ill.run .dot{opacity:1}
+.hero-ill .ob{stroke:var(--il);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.hero-ill .o1{fill:var(--i1)}.hero-ill .o2{fill:var(--i2)}.hero-ill .o3{fill:var(--i3)}.hero-ill .os{fill:var(--is)}
+.hero-ill .chk{fill:none;stroke:var(--is);stroke-width:5}
+.hero-ill .ring{fill:none;stroke:var(--i1);stroke-opacity:.3;stroke-width:2}
+.hero-ill .start{fill:var(--i1)}.hero-ill .pulse{fill:var(--i1);opacity:.18}
+.hero-ill .spk{fill:none;stroke:var(--i2);stroke-width:3;stroke-linecap:round}
+.hero-ill .pl{transition:transform .6s var(--out)}
+.hero-ill .pl1{transform:translate(calc(var(--mx,0)*-4px),calc(var(--my,0)*-4px))}
+.hero-ill .pl2{transform:translate(calc(var(--mx,0)*5px),calc(var(--my,0)*5px))}
+.hero-ill .pl3{transform:translate(calc(var(--mx,0)*11px),calc(var(--my,0)*11px))}
+@media (prefers-reduced-motion:no-preference){
+  .hero::before{animation:em-mesh 24s ease-in-out infinite alternate}
+  .hero-t>*{animation:em-up .6s var(--out) both}.hero-t>h1,.ph>h1{animation-name:em-up2}.hero-t>:nth-child(2){animation-delay:.06s}.hero-t>:nth-child(3){animation-delay:.12s}.hero-t>:nth-child(4){animation-delay:.18s}
+  .hero-ill .h-bg{transform-box:fill-box;transform-origin:center;animation:em-grow .9s var(--out) both}
+  .hero-ill .rt{animation:em-fade .8s .25s both}
+  .hero-ill .win{stroke-dasharray:1;stroke-dashoffset:1;animation:em-draw 1.2s .45s var(--out) forwards}
+  .hero-ill .pop{transform-box:fill-box;transform-origin:center;animation:em-pop2 .6s var(--d,0s) var(--spring) both}
+  .hero-ill .fl{animation:em-float 5.5s var(--f,0s) ease-in-out infinite alternate}
+  .hero-ill .pulse,.hero-ill .ring{transform-box:fill-box;transform-origin:center;animation:em-pulse 2.8s ease-out infinite}
+  .hero-ill .ring{animation-delay:1.6s}
+  .hero-ill .spk path{transform-box:fill-box;transform-origin:center;animation:em-twinkle 3.2s ease-in-out infinite}
+  .hero-ill .spk path:nth-child(2){animation-delay:-1.1s}.hero-ill .spk path:nth-child(3){animation-delay:-2.2s}
+}
+@keyframes em-mesh{to{transform:translate3d(3%,4%,0) scale(1.08)}}
+@keyframes em-grow{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+@keyframes em-draw{to{stroke-dashoffset:0}}
+@keyframes em-pop2{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes em-float{from{transform:translateY(-4px)}to{transform:translateY(5px)}}
+@keyframes em-pulse{0%{transform:scale(.7);opacity:.35}100%{transform:scale(1.7);opacity:0}}
+@keyframes em-twinkle{0%,100%{transform:scale(.6);opacity:.4}50%{transform:scale(1.1);opacity:1}}
+</style>
 <section class="hero">
+<div class="hero-t">
 <p class="kicker">Gratis · sin registro · con tus números</p>
 <h1>Decide con tus números, <em>no con los de otros</em></h1>
 <p class="lead">Hipoteca, coche, impuestos, energía o ahorro: pones tus cifras y en segundos ves qué opción te conviene a ti, por cuánto y por qué.</p>
@@ -8,10 +55,32 @@
 <input id="q" type="search" placeholder="Busca: hipoteca, renting, Euríbor…" autocomplete="off" data-filter="#calcs" data-empty="#empty" data-count="#count">
 </div>
 <p class="sr-only" id="count" aria-live="polite"></p>
+</div>
+<svg class="hero-ill" viewBox="0 0 420 380" width="420" height="380" aria-hidden="true" focusable="false">
+<g class="pl pl1"><circle class="h-bg" cx="210" cy="198" r="164"/><circle class="h-bg2" cx="70" cy="300" r="30"/><circle class="h-bg2" cx="364" cy="70" r="20"/></g>
+<g class="pl pl2" fill="none" stroke-linecap="round">
+<path class="rt" d="M210 270C160 262 70 240 60 186"/><path class="rt" d="M210 270C185 240 135 192 135 136"/><path class="rt" d="M210 270C235 240 285 192 285 136"/><path class="rt" d="M210 270C260 262 350 240 360 186"/>
+<path class="rt trunk" d="M210 346V270"/>
+<path id="hp" class="win" pathLength="1" d="M210 346V270C200 214 226 168 210 118"/>
+<circle class="node" cx="210" cy="270" r="7"/>
+<circle class="dot" r="5"><animateMotion dur="3.6s" repeatCount="indefinite" begin="indefinite"><mpath href="#hp"/></animateMotion></circle>
+</g>
+<g class="pl pl3 ob">
+<g transform="translate(64 166) scale(1.3)"><g class="pop" style="--d:.5s"><g class="fl" style="--f:-1s"><g class="o2"><path d="M-18 8v6c0 3.3 8 6 18 6s18-2.7 18-6v-6"/><ellipse cy="8" rx="18" ry="6"/><path d="M-18 0v6c0 3.3 8 6 18 6s18-2.7 18-6v-6"/><ellipse cy="0" rx="18" ry="6"/><path d="M-18 -8v6c0 3.3 8 6 18 6s18-2.7 18-6v-6"/><ellipse cy="-8" rx="18" ry="6"/></g></g></g></g>
+<g transform="translate(135 112) scale(1.3)"><g class="pop" style="--d:.62s"><g class="fl" style="--f:-2.5s"><rect class="os" x="-17" y="-6" width="34" height="26"/><path class="o1" d="M-24-3 0-24 24-3z"/><rect class="o2" x="-5" y="6" width="10" height="14" rx="1.5"/></g></g></g>
+<g transform="translate(285 116) scale(1.3)"><g class="pop" style="--d:.74s"><g class="fl" style="--f:-.5s"><path class="o3" d="M-28 10V2c0-3 2-5 5-5.5l6-1.2 8-9c1.3-1.4 3-2.3 5-2.3h12c2 0 3.7.9 5 2.3l8 9 5 .8c3 .5 5 3 5 6V10z"/><path class="os" d="M-14-4.7l6-6.6c.8-.8 1.7-1.2 2.8-1.2H0v7.8zM5-12.5h4c1.1 0 2 .4 2.8 1.2l6 6.6H5z"/><circle class="os" cx="-14" cy="10" r="7"/><circle class="os" cx="14" cy="10" r="7"/></g></g></g>
+<g transform="translate(356 166) scale(1.3)"><g class="pop" style="--d:.86s"><g class="fl" style="--f:-3s"><path fill="none" d="M0-20V16M-12 16h24M-22-12h44M-22-12l-7 13M-22-12l7 13M22-12l-7 13M22-12l7 13"/><path class="o2" d="M-31 1a9 4.5 0 0 0 18 0zM13 1a9 4.5 0 0 0 18 0z"/><circle class="o1" cy="-20" r="3.5"/></g></g></g>
+<g transform="translate(110 252)"><g class="pop" style="--d:1s"><g class="fl" style="--f:-1.8s"><circle class="o2" r="10"/><circle fill="none" r="5" stroke-width="2"/></g></g></g>
+<g transform="translate(316 250)"><g class="pop" style="--d:1.1s"><g class="fl" style="--f:-4s"><circle class="o3" r="8"/><path fill="none" d="M-3 0h6M0-3v6" stroke-width="2"/></g></g></g>
+<g transform="translate(210 88) scale(1.12)"><circle class="ring" r="40"/><g class="pop goal" style="--d:1.25s"><circle class="o1" r="30"/><path class="chk" d="M-12 1l8 8 16-17"/></g></g>
+</g>
+<g class="spk"><path d="M262 54v12M256 60h12"/><path d="M160 46v10M155 51h10"/><path d="M250 128v8M246 132h8"/></g>
+<g transform="translate(210 346)"><circle class="pulse" r="15"/><circle class="start" r="9"/></g>
+</svg>
 </section>
 <h2 id="calculadoras">¿Qué tienes que decidir?</h2>
 <ul class="cards" id="calcs">$cards</ul>
-<p class="empty" id="empty" hidden>No tenemos todavía esa calculadora. Prueba con otra palabra o <a href="/contacto/">cuéntanos cuál te falta</a>.</p>
+<p class="empty" id="empty" hidden><svg class="ill-e" viewBox="0 0 160 120" width="96" height="72" aria-hidden="true"><use href="/assets/illustrations.svg#vacio"/></svg>No tenemos todavía esa calculadora. Prueba con otra palabra o <a href="/contacto/">cuéntanos cuál te falta</a>.</p>
 <h2>Cómo funciona</h2>
 <ol class="steps">
 <li><h3>Elige tu dilema</h3><p>¿Fija o variable? ¿Comprar o renting? Busca la decisión que tienes delante.</p></li>

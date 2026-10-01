@@ -1,0 +1,65 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "tipo": 6,
+    "anos": 20,
+    "importe": 30000,
+    "aporte": 0,
+    "rentab": 4,
+    "impuesto": 19,
+    "comision": 0,
+    "modo": 1
+   },
+   "expect": {
+    "patrimonioAmortizar": 90697.71,
+    "patrimonioInvertir": 58944.29,
+    "diferencia": -31753.41,
+    "rentabilidadDeEquilibrio": 6.891
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "tipo": 1.5,
+    "anos": 25,
+    "importe": 30000,
+    "aporte": 0,
+    "rentab": 4,
+    "impuesto": 19,
+    "comision": 0,
+    "modo": 1
+   },
+   "expect": {
+    "patrimonioAmortizar": 45896.42,
+    "patrimonioInvertir": 70479.82,
+    "diferencia": 24583.4,
+    "rentabilidadDeEquilibrio": 1.791
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 120000,
+    "tipo": 3,
+    "anos": 15,
+    "importe": 20000,
+    "aporte": 100,
+    "rentab": 4,
+    "impuesto": 19,
+    "comision": 0.5,
+    "modo": 2
+   },
+   "expect": {
+    "patrimonioAmortizar": 55171.94,
+    "patrimonioInvertir": 56212.51,
+    "diferencia": 1040.56,
+    "rentabilidadDeEquilibrio": 3.471
+   },
+   "tol": 1
+  }
+ ]
+}
