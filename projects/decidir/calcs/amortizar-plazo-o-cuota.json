@@ -1,0 +1,22 @@
+{
+  "slug": "amortizar-plazo-o-cuota",
+  "title": "Amortizar hipoteca: ¿reducir plazo o cuota? Calculadora con tus números",
+  "description": "Mete lo que te queda de hipoteca, el tipo y lo que vas a amortizar y verás cuántos intereses ahorras reduciendo plazo frente a cuota, y cuándo conviene cada opción.",
+  "h1": "Amortizar hipoteca: ¿reduzco plazo o cuota?",
+  "lead": "Con la misma amortización anticipada, reducir plazo ahorra más intereses; reducir cuota te da aire cada mes. Calcula cuánto es cada cosa en tu caso.",
+  "inputs": [
+    {"id": "capital", "label": "Capital pendiente (€)", "default": 120000, "min": 1, "step": 100},
+    {"id": "tipo", "label": "Tipo de interés anual (%)", "default": 3.0, "min": 0, "step": 0.01},
+    {"id": "meses", "label": "Meses que quedan", "default": 240, "min": 1, "step": 1},
+    {"id": "extra", "label": "Cantidad que vas a amortizar (€)", "default": 10000, "min": 1, "step": 100},
+    {"id": "comision", "label": "Comisión por amortización (%)", "default": 0, "min": 0, "step": 0.01}
+  ],
+  "faqs": [
+    ["¿Qué ahorra más intereses, reducir plazo o cuota?", "Con la misma cantidad amortizada, reducir plazo siempre ahorra más intereses, porque el capital pendiente baja igual pero además dejas de pagar meses enteros de intereses al final. La ventaja de reducir cuota es el alivio mensual inmediato."],
+    ["¿Cuándo conviene reducir cuota?", "Cuando necesitas liberar dinero cada mes (ingresos ajustados, otros gastos), cuando tu tipo de interés es bajo y prefieres invertir la diferencia, o cuando la seguridad de una cuota menor vale más para ti que el ahorro total."],
+    ["¿Puedo hacer una mezcla?", "Sí: muchos bancos permiten amortizar una parte a plazo y otra a cuota, o alternar en distintas amortizaciones. Puedes probar aquí distintas cantidades para ver el efecto de cada tramo."],
+    ["¿Cuánto me cobra el banco por amortizar?", "En hipotecas variables firmadas desde 2019 la comisión máxima es 0,25 % los 3 primeros años (0,15 % en 5 años) y 0 % después; en fijas, 2 % los 10 primeros años y 1,5 % después, y solo si el banco tiene pérdida financiera. Muchas hipotecas no cobran nada: mira tu escritura."],
+    ["¿Y la desgravación fiscal de la hipoteca?", "Si compraste tu vivienda habitual antes de 2013 y mantienes la deducción, puedes desgravar el 15 % de lo pagado hasta 9.040 € al año (cuotas más amortizaciones). En ese caso suele compensar amortizar hasta ese tope cada año y no más."]
+  ],
+  "sources": "Fórmula de amortización francesa (sistema estándar en hipotecas españolas). Límites de comisión: Ley 5/2019 de contratos de crédito inmobiliario, art. 23. Deducción por vivienda habitual: disposición transitoria 18ª de la Ley del IRPF."
+}

@@ -1,0 +1,11 @@
+{
+  "func": "calcular",
+  "cases": [
+    {"in": {"capital": 120000, "tipo": 3.0, "meses": 240, "extra": 10000, "comision": 0},
+     "expect": {"cuota0": 665.48, "cuotaA": 610.02, "mesesB": 214}, "tol": 0.5},
+    {"in": {"capital": 200000, "tipo": 0, "meses": 300, "extra": 20000, "comision": 0},
+     "expect": {"cuota0": 666.67, "intBase": 0, "ahorroA": 0, "ahorroB": 0, "mesesB": 270}, "tol": 0.5},
+    {"in": {"capital": 50000, "tipo": 4.5, "meses": 120, "extra": 50000, "comision": 1},
+     "expect": {"mesesB": 0, "comision": 500}, "tol": 0.5}
+  ]
+}

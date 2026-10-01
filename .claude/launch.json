@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"decidir","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8787","--directory","projects/decidir/dist"],"port":8787}]}

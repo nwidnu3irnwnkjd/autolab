@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-01",
+  "euribor_12m": 2.10,
+  "euribor_fuente": "Banco de España, media mensual (actualizar cada mes)",
+  "tipo_hipoteca_fija_medio": 2.60,
+  "deduccion_vivienda_pre2013": {"porcentaje": 15, "base_maxima_anual": 9040}
+}

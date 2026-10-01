@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<meta name="description" content="$description">
+<link rel="canonical" href="$canonical">
+<meta property="og:title" content="$title">
+<meta property="og:description" content="$description">
+<meta property="og:url" content="$canonical">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+$head_extra
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#5b6470;--line:#e6e8eb;--accent:#0b5fff;--accent-bg:#eef3ff;--ok:#0a7f3f;--ok-bg:#e8f6ee;--warn:#9a6b00;--warn-bg:#fff6dd}
+@media (prefers-color-scheme:dark){:root{--bg:#111315;--fg:#ececec;--muted:#a0a8b3;--line:#2a2f36;--accent:#6b9cff;--accent-bg:#172038;--ok:#4cc38a;--ok-bg:#12271c;--warn:#e0b94a;--warn-bg:#2d2610}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--accent)}header,footer{border-color:var(--line)}
+header{border-bottom:1px solid var(--line)}header .in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.in{max-width:860px;margin:0 auto;padding:14px 16px}main.in{padding-top:24px;padding-bottom:48px}
+.brand{font-weight:700;text-decoration:none;color:var(--fg)}nav a{margin-left:14px;font-size:14px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px}h2{font-size:22px;margin:32px 0 10px}h3{font-size:17px;margin:20px 0 6px}
+.lead{color:var(--muted);font-size:18px;margin:0 0 20px}
+.calc{border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+label{display:block;font-size:14px;color:var(--muted);margin-bottom:4px}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:16px;background:var(--bg);color:var(--fg)}
+button{margin-top:14px;padding:12px 18px;border:0;border-radius:8px;background:var(--accent);color:#fff;font-size:16px;cursor:pointer}
+.result{margin-top:18px;display:none}.verdict{padding:14px 16px;border-radius:10px;background:var(--ok-bg);color:var(--ok);font-weight:600;font-size:18px}
+.verdict.warn{background:var(--warn-bg);color:var(--warn)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:14px;color:var(--muted)}.box{background:var(--accent-bg);border-radius:10px;padding:14px 16px;margin:16px 0}
+.disclaimer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:28px}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600}
+footer{border-top:1px solid var(--line);font-size:13px;color:var(--muted)}footer a{color:var(--muted);margin-right:12px}
+.bar{height:14px;background:var(--line);border-radius:7px;overflow:hidden;margin:4px 0 10px}.bar>i{display:block;height:100%;background:var(--accent)}
+ul.cards{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}ul.cards li{border:1px solid var(--line);border-radius:10px;padding:14px}ul.cards a{text-decoration:none;font-weight:600}ul.cards p{margin:6px 0 0;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="in"><a class="brand" href="/">$site_name</a><nav><a href="/decidir/">Calculadoras</a><a href="/como-funciona/">Cómo funciona</a></nav></div></header>
+<main class="in">
+$body
+</main>
+<footer><div class="in">© $year $site_name · <a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/cookies/">Cookies</a><a href="/politica-ia/">Política de IA</a><a href="/contacto/">Contacto</a><br>La información de este sitio es orientativa y no constituye asesoramiento financiero, fiscal ni legal.</div></footer>
+$scripts
+</body>
+</html>
