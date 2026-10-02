@@ -107,7 +107,7 @@
  "cocinar-en-casa-o-comer-fuera": [
   "marca-blanca-o-marca-ahorro-anual",
   "comedor-escolar-o-tupper",
-  "teletrabajo-o-oficina-coste-real"
+  "freidora-de-aire-u-horno-cuanto-gasta"
  ],
  "comedor-escolar-o-tupper": [
   "cocinar-en-casa-o-comer-fuera",
@@ -189,6 +189,11 @@
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta"
  ],
+ "empleada-hogar-cuanto-cuesta-contratar-cotizacion": [
+  "residencia-o-cuidador-a-domicilio",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir"
+ ],
  "equipaje-y-asiento-avion-coste-real": [
   "tren-avion-o-coche",
   "hotel-o-apartamento-viaje-en-grupo",
@@ -214,6 +219,11 @@
   "seguro-hogar-con-o-sin-franquicia",
   "baja-medica-cuanto-cobro-incapacidad-temporal"
  ],
+ "freidora-de-aire-u-horno-cuanto-gasta": [
+  "cocinar-en-casa-o-comer-fuera",
+  "secadora-o-tendedero-coste-por-lavado",
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro"
+ ],
  "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
   "comprar-o-alquilar-trastero",
   "alquilar-o-comprar",
@@ -232,7 +242,7 @@
  "guarderia-cuidadora-o-reducir-jornada": [
   "excedencia-o-reduccion-jornada",
   "deduccion-maternidad-familia-numerosa",
-  "retribucion-flexible-me-conviene"
+  "empleada-hogar-cuanto-cuesta-contratar-cotizacion"
  ],
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -335,7 +345,7 @@
   "jubilacion-activa-o-dejar-de-trabajar"
  ],
  "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
-  "deduccion-maternidad-familia-numerosa",
+  "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
   "guarderia-cuidadora-o-reducir-jornada",
   "excedencia-o-reduccion-jornada"
  ],
@@ -366,7 +376,7 @@
  ],
  "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": [
   "calefaccion-gas-aerotermia-electrica",
-  "aire-acondicionado-inverter-o-ventilador-coste-verano",
+  "freidora-de-aire-u-horno-cuanto-gasta",
   "luz-fija-o-indexada"
  ],
  "reformar-o-mudarse": [
@@ -387,7 +397,7 @@
  "residencia-o-cuidador-a-domicilio": [
   "excedencia-o-reduccion-jornada",
   "jubilacion-anticipada-o-demorada",
-  "pension-viudedad-cuanto-cobro"
+  "empleada-hogar-cuanto-cuesta-contratar-cotizacion"
  ],
  "retencion-irpf-nomina-subir-o-no": [
   "retribucion-flexible-me-conviene",
@@ -402,7 +412,7 @@
  "secadora-o-tendedero-coste-por-lavado": [
   "horas-valle-luz-lavadora-termo-cuanto-ahorro",
   "luz-fija-o-indexada",
-  "reparar-o-comprar-electrodomestico"
+  "freidora-de-aire-u-horno-cuanto-gasta"
  ],
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",

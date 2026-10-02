@@ -1,0 +1,122 @@
+{
+  "slug": "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+  "title": "Empleada de hogar: coste real y cotización 2026",
+  "description": "Calcula cuánto te cuesta una empleada de hogar con la Seguridad Social de 2026: sueldo, cuota del empleador, reducción del 20 % y si cumples el mínimo.",
+  "h1": "Empleada de hogar: ¿cuánto me cuesta contratarla de verdad?",
+  "lead": "Una empleada de hogar externa que trabaja 20 horas a la semana a 10 € la hora, con contrato indefinido, le cuesta a la familia 1.041,49 € al mes (866,67 € de sueldo bruto más 174,82 € de Seguridad Social tras la reducción del 20 %) si ese precio llega al mínimo legal de 9,55 € por hora, todo incluido. Si eres una familia numerosa, estás de alta en la Seguridad Social y la empleada se dedica exclusivamente a cuidar a miembros de la familia, la cuota baja a 128,50 € (995,17 € al mes en total); con un contrato temporal sube a 176,70 €. Son cifras de 2026, brutas y sin el IRPF de la empleada; la herramienta no incluye las comunidades forales ni las horas de presencia.",
+  "veredicto": "Contratar a una empleada de hogar cuesta su sueldo bruto más la cuota de Seguridad Social del empleador, que se calcula sobre la base de cotización del tramo de su retribución mensual (escala de 2026 con 8 tramos), no sobre el sueldo exacto. En 2026 el empleador paga el 23,60 % de contingencias comunes (con una reducción del 20 %, o una bonificación del 45 % si es una persona cuidadora que se dedica exclusivamente a cuidar a una familia numerosa y quien paga las cuotas está de alta en la Seguridad Social; la calculadora lo aplica solo a contingencias comunes), el 0,75 % del MEI, el 1,50 % de accidentes de trabajo y enfermedades profesionales, y el desempleo (5,50 %, o 6,70 % en contrato temporal) y el Fogasa (0,20 %) con una bonificación del 80 % (Orden PJC/297/2026 y RDL 16/2022). Con 20 horas a 10 € la hora, esa cuota es el 22,27 % de una base de 785 €. La empleada paga el 4,70 %, el 0,15 % y el 1,55 % (1,60 % si es temporal) de la misma base, y tú se lo descuentas del sueldo. Cumples el salario mínimo si pagas por horas al menos 9,55 € por hora trabajada, con todos los conceptos incluidos, o, con sueldo mensual, el SMI de 17.094 € al año a prorrata de tus horas (arts. 8 y 9 del RD 1620/2011 y art. 4.2 del RD 126/2026). Pasar el límite de un tramo sube la base de golpe: con contrato indefinido, la reducción del 20 % y 20 horas semanales o menos, un sueldo mensual de 877,01 € en lugar de 877,00 € hace que la cuota que pagas suba de 174,82 € a 216,02 €.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "modo",
+      "label": "¿Cómo trabaja y cómo le pagas?",
+      "type": "select",
+      "options": [
+        {
+          "v": "horas",
+          "t": "Externa, pagada por horas (precio por hora con todo incluido)"
+        },
+        {
+          "v": "mensual",
+          "t": "Externa, con sueldo mensual"
+        },
+        {
+          "v": "interna",
+          "t": "Interna, con sueldo mensual"
+        }
+      ]
+    },
+    {
+      "id": "horas",
+      "label": "Horas de trabajo efectivo a la semana (de 1 a 40; sin horas de presencia)",
+      "default": 20,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.empleada_hogar_2026.supuestos.horas"
+    },
+    {
+      "id": "importe",
+      "label": "Retribución bruta pactada: € por hora si pagas por horas, o € al mes si pagas sueldo mensual (sin contar las pagas extra si las pagas aparte)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.empleada_hogar_2026.supuestos.importe"
+    },
+    {
+      "id": "pagas",
+      "label": "Pagas extra (solo con sueldo mensual)",
+      "type": "select",
+      "options": [
+        {
+          "v": "prorr",
+          "t": "El sueldo ya incluye las pagas extra prorrateadas (12 pagas)"
+        },
+        {
+          "v": "14",
+          "t": "Dos pagas extra aparte, de una mensualidad cada una (14 pagas)"
+        }
+      ]
+    },
+    {
+      "id": "fam",
+      "label": "Familia numerosa",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No, o la empleada también limpia o cocina, o no cumplo esas condiciones"
+        },
+        {
+          "v": "si",
+          "t": "Sí: título de familia numerosa en vigor, yo (quien paga las cuotas) estoy de alta en la Seguridad Social y la empleada se dedica exclusivamente a cuidar a miembros de la familia"
+        }
+      ]
+    },
+    {
+      "id": "meses",
+      "label": "Meses de contrato (de 1 a 12)",
+      "default": 12,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.empleada_hogar_2026.supuestos.meses"
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo de contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "indef",
+          "t": "Indefinido"
+        },
+        {
+          "v": "temporal",
+          "t": "De duración determinada (temporal)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cuesta una empleada de hogar con la Seguridad Social en 2026?",
+      "Sueldo bruto más cuota del empleador: 23,60 % de contingencias comunes (con la reducción del 20 %), 0,75 % de MEI, 1,50 % de accidentes y enfermedades profesionales, y desempleo y Fogasa con bonificación del 80 %. Con 20 horas a 10 €, 1.041,49 € al mes."
+    ],
+    [
+      "¿Cuál es el sueldo mínimo de una empleada de hogar en 2026?",
+      "Si trabaja por horas como externa, 9,55 € por hora trabajada con todos los conceptos incluidos (art. 4.2 del Real Decreto 126/2026). Con sueldo mensual, el SMI de 17.094 € al año (1.221 € en 14 pagas) para 40 horas semanales, a prorrata si trabaja menos."
+    ],
+    [
+      "¿Qué es la reducción del 20 % en la cuota de una empleada de hogar?",
+      "Es una reducción del 20 % en la aportación del empleador por contingencias comunes, más una bonificación del 80 % en desempleo y Fogasa, para quien dé de alta a una persona empleada de hogar en el Régimen General (disposición adicional primera del RDL 16/2022)."
+    ],
+    [
+      "¿Hay bonificación por familia numerosa para contratar una empleada de hogar?",
+      "Sí, del 45 % de las cuotas a cargo del empleador si contratas a una persona que cuida en exclusiva a la familia numerosa y estás de alta en la Seguridad Social (RDL 1/2023, DA 3.ª bis). Sustituye al 20 %. La calculadora lo aplica solo a contingencias comunes."
+    ],
+    [
+      "¿Cuánto paga la empleada de hogar a la Seguridad Social?",
+      "Un 4,70 % de contingencias comunes, un 0,15 % de MEI y un 1,55 % de desempleo (1,60 % si el contrato es temporal) sobre la base de cotización, unos 6,40 % en total. Tú ingresas la cuota completa y se la descuentas de su sueldo."
+    ]
+  ],
+  "sources": "Modelo propio. Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296), arts. 15 (escala de bases y tipos del Sistema Especial para Empleados de Hogar), 16 (MEI), 35 (desempleo y Fogasa) y 2.1 (tope de base), leída el 2/10/2026; Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), DA 61.ª (CNAE 97: 1,50 %) y art. 251; RDL 16/2022 (https://www.boe.es/buscar/act.php?id=BOE-A-2022-14680), DA 1.ª y DT 3.ª; RDL 1/2023 (https://www.boe.es/buscar/act.php?id=BOE-A-2023-625), DA 3.ª bis; Real Decreto 126/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-3815), arts. 1 y 4.2; Real Decreto 1620/2011 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-17975), arts. 8 y 9. Supuestos propios y editables: 20 horas semanales a 10 € la hora, contrato indefinido y 12 meses; las horas al mes son las semanales por 52 entre 12; las dos pagas extra valen una mensualidad cada una; la reducción del 20 % y la bonificación del 45 % se aplican solo a contingencias comunes y el MEI no se reduce; la base no baja de la del salario mínimo de tus horas (art. 15.2). No incluye: IRPF de la empleada, horas de presencia y extra, alojamiento y manutención, convenios, indemnización, bajas, la deducción por familia numerosa, comunidades forales, alta en el sistema y el reparto de bases entre varios empleadores (la calculadora calcula el coste de cada familia por separado). Información orientativa, no asesoramiento. Cifras de 2026."
+}

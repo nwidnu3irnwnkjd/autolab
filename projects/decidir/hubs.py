@@ -162,7 +162,7 @@ HUBS = {
                  "las placas solares y, al final, los electrodomésticos. Hoy la energía del PVPC cuesta {{pvpc_hoy}} €/kWh de media ({{fecha_pvpc_es}}, sin peajes ni impuestos; fuente: Red Eléctrica) "
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
-            ("Sin obra: lo primero", ["luz-fija-o-indexada", "potencia-contratada-luz-bajar-compensa", "horas-valle-luz-lavadora-termo-cuanto-ahorro", "calefaccion-gas-aerotermia-electrica", "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta", "secadora-o-tendedero-coste-por-lavado"]),
+            ("Sin obra: lo primero", ["luz-fija-o-indexada", "potencia-contratada-luz-bajar-compensa", "horas-valle-luz-lavadora-termo-cuanto-ahorro", "calefaccion-gas-aerotermia-electrica", "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta", "secadora-o-tendedero-coste-por-lavado", "freidora-de-aire-u-horno-cuanto-gasta"]),
             ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "termo-electrico-o-calentador-gas-o-aerotermia-agua", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
         ],
         "steps": {
@@ -216,6 +216,10 @@ HUBS = {
             "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": {
                 "name": "Radiador, calefactor o bomba de calor",
                 "text": "Para calentar una estancia, el radiador de aceite y el calefactor gastan lo mismo por kWh de calor; la bomba de calor (split) da varios kWh de calor por cada kWh eléctrico. La calculadora da el coste por temporada con tus horas y tu precio de la luz.",
+            },
+            "freidora-de-aire-u-horno-cuanto-gasta": {
+                "name": "Freidora de aire u horno",
+                "text": "Para raciones pequeñas la freidora de aire suele gastar menos luz que el horno porque calienta menos volumen y menos tiempo. La calculadora compara el coste por uso y al año con tus usos y tu precio de la luz.",
             },
             "secadora-o-tendedero-coste-por-lavado": {
                 "name": "Secadora o tendedero",
@@ -386,7 +390,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
+            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "empleada-hogar-cuanto-cuesta-contratar-cotizacion", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -521,6 +525,10 @@ HUBS = {
             "pension-viudedad-cuanto-cobro": {
                 "name": "Pensión de viudedad",
                 "text": "El porcentaje de la base reguladora (52, 60 o 70 %) depende de tu edad, tus hijos y tus ingresos, y se compara con el mínimo. La calculadora te da cuánto cobrarías con tus datos.",
+            },
+            "empleada-hogar-cuanto-cuesta-contratar-cotizacion": {
+                "name": "Empleada del hogar: cuánto cuesta",
+                "text": "Contratar a una empleada del hogar suma al salario la cotización a la Seguridad Social. La calculadora da el coste total mensual y anual según las horas y el salario que indiques.",
             },
             "residencia-o-cuidador-a-domicilio": {
                 "name": "Residencia o cuidador a domicilio",

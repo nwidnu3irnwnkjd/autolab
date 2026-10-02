@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "alt": 0,
+    "usos": 4,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 35,
+    "compra": 80
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.29,
+    "kwhFr": 0.54,
+    "kwhAlt": 1.12,
+    "anualFr": 28.39,
+    "anualAlt": 59.52,
+    "amortAnual": 10.0,
+    "totalFr": 38.39,
+    "diferencia": 21.13,
+    "ahorroEnergia": 31.13,
+    "aniosAmort": 2.57,
+    "usosEq": 1.28,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alt": 1,
+    "usos": 4,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 30,
+    "compra": 80
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.19,
+    "kwhFr": 0.54,
+    "kwhAlt": 0.76,
+    "anualFr": 28.39,
+    "anualAlt": 40.21,
+    "amortAnual": 10.0,
+    "totalFr": 38.39,
+    "diferencia": 1.82,
+    "ahorroEnergia": 11.82,
+    "aniosAmort": 6.77,
+    "usosEq": 3.39,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alt": 2,
+    "usos": 4,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 8,
+    "compra": 80
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.03,
+    "kwhFr": 0.54,
+    "kwhAlt": 0.11,
+    "anualFr": 28.39,
+    "anualAlt": 5.64,
+    "amortAnual": 10.0,
+    "totalFr": 38.39,
+    "diferencia": -32.75,
+    "ahorroEnergia": -22.75,
+    "aniosAmort": -1.0,
+    "usosEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alt": 3,
+    "usos": 4,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 35,
+    "compra": 80
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.09,
+    "kwhFr": 0.54,
+    "kwhAlt": 1.43,
+    "anualFr": 28.39,
+    "anualAlt": 19.08,
+    "amortAnual": 10.0,
+    "totalFr": 38.39,
+    "diferencia": -19.31,
+    "ahorroEnergia": -9.31,
+    "aniosAmort": -1.0,
+    "usosEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alt": 0,
+    "usos": 4,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 35,
+    "compra": 400
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.29,
+    "kwhFr": 0.54,
+    "kwhAlt": 1.12,
+    "anualFr": 28.39,
+    "anualAlt": 59.52,
+    "amortAnual": 50.0,
+    "totalFr": 78.39,
+    "diferencia": -18.87,
+    "ahorroEnergia": 31.13,
+    "aniosAmort": 12.85,
+    "usosEq": 6.42,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alt": 0,
+    "usos": 0,
+    "precio": 0.2,
+    "precioGas": 0.064,
+    "kwFr": 1.4,
+    "minFr": 20,
+    "minAlt": 35,
+    "compra": 0
+   },
+   "expect": {
+    "costeFr": 0.14,
+    "costeAlt": 0.29,
+    "kwhFr": 0.54,
+    "kwhAlt": 1.12,
+    "anualFr": 0.0,
+    "anualAlt": 0.0,
+    "amortAnual": 0.0,
+    "totalFr": 0.0,
+    "diferencia": 0.0,
+    "ahorroEnergia": 0.0,
+    "aniosAmort": 0.0,
+    "usosEq": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}

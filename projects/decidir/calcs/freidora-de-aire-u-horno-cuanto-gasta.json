@@ -1,0 +1,118 @@
+{
+  "slug": "freidora-de-aire-u-horno-cuanto-gasta",
+  "title": "Freidora de aire u horno: cuánto gasta cada uno",
+  "description": "Cuánto cuesta cada uso y cada año cocinar con freidora de aire frente a horno, microondas u horno de gas, con el precio de la luz de hoy.",
+  "h1": "Freidora de aire u horno: cuánto gasta cada uno por uso y por año",
+  "lead": "La freidora de aire gasta menos que un horno eléctrico tradicional si la usas lo bastante para repartir su compra, pero con los tiempos de partida no gana al microondas ni al horno de gas con el gas a 0,064 €/kWh: con 1,4 kW, 3 minutos de precalentamiento y 20 de cocción frente a 1,5 kW, 10 y 35 del horno (ejemplos, a 0,20 €/kWh sin impuestos), cada uso cuesta 0,14 € con la freidora y 0,29 € con el horno, 28 € frente a 60 € al año con 4 usos a la semana. No son equivalentes en capacidad: pon tus potencias, tus minutos y tus usos.",
+  "veredicto": "La freidora de aire sale más barata que el horno eléctrico tradicional cuando su energía por uso, más la compra repartida, queda por debajo de la del horno con tus usos a la semana; frente al microondas o al horno de gas puede no compensar, y ninguna de las opciones tiene la misma capacidad. Potencias y tiempos son hipótesis editables.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "alt",
+      "label": "Con qué la comparas (al elegirla se rellenan los minutos típicos de abajo)",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Horno eléctrico tradicional (1,5 kW de media y 10 min de precalentamiento)"
+        },
+        {
+          "v": "1",
+          "t": "Horno eléctrico ventilado (1,2 kW y 8 min)"
+        },
+        {
+          "v": "2",
+          "t": "Microondas (0,8 kW y sin precalentamiento)"
+        },
+        {
+          "v": "3",
+          "t": "Horno de gas (2 kW térmicos y 8 min; usa el precio del gas)"
+        }
+      ]
+    },
+    {
+      "id": "usos",
+      "label": "Veces que cocinarías con la freidora a la semana (de 0 a 30; 4 es un ejemplo)",
+      "default": 4,
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.freidora_horno.supuestos.usos"
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la energía (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+      "default": 0.184,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+    },
+    {
+      "id": "precioGas",
+      "label": "Precio del gas natural (€/kWh, con impuestos; solo cuenta si eliges horno de gas; el de partida es la TUR.2 de octubre de 2026)",
+      "default": 0.064,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.gas_eur_kwh"
+    },
+    {
+      "id": "kwFr",
+      "label": "Potencia media de la freidora en marcha (kW; 1,4 es una hipótesis, no la de la placa: con termostato la media es menor)",
+      "default": 1.4,
+      "min": 0.1,
+      "step": 0.1,
+      "default_from": "params.freidora_horno.supuestos.kw_fr"
+    },
+    {
+      "id": "minFr",
+      "label": "Minutos de cocción con la freidora, sin contar 3 de precalentamiento (min; 20 es un ejemplo de receta)",
+      "default": 20,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.freidora_horno.supuestos.min_fr"
+    },
+    {
+      "id": "minAlt",
+      "label": "Minutos de cocción con la otra opción, sin precalentar (min; 35 es un ejemplo de horno; el microondas necesita menos)",
+      "default": 35,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.freidora_horno.supuestos.min_alt"
+    },
+    {
+      "id": "compra",
+      "label": "Compra de la freidora (€; 80 es un ejemplo, no un presupuesto; pon 0 si ya la tienes; se reparte en 8 años)",
+      "default": 80,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.freidora_horno.supuestos.compra"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto gasta una freidora de aire por uso?",
+      "Depende de su potencia media y de los minutos, que pones tú. Con 1,4 kW, 3 minutos de precalentamiento y 20 de cocción (ejemplos, no datos de fabricante) y 0,20 €/kWh sin impuestos son 0,14 € por uso."
+    ],
+    [
+      "¿Una freidora de aire gasta menos que un horno?",
+      "Frente a un horno eléctrico tradicional, con estos ejemplos, sí: 0,14 € frente a 0,29 € por uso. Frente al microondas o a un horno de gas con gas a 0,064 €/kWh, no. Cambia las horas o la potencia y el resultado puede cambiar."
+    ],
+    [
+      "¿Cuántas veces a la semana hay que usarla para que compense comprarla?",
+      "Con los ejemplos y 80 € de compra repartidos en 8 años, a partir de 1,3 usos por semana frente al horno tradicional. Frente al horno ventilado hacen falta 3,4, y frente al microondas no se amortiza."
+    ],
+    [
+      "¿Qué precio de la luz usa la calculadora?",
+      "Por defecto, el PVPC medio del mes que publica Red Eléctrica (REData), o la media de septiembre de 2026 si hay menos de 7 días de datos; es editable. Se suman el Impuesto Especial sobre la Electricidad y el IVA del 21 %. Con tarifa fija, pon su precio."
+    ],
+    [
+      "¿Se puede cocinar lo mismo en una freidora de aire que en un horno?",
+      "No del todo: la freidora admite raciones pequeñas, y el horno, bandejas grandes o varios platos a la vez. La calculadora compara un uso con otro, no la capacidad; si cocinas para más gente, el coste por ración cambia."
+    ]
+  ],
+  "sources": "Modelo propio: energía por uso = potencia media en marcha (kW, hipótesis) × (minutos de precalentamiento + de cocción) ÷ 60; en electricidad, coste = kWh × precio con impuestos; en el horno de gas, kWh térmicos × precio del gas con impuestos; coste al año = coste por uso × usos a la semana × 52; la freidora suma su compra repartida en 8 años y la alternativa se supone ya comprada. Precio de la luz por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Precio del gas natural por defecto: 0,064 €/kWh con impuestos, TUR.2 variable más Impuesto sobre Hidrocarburos e IVA (Resolución de 30/9/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389, consultado el 2/10/2026); editable. Supuestos no oficiales y editables: 4 usos a la semana, freidora de 1,4 kW de media con 3 minutos de precalentamiento y 20 de cocción, compra de 80 €; potencias medias y precalentamientos de la alternativa (1,5 kW y 10 min en horno tradicional, 1,2 kW y 8 min en ventilado, 0,8 kW en microondas, 2 kW térmicos y 8 min en horno de gas) y minutos típicos de cocción (35, 30, 8 y 35); no son datos de ningún fabricante ni de ninguna etiqueta energética. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}
