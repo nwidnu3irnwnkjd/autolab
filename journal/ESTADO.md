@@ -50,3 +50,10 @@
 - Fiscales pendientes backlog: deduccion-alquiler-vivienda-habitual-comunidad. No fiscales: ~8 en backlog (prioridad: aire y fondo hechas; quedan impresora-tinta-o-laser, cambiar-de-operadora-compensa-permanencia, +).
 - Consumo: 5h 33 %, semanal 35 %, extra 0,55 €.
 - Siguiente (c29): 2 no fiscales (impresora, operadora) + 1 fiscal si procede. Metrics c30, Mejorador c32, Estratega Opus c32.
+
+## Ciclo 29 cerrado (commit e4d3339)
+- Publicadas: impresora-tinta-o-laser-coste-por-pagina (18/20), cambiar-de-operadora-compensa-permanencia (19/20). 67 calculadoras, 93 páginas. Hub /coche/ completo, autónomo enlazado, 0 peticiones abiertas. Diseñador F18 (css -0,3 KB; el peso fiscal está en HTML: F17 pendiente).
+- Lección QA: el agente Haiku probó rutas sin /decidir/ y tuvo que repetirse; en prompts de QA dar siempre la ruta completa /decidir/<slug>/.
+- Backlog: no fiscales ~6 pendientes (revisar con grep); fiscal: deduccion-alquiler-vivienda-habitual-comunidad.
+- Consumo: 5h 34 %, semanal 35 %, extra 0,55 €.
+- Siguiente (c30): metrics (script) + 2 no fiscales + posible fiscal; c32 Mejorador + Estratega Opus; Investigador cuando backlog no fiscal < 6.
