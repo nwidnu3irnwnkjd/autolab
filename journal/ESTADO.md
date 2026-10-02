@@ -43,3 +43,10 @@
 - Pendiente de clusters/hubs (Estratega c28): marca-blanca, residencia, aire, fondo, venta-vivienda. Peso de site-calc.css 18→23 KB (vigilar; venta-vivienda 71 KB cargados).
 - Consumo: 5h 28 %, semanal 34 %, extra 0,55 €.
 - Siguiente (c28): Estratega Opus (clusters + SEO), Investigador no necesario, 2 no fiscales prioridad + fiscal máx. 1. Metrics c30, Mejorador c32.
+
+## Ciclo 28 cerrado (commit 9b8cee2)
+- Publicadas: autonomo-estimacion-directa-o-modulos (Opus: apto con cambios, aplicados; límite 250.000 € 2026 por criterio DGT/AEAT, 2027 = 150.000 €), coche-segunda-mano-particular-o-concesionario, gasolinera-low-cost-compensa-desviarse. 65 calculadoras, 91 páginas. Estratega Opus: clusters (64 calcs ≥2 enlaces entrantes), hubs, guía Renta ampliada (cifras de params, sin verificar por Opus aparte: riesgo bajo).
+- Peticiones: 1 abierta (R-modulos.1 clusters de autónomo; y coche/gasolinera pendientes de entrar en /coche/).
+- Fiscales pendientes backlog: deduccion-alquiler-vivienda-habitual-comunidad. No fiscales: ~8 en backlog (prioridad: aire y fondo hechas; quedan impresora-tinta-o-laser, cambiar-de-operadora-compensa-permanencia, +).
+- Consumo: 5h 33 %, semanal 35 %, extra 0,55 €.
+- Siguiente (c29): 2 no fiscales (impresora, operadora) + 1 fiscal si procede. Metrics c30, Mejorador c32, Estratega Opus c32.
