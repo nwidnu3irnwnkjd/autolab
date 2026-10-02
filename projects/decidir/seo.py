@@ -246,6 +246,9 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
     open(os.path.join(dist, "llms.txt"), "w").write("\n".join(lines))
 
     full = [head]
+    if hubs:  # c48: índice de temas también en llms-full (antes solo en llms.txt)
+        full.append("\n## Temas (mapas de decisión)\n\n" + "\n".join(f"- [{h['h1']}]({base}{h['path']})" for h in hubs)
+                    + f"\n- [Calendario de decisiones]({base}/calendario/) · [Actualidad]({base}/actualidad/) · [Índice corto]({base}/llms.txt)\n")
     for c in calcs:
         url = f"{base}/decidir/{c['slug']}/"
         ins = "\n".join(f"- {re.sub('<[^>]+>', '', i['label'])}: " + (", ".join(o["t"] for o in i["options"]) if i.get("type") == "select" else f"por defecto {i.get('default')}")

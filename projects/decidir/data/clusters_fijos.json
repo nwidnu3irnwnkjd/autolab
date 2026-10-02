@@ -35,7 +35,7 @@
     "cuota-autonomos-ingresos-reales-regularizacion"
   ],
   "autonomo-o-asalariado": [
-    "autonomo-o-sociedad-limitada",
+    "paro-autonomos-cese-actividad-cuanto-cobro",
     "cuota-autonomos-ingresos-reales-regularizacion",
     "autonomo-estimacion-directa-o-modulos"
   ],
@@ -142,12 +142,12 @@
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
     "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
-    "baja-medica-cuanto-cobro-incapacidad-temporal"
+    "paro-autonomos-cese-actividad-cuanto-cobro"
   ],
   "cuota-autonomos-ingresos-reales-regularizacion": [
     "autonomo-o-asalariado",
     "autonomo-estimacion-directa-o-modulos",
-    "autonomo-o-sociedad-limitada"
+    "paro-autonomos-cese-actividad-cuanto-cobro"
   ],
   "curso-online-bootcamp-o-fp-coste-y-retorno": [
     "academia-idiomas-presencial-online-o-intensivo",
@@ -495,5 +495,10 @@
     "permiso-nacimiento-cuanto-cobro-y-como-repartir",
     "guarderia-cuidadora-o-reducir-jornada",
     "deduccion-maternidad-familia-numerosa"
+  ],
+  "paro-autonomos-cese-actividad-cuanto-cobro": [
+    "cuota-autonomos-ingresos-reales-regularizacion",
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "autonomo-o-asalariado"
   ]
 }

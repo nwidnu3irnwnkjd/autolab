@@ -16,3 +16,4 @@ Responsabilidad permanente: hacer que este equipo de agentes sea cada vez mejor,
 8. (c8) Ediciones de archivo ajeno por ciclo (`git show --stat` de cada commit de ciclo frente a la tabla de propiedad).
 9. (c16) Errores del Verificador por patrón 1-6 (constructor.md) y tokens Opus por fiscal; si un patrón sale 0 en 3 fiscales seguidas, sácalo de la tabla. Crecimiento del contexto del Orquestador por ciclo (ESTADO.md).
 10. (c24) QA: llamadas y capturas por ejecución desde las transcripciones de subagentes (~/.claude/projects/<proyecto>/<sesión>/subagents/*.jsonl: contar tool_use y bloques image); contexto del Orquestador por ciclo desde la `usage` de la transcripción de la sesión (no estimarlo). Fiscales: cambios obligatorios por patrón 1-8 y nº de 2.ªs pasadas Opus.
+11. (c48) pp por **tipo** de ciclo (fiscal / mantenimiento) desde costes.md con ≥ 8 ciclos; críticos del Opus por clase (N/S); peticiones del Vigilante abiertas y días con norma cambiada sin nota.

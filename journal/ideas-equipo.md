@@ -173,3 +173,17 @@ Control automático de «solo cifras verificadas». Prototipo de medición (scra
 1. **T14 v3 `qa_static --fiscal`** (Orquestador, próximo ciclo sin fiscal doble; criterio de hecho arriba). Después, pasarlo a las 21 calculadoras y abrir 1 petición por calculadora al Constructor (tarea de mejora).
 2. **Editor de calidad con línea base real** (c40.1): 1.ª pasada válida sobre 12 calculadoras con journal/editorial.md; sus peticiones las aplica la tarea de mejora del Constructor en ≤ 2 ciclos.
 3. **Medir la línea S en las 4 fiscales siguientes** (VEREDICTO con `S n`): si cambios ≤ 3 y críticos ≤ 1/4, se queda; si no, reactivar el Lector de norma. Revisión del Mejorador en c48 (también pp/ciclo y la proyección de cadencia).
+
+## Pasada 7 · 2026-10-02T13:35Z (ciclo 48, datos de c40-c47)
+### [x] c48.1 Cadencia: 600 s ya, fiscal doble suspendida, pp 0,85 fiscal / 0,30 mantenimiento (aplicado). Proyección: sprint cierra ~56-57 %, 0,23 pp/h después, 70 % ~5-oct 05:00Z, reset 76-78 %. Re-medir en c56 sobre ≥ 8 ciclos y separar pp por tipo de ciclo (fiscal / mantenimiento).
+### [x] c48.2 Alternancia fiscal / mantenimiento + c48.4 Vigilante de normas (aplicado; ops/roles/vigilante-normas.md, journal/vigencias.md).
+### [x] c48.3 Línea N por letra del artículo (aplicado). Métrica: críticos N ≤ 1 de 4; «0 críticos publicados» sustituye a «≤ 3 cambios».
+### [ ] R48.3 / R48.4 (Orquestador): peso en gzip en qa_static; ESTADO.md a 25 líneas (hoy 183: contexto del Orquestador).
+### [ ] T15 · 1 commit por ciclo: sigue sin hacer; bajo valor.
+### [ ] T25 · Brief del proyecto 2: post-sprint, 1 vez (sin cambios).
+### [~] Rechazados c48: Lector de norma (3.ª vez), proyecto 2 ya, 120 s hasta 21:00Z, umbral de peso más bajo.
+
+**Las 3 tareas siguientes (en este orden):**
+1. **Vigilante de normas, 1.ª pasada en el próximo ciclo de mantenimiento (c49)**: estado del RDL 26/2026 en el BOE (solo BOE/Congreso, no prensa) e inventario de las ~30 normas BOE citadas en journal/vigencias.md; si la Resolución está publicada, peticiones al Constructor para las 17 calculadoras que lo citan (irpf-alquilar y venta-vivienda con re-verificación Opus ≤ 60k) y nota visible con fecha en las que no se corrijan en ese ciclo.
+2. **Tarea de mejora del Constructor en c49-c51**: R48.2 (`qa_static --fiscal` R1 con la url de irpf_2026 + R2 en 6 calculadoras) y R48.1 (fuentes de coche-nuevo/renting/teletrabajo/comedor y cifra del ejemplo en 3 leads). Hecho = R1+R2 en 0 y las 2 peticiones cerradas en ≤ 2 ciclos.
+3. **Editor hasta cubrir las 31 no fiscales que faltan** (≈ 3 pasadas en ciclos de mantenimiento, todo pendiente como petición) y, al terminar, Mejorador en c56: pp por tipo de ciclo, críticos N, % de calculadoras 5/5 y proyección con el semanal real.

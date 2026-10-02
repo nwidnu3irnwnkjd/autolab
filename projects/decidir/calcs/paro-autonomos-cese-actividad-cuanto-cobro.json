@@ -1,0 +1,151 @@
+{
+  "slug": "paro-autonomos-cese-actividad-cuanto-cobro",
+  "title": "Paro de autónomos: cuánto cobras por cese de actividad",
+  "description": "Calcula si tienes derecho al paro de autónomos (cese de actividad), cuánto cobras al mes (70 % con máximo y mínimo) y durante cuántos meses.",
+  "h1": "Paro de autónomos: ¿tengo derecho y cuánto cobro por cese de actividad?",
+  "lead": "Si cierras tu negocio por una causa que la ley admite (pérdidas, fuerza mayor, pérdida de la licencia) y tienes al menos 12 meses cotizados por cese de actividad, con una base media de 1.200 € al mes y 24 meses cotizados por cese cobrarías 840 € al mes durante 8 meses (6.720 € brutos en total), dentro de un máximo de 1.225 € sin hijos a cargo (1.400 € con 1 hijo y 1.575 € con 2 o más) y un mínimo de 560 € (749 € con hijos), cifras de 2026. El derecho no existe si dejas la actividad por decisión propia (salvo el TRADE que rompe con su cliente por incumplimiento grave de este) o si te faltan 12 meses cotizados por cese en los últimos 24, y la prestación se suspende mientras trabajes. La herramienta calcula si encajas, la prestación mensual, los meses y el total; no incluye el IRPF ni el cese parcial.",
+  "veredicto": "La prestación por cese de actividad es el 70 % de la media de tus bases de los últimos 12 meses, con un máximo del 175, 200 o 225 % y un mínimo del 80 o 107 % del IPREM mensual más una sexta parte (arts. 339.2 y 339.3 de la LGSS): en 2026, entre 560 y 1.225 € sin hijos a cargo y entre 749 y 1.575 € con hijos. Dura de 4 a 24 meses según los meses cotizados por cese en los 48 anteriores (art. 338.1). Solo la cobras si el cese es una situación legal (motivos económicos, fuerza mayor, pérdida de licencia, violencia de género, divorcio o fin del contrato de un TRADE), tienes al menos 12 meses cotizados por cese y 12 de ellos en los últimos 24, han pasado 18 meses desde que te reconocieron la anterior, si la hubo. La prestación se suspende mientras trabajes (y se extingue si trabajas 12 meses o más). En un cese definitivo, el derecho no existe si ya has cumplido la edad ordinaria de jubilación, salvo que no tengas la cotización exigida para la pensión. La cuota a la Seguridad Social la paga el órgano gestor mientras cobras si la pides en plazo (arts. 329.1.b y 337.6); si te retrasas, desde el mes siguiente a la solicitud.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "base",
+      "label": "Base de cotización media de los últimos 12 meses (€ al mes; la base por la que cotizas en el RETA, no lo que facturas)",
+      "default": 1200,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.paro_autonomos_cese_2026.supuestos.base",
+      "ayuda": "Es la media de las bases por las que cotizaste en los 12 meses anteriores al cese (art. 339.1 de la LGSS). La ves en tus recibos de cuota de autónomos; si cambiaste de base, haz la media."
+    },
+    {
+      "id": "m48",
+      "label": "Meses cotizados por cese de actividad en los últimos 48 meses (sin los ya usados en otra prestación)",
+      "default": 24,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.paro_autonomos_cese_2026.supuestos.meses48",
+      "ayuda": "Cuentan meses completos con cotización por cese de actividad (obligatoria para los autónomos). Si has cotizado más de 48 meses, escribe 48: es el máximo de la escala. No cuentes los que ya usaste en una prestación anterior (art. 338.4)."
+    },
+    {
+      "id": "m24",
+      "label": "De esos, meses cotizados por cese en los 24 meses inmediatamente anteriores al cese",
+      "default": 24,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.paro_autonomos_cese_2026.supuestos.meses24",
+      "ayuda": "Hacen falta al menos 12 en estos últimos 24 meses (art. 338.1). No puede ser mayor que el dato anterior."
+    },
+    {
+      "id": "hijos",
+      "label": "Hijos a tu cargo (0, 1 o 2 o más)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.paro_autonomos_cese_2026.supuestos.hijos",
+      "ayuda": "Cuentan los menores de 26 años y los mayores con discapacidad igual o superior al 33 %, que convivan contigo y no tengan rentas iguales o superiores al SMI sin pagas extra (art. 339.4). Si no cumplen, marca 0."
+    },
+    {
+      "id": "causa",
+      "label": "Motivo del cese",
+      "type": "select",
+      "options": [
+        {
+          "v": "eco",
+          "t": "Motivos económicos, técnicos, productivos u organizativos (pérdidas de más del 10 % de los ingresos, ejecuciones, concurso)"
+        },
+        {
+          "v": "fuerza",
+          "t": "Fuerza mayor que impide la actividad (cese definitivo o temporal total)"
+        },
+        {
+          "v": "licencia",
+          "t": "Pérdida de la licencia administrativa (sin infracción penal)"
+        },
+        {
+          "v": "violencia",
+          "t": "Violencia de género o violencia sexual"
+        },
+        {
+          "v": "divorcio",
+          "t": "Divorcio o separación (ayudabas en el negocio de tu excónyuge)"
+        },
+        {
+          "v": "trade",
+          "t": "Fin del contrato con tu cliente principal (autónomo económicamente dependiente, TRADE)"
+        },
+        {
+          "v": "voluntario",
+          "t": "Dejo la actividad por decisión propia (mejor oferta, cambio de vida, cierre sin motivo legal)"
+        },
+        {
+          "v": "fuera",
+          "t": "Cese parcial (reducción del 60 % de plantilla, deudas, fuerza mayor parcial), sociedad de capital, cooperativa, Mar o agrario"
+        }
+      ]
+    },
+    {
+      "id": "edad",
+      "label": "Tu edad (años cumplidos)",
+      "default": 45,
+      "min": 16,
+      "step": 1,
+      "default_from": "params.paro_autonomos_cese_2026.supuestos.edad"
+    },
+    {
+      "id": "trabaja",
+      "label": "¿Seguirás trabajando mientras cobres?",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No, dejo toda actividad por cuenta propia y ajena"
+        },
+        {
+          "v": "si",
+          "t": "Sí, trabajaré por cuenta propia o ajena a la vez"
+        }
+      ]
+    },
+    {
+      "id": "anterior",
+      "label": "¿Has cobrado antes la prestación por cese de actividad?",
+      "type": "select",
+      "options": [
+        {
+          "v": "nunca",
+          "t": "No, nunca"
+        },
+        {
+          "v": "reciente",
+          "t": "Sí, me la reconocieron hace menos de 18 meses"
+        },
+        {
+          "v": "antigua",
+          "t": "Sí, hace 18 meses o más (solo cuento los meses cotizados desde entonces)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cobra un autónomo por cese de actividad?",
+      "El 70 % de la media de tus bases de los últimos 12 meses, entre 560 € (749 € con hijos a cargo) y 1.225 € (1.400 € con 1 hijo, 1.575 € con 2 o más) en 2026. Con una base de 1.200 €, cobras 840 € al mes."
+    ],
+    [
+      "¿Cuántos meses de paro tiene un autónomo?",
+      "Depende de los meses cotizados por cese en los 48 anteriores, con 12 en los últimos 24: 12 a 17 meses dan 4 de prestación; 18 a 23, 6; 24 a 29, 8; 30 a 35, 10; 36 a 42, 12; 43 a 47, 16; 48, 24 (art. 338.1)."
+    ],
+    [
+      "¿Cuándo no tengo derecho al paro de autónomos?",
+      "El derecho no existe si dejas la actividad por decisión propia (salvo el TRADE que rompe por incumplimiento grave del cliente), te faltan 12 meses cotizados por cese, no pasaron 18 meses desde que te reconocieron otra prestación o superaste la edad ordinaria en un cese definitivo."
+    ],
+    [
+      "¿Quién paga la cuota de autónomos mientras cobro el cese de actividad?",
+      "El órgano gestor (tu mutua o el SEPE) se hace cargo de tu cuota mientras cobras, si pides la prestación en plazo (arts. 329.1.b y 337.6 de la LGSS); si te retrasas, desde el mes siguiente a la solicitud. En el cese parcial paga el 50 %."
+    ],
+    [
+      "¿Puedo trabajar mientras cobro la prestación por cese de actividad?",
+      "No: es incompatible con el trabajo por cuenta propia o ajena y la prestación se suspende; si trabajas 12 meses o más, se extingue (arts. 340 a 342 de la LGSS). Las excepciones son los ceses parciales, que esta calculadora no cubre."
+    ]
+  ],
+  "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado (actualización del BOE de 29/09/2026) (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): art. 327.1 (protección obligatoria), art. 329.1.b (el órgano gestor se hace cargo de la cuota), art. 330.1 (requisitos), art. 331 (situación legal de cese), art. 333 (autónomos económicamente dependientes), arts. 337.4 y 337.5 (plazo de solicitud), art. 338 (escala de duración, 18 meses entre prestaciones, cotizaciones ya usadas), art. 339 (base reguladora, 70 %, máximo y mínimo sobre el IPREM mensual más una sexta parte, hijos a cargo), arts. 340 a 342 (suspensión, extinción e incompatibilidades) y disposición transitoria séptima (edad ordinaria de jubilación en 2026), en la redacción del Real Decreto-ley 13/2022 (https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482), en vigor desde el 1/1/2023. IPREM 2026: 600 € al mes (700 € con la sexta parte), máximo de 1.225, 1.400 y 1.575 € y mínimo de 560 y 749 €, según las cuantías del SEPE (https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html). Hipótesis no oficiales y editables: base de 1.200 €, 24 meses cotizados, sin hijos y 45 años. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

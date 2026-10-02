@@ -40,7 +40,7 @@
   "cuota-autonomos-ingresos-reales-regularizacion"
  ],
  "autonomo-o-asalariado": [
-  "autonomo-o-sociedad-limitada",
+  "paro-autonomos-cese-actividad-cuanto-cobro",
   "cuota-autonomos-ingresos-reales-regularizacion",
   "autonomo-estimacion-directa-o-modulos"
  ],
@@ -152,7 +152,7 @@
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
   "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
-  "baja-medica-cuanto-cobro-incapacidad-temporal"
+  "paro-autonomos-cese-actividad-cuanto-cobro"
  ],
  "cuanto-cuesta-un-bebe-el-primer-ano": [
   "permiso-nacimiento-cuanto-cobro-y-como-repartir",
@@ -162,7 +162,7 @@
  "cuota-autonomos-ingresos-reales-regularizacion": [
   "autonomo-o-asalariado",
   "autonomo-estimacion-directa-o-modulos",
-  "autonomo-o-sociedad-limitada"
+  "paro-autonomos-cese-actividad-cuanto-cobro"
  ],
  "curso-online-bootcamp-o-fp-coste-y-retorno": [
   "academia-idiomas-presencial-online-o-intensivo",
@@ -343,6 +343,11 @@
   "declaracion-conjunta-o-individual",
   "retencion-irpf-nomina-subir-o-no",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+ ],
+ "paro-autonomos-cese-actividad-cuanto-cobro": [
+  "cuota-autonomos-ingresos-reales-regularizacion",
+  "cuanto-cobro-de-paro-prestacion-desempleo",
+  "autonomo-o-asalariado"
  ],
  "pc-sobremesa-o-portatil-coste-a-5-anos": [
   "teletrabajo-o-oficina-coste-real",

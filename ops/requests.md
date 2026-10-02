@@ -129,3 +129,9 @@
 - [x] R-aceptartrabajo.1 [Constructor -> Estratega] data/clusters.json: aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad con relacionadas cuanto-cobro-de-paro-prestacion-desempleo, subsidio-desempleo-cuanto-cobro-y-cuanto-dura y capitalizar-paro-o-cobrarlo (la página enlaza a las tres). · abierta c41
 
 - [x] R-incapacidad.1 [Constructor -> Estratega] data/clusters.json: incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar con relacionadas baja-medica-cuanto-cobro-incapacidad-temporal, jubilacion-activa-o-dejar-de-trabajar y pension-viudedad-cuanto-cobro (la página enlaza a las tres). · abierta c44
+
+## 2026-10-02 · Mejorador del equipo (c48)
+- [ ] R48.1 [Mejorador -> Constructor] calcs/coche-nuevo-o-seminuevo.json, comprar-coche-o-renting.json, teletrabajo-o-oficina-coste-real, comedor-escolar-o-tupper · frases con €/% sin fuente oficial (avisos YMYL de qa_static; pendiente del Editor pasadas 1-3): añadir fuente oficial con fecha (BOE/AEAT/BdE) o reescribir la frase sin la cifra; y cifra del ejemplo en el lead de alquilar-o-comprar, bici-electrica-o-transporte-publico, coche-segunda-mano (sale del test.json por defecto) · abierta c48
+- [ ] R48.2 [Mejorador -> Constructor] data/params.json + calcs fiscales · `qa_static --fiscal` R1 (url en irpf_2026, deposito_letras_2026, donativos_2026) y R2 (6 calculadoras: ver constructor.md «Tarea de mejora») · abierta c48
+- [ ] R48.3 [Mejorador -> Orquestador] ops/qa_static.py · medir también el peso transferido (gzip): la peor página pesa 79 KB sin comprimir pero ~22 KB gzip (HTML 12 + CSS 6); aviso por gzip > 30 KB y el aviso raw > 60 KB pasa a informativo (48 avisos sin efecto real en los < 2 s) · abierta c48
+- [ ] R48.4 [Mejorador -> Orquestador] journal/ESTADO.md · tiene 183 líneas (regla: ≤ 25) y la cabecera dice «ciclo 24»: reescribirlo a 25 líneas y mover el histórico al journal del día · abierta c48

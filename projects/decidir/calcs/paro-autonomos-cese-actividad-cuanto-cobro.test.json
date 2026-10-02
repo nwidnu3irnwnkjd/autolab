@@ -1,0 +1,1061 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 2000,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1225.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 1,
+    "dur": 8,
+    "total": 9800.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1750,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1225.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 9800.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1750.02,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1225.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 1,
+    "dur": 8,
+    "total": 9800.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 800,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 560.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 4480.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 799.99,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 560.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": -1,
+    "dur": 8,
+    "total": 4480.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 800.02,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 560.014,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 4480.112,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 2000,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 1,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1400.0,
+    "tope": 1400.0,
+    "minimo": 749.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 11200.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 2000,
+    "m48": 36,
+    "m24": 24,
+    "hijos": 1,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1400.0,
+    "tope": 1400.0,
+    "minimo": 749.0,
+    "ap": 0,
+    "dur": 12,
+    "total": 16800.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 3000,
+    "m48": 48,
+    "m24": 24,
+    "hijos": 2,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1575.0,
+    "tope": 1575.0,
+    "minimo": 749.0,
+    "ap": 1,
+    "dur": 24,
+    "total": 37800.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 2250,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 2,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 1575.0,
+    "tope": 1575.0,
+    "minimo": 749.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 12600.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1000,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 1,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 749.0,
+    "tope": 1400.0,
+    "minimo": 749.0,
+    "ap": -1,
+    "dur": 8,
+    "total": 5992.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1070,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 1,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 749.0,
+    "tope": 1400.0,
+    "minimo": 749.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 5992.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 12,
+    "m24": 12,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 4,
+    "total": 3360.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 17,
+    "m24": 12,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 4,
+    "total": 3360.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 18,
+    "m24": 12,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 6,
+    "total": 5040.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 23,
+    "m24": 20,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 6,
+    "total": 5040.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 29,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 30,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 10,
+    "total": 8400.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 35,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 10,
+    "total": 8400.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 36,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 12,
+    "total": 10080.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 42,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 12,
+    "total": 10080.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 43,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 16,
+    "total": 13440.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 47,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 16,
+    "total": 13440.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 48,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 24,
+    "total": 20160.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 60,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 24,
+    "total": 20160.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 11,
+    "m24": 11,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 30,
+    "m24": 11,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 11,
+    "m24": 12,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 7
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 20,
+    "m24": 21,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 7
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "voluntario",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "fuera",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "trade",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "violencia",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "licencia",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "divorcio",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "fuerza",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "reciente"
+   },
+   "expect": {
+    "bloqueo": 5
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "no",
+    "anterior": "antigua"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 64,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 65,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 66,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 0,
+    "condEdad": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 67,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 70,
+    "trabaja": "no",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 45,
+    "trabaja": "si",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 1,
+    "condEdad": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "base": 1200,
+    "m48": 24,
+    "m24": 24,
+    "hijos": 0,
+    "causa": "eco",
+    "edad": 66,
+    "trabaja": "si",
+    "anterior": "nunca"
+   },
+   "expect": {
+    "bloqueo": 0,
+    "prest": 840.0,
+    "tope": 1225.0,
+    "minimo": 560.0,
+    "ap": 0,
+    "dur": 8,
+    "total": 6720.0,
+    "condTrabajo": 1,
+    "condEdad": 1
+   },
+   "tol": 1
+  }
+ ]
+}

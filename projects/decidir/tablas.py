@@ -415,7 +415,7 @@ PAGES = [
          calcs=["cuanto-cobro-de-paro-prestacion-desempleo", "jubilacion-anticipada-o-demorada", "pension-viudedad-cuanto-cobro", "capitalizar-paro-o-cobrarlo"],
          variables=["SMI (€)", "IPREM (€)", "Paro máximo y mínimo (€/mes)", "Pensión máxima y mínimas (€)", "Base máxima de cotización (€/mes)", "Interés legal del dinero (%)"],
          keywords=["SMI 2026", "IPREM 2026", "pensión máxima 2026", "paro máximo 2026", "pensión mínima 2026"]),
-    dict(slug="trabajo-prestaciones", guias=["me-han-despedido-indemnizacion-paro-plazos"], compute=trabajo, body=trabajo_body, md=trabajo_md,
+    dict(slug="trabajo-prestaciones", guias=["me-han-despedido-indemnizacion-paro-plazos", "subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas"], compute=trabajo, body=trabajo_body, md=trabajo_md,
          title="Trabajo y prestaciones 2026: paro, despido, permisos",
          h1="Trabajo y prestaciones 2026: paro, permiso de nacimiento, despido y dietas",
          description="Paro máximo y mínimo y su duración, permiso de nacimiento, jubilación activa, despido, kilometraje, dietas y finiquito en 2026, con fuente.",

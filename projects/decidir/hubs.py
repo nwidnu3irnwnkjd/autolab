@@ -252,7 +252,7 @@ HUBS = {
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
-            ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos"]),
+            ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos", "paro-autonomos-cese-actividad-cuanto-cobro"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
@@ -280,6 +280,11 @@ HUBS = {
                 "text": "Cotizas por el rendimiento neto que prevés y, al cierre del año, la Seguridad Social regulariza la diferencia con el real: te devuelve o te pide. La calculadora da tu tramo y cuánto te regularizarán.",
                 "guia": "autonomo-2026-cuota-regularizacion-modulos",
             },
+            "paro-autonomos-cese-actividad-cuanto-cobro": {
+                "name": "Paro de autónomos (cese de actividad)",
+                "text": "Si cierras o paras tu actividad por pérdidas o fuerza mayor, cobras el 70 % de tu base de cotización durante 4 a 24 meses según lo cotizado. La calculadora da si tienes derecho, cuánto cobras y cuántos meses.",
+                "guia": "autonomo-2026-cuota-regularizacion-modulos",
+            },
             "finiquito-baja-voluntaria-vacaciones-preaviso": {
                 "name": "Finiquito al dejar un trabajo",
                 "text": "Al irte cobras el sueldo del mes, las pagas pendientes y las vacaciones sin disfrutar, y si no das el preaviso del convenio te descuentan días. La calculadora da el finiquito bruto y neto con tus fechas.",
@@ -287,6 +292,7 @@ HUBS = {
             "retribucion-flexible-me-conviene": {
                 "name": "Retribución flexible",
                 "text": "Seguro médico, comida, transporte y guardería pagados desde la nómina dentro de los límites del artículo 42 de la Ley del IRPF te ahorran IRPF, no cotización. La calculadora da cuánto ahorras con tu tipo marginal.",
+                "guia": "subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas",
             },
             "comparar-ofertas-de-trabajo-neto-real": {
                 "name": "Comparar dos ofertas de trabajo",
@@ -303,10 +309,12 @@ HUBS = {
             "retencion-irpf-nomina-subir-o-no": {
                 "name": "Retención de IRPF en la nómina: ¿subirla o no?",
                 "text": "La retención es un anticipo, no el impuesto final: si es menor que tu cuota saldrá a pagar y si es mayor te devolverán la diferencia. La calculadora compara tu retención con tu cuota estimada y te dice si te conviene pedir que te la cambien.",
+                "guia": "subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas",
             },
             "kilometraje-y-dietas-exentas-irpf": {
                 "name": "Kilometraje y dietas exentas de IRPF",
                 "text": "La empresa puede pagarte sin IRPF hasta 0,26 € por km y las dietas dentro de los límites del Reglamento; el exceso tributa. La calculadora compara lo que te pagan con lo que te cuesta el coche por km y da el exceso sujeto a IRPF.",
+                "guia": "subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas",
             },
             "obligado-a-declarar-renta-dos-pagadores": {
                 "name": "¿Estás obligado a declarar? (dos pagadores)",
