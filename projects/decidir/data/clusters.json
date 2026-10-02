@@ -2,7 +2,7 @@
  "academia-idiomas-presencial-online-o-intensivo": [
   "comprar-o-alquilar-trastero",
   "hotel-o-apartamento-viaje-en-grupo",
-  "reformar-o-mudarse"
+  "movil-reacondicionado-o-nuevo"
  ],
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -154,10 +154,20 @@
   "placas-solares-merece-la-pena",
   "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
+ "movil-reacondicionado-o-nuevo": [
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "fibra-y-movil-juntos-o-por-separado",
+  "reparar-o-comprar-electrodomestico"
+ ],
  "navidad-cuanto-gastar-sin-endeudarte": [
   "contado-o-financiar",
   "hotel-o-apartamento-viaje-en-grupo",
   "portatil-o-movil-comprar-renting-o-financiar"
+ ],
+ "obligado-a-declarar-renta-dos-pagadores": [
+  "declaracion-conjunta-o-individual",
+  "comparar-ofertas-de-trabajo-neto-real",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "placas-solares-merece-la-pena": [
   "luz-fija-o-indexada",
@@ -223,6 +233,11 @@
   "hipoteca-fija-o-variable",
   "amortizar-plazo-o-cuota",
   "amortizar-o-invertir"
+ ],
+ "suscripciones-cuanto-gasto-al-ano": [
+  "teletrabajo-o-oficina-coste-real",
+  "fibra-y-movil-juntos-o-por-separado",
+  "navidad-cuanto-gastar-sin-endeudarte"
  ],
  "teletrabajo-o-oficina-coste-real": [
   "excedencia-o-reduccion-jornada",

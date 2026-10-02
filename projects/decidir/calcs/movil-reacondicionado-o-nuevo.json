@@ -1,0 +1,95 @@
+{
+  "slug": "movil-reacondicionado-o-nuevo",
+  "title": "Móvil reacondicionado o nuevo: coste por año y garantía",
+  "description": "Compara móvil nuevo y reacondicionado o usado: coste total y por año, riesgo de reparación, garantía legal y desde cuántos años compensa el nuevo.",
+  "h1": "Móvil reacondicionado, usado o nuevo: coste por año y garantía",
+  "lead": "Un móvil reacondicionado o usado compensa si su coste por año de vida esperada (precio menos reventa, más el riesgo de reparación fuera de garantía) es menor que el del nuevo; con los ejemplos de la página sale a 142,50 € al año frente a 145 € del nuevo, y el nuevo solo gana si dura 6 años o más, o si el reacondicionado cuesta más de unos 459 €. Pon tus precios, los años que esperas que dure cada uno y la garantía que te dan, y verás el coste por año, el riesgo de reparación y el precio máximo al que compensa el reacondicionado.",
+  "veredicto": "El reacondicionado o usado compensa mientras su precio sea menor que el precio de equilibrio que calcula la página con tus años de vida, garantía y reventa; el nuevo gana si le esperas una vida más larga que la que indica la calculadora o si el reacondicionado no baja de ese precio.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "pnuevo",
+      "label": "Precio del móvil nuevo (€; 800 € es un ejemplo, no un precio de mercado)",
+      "default": 800,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "prec",
+      "label": "Precio del reacondicionado o usado (€; 450 € es un ejemplo)",
+      "default": 450,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "vidaN",
+      "label": "Años de vida esperada del nuevo (hipótesis tuya: batería y actualizaciones; 5 es un ejemplo)",
+      "default": 5,
+      "min": 1,
+      "step": 0.5,
+      "max": 30
+    },
+    {
+      "id": "vidaR",
+      "label": "Años de vida esperada del reacondicionado o usado (hipótesis tuya; 3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "step": 0.5,
+      "max": 30
+    },
+    {
+      "id": "garR",
+      "label": "Garantía del reacondicionado o usado (años; 0 si es entre particulares; mira tu factura; 1 es un ejemplo)",
+      "default": 1,
+      "min": 0,
+      "step": 1,
+      "max": 3
+    },
+    {
+      "id": "prob",
+      "label": "Probabilidad de avería cada año fuera de garantía (%; hipótesis, 15 % es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 1,
+      "max": 100
+    },
+    {
+      "id": "rep",
+      "label": "Coste de una reparación (€; 150 € es un ejemplo)",
+      "default": 150,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "reventa",
+      "label": "Valor de reventa al final (% del precio pagado; hipótesis, 15 % es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 1,
+      "max": 99
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa más un móvil reacondicionado o uno nuevo?",
+      "Compensa el que tenga menor coste por año de vida esperada: precio menos reventa, más el riesgo esperado de reparación fuera de garantía, entre los años de uso. Con los ejemplos de la página, el reacondicionado cuesta 142,50 € al año y el nuevo 145 €, una diferencia pequeña que cambia con los años de vida y con el precio. La calculadora te da el precio máximo del reacondicionado y los años de vida desde los que el nuevo sale mejor."
+    ],
+    [
+      "¿Qué garantía tiene un móvil nuevo y uno de segunda mano?",
+      "Según el texto consolidado del TRLGDCU (art. 120.1, modificado por el Real Decreto-ley 7/2021), el empresario responde de las faltas de conformidad que se manifiesten en tres años desde la entrega de un bien. En los bienes de segunda mano se puede pactar un plazo menor, que no puede ser inferior a un año. Entre particulares no hay vendedor profesional: consulta tus derechos de garantía y qué figura en tu factura."
+    ],
+    [
+      "¿A partir de cuántos años de vida compensa comprar el nuevo?",
+      "Cuando el coste por año del nuevo baja del que tiene el reacondicionado. Con los ejemplos de la página ocurre a partir de 6 años de vida del nuevo, manteniendo 3 años para el reacondicionado, un 15 % de probabilidad de avería y 150 € por reparación. Con otros datos el umbral cambia: la calculadora lo recalcula."
+    ],
+    [
+      "¿Cómo se calcula el riesgo de reparación?",
+      "Como un valor esperado: probabilidad de avería cada año, por el coste de la reparación, por los años de vida que quedan fuera de garantía. Con los ejemplos, el nuevo (5 años de vida, 3 de garantía) acumula 2 años sin garantía: 15 % x 150 € x 2 = 45 €. Es un promedio, no lo que te va a costar a ti: una avería real puede costar 0 o varias reparaciones."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No valora la calidad del reacondicionado ni quién lo ha reacondicionado, el estado de la batería, las actualizaciones de seguridad que reciba cada modelo, el impacto ambiental, la garantía extendida opcional ni el coste de oportunidad de tu dinero. Los precios, vidas, probabilidades y reventa son ejemplos o hipótesis editables, no datos de mercado."
+    ]
+  ],
+  "sources": "Modelo propio: coste total de propiedad = precio x (1 - reventa) + probabilidad anual de avería x coste de reparación x años de vida sin garantía; coste por año = coste total / años de vida esperada; precio de equilibrio del reacondicionado = (coste por año del nuevo x años de vida del reacondicionado - riesgo de reparación del reacondicionado) / (1 - reventa); años de vida desde los que compensa el nuevo = menor número de años (hasta 30) a partir del cual el coste por año del nuevo es igual o menor que el del reacondicionado. Garantía del nuevo en el modelo: 3 años. Todos los precios, años de vida, probabilidades, costes de reparación y porcentajes de reventa son ejemplos declarados y editables, no datos de mercado; se aplica el mismo porcentaje de reventa a ambos. Garantía legal: Real Decreto Legislativo 1/2007 (TRLGDCU), art. 120.1, redacción del Real Decreto-ley 7/2021, de 27 de abril, texto consolidado del BOE consultado el 2/10/2026: https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555 ; Real Decreto-ley 7/2021: https://www.boe.es/buscar/act.php?id=BOE-A-2021-6872 . Información orientativa, no asesoramiento financiero ni jurídico."
+}

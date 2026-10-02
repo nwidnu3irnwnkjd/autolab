@@ -1,0 +1,92 @@
+{
+  "slug": "suscripciones-cuanto-gasto-al-ano",
+  "title": "Suscripciones: cuánto gastas al año y cuáles cancelar",
+  "description": "Calcula cuánto gastas al año en suscripciones, el coste por hora de uso de cada grupo y cuánto ahorras si rotas o cancelas las que menos usas.",
+  "h1": "Suscripciones: cuánto gastas al año y cuáles compensa cancelar",
+  "lead": "Compensa rotar o cancelar las suscripciones que cuestan más por hora de uso que la media de las tuyas, y pagar por año solo las que usas todo el año si el descuento lo justifica. Con los ejemplos de la página (90 € al mes, 66 horas de uso al mes) gastas 1.080 € al año, la media sale a 1,36 € por hora y rotar o cancelar el streaming (1,50 €/h) y el grupo de otras (7,50 €/h) ahorra 552 € al año. Pon tus gastos y tus horas y verás qué grupos superan tu media y cuánto ahorras con ellos.",
+  "veredicto": "Las suscripciones que cuestan más por hora de uso que la media de las tuyas son las candidatas a rotar (pagarlas solo los meses en que las usas) o cancelar; las demás compensa mantenerlas, y con plan anual solo si tienen descuento y las usas todo el año.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "p1",
+      "label": "Streaming de vídeo: suma de lo que pagas (€/mes; 30 € es un ejemplo, no una tarifa)",
+      "default": 30,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "h1",
+      "label": "Streaming de vídeo: horas de uso al mes (20 h es un ejemplo)",
+      "default": 20,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "p2",
+      "label": "Música, almacenamiento y apps: suma (€/mes; 15 € es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "h2",
+      "label": "Música, almacenamiento y apps: horas de uso al mes (40 h es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "p3",
+      "label": "Otras (prensa, gimnasio…): suma (€/mes; 45 € es un ejemplo)",
+      "default": 45,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "h3",
+      "label": "Otras: horas de uso al mes (6 h es un ejemplo)",
+      "default": 6,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "dto",
+      "label": "Descuento por pagar el año entero (%; 0 si no hay; 15 % es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 1,
+      "max": 99
+    },
+    {
+      "id": "meses",
+      "label": "Meses al año que mantendrías las de menor uso si las rotas (de 0 a 12; 5 es un ejemplo)",
+      "default": 5,
+      "min": 0,
+      "step": 1,
+      "max": 12
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto gasto al año en suscripciones?",
+      "Es la suma de lo que pagas al mes por 12. Con los ejemplos de la página, 90 € al mes son 1.080 € al año. Pon tus gastos reales: la calculadora los reparte en tres grupos (vídeo, música y apps, otras) y te da el total y el gasto por grupo."
+    ],
+    [
+      "¿Qué suscripciones compensa cancelar?",
+      "Las que cuestan más por hora de uso que la media de todas las tuyas (gasto mensual total entre horas de uso totales). Con los ejemplos de la página, la media es de 1,36 € por hora y quedan por encima el streaming (1,50 €/h) y el grupo de otras (7,50 €/h). Una suscripción sin horas de uso es candidata a cancelar directamente."
+    ],
+    [
+      "¿Compensa rotar suscripciones en vez de mantenerlas todo el año?",
+      "Rotar sale mejor cuando los meses que pagas, multiplicados por la cuota mensual, cuestan menos que el plan anual con descuento. Con los ejemplos (15 % de descuento), pagar 5 meses de una suscripción de 30 € cuesta 150 €, mientras que 12 cuotas con ese descuento cuestan bastante más. La calculadora supone que concentras las mismas horas de uso en los meses en que pagas; si no es así, el ahorro es menor."
+    ],
+    [
+      "¿Sale a cuenta pagar la suscripción por año?",
+      "Solo en las que vas a usar todo el año: con un descuento del 15 %, pagar por adelantado una cuota de 15 € al mes cuesta 153 € en lugar de 180 €, pero pierdes la flexibilidad de cancelar. Si las rotas o cancelas, el plan anual deja de compensar."
+    ],
+    [
+      "¿Qué no incluye este cálculo?",
+      "No incluye precios de plataformas concretas (todo son tus datos o ejemplos), ni el catálogo, la calidad o el valor que te da cada servicio, ni contratos con permanencia, ni cambios de precio durante el año. Cada fila suma varias suscripciones del mismo tipo, así que el coste por hora es una media del grupo."
+    ]
+  ],
+  "sources": "Modelo propio: gasto anual = 12 x suma de cuotas mensuales; coste por hora = cuota mensual / horas de uso al mes; media = gasto mensual total / horas totales; candidatas = grupos con coste por hora superior a la media o sin horas de uso; ahorro de una candidata = 12 x cuota - menor entre (meses activos x cuota) y (12 x cuota x (1 - descuento)); en las que se mantienen, el ahorro es el descuento por plan anual. Hipótesis: al rotar se concentran las mismas horas de uso anuales en los meses de pago. Todos los precios, horas, descuentos y meses de la página son ejemplos declarados y editables, no tarifas de ninguna plataforma; no se usan cifras externas. Al contratar o darte de baja, revisa las condiciones: el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios prohíbe en su art. 62.3 las cláusulas que obstaculicen el derecho a poner fin a un contrato de tracto sucesivo (BOE consolidado, consultado el 2/10/2026: https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555). Información orientativa, no asesoramiento financiero."
+}

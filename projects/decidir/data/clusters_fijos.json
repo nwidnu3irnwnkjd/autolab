@@ -110,12 +110,14 @@
  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
   "declaracion-conjunta-o-individual",
   "plan-pensiones-o-fondo-indexado",
-  "rescate-plan-pensiones-capital-o-renta"
+  "rescate-plan-pensiones-capital-o-renta",
+  "obligado-a-declarar-renta-dos-pagadores"
  ],
  "portatil-o-movil-comprar-renting-o-financiar": [
   "contado-o-financiar",
   "fibra-y-movil-juntos-o-por-separado",
-  "reparar-o-comprar-electrodomestico"
+  "reparar-o-comprar-electrodomestico",
+  "movil-reacondicionado-o-nuevo"
  ],
  "teletrabajo-o-oficina-coste-real": [
   "excedencia-o-reduccion-jornada",
@@ -125,7 +127,8 @@
  "fibra-y-movil-juntos-o-por-separado": [
   "portatil-o-movil-comprar-renting-o-financiar",
   "teletrabajo-o-oficina-coste-real",
-  "contado-o-financiar"
+  "contado-o-financiar",
+  "suscripciones-cuanto-gasto-al-ano"
  ],
  "seguro-mascota-merece-la-pena": [
   "seguro-todo-riesgo-o-terceros",
@@ -155,7 +158,8 @@
  "declaracion-conjunta-o-individual": [
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
   "autonomo-o-asalariado",
-  "rescate-plan-pensiones-capital-o-renta"
+  "rescate-plan-pensiones-capital-o-renta",
+  "obligado-a-declarar-renta-dos-pagadores"
  ],
  "amortizar-plazo-o-cuota": [
   "amortizar-o-invertir",
@@ -231,5 +235,20 @@
   "autonomo-o-sociedad-limitada",
   "declaracion-conjunta-o-individual",
   "excedencia-o-reduccion-jornada"
+ ],
+ "suscripciones-cuanto-gasto-al-ano": [
+  "teletrabajo-o-oficina-coste-real",
+  "fibra-y-movil-juntos-o-por-separado",
+  "navidad-cuanto-gastar-sin-endeudarte"
+ ],
+ "movil-reacondicionado-o-nuevo": [
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "fibra-y-movil-juntos-o-por-separado",
+  "reparar-o-comprar-electrodomestico"
+ ],
+ "obligado-a-declarar-renta-dos-pagadores": [
+  "declaracion-conjunta-o-individual",
+  "comparar-ofertas-de-trabajo-neto-real",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ]
 }

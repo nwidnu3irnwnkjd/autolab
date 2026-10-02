@@ -1,0 +1,167 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "pnuevo": 800,
+    "prec": 450,
+    "vidaN": 5,
+    "vidaR": 3,
+    "garR": 1,
+    "prob": 15,
+    "rep": 150,
+    "reventa": 15
+   },
+   "expect": {
+    "tcoNuevo": 725.0,
+    "tcoReac": 427.5,
+    "anoNuevo": 145.0,
+    "anoReac": 142.5,
+    "riesgoNuevo": 45.0,
+    "riesgoReac": 45.0,
+    "residualNuevo": 120.0,
+    "residualReac": 67.5,
+    "diferenciaAno": 2.5,
+    "mejor": 1,
+    "precioEquilibrio": 458.82,
+    "desdeAnos": 6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 800,
+    "prec": 450,
+    "vidaN": 5,
+    "vidaR": 3,
+    "garR": 1,
+    "prob": 15,
+    "rep": 0,
+    "reventa": 15
+   },
+   "expect": {
+    "tcoNuevo": 680.0,
+    "tcoReac": 382.5,
+    "anoNuevo": 136.0,
+    "anoReac": 127.5,
+    "riesgoNuevo": 0.0,
+    "riesgoReac": 0.0,
+    "residualNuevo": 120.0,
+    "residualReac": 67.5,
+    "diferenciaAno": 8.5,
+    "mejor": 1,
+    "precioEquilibrio": 480.0,
+    "desdeAnos": 6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 800,
+    "prec": 450,
+    "vidaN": 1,
+    "vidaR": 1,
+    "garR": 1,
+    "prob": 15,
+    "rep": 150,
+    "reventa": 15
+   },
+   "expect": {
+    "tcoNuevo": 680.0,
+    "tcoReac": 382.5,
+    "anoNuevo": 680.0,
+    "anoReac": 382.5,
+    "riesgoNuevo": 0.0,
+    "riesgoReac": 0.0,
+    "residualNuevo": 120.0,
+    "residualReac": 67.5,
+    "diferenciaAno": 297.5,
+    "mejor": 1,
+    "precioEquilibrio": 800.0,
+    "desdeAnos": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 800,
+    "prec": 450,
+    "vidaN": 5,
+    "vidaR": 3,
+    "garR": 1,
+    "prob": 0,
+    "rep": 150,
+    "reventa": 0
+   },
+   "expect": {
+    "tcoNuevo": 800.0,
+    "tcoReac": 450.0,
+    "anoNuevo": 160.0,
+    "anoReac": 150.0,
+    "riesgoNuevo": 0.0,
+    "riesgoReac": 0.0,
+    "residualNuevo": 0.0,
+    "residualReac": 0.0,
+    "diferenciaAno": 10.0,
+    "mejor": 1,
+    "precioEquilibrio": 480.0,
+    "desdeAnos": 6
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 800,
+    "prec": 700,
+    "vidaN": 5,
+    "vidaR": 2,
+    "garR": 3,
+    "prob": 15,
+    "rep": 150,
+    "reventa": 15
+   },
+   "expect": {
+    "tcoNuevo": 725.0,
+    "tcoReac": 595.0,
+    "anoNuevo": 145.0,
+    "anoReac": 297.5,
+    "riesgoNuevo": 45.0,
+    "riesgoReac": 0.0,
+    "residualNuevo": 120.0,
+    "residualReac": 105.0,
+    "diferenciaAno": -152.5,
+    "mejor": 0,
+    "precioEquilibrio": 341.18,
+    "desdeAnos": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 450,
+    "prec": 450,
+    "vidaN": 3,
+    "vidaR": 3,
+    "garR": 1,
+    "prob": 0,
+    "rep": 0,
+    "reventa": 0
+   },
+   "expect": {
+    "tcoNuevo": 450.0,
+    "tcoReac": 450.0,
+    "anoNuevo": 150.0,
+    "anoReac": 150.0,
+    "riesgoNuevo": 0.0,
+    "riesgoReac": 0.0,
+    "residualNuevo": 0.0,
+    "residualReac": 0.0,
+    "diferenciaAno": 0.0,
+    "mejor": 2,
+    "precioEquilibrio": 450.0,
+    "desdeAnos": 3
+   },
+   "tol": 1
+  }
+ ]
+}

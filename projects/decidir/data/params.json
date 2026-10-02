@@ -1843,5 +1843,24 @@
       "costes_sl": 1800,
       "ccaa": "madrid"
     }
+  },
+ "obligado_declarar_2026": {
+  "fuente": "Ley 35/2006 del IRPF, art. 96 (texto consolidado; última modificación del apartado 3: Real Decreto-ley 4/2024 con efectos 1/1/2024; RDL 9/2024 sin efecto, BOE-A-2025-1136); Reglamento del IRPF art. 61 (cita 15.000 €: prevalece la ley); AEAT Manual práctico de Renta 2025",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+  "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+  "url_aeat": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c01-campana-declaracion-renta/quienes-estan-obligados-presentar-declaracion-irpf/delimitacion-obligacion-declarar-irpf.html",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A",
+  "limite_trabajo_general": 22000,
+  "limite_trabajo_reducido": 15876,
+  "limite_resto_pagadores": 1500,
+  "limite_capital_ganancias_retencion": 1600,
+  "limite_inmobiliarias_letras_vpo": 1000,
+  "limite_conjunto_general": 1000,
+  "supuestos": {
+   "nota": "Ejemplo editable (no es dato oficial)",
+   "t1": 18000,
+   "t2": 2000
   }
+ }
 }

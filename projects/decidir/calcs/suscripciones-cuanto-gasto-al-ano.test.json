@@ -1,0 +1,179 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "p1": 30,
+    "h1": 20,
+    "p2": 15,
+    "h2": 40,
+    "p3": 45,
+    "h3": 6,
+    "dto": 15,
+    "meses": 5
+   },
+   "expect": {
+    "gastoAnual": 1080.0,
+    "gastoPagoAnual": 918.0,
+    "horasMes": 66.0,
+    "mediaHora": 1.36,
+    "horaG1": 1.5,
+    "horaG2": 0.38,
+    "horaG3": 7.5,
+    "mayorCoste": 2,
+    "nCandidatas": 2,
+    "ahorroCandidatas": 525.0,
+    "ahorroMantenidas": 27.0,
+    "ahorroTotal": 552.0,
+    "gastoTras": 528.0,
+    "descuentoAnual": 162.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "p1": 30,
+    "h1": 20,
+    "p2": 15,
+    "h2": 40,
+    "p3": 45,
+    "h3": 6,
+    "dto": 0,
+    "meses": 5
+   },
+   "expect": {
+    "gastoAnual": 1080.0,
+    "gastoPagoAnual": 1080.0,
+    "horasMes": 66.0,
+    "mediaHora": 1.36,
+    "horaG1": 1.5,
+    "horaG2": 0.38,
+    "horaG3": 7.5,
+    "mayorCoste": 2,
+    "nCandidatas": 2,
+    "ahorroCandidatas": 525.0,
+    "ahorroMantenidas": 0.0,
+    "ahorroTotal": 525.0,
+    "gastoTras": 555.0,
+    "descuentoAnual": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "p1": 30,
+    "h1": 20,
+    "p2": 15,
+    "h2": 40,
+    "p3": 45,
+    "h3": 0,
+    "dto": 15,
+    "meses": 5
+   },
+   "expect": {
+    "gastoAnual": 1080.0,
+    "gastoPagoAnual": 918.0,
+    "horasMes": 60.0,
+    "mediaHora": 1.5,
+    "horaG1": 1.5,
+    "horaG2": 0.38,
+    "horaG3": -1,
+    "mayorCoste": 0,
+    "nCandidatas": 1,
+    "ahorroCandidatas": 540.0,
+    "ahorroMantenidas": 81.0,
+    "ahorroTotal": 621.0,
+    "gastoTras": 459.0,
+    "descuentoAnual": 162.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "p1": 0,
+    "h1": 20,
+    "p2": 0,
+    "h2": 40,
+    "p3": 60,
+    "h3": 10,
+    "dto": 15,
+    "meses": 5
+   },
+   "expect": {
+    "gastoAnual": 720.0,
+    "gastoPagoAnual": 612.0,
+    "horasMes": 70.0,
+    "mediaHora": 0.86,
+    "horaG1": 0.0,
+    "horaG2": 0.0,
+    "horaG3": 6.0,
+    "mayorCoste": 2,
+    "nCandidatas": 1,
+    "ahorroCandidatas": 420.0,
+    "ahorroMantenidas": 0.0,
+    "ahorroTotal": 420.0,
+    "gastoTras": 300.0,
+    "descuentoAnual": 108.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "p1": 30,
+    "h1": 20,
+    "p2": 15,
+    "h2": 40,
+    "p3": 45,
+    "h3": 6,
+    "dto": 0,
+    "meses": 12
+   },
+   "expect": {
+    "gastoAnual": 1080.0,
+    "gastoPagoAnual": 1080.0,
+    "horasMes": 66.0,
+    "mediaHora": 1.36,
+    "horaG1": 1.5,
+    "horaG2": 0.38,
+    "horaG3": 7.5,
+    "mayorCoste": 2,
+    "nCandidatas": 2,
+    "ahorroCandidatas": 0.0,
+    "ahorroMantenidas": 0.0,
+    "ahorroTotal": 0.0,
+    "gastoTras": 1080.0,
+    "descuentoAnual": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "p1": 30,
+    "h1": 0,
+    "p2": 15,
+    "h2": 0,
+    "p3": 45,
+    "h3": 0,
+    "dto": 15,
+    "meses": 5
+   },
+   "expect": {
+    "gastoAnual": 1080.0,
+    "gastoPagoAnual": 918.0,
+    "horasMes": 0.0,
+    "mediaHora": -1,
+    "horaG1": -1,
+    "horaG2": -1,
+    "horaG3": -1,
+    "mayorCoste": -1,
+    "nCandidatas": 3,
+    "ahorroCandidatas": 1080.0,
+    "ahorroMantenidas": 0.0,
+    "ahorroTotal": 1080.0,
+    "gastoTras": 0.0,
+    "descuentoAnual": 162.0
+   },
+   "tol": 1
+  }
+ ]
+}
