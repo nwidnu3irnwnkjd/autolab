@@ -175,3 +175,9 @@
 - 5h 55 % (reset 13:40Z), semanal 47 %, extra 0,55 €.
 - Fiscales pendientes: incapacidad-permanente, paro-autonomos-cese, ayuda-alquiler-joven, jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad. No fiscal con demanda restante: cuánto cuesta un bebé el primer año.
 - Siguiente (c47): Mejorador Opus (c48?) / Estratega Opus c48; c47: 1 fiscal + cuánto-cuesta-un-bebé + reconsulta RDL.
+
+## Ciclo 47 cerrado
+- Publicadas: incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar (Opus: crítico = falta el suelo del art. 196.2 de 684,30 €/mes en la total por enfermedad común; complemento por mínimos por diferencia; reverificada) y cuanto-cuesta-un-bebe-el-primer-ano (demanda #4, 19/20). 100 calculadoras.
+- 5h 59 % (reset 13:40Z), semanal 48 %, extra 0,55 €.
+- Fiscales pendientes: paro-autonomos-cese, ayuda-alquiler-joven (RD 326/2026), jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad. Las `demanda:` del Estratega están agotadas: pedir nuevas en c48.
+- Siguiente (c48): Mejorador Opus + Estratega Opus (nuevas demanda: + reconsulta RDL 26/2026 + metrics) + 1 fiscal (paro-autonomos).
