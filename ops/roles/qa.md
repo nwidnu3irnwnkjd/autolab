@@ -39,3 +39,6 @@ v3 no bajó los tokens (94k → 102k): el coste son las capturas, no las comprob
 - Máx. 4 páginas por ciclo (las nuevas primero; si hay más, la home + 3). Capturas: 1 sola por página nueva (375 px claro). Todo lo demás con `javascript_tool`, que no gasta imagen: `document.documentElement.scrollWidth > innerWidth` (desborde), texto del resultado tras calcular, y `read_console_messages` con `onlyErrors`.
 - Modo oscuro y 1280 px: solo si el ciclo tocó templates/ o assets/ (lo dice el Orquestador).
 - Informe: máx. 5 líneas (antes 15).
+
+## Servidor de vista previa (c17)
+Si `curl http://localhost:8787/` no responde o el navegador dice «Browser pane gone», el Orquestador reinicia con `preview_start name decidir` (el servidor sirve projects/decidir/dist y puede caerse al regenerarse). Los roles NO deben reiniciarlo: avisan en su informe.

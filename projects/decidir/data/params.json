@@ -1703,5 +1703,29 @@
    "confianza": "A",
    "texto": "donativo irrevocable, puro y simple a una entidad del art. 16; justificación con certificación de la entidad con NIF del donante, mención de estar acogida a la Ley 49/2002, fecha e importe; si hay contraprestación simbólica, que no supere el 15 % del donativo y 25.000 € (art. 17.2)"
   }
+ },
+ "seguro_vida_hipoteca": {
+  "fuente": "Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario, art. 17.3 (prestamista que exige seguro: debe aceptar pólizas alternativas equivalentes, sin cobrar por analizarlas y sin empeorar las condiciones del préstamo por aceptarlas); BOE-A-2019-3814, texto consolidado, última actualización publicada 30/09/2026",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814",
+  "consulta": "consultado el 2/10/2026",
+  "nota": "Las primas (450 y 250 €/año), la bonificación (0,5 puntos) y el capital (150.000 €, 25 años) son ejemplos editables, no ofertas. El TIN de ejemplo sale de live.tipo_hipoteca_fija. Las referencias a la Ley 5/2019 en la ficha son al art. 17.3 (verificado en el texto consolidado del BOE); NO se citó el art. 14 porque trata de transparencia precontractual."
+ },
+ "seguro_salud_privado": {
+  "nota": "Todos los importes (prima, copago, coste por acto, subidas) son ejemplos editables, no tarifas de aseguradoras ni de clínicas; no hay cifras externas. La subida de prima y de precios son hipótesis del usuario. Información de coste esperado, no recomendación sanitaria.",
+  "consulta": "2026-10-02"
+ },
+ "deposito_letras_2026": {
+  "ejercicio": 2026,
+  "consultado": "2026-10-02",
+  "base_legal": "Ley 35/2006 (IRPF) arts. 25.2, 26, 37, 49, 56, 66, 76, 94 y 101.4/101.6; RD 439/2007 arts. 75.3.b y 97; RDL 16/2011 art. 10; RD 2606/1996; textos consolidados del BOE a 02/10/2026 (Ley 35/2006 y RD 439/2007: última actualización publicada el 30/09/2026; RD 2606/1996: 24/11/2021)",
+  "escala_ahorro": {"fuente": "Ley 35/2006, arts. 66.1 (estatal) y 76 (autonómica, igual): cuota acumulada 570/5.190/22.440/35.940 € por mitad; tipo total = doble: 19/21/23/27/30 %", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764", "consulta": "consultado el 2/10/2026", "confianza": "A", "tramos": [[0, 19], [6000, 21], [50000, 23], [200000, 27], [300000, 30]]},
+  "retencion": {"fuente": "Ley 35/2006, art. 101.4 (rendimientos del capital mobiliario, 19 %) y art. 101.6 (ganancias por reembolso de fondos, 19 %); RD 439/2007, art. 75.3.b (sin retención en Letras del Tesoro, salvo cuentas basadas en Letras de entidades de crédito)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820", "consulta": "consultado el 2/10/2026", "confianza": "A", "pct": 19},
+  "letras": {"fuente": "Tesoro Público, resultado de últimas subastas de Letras: tipo de interés simple base 360, precio P = 100/(1 + i·d/360); comprobado: 12 meses, precio medio 97,163, d = 371 días, i = 2,833 % frente a 2,832 % publicado", "url": "https://www.tesoro.es/deuda-publica/subastas/resultado-ultimas-subastas/letras-del-tesoro", "consulta": "consultado el 2/10/2026", "confianza": "A", "base": 360, "dias_anio": 365,
+   "ejemplo_9m_tipo_medio": 2.776, "ejemplo_9m_fecha": "2026-09-08", "ejemplo_9m_dias": 266, "ejemplo_9m_precio_medio": 97.990, "ejemplo_6m_tipo_medio": 2.623, "ejemplo_6m_fecha": "2026-09-01", "ejemplo_12m_tipo_medio": 2.832, "ejemplo_12m_fecha": "2026-09-01", "ejemplo_3m_tipo_medio": 2.456, "ejemplo_3m_fecha": "2026-09-08",
+   "nota": "Ejemplo con fecha y fuente (tipo de interés medio de la subasta del 8/9/2026 a 9 meses; precio medio 97,990 implica 266 días hasta el vencimiento, no 273,75), no dato fijo: cambia en cada subasta; el usuario lo sustituye por el último publicado."},
+  "fgd": {"fuente": "RDL 16/2011, art. 10 (límite de 100.000 € por depositante) y RD 2606/1996 (anexo: «100.000 euros por depositante y entidad de crédito»; art. 7 bis para valores)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-16173", "url2": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-28535", "consulta": "consultado el 2/10/2026", "confianza": "A", "limite_euros": 100000},
+  "fondos": {"fuente": "Ley 35/2006, arts. 33, 37.1, 46, 49.1.b y 94.1.a (ganancia o pérdida solo al reembolso; traspaso entre fondos de inversión sin computar); la comisión de gestión va dentro del valor liquidativo y no es gasto deducible aparte (art. 26.1.a)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764", "consulta": "consultado el 2/10/2026", "confianza": "A"},
+  "supuestos": {"plazo_meses": 9, "importe": 20000, "tin_deposito": 2.5, "rentab_fondo": 2.4, "comision_fondo": 0.2, "otras_rentas_ahorro": 0},
+  "nota": "TIN del depósito, rentabilidad bruta del fondo, comisión del fondo e importe son ejemplos editables, no ofertas ni datos de mercado: no hay fuente oficial de la oferta de cada entidad. Letras: ejemplo oficial fechado."
  }
 }

@@ -69,9 +69,11 @@ def head_extra():
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={site["adsense_client"]}" crossorigin="anonymous"></script>')
     return "\n".join(out)
 
+HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/"}  # hubs.HUBS (R16.1); resto de temas: ancla del catálogo
+
 def calc_header(c):
     """Cabecera .ph de una calculadora."""
-    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="{"/hipoteca/" if tema(c) == "hipoteca" else "/decidir/#" + tema(c)}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
+    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="{HUB_PATHS.get(tema(c), "/decidir/#" + tema(c))}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
 <h1>{c["h1"]}</h1>
 <p class="lead">{c["lead"]}</p></header>"""
 

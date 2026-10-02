@@ -1,0 +1,122 @@
+{
+  "slug": "deposito-letras-o-fondo-monetario",
+  "title": "Depósito, Letras del Tesoro o fondo monetario: ¿cuál da más?",
+  "description": "Compara el neto de un depósito, las Letras del Tesoro y un fondo monetario tras el IRPF del ahorro (19 % a 30 %), con TAE neta y punto de equilibrio.",
+  "h1": "Depósito, Letras del Tesoro o fondo monetario: ¿qué te deja más neto?",
+  "lead": "Con el mismo importe y plazo, depósito, Letras del Tesoro y fondo monetario tributan en la base del ahorro con la misma escala (19 %, 21 %, 23 %, 27 % y 30 %), así que, con estos supuestos, te deja más neto el que rinde más bruto a tu plazo y el IRPF cambia cuánto te queda, no el orden. Con 20.000 €, un depósito a 9 meses al 2,5 % de TIN, una Letra a 9 meses al 2,776 % (266 días reales de vida) y un fondo que rinde un 2,4 % bruto con una comisión del 0,2 %, las Letras dejan 332,29 € netos, el depósito 303,75 € y el fondo 266,57 €. El fondo solo compensa si rinde más que el mejor de los otros dos (aquí, un 2,94 % anual bruto antes de comisión) y asumes que no tiene capital garantizado. Excepción no modelada: si tienes pérdidas patrimoniales por compensar (art. 49), favorecen al fondo y pueden cambiar el orden. Calcula el neto con tus tipos y tu tramo.",
+  "veredicto": "Con estos supuestos, te deja más neto la opción con mayor rendimiento bruto a tu plazo, porque las tres tributan en la base del ahorro con la misma escala (19 % a 30 %): con 20.000 €, depósito a 9 meses al 2,5 % de TIN, Letra a 9 meses al 2,776 % (266 días reales) y fondo al 2,4 % bruto con 0,2 % de comisión, las Letras dejan 332,29 € netos, el depósito 303,75 € y el fondo 266,57 €. El fondo monetario necesita rendir más que el mejor de depósito y Letras (aquí, un 2,94 % anual bruto antes de comisión) para compensar que no tiene capital garantizado; con tipos distintos o con mayor rentabilidad del fondo puede ganar cualquiera de las tres. El impuesto no cambia el orden salvo que tengas pérdidas patrimoniales por compensar o una deducción de Ceuta o Melilla, que esta calculadora no modela.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "importe",
+      "label": "Importe a colocar (€)",
+      "default": 20000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.deposito_letras_2026.supuestos.importe"
+    },
+    {
+      "id": "plazo",
+      "label": "Plazo (meses, de 1 a 12)",
+      "default": 9,
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default_from": "params.deposito_letras_2026.supuestos.plazo_meses"
+    },
+    {
+      "id": "tin",
+      "label": "TIN del depósito (% anual, intereses al vencimiento; ejemplo editable)",
+      "default": 2.5,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.deposito_letras_2026.supuestos.tin_deposito"
+    },
+    {
+      "id": "letras",
+      "label": "Rentabilidad de las Letras (% anual, el «tipo de interés» de la subasta del Tesoro a plazo similar; ejemplo: tipo medio a 9 meses del 8/9/2026)",
+      "default": 2.776,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.deposito_letras_2026.letras.ejemplo_9m_tipo_medio"
+    },
+    {
+      "id": "diasLetra",
+      "label": "Días hasta el vencimiento de la Letra (la de 9 meses del 8/9/2026 dura 266; 0 = 365 × plazo / 12)",
+      "default": 266,
+      "min": 0,
+      "max": 400,
+      "step": 1,
+      "default_from": "params.deposito_letras_2026.letras.ejemplo_9m_dias"
+    },
+    {
+      "id": "rentFondo",
+      "label": "Rentabilidad bruta anual esperada del fondo monetario (%, antes de comisión; hipótesis tuya, puede ser negativa)",
+      "default": 2.4,
+      "step": 0.1,
+      "default_from": "params.deposito_letras_2026.supuestos.rentab_fondo"
+    },
+    {
+      "id": "comFondo",
+      "label": "Comisión de gestión anual del fondo (%)",
+      "default": 0.2,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.deposito_letras_2026.supuestos.comision_fondo"
+    },
+    {
+      "id": "otras",
+      "label": "Otras rentas del ahorro del año: intereses, dividendos y ganancias (€; 0 si ninguna)",
+      "default": 0,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.deposito_letras_2026.supuestos.otras_rentas_ahorro"
+    },
+    {
+      "id": "ambito",
+      "label": "Dónde tributas por IRPF",
+      "type": "select",
+      "options": [
+        {
+          "v": "comun",
+          "t": "Régimen común (cualquier comunidad salvo las tres siguientes)"
+        },
+        {
+          "v": "vasco",
+          "t": "País Vasco (haciendas forales)"
+        },
+        {
+          "v": "navarra",
+          "t": "Navarra (hacienda foral)"
+        },
+        {
+          "v": "ceutamelilla",
+          "t": "Ceuta o Melilla (se calcula igual, con aviso)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué deja más neto: depósito, Letras del Tesoro o fondo monetario?",
+      "Con el mismo importe y plazo, el que más rinde bruto, porque los tres tributan en la base del ahorro con la misma escala y, con estos supuestos, el impuesto no cambia el orden (salvo pérdidas patrimoniales por compensar o una deducción de Ceuta o Melilla, que no se modelan). Ejemplo con 20.000 € a 9 meses, sin otras rentas del ahorro: depósito al 2,5 % de TIN, 375 € brutos y 303,75 € netos; Letra de 266 días reales al 2,776 %, 410,23 € brutos y 332,29 € netos; fondo con 2,4 % bruto y 0,2 % de comisión, 329,10 € brutos y 266,57 € netos. Son tipos de ejemplo: si tu banco ofrece más o el fondo rinde más, el orden cambia. Las Letras se calculan con los días reales hasta el vencimiento y base de 360 días (tipo simple del Tesoro): a igual porcentaje y 365 días, salen algo por delante (con un 3 % en ambos, 608,33 € brutos las Letras frente a 600 € el depósito con 20.000 €)."
+    ],
+    [
+      "¿Cómo tributan los intereses de un depósito, las Letras y un fondo?",
+      "Los intereses del depósito y el rendimiento de las Letras (diferencia entre lo que cobras al vencimiento y lo que pagaste) son rendimientos del capital mobiliario (art. 25.2 de la Ley del IRPF). La ganancia de un fondo es una ganancia patrimonial que solo se computa al reembolsar (arts. 37 y 94). Las tres van a la base del ahorro (art. 49), con escala conjunta estatal y autonómica del 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima (arts. 66 y 76). Si traspasas entre fondos de inversión sin cobrar el dinero no se computa la ganancia (art. 94.1.a), pero en un plazo de hasta 12 meses esa ventaja de diferir apenas cambia el resultado y la calculadora no la valora."
+    ],
+    [
+      "¿Me retienen el 19 % y puedo acabar pagando más?",
+      "Sí, depende de tus otras rentas del ahorro. El banco retiene el 19 % de los intereses del depósito (art. 101.4) y la gestora el 19 % de la ganancia al reembolsar un fondo (art. 101.6); las Letras no llevan retención (art. 75.3.b del Reglamento del IRPF), tampoco a través de un banco, salvo en cuentas basadas en operaciones sobre Letras, y el impuesto lo pagas en la renta. La retención es un pago a cuenta: en la declaración se regulariza con el impuesto real según la escala. Por ejemplo, con otras rentas del ahorro de 6.000 € el interés de un depósito de 600 € tributa al 21 %, 126 €, frente a 114 € retenidos: pagarías 12 € más en la renta."
+    ],
+    [
+      "¿Está garantizado mi dinero en cada opción?",
+      "No de la misma manera. Los depósitos están cubiertos por el Fondo de Garantía de Depósitos hasta 100.000 € por depositante y entidad de crédito (art. 10 del Real Decreto-ley 16/2011 y Real Decreto 2606/1996); lo que exceda de esa cifra en la misma entidad no está cubierto. Las Letras son deuda del Estado, no un depósito: el Fondo de Garantía de Depósitos no cubre el riesgo del Estado como emisor; si las tienes depositadas en un banco, el fondo de garantía de inversores cubre aparte hasta 100.000 € si la entidad no te las devuelve (art. 7 bis del Real Decreto 2606/1996). Un fondo monetario no tiene capital garantizado: puede perder valor y la rentabilidad pasada no asegura la futura; con una rentabilidad bruta del −3 % anual y 0,2 % de comisión, 20.000 € a 9 meses pierden 481,95 €."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "Cubre a personas físicas residentes en España en régimen común: no incluye el País Vasco ni Navarra (haciendas forales, con escala propia). En Ceuta y Melilla calcula lo mismo con un aviso: la deducción del 60 % de la cuota (art. 68.4 de la Ley del IRPF) solo afecta a las rentas obtenidas allí (en general no a las Letras ni a los fondos) y, si te aplica, puede cambiar el orden entre las opciones. Supone que el rendimiento de las tres opciones se imputa en un solo ejercicio junto con tus otras rentas del ahorro de ese año (el del vencimiento o reembolso), que el depósito paga los intereses al vencimiento y que el plazo es de 1 a 12 meses (las Letras se emiten a 3, 6, 9 y 12 meses). No compensa pérdidas patrimoniales (art. 49): si las tienes, del año o pendientes de los 4 anteriores, compensan al 100 % la ganancia del fondo y solo hasta el 25 % los intereses del depósito y de las Letras, lo que favorece al fondo y puede cambiar el orden. Tampoco aplica el mínimo personal y familiar sobre el ahorro (art. 56.2: si tu base general es menor que el mínimo, el resto reduce el ahorro y bajaría el impuesto de las tres), ni descuenta comisiones de custodia, suscripción o reembolso, ni valora la liquidez: el depósito y las Letras a vencimiento no se pueden mover sin penalización o sin vender."
+    ]
+  ],
+  "sources": "Modelo propio del IRPF del ahorro del ejercicio 2026 (declaración de 2027), calculado con la Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764; texto consolidado, última actualización publicada el 30/09/2026, consultada el 2/10/2026): art. 25.2 (intereses y rendimiento de activos financieros), art. 26.1.a (gastos deducibles), arts. 33 y 37 (ganancias patrimoniales), art. 49 (integración en la base del ahorro), art. 56 (mínimo personal y familiar), arts. 66 y 76 (escala del ahorro estatal y autonómica: 19 %, 21 %, 23 %, 27 %, 30 %), art. 94 (fondos de inversión: computo al reembolso y traspasos), art. 101.4 y 101.6 (retención del 19 %) y art. 68.4.1.º, 2.º y 3.º.f (Ceuta y Melilla: la deducción solo cubre rentas obtenidas allí); Reglamento del IRPF, Real Decreto 439/2007 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820; consultado el 2/10/2026): art. 75.3.b (sin retención en Letras del Tesoro) y art. 97 (retención en reembolsos de fondos); Real Decreto-ley 16/2011, art. 10 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-16173) y Real Decreto 2606/1996 (https://www.boe.es/buscar/act.php?id=BOE-A-1996-28535), consultados el 2/10/2026: Fondo de Garantía de Depósitos, 100.000 € por depositante y entidad de crédito, y art. 7 bis (valores confiados a la entidad, hasta 100.000 €); Tesoro Público, resultado de las últimas subastas de Letras (https://www.tesoro.es/deuda-publica/subastas/resultado-ultimas-subastas/letras-del-tesoro), consultado el 2/10/2026: tipo de interés simple con los días reales hasta el vencimiento y base de 360 días; el 2,776 % usado como ejemplo es el tipo medio de la subasta a 9 meses del 8/9/2026 (precio medio 97,990, 266 días) y cambia en cada subasta. Supuestos: persona física residente en España; importe, plazo, TIN del depósito, rentabilidad bruta y comisión del fondo son ejemplos editables, no ofertas ni datos de mercado; intereses del depósito al vencimiento, año de 365 días, Letras con los días reales indicados (por defecto 266, o 365 × plazo / 12 si se deja a 0), mantenidas hasta el vencimiento sin comisiones de custodia, comisión del fondo restada de la rentabilidad bruta, todo el rendimiento en un solo ejercicio y sin compensar pérdidas (art. 49: puede cambiar el orden a favor del fondo). Excluidos: País Vasco y Navarra, compensación de pérdidas patrimoniales, deducción de Ceuta y Melilla, mínimo personal y familiar sobre el ahorro, liquidez, comisiones de custodia, suscripción y reembolso, riesgo del fondo, importes por encima de 100.000 € por entidad. Información orientativa, no asesoramiento fiscal ni financiero."
+}

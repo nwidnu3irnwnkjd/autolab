@@ -16,7 +16,7 @@ function eur(x) { return EM.eur(x); }
 var IDS = ["kmdia", "dias", "abono", "kmcoche", "bici", "vida", "mant", "seguro"];
 function leer() { var d = {}; IDS.forEach(function (k) { d[k] = parseFloat(document.getElementById(k).value) || 0; }); return d; }
 function aviso(v, n) { EM.renderResult({ winner: "invalido", verdict: v, tone: "warn", note: "<p>" + n + "</p>" }); }
-function anos(x) { return (Math.round(x * 10) / 10).toLocaleString("es-ES") + " años"; }
+function anos(x) { return EM.num(Math.round(x * 10) / 10, 1).replace(/,0$/, "") + " años"; }
 function pintar() {
   var d = leer(), r, b, nombres = ["el coche", "el abono de transporte público", "la bici eléctrica"], v, note, cs, hay = d.abono > 0, pc, pa, vu;
   if (d.kmdia < 0 || d.dias < 0 || d.abono < 0 || d.kmcoche < 0 || d.bici < 0 || d.vida < 0 || d.mant < 0 || d.seguro < 0) return;
@@ -29,7 +29,7 @@ function pintar() {
   note += pc >= 0 ? "la bici se amortiza frente al coche en <strong>" + anos(pc) + "</strong>" + (pc <= d.vida ? ", dentro de su vida útil de " + vu : ", más que su vida útil de " + vu + " (no compensa)") : "con estos datos la bici no llega a amortizarse frente al coche (sus costes corrientes superan lo que te ahorra)";
   if (hay) note += "; frente al abono, " + (pa >= 0 ? "en <strong>" + anos(pa) + "</strong>" + (pa <= d.vida ? "" : " (más que su vida útil)") : "no se amortiza");
   note += ". ";
-  note += r.kmMinCoche >= 0 ? "Frente al coche, el coste anual de la bici queda por debajo a partir de unos <strong>" + Math.round(r.kmMinCoche).toLocaleString("es-ES") + " km al año</strong> (tú haces " + Math.round(r.km).toLocaleString("es-ES") + "). " : "Con ese coste por km del coche, igual o menor que el de mantenimiento de la bici, la bici no gana al coche por coste a ningún kilometraje. ";
+  note += r.kmMinCoche >= 0 ? "Frente al coche, el coste anual de la bici queda por debajo a partir de unos <strong>" + EM.num(r.kmMinCoche, 0) + " km al año</strong> (tú haces " + EM.num(r.km, 0) + "). " : "Con ese coste por km del coche, igual o menor que el de mantenimiento de la bici, la bici no gana al coche por coste a ningún kilometraje. ";
   if (hay) note += "Frente al transporte público, la bici sale más barata si tu abono cuesta más de <strong>" + EM.eur(r.abonoMinMes, 2) + " al mes</strong> (pagas " + EM.eur(d.abono, 2) + "). ";
   note += "</p><p><strong>No incluido:</strong> el tiempo, la comodidad, el clima, el aparcamiento ni los costes fijos del coche (seguro, impuesto, ITV: si dejarías de tener coche, el ahorro sería mayor). Supone que la bici sustituye todos esos desplazamientos y que cancelas el abono. Las ayudas a la compra de bicis eléctricas y los abonos dependen de tu municipio: consulta tu ayuntamiento. Reventa de la bici: 0 €; si la revenderás, réstalo del precio. Mira también <a href=\"/decidir/tren-avion-o-coche/\">tren, avión o coche</a>.</p>";
   EM.renderResult({

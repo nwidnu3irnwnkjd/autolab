@@ -407,3 +407,6 @@ article.hub h2+section.box::before{top:0}
 p.hub-link.note{padding:12px 16px;border:1.5px solid var(--accent);border-radius:var(--r-sm);background:var(--accent-soft);color:var(--fg)}
 p.hub-link.note a{font-weight:700;color:var(--accent-ink)}
 @media (max-width:480px){article.hub section.box{margin-left:14px;padding-left:30px}article.hub section.box .btn2{width:100%;margin-right:0}}
+div.box#dato-del-mes{background:var(--accent-soft);border:1.5px solid var(--accent);border-left-width:5px;color:var(--fg);padding:14px 16px;overflow-wrap:anywhere}div.box#dato-del-mes p{margin:0}div.box#dato-del-mes strong:first-child{display:block;margin-bottom:4px;color:var(--accent-ink)}
+p.hub-link.note{overflow-wrap:anywhere;line-height:1.7}p.hub-link.note a{display:inline-block;padding:2px 0;text-decoration:underline;text-underline-offset:3px}
+main:focus{outline:none}

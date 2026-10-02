@@ -1,0 +1,100 @@
+{
+  "slug": "seguro-vida-hipoteca-banco-o-externo",
+  "title": "Seguro de vida de la hipoteca: banco o póliza externa",
+  "description": "Compara el seguro de vida de tu hipoteca: el del banco (con bonificación del tipo) o una póliza externa. Coste a N años y bonificación mínima que compensa.",
+  "h1": "Seguro de vida de la hipoteca: ¿el del banco o una póliza externa?",
+  "lead": "El seguro de vida del banco compensa si la bonificación del tipo que te da por contratarlo ahorra más en intereses que lo que su prima cuesta de más que una póliza externa equivalente; si la bonificación es menor, sale mejor la externa. Pon tu capital pendiente, plazo, tipo, las dos primas y la bonificación, y la calculadora te da el coste total de cada opción a tu horizonte, la diferencia y la bonificación mínima que compensa.",
+  "veredicto": "Con una póliza externa de coberturas equivalentes, el seguro de vida del banco solo compensa si la bonificación del tipo supera la bonificación mínima que calcula la página con tu capital, plazo, tipo y primas; por debajo de ese umbral sale más barata la póliza externa.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "capital",
+      "label": "Capital pendiente de la hipoteca (€; 150.000 € es un ejemplo)",
+      "default": 150000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "plazo",
+      "label": "Plazo restante (años; 25 es un ejemplo)",
+      "default": 25,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tin",
+      "label": "TIN del préstamo con la bonificación (% anual; el ejemplo es el tipo medio de las nuevas hipotecas fijas, pon el de tu contrato)",
+      "default": 2.76,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "live.tipo_hipoteca_fija",
+      "default_round": 2
+    },
+    {
+      "id": "bonif",
+      "label": "Bonificación del tipo por contratar el seguro del banco (puntos porcentuales; 0,5 es un ejemplo, mira tu escritura)",
+      "default": 0.5,
+      "min": 0,
+      "step": 0.05
+    },
+    {
+      "id": "primaBanco",
+      "label": "Prima anual del seguro de vida del banco (€ del primer año; 450 € es un ejemplo, no una oferta)",
+      "default": 450,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "primaExt",
+      "label": "Prima anual de la póliza externa equivalente (€ del primer año; 250 € es un ejemplo, no una oferta)",
+      "default": 250,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "horizonte",
+      "label": "Años que vas a comparar (hasta el plazo restante; 25 es un ejemplo)",
+      "default": 25,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "evol",
+      "label": "Evolución del capital cubierto",
+      "type": "select",
+      "options": [
+        {
+          "v": "1",
+          "t": "Decrece con el préstamo (la prima baja con el capital pendiente)"
+        },
+        {
+          "v": "0",
+          "t": "Constante (prima fija todos los años)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa más el seguro de vida del banco o una póliza externa?",
+      "Depende de la bonificación. Con los ejemplos de la página (150.000 € a 25 años, TIN del 2,76 %, prima del banco de 450 € y externa de 250 € al año), la póliza externa sale más barata si la bonificación es menor de 0,12 puntos y el seguro del banco compensa a partir de ahí: con 0,5 puntos ahorra unos 8.888 € en 25 años y con 0,1 puntos gana la externa por unos 559 €. Con tus datos, la calculadora da tu umbral."
+    ],
+    [
+      "¿Puede el banco rechazar una póliza externa?",
+      "Según el art. 17.3 de la Ley 5/2019, el prestamista que exige un seguro de vida vinculado al préstamo debe aceptar pólizas alternativas de proveedores que ofrezcan condiciones y prestaciones equivalentes, tanto al firmar como en cada renovación, sin cobrar comisión por analizarlas, y aceptarla no puede empeorar las condiciones del préstamo. Si dudas de la equivalencia o de cómo afecta a tu bonificación, consulta tu escritura y la FEIN."
+    ],
+    [
+      "¿Qué pasa con la bonificación si cambio al seguro externo?",
+      "Esta página supone que pierdes la bonificación: el préstamo pasa al TIN más la bonificación, que es el caso más habitual en contratos bonificados. Lo que ocurra en tu caso depende de tu escritura y de lo que firmaste; el art. 17.3 de la Ley 5/2019 dice que aceptar una póliza alternativa no puede empeorar las condiciones del préstamo, así que compruébalo con el banco antes de cambiar y por escrito."
+    ],
+    [
+      "¿Cómo se calcula el ahorro por la bonificación?",
+      "Se calcula el préstamo completo en amortización francesa con el tipo bonificado y con el tipo sin bonificar, y se compara lo que pagas de intereses efectivos (cuotas pagadas más capital pendiente menos capital inicial) a tu horizonte, más las primas. Con los ejemplos de la página, 0,5 puntos ahorran unos 11.710 € de intereses en 25 años y las primas del banco suman unos 2.821 € más (6.490 € frente a 3.669 € con la prima que baja con el capital): la diferencia neta es de unos 8.888 €."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "No incluye que las coberturas sean realmente equivalentes ni las exclusiones de cada póliza, la salud y la edad (que cambian la prima), la subida de la prima con los años, el reembolso de la parte no consumida de una prima única al amortizar, comisiones ni el efecto fiscal. Las primas son de ejemplo, no ofertas. Es información orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Cálculo propio: préstamo en amortización francesa a plazo restante x 12 cuotas. Seguro del banco: tipo = TIN con la bonificación. Póliza externa: tipo = TIN + bonificación. Coste a N años = intereses efectivos (cuotas pagadas + capital pendiente - capital inicial) + primas anuales. Con capital decreciente, la prima de cada año es la prima del primer año x capital pendiente a principio de ese año / capital inicial; con capital constante, la prima es fija. Bonificación mínima: la que iguala el coste de las dos opciones (búsqueda por bisección entre 0 y 10 puntos). Primas, bonificación y capital son ejemplos editables, no ofertas. Normativa: Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario, art. 17.3 (BOE-A-2019-3814, texto consolidado, consultado el 2/10/2026): <a href=\"https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814\" rel=\"noopener\">BOE</a>. TIN de ejemplo: tipo medio de las nuevas hipotecas de vivienda con más de 10 años de fijación inicial, Banco Central Europeo (Data Portal, MIR), dato de agosto de 2026: <a href=\"https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N\" rel=\"noopener\">BCE</a>. No incluye exclusiones de pólizas, salud, edad, prima única ni comisiones. Información orientativa, no asesoramiento."
+}

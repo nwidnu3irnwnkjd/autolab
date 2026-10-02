@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "primaBanco": 450,
+    "primaExt": 250,
+    "horizonte": 25,
+    "evol": 1
+   },
+   "expect": {
+    "cuotaBanco": 692.73,
+    "cuotaExt": 731.77,
+    "interesesBanco": 57820.32,
+    "interesesExt": 69530.09,
+    "primasBanco": 6490.04,
+    "primasExt": 3668.62,
+    "costeBanco": 64310.36,
+    "costeExt": 73198.71,
+    "diferencia": 8888.35,
+    "bonifMin": 0.124,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.1,
+    "primaBanco": 450,
+    "primaExt": 250,
+    "horizonte": 25,
+    "evol": 1
+   },
+   "expect": {
+    "cuotaBanco": 692.73,
+    "cuotaExt": 700.44,
+    "interesesBanco": 57820.32,
+    "interesesExt": 60132.79,
+    "primasBanco": 6490.04,
+    "primasExt": 3618.23,
+    "costeBanco": 64310.36,
+    "costeExt": 63751.02,
+    "diferencia": -559.34,
+    "bonifMin": 0.124,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0,
+    "primaBanco": 450,
+    "primaExt": 250,
+    "horizonte": 1,
+    "evol": 1
+   },
+   "expect": {
+    "cuotaBanco": 692.73,
+    "cuotaExt": 692.73,
+    "interesesBanco": 4086.81,
+    "interesesExt": 4086.81,
+    "primasBanco": 450.0,
+    "primasExt": 250.0,
+    "costeBanco": 4536.81,
+    "costeExt": 4336.81,
+    "diferencia": -200.0,
+    "bonifMin": 0.134,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.3,
+    "primaBanco": 250,
+    "primaExt": 250,
+    "horizonte": 25,
+    "evol": 1
+   },
+   "expect": {
+    "cuotaBanco": 692.73,
+    "cuotaExt": 716.01,
+    "interesesBanco": 57820.32,
+    "interesesExt": 64802.06,
+    "primasBanco": 3605.58,
+    "primasExt": 3643.48,
+    "costeBanco": 61425.89,
+    "costeExt": 68445.54,
+    "diferencia": 7019.65,
+    "bonifMin": 0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 0,
+    "bonif": 0.5,
+    "primaBanco": 450,
+    "primaExt": 250,
+    "horizonte": 10,
+    "evol": 0
+   },
+   "expect": {
+    "cuotaBanco": 500.0,
+    "cuotaExt": 532.0,
+    "interesesBanco": 0.0,
+    "interesesExt": 6080.05,
+    "primasBanco": 4500.0,
+    "primasExt": 2500.0,
+    "costeBanco": 4500.0,
+    "costeExt": 8580.05,
+    "diferencia": 4080.05,
+    "bonifMin": 0.166,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 0,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "primaBanco": 0,
+    "primaExt": 0,
+    "horizonte": 25,
+    "evol": 1
+   },
+   "expect": {
+    "cuotaBanco": 0,
+    "costeBanco": 0,
+    "costeExt": 0,
+    "diferencia": 0,
+    "mejor": 2
+   },
+   "tol": 1
+  }
+ ]
+}

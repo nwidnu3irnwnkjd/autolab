@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 0,
+    "subidaPrima": 4,
+    "actos": 8,
+    "coste": 60,
+    "copago": 8,
+    "subidaPrecios": 2,
+    "horizonte": 10
+   },
+   "expect": {
+    "conSeguro": 11506.28,
+    "sinSeguro": 5255.87,
+    "primas": 10805.5,
+    "copagos": 700.78,
+    "diferencia": -6250.41,
+    "actosEq": 18.977,
+    "actosEq1": 17.308,
+    "ahorroPorActo": 52,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 0,
+    "subidaPrima": 4,
+    "actos": 25,
+    "coste": 60,
+    "copago": 8,
+    "subidaPrecios": 2,
+    "horizonte": 10
+   },
+   "expect": {
+    "conSeguro": 12995.44,
+    "sinSeguro": 16424.58,
+    "primas": 10805.5,
+    "copagos": 2189.94,
+    "diferencia": 3429.14,
+    "actosEq": 18.977,
+    "actosEq1": 17.308,
+    "ahorroPorActo": 52,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 0,
+    "subidaPrima": 4,
+    "actos": 0,
+    "coste": 60,
+    "copago": 8,
+    "subidaPrecios": 2,
+    "horizonte": 1
+   },
+   "expect": {
+    "conSeguro": 900.0,
+    "sinSeguro": 0.0,
+    "primas": 900.0,
+    "copagos": 0.0,
+    "diferencia": -900.0,
+    "actosEq": 17.308,
+    "actosEq1": 17.308,
+    "ahorroPorActo": 52,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 50,
+    "subidaPrima": 0,
+    "actos": 8,
+    "coste": 60,
+    "copago": 8,
+    "subidaPrecios": 0,
+    "horizonte": 10
+   },
+   "expect": {
+    "conSeguro": 5140.0,
+    "sinSeguro": 4800.0,
+    "primas": 4500.0,
+    "copagos": 640.0,
+    "diferencia": -340.0,
+    "actosEq": 8.654,
+    "actosEq1": 8.654,
+    "ahorroPorActo": 52,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 0,
+    "subidaPrima": 4,
+    "actos": 8,
+    "coste": 60,
+    "copago": 60,
+    "subidaPrecios": 2,
+    "horizonte": 10
+   },
+   "expect": {
+    "conSeguro": 16061.36,
+    "sinSeguro": 5255.87,
+    "primas": 10805.5,
+    "copagos": 5255.87,
+    "diferencia": -10805.5,
+    "actosEq": -1,
+    "actosEq1": -1,
+    "ahorroPorActo": 0,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 900,
+    "empresa": 0,
+    "subidaPrima": 4,
+    "actos": 8,
+    "coste": 0,
+    "copago": 0,
+    "subidaPrecios": 2,
+    "horizonte": 10
+   },
+   "expect": {
+    "conSeguro": 10805.5,
+    "sinSeguro": 0.0,
+    "primas": 10805.5,
+    "copagos": 0.0,
+    "diferencia": -10805.5,
+    "actosEq": -1,
+    "actosEq1": -1,
+    "ahorroPorActo": 0,
+    "mejor": 1
+   },
+   "tol": 1
+  }
+ ]
+}

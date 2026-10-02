@@ -7,12 +7,12 @@
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
   "hipoteca-fija-o-variable",
-  "subrogar-hipoteca-merece-la-pena"
+  "seguro-vida-hipoteca-banco-o-externo"
  ],
  "amortizar-plazo-o-cuota": [
   "amortizar-o-invertir",
   "hipoteca-fija-o-variable",
-  "subrogar-hipoteca-merece-la-pena"
+  "seguro-vida-hipoteca-banco-o-externo"
  ],
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
@@ -68,6 +68,11 @@
   "rescate-plan-pensiones-capital-o-renta",
   "autonomo-o-asalariado",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+ ],
+ "deposito-letras-o-fondo-monetario": [
+  "plan-pensiones-o-fondo-indexado",
+  "contado-o-financiar",
+  "fibra-y-movil-juntos-o-por-separado"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
@@ -129,10 +134,20 @@
   "reparar-o-comprar-electrodomestico",
   "contado-o-financiar"
  ],
+ "seguro-salud-privado-merece-la-pena": [
+  "seguro-mascota-merece-la-pena",
+  "universidad-publica-o-privada-o-master",
+  "contado-o-financiar"
+ ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
   "coche-nuevo-o-seminuevo",
   "seguro-mascota-merece-la-pena"
+ ],
+ "seguro-vida-hipoteca-banco-o-externo": [
+  "subrogar-hipoteca-merece-la-pena",
+  "amortizar-o-invertir",
+  "amortizar-plazo-o-cuota"
  ],
  "subrogar-hipoteca-merece-la-pena": [
   "hipoteca-fija-o-variable",
