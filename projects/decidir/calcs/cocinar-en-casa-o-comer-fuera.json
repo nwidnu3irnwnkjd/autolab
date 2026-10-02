@@ -70,15 +70,15 @@
   "faqs": [
     [
       "¿Cuánto ahorro al año cocinando en casa en vez de comer fuera?",
-      "Es el ahorro por comida (precio fuera menos coste de cocinar) por las comidas que sustituyes al año. Con los ejemplos de la página (13 € fuera, 4 € en casa, 3 comidas por semana y 220 días laborables) son 1.188 € al año sin valorar tu tiempo. Pon tus precios y tus comidas para tu cifra."
+      "Es el ahorro por comida (precio fuera menos coste de cocinar) por las comidas que sustituyes al año. Con los ejemplos (13 € fuera, 4 € en casa, 3 comidas por semana, 220 días laborables) son 1.188 € al año sin valorar tu tiempo."
     ],
     [
       "¿Compensa cocinar si valoro mi tiempo?",
-      "Compensa mientras tu hora valga menos que el ahorro por comida dividido entre los minutos extra que te lleva cocinar frente a desplazarte. Con los ejemplos de la página, el equilibrio está en 36 € por hora: a 10 € la hora ahorras 858 € al año y a 40 € la hora, comer fuera sale 132 € mejor. Si cocinar te lleva menos tiempo que desplazarte, no hay valor de la hora que invierta el resultado mientras sea más barato."
+      "Compensa mientras tu hora valga menos que el ahorro por comida dividido entre los minutos extra de cocinar frente a desplazarte. Con los ejemplos el equilibrio está en 36 € por hora: a 10 € ahorras 858 € al año y a 40 €, comer fuera sale 132 € mejor."
     ],
     [
       "¿Cuántas comidas por semana hay que cocinar para que merezca la pena?",
-      "El número de comidas no cambia cuál opción sale mejor, porque el coste es lineal por comida: lo que cambia es cuánto ahorras. Con los ejemplos de la página cada comida sustituida suma 396 € al año sin valorar tu tiempo (13 € menos 4 €, por 44 comidas al año por cada comida semanal). Lo que decide es el valor de tu hora."
+      "No cambia cuál sale mejor, porque el coste es lineal por comida; cambia cuánto ahorras. Con los ejemplos cada comida semanal sustituida suma 396 € al año sin valorar tu tiempo (13 € menos 4 €, por 44 comidas). Lo que decide es el valor de tu hora."
     ],
     [
       "¿Qué pasa con el táper y el menú del día?",
@@ -86,7 +86,7 @@
     ],
     [
       "¿Qué no incluye este cálculo?",
-      "No incluye la calidad de lo que comes (no es consejo nutricional), el ocio o lo social de comer con otros, ni el ticket restaurante o la retribución en especie de tu empresa: su fiscalidad no está modelada, consulta con tu empresa. Tampoco el gasto de gas o electricidad de cocinar si no lo has sumado al coste por ración, ni cambios de precio durante el año."
+      "No incluye la calidad de lo que comes (no es consejo nutricional), lo social de comer con otros, ni el ticket restaurante de tu empresa, cuya fiscalidad no está modelada. Tampoco el gas o la electricidad de cocinar si no los sumas al coste por ración."
     ]
   ],
   "sources": "Modelo propio: comidas al año = comidas por semana x días laborables / 5; coste de una comida fuera = precio + minutos de desplazamiento / 60 x valor de la hora; coste de una comida en casa = coste por ración + minutos de cocinar / 60 x valor de la hora; ahorro anual = comidas sustituidas al año x (coste fuera - coste en casa); valor de la hora de equilibrio = (precio - coste por ración) / ((minutos de cocinar - minutos de desplazamiento) / 60), cuando cocinar cuesta más tiempo y menos dinero. Todas las cifras de la página (13 €, 4 €, 30 y 15 minutos, 3 comidas, 220 días) son ejemplos declarados y editables, no precios de mercado ni de ningún restaurante o supermercado; no se usan cifras externas. Para seguir el precio de los alimentos a lo largo del tiempo, el INE publica el IPC (https://www.ine.es/jaxiT3/Tabla.htm?t=50934, consultado el 2/10/2026; no se usan sus cifras en el cálculo). Ticket restaurante y retribución en especie: fiscalidad no modelada, consulta con tu empresa. Información orientativa, no asesoramiento nutricional ni fiscal."

@@ -67,11 +67,11 @@
   "faqs": [
     [
       "¿Qué sale más barato, academia, online o inmersión?",
-      "Depende de tu precio por hora y de cuánto rinda cada formato. Con los ejemplos de la página, el online es lo más barato (2.000 € frente a 3.100 € de la academia y 9.000 € de la inmersión), pero solo mientras rinda al menos el 52 % de la academia; con una eficacia menor, la academia pasa a ser más barata. Depende de tu disciplina y de tu objetivo."
+      "Depende del precio por hora y de lo que rinda cada formato. Con los ejemplos, el online es lo más barato (2.000 € frente a 3.100 € de la academia y 9.000 € de la inmersión), pero solo mientras rinda al menos el 52 % de la academia."
     ],
     [
       "¿Cuántas horas necesito para llegar a mi nivel?",
-      "La página no da una cifra: depende del idioma, de tu punto de partida, de tu objetivo y de cómo estudies, y por eso es un dato que escribes tú como hipótesis. Para ubicar tu nivel objetivo puedes usar los niveles del Marco Común Europeo de Referencia para las lenguas (A1 a C2), cuya descripción oficial enlazamos en las fuentes; las horas que necesites estimarlas tú o tu profesor."
+      "La página no da una cifra: depende del idioma, de tu punto de partida y de tu objetivo, y la escribes tú como hipótesis. Para situar tu nivel objetivo puedes usar los niveles A1 a C2 del Marco Común Europeo de Referencia, enlazado en las fuentes."
     ],
     [
       "¿Cómo se estima la eficacia del online respecto a la academia?",
@@ -79,11 +79,11 @@
     ],
     [
       "¿Compensa una inmersión en el extranjero?",
-      "En coste por hora, solo si su precio semanal es bajo: con los ejemplos de la página la inmersión sale por 9.000 € y solo pasaría a ser la más barata si su coste semanal cayera por debajo de 200 €. Su ventaja es el plazo (con 20 horas lectivas por semana, unos 2,3 meses frente a 11,5 en la academia con 4 horas semanales) y que las horas fuera de clase no se cuentan, así que la comparación no es completa."
+      "Solo si su precio semanal es bajo: con los ejemplos sale por 9.000 € y solo sería la más barata por debajo de 200 € a la semana. Su ventaja es el plazo (unos 2,3 meses frente a 11,5 en la academia); las horas fuera de clase no se cuentan."
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye precios de academias ni de plataformas concretas, el material, los exámenes oficiales, el coste de oportunidad del tiempo, el tiempo de desplazamiento ni las horas de práctica fuera de clase. Las horas necesarias, la eficacia y los precios son hipótesis o ejemplos tuyos, y la página no promete resultados. Es información orientativa, no asesoramiento."
+      "No incluye precios de academias ni plataformas concretas, material, exámenes oficiales, coste de oportunidad del tiempo, desplazamientos ni práctica fuera de clase. Las horas, la eficacia y los precios son hipótesis o ejemplos tuyos y la página no promete resultados."
     ]
   ],
   "sources": "Modelo propio de coste. Academia: horas necesarias x (precio por hora x (1 - descuento) + desplazamiento por hora de clase). Online: horas necesarias / eficacia x precio por hora, porque con una eficacia menor del 100 % necesitas más horas lectivas para el mismo aprendizaje. Inmersión: horas necesarias / 20 horas lectivas por semana (supuesto del modelo) x coste semanal con viaje, curso y alojamiento. Meses = horas / horas por semana / (52/12) para academia y online; semanas / (52/12) para la inmersión, que se supone a tiempo completo. Punto de equilibrio del online = precio online / precio por hora de la academia con descuento y desplazamiento; el de la inmersión = coste de la opción más barata de las otras dos / semanas de inmersión. Las horas necesarias, la eficacia relativa (hipótesis editable, no científica), las 20 horas por semana y todos los precios son ejemplos declarados; no se usan cifras externas ni precios de academias concretas. Niveles A1 a C2: Marco común europeo de referencia para las lenguas, Instituto Cervantes: https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/ (consultado el 2/10/2026); la página no toma de él cifras de horas. No incluye exámenes, material, coste de oportunidad, tiempo de desplazamiento ni práctica fuera de clase. Información orientativa, sin promesa de resultados."

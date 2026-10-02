@@ -105,8 +105,8 @@ def main():
     for p in tablas.PAGES:
         write(tablas.path(p["slug"]), p["title"], p["description"], tablas.page(p["slug"], TAB, calcs, card, tmod, seo.AUTHOR),
               jsonld=tablas.jsonld(p["slug"], TAB, B, tmod, tpub, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=tmod)
-    tdesc = "Tablas oficiales 2026 con fuente: tramos del IRPF por comunidad, cuota de autónomos, ITP y AJD, SMI, IPREM, paro y pensiones. Con CSV."
-    write(tablas.INDEX, "Tablas 2026: IRPF, autónomos, ITP, SMI y pensiones", tdesc, tablas.index_page(TAB, tmod, seo.AUTHOR),
+    tdesc = "Tablas oficiales 2026 con fuente: IRPF por comunidad, cuota de autónomos, ITP y AJD, SMI, paro, pensiones, despido y permisos. Con CSV."
+    write(tablas.INDEX, "Tablas 2026: IRPF, autónomos, ITP, pensiones y trabajo", tdesc, tablas.index_page(TAB, tmod, seo.AUTHOR),
           jsonld=tablas.index_jsonld(B, tmod, tpub, seo.org(B), seo.breadcrumbs, tdesc), priority="0.7", lastmod=tmod)
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos

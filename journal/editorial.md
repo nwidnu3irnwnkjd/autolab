@@ -31,3 +31,27 @@
 ## Resumen
 - Leads sin condición: 6/12 → 2/12 (quedan diesel, seguro: lead sin 'si/cuando' explícito, sin cifra de ejemplo porque no consta en texto). Frases >30 p: 38 → 28. Título/description ≤ límites en todas. Sin peticiones al Constructor; no se añadieron cifras de ejemplo a los leads (requieren resultado calculado, pendiente de Constructor).
 - Pendiente (otra pasada): leads de diesel, seguro, guardería, calefacción, renting y contado sin cifra del ejemplo; avisos YMYL sin enlace en coche-nuevo, renting, contado.
+
+# Editorial (Editor de calidad) · pasada 2 · 2026-10-02 · 12 calculadoras no fiscales (distintas de la pasada 1)
+
+## Línea base (antes)
+- 11 calculadoras con 3-5 FAQs de más de 50 palabras (38 respuestas en total); title y description dentro de límites en las 12; leads con condición en 11/12 (alquilar-o-comprar sin cifra de ejemplo; bici y coche-segunda-mano también sin cifra: no consta en texto, pendiente de Constructor); contado-o-financiar con 0 enlaces a fuente.
+
+## Después (solo textos de calcs/*.json y content/*.html; sin cifras, lógica, .js ni test.json)
+- academia-idiomas · 4 FAQs a ≤50 p (cifras intactas)
+- adoptar-o-comprar-perro · 3 FAQs a ≤50 p
+- aire-acondicionado-inverter · 4 FAQs a ≤50 p
+- alquilar-o-comprar · lead con condición respuesta-primero (sin cifra) + FAQ 1 a ≤50 p
+- bici-electrica · 3 FAQs a ≤50 p
+- caldera-reparar-o-cambiar · 3 FAQs a ≤50 p
+- cambiar-de-operadora · 3 FAQs a ≤50 p
+- coche-propio-carsharing-vtc · 4 FAQs a ≤50 p
+- coche-segunda-mano · 3 FAQs a ≤50 p (FAQ de impuestos recortada)
+- cocinar-en-casa · 4 FAQs a ≤50 p
+- comedor-escolar-o-tupper · 3 FAQs a ≤50 p
+- comprar-o-alquilar-herramienta · 4 FAQs a ≤50 p
+- Pendiente pasada 1: contado-o-financiar con 3 enlaces a fuente ya citadas (Ley 16/2011 BOE, Portal Cliente Bancario BdE, AEAT). coche-nuevo-o-seminuevo y comprar-coche-o-renting: sus «sources» no citan ninguna URL oficial, así que no hay enlace que añadir solo con texto (necesitan fuente nueva: Verificador).
+
+## Resumen
+- FAQs >50 p: 38 → 0 en las 12. Avisos YMYL de comedor-escolar (frases con € sin enlace) siguen: no hay fuente oficial citada. Quedan sin cifra de ejemplo en el lead: alquilar-o-comprar, bici-electrica, coche-segunda-mano.
+- Verificado: build OK, check.py 8560/8560, qa_static --changed 0 BLOQUEANTE.

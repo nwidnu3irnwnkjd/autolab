@@ -1,0 +1,119 @@
+{
+  "slug": "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
+  "title": "Subsidio por desempleo 2026: cuánto cobras y cuánto dura",
+  "description": "Calcula si tienes derecho al subsidio por desempleo, cuánto cobrarías (570, 540 o 480 €) y cuántos meses dura según tu paro, tus cargas y tus rentas.",
+  "h1": "Subsidio por desempleo: ¿tengo derecho, cuánto cobro y cuánto dura?",
+  "lead": "Si has agotado el paro, tienes un hijo a tu cargo y las rentas de tu unidad familiar no pasan de 915,75 € por persona al mes, tendrías derecho al subsidio por desempleo: 570 € al mes los primeros 180 días, 540 € hasta el día 360 y 480 € después, durante 30 meses si tu paro duró 180 días o más (unos 15.300 € brutos en total); sin cargas familiares serían 6 meses y unos 3.420 €, y con menos de 45 años solo si tu paro duró 360 días o más. Si tus rentas (o, con familia a cargo, las de tu unidad por persona) superan 915,75 € al mes, la opción no existe. Son cifras de 2026 (IPREM de 600 €), brutas y antes del IRPF; la herramienta no incluye la Renta Activa de Inserción, el Ingreso Mínimo Vital ni los casos especiales.",
+  "veredicto": "El subsidio por desempleo se cobra si has agotado el paro (o tienes entre 90 y 359 días cotizados y no alcanzas la prestación) y cumples el requisito de renta: rentas propias de hasta el 75 % del SMI sin pagas extra (915,75 € al mes en 2026) o, como alternativa, responsabilidades familiares con rentas de la unidad familiar de hasta ese importe por persona (arts. 274 y 275 de la LGSS). La cuantía es el 95 % del IPREM los primeros 180 días (570 €), el 90 % hasta el día 360 (540 €) y el 80 % desde el 361 (480 €) (art. 278); con 52 años o más y los requisitos de jubilación salvo la edad, el 80 % (480 €) hasta la edad ordinaria de jubilación (art. 280). La duración (art. 277) es de 6 meses sin cargas familiares y 24 o 30 con ellas si agotaste el paro, y de 3 a 6 meses (21 con cargas) si tenías entre 90 y 359 días cotizados. Si superas el límite de renta, o tienes menos de 45 años, no tienes cargas y tu paro duró menos de 360 días, no hay derecho a esta ayuda con estos datos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "situ",
+      "label": "¿En qué situación estás?",
+      "type": "select",
+      "options": [
+        {
+          "v": "agotado",
+          "t": "He agotado la prestación por desempleo (el paro)"
+        },
+        {
+          "v": "insuf",
+          "t": "No tengo cotización suficiente para el paro (entre 90 y 359 días cotizados)"
+        }
+      ]
+    },
+    {
+      "id": "dias",
+      "label": "Días de paro que has agotado (si agotaste el paro) o días cotizados en los últimos 6 años que no hayas usado ya para una prestación o subsidio anterior (si no llegas al paro; el informe de vida laboral no los descuenta)",
+      "default": 360,
+      "min": 0,
+      "step": 30,
+      "default_from": "params.subsidio_desempleo_2026.supuestos.dias"
+    },
+    {
+      "id": "edad",
+      "label": "Tu edad en años cumplidos (al agotar el paro o al quedarte en desempleo)",
+      "default": 40,
+      "min": 16,
+      "step": 1,
+      "default_from": "params.subsidio_desempleo_2026.supuestos.edad"
+    },
+    {
+      "id": "hijos",
+      "label": "Hijos a tu cargo (menores de 26 años, mayores con discapacidad o menores acogidos, que conviven contigo o dependen de ti)",
+      "default": 1,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.subsidio_desempleo_2026.supuestos.hijos"
+    },
+    {
+      "id": "conyuge",
+      "label": "¿Tienes cónyuge o pareja de hecho (inscrita desde hace 2 años o con hijos en común) en tu unidad familiar?",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No"
+        },
+        {
+          "v": "si",
+          "t": "Sí"
+        }
+      ]
+    },
+    {
+      "id": "renta",
+      "label": "Tus rentas propias del mes natural anterior a la solicitud (€ brutos al mes, sin pagas extra: alquileres, pensiones alimenticias, trabajo o prestaciones que sigas cobrando). No cuentes el sueldo ni el paro que ya no cobras el día de la solicitud (art. 275.5.e)",
+      "default": 0,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.subsidio_desempleo_2026.supuestos.renta"
+    },
+    {
+      "id": "rentaOtros",
+      "label": "Rentas de los demás miembros de tu unidad familiar en ese mes (€ brutos al mes, suma de todos; 0 si vives solo)",
+      "default": 0,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.subsidio_desempleo_2026.supuestos.renta_otros"
+    },
+    {
+      "id": "jub",
+      "label": "¿Has cotizado al menos 6 años por desempleo y cumples todos los requisitos de jubilación salvo la edad (por ejemplo, 15 años cotizados, 2 de ellos en los últimos 15 años)? Solo cuenta desde los 52 años",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No, o no lo sé"
+        },
+        {
+          "v": "si",
+          "t": "Sí"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto es el subsidio por desempleo en 2026?",
+      "Con el IPREM de 2026 (600 € al mes) el subsidio es de 570 € al mes los primeros 180 días (95 %), 540 € desde el día 181 hasta el 360 (90 %) y 480 € desde el día 361 (80 %), según el art. 278 de la LGSS. Para mayores de 52 años es de 480 € al mes todo el tiempo (80 %, art. 280.4). Son importes brutos: la herramienta no calcula la retención del IRPF."
+    ],
+    [
+      "¿Cuánto dura el subsidio por desempleo?",
+      "Si has agotado el paro (art. 277.1): 6 meses sin responsabilidades familiares (con menos de 45 años, solo si el paro agotado duró 360 días o más); con responsabilidades familiares, 24 meses si el paro duró 120 días o más y 30 meses si duró 180 días o más. Si no llegabas al paro (art. 277.2): 3 meses con 90 días cotizados, 4 con 120, 5 con 150 y 6 con 180 días sin cargas familiares o 21 con ellas. Se reconoce por trimestres y hay que pedir cada prórroga."
+    ],
+    [
+      "¿Qué ingresos puedo tener para cobrar el subsidio por desempleo?",
+      "Si tus rentas propias del mes natural anterior a la solicitud no superan el 75 % del SMI sin pagas extra, es decir 915,75 € al mes en 2026, cumples el requisito. Si las superas, puedes acceder igualmente si acreditas responsabilidades familiares: cónyuge o pareja, o hijos a cargo (basta uno) con rentas de la unidad familiar, divididas entre sus miembros, de hasta esos 915,75 € por persona (arts. 274.2 y 275 de la LGSS). No cuentan el sueldo ni las prestaciones que ya no cobras el día de la solicitud (art. 275.5.e). La indemnización legal por despido no cuenta como renta; el exceso pactado sobre ella, sí."
+    ],
+    [
+      "¿Puedo cobrar el subsidio si no he cobrado el paro?",
+      "Sí, si estás en situación legal de desempleo, has cotizado entre 90 y 359 días que no hayas usado ya para una prestación o subsidio anterior (art. 269.2) sin llegar a la prestación contributiva y cumples el requisito de renta (art. 274.1.b de la LGSS). Duraría entre 3 y 6 meses, o 21 con responsabilidades familiares si tienes 180 días cotizados o más. Con 360 días cotizados o más tienes derecho al paro, no a este subsidio."
+    ],
+    [
+      "¿Cómo funciona el subsidio para mayores de 52 años?",
+      "Es el subsidio que te corresponde si lo cumples, no se suma al general. Pagan el 80 % del IPREM (480 € al mes) hasta que cumples la edad ordinaria de jubilación, si has cotizado al menos 6 años por desempleo, cumples todos los requisitos de jubilación salvo la edad (15 años cotizados, 2 de ellos en los últimos 15 años, art. 205.1.b) y tus rentas propias no superan 915,75 € al mes (art. 280 de la LGSS). En este subsidio no cuentan las rentas de la familia, y la Seguridad Social cotiza por jubilación a tu favor mientras lo cobras."
+    ]
+  ],
+  "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado leído el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), en la redacción del RDL 2/2024: art. 274 (beneficiarios; el menor de 45 años sin responsabilidades familiares necesita un paro agotado de 360 días o más; renta propia o, alternativamente, responsabilidades familiares), art. 275 (rentas del mes natural anterior hasta el 75 % del SMI sin pagas extra, por persona de la unidad familiar), art. 276.1 (plazo de 15 días hábiles), art. 277 (duración), art. 278 (95, 90 y 80 % del IPREM), art. 280 (mayores de 52 años, 80 % del IPREM) y arts. 272.d y 205.1.a (edad ordinaria de jubilación). IPREM 2026: 600 € al mes (Ley 31/2022, DA 90.ª, prorrogada; cuantías del SEPE: https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html). SMI 2026: 1.221 € al mes (Real Decreto 126/2026, art. 1: https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-3815). Supuestos propios y editables: situación y días de ejemplo, un hijo a cargo y rentas nulas; el mes se computa en 30 días; la edad exacta de 45 años se trata como «más de 45» y la duración del subsidio para mayores de 52 se acota entre los 65 y los 67 años. No incluye: Renta Activa de Inserción, subsidio de emigrantes retornados y de víctimas de violencia, liberados de prisión, Ingreso Mínimo Vital, fijos discontinuos, trabajadores agrarios, prestaciones autonómicas, patrimonio como renta, IRPF y compatibilidad con un trabajo. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

@@ -72,19 +72,19 @@
   "faqs": [
     [
       "¿Cuántos km al año hacen falta para que compense tener coche propio?",
-      "Los que superen el punto de equilibrio con tus datos. Para el carsharing sale de dividir tus costes fijos y de depreciación, menos 12 cuotas del carsharing, entre lo que ahorra cada km frente a su tarifa (tarifa por km menos coste variable de tu coche); para el taxi/VTC, igual pero sin cuota. Con los ejemplos de la página son unos 9.429 km al año frente al carsharing y unos 2.621 frente al taxi/VTC. Con tus datos pueden salir otros: si el carsharing por km es igual o más barato que tu coste variable, el coche propio no gana a ningún kilometraje."
+      "Los que superen el punto de equilibrio: costes fijos y depreciación (menos 12 cuotas del carsharing) entre lo que ahorra cada km. Con los ejemplos, unos 9.429 km al año frente al carsharing y 2.621 frente al taxi/VTC. Si su tarifa por km es menor que tu coste variable, nunca."
     ],
     [
       "¿Sale más barato el carsharing o el taxi/VTC?",
-      "Depende de tus tarifas y de tus km. El carsharing tiene una cuota mensual y un coste por km menor, mientras que el taxi/VTC no tiene cuota y su coste por km es mayor. Con los ejemplos de la página, el carsharing sale más barato desde que haces unos pocos viajes y el taxi/VTC solo si no haces ninguno (con 0 km no paga nada, y el carsharing paga su cuota). Con tus tarifas puede cambiar: ambas son entradas tuyas, no datos de ninguna empresa."
+      "Depende de tus tarifas y km. El carsharing tiene cuota y menor coste por km; el taxi/VTC no tiene cuota y cobra más por km. Con los ejemplos, el carsharing gana desde unos pocos viajes. Las tarifas son tuyas, no de ninguna empresa."
     ],
     [
       "¿Qué costes fijos tiene un coche propio aunque no lo uses?",
-      "Seguro, impuesto de circulación, ITV, parking o garaje y la depreciación (lo que el coche pierde de valor cada año). Son los que cuentan en el coste fijo anual y la depreciación de la calculadora. Los importes de la página son ejemplos editables, no cifras oficiales: el seguro depende de tu perfil, el impuesto de tu ayuntamiento y la depreciación del coche."
+      "Seguro, impuesto de circulación, ITV, parking o garaje y la depreciación (lo que el coche pierde de valor cada año). Los importes de la página son ejemplos editables, no cifras oficiales: el seguro depende de tu perfil, el impuesto de tu ayuntamiento y la depreciación del coche."
     ],
     [
       "¿Por qué cuenta la depreciación si no la pago cada año?",
-      "Porque es dinero que pierdes: si el coche vale menos cada año, o si lo vendes por menos de lo que costó, esa diferencia es un coste real del coche propio. Si no la quieres contar, ponla en 0, pero entonces el coche propio sale más barato de lo que es y el equilibrio con el carsharing baja. El coste de oportunidad del dinero invertido en el coche no está incluido."
+      "Porque es dinero que pierdes: si el coche vale menos cada año, esa diferencia es un coste real. Si la pones en 0, el coche propio sale más barato de lo que es. El coste de oportunidad del dinero invertido en el coche no está incluido."
     ],
     [
       "¿Qué no incluye esta comparación?",

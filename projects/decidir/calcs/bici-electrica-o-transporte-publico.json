@@ -81,15 +81,15 @@
     ],
     [
       "¿En cuántos años se amortiza una bici eléctrica?",
-      "Es el precio de la bici dividido entre el ahorro anual que obtienes frente al coche o el abono, descontando mantenimiento, carga y seguro. Con 10 km al día, 220 días, un coche a 0,199 €/km, una bici de 1.800 € y un abono de 40 €, sale en 5,5 años frente al coche y en casi 5 años frente al abono, cerca del límite de su vida útil de 6 años. Con un trayecto más corto o una bici que dure menos, puede no compensar."
+      "Precio de la bici entre ahorro anual. Con los ejemplos (10 km al día, 220 días, bici de 1.800 €, abono de 40 €) sale en 5,5 años frente al coche y casi 5 frente al abono, con 6 de vida útil. Si el trayecto es corto, quizá no."
     ],
     [
       "¿A partir de cuántos km al año compensa la bici frente al coche?",
-      "A partir del coste fijo anual de la bici dividido entre la diferencia de coste por km (coche menos bici). Con los datos del ejemplo anterior son unos 2.000 km al año, y los 10 km al día durante 220 días (2.200 km) quedan justo por encima. Con un trayecto más corto, el coche sale más barato en coste. La calculadora te da el umbral con tus datos."
+      "A partir del coste fijo anual de la bici dividido entre la diferencia de coste por km (coche menos bici). Con el ejemplo son unos 2.000 km al año; los 2.200 km (10 km, 220 días) quedan justo por encima. Con un trayecto más corto, el coche sale más barato."
     ],
     [
       "¿Y frente al abono de transporte público?",
-      "El abono cuesta lo mismo hagas los km que hagas, así que la comparación depende solo de su precio: la bici sale más barata si el abono cuesta más que el coste anual de la bici entre 12. Con trayectos largos, el mantenimiento y la carga de la bici suben y el abono puede salir ligeramente más barato. Escribe el abono de tu ciudad: la página no trae tarifas oficiales."
+      "El abono cuesta lo mismo hagas los km que hagas: la bici sale más barata si el abono cuesta más que el coste anual de la bici entre 12. Con trayectos largos el abono puede salir algo más barato. Escribe el de tu ciudad: la página no trae tarifas oficiales."
     ],
     [
       "¿Qué no incluye esta comparación?",

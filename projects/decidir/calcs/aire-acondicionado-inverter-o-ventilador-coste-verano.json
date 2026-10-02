@@ -82,19 +82,19 @@
   "faqs": [
     [
       "¿Gasta menos un aire inverter que uno no inverter?",
-      "Con el mismo trabajo de enfriar, el inverter modula la potencia del compresor en lugar de arrancar y parar, y por eso suele gastar menos energía; cuánto menos lo pones tú como potencia media de cada equipo, porque la placa no es el consumo real. Con los ejemplos de la página (0,6 kW frente a 1 kW, 6 horas al día durante 90 días y 0,20 €/kWh sin impuestos) la energía de la temporada cuesta 82 € con el inverter y 137 € con el no inverter."
+      "Suele gastar menos porque modula el compresor; cuánto menos lo decides tú con la potencia media. Con los ejemplos (0,6 kW frente a 1 kW, 6 horas al día, 90 días, 0,20 €/kWh sin impuestos) la temporada cuesta 82 € con el inverter y 137 € con el no inverter."
     ],
     [
       "¿Puede un ventilador sustituir al aire acondicionado?",
-      "No son equivalentes: un ventilador mueve el aire y alivia la sensación de calor, pero no baja la temperatura de la habitación ni quita humedad. Si el objetivo es enfriar, la comparación de coste con un ventilador no vale; si basta con refrescar, el ventilador gasta mucho menos. Con los ejemplos de la página (0,05 kW) consume 27 kWh en la temporada frente a 324 kWh del inverter. Esto no es un consejo médico: con olas de calor o personas vulnerables, consulta a un profesional sanitario."
+      "No: el ventilador alivia la sensación de calor, pero no baja la temperatura ni quita humedad. Si basta con refrescar, gasta mucho menos: con los ejemplos, 27 kWh en la temporada frente a 324 kWh del inverter. Con olas de calor o personas vulnerables, consulta a un sanitario."
     ],
     [
       "¿Cuántas horas al día hay que usar el aire inverter para que compense?",
-      "Frente a un aire no inverter, compensa a partir de las horas al día en que el ahorro de energía durante la vida útil iguala la diferencia de compra. Con los ejemplos (1 kW y 500 € el no inverter, 0,6 kW y 800 € el inverter, 90 días, 10 años y 0,20 €/kWh sin impuestos) el equilibrio está en 3,3 horas al día; con 1 hora al día sale 208 € más barato el no inverter en 10 años. La calculadora te da el equilibrio con tus datos."
+      "A partir de las horas al día en que el ahorro iguala la diferencia de compra. Con los ejemplos (500 € frente a 800 €, 90 días, 10 años) el equilibrio está en 3,3 horas al día; con 1 hora, el no inverter sale 208 € más barato."
     ],
     [
       "¿Qué precio de la luz usa la calculadora?",
-      "Por defecto, el precio medio del PVPC del mes en curso que publica Red Eléctrica (REData), o la media de septiembre de 2026 si el mes tiene menos de 7 días de datos; es editable. Le añade el Impuesto Especial sobre la Electricidad (5,11269632 %, con mínimo de 1 €/MWh) y el IVA general del 21 %. Si tienes una tarifa fija, pon su precio de energía. El PVPC medio de las 24 horas es más bajo que el de la tarde-noche, que es cuando más se usa el aire, así que puedes subirlo."
+      "Por defecto, el PVPC medio del mes que publica Red Eléctrica (REData), o la media de septiembre de 2026 si hay menos de 7 días de datos; es editable. Se suman el Impuesto Especial sobre la Electricidad y el IVA del 21 %. Con tarifa fija, pon su precio."
     ],
     [
       "¿Qué no incluye esta estimación?",

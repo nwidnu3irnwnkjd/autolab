@@ -1,102 +1,102 @@
 {
- "slug": "comedor-escolar-o-tupper",
- "title": "Comedor escolar o tupper: coste por curso y tu tiempo",
- "description": "Compara el coste por curso del comedor escolar y del tupper: menú, días, compra, tu tiempo y descuento o beca. Menú de equilibrio.",
- "h1": "Comedor escolar o tupper: cuánto cuesta cada opción por curso",
- "lead": "El tupper sale más barato que el comedor escolar si el menú cuesta más de lo que te supone preparar la comida en casa (compra, material y, si lo cuentas, tu tiempo): con los ejemplos de la página (menú de 6 €, 170 días, 3 € de compra al día, 20 minutos de preparación y 30 € de material) el tupper cuesta 540,00 € al curso frente a 1.020,00 € del comedor, y este solo igualaría con un menú de 3,18 € o menos; si valoras tu hora a 10 €, gana el comedor por 86,67 €. Pon el descuento o beca que te corresponda según tu centro.",
- "veredicto": "El comedor compensa frente al tupper si el precio del menú, tras el descuento o beca que tengas, queda por debajo de lo que cuesta preparar la comida en casa: compra, material y tu tiempo si lo valoras. El menú máximo para igualar sale de esa igualdad con tus datos.",
- "tema": "ahorro",
- "inputs": [
-  {
-   "id": "menu",
-   "label": "Precio del menú del comedor (€ por día y niño, sin descuento; 6 € es un ejemplo, no la tarifa de ningún centro)",
-   "default": 6,
-   "min": 0,
-   "step": 0.25,
-   "default_from": "params.comedor_tupper.supuestos.menu"
-  },
-  {
-   "id": "dias",
-   "label": "Días de comedor al curso (días lectivos en los que lo usarías; 170 es un ejemplo, consulta el calendario de tu centro)",
-   "default": 170,
-   "min": 1,
-   "max": 366,
-   "step": 5,
-   "default_from": "params.comedor_tupper.supuestos.dias"
-  },
-  {
-   "id": "desc",
-   "label": "Descuento o beca sobre el menú (% de 0 a 100; es un dato tuyo: consulta tu centro; 0 si no tienes)",
-   "default": 0,
-   "min": 0,
-   "max": 100,
-   "step": 5,
-   "default_from": "params.comedor_tupper.supuestos.desc"
-  },
-  {
-   "id": "hijos",
-   "label": "Número de hijos que usarían el comedor (de 1 a 10; 1 es un ejemplo)",
-   "default": 1,
-   "min": 1,
-   "max": 10,
-   "step": 1,
-   "default_from": "params.comedor_tupper.supuestos.hijos"
-  },
-  {
-   "id": "compra",
-   "label": "Coste de la comida preparada en casa (€ por día y niño, compra de ingredientes; 3 € es un ejemplo)",
-   "default": 3,
-   "min": 0,
-   "step": 0.25,
-   "default_from": "params.comedor_tupper.supuestos.compra"
-  },
-  {
-   "id": "minutos",
-   "label": "Tiempo de preparación (minutos al día en total, para todos; 20 es un ejemplo)",
-   "default": 20,
-   "min": 0,
-   "max": 240,
-   "step": 5,
-   "default_from": "params.comedor_tupper.supuestos.minutos"
-  },
-  {
-   "id": "valorHora",
-   "label": "Valor de tu hora (€/h; opcional: 0 si no quieres contar tu tiempo en euros; 0 es un ejemplo)",
-   "default": 0,
-   "min": 0,
-   "step": 1,
-   "default_from": "params.comedor_tupper.supuestos.valor_hora"
-  },
-  {
-   "id": "material",
-   "label": "Material del tupper al curso (€ en total: fiambreras, bolsa isotérmica; 30 € es un ejemplo)",
-   "default": 30,
-   "min": 0,
-   "step": 5,
-   "default_from": "params.comedor_tupper.supuestos.material"
-  }
- ],
- "faqs": [
-  [
-   "¿Sale más barato el comedor escolar o llevar tupper?",
-   "Depende de tu menú, tu compra y si cuentas tu tiempo. Con los ejemplos de la página (menú de 6 €, 170 días, 3 € de compra al día, 30 € de material y 20 minutos de preparación) el tupper cuesta 540,00 € al curso y el comedor 1.020,00 €. Si valoras tu hora a 10 €, el tupper sube a 1.106,67 € y gana el comedor por 86,67 €. La calculadora lo recalcula con tus datos."
+  "slug": "comedor-escolar-o-tupper",
+  "title": "Comedor escolar o tupper: coste por curso y tu tiempo",
+  "description": "Compara el coste por curso del comedor escolar y del tupper: menú, días, compra, tu tiempo y descuento o beca. Menú de equilibrio.",
+  "h1": "Comedor escolar o tupper: cuánto cuesta cada opción por curso",
+  "lead": "El tupper sale más barato que el comedor escolar si el menú cuesta más de lo que te supone preparar la comida en casa (compra, material y, si lo cuentas, tu tiempo): con los ejemplos de la página (menú de 6 €, 170 días, 3 € de compra al día, 20 minutos de preparación y 30 € de material) el tupper cuesta 540,00 € al curso frente a 1.020,00 € del comedor, y este solo igualaría con un menú de 3,18 € o menos; si valoras tu hora a 10 €, gana el comedor por 86,67 €. Pon el descuento o beca que te corresponda según tu centro.",
+  "veredicto": "El comedor compensa frente al tupper si el precio del menú, tras el descuento o beca que tengas, queda por debajo de lo que cuesta preparar la comida en casa: compra, material y tu tiempo si lo valoras. El menú máximo para igualar sale de esa igualdad con tus datos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "menu",
+      "label": "Precio del menú del comedor (€ por día y niño, sin descuento; 6 € es un ejemplo, no la tarifa de ningún centro)",
+      "default": 6,
+      "min": 0,
+      "step": 0.25,
+      "default_from": "params.comedor_tupper.supuestos.menu"
+    },
+    {
+      "id": "dias",
+      "label": "Días de comedor al curso (días lectivos en los que lo usarías; 170 es un ejemplo, consulta el calendario de tu centro)",
+      "default": 170,
+      "min": 1,
+      "max": 366,
+      "step": 5,
+      "default_from": "params.comedor_tupper.supuestos.dias"
+    },
+    {
+      "id": "desc",
+      "label": "Descuento o beca sobre el menú (% de 0 a 100; es un dato tuyo: consulta tu centro; 0 si no tienes)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default_from": "params.comedor_tupper.supuestos.desc"
+    },
+    {
+      "id": "hijos",
+      "label": "Número de hijos que usarían el comedor (de 1 a 10; 1 es un ejemplo)",
+      "default": 1,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default_from": "params.comedor_tupper.supuestos.hijos"
+    },
+    {
+      "id": "compra",
+      "label": "Coste de la comida preparada en casa (€ por día y niño, compra de ingredientes; 3 € es un ejemplo)",
+      "default": 3,
+      "min": 0,
+      "step": 0.25,
+      "default_from": "params.comedor_tupper.supuestos.compra"
+    },
+    {
+      "id": "minutos",
+      "label": "Tiempo de preparación (minutos al día en total, para todos; 20 es un ejemplo)",
+      "default": 20,
+      "min": 0,
+      "max": 240,
+      "step": 5,
+      "default_from": "params.comedor_tupper.supuestos.minutos"
+    },
+    {
+      "id": "valorHora",
+      "label": "Valor de tu hora (€/h; opcional: 0 si no quieres contar tu tiempo en euros; 0 es un ejemplo)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.comedor_tupper.supuestos.valor_hora"
+    },
+    {
+      "id": "material",
+      "label": "Material del tupper al curso (€ en total: fiambreras, bolsa isotérmica; 30 € es un ejemplo)",
+      "default": 30,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.comedor_tupper.supuestos.material"
+    }
   ],
-  [
-   "¿Cuánto debería costar el menú para que compense el comedor?",
-   "Es el menú de equilibrio: el precio por día al que el comedor iguala al tupper. Con los ejemplos sale 3,18 € sin contar tu tiempo, y 6,51 € si valoras tu hora a 10 €. Con un descuento del 50 % en el menú, el comedor cuesta 510,00 € al curso y gana al tupper por 30,00 €."
+  "faqs": [
+    [
+      "¿Sale más barato el comedor escolar o llevar tupper?",
+      "Depende de tu menú, tu compra y si cuentas tu tiempo. Con los ejemplos (menú de 6 €, 170 días, compra de 3 € al día) el tupper cuesta 540,00 € al curso y el comedor 1.020,00 €; con tu hora a 10 €, gana el comedor por 86,67 €."
+    ],
+    [
+      "¿Cuánto debería costar el menú para que compense el comedor?",
+      "Es el menú de equilibrio: el precio por día al que el comedor iguala al tupper. Con los ejemplos sale 3,18 € sin contar tu tiempo, y 6,51 € si valoras tu hora a 10 €. Con un descuento del 50 % en el menú, el comedor cuesta 510,00 € al curso y gana al tupper por 30,00 €."
+    ],
+    [
+      "¿Cómo cuento el descuento o la beca?",
+      "Lo pones tú: un porcentaje sobre el precio del menú, de 0 a 100. Los descuentos y becas dependen de tu centro y de tu administración educativa, así que consulta tu centro. La página no usa ninguna cifra legal ni ayuda concreta."
+    ],
+    [
+      "¿Y si tengo más de un hijo?",
+      "Se multiplican por el número de hijos el precio del menú y la compra de la comida; el tiempo de preparación y el material se cuentan una sola vez. Con dos hijos, 3,50 € de compra al día y los demás ejemplos, el tupper cuesta 1.220,00 € al curso frente a 2.040,00 € del comedor."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye cuotas del cuidado del mediodía si el centro las cobra aparte, comodidad ni preferencias de cada niño. Compara solo costes y no recomienda ninguna forma de comer. Supone el mismo precio de menú y de compra todo el curso y el mismo tiempo de preparación cada día."
+    ]
   ],
-  [
-   "¿Cómo cuento el descuento o la beca?",
-   "Es un dato que pones tú: un porcentaje sobre el precio del menú, de 0 a 100. Los descuentos, las becas y sus requisitos dependen de tu centro y de tu administración educativa, así que consulta tu centro para saber si te corresponde alguno y cuánto cubre. La página no usa ninguna cifra legal ni ninguna ayuda concreta."
-  ],
-  [
-   "¿Y si tengo más de un hijo?",
-   "Se multiplican por el número de hijos el precio del menú y la compra de la comida; el tiempo de preparación y el material se cuentan una sola vez. Con dos hijos, 3,50 € de compra al día y los demás ejemplos, el tupper cuesta 1.220,00 € al curso frente a 2.040,00 € del comedor."
-  ],
-  [
-   "¿Qué no incluye esta comparación?",
-   "No incluye cuotas del cuidado del mediodía si el centro las cobra aparte, la comodidad, la organización de tu semana ni las preferencias de cada niño. Compara solo costes y no recomienda ninguna forma de comer. Se supone el mismo precio de menú y de compra todo el curso, y que el tiempo de preparación es el mismo cada día."
-  ]
- ],
- "sources": "Modelo propio: comedor = hijos × días × menú × (1 − descuento); tupper = días × (hijos × compra por día + minutos ÷ 60 × valor de la hora) + material; diferencia = comedor − tupper; menú de equilibrio = coste del tupper ÷ (hijos × días × (1 − descuento)). Se declara empate práctico si la diferencia es menor del 5 %. Todas las cifras de la página (6 €, 170 días, 3 €, 20 minutos, 30 € de material, 10 € la hora, 50 % de descuento) son ejemplos declarados y editables, no tarifas de ningún centro ni cifras de ninguna administración; no se usan cifras legales. El descuento o beca lo pones tú: consulta tu centro. Para seguir el precio de los alimentos a lo largo del tiempo, el INE publica el IPC (https://www.ine.es/jaxiT3/Tabla.htm?t=50934, consultado el 2/10/2026; no se usan sus cifras en el cálculo). Información orientativa, no asesoramiento nutricional ni fiscal."
+  "sources": "Modelo propio: comedor = hijos × días × menú × (1 − descuento); tupper = días × (hijos × compra por día + minutos ÷ 60 × valor de la hora) + material; diferencia = comedor − tupper; menú de equilibrio = coste del tupper ÷ (hijos × días × (1 − descuento)). Se declara empate práctico si la diferencia es menor del 5 %. Todas las cifras de la página (6 €, 170 días, 3 €, 20 minutos, 30 € de material, 10 € la hora, 50 % de descuento) son ejemplos declarados y editables, no tarifas de ningún centro ni cifras de ninguna administración; no se usan cifras legales. El descuento o beca lo pones tú: consulta tu centro. Para seguir el precio de los alimentos a lo largo del tiempo, el INE publica el IPC (https://www.ine.es/jaxiT3/Tabla.htm?t=50934, consultado el 2/10/2026; no se usan sus cifras en el cálculo). Información orientativa, no asesoramiento nutricional ni fiscal."
 }

@@ -141,7 +141,7 @@
  ],
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
-  "finiquito-baja-voluntaria-vacaciones-preaviso",
+  "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
   "indemnizacion-despido-objetivo-o-improcedente-neto"
  ],
  "cuota-autonomos-ingresos-reales-regularizacion": [
@@ -261,8 +261,8 @@
  ],
  "indemnizacion-despido-objetivo-o-improcedente-neto": [
   "cuanto-cobro-de-paro-prestacion-desempleo",
-  "capitalizar-paro-o-cobrarlo",
-  "finiquito-baja-voluntaria-vacaciones-preaviso"
+  "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
+  "capitalizar-paro-o-cobrarlo"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
   "declaracion-conjunta-o-individual",
@@ -413,6 +413,11 @@
   "hipoteca-fija-o-variable",
   "amortizar-plazo-o-cuota",
   "amortizar-o-invertir"
+ ],
+ "subsidio-desempleo-cuanto-cobro-y-cuanto-dura": [
+  "cuanto-cobro-de-paro-prestacion-desempleo",
+  "capitalizar-paro-o-cobrarlo",
+  "indemnizacion-despido-objetivo-o-improcedente-neto"
  ],
  "suscripciones-cuanto-gasto-al-ano": [
   "marca-blanca-o-marca-ahorro-anual",

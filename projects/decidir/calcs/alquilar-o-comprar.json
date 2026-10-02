@@ -3,7 +3,7 @@
   "title": "Alquilar o comprar vivienda: qué sale mejor a N años",
   "description": "Compara el patrimonio que tendrías comprando o alquilando e invirtiendo la entrada, según tu horizonte, y descubre en qué año compensa comprar.",
   "h1": "Alquilar o comprar vivienda: ¿qué sale mejor a N años?",
-  "lead": "Compara el patrimonio neto que te quedaría al cabo de los años que elijas si compras con hipoteca o si alquilas e inviertes la entrada y la diferencia mensual, con tus números y para España.",
+  "lead": "Comprar suele compensar si te quedas muchos años y la vivienda se revaloriza; alquilar e invertir la entrada suele ganar si te mudas pronto o el precio apenas sube. La calculadora compara el patrimonio neto de ambos caminos con tus números y para España, y te dice desde qué año empieza a ganar comprar.",
   "veredicto": "Comprar suele compensar si te quedas muchos años y la vivienda se revaloriza; alquilar e invertir suele ganar si te mudas pronto o el precio apenas sube.",
   "tema": "hipoteca",
   "inputs": [
@@ -109,7 +109,7 @@
   "faqs": [
     [
       "¿Qué es mejor, alquilar o comprar una vivienda?",
-      "Depende de cuántos años vayas a quedarte y de cuánto se revalorice la vivienda frente a lo que rinda tu dinero invertido. Comprar suele compensar a horizontes largos; alquilar suele ganar si te mueves pronto o si la vivienda se revaloriza poco. Esta calculadora te da el año en que comprar empieza a superar a alquilar."
+      "Depende de cuántos años te quedes y de cuánto se revalorice la vivienda frente a lo que rinda tu dinero invertido. Comprar suele compensar a partir de cierto año; si te mudas antes, suele ganar alquilar e invertir. La calculadora te da ese año con tus números."
     ],
     [
       "¿Qué gastos de compra debo incluir?",

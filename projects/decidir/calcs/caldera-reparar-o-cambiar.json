@@ -78,7 +78,7 @@
     ],
     [
       "¿En cuántos años se amortiza una caldera de condensación?",
-      "Se divide el coste neto de la caldera nueva entre el ahorro de gas por su mayor rendimiento. Con los ejemplos (8.000 kWh al año, 81 % frente a 92 %, gas a 0,064 €/kWh) el ahorro de gas ronda 61 € al año, así que por el gas solo tardaría muchos años; lo que acorta la amortización frente a reparar es la reparación que te ahorras y las averías que evitas. La calculadora da los dos plazos con tus datos."
+      "Se divide el coste neto de la caldera nueva entre el ahorro de gas. Con los ejemplos (81 % frente a 92 %, gas a 0,064 €/kWh) ese ahorro ronda 61 € al año: por el gas solo tardaría muchos años. Frente a reparar, se acorta por las averías evitadas."
     ],
     [
       "¿Qué rendimiento tiene mi caldera actual?",
@@ -86,11 +86,11 @@
     ],
     [
       "¿Cuánto gas ahorro con una caldera de condensación?",
-      "El ahorro de gas es el consumo actual por (1 menos rendimiento actual entre rendimiento nuevo). Con 81 % y 92 % es cerca del 12 % del gas. Si tu caldera ya rinde parecido a la nueva, el ahorro de gas es casi nulo y el cambio solo se justifica por averías o por falta de piezas."
+      "Es cerca del 12 % del gas con 81 % y 92 % de rendimiento (consumo por 1 menos rendimiento actual entre nuevo). Si tu caldera ya rinde parecido a la nueva, el ahorro es casi nulo y el cambio solo se justifica por averías o falta de piezas."
     ],
     [
       "¿Esta calculadora sustituye a un técnico?",
-      "No. Una revisión por técnico autorizado es obligatoria y esta calculadora no sustituye el diagnóstico: si hay olor a gas, llama de color anormal o sospecha de monóxido de carbono, corta el gas y avisa al servicio técnico. Tampoco incluye normativa de calderas, posibles prohibiciones futuras ni ayudas autonómicas: consulta tu comunidad."
+      "No. La revisión por técnico autorizado es obligatoria. Si hay olor a gas, llama de color anormal o sospecha de monóxido de carbono, corta el gas y avisa al servicio técnico. Tampoco incluye normativa, posibles prohibiciones futuras ni ayudas autonómicas: consulta tu comunidad."
     ]
   ],
   "sources": "Modelo propio simplificado: coste anual de reparar = presupuesto / años que aguanta la reparada + reserva de averías del 10 % del presupuesto al año + gas actual; coste anual de cambiar = (caldera nueva - ayudas) / 15 años + gas con el rendimiento nuevo; gas = consumo x rendimiento actual / rendimiento nuevo x precio. Sin descuento ni inflación. La vida de 15 años de la caldera nueva y la reserva de averías del 10 % son hipótesis del modelo, no cifras oficiales (data/params.json, caldera_2026). Gas: 0,064 €/kWh con impuestos en octubre de 2026 (TUR.2, BOE-A-2026-20389, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389; Impuesto sobre Hidrocarburos e IVA según el RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265; consultado el 2/10/2026); en noviembre y diciembre puede bajar si el IPC del gas natural supera el 15 % interanual. Rendimiento de caldera de condensación 0,92 (hasta 94 %) y de una antigua unos 0,81: https://www.caloryfrio.com/calefaccion/calderas/rendimiento-medio-estacional-de-las-calderas-de-condensacion.html (consultado el 1/10/2026), orientativos. Caldera instalada 1.200-4.500 €: https://www.cronoshare.com/cuanto-cuesta/instalar-caldera-gas (orientativo, consultado el 1/10/2026). Revisión obligatoria cada dos años en vivienda: https://www.ocu.org/vivienda-y-energia/calderas/noticias/revisiones-calderas-de-gas. Presupuesto de reparación, consumo de gas y años que aguanta la reparada: ejemplos editables, no datos oficiales. Información orientativa, no un presupuesto ni asesoramiento técnico."

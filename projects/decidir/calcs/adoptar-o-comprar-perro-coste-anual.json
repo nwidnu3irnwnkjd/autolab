@@ -91,7 +91,7 @@
   "faqs": [
     [
       "¿Cuánto cuesta tener un perro al año?",
-      "Depende de su tamaño y de tus gastos: la calculadora suma el pienso por 12, el veterinario y otros gastos del año y el seguro si lo pones. Con los ejemplos de la página (40 € al mes de pienso y 250 € al año de veterinario, sin seguro) son 730 € al año, unos 61 € al mes; con un seguro de 300 € al año suben a 1.030 € y el seguro pesa un 29 % del gasto. Son importes de ejemplo editables, no precios de mercado."
+      "Depende de su tamaño y de tus gastos. Con los ejemplos (40 € al mes de pienso y 250 € al año de veterinario) son 730 € al año; con un seguro de 300 € al año suben a 1.030 €. Son importes editables, no precios de mercado."
     ],
     [
       "¿Cuánto cuesta el primer año de un perro?",
@@ -99,7 +99,7 @@
     ],
     [
       "¿Es más barato adoptar o comprar un perro?",
-      "En esta calculadora, la diferencia entre adoptar y comprar es solo el precio de entrada: adoptar sale más barato si tu cuota de adopción es menor que el precio de compra. Con los ejemplos la diferencia es de 600 € en 12 años (9.210 € frente a 9.810 €), unos 9,9 meses de gasto corriente; con una cuota de 500 € y una compra de 300 €, comprar sale 200 € más barato. No valora salud, edad ni carácter del animal."
+      "Adoptar sale más barato si tu cuota es menor que el precio de compra: la diferencia es solo la entrada. Con los ejemplos son 600 € en 12 años (9.210 € frente a 9.810 €); con cuota de 500 € y compra de 300 €, comprar sale 200 € menos."
     ],
     [
       "¿Qué pesa más, el precio de entrada o el gasto corriente?",
@@ -107,7 +107,7 @@
     ],
     [
       "¿Qué no incluye esta estimación?",
-      "No incluye urgencias ni tratamientos imprevistos (el seguro entra solo como una prima fija), ni alimentación especial, paseador, guardería, viajes o adiestramiento, salvo que los sumes al veterinario y otros gastos; tampoco la inflación ni descuentos financieros. Los importes de los selectores son hipótesis de ejemplo y no sustituyen el consejo de tu veterinario ni valoran la salud del animal. Para ver el efecto del seguro, mira la calculadora del seguro de mascota."
+      "No incluye urgencias ni tratamientos imprevistos (el seguro entra como prima fija), alimentación especial, paseador, guardería, viajes ni adiestramiento, salvo que los sumes al veterinario y otros gastos; tampoco inflación. Los importes son ejemplos y no sustituyen el consejo de tu veterinario."
     ]
   ],
   "sources": "Modelo propio: gasto anual = 12 × pienso mensual + veterinario y otros gastos del año + seguro; primer año = entrada (cuota de adopción o precio de compra) + gastos iniciales + gasto anual; total = entrada + gastos iniciales + años × gasto anual, sin descontar ni aplicar inflación. Sin cifras legales ni precios de mercado: pienso, veterinario, seguro, gastos iniciales, cuota de adopción, precio de compra y años son ejemplos editables por tamaño, no datos de ninguna protectora, criadero, clínica ni aseguradora. No hay fuente externa porque todos los importes son entradas del usuario; para obligaciones de tenencia (registro, identificación, seguro de responsabilidad civil en algunas razas o comunidades), consulta la normativa de tu ayuntamiento o comunidad autónoma, que no se calcula aquí. Consultado el 2/10/2026. Información orientativa, no asesoramiento ni consejo veterinario."

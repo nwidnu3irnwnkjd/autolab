@@ -286,6 +286,101 @@ def cuantias_md(D):
     return "Cuantías oficiales 2026:\n" + "\n".join(f"- {lab}: {_ef(val) if u == '€' else _pc(val)} ({f})" for _, it in D["G"] for _, lab, val, u, f, _ in it)
 
 
+# ---------- 5. Trabajo y prestaciones (c42) ----------
+def trabajo(P):
+    Pa, Pn, Ja, Di, Kd, Rf, Fi = (P.get(k) for k in ("cuanto_cobro_paro_2026", "permiso_nacimiento_2026", "jubilacion_activa_2026",
+        "indemnizacion_despido_2026", "kilometraje_dietas_2026", "retribucion_flexible_2026", "finiquito_baja_voluntaria_2026"))
+    for b in (Pa, Pn, Ja, Di, Kd, Rf, Fi): assert _ok(b) and b.get("confianza") in ("A", "A−"), "clave sin confianza A/A−"
+    sepe = Pa["url_sepe_cuantias"]; ET = Di["url"]
+    # item: (clave, rótulo, valor, tipo, fuente, url)  tipo: eur, pct, dias, sem, mens, eurkm
+    G = []
+    def add(name, items): G.append((name, [i for i in items if i[2] is not None and i[5]]))
+    add("Prestación por desempleo (paro)", [
+        ("paro_max_0", "Paro máximo al mes, sin hijos", Pa.get("tope_mensual", [None])[0], "eur", "LGSS art. 270.3 y SEPE", sepe),
+        ("paro_max_1", "Paro máximo al mes, 1 hijo", Pa.get("tope_mensual", [None] * 2)[1], "eur", "LGSS art. 270.3 y SEPE", sepe),
+        ("paro_max_2", "Paro máximo al mes, 2 o más hijos", Pa.get("tope_mensual", [None] * 3)[2], "eur", "LGSS art. 270.3 y SEPE", sepe),
+        ("paro_min_0", "Paro mínimo al mes, sin hijos", Pa.get("minimo_mensual", [None])[0], "eur", "LGSS art. 270.3 y SEPE", sepe),
+        ("paro_min_1", "Paro mínimo al mes, con hijos", Pa.get("minimo_mensual", [None] * 2)[1], "eur", "LGSS art. 270.3 y SEPE", sepe),
+        ("paro_pct_180", "Porcentaje de la base reguladora, primeros 180 días", Pa.get("pct_primeros_180_dias"), "pct", "LGSS art. 270.2", Pa["url"]),
+        ("paro_pct_despues", "Porcentaje de la base reguladora, desde el día 181", Pa.get("pct_despues"), "pct", "LGSS art. 270.2", Pa["url"]),
+        ("paro_dias_minimos", "Días cotizados mínimos en los 6 años anteriores", Pa.get("dias_minimos_cotizados"), "dias", "LGSS art. 269.1", Pa["url"]),
+    ])
+    esc = [("duracion_%d" % d, f"Duración de la prestación con {num(d, 0)} días cotizados o más", v, "dias", "LGSS art. 269.1", Pa["url"]) for d, v in Pa.get("escala_duracion", [])]
+    add("Duración del paro según días cotizados", esc)
+    add("Permiso de nacimiento", [
+        ("nac_semanas", "Semanas de permiso por progenitor", Pn.get("semanas_total"), "sem", "ET art. 48.4 (RDL 9/2025)", Pn["url_et"]),
+        ("nac_obligatorias", "Semanas obligatorias e ininterrumpidas tras el parto", Pn.get("semanas_obligatorias"), "sem", "ET art. 48.4", Pn["url_et"]),
+        ("nac_12_meses", "Semanas voluntarias hasta los 12 meses del hijo", Pn.get("semanas_12_meses"), "sem", "ET art. 48.4", Pn["url_et"]),
+        ("nac_8_anos", "Semanas voluntarias hasta los 8 años del hijo", Pn.get("semanas_8_anos"), "sem", "ET art. 48.4", Pn["url_et"]),
+        ("nac_monoparental", "Semanas en familia monoparental", Pn.get("semanas_monoparental"), "sem", "ET art. 48.4", Pn["url_et"]),
+        ("nac_base_max", "Base máxima de cotización al mes (tope de la prestación)", Pn.get("base_maxima_mes"), "eur", "Orden PJC/297/2026, art. 2.1", Pn["url_orden_cotizacion"]),
+    ])
+    esc_ja = Ja.get("escala_pct", [])
+    add("Jubilación activa", [("ja_escala_%d" % (i + 1), f"Porcentaje de la pensión que se cobra con {i + 1} {'año' if i == 0 else 'años'} de demora" + (" o más" if i == len(esc_ja) - 1 else ""),
+                                p, "pct", "LGSS art. 214", Ja["url"]) for i, p in enumerate(esc_ja)] + [
+        ("ja_autonomo_contrata", "Porcentaje si el autónomo contrata a un trabajador", Ja.get("pct_autonomo_contrata"), "pct", "LGSS art. 214", Ja["url"]),
+        ("ja_suma", "Puntos que se suman cada 12 meses en activa", Ja.get("suma_pp_cada_12_meses"), "pp", "LGSS art. 214", Ja["url"]),
+        ("ja_solidaridad", "Cotización de solidaridad (empresa 7 % + trabajador 2 %)", Ja.get("solidaridad_pct"), "pct", "LGSS arts. 153 y 310", Ja["url"]),
+    ])
+    add("Indemnización por despido", [
+        ("desp_dias_obj", "Despido objetivo: días de salario por año de servicio", Di.get("dias_objetivo"), "dias", "ET art. 53.1.b", ET),
+        ("desp_tope_obj", "Despido objetivo: máximo", Di.get("tope_objetivo_mensualidades"), "mens", "ET art. 53.1.b", ET),
+        ("desp_dias_imp", "Despido improcedente: días de salario por año de servicio", Di.get("dias_improcedente"), "dias", "ET art. 56.1", ET),
+        ("desp_tope_imp", "Despido improcedente: máximo", Di.get("tope_improcedente_mensualidades"), "mens", "ET art. 56.1", ET),
+        ("desp_dias_pre", "Contratos anteriores al 12-2-2012: días por año hasta esa fecha", Di.get("dias_previo_2012"), "dias", "ET DT 11.ª", ET),
+        ("desp_tope_pre", "Contratos anteriores al 12-2-2012: máximo", Di.get("tope_previo_mensualidades"), "mens", "ET DT 11.ª", ET),
+        ("desp_exenta", "Indemnización obligatoria exenta de IRPF, hasta", Di.get("exencion_tope"), "eur", "Ley 35/2006, art. 7.e", Di["url_irpf"]),
+    ])
+    add("Kilometraje y dietas exentas", [
+        ("km", "Kilometraje exento (más peajes y aparcamiento justificados)", Kd.get("km_eur"), "eurkm", "Orden HFP/792/2023", Kd["url_orden"]),
+        ("dieta_sin_es", "Manutención sin pernocta, en España", Kd.get("manutencion_sin_pernocta_espana"), "eur", "RIRPF art. 9.A.3", Kd["url"]),
+        ("dieta_con_es", "Manutención con pernocta, en España", Kd.get("manutencion_con_pernocta_espana"), "eur", "RIRPF art. 9.A.3", Kd["url"]),
+        ("dieta_sin_ext", "Manutención sin pernocta, en el extranjero", Kd.get("manutencion_sin_pernocta_extranjero"), "eur", "RIRPF art. 9.A.3", Kd["url"]),
+        ("dieta_con_ext", "Manutención con pernocta, en el extranjero", Kd.get("manutencion_con_pernocta_extranjero"), "eur", "RIRPF art. 9.A.3", Kd["url"]),
+    ])
+    add("Retribución flexible: topes exentos", [
+        ("rf_seguro", "Seguro de salud, por persona y año", Rf.get("seguro_persona"), "eur", "Ley 35/2006, art. 42.3.c", Rf["url"]),
+        ("rf_seguro_disc", "Seguro de salud, por persona con discapacidad y año", Rf.get("seguro_persona_discapacidad"), "eur", "Ley 35/2006, art. 42.3.c", Rf["url"]),
+        ("rf_comida", "Comida en fórmulas indirectas (vales, tarjeta), por día", Rf.get("comida_dia"), "eur", "RIRPF art. 45.2", Rf["url_rirpf"]),
+        ("rf_transporte", "Transporte colectivo, por año", Rf.get("transporte_anual"), "eur", "Ley 35/2006, art. 42.3.e", Rf["url"]),
+        ("rf_transporte_mes", "Tarjeta de transporte, por mes", Rf.get("transporte_mes_tarjeta"), "eur", "RIRPF arts. 46 y 46 bis", Rf["url_rirpf"]),
+        ("rf_especie", "Máximo del salario en especie sobre las percepciones salariales", Rf.get("especie_max_pct"), "pct", "ET art. 26.1", Rf["url_et"]),
+    ])
+    add("Finiquito", [
+        ("fin_vacaciones", "Vacaciones mínimas anuales (compensables al extinguirse el contrato si no se disfrutaron)", Fi.get("vacaciones_minimas_dias"), "diasnat", "ET art. 38.1 y Convenio 132 OIT", Fi["url"]),
+        ("fin_base_max", "Tope de base de cotización al mes", Fi.get("base_maxima_cotizacion_mes"), "eur", "Orden PJC/297/2026", Fi["url_orden_cotizacion"]),
+    ])
+    UN = {"eur": "EUR", "pct": "%", "dias": "dias", "sem": "semanas", "mens": "mensualidades", "eurkm": "EUR/km", "pp": "puntos", "diasnat": "dias_naturales"}
+    csvr = [["trabajo_prestaciones_2026", k, "valor", v, UN[t], f, u] for _, it in G for k, _, v, t, f, u in it]
+    return dict(G=G, csv=csvr, fecha="2026-10-02", v={k: v for _, it in G for k, _, v, _, _, _ in it})
+
+def _tv(v, t):
+    if t == "eur": return _ef(v)
+    if t == "eurkm": return _f(v) + " €/km"
+    if t == "pct": return _pc(v)
+    if t == "pp": return f"{_f(v)} puntos"
+    if t == "sem": return f"{_f(v)} semanas"
+    if t == "mens": return f"{_f(v)} mensualidades"
+    if t == "diasnat": return f"{_f(v)} días naturales"
+    return f"{_f(v)} días"
+
+def trabajo_body(D):
+    G, v = D["G"], D["v"]
+    secs = []
+    for name, items in G:
+        if not items: continue
+        tr = "".join(f'<tr><th scope="row">{e(lab)}</th><td><strong>{e(_tv(val, t))}</strong></td><td>{_src(url, f)}</td></tr>' for k, lab, val, t, f, url in items)
+        sid = "t-" + "".join(c for c in name.lower().split(":")[0].replace(" ", "-") if c.isalnum() or c == "-")
+        secs.append(f'<h2 id="{sid}">{e(name)} 2026</h2>\n<div class="em-tw"><table><thead><tr><th scope="col">Concepto</th><th scope="col">Cuantía 2026</th><th scope="col">Fuente</th></tr></thead><tbody>{tr}</tbody></table></div>')
+    g = lambda k, d="": _tv(v[k], "eur") if k in v else d
+    return f"""<div class="box"><p><strong>Respuesta corta:</strong> en 2026 el paro va de <strong>{g("paro_min_0")} a {g("paro_max_2")} al mes</strong> según hijos; el permiso de nacimiento es de <strong>{_f(v["nac_semanas"])} semanas por progenitor</strong> con tope de base de {g("nac_base_max")} al mes; la indemnización por despido es de {_f(v["desp_dias_obj"])} días por año en el objetivo ({_f(v["desp_tope_obj"])} mensualidades máximo) y de {_f(v["desp_dias_imp"])} en el improcedente ({_f(v["desp_tope_imp"])} máximo); el kilometraje exento es de {_tv(v["km"], "eurkm")}; y las vacaciones mínimas son de {_f(v["fin_vacaciones"])} días naturales al año.</p></div>
+{chr(10).join(secs)}
+<p class="note">Cada fila enlaza la norma o la página oficial de la que sale; son las mismas cifras que usan nuestras calculadoras. El importe exacto de tu caso depende de tu base de cotización, tus años de servicio y tu convenio: usa la calculadora enlazada abajo. La escala de la jubilación activa se aplica según los años completos de demora del acceso a la pensión.</p>"""
+
+def trabajo_md(D):
+    return "Trabajo y prestaciones 2026:\n" + "\n".join(f"- {lab}: {_tv(val, t)} ({f})" for _, it in D["G"] for _, lab, val, t, f, _ in it)
+
+
 # ---------- páginas ----------
 PAGES = [
     dict(slug="tramos-irpf-comunidades", compute=irpf, body=irpf_body, md=irpf_md,
@@ -320,6 +415,14 @@ PAGES = [
          calcs=["cuanto-cobro-de-paro-prestacion-desempleo", "jubilacion-anticipada-o-demorada", "pension-viudedad-cuanto-cobro", "capitalizar-paro-o-cobrarlo"],
          variables=["SMI (€)", "IPREM (€)", "Paro máximo y mínimo (€/mes)", "Pensión máxima y mínimas (€)", "Base máxima de cotización (€/mes)", "Interés legal del dinero (%)"],
          keywords=["SMI 2026", "IPREM 2026", "pensión máxima 2026", "paro máximo 2026", "pensión mínima 2026"]),
+    dict(slug="trabajo-prestaciones", compute=trabajo, body=trabajo_body, md=trabajo_md,
+         title="Trabajo y prestaciones 2026: paro, despido, permisos",
+         h1="Trabajo y prestaciones 2026: paro, permiso de nacimiento, despido y dietas",
+         description="Paro máximo y mínimo y su duración, permiso de nacimiento, jubilación activa, despido, kilometraje, dietas y finiquito en 2026, con fuente.",
+         nav="Trabajo y prestaciones", hubs=["impuestos", "ahorro"],
+         calcs=["cuanto-cobro-de-paro-prestacion-desempleo", "permiso-nacimiento-cuanto-cobro-y-como-repartir", "jubilacion-activa-o-dejar-de-trabajar", "indemnizacion-despido-objetivo-o-improcedente-neto", "kilometraje-y-dietas-exentas-irpf", "retribucion-flexible-me-conviene", "finiquito-baja-voluntaria-vacaciones-preaviso"],
+         variables=["Paro máximo y mínimo (€/mes)", "Duración del paro (días)", "Permiso de nacimiento (semanas)", "Jubilación activa (% de la pensión)", "Indemnización por despido (días por año y mensualidades máximas)", "Kilometraje y dietas exentas (€)", "Retribución flexible exenta (€)", "Vacaciones del finiquito (días)"],
+         keywords=["paro 2026 cuantía máxima", "permiso nacimiento 19 semanas", "indemnización despido 33 días", "kilometraje exento 0,26", "dietas exentas 2026", "jubilación activa porcentaje"]),
 ]
 BY = {p["slug"]: p for p in PAGES}
 FILES = ["tablas.py", "data/params.json"]
@@ -374,9 +477,9 @@ def index_page(T, modified, author):
     fecha = T[PAGES[0]["slug"]]["fecha"]
     return f"""<article class="guide tablas">
 <p class="kicker">Datos oficiales verificados</p>
-<h1>Tablas 2026: IRPF, autónomos, ITP y cuantías oficiales</h1>
+<h1>Tablas 2026: IRPF, autónomos, ITP, pensiones y trabajo</h1>
 <p class="byline note">Por {author} · Cifras revisadas el <time datetime="{fecha}">{fecha_es(fecha)}</time> · Página actualizada el <time datetime="{modified}">{fecha_es(modified)}</time></p>
-<p class="lead">Las cifras oficiales de 2026 que usan nuestras calculadoras, en tablas limpias, con la norma enlazada en cada fila y un cálculo propio que no encontrarás junto en otro sitio: cuánto IRPF se paga en cada comunidad, la cuota de autónomos de cada tramo y los impuestos de compra de una vivienda por comunidad.</p>
+<p class="lead">Las cifras oficiales de 2026 que usan nuestras calculadoras, en tablas limpias, con la norma enlazada en cada fila y un cálculo propio que no encontrarás junto en otro sitio: cuánto IRPF se paga en cada comunidad, la cuota de autónomos de cada tramo, los impuestos de compra de una vivienda por comunidad y las cuantías de trabajo y prestaciones (paro, permiso de nacimiento, despido y dietas).</p>
 <ul class="guides">{items}</ul>
 <p>Todas las tablas en un archivo: <a href="{INDEX}datos.json">{INDEX}datos.json</a> (y un CSV en cada página). Para cifras de mercado que cambian cada mes (Euríbor, carburantes, coste por km), consulta el <a href="/barometro/">Barómetro Entre Muchos</a>.</p>
 <p class="disclaimer">Información orientativa, no constituye asesoramiento fiscal, laboral ni financiero. Lee <a href="/como-funciona/">cómo trabajamos</a>.</p>
