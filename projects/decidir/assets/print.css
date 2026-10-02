@@ -2,6 +2,7 @@
 /* Informe imprimible (A4): solo se muestra el bloque de informe; tokens claros siempre */
 @page{size:A4;margin:15mm 16mm 16mm}
 @media print{
+  .plan-next{display:none!important}
   :root{--bg:#fff;--surface:#fff;--surface-2:#f3f5fa;--fg:#111;--muted:#444;--line:#ccd2e0;--accent:#1b37c4;--accent-soft:#eef1fb;
     --ok:#0a7340;--ok-bg:#e4f5ec;--ok-line:#9fd3b6;--warn:#7a4e00;--warn-bg:#fff3d4;--warn-line:#e3c26d;--info:#1b37c4;--info-bg:#eef1fb;--info-line:#b7c4f5;
     --c1:#2548f0;--c2:#e2672c;--c3:#11998e;--c4:#9b4dca;--track:#e3e7f0;--shadow:none;--shadow-lg:none;color-scheme:light}

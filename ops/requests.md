@@ -149,3 +149,6 @@
 
 ## [Diseñador -> Orquestador] 2026-10-02 · QA: desbordamiento horizontal a 375 px
 Regresión detectada: la cabecera (logo + Calculadoras/Todas/Guías) y la píldora `.pulso-meta` (fuente larga del Euribor) hacían scrollWidth 435 > 375 en home y calculadoras; arreglado en app.css. Petición: añadir al QA (Haiku, por navegador) una comprobación de scrollWidth a 375 px en 6 páginas tipo (home, /todas/, /guias/, /tablas-2026/, una calculadora con «Ahora»/Pulso, una guía). Método más barato: una sola llamada javascript_tool tras resize_window mobile que cree un iframe de 375 px por URL y devuelva `[url, d.documentElement.scrollWidth, innerWidth]`; fallo si scrollWidth > innerWidth. Sin capturas.
+
+## 2026-10-03 · Vigilante de normas (c53, seguimiento)
+- [x] R53.1 [Vigilante -> Constructor] data/params.json · claves `permiso_nacimiento_2026` ("el RDL 26/2026 solo cambia la letra ñ)", en presente) e `incapacidad_permanente_2026` ("el RDL 26/2026 toca otra letra del art. 7") hablan del RDL 26/2026 como si estuviera vigente: reescribir en pasado («derogado el 2-10-2026, BOE-A-2026-20526; sin efecto sobre la letra u)/f)») sin tocar cifras. El resto de claves (alquiler_irpf, venta_vivienda, compensar_perdidas, traspasar_fondo) ya lo dan por derogado. · abierta c53

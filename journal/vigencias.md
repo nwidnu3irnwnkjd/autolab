@@ -50,4 +50,6 @@ Presupuesto: no leídos los consolidados de RDL 3/2026 y las «Resto». Siguient
 
 ## Novedades normativas
 - **2026-10-02** · El Congreso deroga el RDL 26/2026 (vivienda/IRPF alquiler y venta) y el RDL 27/2026 (estabilidad de alquileres); efectos desde su publicación, sin retroactividad · https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526
+- Sin novedades laborales/fiscales nuevas en el sumario del 2-oct (solo BOE-A-2026-20526/20527); sumario del 3-oct 404.
+- Consolidados LIRPF (BOE-A-2006-20764) y RIRPF (BOE-A-2007-6820): consultados 2026-10-03, «Última actualización» 30/09/2026 en ambos; aún NO reflejan la reversión (LIRPF sigue mostrando la versión RDL 26/2026). Reconsultar en la próxima pasada; hasta entonces las calculadoras (que citan Ley 12/2023) no difieren.
 - Última comprobación: 2026-10-03 (BOE hasta el sumario del 2-oct; 3, 4 y 5-oct aún no publicados).

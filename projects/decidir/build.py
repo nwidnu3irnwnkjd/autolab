@@ -7,6 +7,7 @@ import seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, 
 import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
 import directorio, asistente  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
+import plan  # plan completo «Compra de vivienda» (Diseñador, R16.4)
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import embed  # widget insertable /embed/<slug>/ y /inserta/ (Diseñador)
@@ -59,6 +60,7 @@ def render_calc(c, all_calcs):
 {ui.calc_header(c)}
 <p class="note upd">Actualizado: <time datetime="{_lm}">{seo.fecha_es(_lm)}</time></p>
 {ui.calc_form(c)}
+{plan.next_block(c['slug'])}
 {c["content"]}
 {seo.ahora_html(c["slug"])}{seo.pulso_html(LIVE, c["slug"])}
 <h2>Preguntas frecuentes</h2>
@@ -92,6 +94,7 @@ def main():
     ACTIVE_HUBS = hubs.eligible(calcs, GUIDES)  # disparador: >= 6 páginas del tema
     B = site["base_url"].rstrip("/")
     BARO = barometro.build(DIST, params, B)  # -> dist/barometro/datos.json (antes de render_calc: "Dato del mes")
+    plan.validate(calcs)
     for c in calcs: render_calc(c, calcs)
     ASIS = asistente.build(DIST, calcs, GUIDES, tablas.PAGES)  # asistente «¿Cuál es tu situación?» (Diseñador)
     cards = ui.home_cards(calcs)  # R18.1/peso: solo destacadas en la home (resto: lazy desde /decidir/)
@@ -125,6 +128,7 @@ def main():
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
         hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))
+        if k == "hipoteca": hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", plan.hub_link(spec["path"]))
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
     s27body, s27ld = semana.cambios_page(params, calcs, card, seo.lastmod(*semana.FILES), seo.AUTHOR)  # /que-cambia-1-enero-2027/ (c51)
@@ -132,7 +136,12 @@ def main():
     write(semana.PATH2027, semana.H2027, semana.D2027, s27body, priority="0.8", lastmod=s27mod, og_tema="impuestos",
           jsonld=[seo.article(semana.H2027, semana.D2027, B + semana.PATH2027, s27pub, s27mod, B), seo.breadcrumbs(B, [("Inicio", "/"), ("Qué cambia en 2027", None)])] + s27ld)
     HUB_PAGES.append(dict(path=semana.PATH2027, h1=semana.H2027, description=semana.D2027, modified=s27mod, published=s27pub))
+    pmod = seo.lastmod(*plan.FILES); ppub = seo.published("plan.py"); pp = plan.PLANES["compra-vivienda"]
+    pbody, pld = plan.page("compra-vivienda", calcs, card, B, ppub, pmod)
+    write(pp["path"], pp["title"], pp["description"], pbody, jsonld=pld, priority="0.8", lastmod=pmod, og="og-hipoteca.png")
+    HUB_PAGES.append(dict(path=pp["path"], h1=pp["h1"], description=pp["description"], modified=pmod, published=ppub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
+    dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', plan.dir_li())  # plan completo (Diseñador)
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
           seo.insert_before(dbody, '<div class="search" role="search">', ASIS), jsonld=dld, priority="0.8", lastmod=dmod)
     if GUIDES:

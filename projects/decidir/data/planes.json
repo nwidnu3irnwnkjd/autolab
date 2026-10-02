@@ -1,0 +1,34 @@
+{
+  "_nota": "Planes completos que encadenan calculadoras. En cada enlace, map = {id de input en la calculadora de origen: id de input en la de destino}. Solo se mapean ids que significan lo mismo y tienen la misma unidad. Clave 'a+b' = a*(1-b/100) (precio y % de entrada -> capital de la hipoteca, en €). El build avisa si un id no existe.",
+  "compra-vivienda": {
+    "path": "/plan/compra-vivienda/",
+    "name": "Plan completo: compra de vivienda",
+    "short": "Plan de compra de vivienda",
+    "h1": "Plan completo para comprar una vivienda, paso a paso",
+    "title": "Plan para comprar vivienda: 4 calculadoras en orden",
+    "description": "Cuánto dinero necesitas, alquilar o comprar, qué plazo aguantas y fijo o variable: cuatro calculadoras encadenadas que se pasan tus números.",
+    "lead": "<strong>Respuesta corta:</strong> comprar una vivienda se decide en cuatro pasos y el orden importa: primero cuánto efectivo necesitas, después si compensa comprar en vez de alquilar, luego qué plazo cabe en tus ingresos y, por último, tipo fijo o variable. Aquí las cuatro calculadoras van encadenadas: al pasar de una a la siguiente se llevan tus números (precio, entrada, tipo, capital) para que no los teclees de nuevo. Los cálculos se hacen en tu navegador.",
+    "steps": [
+      {"slug": "cuanto-ahorrar-para-comprar-casa", "name": "Cuánto dinero necesitas", "short": "Cuánto necesitas",
+       "text": "Antes de mirar pisos, calcula el efectivo real: la entrada, los impuestos de la compra, los gastos de notaría, registro y tasación, y cuánto tienes que ahorrar al mes para llegar a la fecha que te marques."},
+      {"slug": "alquilar-o-comprar", "name": "Alquilar o comprar", "short": "Alquilar o comprar",
+       "text": "Comprar no gana siempre. Depende de cuántos años te quedes, de cómo evolucione el precio de la vivienda y de qué harías con el dinero de la entrada. Compara el patrimonio de cada opción con tus propias hipótesis."},
+      {"slug": "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "name": "Plazo: 20, 25 o 30 años", "short": "Plazo de la hipoteca",
+       "text": "Un plazo más corto paga menos intereses pero sube la cuota. Con tus ingresos y tus otras deudas, mira qué plazo cabe en el tope de esfuerzo que te pongas."},
+      {"slug": "hipoteca-fija-o-variable", "name": "Hipoteca fija o variable", "short": "Fija o variable",
+       "text": "La fija protege la cuota; la variable paga Euríbor más un diferencial. Calcula a partir de qué Euríbor medio te sale más cara la fija y decide con esa cifra en la mano."}
+    ],
+    "links": [
+      {"from": "cuanto-ahorrar-para-comprar-casa", "to": "alquilar-o-comprar", "map": {"precio": "precio", "entrada": "entrada", "interes": "interes"}},
+      {"from": "alquilar-o-comprar", "to": "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "map": {"precio+entrada": "capital", "interes": "tin"}},
+      {"from": "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "to": "hipoteca-fija-o-variable", "map": {"capital": "capital", "tin": "fijo"}}
+    ],
+    "faqs": [
+      ["¿Tengo que seguir los cuatro pasos en orden?", "No. Puedes entrar por cualquier paso desde el indicador «Paso X de 4». El orden sugerido es el que suele ahorrar errores: saber cuánto efectivo necesitas antes de comparar alquiler y compra, y fijar el plazo antes de elegir tipo."],
+      ["¿Qué números se pasan de una calculadora a la siguiente?", "Solo los que significan lo mismo en las dos: el precio de la vivienda, el porcentaje de entrada, el tipo de interés y, cuando hace falta, el capital de la hipoteca (precio menos entrada). Los demás campos se quedan con sus valores de ejemplo para que los pongas tú."],
+      ["¿Se guardan o se envían mis datos?", "No. Los valores viajan en la dirección de la página (la parte tras el signo #) de tu navegador a tu navegador. No se envían a ningún servidor y no hace falta registrarse."],
+      ["¿Qué pasa si tengo desactivado JavaScript?", "El botón «Continúa con…» abre la siguiente calculadora con sus valores de ejemplo, sin tus números. Las calculadoras necesitan JavaScript para calcular."],
+      ["¿Es asesoramiento financiero?", "No. Son herramientas orientativas con hipótesis editables. Antes de firmar, compara ofertas reales de varios bancos y, si la decisión es grande, consulta con un profesional."]
+    ]
+  }
+}
