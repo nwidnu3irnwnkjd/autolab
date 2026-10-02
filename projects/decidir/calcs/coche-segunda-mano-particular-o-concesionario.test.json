@@ -1,0 +1,137 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 13500,
+    "reparPrev": 400,
+    "averia": 1500,
+    "prob": 20,
+    "cobertura": 50,
+    "trasp": 300,
+    "revision": 100
+   },
+   "expect": {
+    "costePart": 13100.0,
+    "costeConc": 14050.0,
+    "diferencia": -950.0,
+    "prima": 1500,
+    "primaEquilibrio": 550.0,
+    "probEquilibrio": 146.67,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 12500,
+    "reparPrev": 400,
+    "averia": 3000,
+    "prob": 40,
+    "cobertura": 50,
+    "trasp": 300,
+    "revision": 100
+   },
+   "expect": {
+    "costePart": 14000.0,
+    "costeConc": 13500.0,
+    "diferencia": 500.0,
+    "prima": 500,
+    "primaEquilibrio": 1000.0,
+    "probEquilibrio": 6.67,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 13500,
+    "reparPrev": 400,
+    "averia": 0,
+    "prob": 0,
+    "cobertura": 50,
+    "trasp": 300,
+    "revision": 100
+   },
+   "expect": {
+    "costePart": 12800.0,
+    "costeConc": 13900.0,
+    "diferencia": -1100.0,
+    "prima": 1500,
+    "primaEquilibrio": 400.0,
+    "probEquilibrio": -1,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 13500,
+    "reparPrev": 400,
+    "averia": 1500,
+    "prob": 20,
+    "cobertura": 0,
+    "trasp": 300,
+    "revision": 100
+   },
+   "expect": {
+    "costePart": 13100.0,
+    "costeConc": 14200.0,
+    "diferencia": -1100.0,
+    "prima": 1500,
+    "primaEquilibrio": 400.0,
+    "probEquilibrio": -1,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 11000,
+    "reparPrev": 400,
+    "averia": 1500,
+    "prob": 20,
+    "cobertura": 50,
+    "trasp": 300,
+    "revision": 100
+   },
+   "expect": {
+    "costePart": 13100.0,
+    "costeConc": 11550.0,
+    "diferencia": 1550.0,
+    "prima": -1000,
+    "primaEquilibrio": 550.0,
+    "probEquilibrio": -186.67,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioPart": 12000,
+    "precioConc": 13500,
+    "reparPrev": 400,
+    "averia": 5000,
+    "prob": 100,
+    "cobertura": 100,
+    "trasp": 0,
+    "revision": 0
+   },
+   "expect": {
+    "costePart": 17400.0,
+    "costeConc": 13900.0,
+    "diferencia": 3500.0,
+    "prima": 1500,
+    "primaEquilibrio": 5000.0,
+    "probEquilibrio": 30.0,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

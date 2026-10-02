@@ -26,11 +26,15 @@ HUBS = {
                  "cambiarla de banco, amortizar plazo o cuota y amortizar o invertir. Hoy el Euríbor a 12 meses está en el {{euribor_12m}} % "
                  "(media de {{periodo_euribor_es}}) y las hipotecas fijas nuevas a más de 10 años se firman de media al {{tipo_fijo}} % ({{periodo_tipo_fijo_es}}); fuente: BCE."),
         "groups": [
-            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-fija-o-variable"]),
+            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-fija-o-variable", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
+            "seguro-vida-hipoteca-banco-o-externo": {
+                "name": "Seguro de vida: el del banco o uno externo",
+                "text": "Con una póliza externa de coberturas equivalentes, el seguro del banco solo compensa si la bonificación del tipo supera la mínima que sale de tu capital, plazo, tipo y primas. La calculadora te da ese umbral.",
+            },
             "cuanto-ahorrar-para-comprar-casa": {
                 "name": "Cuánto dinero necesitas",
                 "text": "Antes de mirar pisos, calcula el efectivo que hace falta de verdad: la entrada, los impuestos (ITP en vivienda usada; IVA y AJD en nueva) y los gastos de notaría, registro, gestoría y tasación. Es la cifra que te dice si puedes empezar ya o te conviene esperar.",
@@ -139,7 +143,7 @@ HUBS = {
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
             ("Sin obra: lo primero", ["luz-fija-o-indexada", "calefaccion-gas-aerotermia-electrica"]),
-            ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico"]),
+            ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
         ],
         "steps": {
             "luz-fija-o-indexada": {
@@ -175,6 +179,10 @@ HUBS = {
                 "name": "Cambiar un electrodoméstico que funciona",
                 "text": "Cambiar uno que funciona por uno de clase A compensa solo si el ahorro de luz cubre su precio en los años que cuentas: la calculadora te da los kWh al año que tendrías que ahorrar.",
             },
+            "aire-acondicionado-inverter-o-ventilador-coste-verano": {
+                "name": "Aire inverter, no inverter o ventilador",
+                "text": "El inverter compensa frente a uno no inverter cuando el ahorro de energía en su vida útil supera la diferencia de precio, y eso depende de tus horas de uso. Frente a un ventilador la comparación es solo de coste: el ventilador no enfría.",
+            },
             "reparar-o-comprar-electrodomestico": {
                 "name": "Si se estropea: reparar o comprar",
                 "text": "Cuando el aparato falla, la decisión cambia: la calculadora da el presupuesto máximo de reparación que compensa con su vida útil, el riesgo de otra avería y el consumo extra del viejo.",
@@ -198,9 +206,9 @@ HUBS = {
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
-            ("Si alquilas una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto"]),
+            ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar"]),
-            ("Al presentar la declaración y en el futuro", ["declaracion-conjunta-o-individual", "rescate-plan-pensiones-capital-o-renta"]),
+            ("Al presentar la declaración y en el futuro", ["obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
@@ -219,6 +227,18 @@ HUBS = {
             "irpf-alquilar-vivienda-rendimiento-neto": {
                 "name": "IRPF por alquilar una vivienda",
                 "text": "Lo que tributa es el rendimiento neto: ingresos menos gastos deducibles y, si cumples los requisitos, la reducción del 50 al 90 % del artículo 23.2 de la Ley del IRPF. La calculadora da el rendimiento neto, la base y la cuota con tus datos.",
+            },
+            "venta-vivienda-plusvalia-irpf-exencion": {
+                "name": "Vender tu vivienda: IRPF y exención",
+                "text": "La ganancia (venta menos compra, gastos y mejoras) tributa en la base del ahorro; si es tu vivienda habitual puede quedar excluida reinvirtiendo en otra o, con 65 años o más, sin reinvertir. La calculadora da la ganancia, la parte exenta y la cuota con tus datos.",
+            },
+            "obligado-a-declarar-renta-dos-pagadores": {
+                "name": "¿Estás obligado a declarar? (dos pagadores)",
+                "text": "Con dos pagadores el límite de rendimientos del trabajo que obliga a declarar es más bajo que con uno, si el segundo y siguientes superan un importe mínimo. La calculadora te dice si estás obligado con tus cifras (territorio común).",
+            },
+            "deduccion-maternidad-familia-numerosa": {
+                "name": "Deducción por maternidad y familia numerosa",
+                "text": "Con hijos menores de 3 años o familia numerosa, estas deducciones las abona Hacienda aunque superen tu cuota, y parte se puede cobrar por adelantado cada mes. La calculadora da cuánto te corresponde con tus cotizaciones y tu situación.",
             },
             "capitalizar-paro-o-cobrarlo": {
                 "name": "Capitalizar el paro o cobrarlo",
@@ -266,10 +286,10 @@ HUBS = {
                  "luego dónde guardar lo que ahorras y, por último, las decisiones de familia, trabajo y estudios que mueven más dinero al año. "
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
-            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
+            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
-            ("Dónde guardar lo que ahorras", ["deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+            ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
             "mudanza-empresa-o-furgoneta": {
@@ -283,6 +303,18 @@ HUBS = {
             "fibra-y-movil-juntos-o-por-separado": {
                 "name": "Fibra y móvil: pack o por separado",
                 "text": "El pack sale más barato mientras dura la promoción y su precio posterior no supere lo que pagarías por separado. La calculadora te da el mes en que se agota la ventaja y el riesgo de la permanencia.",
+            },
+            "marca-blanca-o-marca-ahorro-anual": {
+                "name": "Marca blanca o de fabricante",
+                "text": "Cambiar compensa si el ahorro al año (la parte de la compra que cambiarías por la diferencia de precio) supera el mínimo que te merece el cambio. La calculadora da la diferencia de precio mínima con la que compensa.",
+            },
+            "cocinar-en-casa-o-comer-fuera": {
+                "name": "Cocinar en casa o comer fuera",
+                "text": "Cocinar compensa mientras el valor que das a tu hora sea menor que el ahorro por comida dividido entre el tiempo extra que te cuesta. La calculadora da ese valor de equilibrio.",
+            },
+            "gimnasio-o-entrenar-en-casa": {
+                "name": "Gimnasio o entrenar en casa",
+                "text": "El gimnasio compensa solo si su coste por sesión que de verdad haces (cuota, matrícula y desplazamiento) es menor que el del equipo de casa menos su reventa. La calculadora da las sesiones por semana de equilibrio.",
             },
             "seguro-hogar-con-o-sin-franquicia": {
                 "name": "Seguro de hogar con o sin franquicia",
@@ -329,6 +361,10 @@ HUBS = {
                 "name": "Hotel o apartamento para un viaje en grupo",
                 "text": "El apartamento gana cuando su noche más la comida cocinada cuesta menos que las habitaciones más comer fuera; con pocas personas o pocas noches puede ganar el hotel. La calculadora da el coste por persona y noche.",
             },
+            "fondo-de-emergencia-cuantos-meses-necesito": {
+                "name": "Fondo de emergencia: cuántos meses",
+                "text": "Antes de invertir, el colchón: los meses de gastos recomendados suben con la inestabilidad del empleo, los ingresos variables y las personas a cargo. Es una hipótesis de trabajo, no una ley; la calculadora da la cifra y cuánto tardas en reunirla.",
+            },
             "deposito-letras-o-fondo-monetario": {
                 "name": "Depósito, Letras del Tesoro o fondo monetario",
                 "text": "Las tres tributan igual en la base del ahorro, así que deja más neto la de mayor rendimiento a tu plazo; el fondo tiene que rendir más para compensar que no garantiza el capital. La calculadora da el neto de cada una.",
@@ -344,6 +380,10 @@ HUBS = {
             "teletrabajo-o-oficina-coste-real": {
                 "name": "Teletrabajo u oficina",
                 "text": "Teletrabajar ahorra si lo que evitas cada día en desplazamiento y comida supera el gasto extra en casa. La calculadora da el ahorro anual y la compensación mínima de la empresa.",
+            },
+            "residencia-o-cuidador-a-domicilio": {
+                "name": "Residencia o cuidador a domicilio",
+                "text": "El cuidado en casa cuesta menos que la residencia mientras las horas diarias de cuidador queden por debajo del equilibrio que sale de tus datos. Es una comparación de coste, no una recomendación sobre el cuidado.",
             },
             "universidad-publica-o-privada-o-master": {
                 "name": "Universidad pública o privada",

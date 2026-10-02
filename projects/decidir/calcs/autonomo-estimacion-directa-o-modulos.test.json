@@ -1,0 +1,523 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 40000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 3631.75,
+    "netoDirecta": 14477.22,
+    "irpfDirecta": 1891.03,
+    "ssModulos": 4323.53,
+    "netoModulos": 13217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": -1259.31,
+    "pagoDirectaAnual": 3109.97,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 14000,
+    "gastos": 6000,
+    "previo": 7000,
+    "modulos": 6000,
+    "otras": 0,
+    "ccaa": "andalucia",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 2470.57,
+    "netoDirecta": 5529.43,
+    "irpfDirecta": 0,
+    "ssModulos": 2470.57,
+    "netoModulos": 5529.43,
+    "irpfModulos": 0,
+    "diferencia": 0.0,
+    "pagoDirectaAnual": 1050.59,
+    "pagoModulosAnual": 456.0,
+    "gastosEquilibrio": 5029.86,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 90000,
+    "gastos": 75000,
+    "previo": 20000,
+    "modulos": 17000,
+    "otras": 0,
+    "ccaa": "valencia",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 3211.75,
+    "netoDirecta": 10862.73,
+    "irpfDirecta": 925.52,
+    "ssModulos": 3631.75,
+    "netoModulos": 9264.44,
+    "irpfModulos": 2103.81,
+    "diferencia": -1598.29,
+    "pagoDirectaAnual": 2239.77,
+    "pagoModulosAnual": 1292.0,
+    "gastosEquilibrio": 69368.25,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 5000,
+    "previo": 30000,
+    "modulos": 24000,
+    "otras": 0,
+    "ccaa": "cataluna",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 6547.07,
+    "netoDirecta": 36371.83,
+    "irpfDirecta": 12081.1,
+    "ssModulos": 4817.65,
+    "netoModulos": 46231.1,
+    "irpfModulos": 3951.25,
+    "diferencia": 9859.27,
+    "pagoDirectaAnual": 9290.59,
+    "pagoModulosAnual": 1824.0,
+    "gastosEquilibrio": 31182.35,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 70000,
+    "gastos": 45000,
+    "previo": 21000,
+    "modulos": 18000,
+    "otras": 30000,
+    "ccaa": "galicia",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 4570.59,
+    "netoDirecta": 13631.88,
+    "irpfDirecta": 6797.53,
+    "ssModulos": 3631.75,
+    "netoModulos": 15422.35,
+    "irpfModulos": 5945.9,
+    "diferencia": 1790.47,
+    "pagoDirectaAnual": 3881.59,
+    "pagoModulosAnual": 1368.0,
+    "gastosEquilibrio": 48368.25,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 0,
+    "gastos": 0,
+    "previo": 0,
+    "modulos": 0,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 2470.57,
+    "netoDirecta": -2470.57,
+    "irpfDirecta": 0,
+    "ssModulos": 2470.57,
+    "netoModulos": -2470.57,
+    "irpfModulos": 0,
+    "diferencia": 0.0,
+    "pagoDirectaAnual": 0.0,
+    "pagoModulosAnual": 0.0,
+    "gastosEquilibrio": 0.0,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 20000,
+    "gastos": 26000,
+    "previo": 6000,
+    "modulos": 5000,
+    "otras": 15000,
+    "ccaa": "murcia",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 2470.57,
+    "netoDirecta": -6754.06,
+    "irpfDirecta": -1716.51,
+    "ssModulos": 2470.57,
+    "netoModulos": -9572.57,
+    "irpfModulos": 1102.0,
+    "diferencia": -2818.51,
+    "pagoDirectaAnual": 0.0,
+    "pagoModulosAnual": 380.0,
+    "gastosEquilibrio": 12529.43,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 250000,
+    "gastos": 180000,
+    "previo": 60000,
+    "modulos": 55000,
+    "otras": 0,
+    "ccaa": "baleares",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 6547.07,
+    "netoDirecta": 45985.96,
+    "irpfDirecta": 17466.96,
+    "ssModulos": 6547.07,
+    "netoModulos": 49495.18,
+    "irpfModulos": 13957.75,
+    "diferencia": 3509.21,
+    "pagoDirectaAnual": 12290.59,
+    "pagoModulosAnual": 4180.0,
+    "gastosEquilibrio": 189202.93,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 250001,
+    "gastos": 180000,
+    "previo": 60000,
+    "modulos": 55000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 6547.07,
+    "netoDirecta": 46711.13,
+    "irpfDirecta": 16742.79,
+    "ssModulos": 6547.07,
+    "netoModulos": 50201.64,
+    "irpfModulos": 13252.29,
+    "diferencia": 3490.51,
+    "pagoDirectaAnual": 12290.79,
+    "pagoModulosAnual": 4180.0,
+    "gastosEquilibrio": 189203.93,
+    "exento130": 0,
+    "bloqueo": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 40000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "directa_bloqueo"
+   },
+   "expect": {
+    "ssDirecta": 3631.75,
+    "netoDirecta": 14477.22,
+    "irpfDirecta": 1891.03,
+    "ssModulos": 4323.53,
+    "netoModulos": 13217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": -1259.31,
+    "pagoDirectaAnual": 3109.97,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 40000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "canarias",
+    "retencion": 70,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 3631.75,
+    "netoDirecta": 14400.78,
+    "irpfDirecta": 1967.47,
+    "ssModulos": 4323.53,
+    "netoModulos": 13121.46,
+    "irpfModulos": 2555.01,
+    "diferencia": -1279.32,
+    "pagoDirectaAnual": 3109.97,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 1,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 40000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 69.99,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 3631.75,
+    "netoDirecta": 14477.22,
+    "irpfDirecta": 1891.03,
+    "ssModulos": 4323.53,
+    "netoModulos": 13217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": -1259.31,
+    "pagoDirectaAnual": 3109.97,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 20000,
+    "gastos": 12000,
+    "previo": 5000,
+    "modulos": 4000,
+    "otras": 8200,
+    "ccaa": "clm",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 2470.57,
+    "netoDirecta": 4481.22,
+    "irpfDirecta": 1048.21,
+    "ssModulos": 2470.57,
+    "netoModulos": 4807.43,
+    "irpfModulos": 722.0,
+    "diferencia": 326.21,
+    "pagoDirectaAnual": 1050.59,
+    "pagoModulosAnual": 304.0,
+    "gastosEquilibrio": 13529.43,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 20000,
+    "gastos": 12000,
+    "previo": 5000,
+    "modulos": 4000,
+    "otras": 4200,
+    "ccaa": "clm",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 2470.57,
+    "netoDirecta": 4983.86,
+    "irpfDirecta": 545.57,
+    "ssModulos": 2470.57,
+    "netoModulos": 5371.73,
+    "irpfModulos": 157.7,
+    "diferencia": 387.87,
+    "pagoDirectaAnual": 1050.59,
+    "pagoModulosAnual": 304.0,
+    "gastosEquilibrio": 13529.43,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 30000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 4817.65,
+    "netoDirecta": 21175.57,
+    "irpfDirecta": 4006.78,
+    "ssModulos": 4323.53,
+    "netoModulos": 23217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": 2042.33,
+    "pagoDirectaAnual": 4784.65,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 20000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 5435.3,
+    "netoDirecta": 28080.04,
+    "irpfDirecta": 6484.66,
+    "ssModulos": 4323.53,
+    "netoModulos": 33217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": 5137.86,
+    "pagoDirectaAnual": 6567.29,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 60000,
+    "gastos": 40000,
+    "previo": 22000,
+    "modulos": 19000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "sin_modulos"
+   },
+   "expect": {
+    "ssDirecta": 3631.75,
+    "netoDirecta": 14477.22,
+    "irpfDirecta": 1891.03,
+    "ssModulos": 4323.53,
+    "netoModulos": 13217.91,
+    "irpfModulos": 2458.57,
+    "diferencia": -1259.31,
+    "pagoDirectaAnual": 3109.97,
+    "pagoModulosAnual": 1444.0,
+    "gastosEquilibrio": 36676.47,
+    "exento130": 0,
+    "bloqueo": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 40000,
+    "gastos": 26000,
+    "previo": 15053.773440860214,
+    "modulos": 13000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "ssDirecta": 3211.75,
+    "netoDirecta": 10104.68,
+    "irpfDirecta": 683.57,
+    "ssModulos": 3211.75,
+    "netoModulos": 9598.81,
+    "irpfModulos": 1189.43,
+    "diferencia": -505.87,
+    "pagoDirectaAnual": 2049.77,
+    "pagoModulosAnual": 988.0,
+    "gastosEquilibrio": 24322.52,
+    "exento130": 0,
+    "bloqueo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 130000,
+    "gastos": 60000,
+    "previo": 30000,
+    "modulos": 26000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "aviso150": 1
+   },
+   "tol": 0.01
+  },
+  {
+   "in": {
+    "ingresos": 125000,
+    "gastos": 60000,
+    "previo": 30000,
+    "modulos": 26000,
+    "otras": 0,
+    "ccaa": "madrid",
+    "retencion": 0,
+    "situacion": "modulos"
+   },
+   "expect": {
+    "aviso150": 0
+   },
+   "tol": 0.01
+  }
+ ]
+}

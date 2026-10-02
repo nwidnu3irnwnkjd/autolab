@@ -1,0 +1,175 @@
+{
+ "slug": "autonomo-estimacion-directa-o-modulos",
+ "title": "Autónomo: estimación directa o módulos, ¿cuál sale mejor?",
+ "description": "Compara módulos y estimación directa simplificada en 2026: cuota de autónomos, IRPF, pagos trimestrales y el plazo de renuncia, con tus ingresos y gastos.",
+ "h1": "Autónomo: estimación directa o módulos, ¿cuál te sale mejor en 2026?",
+ "lead": "Módulos te sale mejor si tus gastos reales son bajos y tu rendimiento real (ingresos menos gastos y cuota) supera el rendimiento neto que fijan los módulos; la estimación directa simplificada gana cuando tus gastos son altos. Con 60.000 € de ingresos, 22.000 € de rendimiento neto previo y 19.000 € de rendimiento neto de módulos en Madrid, módulos deja más hasta 36.676 € de gastos al año y la directa a partir de ahí. Con tus cifras, tu comunidad y otras rentas, calcúlalo y mira el plazo de renuncia.",
+ "veredicto": "Módulos sale mejor que la estimación directa simplificada cuando tus gastos reales son bajos y tu rendimiento real supera el neto de módulos; la directa gana cuando tus gastos son altos. Con 60.000 € de ingresos, 22.000 € de rendimiento neto previo y 19.000 € de neto de módulos en Madrid, módulos deja unos 2.000 € más al año con 30.000 € de gastos y la directa unos 1.300 € más con 40.000 €, con un punto de equilibrio en 36.676 € de gastos; la calculadora da tu cifra con tus datos, sin incluir IVA.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "ingresos",
+   "label": "Ingresos anuales de la actividad (€, sin IVA)",
+   "default": 60000,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.autonomo_modulos_2026.supuestos.ingresos"
+  },
+  {
+   "id": "gastos",
+   "label": "Gastos reales anuales de la actividad (€, sin contar la cuota de autónomos)",
+   "default": 40000,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.autonomo_modulos_2026.supuestos.gastos"
+  },
+  {
+   "id": "previo",
+   "label": "Rendimiento neto previo en módulos (€ al año, fase 1 de la Orden; casilla 1465 de tu Renta)",
+   "default": 22000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.autonomo_modulos_2026.supuestos.previo"
+  },
+  {
+   "id": "modulos",
+   "label": "Rendimiento neto de módulos (€ al año, tras amortizaciones e índices correctores; antes de la reducción del 5 %)",
+   "default": 19000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.autonomo_modulos_2026.supuestos.modulos"
+  },
+  {
+   "id": "otras",
+   "label": "Otras rentas tuyas (€ al año, base general ya neta; 0 si solo tienes esta actividad)",
+   "default": 0,
+   "min": 0,
+   "step": 1000
+  },
+  {
+   "id": "ccaa",
+   "label": "Comunidad autónoma donde resides (régimen común)",
+   "type": "select",
+   "options": [
+    {
+     "v": "madrid",
+     "t": "Comunidad de Madrid"
+    },
+    {
+     "v": "andalucia",
+     "t": "Andalucía"
+    },
+    {
+     "v": "aragon",
+     "t": "Aragón"
+    },
+    {
+     "v": "asturias",
+     "t": "Asturias"
+    },
+    {
+     "v": "baleares",
+     "t": "Illes Balears"
+    },
+    {
+     "v": "canarias",
+     "t": "Canarias"
+    },
+    {
+     "v": "cantabria",
+     "t": "Cantabria"
+    },
+    {
+     "v": "clm",
+     "t": "Castilla-La Mancha"
+    },
+    {
+     "v": "cyl",
+     "t": "Castilla y León"
+    },
+    {
+     "v": "cataluna",
+     "t": "Cataluña"
+    },
+    {
+     "v": "extremadura",
+     "t": "Extremadura"
+    },
+    {
+     "v": "galicia",
+     "t": "Galicia"
+    },
+    {
+     "v": "murcia",
+     "t": "Región de Murcia"
+    },
+    {
+     "v": "rioja",
+     "t": "La Rioja"
+    },
+    {
+     "v": "valencia",
+     "t": "Comunitat Valenciana"
+    }
+   ]
+  },
+  {
+   "id": "retencion",
+   "label": "Parte de tus ingresos con retención en factura (%; 0 si facturas a particulares)",
+   "default": 0,
+   "min": 0,
+   "max": 100,
+   "step": 5
+  },
+  {
+   "id": "situacion",
+   "label": "Tu situación hoy",
+   "type": "select",
+   "options": [
+    {
+     "v": "modulos",
+     "t": "Estoy en módulos y puedo renunciar"
+    },
+    {
+     "v": "inicio",
+     "t": "Voy a iniciar la actividad"
+    },
+    {
+     "v": "directa_libre",
+     "t": "Estoy en directa y ya pasaron 3 años desde la renuncia"
+    },
+    {
+     "v": "directa_bloqueo",
+     "t": "Estoy en directa por renuncia o exclusión de hace menos de 3 años"
+    },
+    {
+     "v": "sin_modulos",
+     "t": "Mi actividad no figura en los anexos de la Orden de módulos"
+    }
+   ]
+  }
+ ],
+ "faqs": [
+  [
+   "¿Qué me conviene más: módulos o estimación directa?",
+   "Depende de tus gastos reales frente al rendimiento neto que fijan los módulos para tu actividad. Con 60.000 € de ingresos, 22.000 € de rendimiento neto previo y 19.000 € de neto de módulos en Madrid, módulos deja unos 2.000 € más al año con 30.000 € de gastos y 5.138 € más con 20.000 €; la directa deja unos 1.300 € más con 40.000 € y unos 4.100 € más con 50.000 €. El equilibrio está en 36.676 € de gastos: aproximadamente cuando tus ingresos menos gastos y cuota igualan tu neto de módulos. El resultado cambia con tu actividad, tu comunidad y tus otras rentas."
+  ],
+  [
+   "¿Siguen vigentes los módulos en 2026 y con qué límites?",
+   "Sí: la Orden HAC/1425/2025 mantiene para 2026 los módulos y las instrucciones del año anterior y añade una reducción del 5 % sobre el rendimiento neto de módulos. El límite de ingresos es lo que no está claro: el art. 31.1.3.ª de la Ley del IRPF consolidada fija 150.000 € al año (75.000 € si facturas a empresas o profesionales) porque la prórroga a 250.000 € y 125.000 € se hizo con reales decretos-leyes que el Congreso derogó, mientras que la Agencia Tributaria, con criterio de la DGT (nota de 1/4/2026), aplica 250.000 € y 125.000 € para 2026. Para 2027 rige la ley (150.000 € y 75.000 € a empresas) mientras no haya prórroga ni Orden, que no estaba publicada el 2/10/2026: no decidas la renuncia apoyándote en 250.000 €. La calculadora bloquea si en el año anterior superaste 250.000 € y avisa desde 125.000 €."
+  ],
+  [
+   "¿Cuándo puedo renunciar a módulos y cuánto dura la renuncia?",
+   "Durante el mes de diciembre anterior al año en que quieres estar en directa (art. 33.1.a del Reglamento del IRPF), o presentando el pago fraccionado del primer trimestre del año en la forma de la directa (art. 33.1.b). Para 2026, la Orden HAC/1425/2025 fijó el plazo hasta el 31/12/2025, y la de 2027 fijará el suyo cuando se publique. La renuncia dura como mínimo 3 años (art. 33.3), y quien renuncia o es excluido tributa en directa los tres años siguientes (art. 31.1.3.ª.5.ª de la Ley del IRPF). Si en el año anterior superas los límites de módulos, la renuncia se tiene por no presentada. Renunciar a módulos supone renunciar también al régimen simplificado del IVA, y al revés (art. 33.2 del Reglamento del IVA y art. 36 del Reglamento del IRPF)."
+  ],
+  [
+   "¿Cuánto son los pagos trimestrales en cada régimen?",
+   "En directa, el modelo 130 es el 20 % del rendimiento neto acumulado del año (art. 110.1.a del Reglamento del IRPF), menos retenciones; en la calculadora, 20 % del rendimiento neto anual repartido en 4. En módulos, el modelo 131 es el 2 % del rendimiento neto de módulos en cada trimestre si no tienes asalariados, el 3 % con uno y el 4 % con más (Orden HAC/1425/2025, anexo II), y ese neto ya lleva la reducción del 5 %. Los profesionales con al menos el 70 % de ingresos con retención el año anterior no presentan el 130 (art. 109.2). Son anticipos del IRPF anual, no un coste extra."
+  ],
+  [
+   "¿Cómo cotizo a la Seguridad Social en módulos?",
+   "La cuota de autónomos de 2026 se elige por tramos de rendimientos netos mensuales (Orden PJC/297/2026), con un 31,50 % de tipo total. Para quien está en módulos, el rendimiento computable es el rendimiento neto previo (art. 308.1.c de la Ley General de la Seguridad Social; en la Renta, la casilla 1465), con una deducción del 7 % por gastos genéricos. En directa es el rendimiento neto más las cuotas. Por eso la cuota puede ser distinta en cada régimen. La calculadora usa la base mínima de tu tramo."
+  ]
+ ],
+ "sources": "Modelo propio y anual, solo estimación directa simplificada de una persona física frente a módulos de actividades no agrícolas. Directa: rendimiento neto = ingresos menos gastos, cuota de autónomos y difícil justificación del 5 % con máximo 2.000 € (art. 30.2.ª del Reglamento del IRPF y art. 30.2.4.ª de la Ley del IRPF), con la cuota resuelta por punto fijo con el rendimiento computable de la Seguridad Social (art. 308.1.c LGSS: rendimiento neto más cuotas, menos el 7 % de gastos genéricos, tabla de la Orden PJC/297/2026). Módulos: el rendimiento neto de módulos lo introduces tú (el procedimiento de fases 1 a 3 del anexo II de la Orden HAC/1425/2025 depende de tu actividad y no se calcula), se reduce un 5 % (disposición adicional 1.ª) y no se resta la cuota de autónomos ni los gastos reales; la cuota se calcula sobre el rendimiento neto previo. IRPF: escala estatal y autonómica de 2026 de las 15 comunidades de régimen común, mínimo personal sin hijos, reducción del art. 32.2.3.º (1.620 € con rentas por debajo de 12.000 €) y cuota atribuible por diferencia sobre tus otras rentas; la pérdida se integra. Pagos fraccionados: 20 % en directa (art. 110.1.a del Reglamento del IRPF) y 2 % trimestral en módulos sin asalariados (anexo II de la Orden, pagos fraccionados 4). Renuncia: arts. 31.1.3.ª.5.ª de la Ley del IRPF y 33 y 34 del Reglamento. Fuentes: Orden HAC/1425/2025 (https://www.boe.es/buscar/act.php?id=BOE-A-2025-25272); Ley 35/2006 del IRPF, consolidada a 1/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820); Ley General de la Seguridad Social, art. 308 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Agencia Tributaria, estimación objetiva (https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/regimenes-determinar-rendimiento-actividad/estimacion-objetiva.html). Límite de ingresos de módulos en 2026: confianza B (criterio AEAT/DGT de 1/4/2026; ver FAQ); en 2027, 150.000 € salvo prórroga. No cubre País Vasco ni Navarra; en Castilla y León, Región de Murcia y La Rioja alguna cifra autonómica es orientativa. Hipótesis editables, no previsiones: 60.000 € de ingresos, 40.000 € de gastos, 22.000 € de rendimiento neto previo y 19.000 € de neto de módulos. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal."
+}

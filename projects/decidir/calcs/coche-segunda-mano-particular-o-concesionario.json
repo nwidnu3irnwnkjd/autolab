@@ -1,0 +1,90 @@
+{
+  "slug": "coche-segunda-mano-particular-o-concesionario",
+  "title": "Coche de segunda mano: particular o concesionario",
+  "description": "Compara el coste esperado de comprar un coche usado a particular o en concesionario con garantía, y la diferencia de precio a la que se igualan.",
+  "h1": "Coche de segunda mano: ¿particular o concesionario con garantía?",
+  "lead": "Comprar a particular sale más barato que en el concesionario cuando la diferencia de precio supera los gastos de transferencia, la revisión previa y la parte de la avería esperada que cubriría la garantía; si es menor, compensa el concesionario. Con tus precios, tus gastos y tu hipótesis de avería, la calculadora da el coste esperado de cada opción y esa diferencia de equilibrio.",
+  "veredicto": "A particular sale más barato si el sobreprecio del concesionario supera los gastos de transferencia, la revisión previa y la avería esperada que cubre la garantía; si es menor, compensa el concesionario. Con tus datos la calculadora da el coste esperado de cada opción y la diferencia de equilibrio; la probabilidad y el coste de avería son hipótesis tuyas, no estadísticas.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "precioPart",
+      "label": "Precio del coche a particular (€)",
+      "default": 12000,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "precioConc",
+      "label": "Precio del mismo tipo de coche en concesionario (€; incluye IVA y suele incluir la gestión del cambio de titular)",
+      "default": 13500,
+      "min": 1,
+      "step": 100
+    },
+    {
+      "id": "reparPrev",
+      "label": "Reparaciones previstas en el periodo que ya conoces (€; frenos, neumáticos, correa; las mismas en ambos)",
+      "default": 400,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "averia",
+      "label": "Coste de una avería grave (€; hipótesis, ejemplo)",
+      "default": 1500,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "prob",
+      "label": "Probabilidad de esa avería en el periodo (%; hipótesis tuya, no estadística)",
+      "default": 20,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "cobertura",
+      "label": "Parte de esa avería que cubre la garantía del concesionario (%; ver tu contrato; ejemplo)",
+      "default": 50,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "trasp",
+      "label": "Impuesto y tasa de transferencia a particular (€; consulta la tarifa de tu comunidad y la DGT; 300 € es un ejemplo)",
+      "default": 300,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "revision",
+      "label": "Revisión previa independiente del coche de particular (€; ejemplo)",
+      "default": 100,
+      "min": 0,
+      "step": 10
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué sale más barato, un coche de particular o de concesionario?",
+      "Depende de cuánto más cobre el concesionario y de cuánto riesgo de avería asumas. A particular sale más barato cuando la diferencia de precio supera los gastos de transferencia, la revisión previa y la avería esperada que cubriría la garantía. La calculadora te da esa diferencia de equilibrio con tus datos."
+    ],
+    [
+      "¿Qué garantía tiene un coche de segunda mano?",
+      "El concesionario o profesional que vende como empresa a un consumidor tiene una garantía legal mínima, cuya duración y alcance debes confirmar en el contrato y en el texto refundido de la Ley General para la Defensa de los Consumidores. Un particular no suele ofrecerla. La garantía cubre faltas de conformidad, no el desgaste normal."
+    ],
+    [
+      "¿Qué impuestos pago al comprar un coche usado?",
+      "A un particular se le suele pagar el impuesto de transmisiones patrimoniales, cuyo tipo depende de tu comunidad, más la tasa de transferencia de la DGT. En el concesionario el IVA suele ir ya en el precio. En la calculadora pones tú el total de impuesto y tasa: consulta la tarifa de tu comunidad y la DGT."
+    ],
+    [
+      "¿De dónde sale la probabilidad de avería?",
+      "Es una hipótesis tuya: la página no incluye estadísticas de averías. Por eso la calculadora te da también la probabilidad a la que ambas opciones cuestan lo mismo, para que veas si tu hipótesis está por encima o por debajo."
+    ],
+    [
+      "¿Merece la pena una revisión previa en un coche de particular?",
+      "Reduce la incertidumbre y puede sacar averías ocultas, pero cuesta dinero y no elimina el riesgo. En la calculadora es un gasto que sumas solo a la opción de particular; si ya conoces el estado del coche, puedes poner 0."
+    ]
+  ],
+  "sources": "Modelo propio: coste esperado a particular = precio + impuesto y tasa de transferencia + revisión previa + reparaciones previstas + probabilidad de avería x coste de la avería; coste esperado en concesionario = precio + reparaciones previstas + probabilidad x coste x (1 - parte cubierta por la garantía). Diferencia de equilibrio = impuesto y tasa + revisión + parte de la avería esperada que cubre la garantía. Todas las cifras (precios, impuesto y tasa, revisión, avería, probabilidad, cobertura) las pones tú o son ejemplos editables, no datos oficiales ni estadísticas. Garantía legal de los bienes: Real Decreto Legislativo 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios, BOE https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555 (consulta la duración y el alcance vigentes; no se citan aquí). Tasas de tráfico y transferencia: Sede electrónica de la DGT https://sede.dgt.gob.es/ ; el impuesto de transmisiones patrimoniales lo fija tu comunidad autónoma, consulta su hacienda. No incluye seguro, ITV, impuesto de circulación, financiación ni reventa. Información orientativa, no asesoramiento."
+}

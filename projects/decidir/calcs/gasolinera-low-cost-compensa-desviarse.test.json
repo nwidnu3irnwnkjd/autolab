@@ -1,0 +1,125 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0.08,
+    "km": 6,
+    "cons": 6.5,
+    "precio": 1.833,
+    "valorHora": 0,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 3.2,
+    "combustible": 0.71,
+    "tiempo": 0.0,
+    "neto": 2.49,
+    "kmEquilibrio": 26.86,
+    "litrosMin": 8.94
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0.08,
+    "km": 40,
+    "cons": 6.5,
+    "precio": 1.833,
+    "valorHora": 0,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 3.2,
+    "combustible": 4.77,
+    "tiempo": 0.0,
+    "neto": -1.57,
+    "kmEquilibrio": 26.86,
+    "litrosMin": 59.57
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0.08,
+    "km": 0,
+    "cons": 6.5,
+    "precio": 1.833,
+    "valorHora": 0,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 3.2,
+    "combustible": 0.0,
+    "tiempo": 0.0,
+    "neto": 3.2,
+    "kmEquilibrio": 26.86,
+    "litrosMin": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0,
+    "km": 6,
+    "cons": 6.5,
+    "precio": 1.833,
+    "valorHora": 0,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 0,
+    "combustible": 0.71,
+    "tiempo": 0.0,
+    "neto": -0.71,
+    "kmEquilibrio": 0.0,
+    "litrosMin": -1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0.08,
+    "km": 10,
+    "cons": 6.5,
+    "precio": 1.833,
+    "valorHora": 15,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 3.2,
+    "combustible": 1.19,
+    "tiempo": 3.75,
+    "neto": -1.74,
+    "kmEquilibrio": 6.48,
+    "litrosMin": 61.77
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "litros": 40,
+    "dif": 0.08,
+    "km": 6,
+    "cons": 0,
+    "precio": 1.833,
+    "valorHora": 0,
+    "vel": 40
+   },
+   "expect": {
+    "bruto": 3.2,
+    "combustible": 0.0,
+    "tiempo": 0.0,
+    "neto": 3.2,
+    "kmEquilibrio": -1,
+    "litrosMin": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

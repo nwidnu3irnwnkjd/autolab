@@ -1,0 +1,86 @@
+{
+  "slug": "gasolinera-low-cost-compensa-desviarse",
+  "title": "Gasolinera low cost: ¿compensa desviarse?",
+  "description": "Calcula si compensa desviarte a una gasolinera más barata: ahorro neto, km de desvío de equilibrio y litros mínimos con tu consumo y el precio de hoy.",
+  "h1": "Gasolinera barata: ¿compensa desviarse para repostar?",
+  "lead": "Desviarte a una gasolinera más barata compensa cuando los litros que repostas por la diferencia de precio superan el combustible que gastas en el desvío y, si quieres contarlo, el valor de tu tiempo. Con tu depósito, tu consumo, los km del desvío y el precio de hoy, la calculadora da el ahorro neto, los km de desvío de equilibrio y los litros mínimos para compensar.",
+  "veredicto": "Desviarte compensa si litros por diferencia de precio superan el combustible del desvío y, si lo cuentas, tu tiempo; con tus datos la calculadora da el ahorro neto, los km de desvío de equilibrio y los litros mínimos. No incluye desgaste del coche ni colas.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "litros",
+      "label": "Litros que vas a repostar (l; un depósito medio es un ejemplo)",
+      "default": 40,
+      "min": 0.1,
+      "step": 1
+    },
+    {
+      "id": "dif",
+      "label": "Diferencia de precio con tu gasolinera habitual (€/l; 0,08 es un ejemplo)",
+      "default": 0.08,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "km",
+      "label": "Km de desvío, ida y vuelta (km extra respecto a tu ruta)",
+      "default": 6,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "cons",
+      "label": "Consumo de tu coche (l/100 km; 6,5 es un ejemplo)",
+      "default": 6.5,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "precio",
+      "label": "Precio del combustible (€/l; por defecto, gasolina 95 de hoy; pon el del diésel si repostas diésel)",
+      "default": 1.833,
+      "min": 0,
+      "step": 0.001,
+      "default_from": "live.gasolina95",
+      "default_round": 3,
+      "default_fallback": "params.gasolina_eur_l"
+    },
+    {
+      "id": "valorHora",
+      "label": "Valor de tu tiempo (€/h; opcional, 0 para no contarlo)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "vel",
+      "label": "Velocidad media en el desvío (km/h; solo si cuentas tu tiempo)",
+      "default": 40,
+      "min": 1,
+      "step": 5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa desviarse para repostar en una gasolinera más barata?",
+      "Depende de cuántos litros repostes, de la diferencia de precio y de los km del desvío. Compensa cuando el ahorro en el depósito supera el combustible que gastas en el desvío y, si lo cuentas, tu tiempo. La calculadora te da el ahorro neto con tus datos."
+    ],
+    [
+      "¿Hasta cuántos km de desvío compensa?",
+      "Hasta los km en que el ahorro bruto (litros por diferencia de precio) se iguala con el coste por km del desvío (consumo por precio del combustible, más tu tiempo si lo cuentas). La calculadora te da ese punto: más allá de él, el desvío cuesta más de lo que ahorras."
+    ],
+    [
+      "¿Cuántos litros necesito repostar para que compense?",
+      "Los litros mínimos son los km del desvío por su coste por km, divididos entre la diferencia de precio por litro. Si repostas menos que eso, el desvío no compensa; si repostas más, ahorras. Con diferencia de precio 0 no hay litros que compensen."
+    ],
+    [
+      "¿Debo contar el valor de mi tiempo?",
+      "Es opcional. Si lo dejas en 0 solo se compara dinero con dinero. Si pones tu valor por hora y la velocidad media del desvío, el tiempo extra se suma al coste y baja los km de equilibrio."
+    ],
+    [
+      "¿Qué precio de combustible usa la calculadora?",
+      "Por defecto, el precio medio de la gasolina 95 en España del Geoportal de gasolineras del MITECO, el mismo dato de hoy de la página. Si repostas diésel, cámbialo por el precio del diésel. Es el precio al que se pagaría el combustible gastado en el desvío."
+    ]
+  ],
+  "sources": "Modelo propio: ahorro bruto = litros x diferencia de precio; coste del desvío = km x consumo / 100 x precio del combustible + km / velocidad x valor de tu hora; ahorro neto = ahorro bruto - coste del desvío; km de equilibrio = ahorro bruto / coste por km del desvío; litros mínimos = km x coste por km / diferencia de precio. Precio por defecto: media en España de la gasolina 95 (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página); si no hay dato vivo, 1,833 €/l (consulta 2/10/2026). Litros, diferencia de precio, km de desvío, consumo, valor del tiempo y velocidad son ejemplos o los pones tú, no datos oficiales. No incluye desgaste del coche ni colas. Información orientativa, no asesoramiento."
+}

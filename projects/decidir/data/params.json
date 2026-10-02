@@ -1851,6 +1851,46 @@
    "pagas": 14
   }
  },
+  "autonomo_modulos_2026": {
+    "fuente": "Orden HAC/1425/2025, de 9 de diciembre (BOE-A-2025-25272: art. 3 magnitudes excluyentes, arts. 5 y 6 plazos de renuncia, DA 1.ª reducción del 5 %, anexo II instrucciones y pagos fraccionados); Ley 35/2006 del IRPF, arts. 30, 31 y 32 y DT 32.ª (consolidada 1/10/2026); Reglamento del IRPF, arts. 28-30, 32-34, 109 y 110 (consolidado); LGSS art. 308.1.c (rendimiento computable en estimación objetiva = rendimiento neto previo); Orden PJC/297/2026 (tabla RETA, ver autonomo_2026)",
+    "url_orden": "https://www.boe.es/buscar/act.php?id=BOE-A-2025-25272",
+    "url_lirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+    "url_rirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+    "url_lgss": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+    "url_aeat_limites": "https://sede.agenciatributaria.gob.es/Sede/irpf/empresarios-individuales-profesionales/regimenes-determinar-rendimiento-actividad/estimacion-objetiva.html",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "B",
+    "confianza_nota": "A en el procedimiento, la reducción del 5 %, los porcentajes de pago fraccionado y los plazos de renuncia (texto consolidado). B en el límite de ingresos: el art. 31.1.3.ª.b LIRPF consolidado fija 150.000 € (75.000 € a empresas) y la DT 32.ª solo eleva a 250.000 €/125.000 € hasta 2024 (las prórrogas de RDL 9/2024, 16/2025 y 2/2026 fueron derogadas por el Congreso); la AEAT, con criterio de la DGT (nota de 1/4/2026), aplica 250.000 € y 125.000 € para 2026; para 2027 rige la ley (150.000 €) salvo prórroga. La calculadora bloquea si en el año anterior se superaron 250.000 € y avisa desde 125.000 €.",
+    "limites": {
+      "ingresos_ley": 150000,
+      "facturas_empresas_ley": 75000,
+      "ingresos_aeat_2026": 250000,
+      "facturas_empresas_aeat_2026": 125000,
+      "compras_ley": 150000,
+      "compras_aeat_2026": 250000,
+      "directa_simplificada_cifra_negocios": 600000
+    },
+    "orden_2026": {
+      "reduccion_modulos_pct": 5,
+      "pf131_sin_asalariados_pct": 2,
+      "pf131_un_asalariado_pct": 3,
+      "pf131_mas_pct": 4,
+      "plazo_renuncia_2026": "hasta el 31/12/2025 (arts. 5 y 6 de la Orden); la Orden de 2027 no estaba publicada el 2/10/2026"
+    },
+    "directa": {
+      "dificil_justificacion_pct": 5,
+      "dificil_justificacion_max": 2000,
+      "pf130_pct": 20,
+      "renuncia_minimo_anios": 3
+    },
+    "supuestos": {
+      "nota": "Hipótesis del modelo editables (no son datos oficiales)",
+      "ingresos": 60000,
+      "gastos": 40000,
+      "previo": 22000,
+      "modulos": 19000
+    }
+  },
   "autonomo_sl_2026": {
     "fuente": "Ley 27/2014 del Impuesto sobre Sociedades (texto consolidado, actualización de 02/09/2026), art. 29.1 (tipo general 25 %; tipo del 15 % para entidades de nueva creación con actividad económica en el primer período con base imponible positiva y en el siguiente, salvo grupo, entidad patrimonial y actividad previa de una persona física con más del 50 % de la sociedad; última redacción: Ley 7/2024, vigente desde 22/12/2024) y disposición transitoria 44.ª (añadida por la Ley 7/2024; períodos que se inicien en 2026: cifra de negocios del período anterior < 1 M€, 19 % hasta 50.000 € de base y 21 % el resto; entidades de reducida dimensión del art. 101, 23 %); Ley 35/2006 del IRPF, arts. 17.2.e (retribución de administradores = rendimiento del trabajo), 19.2.a y 19.2.f, 20 (reducción: sin otras rentas distintas de las del trabajo > 6.500 €), 25.1.a (dividendos = capital mobiliario), 49, 56.2, 63, 66 y 76 (base del ahorro y escala; el mínimo personal no absorbido por la base general pasa a la del ahorro), DA 61.ª (solo relación laboral o estatutaria); Ley General de la Seguridad Social, arts. 305.2.b (administrador o socio con control efectivo, en el RETA) y 308.1.a regla 4.ª y 308.1.c reglas 1.ª y 2.ª (rendimiento computable del autónomo societario: rendimientos íntegros por la participación en los fondos propios, con ≥ 33 % del capital o administrador con ≥ 25 %, más los rendimientos de trabajo en la sociedad, con deducción del 3 %; base mínima del grupo de cotización 7); Orden PJC/297/2026, arts. 3 (base mínima grupo 7: 1.424,40 €/mes) y 18 (tabla de bases y tipo RETA); Ley de Sociedades de Capital (RDLeg 1/2010), arts. 4 (capital mínimo de la SL: 1 €, Ley 18/2022), 217 (cargo gratuito salvo estatutos), 274 (reserva legal)",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
