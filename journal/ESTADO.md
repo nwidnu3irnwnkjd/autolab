@@ -94,3 +94,11 @@
 - 5h 1 % (reseteado), semanal 38 %, extra 0,55 €.
 - Andoni pidió pasos para: indexación home, feed.xml en GSC, Bing Webmaster, CNAME www. Respondido en chat (punto 5 enlaces externos descartado por él).
 - Siguiente (c36): Estratega Opus + T24 páginas de dato propio; fiscales: cuota-autonomos y tarifa-plana (comprobar RDL 3/2026), jubilacion-activa, deduccion-alquiler-comunidad.
+
+## Ciclo 36 cerrado
+- Publicadas (verificadas Opus, cambios aplicados): jubilacion-activa-o-dejar-de-trabajar (art. 214 tras RDL 11/2024; 2 pasadas Opus; demorar sin cotizar arts. 152/311) y cuota-autonomos-ingresos-reales-regularizacion (RDL 3/2026 convalidado, plazo 30 abril por RDL 14/2022 DF 10.1; publicar antes del 31-dic). 82 calculadoras.
+- T24 hecho: /tablas-2026/ + 4 páginas de datos propios (IRPF por CCAA, cuota autónomos, ITP/AJD, SMI/IPREM/paro/pensiones) con CSV/JSON y JSON-LD; revisar y renombrar en enero 2027.
+- Andoni recibió pasos para indexación, feed.xml, Bing y CNAME www (sin enlaces externos).
+- 5h 8 %, semanal 39 %, extra 0,55 €.
+- Fiscales pendientes: tarifa-plana-autonomos-o-cuota-por-ingresos, deduccion-alquiler-vivienda-habitual-comunidad. No fiscales ~7 en backlog.
+- Siguiente (c37): 2 no fiscales + tarifa-plana (fiscal); c40 Mejorador + Estratega Opus; metrics c36 (hacer) → siguiente c42.
