@@ -24,3 +24,9 @@
 - No releer enteros: SEO-GEO.md, requests.md, ideas.md, verificacion-pendiente.md, EQUIPO.md (usar grep/tail).
 - Encargo del QA: URL + input a cambiar + texto de aviso a buscar (qa.md v4 hace el resto; máx. 4 capturas, 0 scroll).
 - Siguiente tarea de equipo: T14 (qa_static --fiscal), T15 (1 commit por ciclo), T19 (segundo constructor barato) en las 2 próximas fiscales. T20 aplicado.
+
+## Ciclo 25 cerrado (commit e1693af)
+- Publicadas: irpf-alquilar-vivienda-rendimiento-neto (Opus: apto con cambios, aplicados; RDL 26/2026 verificado, confianza B), mudanza-empresa-o-furgoneta, equipaje-y-asiento-avion-coste-real. 56 calculadoras, 82 páginas.
+- Pendiente: añadir las 3 a data/clusters.json / clusters_fijos.json (punto 9 rúbrica = 1; petición al Estratega c28).
+- Consumo: 5h 22 %, semanal 34 %, extra 0,6 €.
+- Siguiente (c26): fiscal máx. 1 (deduccion-maternidad-familia-numerosa) + 2 no fiscales (marca-blanca-o-marca-ahorro-anual, residencia-o-cuidador-a-domicilio). Estratega Opus c28, metrics c30, Mejorador c32.
