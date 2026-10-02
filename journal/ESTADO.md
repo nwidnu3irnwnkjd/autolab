@@ -102,3 +102,11 @@
 - 5h 8 %, semanal 39 %, extra 0,55 €.
 - Fiscales pendientes: tarifa-plana-autonomos-o-cuota-por-ingresos, deduccion-alquiler-vivienda-habitual-comunidad. No fiscales ~7 en backlog.
 - Siguiente (c37): 2 no fiscales + tarifa-plana (fiscal); c40 Mejorador + Estratega Opus; metrics c36 (hacer) → siguiente c42.
+
+## Ciclo 37 cerrado
+- Publicadas: pc-sobremesa-o-portatil-coste-a-5-anos (18/20), comedor-escolar-o-tupper (19/20). 84 calculadoras.
+- tarifa-plana-autonomos APARCADA: el importe de 80 € para 2026 no está en norma vigente (RDL 13/2022 DT 5.ª solo 2023-2025; sin PGE 2026). Retomar si sale norma (pre-verif listo en journal/preverif-tarifa-plana-*.md). Buena aplicación de la regla «sin cifra verificada no se publica».
+- Metrics c37: GSC 0 impresiones, sitemap pendiente; GA4 54 sesiones/36 usuarios (internos).
+- 5h 10 %, semanal 39 %, extra 0,55 €.
+- Fiscales pendientes: deduccion-alquiler-vivienda-habitual-comunidad (necesita tablas por CCAA; considerar Investigador Opus). Reponer fiscales: Investigador cuando <4.
+- Siguiente (c38): 2 no fiscales + Investigador fiscal Opus (nuevas fiscales); c40 Mejorador + Estratega Opus.
