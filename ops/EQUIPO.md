@@ -1,13 +1,15 @@
-# Equipo de agentes (mantiene el Mejorador del equipo) · v3.2 2026-10-02T05:20Z (ciclo 24; v3.1 2026-10-02T02:30Z c16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
+# Equipo de agentes (mantiene el Mejorador del equipo) · v3.3 2026-10-02T07:40Z (ciclo 32; v3.2 2026-10-02T05:20Z c24; v3.1 2026-10-02T02:30Z c16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
 
 | Rol | Modelo | Frecuencia | Propiedad |
 |---|---|---|---|
 | Orquestador / Eficiencia | Sonnet 5.5 (sesión) | cada ciclo | ops/loop-prompt.md, ops/*.py, build.py (`main`, `write`, sitemap), costes, integración, barrido de requests |
-| Constructor | Sonnet | cada ciclo, **lote de 2** calculadoras (o 1 fiscal) | calcs/, content/<slug>, data/backlog.md, data/params.json, calcs_loader.py, ops/verif/<slug>_oraculo.py |
+| Constructor | Sonnet | cada ciclo, **lote de 2** calculadoras (o 1-2 fiscales, c32: 2 si 5h < 50 % y semanal < 60 %) | calcs/, content/<slug>, data/backlog.md, data/params.json, calcs_loader.py, ops/verif/<slug>_oraculo.py |
 | Diseñador UI/UX | **Sonnet** (Opus solo para dirección visual nueva) | 1 de cada 3 ciclos (fase F casi cerrada: quedan F8-F12) | templates/, assets/, funciones UI de build.py (→ ui.py) |
 | Estratega SEO/GEO | Opus cada 4 ciclos; Sonnet en los demás pares | ciclos pares | seo.py, content/guias, static/, data/clusters.json, ops/SEO-GEO.md |
-| Investigador | Opus + web (Sonnet si es competencia de 1 calculadora) | backlog < 6 o cada 6 ciclos | journal/ideas.md, competencia.md, líneas nuevas del backlog |
-| Verificador fiscal/legal (nuevo c8) | Opus para la revisión legal; Sonnet para re-verificar | cada calculadora fiscal/legal | journal/verificacion-<slug>.md, ops/verif/<slug>.py (ops/roles/verificador-fiscal.md) |
+| Investigador | Opus + web (Sonnet si es competencia de 1 calculadora) | backlog < 6 no fiscales, **< 4 fiscales (Opus + web, c32)** o cada 6 ciclos | journal/ideas.md, competencia.md, líneas nuevas del backlog |
+| Verificador fiscal/legal (nuevo c8) | Opus para la revisión legal; Sonnet para re-verificar | cada calculadora fiscal/legal (hasta 2 en paralelo, c32) | journal/verificacion-<slug>.md, ops/verif/<slug>.py (ops/roles/verificador-fiscal.md) |
+| Lector de norma (nuevo c32, era T19) | Sonnet ≤ 50k | cada fiscal, en paralelo al Constructor | journal/lector-<slug>.md (ops/roles/lector-norma.md) |
+| Editor de calidad (nuevo c32, era T16) | Sonnet ≤ 120k | cada 4 ciclos en el sprint; 1/día después | journal/editorial.md, peticiones (ops/roles/editor-calidad.md) |
 | QA | Haiku | cada ciclo (máx. 4 páginas, **≤ 4 capturas, 0 scroll, ≤ 30 llamadas**, script JS fijo de qa.md v4) | solo lectura; métodos fijos en qa.md |
 | Mejorador del equipo | Opus (Sonnet para medición rutinaria) | cada 8 ciclos o tras 2 ciclos con fallos de QA | ops/roles/*, EQUIPO.md, journal/ideas-equipo.md |
 
@@ -125,6 +127,31 @@ Fuentes: `git log` (commit «ciclo N», UTC: c15 02:15, c16 02:29, c17 02:47, c1
 ### Peticiones abiertas > 1 ciclo (c24) y dueño
 - R6.2 y R12.2: hechas → el Orquestador las marca [x] al empezar c24 (regla T15: ≤ 2 min, dueño ausente). R16.4: propuesta sin programar → `[~] en espera de tráfico` hasta que haya impresiones en /hipoteca/.
 
+## Rendimiento medido (pasada 5, ciclos 24-31; medido 2026-10-02T07:30Z al inicio de c32)
+Fuentes: `git log` (c24 05:28Z … c31 07:22Z), costes.md, transcripciones de 41 subagentes (pico de contexto, llamadas, capturas).
+| Métrica | c16-c23 | c24-c31 | Objetivo c24 | Estado |
+|---|---|---|---|---|
+| Ciclos/h | 2,73 | **3,7** (13-24 min; fiscal ~18-24, ligero ~12-14) | — | sube: menos 2.ªs pasadas y QA más corto |
+| Semanal | 0,75 pp/ciclo; 2,05 pp/h | **~0,3 pp/ciclo; ~1,05 pp/h** (32 % c23 → 35 % c31; lectura entera, ±0,1) | — | **pp_por_ciclo 0,75 → 0,40 completo / 0,20 ligero** |
+| 5 h | — | 5 % (c20) → 37 % (c31) ≈ 9,4 pp/h | < 70 % | margen para ~1,4× (tope 2 fiscales: 5h < 50 %) |
+| Fiscales publicadas | 6 en 8 ciclos | **4 en 4 ciclos** (c25-c28) + 0 en c29-c31 (backlog fiscal agotado: queda 1) | — | **cuello de botella = backlog fiscal**, no presupuesto |
+| Opus por fiscal (pico, k) | 105 (1 pasada), 149 global | **95-123 (media 107), 0 segundas pasadas** | ≤ 110; 2.ª pasada 0 | **CUMPLIDO** (c24.3) |
+| Cambios obligatorios por fiscal | ~4 | **4-6** (4, 5, 6, 6; 0 de fórmula); clases repetidas: transitorias, patrón 8, no modelado, cita RDL 26/2026 | ≤ 2 | **NO cumplido** → c32.2 |
+| Coste por calculadora fiscal (pico, k) | ~460 | **~410** (Constructor 172-260 + Opus 95-123 + reverif 61-79) ≈ 0,2 pp | — | = |
+| Coste por calculadora no fiscal (k) | ~55 | **~55** (lote de 2 en 98-127k; c31: 120k) ≈ 0,05 pp | ≤ 80 | = |
+| QA Haiku (pico, k) | 110 | **50-65** (30-43 llamadas, 0-2 capturas) | ≤ 65; ≤ 4 capturas | **CUMPLIDO** (c24.1); llamadas 30-43 > 30 |
+| Fallos/falsos positivos QA | 1 en 8 | **1** (Haiku probó rutas sin /decidir/) | 0 | regla de rutas en qa.md |
+| Estratega Sonnet ligero / Investigador Sonnet (k) | 73-125 / 77-89 | **53-62 / 53-59** | — | baratos |
+| Peticiones abiertas > 1 ciclo | 3 | **0** (c29-c31) | 0 | **CUMPLIDO** |
+- **Coste por rol en un ciclo completo con 1 fiscal (~0,40 pp)**: Constructor fiscal ~45 %, Opus ~25 %, reverif ~15 %, no fiscal + QA ~15 %. Ligero (~0,20 pp): Constructor 2 no fiscales ~110k + QA ~60k + Estratega ligero ~60k.
+- **Proyección (reset 6-oct 15:00Z)**: a 35 % (07:22Z) y ~1,1-1,5 pp/h con las mejoras de c32, el sprint cierra a las 21:00Z en **~50-55 %** (si toca 55 % antes, 600 s). Después: (80 − 53) ÷ 90 h ≈ **0,30 pp/h** → ciclo completo (0,40) cada ~1,3 h ≈ 18/día, o mezcla con fiscal doble (0,55) cada ~1,8 h. Cruce del 70 % (fin de Opus/fiscales) hacia el **5-oct ~09:00Z** (antes: 4-oct 16:00Z). Con la fórmula vieja (0,75) el loop habría dejado ~25 pp sin usar en el reset.
+### Evaluación de c24.1-4 (revisión programada c32)
+- c24.1 QA v4: **CUMPLIDO** (110k → 50-65k, capturas 28-41 → 0-2). Se mantiene; tope de 30 llamadas se supera a menudo sin coste visible: no se endurece.
+- c24.2 patrones 7-8 + preverif por archivo: **PARCIAL** — 0 segundas pasadas, pero los cambios siguen en 4-6 y caen en 4 clases fijas → c32.2 (4 líneas obligatorias T/8/N/R) y lector de norma.
+- c24.3 paso 0 del Verificador: **CUMPLIDO** (0 de 4 con 2.ª pasada; en maternidad el paso 0 detectó la diferencia de interpretación en la 1.ª pasada). Se mantiene.
+- c24.4 T19 experimento: **NO EJECUTADO** (no se lanzó en ninguna fiscal) → pasa a rol fijo con decisión tras 4 fiscales (c32.3), porque ya no hay restricción de presupuesto.
+- T14 (`qa_static --fiscal`), T15 (1 commit/ciclo): siguen sin hacer (2 commits por ciclo: «ciclo N» + «estado ciclo N»). T16 → rol Editor (c32.4). T20 HANDOFF: aplicado.
+
 ## Registro de cambios
 - 2026-10-01: equipo v1 creado (6 roles + Estratega SEO/GEO + Mejorador del equipo). Cadencia 20 min, tope 400 EUR extra y 100 EUR/día.
 - 2026-10-01 (v2, Mejorador pasada 1). Cada cambio, con la métrica que debe moverse:
@@ -174,3 +201,12 @@ Fuentes: `git log` (commit «ciclo N», UTC: c15 02:15, c16 02:29, c17 02:47, c1
   - c24.3 verificador-fiscal.md: paso 0 «lectura propia antes del oráculo», muestreo de 3 citas, 2.ª pasada Opus ≤ 60k y solo de lo cambiado. Métrica: fiscales con 2.ª pasada Opus 2/6 → 0; Opus por fiscal (media global) 149k → ≤ 110k.
   - c24.4 Decisión sobre un «segundo constructor» Sonnet que reescriba el oráculo desde la norma sin ver el JS: **no como rol fijo**; experimento T19 en las 2 próximas fiscales (≤ 50k Sonnet, solo la lectura de la norma, sin código). Coste/beneficio: +~0,05 pp por fiscal frente a un ahorro esperado de ~0,05 pp (1/3 de las fiscales evitaría ~130k Opus) más el riesgo de publicar con una lectura errónea; solo compensa si caza ≥ 1 de 2. Analista de datos: no (0 impresiones). Editor de calidad: sigue como pasada única T16 (no hecha; tras el sprint, en un ciclo ligero).
   - No se cambia ningún parámetro del loop-prompt (pp_por_ciclo 0,75/0,35 confirmados; ver proyección). No se revierte nada.
+- 2026-10-02T07:40Z (v3.3, Mejorador pasada 5, ciclo 32). Con presupuesto sobrante (semanal 35 % a 4,3 días del reset), el gasto se pasa a calidad y tráfico. Cada cambio con su métrica (revisión: ciclo 40 o tras 4 fiscales con el protocolo nuevo):
+  - c32.1 **Hasta 2 fiscales por ciclo** en paralelo (loop-prompt §1, constructor.md, verificador-fiscal.md) si 5h < 50 %, semanal < 60 % y hay 2 con fuentes; con doble fiscal, el no fiscal baja a 1. Métrica: fiscales verificadas publicadas por día (c25-c31: 4 en 7 ciclos) → ≥ 8/día; 0 NO PUBLICABLE; ciclo doble ≤ 0,6 pp y ≤ 30 min.
+  - c32.2 constructor.md: 4 líneas obligatorias en preverif (T transitorias desde el consolidado, 8 opción imposible con test, N no modelado con efecto, R normas del año / RDL 26/2026 solo si toca); el Verificador cuenta por clase en su VEREDICTO. Métrica: cambios obligatorios por fiscal 4-6 → ≤ 3.
+  - c32.3 Rol **Lector de norma** (ops/roles/lector-norma.md, Sonnet ≤ 50k, era T19): lee la ley sin ver el código, en paralelo. Métrica: el Opus confirma una diferencia suya en ≥ 2 de 4 fiscales → se queda; si no, se quita. (No un 2.º Opus: el Opus ya da 0 errores de fórmula y 0 segundas pasadas; lo que falta es lectura previa barata.)
+  - c32.4 Rol **Editor de calidad e intención de búsqueda** (ops/roles/editor-calidad.md + «Estilo» en la rúbrica, era T16): lead con respuesta+cifra (fragmentos y resúmenes de IA), title = consulta real, FAQ como consultas, coherencia en 71 calculadoras. Métrica: % de calculadoras con los 5 puntos ok (línea base en la 1.ª pasada) → ≥ 90 % en 3 días; cuando haya impresiones, CTR revisadas vs no revisadas.
+  - c32.5 investigador.md: disparador **< 4 fiscales pendientes → Opus con web, foco fiscal estacional** (31-dic y Renta 2027). Métrica: backlog fiscal con fuentes ≥ 4 siempre (hoy 1).
+  - c32.6 qa.md: regla de rutas (`/decidir/<slug>/`, curl antes de reportar 404). Métrica: fallos de QA por ruta → 0.
+  - c32.7 loop-prompt, solo cadencia: pp_por_ciclo 0,75/0,35 → **0,40 completo / 0,55 fiscal doble / 0,20 ligero** (medido c24-c31); tras el sprint, completo por defecto y ligero solo si permitido < 0,25 pp/h; ahorro con 0,20. Métrica: semanal 75-80 % en el reset (con la fórmula vieja ~55 %), 0 horas de pausa.
+  - Rechazados con motivo: Constructor no fiscal en lote de 3 (97 páginas en 31 ciclos: riesgo de «contenido escalado», principio 2; mejor calidad que cantidad); Estratega Opus más frecuente (0 impresiones: sin datos, otra pasada Opus repite hipótesis; se sube a cada 2 ciclos cuando haya ≥ 5 páginas con impresiones); 2.º Verificador Opus (ver c32.3). No se revierte nada.

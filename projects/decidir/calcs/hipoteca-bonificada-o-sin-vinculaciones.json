@@ -1,0 +1,92 @@
+{
+  "slug": "hipoteca-bonificada-o-sin-vinculaciones",
+  "title": "Hipoteca bonificada o sin vinculaciones: coste real",
+  "description": "Compara el coste total de una hipoteca con bonificaciones (seguros, nómina, tarjeta) y una sin vinculaciones: bonificación mínima que compensa.",
+  "h1": "Hipoteca bonificada o sin vinculaciones: ¿cuál sale más barata?",
+  "lead": "La hipoteca bonificada sale más barata si la rebaja del tipo ahorra más intereses de lo que cuestan las vinculaciones y las comisiones; si la rebaja es pequeña o las vinculaciones son caras, sale mejor la de sin vinculaciones. Pon capital, plazo, tipo, bonificación y el coste anual de los productos, y la calculadora te da el coste total a tu horizonte, la diferencia de cuota y la bonificación mínima que compensa.",
+  "veredicto": "La hipoteca bonificada solo compensa si la bonificación del tipo supera la bonificación mínima que calcula la página con tu capital, plazo, tipo, comisiones y coste de vinculaciones; por debajo de ese umbral sale más barata la de sin vinculaciones.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "capital",
+      "label": "Capital de la hipoteca (€; 150.000 € es un ejemplo)",
+      "default": 150000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "plazo",
+      "label": "Plazo (años)",
+      "default": 25,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tin",
+      "label": "TIN con la bonificación (% anual; el ejemplo es el tipo medio de las nuevas hipotecas fijas, pon el de tu oferta)",
+      "default": 2.76,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "live.tipo_hipoteca_fija",
+      "default_round": 2
+    },
+    {
+      "id": "bonif",
+      "label": "Rebaja del tipo por bonificar (puntos porcentuales; 0,5 es un ejemplo, mira tu oferta)",
+      "default": 0.5,
+      "min": 0,
+      "step": 0.05
+    },
+    {
+      "id": "vinc",
+      "label": "Coste anual de las vinculaciones (€/año; solo el coste extra de seguros, tarjeta y similares; 300 € es un ejemplo)",
+      "default": 300,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "aperturaBon",
+      "label": "Comisión de apertura de la bonificada (% del capital)",
+      "default": 0,
+      "min": 0,
+      "step": 0.05
+    },
+    {
+      "id": "aperturaSin",
+      "label": "Comisión de apertura de la de sin vinculaciones (% del capital)",
+      "default": 0,
+      "min": 0,
+      "step": 0.05
+    },
+    {
+      "id": "horizonte",
+      "label": "Horizonte de comparación (años; hasta el plazo)",
+      "default": 25,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué es una hipoteca bonificada?",
+      "Es una hipoteca cuyo tipo de interés baja si contratas otros productos con la entidad: domiciliar la nómina, un seguro de hogar o de vida, una tarjeta o un plan de pensiones, por ejemplo. Las condiciones concretas y los puntos de rebaja de cada producto están en tu oferta vinculante y en la escritura."
+    ],
+    [
+      "¿Qué cuenta como coste de las vinculaciones?",
+      "Solo lo que pagas de más respecto a lo que harías igualmente: la diferencia entre la prima del seguro del banco y la de un seguro externo equivalente, la cuota anual de la tarjeta si no la tendrías, las comisiones de la cuenta. Si ya cobras la nómina en esa cuenta, domiciliarla no te cuesta nada."
+    ],
+    [
+      "¿Qué pasa si dejo de cumplir una vinculación?",
+      "Normalmente el banco retira la bonificación correspondiente y el tipo sube desde la siguiente revisión, según lo que diga tu contrato. Por eso conviene mirar cuántos puntos pierdes por cada producto y cuántos años vas a mantenerlos."
+    ],
+    [
+      "¿Pueden obligarme a contratar el seguro del banco?",
+      "La Ley 5/2019 (art. 17.3) establece que, si el prestamista exige un seguro, debe aceptar pólizas alternativas equivalentes, sin cobrar por analizarlas y sin empeorar las condiciones del préstamo por ello. Cómo se aplica a tu bonificación concreta, consúltalo en tu oferta y en la ficha de información."
+    ],
+    [
+      "¿Qué horizonte debo usar?",
+      "El tiempo que vayas a mantener la hipoteca en realidad. Si piensas cancelarla o subrogarla antes del final, usa ese plazo; con horizontes cortos pesan más las comisiones de apertura y menos la rebaja del tipo."
+    ]
+  ],
+  "sources": "Cálculo propio: préstamo en amortización francesa a plazo x 12 cuotas. Bonificada: tipo = TIN con la bonificación. Sin vinculaciones: tipo = TIN + rebaja. Coste a N años = intereses efectivos (cuotas pagadas + capital pendiente - capital inicial) + comisión de apertura + coste anual de las vinculaciones x N (solo en la bonificada). Bonificación mínima: la que iguala los costes de las dos opciones (bisección entre 0 y 10 puntos). Vinculaciones máximas: coste anual por debajo del cual la bonificada sigue siendo más barata. Capital, rebaja, vinculaciones y comisiones son ejemplos editables, no ofertas. Información general sobre hipotecas y su oferta vinculante: <a href=\"https://clientebancario.bde.es/pcb/es/\" rel=\"noopener\">Portal del Cliente Bancario del Banco de España</a>. Normativa: <a href=\"https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814\" rel=\"noopener\">Ley 5/2019</a>, art. 17.3 (BOE-A-2019-3814, texto consolidado, consultado el 2/10/2026). TIN de ejemplo: tipo medio de las nuevas hipotecas de vivienda con más de 10 años de fijación inicial, Banco Central Europeo (Data Portal, MIR), dato de agosto de 2026: <a href=\"https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N\" rel=\"noopener\">BCE</a>. Modelo simplificado: tipo fijo todo el plazo, sin amortizaciones anticipadas, tasación, notaría ni gestoría. Información orientativa, no asesoramiento."
+}

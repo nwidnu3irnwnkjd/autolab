@@ -37,3 +37,9 @@ Medido c17-c23 (6 fiscales): Opus de 1 pasada 97-115k (media 105k: **objetivo �
 - Revisa las citas por muestreo: 3 «art. N» de la página contra el texto del artículo (patrón 4, el que más sube).
 - Lee solo journal/preverif-<slug>.md (no verificacion-pendiente.md, 50 KB).
 - 2.ª pasada Opus solo si cambia la interpretación; en ese caso ≤ 60k (solo las piezas cambiadas), no una revisión completa.
+
+## Pasada 5 del Mejorador (2026-10-02, c32): fiscales dobles y lector de norma
+Medido c25-c28 (4 fiscales): Opus 95-123k de pico de contexto, **0 segundas pasadas** (c24.3 cumplido), 0 errores de fórmula, 4-6 cambios obligatorios por fiscal (transitorias, patrón 8, no modelado, cita del RDL 26/2026).
+- Desde c32 puede haber 2 Verificadores Opus en paralelo (uno por fiscal). Cada uno lee solo los archivos de su slug; nadie escribe en journal/verificacion-pendiente.md.
+- Entrada nueva: journal/lector-<slug>.md (ops/roles/lector-norma.md). Si su lectura difiere del bloque `INTERPRETACION`, empieza por esa diferencia (es tu paso 0 ya hecho por otro).
+- En la línea VEREDICTO añade el recuento por clase: `T n · 8 n · N n · R n · otros n`. Así el Mejorador mide si las 4 líneas nuevas de preverif funcionan.

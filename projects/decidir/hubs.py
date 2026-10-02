@@ -26,11 +26,19 @@ HUBS = {
                  "cambiarla de banco, amortizar plazo o cuota y amortizar o invertir. Hoy el Euríbor a 12 meses está en el {{euribor_12m}} % "
                  "(media de {{periodo_euribor_es}}) y las hipotecas fijas nuevas a más de 10 años se firman de media al {{tipo_fijo}} % ({{periodo_tipo_fijo_es}}); fuente: BCE."),
         "groups": [
-            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-fija-o-variable", "seguro-vida-hipoteca-banco-o-externo"]),
+            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
+            "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
+                "name": "Plazo: 20, 25 o 30 años",
+                "text": "Un plazo más corto paga menos intereses pero sube la cuota. El que te conviene es el más corto cuya cuota, sumada a tus otras deudas, quepa en el tope de esfuerzo que fijes; la calculadora lo elige y, si no cabe ninguno, te da el plazo mínimo.",
+            },
+            "hipoteca-bonificada-o-sin-vinculaciones": {
+                "name": "Bonificada o sin vinculaciones",
+                "text": "La bonificada baja el tipo a cambio de contratar nómina, seguros u otros productos. Solo compensa si esa rebaja supera la bonificación mínima que sale de tu capital, plazo, tipo, comisiones y coste de las vinculaciones; la calculadora te da ese umbral.",
+            },
             "seguro-vida-hipoteca-banco-o-externo": {
                 "name": "Seguro de vida: el del banco o uno externo",
                 "text": "Con una póliza externa de coberturas equivalentes, el seguro del banco solo compensa si la bonificación del tipo supera la mínima que sale de tu capital, plazo, tipo y primas. La calculadora te da ese umbral.",
@@ -164,10 +172,12 @@ HUBS = {
             "potencia-contratada-luz-bajar-compensa": {
                 "name": "Potencia contratada: bajarla o no",
                 "text": "Bajar los kW contratados reduce el término fijo de la factura sin obra. La calculadora estima el ahorro anual y los años que tarda en recuperarse el coste del cambio; el límite lo marca tu pico real de uso.",
+                "guia": "ahorrar-factura-luz-potencia-horas-valle-tarifa",
             },
             "horas-valle-luz-lavadora-termo-cuanto-ahorro": {
                 "name": "Horas valle: lavadora, lavavajillas y termo",
                 "text": "Mover consumos a la franja valle solo ahorra si tu tarifa tiene discriminación horaria. La calculadora da el ahorro anual con tus kWh y tus precios por periodo.",
+                "guia": "ahorrar-factura-luz-potencia-horas-valle-tarifa",
             },
             "calefaccion-gas-aerotermia-electrica": {
                 "name": "Calefacción: gas, aerotermia o eléctrica",

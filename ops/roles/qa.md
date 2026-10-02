@@ -32,6 +32,7 @@ Hubs y guías: solo pasos 1, 3 y 4 (el script da desborde, tablas y NaN); sin ca
 - og.png «no existe» (c7) → es fallo solo si fallan `dist/x` Y `curl -sI https://entremuchos.com/x`.
 - Gráfico de línea sin dibujar en el panel oculto (observador de scroll) → no es fallo si `graficos ≥ 1`.
 - «Coma decimal» (c23): en español 3,5 % y 1.234 € son correctos; `milesSinPunto` excluye años (1900-2039); un número de 4+ cifras pegado a «km», «€» o «días» sin punto SÍ es fallo (c12 bici «2045 km»).
+- **Rutas (c31)**: usa literalmente las rutas que imprime `qa_static.py --changed` detrás de `http://localhost:8787/` (el servidor sirve `projects/decidir/dist`; las calculadoras viven en `/decidir/<slug>/`, las guías en `/guias/<slug>/`: si te pasan solo un slug de calculadora, antepón `/decidir/`). Antes de reportar un 404, `curl -sI` de la misma ruta: si curl da 200, el fallo es tuyo, no de la página.
 - Servidor caído (`curl http://localhost:8787/` sin respuesta o «Browser pane gone»): NO lo reinicies, avísalo en 1 línea.
 
 ## Calculadoras nuevas: rúbrica

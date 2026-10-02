@@ -136,3 +136,14 @@ Revisado ESTADO.md a c23: el HANDOFF dice quién es, preferencias, el ciclo y cr
 ### [ ] T16 · estado c24: sin hacer; 76 páginas (> 50 calculadoras): toca tras el sprint, en el primer ciclo ligero con margen.
 ### [ ] T10 · estado c24: sigue sin activar (0 impresiones).
 
+
+## Pasada 5 · 2026-10-02T07:40Z (ciclo 32, datos de c24-c31)
+Contexto: semanal 33 → 35 % en 8 ciclos (~0,3 pp/ciclo frente a 0,75 previsto), 5h ≤ 37 %, extra 0,55 €; 4,3 días al reset. El límite ya no es el presupuesto sino el backlog fiscal (queda 1) y la calidad de texto (4-6 cambios Opus por fiscal). Aplicado en EQUIPO.md v3.3 (c32.1-7); aquí, estado y métrica de cada idea:
+### [x] T19 → rol Lector de norma (c32.3, aplicado). Métrica: diferencia confirmada por el Opus en ≥ 2 de 4 fiscales; si no, quitar.
+### [x] T16 → rol Editor de calidad (c32.4, aplicado). Métrica: % calculadoras con los 5 puntos ok → ≥ 90 % en 3 días; CTR cuando haya impresiones. 1.ª pasada en c33.
+### [x] T21 · Fiscal doble por ciclo (c32.1, aplicado). Métrica: ≥ 8 fiscales verificadas/día, 0 NO PUBLICABLE, ciclo doble ≤ 0,6 pp. Revertir a 1 si un ciclo doble pasa de 0,8 pp o si 5h supera el 60 %.
+### [x] T22 · Investigador fiscal Opus con disparador < 4 (c32.5, aplicado). Lanzarlo YA en c32/c33 (backlog fiscal = 1). Métrica: backlog fiscal ≥ 4 siempre.
+### [x] T23 · Cadencia con pp medido (c32.7, aplicado). Métrica: semanal 75-80 % en el reset sin pausa. Re-medir pp/ciclo en c40 (lectura entera de get_usage: medir sobre ≥ 8 ciclos).
+### [ ] T24 · Páginas «dato propio» para enlaces y GEO (propuesta, dueño: Estratega Opus c36). Con presupuesto libre, lo que más tráfico potencial añade sin escalar contenido: 2-3 páginas con un dato que nadie publica, calculado de nuestras calculadoras y datos vivos (p. ej. «¿Cuándo compensa la tarifa indexada? mes a mes desde 2024», «coste real del coche por km en 2026 con gasolina viva»), con CSV descargable, citables por medios y por IA. Coste ~1 Opus 130k + 1 Sonnet 150k. Métrica: enlaces externos/citas (GSC «Enlaces») y menciones en respuestas de IA a 30 días.
+### [ ] T14, T15 · siguen sin hacer (Orquestador). T14 gana valor con 2 fiscales/ciclo: hacerlo en el primer ciclo sin fiscal doble.
+### [~] Rechazados (c32): lote 3 no fiscal (contenido escalado), Estratega Opus más frecuente sin impresiones (disparador ≥ 5 páginas con impresiones), 2.º Verificador Opus (0 errores de fórmula, 0 segundas pasadas).

@@ -1987,5 +1987,16 @@
    "kwh_termo_semana": 10,
    "pct_desplazable": 70
   }
+ },
+ "hipoteca_bonificada": {
+  "nota": "Capital (150.000 €), plazo (25 años), rebaja del tipo (0,5 puntos), coste anual de vinculaciones (300 €) y comisiones (0 %) son ejemplos editables, no ofertas ni datos oficiales. El TIN de ejemplo sale de live.tipo_hipoteca_fija (BCE, MIR). Referencia legal citada: Ley 5/2019, art. 17.3 (verificado en el texto consolidado, ver seguro_vida_hipoteca).",
+  "url": "https://clientebancario.bde.es/pcb/es/",
+  "consulta": "consultado el 2/10/2026"
+ },
+ "hipoteca_esfuerzo": {
+  "tope_orientativo_pct": 35,
+  "nota": "El 35 % de esfuerzo (cuota de la hipoteca más otras cuotas de deuda sobre ingresos netos) es una regla orientativa de prudencia, editable, no un límite legal ni el criterio de ninguna entidad; no se atribuye a ninguna fuente oficial. Capital (150.000 €) e ingresos (3.500 €/mes) son ejemplos. TIN de ejemplo: live.tipo_hipoteca_fija (BCE, MIR).",
+  "url": "https://clientebancario.bde.es/pcb/es/",
+  "consulta": "consultado el 2/10/2026"
  }
 }

@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "vinc": 300,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 25
+   },
+   "expect": {
+    "cuotaBon": 692.73,
+    "cuotaSin": 731.77,
+    "interesesBon": 57820.32,
+    "interesesSin": 69530.09,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 7500,
+    "costeBon": 65320.32,
+    "costeSin": 69530.09,
+    "diferencia": 4209.78,
+    "bonifMin": 0.322,
+    "vincMax": 468.39,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "vinc": 100,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 25
+   },
+   "expect": {
+    "cuotaBon": 692.73,
+    "cuotaSin": 731.77,
+    "interesesBon": 57820.32,
+    "interesesSin": 69530.09,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 2500,
+    "costeBon": 60320.32,
+    "costeSin": 69530.09,
+    "diferencia": 9209.78,
+    "bonifMin": 0.108,
+    "vincMax": 468.39,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "vinc": 600,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 25
+   },
+   "expect": {
+    "cuotaBon": 692.73,
+    "cuotaSin": 731.77,
+    "interesesBon": 57820.32,
+    "interesesSin": 69530.09,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 15000,
+    "costeBon": 72820.32,
+    "costeSin": 69530.09,
+    "diferencia": -3290.22,
+    "bonifMin": 0.638,
+    "vincMax": 468.39,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 0,
+    "bonif": 0.5,
+    "vinc": 0,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 25
+   },
+   "expect": {
+    "cuotaBon": 500.0,
+    "cuotaSin": 532.0,
+    "interesesBon": 0.0,
+    "interesesSin": 9601.47,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 0,
+    "costeBon": 0.0,
+    "costeSin": 9601.47,
+    "diferencia": 9601.47,
+    "bonifMin": 0,
+    "vincMax": 384.06,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 1,
+    "tin": 2.76,
+    "bonif": 0.5,
+    "vinc": 50,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 1
+   },
+   "expect": {
+    "cuotaBon": 12687.66,
+    "cuotaSin": 12721.83,
+    "interesesBon": 2251.94,
+    "interesesSin": 2661.92,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 50,
+    "costeBon": 2301.94,
+    "costeSin": 2661.92,
+    "diferencia": 359.98,
+    "bonifMin": 0.061,
+    "vincMax": 409.98,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "plazo": 25,
+    "tin": 2.76,
+    "bonif": 0,
+    "vinc": 0,
+    "aperturaBon": 0,
+    "aperturaSin": 0,
+    "horizonte": 25
+   },
+   "expect": {
+    "cuotaBon": 692.73,
+    "cuotaSin": 692.73,
+    "interesesBon": 57820.32,
+    "interesesSin": 57820.32,
+    "comisionBon": 0.0,
+    "comisionSin": 0.0,
+    "vincTotal": 0,
+    "costeBon": 57820.32,
+    "costeSin": 57820.32,
+    "diferencia": 0.0,
+    "bonifMin": 0,
+    "vincMax": 0.0,
+    "mejor": 2
+   },
+   "tol": 1
+  }
+ ]
+}

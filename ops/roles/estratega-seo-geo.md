@@ -22,3 +22,6 @@ Ver en ops/SEO-GEO.md la sección «Frescura y contexto» (datos vivos, Pulso, c
 
 ## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
 Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).
+
+## Frecuencia Opus (c32, Mejorador pasada 5; métrica: impresiones/semana de las páginas tocadas por el Opus)
+Se mantiene cada 4 ciclos mientras GSC dé 0 impresiones (sin datos, una pasada Opus más repite hipótesis). En cuanto haya **≥ 5 páginas con impresiones**, Opus cada 2 ciclos con foco en esas páginas (title, lead, enlaces internos). Los title/description que proponga el Editor de calidad (`[Editor -> Estratega]`) se aplican en tus ciclos Sonnet.

@@ -1,0 +1,71 @@
+{
+  "slug": "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+  "title": "Hipoteca a 20, 25 o 30 años: cuota e intereses",
+  "description": "Compara una hipoteca a 20, 25 o 30 años: cuota, intereses totales y esfuerzo sobre tus ingresos, y el plazo más corto que cabe en tu tope.",
+  "h1": "Hipoteca a 20, 25 o 30 años: ¿qué plazo elegir?",
+  "lead": "Conviene el plazo más corto, entre 20, 25 y 30 años, cuya cuota quede dentro del 35 % de tus ingresos netos (regla orientativa, no legal): con un tipo mayor que 0 %, cuanto más corto es el plazo, menos intereses pagas; alargarlo solo compensa si la cuota no te cabe. Pon capital, tipo e ingresos y verás cuota, intereses y esfuerzo de cada plazo.",
+  "veredicto": "El plazo más corto de los tres que deje la cuota (más tus otras deudas) dentro del tope de esfuerzo que fijes es el que menos intereses paga; si solo cabe a 30 años o en ninguno, la página lo dice y calcula el plazo mínimo que cumpliría el tope.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "capital",
+      "label": "Capital de la hipoteca (€; 150.000 € es un ejemplo)",
+      "default": 150000,
+      "min": 1,
+      "step": 1000
+    },
+    {
+      "id": "tin",
+      "label": "TIN fijo (% anual; el ejemplo es el tipo medio de las nuevas hipotecas fijas, pon el de tu oferta)",
+      "default": 2.76,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "live.tipo_hipoteca_fija",
+      "default_round": 2
+    },
+    {
+      "id": "ingresos",
+      "label": "Ingresos netos mensuales del hogar que firma (€; 3.500 € es un ejemplo)",
+      "default": 3500,
+      "min": 1,
+      "step": 50
+    },
+    {
+      "id": "otras",
+      "label": "Otras cuotas de deuda al mes (€; préstamos, coche, tarjetas)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "tope",
+      "label": "Tope de esfuerzo (% de ingresos; 35 % es una regla orientativa, no legal)",
+      "default": 35,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Por qué un plazo más largo paga más intereses?",
+      "Porque devuelves el capital más despacio y el banco cobra intereses sobre el capital pendiente durante más meses. La cuota baja, pero la suma de intereses sube; la diferencia exacta de cada plazo está en la tabla con tus números."
+    ],
+    [
+      "¿Qué es el esfuerzo hipotecario?",
+      "Es el porcentaje de tus ingresos netos mensuales que se va en cuotas de deuda. Aquí se calcula como (cuota de la hipoteca + otras cuotas de deuda) entre ingresos netos. El 35 % es una referencia de prudencia habitual, no una norma; cada banco aplica sus propios criterios de solvencia."
+    ],
+    [
+      "¿Me conviene el plazo más largo para tener la cuota baja?",
+      "No tiene por qué. Un plazo largo te da margen mensual, pero encarece la hipoteca en intereses. Una opción habitual es firmar un plazo que te quede cómodo y amortizar anticipadamente cuando puedas; compara en la calculadora de amortizar plazo o cuota qué te conviene entonces."
+    ],
+    [
+      "¿Qué plazo máximo puede darme el banco?",
+      "Depende de la entidad y de tu edad: muchas limitan el plazo para que la hipoteca termine antes de cierta edad. Esta calculadora compara tres plazos fijos y calcula el plazo mínimo que cumple tu tope; confirma el máximo posible con tu oferta."
+    ],
+    [
+      "¿Y si la hipoteca es variable?",
+      "La cuota cambiaría con el Euríbor en cada revisión, así que el esfuerzo de hoy no es el de dentro de unos años. Para decidir entre fija y variable usa la calculadora de hipoteca fija o variable; aquí se supone un tipo fijo durante todo el plazo."
+    ]
+  ],
+  "sources": "Cálculo propio: préstamo a tipo fijo en amortización francesa. Intereses totales = cuota x meses - capital. Esfuerzo = (cuota + otras cuotas de deuda) / ingresos netos mensuales. Plazo mínimo: meses necesarios para que la cuota no supere (tope x ingresos - otras cuotas). El tope del 35 % es una regla orientativa de prudencia editable, no un límite legal ni el criterio de ninguna entidad. Información general sobre hipotecas y solvencia: <a href=\"https://clientebancario.bde.es/pcb/es/\" rel=\"noopener\">Portal del Cliente Bancario del Banco de España</a>. TIN de ejemplo: tipo medio de las nuevas hipotecas de vivienda con más de 10 años de fijación inicial, Banco Central Europeo (Data Portal, MIR), dato de agosto de 2026: <a href=\"https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N\" rel=\"noopener\">BCE</a>. Modelo simplificado: tipo fijo todo el plazo, sin seguros, comisiones, gastos de compraventa ni límite de edad. Información orientativa, no asesoramiento."
+}

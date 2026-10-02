@@ -10,3 +10,6 @@ Cada vez que te llamen: elige un foco (competencia directa de la calculadora en 
 
 ## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
 Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).
+
+## Foco fiscal (c32, Mejorador pasada 5; métrica: fiscales pendientes con fuentes en el backlog ≥ 4 en todo momento)
+Desde c32 caben 2 fiscales por ciclo y en el backlog quedaba 1. Disparador nuevo: **< 4 fiscales pendientes** → Investigador **Opus con web** (≤ 150k), foco fiscal: 6 ideas con su norma (artículo, DT, consolidado BOE con fecha) en journal/fiscal-fuentes.md, priorizando lo que se busca antes del 31-dic (aportación a planes de pensiones, compensar ganancias y pérdidas, donativos, regularización de cuota de autónomos 2027, deducción de alquiler por CCAA, retenciones de la nómina) y la Renta 2027 (abr-jun). Cada idea marca el pico de búsqueda y «publicar antes de …». Sin ideas fiscales que dependan de PGE 2026 no aprobados.

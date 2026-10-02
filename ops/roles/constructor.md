@@ -21,7 +21,7 @@ Andoni NO las revisa: la verificación es nuestra. Antes de dar por buena una ca
 2. **Primero tu oráculo** (2026-10-01T23:03Z, c8; métrica: tokens Opus de verificación por calculadora fiscal 484k → ≤ 150k): antes de escribir el .js, escribe `ops/verif/<slug>_oraculo.py`, implementación Python independiente desde la norma, y un barrido aleatorio ≥ 500 casos que ejecute el JS real con JavaScriptCore igual que ops/check.py (`osascript -l JavaScript`, funciones puras antes de `function eur(`) y lo compare con el Python: 0 discrepancias > 1 €. Escribe el oráculo desde la norma ANTES de abrir tu propio .js para que no copie sus errores. Esto encuentra los errores de fórmula (c7: DA 61.ª) con Sonnet, no con Opus.
 3. Después, la verificación de ops/roles/verificador-fiscal.md (Opus, solo aplicabilidad legal, texto ≤ cálculo, supuestos y bordes). Pásale tu lista de supuestos «no todos de ley». La re-verificación tras correcciones la hace Sonnet re-ejecutando los scripts.
 4. Si una cifra no se puede verificar en fuente oficial, no se publica la calculadora: se aparca en el backlog con el motivo.
-5. Alcance: modela solo lo que cambia el veredicto para la mayoría de usuarios; lo demás se declara como límite («no incluye…») en la página. Una fiscal por ciclo como máximo.
+5. Alcance: modela solo lo que cambia el veredicto para la mayoría de usuarios; lo demás se declara como límite («no incluye…») en la página. Hasta **2 fiscales por ciclo** desde c32 (cada una con su Constructor, su lector de norma y su Verificador, en paralelo) si se cumplen las condiciones de loop-prompt §1; si no, 1.
 
 ## Checklist de calidad antes de entregar (2026-10-01T23:03Z, c8; métrica: errores hallados después del Constructor → 0)
 Lecciones: día 1, Euríbor 2,10 % escrito de memoria en params.json (real 3,247 %) y el Barómetro publicado desfasado; c7, el borrador IRPF prometía «conviene con sueldos desiguales», que el cálculo no demostraba.
@@ -45,3 +45,10 @@ Máx. 5 líneas al Orquestador: slugs · tests · rúbrica · peticiones · ruta
 
 ## Oráculo: interpretación escrita antes del código (c24; métrica: fiscales con 2.ª pasada Opus 2/6 → 0)
 En la cabecera de `ops/verif/<slug>_oraculo.py`, antes de cualquier función, un bloque `INTERPRETACION` de ≤ 10 líneas: por cada opción comparada, qué cobra/paga el usuario, durante cuánto tiempo, con qué artículo (y DT) y qué la hace imposible. El Verificador lo lee primero y lo contrasta con la norma: así un error de lectura se discute en 10 líneas, no después de 600 casos que lo reproducen.
+
+## Los 4 errores que el Opus sigue encontrando (c32, Mejorador pasada 5; métrica: cambios obligatorios por fiscal 4-6 (c25-c28) → ≤ 3)
+En las 4 fiscales de c25-c28 (alquiler, maternidad, venta de vivienda, módulos), con 0 errores de fórmula, el Opus pidió 4-6 cambios cada una y casi todos caen aquí. Antes de entregar, 4 líneas más al final de journal/preverif-<slug>.md:
+- **T · Transitorias**: lista de DT/DF del consolidado que nombran el artículo central (búscalo con `grep -n "artículo N"` en el consolidado, no de memoria) y para cada una «modelada / declarada / no aplica en 2026». (Venta de vivienda: DT de coeficientes; alquiler: DT 38.ª y prórroga tácita.)
+- **8 · Opción imposible**: para cada opción, el input que la hace imposible y qué hace la página entonces (bloqueo o mensaje). Prueba 1 caso de test.json en cada bloqueo. (Módulos: patrón 8 de nuevo.)
+- **N · No modelado**: cada cosa de la ley que NO calculas tiene una frase en «Supuestos y fuentes» con su efecto («si te aplica, X sale más caro»). Ninguna omisión silenciosa.
+- **R · Normas del año**: cita el RDL 26/2026 (BOE-A-2026-20266) solo si toca tus artículos; si no los toca, escribe en preverif «RDL 26/2026: no toca arts. …» y NO lo cites en la página como fuente de tus cifras. Anota también si hay PGE 2026 (no los hay: las cuantías siguen las de la última ley vigente).

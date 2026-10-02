@@ -17,3 +17,6 @@ La usan el Constructor (autoevaluación, pegada en su informe final) y el QA (ve
 
 Formato del informe del Constructor: `Rúbrica <slug>: 1=2 2=2 3=n/a 4=2 5=1 6=2 7=2 8=2 9=1 10=2 → 18/20 (n/a cuenta como 2)`.
 Prueba rápida del punto 10: para cada frase con «conviene/sale mejor/ahorras», señala el caso del test.json que la demuestra y otro que muestre su límite. Si no lo hay, reescribe la frase como condición con umbral o bórrala.
+
+## Estilo (c32; lo aplica el Editor de calidad y el Constructor en calculadoras nuevas)
+1. Tuteo siempre. 2. Lead: respuesta + condición + cifra del ejemplo en la 1.ª frase. 3. Veredicto: «Con tus datos, gana X por N € (al año / en N años)»; si la diferencia < 5 %, «empate práctico». 4. Impuestos con su nombre completo la primera vez (IRPF, IBI, ITP) y el artículo solo en «Supuestos y fuentes». 5. Sin absolutos sin condición. 6. «Supuestos y fuentes» con lo no modelado y su efecto. 7. Disclaimer estándar de build (no uno propio). 8. FAQ: 3-5, como consultas reales. 9. Cifras con coma decimal y punto de miles. 10. Title ≤ 60 caracteres, sin año salvo que la cifra sea anual.

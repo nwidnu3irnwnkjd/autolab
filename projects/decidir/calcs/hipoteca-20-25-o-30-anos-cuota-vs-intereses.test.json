@@ -1,0 +1,179 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "tin": 2.76,
+    "ingresos": 3500,
+    "otras": 0,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 813.99,
+    "int20": 45357.72,
+    "esf20": 23.257,
+    "cuota25": 692.73,
+    "int25": 57820.32,
+    "esf25": 19.792,
+    "cuota30": 613.16,
+    "int30": 70736.37,
+    "esf30": 17.519,
+    "cuotaMax": 1225.0,
+    "plazoMinAnos": 11.998,
+    "elegido": 20,
+    "extra30": 25378.65,
+    "alivio30": 200.83,
+    "extra25": 12462.59,
+    "alivio25": 121.26,
+    "extra30vs25": 12916.06
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "tin": 2.76,
+    "ingresos": 2200,
+    "otras": 0,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 813.99,
+    "int20": 45357.72,
+    "esf20": 37.0,
+    "cuota25": 692.73,
+    "int25": 57820.32,
+    "esf25": 31.488,
+    "cuota30": 613.16,
+    "int30": 70736.37,
+    "esf30": 27.871,
+    "cuotaMax": 770.0,
+    "plazoMinAnos": 21.557,
+    "elegido": 25,
+    "extra30": 12916.06,
+    "alivio30": 79.58,
+    "extra25": 12462.59,
+    "alivio25": 121.26,
+    "extra30vs25": 12916.06
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "tin": 2.76,
+    "ingresos": 1900,
+    "otras": 0,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 813.99,
+    "int20": 45357.72,
+    "esf20": 42.842,
+    "cuota25": 692.73,
+    "int25": 57820.32,
+    "esf25": 36.46,
+    "cuota30": 613.16,
+    "int30": 70736.37,
+    "esf30": 32.271,
+    "cuotaMax": 665.0,
+    "plazoMinAnos": 26.533,
+    "elegido": 30,
+    "extra30": 0.0,
+    "alivio30": 0.0,
+    "extra25": 12462.59,
+    "alivio25": 121.26,
+    "extra30vs25": 12916.06
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "tin": 2.76,
+    "ingresos": 1200,
+    "otras": 0,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 813.99,
+    "int20": 45357.72,
+    "esf20": 67.833,
+    "cuota25": 692.73,
+    "int25": 57820.32,
+    "esf25": 57.728,
+    "cuota30": 613.16,
+    "int30": 70736.37,
+    "esf30": 51.096,
+    "cuotaMax": 420.0,
+    "plazoMinAnos": 62.491,
+    "elegido": 0,
+    "extra30": 0.0,
+    "alivio30": 0.0,
+    "extra25": 12462.59,
+    "alivio25": 121.26,
+    "extra30vs25": 12916.06
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 168000,
+    "tin": 0,
+    "ingresos": 2000,
+    "otras": 0,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 700.0,
+    "int20": 0.0,
+    "esf20": 35.0,
+    "cuota25": 560.0,
+    "int25": 0.0,
+    "esf25": 28.0,
+    "cuota30": 466.67,
+    "int30": 0.0,
+    "esf30": 23.333,
+    "cuotaMax": 700.0,
+    "plazoMinAnos": 20.0,
+    "elegido": 20,
+    "extra30": 0.0,
+    "alivio30": 233.33,
+    "extra25": 0.0,
+    "alivio25": 140.0,
+    "extra30vs25": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 12000,
+    "tin": 0,
+    "ingresos": 2000,
+    "otras": 300,
+    "tope": 35
+   },
+   "expect": {
+    "cuota20": 50.0,
+    "int20": 0.0,
+    "esf20": 17.5,
+    "cuota25": 40.0,
+    "int25": 0.0,
+    "esf25": 17.0,
+    "cuota30": 33.33,
+    "int30": 0.0,
+    "esf30": 16.667,
+    "cuotaMax": 400.0,
+    "plazoMinAnos": 2.5,
+    "elegido": 20,
+    "extra30": 0.0,
+    "alivio30": 16.67,
+    "extra25": 0.0,
+    "alivio25": 10.0,
+    "extra30vs25": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

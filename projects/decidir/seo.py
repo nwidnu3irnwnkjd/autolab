@@ -149,12 +149,15 @@ def guide_page(g, calcs, card, base):
 <h1>{g["h1"]}</h1>
 <p class="byline note">Por {AUTHOR} · Publicado el <time datetime="{g["published"]}">{fecha_es(g["published"])}</time> · Actualizado el <time datetime="{g["modified"]}">{fecha_es(g["modified"])}</time></p>
 {g["body"]}
-<p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Revisa tu escritura y, si la decisión es importante, consulta con un profesional. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
+<p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Revisa tus documentos (factura, contrato o escritura) y, si la decisión es importante, consulta con un profesional. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 {calc_block}
 </article>"""
     url = f"{base}/guias/{g['slug']}/"
     jsonld = [article(g["h1"], g["description"], url, g["published"], g["modified"], base),
               breadcrumbs(base, [("Inicio", "/"), ("Guías", "/guias/"), (g["h1"], None)])]
+    if g.get("faq"):  # opcional en el meta: [[pregunta, respuesta], ...]; cada respuesta repite cifras ya presentes en el cuerpo
+        jsonld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]})
     return body, jsonld
 
 def guides_index(guides):
