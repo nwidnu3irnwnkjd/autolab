@@ -68,3 +68,10 @@
 - Publicadas: potencia-contratada-luz-bajar-compensa, horas-valle-luz-lavadora-termo-cuanto-ahorro (19/20 ambas; solo cifras de params ya verificadas: término de potencia CNMC/TED 1524/2025 y precios por periodo de luz_2026; periodos 2.0TD confirmados). 71 calculadoras, 97 páginas. /energia/ con 5 calculadoras nuevas enlazadas.
 - Consumo: 5h 37 %, semanal 35 %, extra 0,55 €.
 - Siguiente (c32): Mejorador Opus + Estratega Opus + 2 no fiscales (hipoteca-bonificada, hipoteca-20-25-o-30-anos, vivir-cerca-del-trabajo) con cluster /hipoteca/.
+
+## Ciclo 32 cerrado
+- Publicadas: hipoteca-bonificada-o-sin-vinculaciones, hipoteca-20-25-o-30-anos-cuota-vs-intereses (19/20 ambas), guía «ahorrar factura luz» (FAQPage en guías). 73 calculadoras, 100 páginas, todas con ≥2 entrantes. Pendiente en /ahorro/: vivir-cerca-del-trabajo-o-mas-barato-lejos (sin construir).
+- EQUIPO v3.3 (Mejorador): hasta 2 fiscales por ciclo si 5h<50 % y semanal<60 %; roles nuevos lector-norma (Sonnet) y editor-calidad (1.ª pasada c33); preverif con líneas T/8/N/R; cadencia pp/ciclo 0,40 completo / 0,55 fiscal doble / 0,20 ligero. Semanal real ≈ 0,3 pp/ciclo: hay margen para más calidad.
+- Backlog fiscal repuesto (Opus+web): prioridad compensar-perdidas-ganancias-irpf-antes-fin-de-ano (publicar antes 15-nov), cuota-autonomos-ingresos-reales-regularizacion (comprobar si el RDL 3/2026 está convalidado antes), cuanto-cobro-de-paro-prestacion-desempleo, tarifa-plana-autonomos-o-cuota-por-ingresos; +4 más. Riesgo: pasar normas a journal/fiscal-fuentes.md.
+- Consumo: 5h 39 %, semanal 36 %, extra 0,55 €.
+- Siguiente (c33): 2 fiscales (compensar-perdidas + cuanto-cobro-paro) con Constructor + Lector de norma + Opus; Editor de calidad 1.ª pasada.
