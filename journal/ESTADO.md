@@ -25,7 +25,7 @@
 - Encargo del QA: URL + input a cambiar + texto de aviso a buscar (qa.md v4 hace el resto; máx. 4 capturas, 0 scroll).
 - Siguiente tarea de equipo: T14 (qa_static --fiscal), T15 (1 commit por ciclo), T19 (segundo constructor barato) en las 2 próximas fiscales. T20 aplicado.
 
-## ESTADO VIVO (actualizado c48; detalle de ciclos 25-47 en journal/archivo-ciclos-25-47.md)
+## ESTADO VIVO (actualizado c49; detalle de ciclos 25-47 en journal/archivo-ciclos-25-47.md)
 - 100 calculadoras, 11 guías, /tablas-2026/ (5 páginas de dato propio), ~135 páginas. 5h 59 %→reset 13:40Z, semanal 48 %, extra 0,55 €. Sprint (120 s) hasta ~2026-10-02T21:00Z, pero EQUIPO v3.5 fija 600 s desde c48 (pp real ≈ 0,85/ciclo con fiscal).
 - Equipo v3.5: fiscal = Constructor + Opus (+ reverificación Sonnet); fiscal doble suspendida hasta el reset; ciclos alternan fiscal y mantenimiento (Vigilante de normas + Editor + QA); no fiscales solo con `demanda:` del Estratega; qa_static --fiscal informativo.
 - RIESGO RDL 26/2026: según prensa rechazado el 2-oct, sin Resolución en el BOE (journal/rdl-26-2026-estado.md, 3 consultas). Al publicarse: Vigilante revisa irpf-alquilar-vivienda-rendimiento-neto (DT 38.ª, 60/70/90 %), venta-vivienda (41 bis.3), notas «R» y /tablas-2026/.
@@ -40,3 +40,9 @@
 - RDL 26/2026: consulta 3: según Público el Congreso lo rechazó el 2-oct; sin Resolución en BOE. Vigilante lo revisa en c49.
 - 5h 2 % (reset 18:40Z), semanal 49 %, extra 0,55 €.
 - Siguiente (c49): ciclo de MANTENIMIENTO: Vigilante de normas (BOE RDL + inventario) + R48.1/R48.2 + Editor + QA; ScheduleWakeup 600 s.
+
+## Ciclo 49 cerrado · CAMBIO DE FASE
+- Andoni (2-oct): «suficiente contenido y herramientas; viremos a posicionamiento, atractivo interno/externo, funcionalidades, actualidad: todo pensado en TRÁFICO; plan a 2 semanas». Plan en ops/PLAN-TRAFICO.md; loop-prompt tiene la sección «FASE TRÁFICO» (desde c50). Cadencia 600 s.
+- c49 (mantenimiento): journal/vigencias.md creado (65 ids BOE; RDL 26/2026 sin Resolución en BOE); R48.1-R48.3 hechas; Editor pasada 4 (36+12 calculadoras revisadas); qa_static mide gzip (0 de 138 páginas > 30 KB).
+- 5h 4 %, semanal 49 %, extra 0,55 €.
+- Siguiente (c50): arrancar semana 1 del plan: /todas/, sitemaps por secciones, OG por página, titles de las 40 mejores, compartir, .ics, buscador, barra «Esta semana».
