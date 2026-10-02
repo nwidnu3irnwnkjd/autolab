@@ -161,3 +161,10 @@
 - RIESGO: RDL 26/2026 votado el 2-oct con el no de PP, Vox y Junts; el BOE aún no publica la resolución. Si se deroga: revisar las calculadoras que lo citan (irpf-alquilar [DT 38.ª y reducciones 60/70/90 %], retención/despido/venta-vivienda como «no modelado», cita de art. 95 ter). Comprobar BOE en c45-c46.
 - 5h 47 % (reset 13:40Z), semanal 46 %, extra 0,55 €.
 - Siguiente (c45): comprobar estado BOE del RDL 26/2026; 1-2 fiscales (baja-medica, incapacidad permanente) + 1 no fiscal con demanda (secadora o tendedero).
+
+## Ciclo 45 cerrado
+- Publicadas: baja-medica-cuanto-cobro-incapacidad-temporal (Opus: 5 cambios; base reguladora literal en Decreto 1646/1972 art. 13; >545 días = prolongación de efectos 174.5), radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta y secadora-o-tendedero-coste-por-lavado (primeras con `demanda:` del Estratega, 19/20). 96 calculadoras.
+- RDL 26/2026: convalidación votada el 2-oct (PP, Vox y Junts en contra); resultado NO confirmado, sin resolución en BOE. Ver journal/rdl-26-2026-estado.md. Reconsultar en c46-c47; si se deroga: revisar irpf-alquilar-vivienda-rendimiento-neto (DT 38.ª y 60/70/90 %), venta-vivienda (art. 41 bis.3), notas «R» de otras fiscales y /tablas-2026/.
+- 5h 51 % (reset 13:40Z), semanal 46 %, extra 0,55 €.
+- Fiscales pendientes: incapacidad-permanente, paro-autonomos-cese, ayuda-alquiler-joven (RD 326/2026), empleada-hogar, jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad. No fiscales con demanda: freidora de aire u horno, cuánto cuesta un bebé.
+- Siguiente (c46): reconsultar RDL 26/2026 + 1-2 fiscales (incapacidad-permanente, empleada-hogar) + 1 no fiscal con demanda; metrics.
