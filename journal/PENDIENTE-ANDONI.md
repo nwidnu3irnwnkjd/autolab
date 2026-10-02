@@ -1,13 +1,11 @@
 # Pendiente de Andoni (cosas que los agentes no pueden hacer)
 
-## LO PRIMERO: 5 cosas que solo tú puedes hacer para que Google y las IAs nos encuentren (actualizado 2-oct, c24)
-Situación: la web está bien hecha y abierta a los buscadores (revisado hoy desde fuera, sin errores), pero Google aún no ha entrado ni una vez: nadie nos enlaza y nadie le ha avisado a mano. Por orden de impacto:
-1. **Pedir a Google que entre (5 min, efecto en 1-3 días).** search.google.com/search-console → propiedad entremuchos.com → barra de arriba «Inspeccionar URL» → pega `https://entremuchos.com/` → «Solicitar indexación». Repite con `/decidir/`, `/hipoteca/`, `/ahorro/` y `/barometro/` (unas 10 al día como máximo). Es lo que más adelanta la primera visita de Google.
-2. **Un enlace desde algo tuyo público (5 min, efecto en días).** Pon `https://entremuchos.com` en tu perfil de LinkedIn (sección «Sitio web») o en un post, o en tu GitHub. Hoy no nos enlaza nadie, y los enlaces son el camino principal por el que Google descubre webs nuevas.
-3. **Dar de alta Bing (2 min, efecto en 2-7 días).** bing.com/webmasters → entra con la cuenta del dominio → «Importar desde Google Search Console». Bing alimenta a Copilot y a parte de ChatGPT, y es el único sitio que nos dirá si una IA nos cita.
-4. **Añadir el «feed» en Search Console (1 min).** Menú izquierdo «Sitemaps» → escribe `feed.xml` → «Enviar». Avisa a Google de cada novedad (ya se lo indicamos también en el archivo para robots, así que esto es un refuerzo).
-5. **Arreglar «www» (5 min, poco impacto en Google, evita un aviso de «web no segura»).** Quien escriba `https://www.entremuchos.com` ve hoy un error de certificado. En el panel de DNS del dominio, cambia el registro `www` para que apunte a `nwidnu3irnwnkjd.github.io` (en vez de a entremuchos.com); GitHub pone el certificado solo en unas horas.
-Qué esperar: con 1-3 hechos, primeras páginas en Google en 1-2 semanas y primeras búsquedas con nosotros en 4-8 semanas (finales de octubre a finales de noviembre). Sin ellos, puede tardar bastante más. Si el 15-oct Google sigue sin haber entrado, lo revisamos juntos.
+## LO PRIMERO (2-oct, c56): Google aún no ha leído ni el sitemap (enviado hace 21 h); solo tú puedes desbloquearlo
+1. **Search Console → «Inspeccionar URL»** → `https://entremuchos.com/` → «Probar URL publicada» (confirma que Google puede leerla) → «Solicitar indexación»; repite con `/todas/`, `/decidir/`, `/barometro/` y `/guias/` (5 min).
+2. **Un enlace desde algo tuyo ya visible**: web en tu perfil de LinkedIn o GitHub, o un post con el enlace (5 min). Hoy nos enlaza 0 webs: es la vía principal por la que Google y Bing descubren sitios nuevos.
+3. **Bing**: bing.com/webmasters → «Importar desde Google Search Console» (2 min). Bing alimenta a Copilot y a ChatGPT; hoy `site:entremuchos.com` da 0.
+4. **Search Console → Configuración → Usuarios → añadir `autolab-reader@entre-muchos-510320.iam.gserviceaccount.com` como «Completo»** (1 min): así enviamos nosotros el feed y los sitemaps nuevos y leemos las estadísticas de rastreo sin pedírtelo más.
+5. **¿Nos dejas poner descripción, web y temas en el repo público de GitHub?** Responde «sí» (lo hacemos nosotros; es un enlace más desde un sitio que Google visita a diario).
 
 ## Hecho
 - Repo GitHub `nwidnu3irnwnkjd/autolab`, token con acceso, GitHub Pages activo, dominio entremuchos.com con DNS correctas, hola@entremuchos.com creado. Online desde el 2026-10-01.
@@ -19,6 +17,7 @@ Qué esperar: con 1-3 hechos, primeras páginas en Google en 1-2 semanas y prime
 4. **Regenerar el token** más adelante (se pegó en el chat) y pasarme el nuevo.
 
 ## Más adelante
+- Arreglar «www» (5 min, poco impacto en Google): en el DNS, registro `www` → `nwidnu3irnwnkjd.github.io` (hoy da error de certificado).
 - AdSense cuando haya >20–30 páginas y algo de tráfico. Afiliación (Awin/Tradedoubler) cuando haya tráfico medible.
 
 ## Posicionamiento en IAs y buscadores (2 minutos, cuando puedas)

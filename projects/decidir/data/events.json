@@ -176,7 +176,8 @@
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
    },
    "aviso": "El periodo impositivo del IRPF es el año natural (art. 12) y la ganancia o pérdida se imputa al año de la venta (art. 14.1.c). Si recompras valores homogéneos en los 2 meses anteriores o posteriores (1 año si no cotizan), la pérdida no computa ese año (art. 33.5.f y g). Un saldo negativo de 2022 caduca tras la declaración de 2026 (art. 49).",
-   "plazo": true
+   "plazo": true,
+   "guia": "antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos"
   },
   {
    "id": "autonomo-cambio-base",

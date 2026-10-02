@@ -1,4 +1,4 @@
-# Equipo de agentes (mantiene el Mejorador del equipo) · v3.5 2026-10-02T13:35Z (ciclo 48; v3.4 2026-10-02T10:20Z c40; v3.3 2026-10-02T07:40Z c32; v3.2 2026-10-02T05:20Z c24; v3.1 2026-10-02T02:30Z c16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
+# Equipo de agentes (mantiene el Mejorador del equipo) · v3.6 2026-10-02T17:30Z (ciclo 56, fase TRÁFICO; v3.5 2026-10-02T13:35Z c48; v3.4 2026-10-02T10:20Z c40; v3.3 2026-10-02T07:40Z c32; v3.2 2026-10-02T05:20Z c24; v3.1 2026-10-02T02:30Z c16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
 
 | Rol | Modelo | Frecuencia | Propiedad |
 |---|---|---|---|
@@ -202,6 +202,22 @@ Fuentes: `git log` (c39 10:04Z … c47 13:23Z), costes.md, línea VEREDICTO de l
 - c40.2 línea S: **NO cumple** (5,1 cambios, 5/8 críticos). T y R bajan a ~0; S y N siguen porque son lectura de cada letra del artículo, que el Constructor no hace bien. No se reactiva el Lector (0 de 9 lanzamientos) ni se añade un 2.º Opus: el Opus caza el 100 % y el coste del crítico es una reverif (~75k ≈ 0,05 pp). Se refuerza N por letra (c48.3) y se cambia la métrica a «0 críticos publicados» + críticos N ≤ 1 de 4.
 - c40.3 `qa_static --fiscal`: **CUMPLIDO**. c40.4 pp: **subestimados otra vez** (0,50 → 0,85 real) → c48.1. c40.5 rutas QA: 0 fallos. c40.6 dato propio: /tablas-2026/trabajo-prestaciones (c42) = 2 de 3; brief proyecto 2: post-sprint (sin cambios).
 
+## Rendimiento medido (pasada 8, ciclos 49-55, fase TRÁFICO; medido 2026-10-02T17:20Z al inicio de c56)
+Fuentes: costes.md (c49 14:12Z 49 % → c55 17:05Z 54 %), `git log`, `usage` de la transcripción del Orquestador, API de Search Console (sitemaps + inspección), curl a Bing.
+| Métrica | c40-c47 | c49-c55 | Lectura |
+|---|---|---|---|
+| Ciclos/h | 2,4 | **2,1** (7 en 2 h 53 min) | — |
+| Semanal | 0,86-1,0 pp/ciclo | **0,83 pp/ciclo** (5 pp/6); 5h +25 pp (≈ 5:1 con el semanal) | igual que con fiscal: el coste no lo ponen los agentes |
+| 5h por ciclo | — | c50-c52 +3; c53 (3 Constructores + Opus) +4; **c54 (Diseñador + Vigilante) +7; c55 (solo Diseñador) +5** | un ciclo de 1 rol cuesta como uno completo |
+| Contexto del Orquestador | ~500k (c40) | **878k** a las 17:00Z; ~38 turnos/ciclo; **~30M tokens de entrada (caché) por ciclo**, 61M en la hora 16Z | **causa principal del coste y riesgo de corte a 1M** |
+| Entregas | 8 fiscales + 5 no fiscales | /todas/, sitemaps, home, 40 titles, 130 OG, Compartir, .ics, 102 embeds, 3 planes, 2 guías, kit de prensa, kpis.py, RDL derogado (3 re-verificadas + 10 notas) | plan semana 1 casi completo en 6 ciclos |
+| Descubrimiento | 0 | **0/12 conocidas; sitemap.xml enviado 1-oct 20:23Z «isPending» (Google no lo ha leído en 21 h), robots.txt nunca leído; feed.xml no enviado; Bing `site:` 0** | sin enlaces externos ni inspección manual, nada de lo hecho se ve |
+| Permiso de la cuenta de servicio en GSC | — | **siteRestrictedUser** (no puede enviar sitemaps ni pedir indexación) | propiedad de dominio `sc-domain:` correcta |
+- **Proyección al reset (2026-10-06T15:00Z, 93,7 h)** desde 54 %. *Sin cambios* (600 s hasta 21:00Z, ~1,7 pp/h): ~60 % a las 21:00Z, luego 0,20 pp/h; si se olvidara el cambio, 85 % el 3-oct ~11:00Z (pausa). *Con c56* (presupuesto ya, 0,85 pp/ciclo): permitido (78 − 54) ÷ 93,7 = **0,256 pp/h → 1 ciclo cada ~3,3 h (~7/día)**; 70 % hacia el **5-oct ~07:00Z**, ahorro hasta **76-78 %** en el reset, 0 h de pausa. Si el contexto baja de 300k (T27), el ciclo ligero cae a ~0,35 y caben ~12 ciclos/día. La semana 2 del plan (10-16 oct) arranca con semanal nuevo: ahí va el gasto de amplificar.
+### Evaluación de c48.1-5 (revisión programada c56)
+- c48.1 cadencia: **CUMPLE** la trayectoria (54 % a 93 h del reset) pero el supuesto 0,30 del ciclo de mantenimiento **ya no vale** (c54-c55 ≈ 0,9-1,2): el contexto del Orquestador se come la diferencia → c56.1 y T27.
+- c48.2 alternancia fiscal/mantenimiento: sustituida por la fase TRÁFICO (c49) → alternancia tráfico completo / ligero (c56.1). c48.3 línea N: 1 fiscal en c49-c55 (lotería, sin críticos publicados): sin datos suficientes, se mantiene. c48.4 Vigilante: **CUMPLE** (derogación del RDL 26/2026 detectada y aplicada en 1 ciclo, c53). c48.5 orden de retorno: superado por PLAN-TRAFICO.
+
 ## Registro de cambios
 - 2026-10-01: equipo v1 creado (6 roles + Estratega SEO/GEO + Mejorador del equipo). Cadencia 20 min, tope 400 EUR extra y 100 EUR/día.
 - 2026-10-01 (v2, Mejorador pasada 1). Cada cambio, con la métrica que debe moverse:
@@ -278,3 +294,8 @@ Fuentes: `git log` (c39 10:04Z … c47 13:23Z), costes.md, línea VEREDICTO de l
   - Rechazados: reactivar el Lector de norma (0 de 9 lanzamientos; el Opus caza el 100 %); arrancar el proyecto 2 (0 señal del 1); seguir a 120 s (las 90 h post-sprint se quedarían con 1 fiscal cada 4,5 h); bajar el umbral de peso (la página real pesa ~22 KB gzip: R48.3).
 - qa_static (R48.3): mide el peso gzip-6 cargado de cada página; AVISO si > 30 KB, el aviso raw > 60 KB es ahora INFO (no cuenta en el total de AVISO) y el BLOQUEANTE de 90 KB raw se mantiene.
 - ops/kpis.py (c50): `python3 ops/kpis.py` añade una fila por hora a journal/kpis.md (URLs en sitemap, 12 URLs de muestra conocidas por Google, GSC y GA4 7 d, eventos share/calc/calendar/asistente, top 5, tendencia ↑↓=); lo lanza close_cycle.sh antes del deploy como paso informativo. Éxito semana 2: ≥ 50 URLs conocidas/indexadas + primeras impresiones. Falla de API = n/d.
+- 2026-10-02T17:30Z (v3.6, Mejorador pasada 8, ciclo 56, fase TRÁFICO). Cada cambio con su métrica (revisión: c64 o el 6-oct 15:00Z tras el reset, lo que llegue antes):
+  - c56.1 loop-prompt, solo cadencia: **sprint cerrado ya**, cadencia de presupuesto con **0,85 pp/ciclo** para cualquier ciclo hasta que el contexto del Orquestador baje de 300k (después 0,80 completo / 0,35 ligero); alternancia **tráfico completo / tráfico ligero**; ≤ 15 turnos del Orquestador por ciclo. Métrica: semanal 75-80 % en el reset, 0 h de pausa; turnos/ciclo 38 → ≤ 15.
+  - c56.2 Orquestador: **handoff y contexto limpio** (T27): ESTADO.md ≤ 25 líneas (R48.4, abierta desde c48) + journal del día bastan para reanudar; reanudar el bucle en una sesión nueva o tras /compact cuando el contexto pase de 900k. Métrica: contexto al inicio de ciclo ≤ 300k; 5h por ciclo ligero ≤ +2 pp.
+  - c56.3 Prioridad de tráfico (ver ideas-equipo pasada 8): 1.º descubrimiento externo (Andoni: inspección manual, enlace propio, Bing, permiso «Completo» en GSC para la cuenta de servicio); 2.º lo nuestro barato (README y descripción del repo público con enlace, calendario editorial de actualidad, GEO de párrafos citables); 3.º no hacer más escaparate hasta que haya rastreo. Métrica: «Conocidas» ≥ 1/12 el 6-oct y ≥ 12/12 el 16-oct; sitemap «isPending» → leído.
+  - Rechazados: directorios abiertos sin cuenta (enlaces de baja calidad, riesgo de spam, Google los ignora); Wikipedia/Wikidata (autopromoción, prohibida por sus normas); datos.gob.es (solo publicadores del sector público; la sección de reutilizadores pide alta de Andoni y aporta poco: queda como opcional); PR a awesome-lists desde la cuenta de Andoni sin su permiso; más Core Web Vitals (HTML ~22 KB gzip, TTFB 0,2 s en GitHub Pages y sin datos de campo CrUX hasta que haya tráfico).

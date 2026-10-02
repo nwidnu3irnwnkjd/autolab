@@ -361,6 +361,7 @@ HUBS = {
             "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": {
                 "name": "Vender con pérdidas antes de fin de año",
                 "text": "Las pérdidas de ventas de acciones o fondos compensan ganancias del mismo año en la base del ahorro, pero recomprar pronto puede bloquear la pérdida. La calculadora da cuánto IRPF ahorras en 2026 con tus datos.",
+                "guia": "antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos",  # c56
             },
             "loteria-navidad-premio-neto-hacienda": {
                 "name": "Premio de lotería",
@@ -370,6 +371,7 @@ HUBS = {
             "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
                 "name": "Donativos",
                 "text": "La deducción estatal es del 80 % de los primeros 250 € y del 40 % del resto, con un tope del 10 % de la base liquidable, y siempre te cuesta algo de dinero. La calculadora da lo que te cuesta de verdad donar.",
+                "guia": "antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos",  # c56
             },
             "declaracion-conjunta-o-individual": {
                 "name": "Declaración conjunta o individual",

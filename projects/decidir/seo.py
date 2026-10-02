@@ -153,7 +153,7 @@ def guide_page(g, calcs, card, base):
 {calc_block}
 </article>"""
     url = f"{base}/guias/{g['slug']}/"
-    jsonld = [article(g["h1"], g["description"], url, g["published"], g["modified"], base),
+    jsonld = [dict(article(g["h1"], g["description"], url, g["published"], g["modified"], base), speakable=SPEAKABLE),  # c56
               breadcrumbs(base, [("Inicio", "/"), ("Guías", "/guias/"), (g["h1"], None)])]
     if g.get("faq"):  # opcional en el meta: [[pregunta, respuesta], ...]; cada respuesta repite cifras ya presentes en el cuerpo
         jsonld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -166,6 +166,8 @@ def guides_index(guides):
 
 
 # ---------- JSON-LD ----------
+SPEAKABLE = {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".lead"]}  # c56: titular y respuesta corta, para asistentes de voz e IAs
+
 def org(base):
     return {"@type": "Organization", "@id": base + "/#org", "name": "Entre Muchos", "url": base + "/",
             "logo": base + "/assets/og.png", "email": "hola@entremuchos.com"}
@@ -189,7 +191,7 @@ def webapp(c, base, mod):
 
 def calc_jsonld(c, base, params):
     url = f"{base}/decidir/{c['slug']}/"
-    out = [article(c["h1"], c["description"], url, published(*calc_files(c["slug"])), calc_lastmod(c["slug"], params), base)]
+    out = [dict(article(c["h1"], c["description"], url, published(*calc_files(c["slug"])), calc_lastmod(c["slug"], params), base), speakable=SPEAKABLE)]  # c56
     if c.get("howto"):  # opcional: lista de pasos en el JSON de la calculadora
         out.append({"@context": "https://schema.org", "@type": "HowTo", "name": c["h1"], "step": [
             {"@type": "HowToStep", "position": i + 1, "text": s} for i, s in enumerate(c["howto"])]})
@@ -218,6 +220,18 @@ def html_to_md(h, base):
     h = re.sub(r"[ \t]+", " ", h); h = re.sub(r"\n\s*\n\s*\n+", "\n\n", h)
     return "\n".join(l.strip() for l in h.splitlines()).strip()
 
+_SPL = re.compile(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿¡])")
+def _respuesta(c, base):
+    """c56 GEO: frase citable del lead (texto plano); si la primera no lleva cifra, añade la primera que la lleve."""
+    t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", html_to_md(c.get("lead") or c.get("veredicto") or "", base)).replace("**", "")
+    fr = [f.strip() for f in _SPL.split(" ".join(t.split())) if f.strip()]
+    if not fr: return c["description"]
+    out = fr[0]
+    if not re.search(r"\d", out):
+        ej = next((f for f in fr[1:] if re.search(r"\d", f)), "")
+        if ej: out += " Ejemplo de la página: " + ej
+    return out
+
 def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), hubs=(), tablas=(), tablas_md=""):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
@@ -227,20 +241,32 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
             f"Metodología: {base}/como-funciona/ · Política de IA: {base}/politica-ia/\n")
     by_t = {}
     for c in calcs: by_t.setdefault(tema(c), []).append(c)
+    mods = {c["slug"]: calc_lastmod(c["slug"], params) for c in calcs}
     lines = [head]
     for t, cs in by_t.items():
         lines.append(f"\n## Calculadoras: {icons[t][0]}\n")
-        lines += [f"- [{c['h1']}]({base}/decidir/{c['slug']}/): {c['description']}" for c in cs]
+        # c56 GEO: respuesta citable (1.ª frase del lead y, si no trae cifra, la primera frase con el ejemplo de la página) + fecha de revisión
+        lines += [f"- [{c['h1']}]({base}/decidir/{c['slug']}/): {c['description']} Respuesta: {_respuesta(c, base)} (revisado el {mods[c['slug']]})" for c in cs]
     if hubs:
         lines.append("\n## Temas (mapas de decisión)\n")
         lines += [f"- [{h['h1']}]({base}{h['path']}): {h['description']}" for h in hubs]
     if guides:
         lines.append("\n## Guías\n")
-        lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']}" for g in guides]
+        lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']} (revisada el {g['modified']})" for g in guides]
     lines.append(f"\n## Calendario\n\n- [Calendario de decisiones]({base}/calendario/): fechas que mueven una decisión de dinero (revisión de la TUR de gas, Euríbor mensual, cambio de hora, Black Friday, retribución flexible, cierre del IRPF y ventas con pérdidas, cambio de base y regularización de autónomos, renuncia a módulos, Renta, y lo pendiente de norma: SMI, IPREM y pensiones de 2027) con su fuente oficial.")
     if notes:
         lines.append("\n## Actualidad\n")
         lines += [f"- [{n['h1']}]({base}/actualidad/{n['slug']}/): {n['description']}" for n in notes[:10]]
+    if extra or tablas:  # c56: datos abiertos descargables, con licencia
+        lines.append(f"\n## Datos abiertos (descarga directa)\n\n"
+                     f"- Barómetro Entre Muchos (mensual): CSV {base}/barometro/datos.csv · JSON {base}/barometro/datos.json · licencia CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.es).\n"
+                     f"- Tablas 2026 (cifras oficiales con su fuente en cada fila y columnas de cálculo propio): JSON con todas {base}/tablas-2026/datos.json y un CSV por tabla en <URL de la tabla>datos.csv (lista abajo) · licencia de los cálculos propios CC BY 4.0; las cifras oficiales se citan con su fuente original.\n"
+                     f"- Calendario de decisiones con fechas y fuente: {base}/calendario/ · Qué cambia el 1 de enero de 2027: {base}/que-cambia-1-enero-2027/")
+        lines.append(f"\n## Cómo citar\n\n"
+                     f"- Formato: Entre Muchos, «<título de la página>», datos del <fecha de revisión que figura en la página>, <URL de la página> (CC BY 4.0 en Barómetro y tablas).\n"
+                     f"- Ejemplo: Entre Muchos, «Barómetro Entre Muchos», datos del {params.get('fecha', TODAY)}, {base}/barometro/ (CC BY 4.0).\n"
+                     f"- Cita la página concreta y su fecha (las cifras de mercado cambian cada mes); los resultados de una calculadora dependen de los datos introducidos: cita el ejemplo de la página, no lo presentes como dato oficial ni como asesoramiento. Las cifras oficiales (BOE, BCE, INE, MITECO, REData) se citan con su fuente, enlazada en cada página.\n"
+                     f"- Contacto para correcciones: hola@entremuchos.com")
     if extra:  # Barómetro: datos propios fechados
         lines.append("\n## Datos propios\n")
         lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json · CSV: {base}/barometro/datos.csv · Licencia de las cifras propias: CC BY 4.0 (cita «Barómetro Entre Muchos» y la fecha de los datos).")
@@ -252,7 +278,7 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
                  f"- [Feed Atom]({base}{FEED_PATH}): notas de actualidad, guías y Barómetro mensual con su fecha.\n")
     open(os.path.join(dist, "llms.txt"), "w").write("\n".join(lines))
 
-    full = [head]
+    full = [head + f"\nCómo citar: Entre Muchos, «<título>», datos del <fecha de revisión>, <URL> · Barómetro y tablas 2026: CC BY 4.0 · Datos abiertos y formato completo: {base}/llms.txt\n"]
     if hubs:  # c48: índice de temas también en llms-full (antes solo en llms.txt)
         full.append("\n## Temas (mapas de decisión)\n\n" + "\n".join(f"- [{h['h1']}]({base}{h['path']})" for h in hubs)
                     + f"\n- [Calendario de decisiones]({base}/calendario/) · [Actualidad]({base}/actualidad/) · [Índice corto]({base}/llms.txt)\n")
