@@ -152,3 +152,9 @@ Regresión detectada: la cabecera (logo + Calculadoras/Todas/Guías) y la píldo
 
 ## 2026-10-03 · Vigilante de normas (c53, seguimiento)
 - [x] R53.1 [Vigilante -> Constructor] data/params.json · claves `permiso_nacimiento_2026` ("el RDL 26/2026 solo cambia la letra ñ)", en presente) e `incapacidad_permanente_2026` ("el RDL 26/2026 toca otra letra del art. 7") hablan del RDL 26/2026 como si estuviera vigente: reescribir en pasado («derogado el 2-10-2026, BOE-A-2026-20526; sin efecto sobre la letra u)/f)») sin tocar cifras. El resto de claves (alquiler_irpf, venta_vivienda, compensar_perdidas, traspasar_fondo) ya lo dan por derogado. · abierta c53
+
+## 2026-10-03 · Constructor (plan alquiler)
+- [x] R54.1 [Constructor -> Orquestador/Diseñador] build.py línea ~132 · el plan `alquilar-vivienda` (data/planes.json) ya se genera y entra en /todas/ y sitemap, pero el enlace desde el hub /hipoteca/ está fijo en build.py: cambiar `["compra-vivienda"] if k == "hipoteca"` por `["compra-vivienda", "alquilar-vivienda"]`. Además `og=` usa og-impuestos.png para este plan (debería ser og-hipoteca.png). Nota: no existe calculadora «cuánto alquiler puedo pagar»; el plan tiene 3 pasos (alquilar-o-comprar, fianza, actualización) + guía en el lead · abierta
+
+## 2026-10-02 · Constructor (paga extra de Navidad)
+- [x] R58.1 [Constructor -> Estratega] hubs.py (hub `impuestos`, grupo «Si cambia tu situación laboral» o «Navidad y Hacienda») · añadir el paso `paga-extra-navidad-cuanto-cobro-neto` (name «Paga extra de Navidad», text: «Entera si trabajaste todo el periodo de devengo; proporcional a los días si entraste o te vas; el neto es la bruta menos la retención de tu nómina. La calculadora da días, bruta y neto.», guía opcional: subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas). La calculadora ya está publicada con `tema: impuestos`; el backlog la pide en el hub /trabajo/, que aún no existe en hubs.py. Pico 15-nov a 22-dic. · abierta c58

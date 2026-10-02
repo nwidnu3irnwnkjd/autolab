@@ -1,0 +1,29 @@
+# Verificación · gastos-alquiler-quien-paga · 2026-10-02 (Verificador fiscal, Opus)
+VEREDICTO: PUBLICABLE CON CAMBIOS · T 0 · 8 0 · N 1 (crítico) · R 0 · S 1 · otros 5
+Paso 0 (lectura propia vs INTERPRETACION): coincide en todo salvo un punto: el 20.2 dice «sólo podrá incrementarse, **por acuerdo de las partes**». El oráculo y el JS dan por debida cualquier subida hasta 2×s (la tratan como «la ley te obliga»); sin acuerdo ni cláusula de revisión, dentro de 5/7 años la suma no sube. Cambia cifra para quien no aceptó la subida.
+Norma leída hoy (API BOE consolidada, versión BOE-A-2026-20526 de 2/10/2026): LAU arts. 4.2, 6, 9.1, 17.6, 17.7, 18.1, 20, 21; DA 11.ª LAU (IRAV, «límite de referencia a los efectos del artículo 18»); DT 4.ª Ley 12/2023 (diario). Oráculo Constructor re-ejecutado: 810 casos, 0 discrepancias.
+
+## Dudas del Constructor
+1. Revisión automática dentro del pacto: SÍ entra en el tope. Es el «acuerdo» del 20.2 hecho por anticipado, pero el tope es imperativo (art. 6: nula en lo que exceda en perjuicio del inquilino). Supuesto del Constructor correcto para ese caso; falta el caso contrario (sin cláusula ni aceptación → 0 % dentro de 5/7 años).
+2. 5/7 años: desde la **vigencia** del contrato, no desde la duración pactada. Cuentan desde la fecha del contrato o la entrega de la vivienda si fue posterior (art. 9.1), y las prórrogas obligatorias y tácitas son vigencia del mismo contrato. Coincide con el Constructor, pero la `ayuda` del input `tramo` («sin prórrogas tácitas anteriores a esa fecha») es confusa: corregir (cambio 4).
+3. Seguro dentro de comunidad: si va en la cuota de comunidad, es gasto general no tributario → forma parte de la «suma» del 20.2 y del tope (bien sumarlo en `comunidad`). El seguro propio del casero NO es «no repercutible» por ley: si el pacto escrito lo traslada con importe, es una carga del 20.1 y entra en la misma suma topada. La página afirma lo contrario (cambio 5).
+4. Base del tope «doble»: el % se aplica a la **suma** de lo repercutido sin tributos (no partida a partida), cada año sobre lo del año anterior. s = % en que **puede** subir la renta según el art. 18.1 (cláusula del contrato, tope IPC «en todo caso») + DA 11.ª (IRAV, contratos desde 26-5-2023), no la subida que se aplicó de hecho. El JS lo aplica bien a `comunidad` (única partida no tributaria). IRAV 2,47 % por defecto coherente con el ámbito (solo contratos desde 26-5-2023). Sin cláusula de actualización s = 0 (supuesto (a), literal y declarado: defendible).
+
+## Cambios obligatorios
+| # | Clase | Archivo | Qué | Por qué / norma |
+|---|---|---|---|---|
+| 1 | N crítico | json, js, html, test.json | Input nuevo `acuerdo` (select): «¿Tu contrato prevé cómo sube la cuota o aceptaste la subida?» sí (default) / no. Con `no` y `tramo=dentro`: pctLegal = 0 (comunidadLegal = comunidad). Con `fuera` no cambia. Nota JS y «Cómo se calcula»: «solo si lo aceptas o lo prevé tu contrato». Casos A1-A2 de ops/verif/gastos-alquiler-quien-paga.py a test.json | 20.2 «por acuerdo de las partes» |
+| 2 | S | json lead/veredicto, html lead, FAQ 3 | «la comunidad solo puede subir hasta el doble que la renta» → «la comunidad solo puede subir si lo acordáis y nunca más del doble del % en que pueda subir la renta». La frase actual se lee como doble del importe y omite el acuerdo | 20.2 literal |
+| 3 | otros (texto ≤ cálculo) | json lead/veredicto, html lead, js verdict/bigLabel | «te repercuten 1.660 € al año» y «puedes rechazar 530,36 € al año»: los 500 € de honorarios se pagan una vez. Usar «este año» o desglosar «1.160 € de gastos anuales + 500 € de honorarios (pago único)»; bigLabel «que puedes rechazar este año» | 20.1 (honorarios = gasto de formalización, no periódico) |
+| 4 | otros (redacción) | json `tramo.ayuda` | → «Cuenta desde la fecha del contrato (o desde que te entregaron la vivienda, si fue después), con sus prórrogas incluidas (art. 9.1)» | 20.2 «años de vigencia» + 9.1 |
+| 5 | otros (absoluto) | html «Qué no incluye»; js nota; json ayuda `comunidad` | Quitar «el seguro de hogar del propio casero (se trata como gasto no repercutible…)». Poner: «Si el contrato te traslada por escrito y con importe otro gasto general que no sea un tributo (por ejemplo, el seguro), súmalo a la comunidad: el tope se aplica a la suma» | 20.1 «cargas y responsabilidades» + 20.2 «la suma» |
+| 6 | otros (patrón 4, citas) | html (Quién paga y lead), json FAQ 2/5, js nota | (a) «7 si el casero es una empresa» → «persona jurídica (una sociedad)»: un autónomo es persona física (5 años); (b) art. 21.1: añadir «salvo que el daño sea imputable al inquilino»; (c) art. 4.2: «renta **inicial** anual» y «alquiler de la vivienda completa» | 20.2/9.1; 21.1; 4.2 literal |
+
+## Citas por muestreo (3)
+art. 20.1 pacto escrito con importe anual · literal OK · art. 17.6 zona tensionada · literal OK · art. 21.1 · falta la salvedad (cambio 6b). Art. 4.2 incompleto (6c).
+## Revisado sin cambios
+DT 1.ª RDL 7/2019 y DT 4.ª Ley 12/2023 (texto ap. 1 coincide), RDL 26/2026 sin efecto en 17, 18, 20, 21 (consolidado), 17.7 (precio de referencia del gran tenedor: no toca gastos, no hace falta citarlo), tributos fuera del tope, pacto sin importe = inválido para todas las partidas, gestión del arrendador sea pf o pj, art. 20.3 «en todo caso» (literal), tasa de basuras = tributo (declarado).
+## Casos nuevos para test.json
+A1 (V(acuerdo="no") → comunidadLegal 600, tuCargo 1.100, rechazable 560), A2 (acuerdo no, pedida 3 % → rechazable 518), A3 (acuerdo no, fuera → igual que el ejemplo «fuera»). Script: ops/verif/gastos-alquiler-quien-paga.py (hoy 2 discrepancias esperadas: A1, A2, hasta aplicar el cambio 1). El oráculo del Constructor también debe recibir `acuerdo`.
+## Re-verificación
+Sonnet: ejecutar ops/verif/gastos-alquiler-quien-paga.py y el oráculo del Constructor (ambos a 0) y releer las frases de los cambios 2-6. Sin 2.ª pasada Opus: la interpretación ya queda fijada aquí.

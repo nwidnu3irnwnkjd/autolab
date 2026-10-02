@@ -28,7 +28,7 @@ HUBS = {
         "groups": [
             ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
-            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc"]),
+            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc", "gastos-alquiler-quien-paga"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
@@ -39,6 +39,10 @@ HUBS = {
             "actualizacion-renta-alquiler-irav-ipc": {
                 "name": "Actualización de la renta",
                 "text": "La subida anual solo puede aplicar el índice que dice la ley (IRAV o IPC según la fecha del contrato). La calculadora da la renta nueva y cuánto te sobra si te piden más.",
+            },
+            "gastos-alquiler-quien-paga": {
+                "name": "Gastos del alquiler: quién paga",
+                "text": "Comunidad, IBI o basuras solo son del inquilino si el pacto consta por escrito y con importe anual; los honorarios de agencia son del casero. La calculadora da lo que te toca pagar y lo que puedes rechazar.",
             },
             "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
                 "name": "Plazo: 20, 25 o 30 años",
@@ -267,7 +271,7 @@ HUBS = {
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos", "paro-autonomos-cese-actividad-cuanto-cobro"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
-            ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda"]),
+            ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda", "paga-extra-navidad-cuanto-cobro-neto"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
@@ -371,6 +375,10 @@ HUBS = {
                 "name": "Vender con pérdidas antes de fin de año",
                 "text": "Las pérdidas de ventas de acciones o fondos compensan ganancias del mismo año en la base del ahorro, pero recomprar pronto puede bloquear la pérdida. La calculadora da cuánto IRPF ahorras en 2026 con tus datos.",
                 "guia": "antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos",  # c56
+            },
+            "paga-extra-navidad-cuanto-cobro-neto": {
+                "name": "Paga extra de Navidad",
+                "text": "Entera si trabajaste todo el periodo de devengo; proporcional a los días si entraste o te vas; el neto es la bruta menos la retención de tu nómina. La calculadora da días, bruta y neto.",
             },
             "loteria-navidad-premio-neto-hacienda": {
                 "name": "Premio de lotería",

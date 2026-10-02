@@ -249,6 +249,11 @@
   "coche-propio-o-carsharing-o-vtc",
   "tren-avion-o-coche"
  ],
+ "gastos-alquiler-quien-paga": [
+  "fianza-y-garantias-adicionales-alquiler",
+  "actualizacion-renta-alquiler-irav-ipc",
+  "alquilar-o-comprar"
+ ],
  "gimnasio-o-entrenar-en-casa": [
   "suscripciones-cuanto-gasto-al-ano",
   "comprar-o-alquilar-herramienta",
@@ -358,6 +363,11 @@
   "declaracion-conjunta-o-individual",
   "retencion-irpf-nomina-subir-o-no",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+ ],
+ "paga-extra-navidad-cuanto-cobro-neto": [
+  "finiquito-baja-voluntaria-vacaciones-preaviso",
+  "retencion-irpf-nomina-subir-o-no",
+  "comparar-ofertas-de-trabajo-neto-real"
  ],
  "paro-autonomos-cese-actividad-cuanto-cobro": [
   "cuota-autonomos-ingresos-reales-regularizacion",

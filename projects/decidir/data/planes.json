@@ -269,5 +269,86 @@
     "No. Son herramientas orientativas con hipótesis editables. Si la decisión es grande, contrasta el resultado con la normativa oficial o con un profesional."
    ]
   ]
+ },
+ "alquilar-vivienda": {
+  "path": "/plan/alquilar-vivienda/",
+  "name": "Plan completo: alquilar una vivienda",
+  "short": "Plan de alquiler",
+  "h1": "Plan para alquilar una vivienda: de decidir a revisar la subida de renta",
+  "title": "Plan para alquilar vivienda: 3 calculadoras en orden",
+  "description": "Alquilar o comprar, qué fianza y garantías te pueden pedir y si te suben bien la renta (IRAV o IPC): tres calculadoras encadenadas y una guía de cláusulas.",
+  "lead": "<strong>Respuesta corta:</strong> alquilar bien se decide en tres pasos: primero si te compensa alquilar frente a comprar, después qué fianza, garantías y adelantos te pueden pedir en el contrato y, ya con él firmado, si la subida de renta que te notifican es la que corresponde (IRAV o IPC según lo que diga tu contrato). Las calculadoras van encadenadas: la renta mensual que escribes en una se lleva a la siguiente. Para firmar con tranquilidad, lee también la guía de <a href=\"/guias/clausulas-contrato-alquiler/\">cláusulas del contrato de alquiler</a>. Los cálculos se hacen en tu navegador.",
+  "kicker": "Plan · Alquiler y vivienda",
+  "parent": [
+   "/hipoteca/",
+   "Hipotecas"
+  ],
+  "n_txt": "tres",
+  "dir_k": "plan completo alquilar vivienda alquiler fianza garantías subida renta irav ipc contrato paso a paso",
+  "hub_txt": "tres calculadoras encadenadas para alquilar una vivienda, de la decisión a la subida de renta.",
+  "steps": [
+   {
+    "slug": "alquilar-o-comprar",
+    "name": "Alquilar o comprar",
+    "short": "Alquilar o comprar",
+    "text": "Antes de firmar un alquiler, comprueba si te compensa frente a comprar. Depende de cuántos años te quedes, de cómo evolucione el precio de la vivienda y de qué harías con el dinero de la entrada. Compara el patrimonio de cada opción con tus propias hipótesis."
+   },
+   {
+    "slug": "fianza-y-garantias-adicionales-alquiler",
+    "name": "Fianza y garantías del contrato",
+    "short": "Fianza y garantías",
+    "text": "Con la renta que vas a pagar, mira cuánto te pueden pedir de fianza, garantía adicional, renta por adelantado y comisiones según el tipo de contrato y quién sea el arrendador, y qué parte de lo que te piden queda fuera de lo que marca la calculadora."
+   },
+   {
+    "slug": "actualizacion-renta-alquiler-irav-ipc",
+    "name": "Actualización de la renta: IRAV o IPC",
+    "short": "Subida de renta",
+    "text": "Con el contrato en marcha, comprueba si la subida que te piden respeta el índice que dice tu contrato y la fecha de firma. La calculadora da la renta actualizada con el IRAV o el IPC publicados y la compara con lo que te reclaman."
+   }
+  ],
+  "links": [
+   {
+    "from": "alquilar-o-comprar",
+    "to": "fianza-y-garantias-adicionales-alquiler",
+    "map": {
+     "alquiler": "renta"
+    },
+    "carry": "Te llevas tu alquiler mensual ya puesto como renta."
+   },
+   {
+    "from": "fianza-y-garantias-adicionales-alquiler",
+    "to": "actualizacion-renta-alquiler-irav-ipc",
+    "map": {
+     "renta": "renta"
+    },
+    "carry": "Te llevas tu renta mensual ya puesta."
+   }
+  ],
+  "faqs": [
+   [
+    "¿Tengo que seguir los tres pasos en orden?",
+    "No. Puedes entrar por cualquier paso desde el indicador «Paso X de 3». El orden sugerido es el de quien aún no ha firmado: decidir si alquilar, revisar las condiciones del contrato y, más adelante, controlar las subidas de renta."
+   ],
+   [
+    "¿Qué números se pasan de una calculadora a la siguiente?",
+    "Solo la renta mensual, que significa lo mismo y está en euros al mes en las tres. En la primera se llama «alquiler mensual equivalente»; en las otras, «renta mensual». El resto de campos se quedan con sus valores de ejemplo para que los pongas tú."
+   ],
+   [
+    "¿Dónde miro las cláusulas del contrato?",
+    "En la guía «Cláusulas del contrato de alquiler» (enlazada en la introducción de este plan): léela antes de firmar. El plan calcula cifras; la guía explica qué cláusulas conviene revisar."
+   ],
+   [
+    "¿Se guardan o se envían mis datos?",
+    "No. Los valores viajan en la dirección de la página (la parte tras el signo #) de tu navegador a tu navegador. No se envían a ningún servidor y no hace falta registrarse."
+   ],
+   [
+    "¿Qué pasa si tengo desactivado JavaScript?",
+    "El botón «Continúa con…» abre la siguiente calculadora con sus valores de ejemplo, sin tus números. Las calculadoras necesitan JavaScript para calcular."
+   ],
+   [
+    "¿Es asesoramiento legal?",
+    "No. Son herramientas orientativas con hipótesis editables. Si hay un conflicto con el arrendador o una decisión importante, contrasta el resultado con la normativa oficial o con un profesional."
+   ]
+  ]
  }
 }

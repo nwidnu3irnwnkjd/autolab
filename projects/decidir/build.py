@@ -129,7 +129,7 @@ def main():
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
         hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))
         if k in ("hipoteca", "impuestos"):
-            pl = "".join(plan.hub_link(spec["path"], pk) for pk in (["compra-vivienda"] if k == "hipoteca" else ["autonomo", "despido"]))
+            pl = "".join(plan.hub_link(spec["path"], pk) for pk in (["compra-vivienda", "alquilar-vivienda"] if k == "hipoteca" else ["autonomo", "despido"]))
             hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", pl)
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
@@ -142,7 +142,7 @@ def main():
     for pk, pp in plan.PLANES.items():  # planes completos (Diseñador, R16.4): compra de vivienda, autónomo, despido
         if pk.startswith("_"): continue
         pbody, pld = plan.page(pk, calcs, card, B, ppub, pmod)
-        write(pp["path"], pp["title"], pp["description"], pbody, jsonld=pld, priority="0.8", lastmod=pmod, og=f"og-{'hipoteca' if pk == 'compra-vivienda' else 'impuestos'}.png")
+        write(pp["path"], pp["title"], pp["description"], pbody, jsonld=pld, priority="0.8", lastmod=pmod, og=f"og-{'hipoteca' if pk in ('compra-vivienda', 'alquilar-vivienda') else 'impuestos'}.png")
         HUB_PAGES.append(dict(path=pp["path"], h1=pp["h1"], description=pp["description"], modified=pmod, published=ppub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
     dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(plan.dir_li(k) for k in plan.PLANES if not k.startswith('_')))  # planes completos (Diseñador)

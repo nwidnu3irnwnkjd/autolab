@@ -1,0 +1,383 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "ejemplo: pacto válido, comunidad +10 % sobre tope 4,94 %, 500 € de honorarios",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 30.36,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 1129.64,
+    "rechazable": 530.36,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: subida pedida justo en el doble (4,94 %)",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 4.94,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1629.64,
+    "tuCargo": 1129.64,
+    "rechazable": 500.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "subida pedida 4,95 %, 0,01 % por encima del tope",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 4.95,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 0.06,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1629.7,
+    "tuCargo": 1129.64,
+    "rechazable": 500.06,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "pacto sin importe anual: todo del casero",
+   "in": {
+    "pacto": "sinimp",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 660.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 100.0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 0.0,
+    "rechazable": 1660.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "sin pacto escrito",
+   "in": {
+    "pacto": "no",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 0,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 660.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 100.0,
+    "honorariosRechazable": 0.0,
+    "pedido": 1160.0,
+    "tuCargo": 0.0,
+    "rechazable": 1160.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "pasados 5/7 años: sin tope del art. 20.2",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "fuera",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 660.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 1160.0,
+    "rechazable": 500.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "renta sin cláusula de actualización (0 %): la comunidad no sube",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 0,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 0.0,
+    "comunidadLegal": 600.0,
+    "excesoComunidad": 60.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 1100.0,
+    "rechazable": 560.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "todo conforme: nada que rechazar",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 0,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 0,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 600.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 0.0,
+    "pedido": 1100.0,
+    "tuCargo": 1100.0,
+    "rechazable": 0.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "todo a cero, sin NaN",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 0,
+    "ibi": 0,
+    "basuras": 0,
+    "subidaPedida": 0,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 0,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 0.0,
+    "pedido": 0.0,
+    "tuCargo": 0.0,
+    "rechazable": 0.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "A1: sin acuerdo ni cláusula dentro de 5/7 años, la comunidad no sube",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "no"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 600.0,
+    "excesoComunidad": 60.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 1100.0,
+    "rechazable": 560.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "A2: sin acuerdo, subida pedida 3 % (bajo el tope): tampoco sube",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 3,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "no"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 600.0,
+    "excesoComunidad": 18.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1618.0,
+    "tuCargo": 1100.0,
+    "rechazable": 518.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "A3: sin acuerdo pero pasados 5/7 años: manda el pacto",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "fuera",
+    "honorarios": 500,
+    "acuerdo": "no"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 660.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 1160.0,
+    "rechazable": 500.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "A4: sin acuerdo y pacto inválido: todo del casero",
+   "in": {
+    "pacto": "sinimp",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "no"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 660.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 100.0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 0.0,
+    "rechazable": 1660.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "S1: seguro sumado a la comunidad (750 €), tope sobre la suma",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 750,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 787.05,
+    "excesoComunidad": 37.95,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1825.0,
+    "tuCargo": 1287.05,
+    "rechazable": 537.95,
+    "limitado": 1
+   },
+   "tol": 1
+  }
+ ]
+}

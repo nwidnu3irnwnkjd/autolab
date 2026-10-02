@@ -514,5 +514,15 @@
     "actualizacion-renta-alquiler-irav-ipc",
     "alquilar-o-comprar",
     "irpf-alquilar-vivienda-rendimiento-neto"
+  ],
+  "gastos-alquiler-quien-paga": [
+    "fianza-y-garantias-adicionales-alquiler",
+    "actualizacion-renta-alquiler-irav-ipc",
+    "alquilar-o-comprar"
+  ],
+  "paga-extra-navidad-cuanto-cobro-neto": [
+    "finiquito-baja-voluntaria-vacaciones-preaviso",
+    "retencion-irpf-nomina-subir-o-no",
+    "comparar-ofertas-de-trabajo-neto-real"
   ]
 }

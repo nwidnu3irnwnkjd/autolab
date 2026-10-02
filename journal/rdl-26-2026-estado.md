@@ -17,3 +17,8 @@
 - Fuentes: https://www.publico.es/politica/ultima-hora-votacion-decretos-sobre-vivienda-congreso-directo.html ; https://www.libertaddigital.com/espana/politica/2026-10-02/en-directo-el-congreso-decide-hoy-el-futuro-de-los-decretos-sobre-vivienda-7468578/ ; https://www.boe.es/buscar/act.php?id=BOE-A-2026-20266
 - Preceptos que recuperarán su redacción anterior cuando se publique la Resolución (lista de la Consulta 2, NO comprobada en texto oficial): art. 23.2 LIRPF / DT 38.ª; art. 41 bis RIRPF; DA 65.ª LIRPF; art. 95 ter LIRPF (Cuenta Financia Europa: quedaría inexistente); TRLRHL arts. 72 y 107.4; art. 91 LIVA; LAU (preceptos modificados por el RDL 26/2026; el RDL 27/2026 sobre estabilidad de contratos es otro decreto, también rechazado). Detalle exacto pendiente de la Resolución/texto oficial.
 - Pendiente: reconsultar BOE (Resolución del Congreso) en 1-3 días.
+
+## Consulta 4 (2026-10-02 tarde, API consolidada BOE)
+- Resolución BOE-A-2026-20526 publicada (BOE 2-oct). Consolidado RDL 26/2026: derogado, fecha_derogacion 2026-10-02.
+- LIRPF, RIRPF y TRLRHL (arts. 72/107): consolidados aún «Desactualizado»; no incluyen nota «se deja sin efecto» respecto al RDL 26/2026. Reversión NO reflejada todavía. Reconsultar en 2-3 días.
+- Sitio: entremuchos.com OK (200, cert Let's Encrypt hasta 30-dic-2026); www.entremuchos.com devuelve cert *.github.io (desajuste de nombre) y 301.

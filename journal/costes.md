@@ -66,3 +66,5 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T17:05Z | 29 | 54 | 0.55 | ciclo 55 cierre: Diseñador; peticiones abiertas: 4; páginas: 248
 2026-10-02T17:30Z | 33 | 54 | 0.55 | ciclo 56 cierre: Mejorador Opus, Estratega Opus; peticiones abiertas: 4; páginas: 249
 2026-10-02T19:50Z | 10 | 59 | 0.55 | ciclo 57 cierre: Estratega Opus, 2 Constructores, 2 Opus, Diseñador, QA; peticiones abiertas: 4; páginas: 254
+2026-10-02T20:13:09Z | 10 | 59 | 0.55 | c58 inicio (contexto 9%)
+2026-10-02T20:40Z | 15 | 60 | 0.55 | ciclo 58 cierre: Constructor x3, Opus x2, Investigador Opus, Vigilante, QA; peticiones abiertas: 4; páginas: 259

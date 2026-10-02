@@ -1,0 +1,126 @@
+{
+  "slug": "paga-extra-navidad-cuanto-cobro-neto",
+  "title": "Paga extra de Navidad: cuánto cobro neto y proporcional",
+  "description": "Calcula cuánto te toca de la paga extra de Navidad si entras o te vas a mitad de año y cuánto cobras neto tras la retención del IRPF de tu nómina.",
+  "h1": "Paga extra de Navidad: cuánto me toca y cuánto cobro neto",
+  "lead": "La paga extra de Navidad la cobras entera si trabajaste todo su periodo de devengo y, si entraste o te vas dentro de él, lo habitual es que te toque la parte proporcional (por días naturales; es criterio del convenio, que puede contar meses); en diciembre te ingresan la paga bruta menos la retención de IRPF de tu nómina, sin otra cotización aparte porque ya se cotizó repartida en tus nóminas mensuales. En el ejemplo (paga de 1.500 €, devengo de julio a diciembre, alta el 1 de septiembre y retención del 15 %) te corresponden 122 de 184 días: 994,57 € brutos y 845,38 € netos; entera serían 1.500 € brutos y 1.275 € netos. La cuantía, el periodo de devengo y si una baja o excedencia descuenta días los fija tu convenio, no la ley: edítalos con los de tu convenio.",
+  "veredicto": "Si trabajas todo el periodo de devengo de tu convenio cobras la paga entera; si entras o te vas dentro de él, lo habitual es la parte proporcional por días naturales, criterio del convenio, que también fija la cuantía y el devengo (art. 31 del Estatuto solo reconoce la paga de Navidad y remite la cuantía al convenio). Neto a ingresar = bruta menos el tipo de retención de tu nómina (art. 80.1 del Reglamento del IRPF), sin cotización adicional en el mes de la paga porque ya se prorrateó en los doce meses (art. 147.1 de la Ley General de la Seguridad Social). Con 1.500 €, devengo de julio a diciembre y retención del 15 %: alta el 1 de septiembre, 122 de 184 días, 994,57 € brutos y 845,38 € netos; todo el periodo, 1.500 € brutos y 1.275 € netos. Con las pagas prorrateadas en las doce mensualidades no hay paga en diciembre.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "importe",
+      "label": "Importe de la paga completa según tu convenio (€ brutos)",
+      "default": 1500,
+      "min": 1,
+      "step": 10,
+      "default_from": "params.paga_extra_navidad_2026.supuestos.importe"
+    },
+    {
+      "id": "devengo",
+      "label": "Periodo de devengo de la paga de Navidad (según convenio)",
+      "type": "select",
+      "options": [
+        {
+          "v": "semestral",
+          "t": "Semestral: del 1 de julio al 31 de diciembre"
+        },
+        {
+          "v": "anual",
+          "t": "Anual: del 1 de enero al 31 de diciembre"
+        }
+      ]
+    },
+    {
+      "id": "situacion",
+      "label": "Tu situación en 2026",
+      "type": "select",
+      "options": [
+        {
+          "v": "alta",
+          "t": "Entré a trabajar dentro del periodo"
+        },
+        {
+          "v": "baja",
+          "t": "Me voy de la empresa dentro del periodo"
+        },
+        {
+          "v": "todo",
+          "t": "Trabajo todo el periodo"
+        }
+      ]
+    },
+    {
+      "id": "mes",
+      "label": "Mes de entrada, o del último día trabajado (1 a 12)",
+      "default": 9,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.paga_extra_navidad_2026.supuestos.mes",
+      "ayuda": "Se ignora si trabajas todo el periodo."
+    },
+    {
+      "id": "dia",
+      "label": "Día de entrada, o último día trabajado (1 a 31)",
+      "default": 1,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.paga_extra_navidad_2026.supuestos.dia",
+      "ayuda": "El día de entrada o de salida cuenta como trabajado."
+    },
+    {
+      "id": "diassin",
+      "label": "Días sin devengo en el periodo (baja, excedencia: solo si tu convenio los descuenta)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "ret",
+      "label": "Retención de IRPF que ves en tu nómina (%)",
+      "default": 15,
+      "min": 0,
+      "max": 47,
+      "step": 0.01,
+      "default_from": "params.paga_extra_navidad_2026.supuestos.ret",
+      "ayuda": "Pon el de la nómina del mes en que cobras la paga, si ya lo sabes."
+    },
+    {
+      "id": "forma",
+      "label": "Cómo cobras las pagas extra",
+      "type": "select",
+      "options": [
+        {
+          "v": "14",
+          "t": "En su mes (14 pagas)"
+        },
+        {
+          "v": "prorr",
+          "t": "Prorrateadas en las 12 nóminas"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto me toca de la paga de Navidad si entré en septiembre?",
+      "Depende del devengo de tu convenio. Si es semestral (julio a diciembre), te toca la parte de los días trabajados: con alta el 1 de septiembre, 122 de 184 días, el 66,3 % de la paga. Si es anual, la proporción se calcula sobre 365 días."
+    ],
+    [
+      "¿Cuánto me retienen de IRPF de la paga extra?",
+      "El tipo de retención de tu nómina aplicado a la paga (art. 80.1 del Reglamento del IRPF). Con una retención del 15 %, una paga bruta de 1.500 € se queda en 1.275 € netos. El tipo del año se fija con todas tus retribuciones previstas."
+    ],
+    [
+      "¿Se cotiza a la Seguridad Social por la paga extra en diciembre?",
+      "No de forma adicional: las percepciones de vencimiento superior al mensual se prorratean en los doce meses (art. 147.1 LGSS). Esa cotización ya se descontó, repartida, de tus nóminas mensuales."
+    ],
+    [
+      "¿Me pagan la parte proporcional si me voy antes de diciembre?",
+      "Normalmente se liquida en el finiquito, según tu convenio: la empresa debe acompañar una propuesta del documento de liquidación de las cantidades adeudadas (art. 49.2 ET). Con pagas prorrateadas ya la has cobrado mes a mes."
+    ],
+    [
+      "¿Quién fija el importe y cuándo se devenga la paga de Navidad?",
+      "La ley dice que una de las dos gratificaciones se paga con ocasión de las fiestas de Navidad y deja al convenio su cuantía (art. 31 ET). El periodo de devengo y la fecha exacta los fija el convenio, no ese artículo. Esta calculadora no incluye convenios."
+    ]
+  ],
+  "sources": "Estatuto de los Trabajadores, RDL 2/2015, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430), consultado el 2/10/2026: art. 31 (dos gratificaciones extraordinarias al año, una con ocasión de la Navidad; cuantía fijada por convenio; el convenio puede prorratearlas en las doce mensualidades) y art. 49.2 (propuesta de documento de liquidación de las cantidades adeudadas al extinguirse el contrato). Ley General de la Seguridad Social, RDL 8/2015, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a147), consultado el 2/10/2026: art. 147.1 (las percepciones de vencimiento superior al mensual se prorratean a lo largo de los doce meses del año; redacción vigente desde el 1/1/2023). Reglamento del IRPF, RD 439/2007, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820#a80), consultado el 2/10/2026: art. 80.1 (la retención es el resultado de aplicar a la cuantía total de las retribuciones el tipo del art. 86) y art. 86.1 (tipo con dos decimales); art. 87 (regularización del tipo). La cotización del trabajador del 6,5 % es la de nuestra calculadora de retención de la nómina (fuentes allí). Los importes, fechas y el tipo de los ejemplos son supuestos editables, no datos oficiales; la cuantía y el devengo de la paga los fija tu convenio."
+}

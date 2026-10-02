@@ -1,0 +1,128 @@
+{
+  "slug": "gastos-alquiler-quien-paga",
+  "title": "Gastos del alquiler: quién paga comunidad, IBI y agencia",
+  "description": "Quién paga comunidad, IBI, basuras e inmobiliaria en un alquiler de vivienda y cuánto pueden subir, según la LAU. Calcula lo que puedes rechazar.",
+  "h1": "Gastos del alquiler: quién paga comunidad, IBI, basuras e inmobiliaria y cuánto pueden subir",
+  "lead": "Si tu contrato de alquiler de vivienda recoge por escrito que pagas comunidad, IBI y basuras con su importe anual, esos gastos son tuyos, pero durante los 5 primeros años (7 si el casero es persona jurídica) la comunidad solo puede subir si lo acordáis y nunca más del doble del % en que pueda subir la renta, y los honorarios de la inmobiliaria son del casero. En el ejemplo (comunidad de 600 €, IBI y basuras de 500 €, una subida de la comunidad del 10 % que aceptas o prevé tu contrato, 500 € de honorarios únicos y una renta que puede subir como máximo un 2,47 %) te repercuten 1.660 € este año y la ley te obliga a pagar 1.129,64 €: puedes rechazar 530,36 €, de ellos 30,36 € de subida por encima del 4,94 % y los 500 € de honorarios. Si no has aceptado la subida ni la prevé tu contrato, la comunidad no sube este año. Si el pacto no consta por escrito con el importe anual, comunidad, IBI y basuras los paga el casero (arts. 20.1 y 20.2 de la Ley de Arrendamientos Urbanos).",
+  "veredicto": "Depende de tu contrato. Con pacto escrito y con importe anual, pagas comunidad, IBI y basuras; sin él, los paga el casero. Los honorarios de agencia y de formalización son del casero en una vivienda. Dentro de los 5 primeros años (7 con casero persona jurídica) la comunidad solo sube si lo acordáis y nunca más del doble del % en que pueda subir la renta. En el ejemplo (subida máxima de renta del 2,47 %), el tope es el 4,94 %: de 1.660 € repercutidos este año, la ley te obliga a pagar 1.129,64 € y puedes rechazar 530,36 €.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "pacto",
+      "label": "Pacto sobre los gastos en tu contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "ok",
+          "t": "Por escrito y con el importe anual a la fecha del contrato"
+        },
+        {
+          "v": "sinimp",
+          "t": "Por escrito, pero sin importe anual"
+        },
+        {
+          "v": "no",
+          "t": "No hay pacto escrito"
+        }
+      ],
+      "ayuda": "Para que valga, el pacto debe constar por escrito y fijar el importe anual de los gastos a la fecha del contrato (art. 20.1)."
+    },
+    {
+      "id": "comunidad",
+      "label": "Comunidad y otros gastos generales no tributarios que pagas ahora, antes de la subida (€ al año)",
+      "default": 600,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.gastos_alquiler_2026.supuestos.comunidad",
+      "ayuda": "Si el contrato te traslada por escrito y con importe otro gasto general que no sea un tributo (por ejemplo, el seguro), súmalo aquí: el tope se aplica a la suma. Las derramas extraordinarias no se calculan."
+    },
+    {
+      "id": "ibi",
+      "label": "IBI y tasa de basuras del año (€ al año)",
+      "default": 400,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.gastos_alquiler_2026.supuestos.ibi"
+    },
+    {
+      "id": "subidaPedida",
+      "label": "Subida de la comunidad que te piden este año (%)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.gastos_alquiler_2026.supuestos.subida_pedida"
+    },
+    {
+      "id": "acuerdo",
+      "label": "¿Tu contrato prevé cómo sube la cuota o aceptaste la subida?",
+      "type": "select",
+      "options": [
+        {
+          "v": "si",
+          "t": "Sí"
+        },
+        {
+          "v": "no",
+          "t": "No"
+        }
+      ],
+      "ayuda": "El art. 20.2 solo deja subir estos gastos por acuerdo; una cláusula de revisión del contrato cuenta como acuerdo. Solo importa dentro de los 5 o 7 primeros años."
+    },
+    {
+      "id": "subidaRenta",
+      "label": "Subida máxima que admite tu renta este año (%)",
+      "default": 2.47,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "params.renta_alquiler_2026.irav_pct",
+      "ayuda": "Es el % máximo de actualización de tu renta (IRAV o IPC; mira la calculadora de actualización de la renta). Si tu contrato no tiene cláusula de actualización, pon 0: leemos que entonces la comunidad tampoco puede subir."
+    },
+    {
+      "id": "tramo",
+      "label": "Años de contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "dentro",
+          "t": "Dentro de los 5 primeros años (7 si el casero es persona jurídica, no un autónomo)"
+        },
+        {
+          "v": "fuera",
+          "t": "Pasados esos 5 o 7 años"
+        }
+      ],
+      "ayuda": "Cuenta desde la fecha del contrato (o desde que te entregaron la vivienda, si fue después), con sus prórrogas incluidas (art. 9.1)."
+    },
+    {
+      "id": "honorarios",
+      "label": "Honorarios de agencia o formalización que te cobran (€, pago único)",
+      "default": 500,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.gastos_alquiler_2026.supuestos.honorarios"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Quién paga la comunidad y el IBI en un alquiler?",
+      "El casero, salvo que el contrato lo traslade al inquilino por escrito fijando el importe anual de esos gastos a la fecha del contrato. Sin ese pacto escrito y con importe, no te los pueden cobrar (art. 20.1 LAU)."
+    ],
+    [
+      "¿Quién paga la inmobiliaria en un alquiler de vivienda?",
+      "El casero: los gastos de gestión inmobiliaria y de formalización del contrato son del arrendador, sea particular o empresa, en contratos desde mayo de 2023 (art. 20.1 LAU). Los anteriores pueden tener otro régimen."
+    ],
+    [
+      "¿Cuánto puede subir la comunidad si la pago yo?",
+      "Durante los 5 primeros años (7 con casero persona jurídica), solo si lo acordáis y nunca más del doble del % en que pueda subir la renta; con una renta que sube un 2,47 %, hasta un 4,94 %. El IBI y las tasas no tienen ese tope (art. 20.2)."
+    ],
+    [
+      "¿Pago yo la luz, el agua y la tasa de basuras?",
+      "Luz, agua y gas con contador individual son tuyos (art. 20.3). La tasa de basuras suele ser un tributo: solo es tuya si el pacto escrito con importe anual la incluye."
+    ],
+    [
+      "¿Quién paga las reparaciones de un piso alquilado?",
+      "Las necesarias para que sea habitable, el casero, sin subir la renta, salvo que el daño sea imputable al inquilino. Las pequeñas por el desgaste del uso ordinario, el inquilino (arts. 21.1 y 21.4 LAU)."
+    ]
+  ],
+  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 20.1 (pacto de gastos generales por escrito y con importe anual; gestión inmobiliaria y formalización a cargo del arrendador, redacción de la Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203), art. 20.2 (tope del doble de la subida de la renta en los 5 o 7 primeros años, salvo tributos), art. 20.3 (suministros con contador), art. 21.1 y 21.4 (reparaciones), art. 17.6 (zona tensionada) y art. 18.1 (actualización de la renta). Ley General Tributaria 58/2003, art. 2.2.a: las tasas son tributos (https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186). Redacción vigente tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). El 2,47 % es el IRAV de agosto de 2026 (INE, https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos), consultado el 2/10/2026. Los importes de comunidad, IBI, basuras y honorarios son ejemplos editables, no datos oficiales."
+}
