@@ -107,3 +107,6 @@
 ## 2026-10-02 · Estratega SEO/GEO (c18: hub /impuestos/ + 3 guías)
 - [x] R18.1 [Estratega -> Diseñador] Pie: añadir `<a href="/impuestos/">Impuestos</a>` tras «Energía» en `templates/base.html` y borrar la línea marcada «TEMPORAL (Estratega, c18)» en `build.write` (replace sobre la plantilla); y `ui.HUB_PATHS`: tema `impuestos` -> `/impuestos/` para el kicker de calc_header. · abierta c18 · RESUELTA c19: «Impuestos» en el pie de base.html, replace TEMPORAL borrado de build.write, HUB_PATHS con impuestos.
 - [x] R21.1 [Orquestador -> Estratega] La home enlaza solo 12 calculadoras en HTML estático (ui.HOME_N); /decidir/, hubs y sitemap enlazan las 43. Evalúa en c22 si interesa subir HOME_N o añadir un bloque «Más calculadoras» estático ligero por tema (con enlaces) sin recargar el peso (≤ 55 KB). · abierta c21
+
+## 2026-10-02 · Estratega SEO/GEO (c24, Opus: auditoría de rastreo + hub /ahorro/)
+- [x] R24.1 [Estratega -> Diseñador] Hub nuevo `/ahorro/` (hubs.HUBS["ahorro"]): añadir `<a href="/ahorro/">Ahorro</a>` tras «Impuestos» en el pie de `templates/base.html` y `ui.HUB_PATHS["ahorro"] = "/ahorro/"` para el `.kicker` de calc_header (hoy apunta a `/decidir/#ahorro`). Ojo: el kicker de plan-pensiones/jubilación/capitalizar/reformar (tema ahorro) también iría a /ahorro/, lo cual es correcto (su «Todas» los lista). · resuelta c24

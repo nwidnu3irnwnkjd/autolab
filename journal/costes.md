@@ -32,3 +32,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T04:32Z | 9 | 31 | 0.55 | ciclo 21 cierre: Diseñador sonnet 81k; Constructor fiscal sonnet 266k + fixes 76k; Constructor no fiscal sonnet 111k; Verificador Opus 115k; QA haiku 69k; peticiones abiertas: 7; páginas: 70
 2026-10-02T04:48Z | 12 | 31 | 0.55 | ciclo 22 cierre: Estratega sonnet 125k; Investigador sonnet 77k; Constructor no fiscal sonnet 125k; QA haiku 144k; peticiones abiertas: 3; páginas: 73
 2026-10-02T05:11Z | 16 | 32 | 0.55 | ciclo 23 cierre: Constructor fiscal sonnet 170k + fixes 79k; Constructor no fiscal sonnet 133k; Verificador Opus 97k; QA haiku 144k (1 falso positivo: coma decimal); peticiones abiertas: 3; páginas: 76
+2026-10-02T05:28Z | 20 | 33 | 0.55 | ciclo 24 cierre: Mejorador opus 161k; Estratega opus 140k; Constructor no fiscal sonnet 124k; Diseñador sonnet 55k; QA haiku 51k; peticiones abiertas: 3; páginas: 79

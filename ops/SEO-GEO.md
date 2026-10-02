@@ -48,7 +48,7 @@ cd "/Users/andonimcbpro/Claude Code/autolab" && python3 ops/indexnow.py         
 - **+28 días:** CTR por página; páginas con impresiones y 0 clics → reescribir title/description. Comparar clics a calculadoras desde guías (GA4, referer interno).
 - Registro en "Experimentos y resultados" abajo, con fecha y cifras.
 
-## Siguientes 5 palancas (priorizadas) — lista de c1, histórica; la vigente está en «Ciclo 16»
+## Siguientes 5 palancas (priorizadas) — lista de c1, histórica; la vigente está en «Ciclo 24»
 1. **Bing Webmaster Tools** (requiere cuenta de Andoni → PENDIENTE-ANDONI): importar desde Search Console; da indexación Bing (base de Copilot/ChatGPT search) y el único informe de citas en IA.
 2. **Respuesta corta citable en cada calculadora** (campo `veredicto` en el JSON, 1-2 frases con la regla de decisión y una cifra con fuente) visible arriba y usada en llms-full.txt. Petición al Constructor.
 3. **Más guías del clúster hipoteca** con intención informativa y volumen: "gastos de compraventa por comunidad (ITP)", "cuánto dinero necesito para comprar una casa", "hipoteca mixta: cuándo conviene"; cada una enlazada a su calculadora.
@@ -249,7 +249,7 @@ Euríbor 12 m, diésel y gasolina (y, cuando haya >= 7 días del mes, el PVPC me
 | Informe PDF del resultado | Compartible, pero no indexable ni medible en SEO; PDF generado en cliente añade peso | Medio-alto (Diseñador) | Peso de página | **Descartado** como palanca SEO; como mucho, hoja de impresión CSS (`@media print`) si el Diseñador lo ve útil |
 | Más guías genéricas | — | Medio | Contenido delgado | Solo si completan un hub o tienen estacionalidad fuerte |
 
-### Siguientes 5 palancas (vigente, priorizada; criterio de éxito)
+### Siguientes 5 palancas (c16, sustituida por la de c24)
 1. **Descubrimiento (Andoni, 10 min):** «Solicitar indexación» de `/`, `/decidir/`, `/hipoteca/`, `/coche/`, `/energia/`, `/barometro/`; `feed.xml` como sitemap; Bing Webmaster Tools; un enlace desde un perfil propio. **Éxito:** primer `lastCrawlTime` antes del 2026-10-09 y ≥ 10 URLs indexadas antes del 2026-10-31. **Si no:** 2026-10-15 revisar propiedad y reenviar.
 2. **«Plan completo» en `/hipoteca/`** (piloto en 3 pasos: cuánto ahorrar → alquilar o comprar → fija o variable; precio, entrada y plazo viajan por URL). **Hecho si:** los 3 pasos se precargan, `check.py` verde, sin datos enviados a ningún servidor. **Éxito (28 d con tráfico):** ≥ 15 % de las sesiones que entran por el hub visitan ≥ 2 calculadoras (GA4). Si funciona, extender a coche y energía.
 3. **Barómetro recurso enlazable:** archivo `/barometro/2026-10/` congelado el 1-nov (≥ 2 meses en `barometro_historico.json`) + borrador de nota «la hipoteca fija media, por debajo del Euríbor» para que Andoni decida si la envía. **Éxito:** `referringUrls` > 0 en `/barometro/` en 60 días o ≥ 1 cita en Bing AI.
@@ -278,3 +278,58 @@ Euríbor 12 m, diésel y gasolina (y, cuando haya >= 7 días del mes, el PVPC me
 - **Clústeres:** `clusters_fijos.json` reordenado (los fijos se truncan a 3: calefacción/ventanas dejaban fuera la caldera). Comprobación sobre `clusters.json`: las 48 calculadoras con ≥ 2 entrantes (antes: caldera, hotel, autónomo-SL y reformar con 0; excedencia, jubilación, navidad, punto de carga y capitalizar con 1). Cierra R16.6, R16.7 y R16.8.
 - **Guía estacional `tu-casa-en-invierno-que-mirar-primero`** (publicada 2-oct, antes del 15-oct): tabla «si tu situación es… / mira primero», 7 secciones (gas, luz, caldera, ventanas, placas, electrodomésticos, teletrabajo) con fuente enlazada, sin promesas de ahorro. Datos vivos con fecha: PVPC (REE), gas TUR.2 (BOE-A-2026-20389), temperatura y mínima semanal de Madrid (Open-Meteo; marcadores nuevos `temp_madrid`, `min_semana_madrid`, `fecha_tiempo_es`, `fecha_gas_es` en `seo.load_guides`). JSON-LD Article + BreadcrumbList parsean. Se diferencia de la checklist (lista corta de comprobaciones) y la enlaza. Hipótesis H12: consultas «gastos casa invierno», «qué revisar calefacción». Métrica: impresiones desde nov; revertir: borrar el .html y los 4 marcadores.
 - **Medición (`metrics.py decidir 7 --inspect`):** sin cambios: sitemap pendiente, 0 descubiertas, 0 clics/impresiones, URLs inspeccionadas «Google no reconoce esta URL», sin lastCrawlTime; GA4 33 sesiones internas. Umbral 2026-10-15 vigente.
+
+## Ciclo 24 (2026-10-02, Opus) · Foto de medición + auditoría de rastreabilidad + feed en robots + hub /ahorro/
+### Foto (`python3 ops/metrics.py decidir 7 --inspect`, ~36 h después de enviar el sitemap)
+- **Search Console:** propiedad `sc-domain:entremuchos.com` correcta (única; permiso `siteRestrictedUser`). Sitemaps: solo `sitemap.xml` (enviado 2026-10-01 20:23Z, `isPending: true`, 0 errores, 0 avisos, sin `lastDownloaded`); `feed.xml` **no** enviado. 0 clics, 0 impresiones.
+- **URL Inspection (6 URLs clave + variantes `http://` y `https://www.` de la home):** todas «Google no reconoce esta URL», **sin `lastCrawlTime`**, `robotsTxtState` UNSPECIFIED, 0 referentes. **Google no ha pedido aún ni robots.txt.**
+- **GA4 (7 d):** 33 sesiones / 32 usuarios, todas internas (duraciones de 250-18.000 s = pestañas de agentes). 0 orgánico. **Bing:** sin BWT no hay dato (IndexNow enviado por close_cycle).
+- **Lectura frente a la previsión (c12/c16):** dentro de plazo (día 2; primer rastreo de horas a días, impresiones 29-oct a 26-nov). No adelanto la revisión de la propiedad: la auditoría de abajo descarta causa técnica; la causa es 0 señales de descubrimiento (0 enlaces, nadie ha pulsado «Solicitar indexación»). Umbral 15-oct sin cambios.
+
+### Auditoría técnica de rastreabilidad (curl con UA Googlebot sobre producción)
+| Comprobación | Resultado |
+|---|---|
+| `/`, `/robots.txt`, `/sitemap.xml`, `/feed.xml`, `/llms.txt`, 3 calculadoras, `/hipoteca/`, `/barometro/` | 200, 0 redirecciones, TTFB 0,16-0,20 s, HTML 16-26 KB |
+| Cabecera `X-Robots-Tag` / meta `noindex` | Ninguna en las 76 URLs del sitemap de producción |
+| Canónica | 76/76 autorreferente y absoluta (`https://entremuchos.com/...`); `title` en todas |
+| Sitemap | XML válido, 76 URLs, todas con `lastmod`, todas 200; coincide 1:1 con el rastreo interno |
+| Enlaces internos (rastreo BFS de `dist/` desde la home) | 0 rotos; 0 huérfanas; profundidad máx. 2 clics (31 a 1 clic, 44 a 2) |
+| Redirecciones | `http://` → `https://` 301; `http://www` → apex 301; sin barra → con barra 301; 404 real para URLs inexistentes |
+| **`https://www.entremuchos.com`** | **Error TLS** (certificado `*.github.io`: el CNAME `www` apunta al apex, no a `nwidnu3irnwnkjd.github.io`, y GitHub no emite certificado para www). Impacto SEO bajo (Google no conoce el www y las canónicas son el apex), pero un usuario que teclee www ve «no seguro». → PENDIENTE-ANDONI punto 5 (DNS). |
+| Cabeceras | `cache-control: max-age=600` (GitHub Pages), sin HSTS (no configurable en Pages; no afecta a indexación) |
+| Peso | máx. 52,7 KB HTML en producción; páginas de calculadora con CSS+JS 60-76 KB (AVISOs de qa_static del Constructor/Diseñador, no bloquean rastreo) |
+| Enlaces menos enlazados (entrantes internos) | seguro-hogar y suscripciones (2), idiomas, móvil reacondicionado, dos pagadores (3): todas de tema `ahorro`, sin hub → motivo de E11 |
+**Conclusión:** nada técnico impide el rastreo. No se adelanta la revisión de propiedad.
+
+### E10 · `Sitemap: https://entremuchos.com/feed.xml` en robots.txt (reversible)
+**Hipótesis H13:** Google y Bing aceptan Atom como sitemap y leen las líneas `Sitemap:` de robots.txt; declararlo da una segunda vía de descubrimiento de lo nuevo (guías, notas, Barómetro) sin depender de que Andoni lo envíe en GSC. Coste cero, riesgo nulo (el feed solo contiene URLs canónicas del sitemap).
+**Cambio:** una línea al final de `static/robots.txt`. **Métrica:** cuando Google lea robots.txt (`robotsTxtState` ≠ UNSPECIFIED), aparición de `feed.xml` en GSC > Sitemaps (Google suele listar los descubiertos por robots) y en `metrics.py`; URLs del feed descubiertas antes que por `sitemap.xml`. **Revertir:** borrar la línea.
+
+### E11 · Hub `/ahorro/` (hubs.py, entrada `ahorro`)
+**Disparador:** tema `ahorro` = 25 calculadoras (+ guías que las enlazan) ≫ 6. **Criterio de utilidad (no relleno):** el tema `ahorro` era el cajón sin mapa y concentraba las calculadoras peor enlazadas; agrupadas en un orden que sí ayuda a decidir: (1) gastos que se repiten cada mes y se revisan una vez al año: suscripciones, fibra y móvil, seguros de hogar, salud y mascota; (2) antes de una compra: cuánto gastar en Navidad, contado o financiar, portátil/móvil, reacondicionado, reparar, herramienta, trastero, hotel o apartamento; (3) dónde guardar lo ahorrado: depósito/Letras/monetario; (4) familia, trabajo y estudios: guardería, excedencia, teletrabajo, universidad, idiomas. 19 pasos, cada texto sacado del `veredicto` de su calculadora, **sin una sola cifra** (no hay dato vivo que aplique; nada de memoria). Plan de pensiones, jubilación, capitalizar paro y reformar siguen colgando de /impuestos/ y /hipoteca/ (`calc_link` da prioridad al primer hub). Keyword principal «calculadoras para ahorrar» (grep en dist: no usada). Title 59, description 149. Descargo «no es asesoramiento financiero ni de seguros».
+**Hipótesis H14:** igual que H8/H9 para consultas genéricas («calculadoras para ahorrar», «cómo ahorrar en gastos de casa») y respuestas de IA «¿por dónde empiezo a ahorrar?»; además sube los entrantes de 19 calculadoras (+1 cada una, a 1 clic de la home).
+**Enlazado automático:** home («Mapas por tema»: Hipotecas · Coche · Energía · Impuestos · Ahorro), las 19 calculadoras («Esta decisión es un paso del mapa…»), guía Black Friday (paso Navidad), sitemap, feed, llms.txt. Pie y `.kicker`: R24.1 al Diseñador.
+**Verificación:** build OK (79 páginas, 53 calculadoras), `check.py` 4041/4041, `qa_static --changed` 0 BLOQUEANTE (26 AVISO ajenos: peso y YMYL de calculadoras), JSON-LD 2/2 parsea; navegador (pestaña limpia): `/ahorro/`, `/` y suscripciones a 375 px `scrollWidth` 375, 0 errores de consola.
+**Métrica (28 d desde la primera indexación):** impresiones de `/ahorro/` > 0 en consultas genéricas de ahorro; GA4 clics hub → calculadora ≥ 20 % de sesiones del hub. **Revertir:** borrar la entrada `ahorro` de `hubs.HUBS` (la página y todos los enlaces desaparecen solos).
+**Pendiente Sonnet:** `cocinar-en-casa-o-comer-fuera` y `gimnasio-o-entrenar-en-casa` (Constructor, en curso) ya salen en «Todas»; añadirlas como pasos en el grupo 1 o 2 cuando se publiquen.
+
+### Revisión estratégica (53 calculadoras, 0 tráfico)
+| Palanca | Ratio hoy | Decisión |
+|---|---|---|
+| Descubrimiento (acciones de Andoni) | El único que mueve la fecha | PENDIENTE-ANDONI reescrito: 5 pasos priorizados, sin tecnicismos |
+| Señal sin cuentas: feed en robots | Alto (1 línea) | **HECHO (E10)** |
+| Hub del tema sin mapa (ahorro) | Alto (25 páginas sin hub, las peor enlazadas) | **HECHO (E11)**. `/consumo/` descartado: duplicaría /ahorro/ |
+| Guías estacionales | Medio: Black Friday, Renta e invierno ya publicadas | Siguiente: ninguna nueva hasta datos; la de Renta 2027 se refresca en enero con fechas AEAT |
+| Barómetro (datos propios) | Alto a 30-60 d | Archivo mensual 1-nov (palanca 3) |
+| Más hubs/guías genéricas | Bajo hasta ver qué indexa Google | No |
+
+### Siguientes 5 palancas (vigente c24, priorizada; criterio de éxito)
+1. **Descubrimiento (Andoni):** PENDIENTE-ANDONI puntos 1-3. **Éxito:** primer `lastCrawlTime` antes del 2026-10-09; ≥ 10 URLs indexadas antes del 2026-10-31. **Si el 15-oct sigue sin rastreo:** con Andoni, comprobar en la UI de GSC «Configuración > Estadísticas de rastreo» y reenviar `sitemap.xml`.
+2. **Re-medición** `metrics.py decidir 7 --inspect` el 5, 9 y 15-oct (Sonnet): registrar la primera fecha con `lastCrawlTime`, `robotsTxtState` y si `feed.xml` aparece en Sitemaps (E10). **Hecho si:** fila nueva en esta sección.
+3. **Barómetro archivo mensual** `/barometro/2026-10/` congelado el 1-nov + borrador de nota «la hipoteca fija media, por debajo del Euríbor». **Éxito:** `referringUrls` > 0 en `/barometro/` a 60 d o ≥ 1 cita en Bing AI.
+4. **Pasos de /ahorro/** para cocinar/gimnasio y cualquier calculadora nueva de tema `ahorro` (Sonnet, cada ciclo con calculadora nueva). **Éxito:** 0 calculadoras de un tema con hub fuera de sus pasos; ninguna calculadora con < 3 entrantes (script BFS de c24).
+5. **Títulos/descripciones con datos de GSC** cuando una página pase de 100 impresiones: reescribir las de CTR < 1 % con la cifra fechada. **Éxito:** CTR +30 % a 28 d en las reescritas.
+
+### Peticiones de este ciclo
+- Diseñador: R24.1 (pie «Ahorro» en `base.html` tras «Impuestos» y `ui.HUB_PATHS["ahorro"] = "/ahorro/"` para el kicker).
+- Andoni: PENDIENTE-ANDONI «LO PRIMERO» (5 puntos).

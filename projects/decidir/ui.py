@@ -82,7 +82,7 @@ def head_extra():
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={site["adsense_client"]}" crossorigin="anonymous"></script>')
     return "\n".join(out)
 
-HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/", "impuestos": "/impuestos/"}  # hubs.HUBS (R16.1); resto de temas: ancla del catálogo
+HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/", "impuestos": "/impuestos/", "ahorro": "/ahorro/"}  # hubs.HUBS (R16.1); resto de temas: ancla del catálogo
 
 def calc_header(c):
     """Cabecera .ph de una calculadora."""
