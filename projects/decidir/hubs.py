@@ -240,6 +240,7 @@ HUBS = {
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
+            ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
@@ -253,6 +254,10 @@ HUBS = {
             "autonomo-o-sociedad-limitada": {
                 "name": "Autónomo o sociedad limitada",
                 "text": "Depende de tu beneficio, de la retribución que te pagues y de cuánto repartas en dividendos. La calculadora compara lo que te queda en mano como autónomo y con una SL, con el IRPF, el Impuesto sobre Sociedades y las cuotas de 2026.",
+            },
+            "cuota-autonomos-ingresos-reales-regularizacion": {
+                "name": "Cuota de autónomo por ingresos reales",
+                "text": "Cotizas por el rendimiento neto que prevés y, al cierre del año, la Seguridad Social regulariza la diferencia con el real: te devuelve o te pide. La calculadora da tu tramo y cuánto te regularizarán.",
             },
             "comparar-ofertas-de-trabajo-neto-real": {
                 "name": "Comparar dos ofertas de trabajo",
@@ -339,7 +344,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -447,6 +452,10 @@ HUBS = {
                 "name": "Teletrabajo u oficina",
                 "text": "Teletrabajar ahorra si lo que evitas cada día en desplazamiento y comida supera el gasto extra en casa. La calculadora da el ahorro anual y la compensación mínima de la empresa.",
             },
+            "jubilacion-activa-o-dejar-de-trabajar": {
+                "name": "Jubilación activa: seguir trabajando y cobrar pensión",
+                "text": "Con la jubilación activa cobras una parte de la pensión (45 % al inicio, hasta el 75 % según los años de demora) mientras sigues trabajando. La calculadora compara el neto de seguir trabajando con el de jubilarte del todo.",
+            },
             "pension-viudedad-cuanto-cobro": {
                 "name": "Pensión de viudedad",
                 "text": "El porcentaje de la base reguladora (52, 60 o 70 %) depende de tu edad, tus hijos y tus ingresos, y se compara con el mínimo. La calculadora te da cuánto cobrarías con tus datos.",
@@ -512,7 +521,7 @@ def eligible(calcs, guides):
     """Hubs que cumplen el disparador (>= MIN_PAGES páginas del tema entre calculadoras y guías)."""
     return {k: s for k, s in HUBS.items() if len(themes_calcs(s, calcs)) + len(guides_of(s, guides, calcs)) >= MIN_PAGES}
 
-def page(key, spec, calcs, guides, params, live, card, base, baro_texts=()):
+def page(key, spec, calcs, guides, params, live, card, base, baro_texts=(), tablas_items=()):
     """-> (body_html, jsonld, lastmod). Pasos en orden de decisión, 1-2 frases, dato vivo con fecha, calculadora y guía de cada paso."""
     baro = spec.get("baro")  # (ancla, índice de la frase de barometro.answers_text, descripción) o None
     baro_text = baro_texts[baro[1]] if baro and len(baro_texts) > baro[1] else ""
@@ -536,10 +545,12 @@ def page(key, spec, calcs, guides, params, live, card, base, baro_texts=()):
             items.append((st["name"], f'/decidir/{s}/'))
     for g in guides_of(spec, guides, calcs): items.append((g["h1"], f'/guias/{g["slug"]}/'))
     if baro: items.append(("Barómetro Entre Muchos", "/barometro/"))
+    for p, h1, _ in tablas_items: items.append((h1, p))  # c36: tablas oficiales 2026 (tablas.hub_items)
     mod = seo.lastmod("hubs.py", extra=[m.get(k, "") for k in spec.get("fechas", [])] + [g["modified"] for g in guides_of(spec, guides, calcs)])
     pub = seo.published("hubs.py")
     gl = "".join(f'<li><a href="/guias/{g["slug"]}/">{g["h1"]}</a> <span class="note">{g["description"]}</span></li>' for g in guides_of(spec, guides, calcs))
     bl = f'<li><a href="{baro[0]}">Barómetro Entre Muchos</a> <span class="note">{baro[2]}</span></li>' if baro else ""
+    bl += "".join(f'<li><a href="{p}">{html.escape(h1)}</a> <span class="note">{html.escape(d)}</span></li>' for p, h1, d in tablas_items)
     body = f"""<article class="guide hub">
 <p class="kicker">{spec["kicker"]}</p>
 <h1>{spec["h1"]}</h1>

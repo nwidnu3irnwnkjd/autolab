@@ -1,7 +1,7 @@
 {
   "autonomo-o-asalariado": [
     "autonomo-o-sociedad-limitada",
-    "comparar-ofertas-de-trabajo-neto-real",
+    "cuota-autonomos-ingresos-reales-regularizacion",
     "autonomo-estimacion-directa-o-modulos"
   ],
   "cuanto-ahorrar-para-comprar-casa": [
@@ -10,7 +10,7 @@
     "hipoteca-fija-o-variable"
   ],
   "plan-pensiones-o-fondo-indexado": [
-    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+    "jubilacion-activa-o-dejar-de-trabajar",
     "traspasar-fondo-o-reembolsar-irpf",
     "jubilacion-anticipada-o-demorada"
   ],
@@ -169,7 +169,7 @@
   "jubilacion-anticipada-o-demorada": [
     "plan-pensiones-o-fondo-indexado",
     "rescate-plan-pensiones-capital-o-renta",
-    "pension-viudedad-cuanto-cobro"
+    "jubilacion-activa-o-dejar-de-trabajar"
   ],
   "comprar-o-alquilar-herramienta": [
     "reparar-o-comprar-electrodomestico",
@@ -218,7 +218,7 @@
   ],
   "autonomo-o-sociedad-limitada": [
     "autonomo-o-asalariado",
-    "capitalizar-paro-o-cobrarlo",
+    "cuota-autonomos-ingresos-reales-regularizacion",
     "autonomo-estimacion-directa-o-modulos"
   ],
   "alquilar-o-comprar": [
@@ -319,7 +319,7 @@
   "autonomo-estimacion-directa-o-modulos": [
     "autonomo-o-sociedad-limitada",
     "autonomo-o-asalariado",
-    "fondo-de-emergencia-cuantos-meses-necesito"
+    "cuota-autonomos-ingresos-reales-regularizacion"
   ],
   "cambiar-de-operadora-compensa-permanencia": [
     "fibra-y-movil-juntos-o-por-separado",
@@ -374,7 +374,7 @@
   "pension-viudedad-cuanto-cobro": [
     "jubilacion-anticipada-o-demorada",
     "rescate-plan-pensiones-capital-o-renta",
-    "residencia-o-cuidador-a-domicilio"
+    "jubilacion-activa-o-dejar-de-trabajar"
   ],
   "traspasar-fondo-o-reembolsar-irpf": [
     "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
@@ -395,5 +395,15 @@
     "obligado-a-declarar-renta-dos-pagadores",
     "declaracion-conjunta-o-individual",
     "comparar-ofertas-de-trabajo-neto-real"
+  ],
+  "cuota-autonomos-ingresos-reales-regularizacion": [
+    "autonomo-o-asalariado",
+    "autonomo-estimacion-directa-o-modulos",
+    "autonomo-o-sociedad-limitada"
+  ],
+  "jubilacion-activa-o-dejar-de-trabajar": [
+    "jubilacion-anticipada-o-demorada",
+    "plan-pensiones-o-fondo-indexado",
+    "pension-viudedad-cuanto-cobro"
   ]
 }

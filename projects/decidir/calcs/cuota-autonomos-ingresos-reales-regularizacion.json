@@ -1,0 +1,97 @@
+{
+ "slug": "cuota-autonomos-ingresos-reales-regularizacion",
+ "title": "Cuota de autónomos por ingresos reales y regularización",
+ "description": "Calcula tu tramo y tu cuota de autónomo en 2026 y cuánto te devuelven o pagas al regularizar, con tu rendimiento previsto, real y la base elegida.",
+ "h1": "Cuota de autónomos por ingresos reales: tu tramo y cuánto te regularizan",
+ "lead": "Si tu base de cotización queda dentro de los límites del tramo de tu rendimiento real, no hay regularización; si queda por debajo pagas la diferencia y si queda por encima te la devuelven. Con 1.800 € netos previstos al mes, una base de 1.200 € y 2.400 € reales, pagarías unos 282 € más al regularizar (4.536 € frente a 4.818 € de cuotas). Con tus cifras y tus meses de alta, calcula tu tramo, tu cuota de 2026 y la base que evitaría la regularización.",
+ "veredicto": "La regularización de la cuota de autónomos compara tu base media del año con la mínima y la máxima del tramo de tu rendimiento real: dentro del intervalo no hay nada que regularizar, por debajo pagas la diferencia y por encima te la devuelven sin intereses. Con 1.800 € netos previstos al mes, base de 1.200 € y 12 meses de alta, con 1.800 € reales no hay regularización, con 2.400 € pagarías unos 282 € y con 1.000 € te devolverían unos 126 €; la calculadora da tu cifra con tus datos, sin incluir bonificaciones ni autónomos societarios.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "prev",
+   "label": "Rendimiento neto mensual que prevés (€/mes: ingresos menos gastos, antes de restar la cuota de autónomos)",
+   "default": 1800,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.prev"
+  },
+  {
+   "id": "real",
+   "label": "Rendimiento neto mensual real (€/mes, misma definición; mayor que 0)",
+   "default": 2400,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.real"
+  },
+  {
+   "id": "base",
+   "label": "Base de cotización elegida (€/mes; entre la mínima de tu tramo previsto y 5.101,20 €)",
+   "default": 1200,
+   "min": 0,
+   "step": 10,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.base"
+  },
+  {
+   "id": "cambio",
+   "label": "Nueva base si la cambias durante el año (€/mes; 0 = no la cambias)",
+   "default": 0,
+   "min": 0,
+   "step": 10,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.cambio"
+  },
+  {
+   "id": "mcambio",
+   "label": "Meses del año con la nueva base (de 1 al total de meses de alta menos 1)",
+   "default": 0,
+   "min": 0,
+   "step": 1,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.mcambio"
+  },
+  {
+   "id": "meses",
+   "label": "Meses de alta en el año (1 a 12)",
+   "default": 12,
+   "min": 1,
+   "step": 1,
+   "default_from": "params.autonomo_regularizacion_2026.supuestos.meses"
+  },
+  {
+   "id": "plur",
+   "label": "¿Trabajas también por cuenta ajena?",
+   "type": "select",
+   "options": [
+    {
+     "v": "0",
+     "t": "No, solo soy autónomo"
+    },
+    {
+     "v": "1",
+     "t": "Sí, estoy en pluriactividad"
+    }
+   ]
+  }
+ ],
+ "faqs": [
+  [
+   "¿Qué tramo me toca y cuánto pago de cuota de autónomo en 2026?",
+   "Depende de tu rendimiento neto mensual una vez restado el 7 % de gastos genéricos. La tabla de 2026 tiene 15 tramos, de 653,59 a 1.928,10 € de base mínima: con la base mínima de cada tramo la cuota va de 205,88 a 607,35 € al mes (tipo total del 31,50 %), y con la máxima, de 226,47 a 1.606,88 €. Con 1.800 € netos previstos al mes, quedas en el tramo General 3 (rendimiento de 1.674 € tras el 7 %): puedes elegir una base entre 960,78 y 5.101,20 € y la cuota mínima es de 302,65 € al mes. La tabla de 2026 es la de 2025, prorrogada por el Real decreto-ley 3/2026."
+  ],
+  [
+   "¿Cómo y cuándo me regularizan la cuota de autónomos?",
+   "La Tesorería General de la Seguridad Social regulariza las cuotas de 2026 en 2027, cuando la Agencia Tributaria le comunica tus rendimientos tras la declaración de la Renta. Compara tu base media del año con la mínima y la máxima del tramo de tu rendimiento real: si está dentro, no cambia nada; si es menor, pagas la diferencia hasta el último día del mes siguiente a la notificación, sin recargo si lo haces a tiempo; si es mayor, te la devuelven de oficio, sin intereses. Con 1.800 € previstos, base de 1.200 € y 2.400 € reales, son unos 282 € a pagar."
+  ],
+  [
+   "¿Cuántas veces puedo cambiar la base de cotización al año?",
+   "Hasta seis veces, según el art. 45.1 del Reglamento General de Cotización. La solicitud surte efecto el 1 de marzo, mayo, julio, septiembre, noviembre o enero siguiente, según presentes la solicitud en el periodo anterior a cada fecha. Cambiarla cuando ves que tus ingresos suben o bajan es lo que reduce la regularización: con 1.200 € de base y 2.400 € reales, subir a 1.700 € durante los últimos 6 meses del año la deja en cero."
+  ],
+  [
+   "¿Qué base elijo para evitar regularizaciones?",
+   "La que más se acerque a tu rendimiento computable real (el neto menos el 7 %) dentro de los límites de tu tramo. Si estimas 2.400 € netos al mes, el computable es 2.232 € (tramo General 6, base entre 1.274,51 y 2.330 €) y con esa base la cuota es de 703 € al mes y no hay regularización. Elegir la base mínima es lo más barato durante el año, pero te deja una factura si ganas más de lo previsto. Una devolución no es un ahorro: es dinero que adelantas sin intereses."
+  ],
+  [
+   "¿Qué pasa con mi cuota de autónomo si también trabajo por cuenta ajena?",
+   "La regularización funciona igual, con los rendimientos de tu actividad como autónomo. Además, si las cotizaciones por contingencias comunes de ambos trabajos suman más de 17.323,68 € en 2026, tienes derecho al reintegro del 50 % del exceso, con tope del 50 % de lo cotizado por contingencias comunes como autónomo (Real decreto-ley 3/2026, art. 3.5), y si no cubres la baja por enfermedad como autónomo la cuota por contingencias comunes baja un 5,5 %. Ninguna de las dos cosas se calcula aquí porque dependen de tu nómina."
+  ]
+ ],
+ "sources": "Modelo propio y anual con la tabla de cotización de 2026. Tramo: rendimiento neto mensual menos el 7 % de gastos genéricos (art. 308.1.c.2.ª de la Ley General de la Seguridad Social), tabla de 2026 (Orden PJC/297/2026, art. 18; es la tabla de 2025 prorrogada por el Real decreto-ley 3/2026, art. 3.4, convalidado por Resolución de 26/2/2026, BOE-A-2026-4668, y la base máxima de los tramos 11 y 12 es 5.101,20 €). Base elegible: entre la mínima del tramo previsto y la base máxima (disposición transitoria 1.ª del Real decreto-ley 13/2022). Cuota: 31,50 % de la base (28,30 % contingencias comunes, 1,30 % profesionales, 0,90 % cese de actividad, obligatorio según el art. 327.1 de la Ley General de la Seguridad Social, 0,10 % formación profesional y 0,90 % del mecanismo de equidad intergeneracional). Regularización: base media provisional frente a la mínima y la máxima del tramo real; por debajo se ingresa la diferencia, por encima se devuelve de oficio (art. 308.1.c.3.ª y 4.ª de la Ley General de la Seguridad Social y art. 46.2 del Reglamento General de Cotización, redacción del Real decreto 665/2024); hasta seis cambios de base al año (art. 45.1 del Reglamento General de Cotización, en la redacción del Real decreto-ley 13/2022, art. 5.1). Fuentes: Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Real decreto-ley 3/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2026-2548); Real decreto-ley 13/2022 (https://www.boe.es/buscar/act.php?id=BOE-A-2022-12482); Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Reglamento General de Cotización (https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579). Cuotas de ejemplo (tabla x 31,50 %): 226,47 y 1.606,88 € al mes con la base máxima de los tramos Reducida 1 y General 11-12; 302,65 € con la mínima de General 3; 607,35 € con la mínima de General 12; 703 € con la base de 2.232 €. Hipótesis del modelo, no oficiales: meses completos en vez de días, una base única más un cambio opcional, y el mismo tipo del 31,50 % sobre la diferencia. La devolución se hace antes del 30 de abril del año siguiente a la comunicación de los rendimientos (art. 308.1.c.4.ª de la Ley General de la Seguridad Social, redacción del Real decreto-ley 14/2022, y art. 46.2.5.ª.c del Reglamento); no hay tabla de 2027. No cubre autónomos societarios, familiares colaboradores, tarifa plana ni otras bonificaciones, venta ambulante, RETA agrario ni País Vasco y Navarra. Hipótesis editables: 1.800 € previstos, 2.400 € reales, base de 1.200 € y 12 meses de alta. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

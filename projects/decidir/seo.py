@@ -211,7 +211,7 @@ def html_to_md(h, base):
     h = re.sub(r"[ \t]+", " ", h); h = re.sub(r"\n\s*\n\s*\n+", "\n\n", h)
     return "\n".join(l.strip() for l in h.splitlines()).strip()
 
-def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), hubs=()):
+def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), hubs=(), tablas=(), tablas_md=""):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
             "con tus propios números (hipoteca, coche, impuestos, energía, ahorro) en España. Cada página da un veredicto, la cifra que lo justifica, "
@@ -237,6 +237,9 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
     if extra:  # Barómetro: datos propios fechados
         lines.append("\n## Datos propios\n")
         lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json · CSV: {base}/barometro/datos.csv · Licencia de las cifras propias: CC BY 4.0 (cita «Barómetro Entre Muchos» y la fecha de los datos).")
+    if tablas:  # c36 T24: tablas oficiales 2026 con cálculo propio y CSV (tablas.py)
+        lines.append(f"\n## Tablas 2026 (cifras oficiales verificadas, con fuente y CSV)\n\n- [Tablas 2026]({base}/tablas-2026/): índice; todas las tablas en JSON: {base}/tablas-2026/datos.json")
+        lines += list(tablas)
     lines.append(f"\n## Optional\n\n- [Texto completo para LLMs]({base}/llms-full.txt): preguntas, criterios de decisión, parámetros y fuentes de cada calculadora.\n"
                  f"- [Catálogo]({base}/decidir/): todas las calculadoras por tema.\n"
                  f"- [Feed Atom]({base}{FEED_PATH}): notas de actualidad, guías y Barómetro mensual con su fecha.\n")
@@ -253,6 +256,7 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
                     f"### Criterios de decisión\n{html_to_md(c['content'], base)}\n\n### Parámetros que introduce el usuario\n{ins}\n\n"
                     f"### Preguntas frecuentes\n{faqs}\n\n### Supuestos y fuentes\n{html_to_md(c['sources'], base)}\n")
     if extra: full.append(extra)
+    if tablas_md: full.append(tablas_md)
     for g in guides:
         full.append(f"\n---\n\n## {g['h1']}\n\nURL: {base}/guias/{g['slug']}/\nActualizado: {g['modified']}\n\n{html_to_md(g['body'], base)}\n")
     open(os.path.join(dist, "llms-full.txt"), "w").write("\n".join(full))
@@ -269,8 +273,8 @@ def feed_link():
 def _atom_dt(iso):
     return iso if "T" in iso else iso + "T00:00:00Z"
 
-def feed_entries(base, guides, notes, baro=None, baro_mod=None, hubs=()):
-    E = []
+def feed_entries(base, guides, notes, baro=None, baro_mod=None, hubs=(), extra=()):
+    E = list(extra)  # c36: entradas ya formadas (tablas.feed_items)
     for h in hubs:
         E.append(dict(id=f"tag:entremuchos.com,2026:temas{h['path'].rstrip('/')}", title=h["h1"], url=f"{base}{h['path']}", published=h["published"], updated=h["modified"], summary=h["description"], cat="Temas"))
     for n in notes:
@@ -289,9 +293,9 @@ def feed_entries(base, guides, notes, baro=None, baro_mod=None, hubs=()):
                           cat="Barómetro"))
     return sorted(E, key=lambda e: (e["updated"], e["published"]), reverse=True)[:30]
 
-def write_feed(dist, site, guides, notes, baro=None, baro_mod=None, hubs=()):
+def write_feed(dist, site, guides, notes, baro=None, baro_mod=None, hubs=(), extra=()):
     base = site["base_url"].rstrip("/"); x = lambda t: html.escape(str(t), quote=True)
-    E = feed_entries(base, guides, notes, baro, baro_mod, hubs)
+    E = feed_entries(base, guides, notes, baro, baro_mod, hubs, extra)
     if not E: return None
     ent = "".join(f"""<entry><id>{x(e["id"])}</id><title>{x(e["title"])}</title><link rel="alternate" type="text/html" href="{x(e["url"])}"/>"""
                   f"""<published>{_atom_dt(e["published"])}</published><updated>{_atom_dt(e["updated"])}</updated><category term="{x(e["cat"])}"/>"""

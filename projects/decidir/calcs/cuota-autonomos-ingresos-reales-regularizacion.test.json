@@ -1,0 +1,994 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2400,
+    "base": 1200,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 9.0,
+    "pagado": 4536.0,
+    "definitiva": 4817.65,
+    "regul": 281.65,
+    "recomendada": 2232.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 3000,
+    "real": 1300,
+    "base": 2000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 11.0,
+    "tramoReal": 4.0,
+    "pagado": 7560.0,
+    "definitiva": 4914.0,
+    "regul": -2646.0,
+    "recomendada": 1437.91,
+    "regulRec": -521.3,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1800,
+    "base": 1674,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 6.0,
+    "pagado": 6327.72,
+    "definitiva": 6327.72,
+    "regul": 0.0,
+    "recomendada": 1674.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1254.51,
+    "real": 1254.51,
+    "base": 900,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 3.0,
+    "tramoReal": 3.0,
+    "pagado": 3402.0,
+    "definitiva": 3402.0,
+    "regul": 0.0,
+    "recomendada": 1166.69,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1254.51,
+    "real": 1254.52,
+    "base": 900,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 3.0,
+    "tramoReal": 4.0,
+    "pagado": 3402.0,
+    "definitiva": 3594.7,
+    "regul": 192.7,
+    "recomendada": 1166.7,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 700,
+    "real": 720.43,
+    "base": 700,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 1.0,
+    "tramoReal": 1.0,
+    "pagado": 2646.0,
+    "definitiva": 2646.0,
+    "regul": 0.0,
+    "recomendada": 670.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 700,
+    "real": 720.44,
+    "base": 700,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 1.0,
+    "tramoReal": 2.0,
+    "pagado": 2646.0,
+    "definitiva": 2717.63,
+    "regul": 71.63,
+    "recomendada": 718.95,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 9000,
+    "real": 9000,
+    "base": 5101.2,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 15.0,
+    "tramoReal": 15.0,
+    "pagado": 19282.54,
+    "definitiva": 19282.54,
+    "regul": 0.0,
+    "recomendada": 5101.2,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 9000,
+    "real": 6451.61,
+    "base": 5101.2,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 15.0,
+    "tramoReal": 14.0,
+    "pagado": 19282.54,
+    "definitiva": 19282.54,
+    "regul": 0.0,
+    "recomendada": 5101.2,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 9000,
+    "real": 6451.62,
+    "base": 5101.2,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 15.0,
+    "tramoReal": 15.0,
+    "pagado": 19282.54,
+    "definitiva": 19282.54,
+    "regul": 0.0,
+    "recomendada": 5101.2,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1500,
+    "real": 2000,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 7,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 5.0,
+    "tramoReal": 8.0,
+    "pagado": 2205.0,
+    "definitiva": 2666.18,
+    "regul": 461.18,
+    "recomendada": 1860.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1500,
+    "real": 2000,
+    "base": 1000,
+    "cambio": 1500,
+    "mcambio": 6,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 5.0,
+    "tramoReal": 8.0,
+    "pagado": 4725.0,
+    "definitiva": 4725.0,
+    "regul": 0.0,
+    "recomendada": 1860.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 2500,
+    "real": 2500,
+    "base": 900,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 9.0,
+    "bloqueo": 1.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 0,
+    "base": 1200,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "bloqueo": 3.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2000,
+    "base": 6000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "bloqueo": 2.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1500,
+    "real": 2000,
+    "base": 1000,
+    "cambio": 700,
+    "mcambio": 12,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 5.0,
+    "bloqueo": 4.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2400,
+    "base": 1200,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 1
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 9.0,
+    "pagado": 4536.0,
+    "definitiva": 4817.65,
+    "regul": 281.65,
+    "recomendada": 2232.0,
+    "regulRec": 0.0,
+    "plurRed": 18.68,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 3000,
+    "real": 700,
+    "base": 1437.91,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 11.0,
+    "tramoReal": 1.0,
+    "pagado": 5435.3,
+    "definitiva": 2717.59,
+    "regul": -2717.71,
+    "recomendada": 1437.91,
+    "regulRec": -2717.71,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 720.43,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 1.0,
+    "pagado": 3780.0,
+    "definitiva": 2717.59,
+    "regul": -1062.41,
+    "recomendada": 960.78,
+    "regulRec": -914.16,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 720.44,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 2.0,
+    "pagado": 3780.0,
+    "definitiva": 3402.0,
+    "regul": -378.0,
+    "recomendada": 960.78,
+    "regulRec": -229.75,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 967.74,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 2.0,
+    "pagado": 3780.0,
+    "definitiva": 3402.0,
+    "regul": -378.0,
+    "recomendada": 960.78,
+    "regulRec": -229.75,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 967.75,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 3.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 960.78,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1254.51,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 3.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1166.69,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1254.52,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 4.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1166.7,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1397.84,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 4.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1299.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1397.85,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 5.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1300.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1612.9,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 5.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1500.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1612.91,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 6.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1500.01,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1827.95,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 6.0,
+    "pagado": 3780.0,
+    "definitiva": 3780.0,
+    "regul": 0.0,
+    "recomendada": 1699.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1827.96,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 7.0,
+    "pagado": 3780.0,
+    "definitiva": 4323.53,
+    "regul": 543.53,
+    "recomendada": 1700.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1989.24,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 7.0,
+    "pagado": 3780.0,
+    "definitiva": 4323.53,
+    "regul": 543.53,
+    "recomendada": 1849.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 1989.25,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 8.0,
+    "pagado": 3780.0,
+    "definitiva": 4570.59,
+    "regul": 790.59,
+    "recomendada": 1850.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2182.79,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 8.0,
+    "pagado": 3780.0,
+    "definitiva": 4570.59,
+    "regul": 790.59,
+    "recomendada": 2029.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2182.8,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 9.0,
+    "pagado": 3780.0,
+    "definitiva": 4817.65,
+    "regul": 1037.65,
+    "recomendada": 2030.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2505.37,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 9.0,
+    "pagado": 3780.0,
+    "definitiva": 4817.65,
+    "regul": 1037.65,
+    "recomendada": 2329.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2505.38,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 10.0,
+    "pagado": 3780.0,
+    "definitiva": 5126.47,
+    "regul": 1346.47,
+    "recomendada": 2330.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2967.74,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 10.0,
+    "pagado": 3780.0,
+    "definitiva": 5126.47,
+    "regul": 1346.47,
+    "recomendada": 2760.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 2967.75,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 11.0,
+    "pagado": 3780.0,
+    "definitiva": 5435.3,
+    "regul": 1655.3,
+    "recomendada": 2760.01,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 3430.1,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 11.0,
+    "pagado": 3780.0,
+    "definitiva": 5435.3,
+    "regul": 1655.3,
+    "recomendada": 3189.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 3430.11,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 12.0,
+    "pagado": 3780.0,
+    "definitiva": 5744.13,
+    "regul": 1964.13,
+    "recomendada": 3190.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 3892.47,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 12.0,
+    "pagado": 3780.0,
+    "definitiva": 5744.13,
+    "regul": 1964.13,
+    "recomendada": 3620.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 3892.48,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 13.0,
+    "pagado": 3780.0,
+    "definitiva": 6052.95,
+    "regul": 2272.95,
+    "recomendada": 3620.01,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 4354.83,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 13.0,
+    "pagado": 3780.0,
+    "definitiva": 6052.95,
+    "regul": 2272.95,
+    "recomendada": 4049.99,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 4354.84,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 14.0,
+    "pagado": 3780.0,
+    "definitiva": 6547.07,
+    "regul": 2767.07,
+    "recomendada": 4050.0,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 6451.61,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 14.0,
+    "pagado": 3780.0,
+    "definitiva": 6547.07,
+    "regul": 2767.07,
+    "recomendada": 5101.2,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prev": 1800,
+    "real": 6451.62,
+    "base": 1000,
+    "cambio": 0,
+    "mcambio": 0,
+    "meses": 12,
+    "plur": 0
+   },
+   "expect": {
+    "tramoPrev": 6.0,
+    "tramoReal": 15.0,
+    "pagado": 3780.0,
+    "definitiva": 7288.22,
+    "regul": 3508.22,
+    "recomendada": 5101.2,
+    "regulRec": 0.0,
+    "bloqueo": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

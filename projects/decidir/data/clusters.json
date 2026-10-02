@@ -32,16 +32,16 @@
  "autonomo-estimacion-directa-o-modulos": [
   "autonomo-o-sociedad-limitada",
   "autonomo-o-asalariado",
-  "fondo-de-emergencia-cuantos-meses-necesito"
+  "cuota-autonomos-ingresos-reales-regularizacion"
  ],
  "autonomo-o-asalariado": [
   "autonomo-o-sociedad-limitada",
-  "comparar-ofertas-de-trabajo-neto-real",
+  "cuota-autonomos-ingresos-reales-regularizacion",
   "autonomo-estimacion-directa-o-modulos"
  ],
  "autonomo-o-sociedad-limitada": [
   "autonomo-o-asalariado",
-  "capitalizar-paro-o-cobrarlo",
+  "cuota-autonomos-ingresos-reales-regularizacion",
   "autonomo-estimacion-directa-o-modulos"
  ],
  "bici-electrica-o-transporte-publico": [
@@ -138,6 +138,11 @@
   "capitalizar-paro-o-cobrarlo",
   "excedencia-o-reduccion-jornada",
   "pension-viudedad-cuanto-cobro"
+ ],
+ "cuota-autonomos-ingresos-reales-regularizacion": [
+  "autonomo-o-asalariado",
+  "autonomo-estimacion-directa-o-modulos",
+  "autonomo-o-sociedad-limitada"
  ],
  "declaracion-conjunta-o-individual": [
   "deduccion-maternidad-familia-numerosa",
@@ -239,10 +244,15 @@
   "venta-vivienda-plusvalia-irpf-exencion",
   "obligado-a-declarar-renta-dos-pagadores"
  ],
+ "jubilacion-activa-o-dejar-de-trabajar": [
+  "jubilacion-anticipada-o-demorada",
+  "plan-pensiones-o-fondo-indexado",
+  "pension-viudedad-cuanto-cobro"
+ ],
  "jubilacion-anticipada-o-demorada": [
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta",
-  "pension-viudedad-cuanto-cobro"
+  "jubilacion-activa-o-dejar-de-trabajar"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
@@ -277,7 +287,7 @@
  "pension-viudedad-cuanto-cobro": [
   "jubilacion-anticipada-o-demorada",
   "rescate-plan-pensiones-capital-o-renta",
-  "residencia-o-cuidador-a-domicilio"
+  "jubilacion-activa-o-dejar-de-trabajar"
  ],
  "placas-solares-merece-la-pena": [
   "aire-acondicionado-inverter-o-ventilador-coste-verano",
@@ -285,7 +295,7 @@
   "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "plan-pensiones-o-fondo-indexado": [
-  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+  "jubilacion-activa-o-dejar-de-trabajar",
   "traspasar-fondo-o-reembolsar-irpf",
   "jubilacion-anticipada-o-demorada"
  ],

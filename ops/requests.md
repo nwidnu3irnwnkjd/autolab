@@ -115,3 +115,5 @@
 - Sin peticiones nuevas. Cerradas R6.2 y R12.2 (ya hechas); R16.4 aplazada con criterio; R-live.4 sigue condicional.
 
 - [x] R-modulos.1 [Constructor -> Estratega] data/clusters.json: autonomo-estimacion-directa-o-modulos con relacionadas autonomo-o-sociedad-limitada, autonomo-o-asalariado y fondo-de-emergencia-cuantos-meses-necesito (la página ya enlaza a las dos primeras). Publicar antes de diciembre (plazo de renuncia a módulos). · cerrada (clusters_fijos + 3 entrantes)
+
+- [x] R-cuotareta.1 [Constructor -> Estratega] data/clusters.json: cuota-autonomos-ingresos-reales-regularizacion con relacionadas autonomo-o-asalariado, autonomo-estimacion-directa-o-modulos y autonomo-o-sociedad-limitada (la página ya enlaza a las tres). Publicar antes del 31-dic (cambio de base con efectos el 1-ene).

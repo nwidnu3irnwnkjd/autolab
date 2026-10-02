@@ -6,6 +6,7 @@ import minify, ogimg, bundle  # minificador y og:image por tema (Diseñador)
 import seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, JSON-LD, llms.txt
 import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
+import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
 from ui import asset_v, ill, ILL, ICONS, tema, card, catalog_body, notfound_body, head_extra
 
@@ -45,7 +46,7 @@ def render_calc(c, all_calcs):
     related = sorted([x for x in all_calcs if x["slug"] != c["slug"]], key=lambda x: tema(x) != tema(c))  # mismo tema primero (sort estable)
     _aff = seo.related_slugs(c["slug"])  # data/clusters.json (Estratega): 2-3 más afines
     if _aff: related = [x for s in _aff for x in all_calcs if x["slug"] == s]
-    rel_html = seo.guides_html(c["slug"], GUIDES) + barometro.calc_link(c["slug"], BARO) + hubs.calc_link(c["slug"], all_calcs, ACTIVE_HUBS) + (("<h2>Otras decisiones relacionadas</h2><ul class=\"cards\">" + "".join(card(x) for x in related) + "</ul>") if related else "")
+    rel_html = seo.guides_html(c["slug"], GUIDES) + barometro.calc_link(c["slug"], BARO) + tablas.calc_link(c["slug"]) + hubs.calc_link(c["slug"], all_calcs, ACTIVE_HUBS) + (("<h2>Otras decisiones relacionadas</h2><ul class=\"cards\">" + "".join(card(x) for x in related) + "</ul>") if related else "")
     body = f"""
 {ui.calc_header(c)}
 {ui.calc_form(c)}
@@ -99,9 +100,17 @@ def main():
     bdesc = f"Datos propios de {barometro.mes_es(BARO['fecha_datos'])}: Euríbor a partir del cual compensa la hipoteca fija, coste por km según motor y cuándo invertir antes que amortizar."
     write(barometro.PATH, f"Barómetro de hipoteca, coche y ahorro ({barometro.mes_es(BARO['fecha_datos'])})", bdesc, barometro.page(BARO, bmod),
           jsonld=barometro.jsonld(BARO, B, bmod, seo.published("barometro.py"), bdesc, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=bmod)
+    TAB = tablas.build(DIST, params, B)  # -> dist/tablas-2026/<slug>/datos.csv y datos.json
+    tmod = seo.lastmod(*tablas.FILES); tpub = seo.published("tablas.py")
+    for p in tablas.PAGES:
+        write(tablas.path(p["slug"]), p["title"], p["description"], tablas.page(p["slug"], TAB, calcs, card, tmod, seo.AUTHOR),
+              jsonld=tablas.jsonld(p["slug"], TAB, B, tmod, tpub, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=tmod)
+    tdesc = "Tablas oficiales 2026 con fuente: tramos del IRPF por comunidad, cuota de autónomos, ITP y AJD, SMI, IPREM, paro y pensiones. Con CSV."
+    write(tablas.INDEX, "Tablas 2026: IRPF, autónomos, ITP, SMI y pensiones", tdesc, tablas.index_page(TAB, tmod, seo.AUTHOR),
+          jsonld=tablas.index_jsonld(B, tmod, tpub, seo.org(B), seo.breadcrumbs, tdesc), priority="0.7", lastmod=tmod)
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
-        hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [])
+        hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
     if GUIDES:
@@ -128,8 +137,8 @@ def main():
     open(os.path.join(DIST, "404.html"), "w").write(BASE.substitute(title="Página no encontrada", description="Esta página no existe. Busca una calculadora en el catálogo.", canonical=site["base_url"], head_extra='<meta name="robots" content="noindex">', body=notfound_body(), scripts="", site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#"))
     bundle.run(ROOT, DIST)  # minifica y recorta CSS/JS por tipo de página (Diseñador)
     seo.copy_static(DIST)  # static/ -> raíz: robots.txt (bots de IA permitidos), clave IndexNow
-    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES, hubs=HUB_PAGES)  # llms.txt + llms-full.txt
-    seo.write_feed(DIST, site, GUIDES, NOTES, BARO, bmod, hubs=HUB_PAGES)  # /feed.xml (Atom): actualidad, guías y Barómetro con su fecha real
+    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES, hubs=HUB_PAGES, tablas=tablas.llms_lines(B), tablas_md=tablas.llms_md(TAB, B))  # llms.txt + llms-full.txt
+    seo.write_feed(DIST, site, GUIDES, NOTES, BARO, bmod, hubs=HUB_PAGES, extra=tablas.feed_items(B, tmod, tpub))  # /feed.xml (Atom): actualidad, guías y Barómetro con su fecha real
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"<url><loc>{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in pages) + "</urlset>\n"
     open(os.path.join(DIST, "sitemap.xml"), "w").write(sm)

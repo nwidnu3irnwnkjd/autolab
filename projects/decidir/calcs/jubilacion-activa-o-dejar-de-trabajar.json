@@ -1,0 +1,161 @@
+{
+ "slug": "jubilacion-activa-o-dejar-de-trabajar",
+ "title": "Jubilación activa o dejar de trabajar: cuánto cobras",
+ "description": "Compara jubilación activa (45-100 % de la pensión más sueldo), jubilarte del todo y demorar la pensión: ingresos al mes y en N años con la norma de 2026.",
+ "h1": "Jubilación activa o dejar de trabajar: ¿cuánto cobras y qué compensa?",
+ "lead": "Con tus datos, la jubilación activa gana a dejar de trabajar cuando tu sueldo neto de cotizaciones supera la parte de la pensión que dejas de cobrar: con 67 años, 40 años cotizados, una pensión de 2.000 € (2.080 € con el complemento por demora) y un sueldo bruto de 2.000 € al mes, cobrarías de media 3.168 € al mes frente a 2.427 € si te jubilas del todo (26.700 € más en 3 años, antes de IRPF), y la activa gana a partir de un sueldo de 1.242 € al mes. Demorar 3 años más la pensión, sin cobrarla, la sube a 2.360 € al mes y recupera lo no cobrado a los 80 años y 9 meses. La activa exige pedir la pensión al menos un año después de la edad ordinaria y paga del 45 % al 100 % de la pensión según los años de demora.",
+ "veredicto": "Con 67 años, 40 años cotizados, una pensión de 2.000 € (2.080 € con la demora) y un sueldo bruto de 2.000 € al mes, gana la jubilación activa por 26.700 € en 3 años: 3.168 € al mes de media frente a 2.427 € si te jubilas del todo, y empieza a ganar con un sueldo de 1.242 € al mes. Con un sueldo de 700 € y 1.500 € de pensión (69 años, 34 cotizados), gana jubilarte del todo por 2.958 € en 2 años. Demorar la pensión no paga durante esos años y recupera lo no cobrado a partir de los 80 años y 9 meses en el primer caso. Antes de IRPF, en euros de hoy; solo si pides la pensión al menos un año después de tu edad ordinaria; no es un cálculo oficial.",
+ "tema": "ahorro",
+ "inputs": [
+  {
+   "id": "pension",
+   "label": "Pensión mensual que te correspondería sin ningún incremento por demora (€ al mes en 14 pagas, en euros de hoy; te la da el simulador de la Seguridad Social)",
+   "default": 2000,
+   "min": 1,
+   "step": 50,
+   "max": 3359.6,
+   "default_from": "params.jubilacion_activa_2026.supuestos.pension"
+  },
+  {
+   "id": "cot",
+   "label": "Años cotizados cuando pides la pensión (con decimales: 40,5 = 40 años y 6 meses)",
+   "default": 40,
+   "min": 1,
+   "step": 0.5,
+   "max": 55,
+   "default_from": "params.jubilacion_activa_2026.supuestos.cot"
+  },
+  {
+   "id": "edad_a",
+   "label": "Edad a la que pides la pensión: años (65 o más)",
+   "default": 67,
+   "min": 65,
+   "step": 1,
+   "max": 80,
+   "default_from": "params.jubilacion_activa_2026.supuestos.edad_a"
+  },
+  {
+   "id": "edad_m",
+   "label": "…y meses",
+   "type": "select",
+   "options": [
+    {
+     "v": "0",
+     "t": "0 meses"
+    },
+    {
+     "v": "1",
+     "t": "1 mes"
+    },
+    {
+     "v": "2",
+     "t": "2 meses"
+    },
+    {
+     "v": "3",
+     "t": "3 meses"
+    },
+    {
+     "v": "4",
+     "t": "4 meses"
+    },
+    {
+     "v": "5",
+     "t": "5 meses"
+    },
+    {
+     "v": "6",
+     "t": "6 meses"
+    },
+    {
+     "v": "7",
+     "t": "7 meses"
+    },
+    {
+     "v": "8",
+     "t": "8 meses"
+    },
+    {
+     "v": "9",
+     "t": "9 meses"
+    },
+    {
+     "v": "10",
+     "t": "10 meses"
+    },
+    {
+     "v": "11",
+     "t": "11 meses"
+    }
+   ]
+  },
+  {
+   "id": "anio",
+   "label": "Año en que pides la pensión (se toma como mitad de año; fija el calendario de edades de la disposición transitoria 7.ª)",
+   "default": 2027,
+   "min": 2026,
+   "step": 1,
+   "max": 2040,
+   "default_from": "params.jubilacion_activa_2026.supuestos.anio"
+  },
+  {
+   "id": "salario",
+   "label": "Sueldo bruto mensual si trabajas por cuenta ajena, o rendimiento neto mensual si eres autónomo (€ al mes, euros de hoy)",
+   "default": 2000,
+   "min": 1,
+   "step": 50,
+   "default_from": "params.jubilacion_activa_2026.supuestos.salario"
+  },
+  {
+   "id": "tipo",
+   "label": "Tipo de actividad (el autónomo cobra el 75 % si tiene un trabajador indefinido de 18 meses de antigüedad o contrata uno nuevo sin vínculo laboral con él en los 2 años anteriores)",
+   "type": "select",
+   "options": [
+    {
+     "v": "ajena",
+     "t": "Trabajo por cuenta ajena (asalariado)"
+    },
+    {
+     "v": "propia",
+     "t": "Autónomo sin trabajador indefinido"
+    },
+    {
+     "v": "propia_contrata",
+     "t": "Autónomo con un trabajador indefinido (18 meses) o que contrata uno nuevo sin vínculo laboral en los 2 años anteriores"
+    }
+   ]
+  },
+  {
+   "id": "n",
+   "label": "Años que seguirías trabajando desde que pides la pensión",
+   "default": 3,
+   "min": 1,
+   "step": 1,
+   "max": 15,
+   "default_from": "params.jubilacion_activa_2026.supuestos.n"
+  }
+ ],
+ "faqs": [
+  [
+   "¿Cuánta pensión cobro si sigo trabajando (jubilación activa)?",
+   "Un porcentaje de tu pensión que depende de los años completos que hayas demorado el acceso a ella desde la edad ordinaria: 45 % con 1 año, 55 % con 2, 65 % con 3, 80 % con 4 y 100 % con 5 o más (art. 214.2 de la Ley General de la Seguridad Social). Cada 12 meses seguidos en activa se suman 5 puntos, hasta el 100 %. Un autónomo que contrata a un trabajador indefinido cobra el 75 % si ha demorado entre 1 y 3 años. Con 67 años, 40 años cotizados y una pensión de 2.000 €, la pensión sube a 2.080 € por un año completo de demora (tu edad ordinaria sería 65 años y 3 meses) y la activa paga el 45 % (936 € al mes en 14 pagas) más tu sueldo, que lo cobras entero."
+  ],
+  [
+   "¿Qué requisitos tiene la jubilación activa en 2026?",
+   "Tener 15 años cotizados cuando cumples la edad ordinaria de jubilación y pedir la pensión al menos un año después de esa fecha; no valen jubilaciones anticipadas ni con bonificaciones. La edad ordinaria depende del año en que la cumples (disposición transitoria 7.ª): en 2026, 65 años con 38 años y 3 meses cotizados y 66 años y 10 meses si no; desde 2027, 65 años con 38 años y 6 meses y 67 si no. Si reúnes los 15 años después de la edad ordinaria, el año mínimo se cuenta desde que los reúnes (art. 214.1, última frase), aunque entonces no hay complemento por demora (art. 210.2) y la herramienta no lo calcula. Puede ser un trabajo a tiempo completo o parcial, por cuenta ajena o propia. Ya no se exige que la pensión alcance el 100 % de la base reguladora: ese requisito era de la redacción anterior a abril de 2025. No es compatible con un puesto en el sector público (art. 214.1 y 214.9)."
+  ],
+  [
+   "¿Pago cotización de solidaridad si compatibilizo pensión y trabajo?",
+   "Sí. Durante la activa cotizas por incapacidad temporal (y el autónomo por contingencias profesionales), más una cotización especial de solidaridad del 9 % de la base de contingencias comunes que no genera prestaciones. En el trabajo por cuenta ajena la reparten la empresa (7 %) y tú (2 %) (art. 153); el autónomo paga el 9 % entero (art. 310). La herramienta calcula la base del autónomo con la mínima de su tramo del RETA. Sin pensión, desde la edad ordinaria solo cotizas por incapacidad temporal (arts. 152 y 311: 0,25 % a cargo del trabajador). Con 2.000 € brutos, tu sueldo neto es de 1.955 € en la activa frente a 1.995 € sin pensión."
+  ],
+  [
+   "¿Compensa más demorar la pensión que acogerse a la jubilación activa?",
+   "Depende de tu sueldo y de cuántos años cobres la pensión. Demorar significa seguir trabajando sin cobrarla: la pensión sube 4 puntos de porcentaje sobre la base reguladora por año completo (art. 210.2.a), pero no cobras nada de ella mientras tanto. Con el ejemplo de 67 años, 40 cotizados, 2.000 € de pensión y 2.000 € de sueldo, seguir 3 años más sin cobrar la sube de 2.080 € a 2.360 € al mes y lo no cobrado se recupera a los 80 años y 9 meses; la activa suma 26.700 € más que jubilarte del todo en esos 3 años. El complemento por demora es compatible con la activa, pero mientras estés en ella no aumenta (art. 210.2 y 214.4)."
+  ],
+  [
+   "¿Qué pasa con la pensión al dejar de trabajar y con los complementos por mínimos?",
+   "Al terminar el trabajo por cuenta ajena o cesar la actividad por cuenta propia se restablece la pensión íntegra (art. 214.8), con las revalorizaciones acumuladas. La cotización durante la activa no mejora ni el porcentaje de la base reguladora ni el complemento por demora (art. 214.4). Mientras compatibilizas pierdes el derecho a los complementos para pensiones inferiores a la mínima (art. 214.6): si tu pensión es baja (por debajo de 13.106,80 € al año, la mínima sin cónyuge a cargo), dejar de trabajar puede salir mejor de lo que indica la herramienta, que no suma ese complemento."
+  ]
+ ],
+ "sources": "Ley General de la Seguridad Social, texto refundido aprobado por el [Real Decreto Legislativo 8/2015](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), texto consolidado con última actualización publicada el 31/07/2026: art. 214 (jubilación activa: edad y un año de demora mínimo, escala del 45 % al 100 %, 75 % del autónomo que contrata, +5 puntos cada 12 meses, sin complemento por mínimos, pensión íntegra al cesar), art. 210.2 (complemento por demora, compatible con la activa), art. 153 y art. 310 (cotización de solidaridad del 9 %), arts. 152 y 311 (exención de cotizar desde la edad ordinaria salvo incapacidad temporal y contingencias profesionales), art. 205.1 y disposiciones transitorias 7.ª y 9.ª (edad ordinaria y porcentaje por meses cotizados). Redacción vigente desde el 1/4/2025 del [Real Decreto-ley 11/2024](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26917). Pensión máxima (3.359,60 € al mes) y pensión mínima de jubilación (13.106,80 € al año sin cónyuge a cargo): [Real Decreto 241/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977). Base máxima de cotización de 5.101,20 € al mes, art. 32 (incapacidad temporal) y tabla de bases: [Orden PJC/297/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Para tu pensión y tus requisitos exactos, usa el simulador de la [Seguridad Social](https://www.seg-social.es/). Modelo propio: euros de hoy sin revalorización, pensión sin IRPF, salario y pensión constantes, cotización continuada hasta pedir la pensión, calendario de edades y porcentajes según el año indicado (hecho causante en julio). Hipótesis no oficiales y editables: 67 años, 40 años cotizados, pedir la pensión en 2027, 2.000 € de pensión, 2.000 € de sueldo y 3 años de trabajo. Consultado el 2/10/2026. Información orientativa, no asesoramiento ni cálculo oficial."
+}
