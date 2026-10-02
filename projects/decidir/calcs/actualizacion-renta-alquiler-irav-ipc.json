@@ -1,0 +1,140 @@
+{
+  "slug": "actualizacion-renta-alquiler-irav-ipc",
+  "title": "Actualización de la renta del alquiler: IRAV o IPC",
+  "description": "Calcula cuánto te puede subir el casero la renta del alquiler según el IRAV o el IPC, desde cuándo se cobra y qué parte puedes rechazar.",
+  "h1": "Actualización de la renta del alquiler: cuánto puede subir según IRAV o IPC",
+  "lead": "Tu casero puede subirte la renta como máximo el IPC y, si firmaste desde el 26 de mayo de 2023, no más que el IRAV, solo si tu contrato tiene cláusula de actualización y en el aniversario del contrato. En el ejemplo (800 € al mes, IPC pactado, IPC del 4,3 % e IRAV del 2,47 % de agosto de 2026) el máximo es del 2,47 %: 819,76 € al mes, 19,76 € más y 237,12 € más al año, desde el mes siguiente a la notificación escrita. Si te piden 860 € al mes, 40,24 € al mes (482,88 € al año) no son una actualización válida. Sin cláusula en el contrato no hay subida. El tope del 2 % del Real Decreto-ley 26/2026 existió solo del 1 al 2 de octubre de 2026 y no rige. Quedan fuera los usos distintos de vivienda, la vivienda protegida, Cataluña y otras normativas autonómicas, las prórrogas extraordinarias y la reducción de renta en zona tensionada.",
+  "veredicto": "Depende de tu contrato. Sin cláusula de actualización, tu casero no puede subirte la renta. Con IPC pactado, puede subirla como máximo el IPC y, si firmaste desde el 26/5/2023, no más que el IRAV. En el ejemplo (800 € al mes, IPC del 4,3 %, IRAV del 2,47 %) el máximo es 819,76 € al mes, 237,12 € más al año, desde el mes siguiente a la notificación escrita, y los 860 € que piden superan ese máximo en 40,24 € al mes. Si el índice que limita tu subida (el IPC; desde el 26/5/2023, el menor entre IPC e IRAV) no es positivo, no hay subida.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "renta",
+      "label": "Renta mensual actual (€ al mes)",
+      "default": 800,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.renta_alquiler_2026.supuestos.renta"
+    },
+    {
+      "id": "firma",
+      "label": "Fecha de firma del contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "post",
+          "t": "Desde el 26/5/2023"
+        },
+        {
+          "v": "pre",
+          "t": "Entre el 6/3/2019 y el 25/5/2023"
+        },
+        {
+          "v": "ant",
+          "t": "Antes del 6/3/2019 (no se calcula)"
+        }
+      ],
+      "ayuda": "Si prorrogaste o renovaste, cuenta la fecha del contrato vigente."
+    },
+    {
+      "id": "indice",
+      "label": "Índice que dice tu contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "ipc",
+          "t": "IPC"
+        },
+        {
+          "v": "none",
+          "t": "No hay cláusula de actualización"
+        },
+        {
+          "v": "igc",
+          "t": "Hay cláusula pero no dice el índice (IGC)"
+        },
+        {
+          "v": "otro",
+          "t": "Otro índice (por ejemplo, el IRAV pactado)"
+        }
+      ],
+      "ayuda": "Con IGC u otro índice se calcula el máximo posible; la subida real puede ser menor."
+    },
+    {
+      "id": "mes",
+      "label": "Mes en que te notifican la subida por escrito (1 a 12)",
+      "default": 10,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.renta_alquiler_2026.supuestos.mes",
+      "ayuda": "Solo se puede actualizar en el aniversario del contrato."
+    },
+    {
+      "id": "irav",
+      "label": "IRAV último publicado por el INE (%; agosto de 2026, publicado el 15/9/2026)",
+      "default": 2.47,
+      "min": -5,
+      "step": 0.01,
+      "default_from": "params.renta_alquiler_2026.irav_pct",
+      "ayuda": "Lo publica el INE cada mes y varía: cámbialo si hay un dato más reciente. Se usa en contratos desde el 26/5/2023."
+    },
+    {
+      "id": "ipc",
+      "label": "IPC interanual del último mes publicado (%; agosto de 2026, definitivo)",
+      "default": 4.3,
+      "min": -5,
+      "step": 0.1,
+      "default_from": "params.renta_alquiler_2026.ipc_pct",
+      "ayuda": "Por defecto, el índice definitivo de agosto de 2026 (INE). El avance de septiembre (4,9 %) no cuenta; el definitivo sale a mediados de octubre. Cámbialo si hay uno más reciente."
+    },
+    {
+      "id": "pide",
+      "label": "Renta que te piden ahora (€ al mes; 0 si no te han dicho)",
+      "default": 860,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.renta_alquiler_2026.supuestos.pide"
+    },
+    {
+      "id": "zona",
+      "label": "Zona tensionada o gran tenedor (solo informa)",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "Ninguno o no lo sé"
+        },
+        {
+          "v": "zt",
+          "t": "Vivo en zona tensionada declarada"
+        },
+        {
+          "v": "gt",
+          "t": "El casero es gran tenedor"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto me puede subir el casero la renta este año?",
+      "Depende de tu contrato: sin cláusula de actualización, nada; con IPC pactado, como máximo el IPC y, si firmaste desde el 26/5/2023, no más que el IRAV (2,47 % en agosto de 2026). Solo en el aniversario del contrato y con notificación escrita."
+    ],
+    [
+      "¿El casero tiene que avisarme con un mes de antelación?",
+      "No hay un preaviso legal de un mes. La renta actualizada se exige desde el mes siguiente a la notificación escrita, que debe indicar el porcentaje aplicado; vale una nota en el recibo anterior (art. 18.2 LAU)."
+    ],
+    [
+      "¿Qué pasa si mi contrato no menciona la actualización de la renta?",
+      "Sin pacto expreso no se aplica actualización (art. 18.1 LAU): la renta se mantiene. Si hay cláusula pero sin índice, se aplica el IGC, siempre con el IPC como tope."
+    ],
+    [
+      "¿Se aplica el IRAV o el IPC en mi contrato?",
+      "Si lo firmaste desde el 26/5/2023, el IRAV es el límite de referencia (disposición adicional 11.ª), aunque el art. 18 aún cita el IPC: confianza media. Si es anterior, rige el art. 18 de cuando firmaste, con tope IPC."
+    ],
+    [
+      "¿Sigue vigente el tope del 2 % del Real Decreto-ley 26/2026?",
+      "No. El tope del 2 % estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado (BOE-A-2026-20526), así que no rige. Esta calculadora aplica la LAU vigente: IPC y, desde el 26/5/2023, el IRAV."
+    ]
+  ],
+  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 18.1 (actualización solo en los términos pactados; sin pacto, ninguna; sin índice, IGC; tope IPC), art. 18.2 (exigible desde el mes siguiente a la notificación escrita) y disposición adicional 11.ª (IRAV como límite de referencia, añadida por la Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Resolución del INE de 18/12/2024 que crea el IRAV (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-26685). IRAV de agosto de 2026 = 2,47 %, publicado el 15/9/2026 (INEbase, https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos), consultado el 2/10/2026. IPC de agosto de 2026 = 4,3 % (índice definitivo, INE, API tabla 76134; el avance de septiembre, 4,9 %, no es el índice definitivo; https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736176802&menu=ultiDatos&idp=1254735976607), consultado el 2/10/2026. El Real Decreto-ley 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado (BOE-A-2026-20526, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Las rentas de los ejemplos son supuestos editables, no datos oficiales."
+}

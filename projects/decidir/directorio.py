@@ -12,12 +12,26 @@ def _short(d, n=80):
     s = m.group(1) if m and len(m.group(1)) <= n else d
     return s if len(s) <= n else s[:n - 1].rsplit(" ", 1)[0] + "…"
 
+DESC = {}  # href -> descripción corta: no va en el HTML, sino en /assets/todas-<hash>.json (lo escribe bundle.run); el HTML solo crece ~100 B por página nueva
+
 def _li(href, title, desc, kw=""):
     k = ' data-k="' + e(kw) + '"' if kw else ""
-    return f'<li{k}><a href="{href}">{e(title)}</a> <span class="note">{e(desc)}</span></li>'
+    DESC[href] = desc
+    return f'<li{k}><a href="{href}">{e(title)}</a></li>'
+
+def write_desc(dist):
+    """Escribe el JSON de descripciones del directorio y devuelve su ruta versionada (bundle.run la pone en el HTML)."""
+    import hashlib
+    t = json.dumps(DESC, ensure_ascii=False, separators=(",", ":"))
+    n = "todas-" + hashlib.sha1(t.encode()).hexdigest()[:10] + ".json"
+    for f in os.listdir(os.path.join(dist, "assets")):
+        if f.startswith("todas-") and f.endswith(".json"): os.remove(os.path.join(dist, "assets", f))
+    open(os.path.join(dist, "assets", n), "w").write(t)
+    return "/assets/" + n
 
 def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, notes, icons, tema, base):
     """-> (body, jsonld, lastmod). Lista agrupada por tema de TODAS las calculadoras + guías, tablas, calendario."""
+    DESC.clear()
     items = []  # (nombre, ruta) para el ItemList
     secs = []
     by = {}
@@ -68,18 +82,22 @@ def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, note
 <p class="empty" id="de" hidden>No hay nada con esa palabra. Prueba con otra o <a href="/contacto/">cuéntanos qué te falta</a>.</p>
 <p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 </article>
-<script>(function(){{var q=document.getElementById("dq"),c=document.getElementById("dc"),m=document.getElementById("de"),g=document.querySelectorAll(".dir .grp");
+<script data-d="/assets/todas.json">(function(){{var q=document.getElementById("dq"),c=document.getElementById("dc"),m=document.getElementById("de"),g=document.querySelectorAll(".dir .grp"),L=[],ld=0;
 function n(s){{return s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")}}
-q.addEventListener("input",function(){{var t=n(q.value).trim().split(/\\s+/).filter(Boolean),v=0;
+function f(){{var t=n(q.value).trim().split(/\\s+/).filter(Boolean),v=0;
 Array.prototype.forEach.call(g,function(s){{var a=0;Array.prototype.forEach.call(s.querySelectorAll("li"),function(l){{var h=n(l.textContent+" "+(l.getAttribute("data-k")||"")),ok=t.every(function(w){{return h.indexOf(w)>-1}});l.hidden=!ok;if(ok)a++}});s.hidden=!a;v+=a}});
-c.textContent=v+(v===1?" página":" páginas");m.hidden=v>0}})}})();</script>"""
+c.textContent=v+(v===1?" página":" páginas");m.hidden=v>0}}
+function d(){{if(ld)return;ld=1;fetch(D).then(function(r){{return r.json()}}).then(function(j){{Array.prototype.forEach.call(document.querySelectorAll(".dir li"),function(l){{var a=l.querySelector("a");if(!a||l.querySelector(".note"))return;var s=j[a.getAttribute("href")];if(s){{var x=document.createElement("span");x.className="note";x.textContent=s;l.appendChild(document.createTextNode(" "));l.appendChild(x)}}}});if(q.value)f()}}).catch(function(){{ld=0}})}}
+var D=document.currentScript.getAttribute("data-d");
+q.addEventListener("input",function(){{d();f()}});q.addEventListener("focus",d);
+if("requestIdleCallback"in window)requestIdleCallback(d);else setTimeout(d,300)}})();</script>"""
     url = base + PATH
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Todas las calculadoras y guías", "url": url,
            "description": f"Lista completa de las {len(calcs)} calculadoras de decisión, guías, tablas 2026 y calendario.",
            "inLanguage": "es-ES", "datePublished": pub, "dateModified": mod, "isPartOf": {"@id": base + "/#website"},
            "publisher": seo.org(base),
            "mainEntity": {"@type": "ItemList", "numberOfItems": total, "itemListElement": [
-               {"@type": "ListItem", "position": i + 1, "name": n, "url": base + p} for i, (n, p) in enumerate(items)]}},
+               {"@type": "ListItem", "position": i + 1, "url": base + p} for i, (n, p) in enumerate(items)]}},
           seo.breadcrumbs(base, [("Inicio", "/"), ("Todas las calculadoras", None)])]
     return body, ld, mod
 

@@ -28,9 +28,18 @@ HUBS = {
         "groups": [
             ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
+            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
+            "fianza-y-garantias-adicionales-alquiler": {
+                "name": "Fianza y garantías del alquiler",
+                "text": "Al firmar, la ley limita lo que te pueden pedir: una mensualidad de fianza y, como mucho, dos de garantía adicional. La calculadora te dice cuánto es legal exigirte con tu renta y tu contrato.",
+            },
+            "actualizacion-renta-alquiler-irav-ipc": {
+                "name": "Actualización de la renta",
+                "text": "La subida anual solo puede aplicar el índice que dice la ley (IRAV o IPC según la fecha del contrato). La calculadora da la renta nueva y cuánto te sobra si te piden más.",
+            },
             "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
                 "name": "Plazo: 20, 25 o 30 años",
                 "text": "Un plazo más corto paga menos intereses pero sube la cuota. El que te conviene es el más corto cuya cuota, sumada a tus otras deudas, quepa en el tope de esfuerzo que fijes; la calculadora lo elige y, si no cabe ninguno, te da el plazo mínimo.",

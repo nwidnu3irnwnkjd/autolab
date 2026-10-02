@@ -1,0 +1,343 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "ejemplo: 900 €, pf, 5 años, garantía 3 y comisión",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 1,
+    "garantia": 3,
+    "adelanto": 1,
+    "comision": 900
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 5400,
+    "exigible": 3600,
+    "noExigible": 1800,
+    "exGarantia": 900,
+    "exAdelanto": 0,
+    "exComision": 900,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "garantía justa en el límite (2 meses), sin comisión",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 1,
+    "garantia": 2,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 3600,
+    "exigible": 3600,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "garantía 2,5 meses por encima del límite",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 1,
+    "garantia": 2.5,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 4050.0,
+    "exigible": 3600.0,
+    "noExigible": 450.0,
+    "exGarantia": 450.0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde 5 años, persona física: límite aplica",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 1,
+    "garantia": 4,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 5400,
+    "exigible": 3600,
+    "noExigible": 1800,
+    "exGarantia": 1800,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "6 años, persona física: sin tope de garantía",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 6,
+    "arr": "pf",
+    "fianza": 1,
+    "garantia": 4,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 3600,
+    "maxLegal": 5400,
+    "pedido": 5400,
+    "exigible": 5400,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "7 años, persona jurídica: límite aplica",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 7,
+    "arr": "pj",
+    "fianza": 1,
+    "garantia": 3,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 4500,
+    "exigible": 3600,
+    "noExigible": 900,
+    "exGarantia": 900,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "8 años, persona jurídica: sin tope, solo comisión",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 8,
+    "arr": "pj",
+    "fianza": 1,
+    "garantia": 3,
+    "adelanto": 1,
+    "comision": 600
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 2700,
+    "maxLegal": 4500,
+    "pedido": 5100,
+    "exigible": 4500,
+    "noExigible": 600,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 600,
+    "sinTope": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "fianza de 2 meses y garantía 0: el exceso cabe en el tope",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 2,
+    "garantia": 0,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 2700,
+    "exigible": 2700,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "fianza 2 y garantía 2: el exceso suma en el tope",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 2,
+    "garantia": 2,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 4500,
+    "exigible": 3600,
+    "noExigible": 900,
+    "exGarantia": 900,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "6 años, fianza 3: sin tope",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 6,
+    "arr": "pf",
+    "fianza": 3,
+    "garantia": 0,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 3600,
+    "exigible": 3600,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "uso distinto con fianza 3: sin tope",
+   "in": {
+    "renta": 900,
+    "tipo": "uso",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 3,
+    "garantia": 0,
+    "adelanto": 1,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 1800,
+    "garantiaMax": 900,
+    "maxLegal": 3600,
+    "pedido": 3600,
+    "exigible": 3600,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "fianza 2 y 2 meses adelantados en vivienda",
+   "in": {
+    "renta": 900,
+    "tipo": "viv",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 2,
+    "garantia": 0,
+    "adelanto": 2,
+    "comision": 0
+   },
+   "expect": {
+    "fianzaLegal": 900,
+    "garantiaMax": 1800,
+    "maxLegal": 3600,
+    "pedido": 3600,
+    "exigible": 2700,
+    "noExigible": 900,
+    "exGarantia": 0,
+    "exAdelanto": 900,
+    "exComision": 0,
+    "sinTope": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "uso distinto: garantía, adelanto y comisión pactables",
+   "in": {
+    "renta": 900,
+    "tipo": "uso",
+    "duracion": 5,
+    "arr": "pf",
+    "fianza": 3,
+    "garantia": 5,
+    "adelanto": 2,
+    "comision": 500
+   },
+   "expect": {
+    "fianzaLegal": 1800,
+    "garantiaMax": 5400,
+    "maxLegal": 9500,
+    "pedido": 9500,
+    "exigible": 9500,
+    "noExigible": 0,
+    "exGarantia": 0,
+    "exAdelanto": 0,
+    "exComision": 0,
+    "sinTope": 1
+   },
+   "tol": 1
+  }
+ ]
+}

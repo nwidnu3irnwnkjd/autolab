@@ -1,0 +1,116 @@
+{
+  "slug": "fianza-y-garantias-adicionales-alquiler",
+  "title": "Fianza y garantías del alquiler: cuánto te pueden pedir",
+  "description": "Calcula cuánto te pueden exigir al firmar un alquiler de vivienda (fianza, garantía y adelanto) y qué puedes negarte a pagar. Con tu renta y tu contrato.",
+  "h1": "Fianza y garantías adicionales del alquiler: cuánto te pueden pedir al firmar",
+  "lead": "Si alquilas una vivienda de 900 € al mes a un casero particular con un contrato de hasta 5 años, la ley solo permite exigirte 3.600 € al firmar (1 mensualidad de fianza, hasta 2 de garantía adicional y 1 de renta adelantada) y la comisión de la inmobiliaria corre a cargo del casero: si te piden 5.400 €, puedes negarte a pagar la diferencia de 1.800 €. La calculadora compara lo que te piden con el máximo legal según el tipo de contrato, la duración y el arrendador.",
+  "veredicto": "Depende de lo que te pidan y de la duración del contrato. En una vivienda, la ley permite 1 mensualidad de fianza, hasta 2 de garantía adicional (en contratos de hasta 5 años, o 7 si el casero es una empresa) y 1 de renta adelantada; la comisión de la inmobiliaria es del casero. Todo lo que pase de ahí puedes negarte a pagarlo.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "tipo",
+      "label": "Tipo de contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "viv",
+          "t": "Vivienda habitual"
+        },
+        {
+          "v": "uso",
+          "t": "Uso distinto de vivienda (local, oficina…)"
+        }
+      ],
+      "ayuda": "No se modelan alquileres de temporada, de habitaciones, subarriendos ni alquileres sociales."
+    },
+    {
+      "id": "renta",
+      "label": "Renta mensual (€ al mes)",
+      "default": 900,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.fianza_alquiler_2026.supuestos.renta"
+    },
+    {
+      "id": "duracion",
+      "label": "Duración pactada del contrato (años)",
+      "default": 5,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.fianza_alquiler_2026.supuestos.duracion",
+      "ayuda": "Usa la duración pactada que pone el contrato, sin contar prórrogas. Si es menor de 5 años (7 si el casero es persona jurídica), el contrato se prorroga hasta ese mínimo (art. 9.1), pero el límite de la garantía se mira con la duración pactada."
+    },
+    {
+      "id": "arr",
+      "label": "Arrendador",
+      "type": "select",
+      "options": [
+        {
+          "v": "pf",
+          "t": "Persona física (particular)"
+        },
+        {
+          "v": "pj",
+          "t": "Persona jurídica (empresa, sociedad, fondo)"
+        }
+      ]
+    },
+    {
+      "id": "fianza",
+      "label": "Fianza que te piden (mensualidades de renta)",
+      "default": 1,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.fianza_alquiler_2026.supuestos.fianza",
+      "ayuda": "Lo que pidan por encima de la fianza legal se trata como garantía adicional y suma en su límite."
+    },
+    {
+      "id": "garantia",
+      "label": "Garantía adicional que te piden (mensualidades de renta: aval, depósito o seguro)",
+      "default": 3,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.fianza_alquiler_2026.supuestos.garantia",
+      "ayuda": "Si te piden una cantidad en euros, divídela entre la renta."
+    },
+    {
+      "id": "adelanto",
+      "label": "Renta por adelantado que te piden (mensualidades, incluida la del primer mes)",
+      "default": 1,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.fianza_alquiler_2026.supuestos.adelanto"
+    },
+    {
+      "id": "comision",
+      "label": "Comisión o honorarios de agencia y formalización que te piden (€)",
+      "default": 900,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.fianza_alquiler_2026.supuestos.comision"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto me pueden pedir al firmar un alquiler de vivienda?",
+      "Fianza de 1 mensualidad, hasta 2 mensualidades de garantía adicional (en contratos de hasta 5 años, o 7 si el casero es una empresa) y 1 mensualidad de renta por adelantado. Con 900 € de renta, 3.600 € como máximo (arts. 36 y 17.2 de la LAU)."
+    ],
+    [
+      "¿Pueden pedirme más de dos meses de garantía adicional?",
+      "Depende de la duración pactada: en vivienda, con contrato de hasta 5 años (7 si el casero es persona jurídica), la garantía adicional no puede pasar de 2 mensualidades. Con una duración mayor, la ley no fija ese tope (art. 36.5 de la LAU)."
+    ],
+    [
+      "¿Tengo que pagar la comisión de la inmobiliaria?",
+      "En un alquiler de vivienda, los gastos de gestión inmobiliaria y de formalización son del arrendador, sea particular o empresa (art. 20.1 de la LAU, desde la Ley 12/2023). En contratos de 2019 a mayo de 2023, solo si era persona jurídica."
+    ],
+    [
+      "¿Cuándo me devuelven la fianza y qué pasa si se retrasan?",
+      "La ley prevé que, si el saldo no se restituye pasado un mes desde la entrega de llaves, devenga el interés legal (art. 36.4 de la LAU). La calculadora no calcula ese interés: depende del tipo vigente y de los días de retraso."
+    ],
+    [
+      "¿Se actualiza la fianza si el contrato se prorroga?",
+      "Durante los 5 primeros años (7 con empresa) no se actualiza. En cada prórroga posterior, el casero puede pedir que se complete hasta 1 mensualidad de la renta vigente, o tú que se reduzca (art. 36.2 de la LAU)."
+    ]
+  ],
+  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 36.1 (fianza de 1 mensualidad en vivienda y 2 en uso distinto), art. 36.2 (actualización en prórrogas), art. 36.4 (interés legal pasado un mes de la entrega de llaves), art. 36.5 (garantía adicional de hasta 2 mensualidades en vivienda con contratos de hasta 5 años, o 7 si el arrendador es persona jurídica), art. 17.2 (no más de 1 mensualidad por adelantado) y art. 20.1 (gestión inmobiliaria y formalización a cargo del arrendador, Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Redacción vigente tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Los importes de renta, duración y lo que te piden son ejemplos editables, no datos oficiales."
+}

@@ -16,8 +16,8 @@
   ],
   "alquilar-o-comprar": [
     "cuanto-ahorrar-para-comprar-casa",
-    "reformar-o-mudarse",
-    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
+    "fianza-y-garantias-adicionales-alquiler",
+    "actualizacion-renta-alquiler-irav-ipc"
   ],
   "amortizar-o-invertir": [
     "amortizar-plazo-o-cuota",
@@ -265,9 +265,9 @@
     "capitalizar-paro-o-cobrarlo"
   ],
   "irpf-alquilar-vivienda-rendimiento-neto": [
+    "actualizacion-renta-alquiler-irav-ipc",
     "declaracion-conjunta-o-individual",
-    "venta-vivienda-plusvalia-irpf-exencion",
-    "obligado-a-declarar-renta-dos-pagadores"
+    "venta-vivienda-plusvalia-irpf-exencion"
   ],
   "jubilacion-activa-o-dejar-de-trabajar": [
     "jubilacion-anticipada-o-demorada",
@@ -504,5 +504,15 @@
     "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
     "fondo-de-emergencia-cuantos-meses-necesito",
     "navidad-cuanto-gastar-sin-endeudarte"
+  ],
+  "actualizacion-renta-alquiler-irav-ipc": [
+    "fianza-y-garantias-adicionales-alquiler",
+    "irpf-alquilar-vivienda-rendimiento-neto",
+    "alquilar-o-comprar"
+  ],
+  "fianza-y-garantias-adicionales-alquiler": [
+    "actualizacion-renta-alquiler-irav-ipc",
+    "alquilar-o-comprar",
+    "irpf-alquilar-vivienda-rendimiento-neto"
   ]
 }

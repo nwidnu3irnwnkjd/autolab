@@ -63,4 +63,10 @@ def run(root, dist):
         tags = "".join(f'<script src="/assets/{u}?v={jsv[u]}"' + ("".join(f' data-{k}="/assets/{l}?v={jsv[l]}"' for l, k in lazy.items() if l in use) if u == "em.js" else "") + "></script>" for u in use if u not in lazy)
         h = re.sub(r'<script src="/assets/(?:app|em)\.js[^"]*"></script>', tags, h, count=1)
         open(p, "w").write(h)
+    td = os.path.join(dist, "todas", "index.html")  # /todas/: descripciones en JSON versionado, fuera del HTML
+    if os.path.exists(td):
+        import directorio
+        if directorio.DESC:
+            u = directorio.write_desc(dist); h = open(td).read()
+            open(td, "w").write(h.replace('data-d="/assets/todas.json"', f'data-d="{u}"'))
     return {k: v[0] for k, v in cssf.items()}

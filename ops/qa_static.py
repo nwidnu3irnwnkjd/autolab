@@ -22,7 +22,8 @@ ROOT = os.path.dirname(OPS)
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 PESO_AVISO = 60 * 1024   # raw: solo INFO (no cuenta como AVISO)
 GZIP_AVISO = 30 * 1024   # peso transferido (gzip -6, como GitHub Pages): AVISO
-PESO_BLOQ = int(float(os.environ.get("QA_PESO_BLOQ_KB", 90)) * 1024)  # override explícito si se acepta una página pesada
+PESO_BLOQ = int(float(os.environ.get("QA_PESO_BLOQ_KB", 90)) * 1024)  # raw: informativo (INFO). Manda el gzip:
+GZIP_BLOQ = int(float(os.environ.get("QA_GZIP_BLOQ_KB", 60)) * 1024)  # BLOQUEANTE si el peso transferido gzip supera esto (override explícito)
 MAX_EDAD, MAX_EDAD_ID = 7, {"euribor12m": 45}
 
 def arg(name, default=None):
@@ -225,7 +226,8 @@ def check_pages(only_urls=None):
                 total += os.path.getsize(fp); gz += len(gzip.compress(open(fp, "rb").read(), 6)); parts.append(f"{os.path.basename(lp)} {os.path.getsize(fp)/1024:.1f}")
         n_checks += 1
         if not is404:
-            if total > PESO_BLOQ: add("BLOQUEANTE", f"{name}:1", f"peso cargado {total/1024:.1f} KB > {PESO_BLOQ/1024:g} KB ({', '.join(parts)})")
+            if gz > GZIP_BLOQ: add("BLOQUEANTE", f"{name}:1", f"peso transferido gzip {gz/1024:.1f} KB > {GZIP_BLOQ/1024:g} KB (raw {total/1024:.1f} KB; {', '.join(parts)})")
+            elif total > PESO_BLOQ: add("INFO", f"{name}:1", f"peso cargado {total/1024:.1f} KB raw > {PESO_BLOQ/1024:g} KB (informativo; manda gzip {gz/1024:.1f} KB) ({', '.join(parts)})")
             elif total > PESO_AVISO: add("INFO", f"{name}:1", f"peso cargado {total/1024:.1f} KB raw > 60 KB ({', '.join(parts)}); gzip {gz/1024:.1f} KB")
             if gz > GZIP_AVISO: add("AVISO", f"{name}:1", f"peso transferido gzip {gz/1024:.1f} KB > 30 KB (raw {total/1024:.1f} KB)")
         if not is404 and not p.noindex: indexables.append(urlp)
