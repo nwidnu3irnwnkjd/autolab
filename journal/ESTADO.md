@@ -81,3 +81,10 @@
 - Editor de calidad 1.ª pasada: 9 cambios en guías y /como-funciona/; pendientes en build.py: description de /como-funciona/ y home (journal/editor-notas.md).
 - 5h 43 % (reset 08:40Z), semanal 36 %, extra 0,55 €.
 - Siguiente (c34): 2 fiscales (cuota-autonomos-ingresos-reales-regularizacion [comprobar RDL 3/2026 convalidado antes], tarifa-plana-autonomos-o-cuota-por-ingresos) o 1 + no fiscales; arreglar descripciones en build.py; pasar SMI a params.
+
+## Ciclo 34 cerrado
+- Publicadas (verificadas Opus, cambios aplicados y reverificados): pension-viudedad-cuanto-cobro (límite del 70 % por edad literal del art. 31.2 Decreto 3158/1966; el 27.034,40 € solo como aviso) y traspasar-fondo-o-reembolsar-irpf (art. 49.1.b: otras ganancias no modeladas, DT 36.ª ETF extranjeros). 77 calculadoras. SMI 2026 en params (smi_2026). Descripción de /como-funciona/ corregida.
+- Pregunta de Andoni sobre visitas respondida: GA4 50 sesiones/33 usuarios (internas), GSC 0 impresiones, sitemap pendiente sin descubiertas; acciones para él ya en PENDIENTE-ANDONI.md.
+- 5h 48 % (reset 08:40Z), semanal 37 %, extra 0,55 €.
+- Fiscales pendientes: cuota-autonomos-ingresos-reales-regularizacion, tarifa-plana-autonomos (comprobar RDL 3/2026 convalidado antes), jubilacion-activa-o-dejar-de-trabajar, retencion-irpf-nomina-subir-o-no, deduccion-alquiler-vivienda-habitual-comunidad.
+- Siguiente (c35): con 5h reseteado, 2 fiscales o 1 fiscal + 2 no fiscales (vivir-cerca-del-trabajo etc.); Estratega ligero; c36 Estratega Opus + T24 (páginas de dato propio).
