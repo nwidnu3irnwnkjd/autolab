@@ -22,7 +22,7 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 - Paso 3.3: horas de costes.md con `date -u +%FT%RZ` (hoy hay una línea de cierre con hora futura) y tokens/minutos por rol tal cual los devuelve cada Agent.
 - Coste: 0. Beneficio: que las mejoras de los roles se apliquen de verdad y las métricas sean fiables.
 
-### [>] T3 · (c8: se integra en T7, prioridad 1) `ops/qa_static.py`: QA estática determinista (dueño: Orquestador; Sonnet, ~40k tokens una vez)
+### [x] T3 · (HECHA c9: ops/qa_static.py) (c8: se integra en T7, prioridad 1) `ops/qa_static.py`: QA estática determinista (dueño: Orquestador; Sonnet, ~40k tokens una vez)
 - Script sin dependencias con los parseadores de qa.md (sitemap, JSON-LD, title/description/canonical/h1, enlaces internos, peso por página). Salida `BLOQUEANTE|AVISO archivo:línea`.
 - Beneficio: falsos positivos → 0 por construcción; el QA Haiku pasa de ~63k a ~25k tokens/ciclo (solo navegador y cifras). Se paga en 1-2 ciclos.
 
@@ -41,7 +41,7 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 
 ## Pasada 2 · 2026-10-01T23:03Z (ciclo 8, datos de c4-c7)
 
-### [>] T7 · `ops/close_cycle.sh` (+ `ops/qa_static.py`): cierre de ciclo en un comando (dueño: Orquestador; Sonnet, ~70k tokens una vez; ciclo 9)
+### [x] T7 · (HECHA c9: ops/close_cycle.sh con --dry-run; falta el primer cierre real) `ops/close_cycle.sh` (+ `ops/qa_static.py`): cierre de ciclo en un comando (dueño: Orquestador; Sonnet, ~70k tokens una vez; ciclo 9)
 - Problema medido: cada ciclo el Orquestador repite a mano ~10 pasos y deja 3 commits (ciclo, «estado IndexNow», «estado ciclo N»: ver `git log`); costes.md tiene horas desordenadas y valores «~»; el QA Haiku gasta 94k/ciclo, la mitad en comprobaciones estáticas deterministas; las peticiones se resuelven sin marcar.
 - Especificación (bash + python estándar, sin red salvo git/curl/IndexNow; `set -euo pipefail`; sale ≠ 0 al primer rojo y NO hace commit):
   1. `close_cycle.sh <N> "<mensaje>" <5h%> <semanal%> <extraEUR> "<roles y tokens>"` (los % los da get_usage, que es MCP y no se puede llamar desde bash).
@@ -63,7 +63,7 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 - Pipeline (parte de T4): la fiscal NO bloquea el ciclo. Ciclo N: Constructor fiscal + oráculo; ciclo N+1: Verificador (en segundo plano) mientras el resto del ciclo publica; ciclo N+2: correcciones + re-verificación Sonnet + publicación. La calculadora no entra en el sitemap hasta el veredicto (la deja fuera del commit o con `"borrador": true` — petición al Orquestador para que build.py lo respete). Coste: complejidad en el commit; beneficio: ciclos de ~12 min en vez de 33 con fiscal.
 - Límite de scope: 1 fiscal en vuelo a la vez; las ramas < 1 % de usuarios que no cambian el veredicto se declaran como límite, no se modelan.
 
-### [ ] T9 · «Editor de calidad/YMYL» como script, no como rol (dueño: Orquestador; dentro de T7.3b; ~20k extra)
+### [x] T9 · (HECHA c9: chequeo YMYL en qa_static.py) «Editor de calidad/YMYL» como script, no como rol (dueño: Orquestador; dentro de T7.3b; ~20k extra)
 - Coste/beneficio: un rol LLM por ciclo costaría ~60-90k (~0,07 pp/ciclo) para revisar textos que casi no cambian; los errores de texto vistos (2 en IRPF, Euríbor del día 1) los evitan mejor la rúbrica v2 (punto 10), el checklist del Constructor y un chequeo determinista: frases con «Ley|art\.|BOE|RDL|%|€» en content/ y calcs/*.json sin enlace a fuente en la misma sección, y números del texto que no salen de params/live/tests → AVISO. Decisión: **script ahora (en T7), rol nunca salvo que el script dé > 3 avisos reales por ciclo.**
 
 ### [ ] T10 · «Analista de datos» (Search Console/GA4) — dejar en ideas

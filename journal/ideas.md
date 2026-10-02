@@ -71,3 +71,41 @@ Sin volúmenes exactos (pendiente Keyword Planner). Evaluación por señales rea
 19. cuánto dura la salsa de tomate / tomate frito abierto
 20. cuánto dura la fruta cortada (aguacate, manzana)
 Hubs: `/carnes/`, `/lacteos/` (y un índice general con buscador).
+
+---
+# Ciclo 9 · 2026-10-02 — 8 calculadoras NO fiscales (Investigador, Sonnet con web)
+**Honestidad sobre volúmenes:** sin Keyword Planner ni acceso a autocompletar. «Evidencia» = nº de resultados/competidores y titulares reales de la SERP del 2026-10-02 (desde EE. UU.). Volumen cualitativo (A alto / M medio / B bajo) por esa señal; validar con Search Console a 28 días. Todas ya añadidas al final de `projects/decidir/data/backlog.md`. Ninguna depende de tablas legales: lo pone el usuario o sale de `live.json` (gasolina95, diesel, luz_pvpc, euribor12m).
+
+| # | Slug | Keyword principal | Vol. | Tema | Evidencia | Por qué ganaríamos | Datos (origen) | YMYL |
+|---|---|---|---|---|---|---|---|---|
+| 1 | reparar-o-comprar-electrodomestico | reparar o comprar lavadora nueva | A | hogar | 9 resultados: OCU, Infobae, NerdWallet, reparadores; todos «regla del 50 %», ninguna calculadora | Veredicto con presupuesto de reparación, edad, precio nuevo, riesgo de 2.ª avería y consumo extra; coste por año de vida restante | Inputs usuario (presupuesto, edad, precio nuevo, kWh etiqueta); luz_pvpc para el consumo | Bajo |
+| 2 | cambiar-electrodomestico-antiguo-merece-la-pena | cambiar electrodomésticos antiguos por clase A merece la pena | A | energía | eldiario.es, elEconomista, Fintonic, Telecinco (jun-2026 «hasta 300 €/año»), mielectro; cifras dispares, sin calculadora | Años de amortización = (precio nuevo − valor actual) / (Δ kWh × €/kWh del día); cifra propia frente a titulares inflados | kWh/año de la etiqueta (usuario), luz_pvpc (live.json), vida útil (param) | Bajo |
+| 3 | coche-nuevo-o-seminuevo | coche nuevo o de segunda mano cuál compensa | A | coche | Autohero, Clicars, Autokey, State Farm (EE. UU.) + calculadoras de depreciación sueltas; ninguna da coste total a N años | Coste total a N años: depreciación (curva editable), garantía, mantenimiento, financiación, seguro; año de equilibrio. Enlaza con comprar-coche-o-renting | Inputs usuario; seguro y mantenimiento como supuestos fechados en params | Bajo |
+| 4 | tren-avion-o-coche | tren avión o coche qué sale más barato | A (estacional: puentes, Navidad, verano) | viajes | Omio, lostraveleros, mundukos: tablas por ruta (Madrid-Barcelona bus 51, tren 59, coche 102, avión 117 €, sin fecha) | Tu coste real de coche (consumo × gasolina95 de live.json + peajes + desgaste), nº de viajeros que divide el coche, extras de avión (equipaje, traslado) y tiempo puerta a puerta | Precios de billete y peajes: inputs; carburante: live.json; km: input | Bajo |
+| 5 | bici-electrica-o-transporte-publico | bici eléctrica o transporte público cuánto se ahorra | M-A | ahorro | rodarelectric (vendedor), Rankia, urbancitymove, SALAMANCArtv (sep-2026); datos «abono 21,80 € Madrid» en artículos | Años para amortizar la bici frente a abono o coche, con carga, mantenimiento, seguro, robo; 3 comparaciones en una | Abono y precio bici: inputs (con ejemplos por ciudad); luz_pvpc para carga | Bajo |
+| 6 | coche-propio-o-carsharing-o-vtc | tener coche o carsharing cuánto cuesta al mes | M | coche | Avancar, adslzone, elespanol 2018, LinkedIn; datos obsoletos (car2go/emov) | Punto de corte en km/mes y salidas/mes a partir del cual el coche propio gana; coste fijo real del coche (seguro, ITV, parking, depreciación) | Todo input; carburante: live.json | Bajo |
+| 7 | cambiar-ventanas-aislamiento-merece-la-pena | cambiar ventanas merece la pena ahorro | M-A (estacional oct-feb) | hogar | Leroy Merlin, OCU, certificadosenergeticos, humedades.com: «amortiza en 5-10 años» sin cálculo | Amortización con TU factura de calefacción y TU % de ahorro (rango pesimista/base/optimista), ayudas como entrada para no fijar normativa | Factura calefacción y presupuesto: inputs; precio kWh de calefaccion-gas-aerotermia (params) | Bajo-medio (ahorro prometido: usar rangos) |
+| 8 | universidad-publica-o-privada-o-master | universidad pública o privada cuánto cuesta | A (pico jun-sep) | familia | Infobae (ene-2025), Bankinter, OCU, yaq, dineo, cuentasclaras: tablas €/crédito por CCAA, sin herramienta de decisión | Coste total del grado/máster + vivir fuera vs en casa + beca opcional + año de equilibrio frente a salario esperado (input); no promete sueldos | €/crédito, alojamiento, salario: inputs; medias públicas como ejemplo fechado | Medio (decisión familiar; sin cifras de empleabilidad inventadas) |
+
+**Descartadas con motivo:** bombillas LED (amortiza en meses, decisión trivial y SERP de vendedores; mejor como bloque dentro de #2), aire acondicionado vs ventilador (informativa, consumo; posible bloque estacional), seguro de hogar y fibra vs móvil (precio depende de cotizadores propietarios: sin dato vivo ni dato del usuario fiable), lavavajillas (sub-caso de #1/#2).
+
+## Tres formatos de contenido de apoyo (guías que enlazan a varias calculadoras)
+1. **«Cuánto cuesta de verdad tener coche en España» (guía-hub, ~1.500 palabras + tabla €/km):** enlaza a diesel-gasolina-hibrido-electrico, comprar-coche-o-renting, seguro-todo-riesgo-o-terceros, coche-nuevo-o-seminuevo, coche-propio-o-carsharing-o-vtc, bici-electrica-o-transporte-publico. Cifra citable por AIO: coste anual medio con fecha (del Barómetro).
+2. **«Checklist de tu casa antes del invierno» (estacional oct-nov):** ventanas/aislamiento, calefacción gas-aerotermia-eléctrica, luz fija o indexada, placas solares, cambiar electrodomésticos. Una tabla «qué hacer primero» ordenada por años de amortización con tus datos (enlaza 5 calculadoras).
+3. **«Plan de compra de vivienda en 4 pasos» (formato B de la sección 2):** cuánto ahorrar → alquilar o comprar → fija o variable → amortizar plazo/cuota → amortizar o invertir. Hub de mayor valor y mejor encaje con AIO (hipotecas: comparadores 43 % de citas). Alternativa ligera: «Black Friday sin arrepentirse» (nov: reparar o comprar, cambiar electrodoméstico, contado o financiar).
+
+## Priorización de los siguientes 10 ciclos de construcción (2 calculadoras por ciclo)
+Criterios: estacionalidad (hoy 2-oct), coste/riesgo (no fiscales primero; 1 fiscal en vuelo con pipeline T8), hueco de competencia, clústeres para enlazado interno. Ya hechas: 12 + guardería + seguro = 14.
+| Ciclo | Construir | Motivo |
+|---|---|---|
+| 10 | cambiar-ventanas-aislamiento-merece-la-pena + cambiar-electrodomestico-antiguo-merece-la-pena | Estacional oct-feb; clúster energía con calefacción y luz ya publicadas |
+| 11 | tren-avion-o-coche + reparar-o-comprar-electrodomestico | Puentes de diciembre y Black Friday (27-nov); ambas rápidas. Fiscal en paralelo: placas-solares-merece-la-pena (cadena T8, ciclo N) |
+| 12 | coche-nuevo-o-seminuevo + cuanto-ahorrar-para-comprar-casa | Cierra clúster coche; hipoteca es el clúster con más citas AIO. Fiscal: verificación de placas |
+| 13 | coche-propio-o-carsharing-o-vtc + bici-electrica-o-transporte-publico | Clúster movilidad completo → guía 1 |
+| 14 | autonomo-o-asalariado (fiscal LISTA) + universidad-publica-o-privada-o-master | Enero: cuota de autónomos y búsquedas de cambio de empleo |
+| 15 | rescate-plan-pensiones-capital-o-renta (fiscal LISTA) + guía «checklist casa» | Pensiones: complementa plan-pensiones-o-fondo-indexado; nov-dic hay búsqueda de rescate/aportación |
+| 16 | Revisión de datos: params/live, ahorrar (fiscales) y Barómetro de noviembre; solo huecos y correcciones | Antes de enero se actualizan IRPF, cuotas y peajes |
+| 17 | Preparar renta 2026: declaración conjunta ya publicada, actualizar mínimos autonómicos pendientes (7 CCAA) | Pico abril-junio; indexar en enero |
+| 18 | Llamar al Investigador (cada 6 ciclos): 8 nuevas con datos de Search Console de los ciclos 1-12 | Reponer con evidencia real de impresiones, no estimaciones |
+| 19 | Reforzar las 3 páginas con más impresiones (veredicto, escenarios, FAQ) en vez de nuevas | Con ≥ 20 calculadoras publicadas, mejorar manda sobre ampliar |
+Regla: si el Verificador fiscal no cierra una fiscal a tiempo, se sustituye por la siguiente no fiscal de la lista; no se detiene el ciclo.

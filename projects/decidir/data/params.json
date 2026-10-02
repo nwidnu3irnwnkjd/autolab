@@ -982,5 +982,567 @@
    "nota": "Sin orden posterior que lo cambie; vigencia por prórroga, contrastar con una factura PVPC actual"
   },
   "ambito": "PVPC solo hasta 10 kW; Península y Baleares (Canarias IGIC, Ceuta y Melilla IPSI excluidos); el precio de REData es el peninsular"
+ },
+ "autonomo_2026": {
+  "fuente": "Orden PJC/297/2026, de 30 de marzo, de cotización 2026 (arts. 2, 17, 18 y 33); Ley General de la Seguridad Social, art. 308.1.c (rendimiento computable y deducción del 7 % por gastos genéricos); Ley 35/2006 del IRPF, arts. 19, 20, 30.2.4.ª, 32.2.3.º y DA 61.ª; Reglamento del IRPF, art. 30.2.ª (5 %, máximo 2.000 €)",
+  "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+  "url_lgss": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+  "url_irpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+  "url_rirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A",
+  "reta": {
+   "tipo_total": 31.5,
+   "desglose": "28,30 contingencias comunes + 1,30 profesionales + 0,90 cese de actividad + 0,10 formación + 0,90 MEI",
+   "deduccion_gastos_genericos_pct": 7,
+   "tramos": [
+    [
+     "reducida",
+     670,
+     653.59,
+     718.94
+    ],
+    [
+     "reducida",
+     900,
+     718.95,
+     900.0
+    ],
+    [
+     "reducida",
+     1166.7,
+     849.67,
+     1166.7
+    ],
+    [
+     "general",
+     1300,
+     950.98,
+     1300
+    ],
+    [
+     "general",
+     1500,
+     960.78,
+     1500
+    ],
+    [
+     "general",
+     1700,
+     960.78,
+     1700
+    ],
+    [
+     "general",
+     1850,
+     1143.79,
+     1850
+    ],
+    [
+     "general",
+     2030,
+     1209.15,
+     2030
+    ],
+    [
+     "general",
+     2330,
+     1274.51,
+     2330
+    ],
+    [
+     "general",
+     2760,
+     1356.21,
+     2760
+    ],
+    [
+     "general",
+     3190,
+     1437.91,
+     3190
+    ],
+    [
+     "general",
+     3620,
+     1519.61,
+     3620
+    ],
+    [
+     "general",
+     4050,
+     1601.31,
+     4050
+    ],
+    [
+     "general",
+     6000,
+     1732.03,
+     5101.2
+    ],
+    [
+     "general",
+     null,
+     1928.1,
+     5101.2
+    ]
+   ],
+   "nota_tramos": "[tabla, límite superior de rendimientos netos mensuales, base mínima, base máxima]; el límite 1.166,70 es exclusivo (tramo 3 reducido: < 1.166,70)"
+  },
+  "general": {
+   "base_max_mes": 5101.2,
+   "trabajador_indefinido_pct": 6.5,
+   "trabajador_temporal_pct": 6.55,
+   "empresa_indefinido_pct": 30.65,
+   "empresa_temporal_pct": 31.85,
+   "desglose": "CC 4,70/23,60; desempleo 1,55/5,50 (indefinido) o 1,60/6,70 (temporal); FOGASA 0/0,20; FP 0,10/0,60; MEI 0,15/0,75; sin AT/EP de la empresa (tarifa por actividad, no verificada)",
+   "solidaridad_mes": [
+    [
+     5101.2,
+     5611.32,
+     0.96,
+     0.19
+    ],
+    [
+     5611.32,
+     7651.8,
+     1.04,
+     0.21
+    ],
+    [
+     7651.8,
+     null,
+     1.22,
+     0.24
+    ]
+   ],
+   "solidaridad_nota": "[desde, hasta, % empresa, % trabajador] sobre la parte de la retribución mensual en cada tramo (art. 17)",
+   "smi_anual": 17094
+  },
+  "irpf_autonomo": {
+   "dificil_justificacion_pct": 5,
+   "dificil_justificacion_max": 2000,
+   "nota": "La deducción del 7 % es solo de la base de cotización a la SS (LGSS 308). En el IRPF, estimación directa simplificada: 5 % del rendimiento neto con máximo 2.000 € (RIRPF 30.2.ª, LIRPF 30.2.4.ª); reducción de 1.620 € para rentas < 12.000 € (LIRPF 32.2.3.º)"
+  },
+  "supuestos": {
+   "nota": "Hipótesis del modelo editables (no son datos oficiales)",
+   "bruto": 30000,
+   "factura": 45000,
+   "gastos": 3000
+  }
+ },
+ "vivienda_2026": {
+  "fuente": "Ley 37/1992 del IVA, art. 91.Uno.1.7.º (10 % en viviendas); Texto refundido del ITP y AJD (RDL 1/1993) con las normas autonómicas de tipos de cada comunidad de régimen común, leídas en el BOE consolidado",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A",
+  "iva_vivienda_pct": 10,
+  "ccaa": {
+   "andalucia": {
+    "nombre": "Andalucía",
+    "itp": {
+     "tipo": "plano",
+     "pct": 7
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.2
+    },
+    "norma": "Ley 5/2021, arts. 41 y 49",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915",
+    "red": "Esta comunidad tiene tipos reducidos para determinados casos (vivienda habitual, edad, familia numerosa, discapacidad o vivienda protegida) que aquí no se aplican.",
+    "hab": [
+     {
+      "t": "usada",
+      "max": 150000,
+      "k": "tipo",
+      "pct": 6,
+      "txt": "en Andalucía la vivienda habitual de hasta 150.000 € tributa por ITP al 6 % en lugar del 7 % (art. 43.1.a de la Ley 5/2021)"
+     },
+     {
+      "t": "nueva",
+      "max": 150000,
+      "k": "tipo",
+      "pct": 1,
+      "txt": "en Andalucía la vivienda habitual de hasta 150.000 € tributa por AJD al 1 % en lugar del 1,2 % (art. 50.1.a de la Ley 5/2021)"
+     }
+    ]
+   },
+   "aragon": {
+    "nombre": "Aragón",
+    "itp": {
+     "tipo": "escala",
+     "tramos": [
+      [
+       0,
+       8
+      ],
+      [
+       400000,
+       8.5
+      ],
+      [
+       450000,
+       9
+      ],
+      [
+       500000,
+       9.5
+      ],
+      [
+       750000,
+       10
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2005, arts. 121-1 y 122-1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006",
+    "red": "Esta comunidad tiene tipos reducidos para determinados casos (vivienda habitual, edad, familia numerosa, discapacidad o vivienda protegida) que aquí no se aplican."
+   },
+   "asturias": {
+    "nombre": "Asturias",
+    "itp": {
+     "tipo": "bloque",
+     "tramos": [
+      [
+       0,
+       8
+      ],
+      [
+       300000,
+       9
+      ],
+      [
+       500000,
+       10
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.2
+    },
+    "norma": "DLeg 2/2014, arts. 26 y 34",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-945",
+    "red": "Esta comunidad tiene tipos reducidos para determinados casos (vivienda habitual, edad, familia numerosa, discapacidad o vivienda protegida) que aquí no se aplican."
+   },
+   "baleares": {
+    "nombre": "Illes Balears",
+    "itp": {
+     "tipo": "escala",
+     "tramos": [
+      [
+       0,
+       8
+      ],
+      [
+       400000,
+       9
+      ],
+      [
+       600000,
+       10
+      ],
+      [
+       1000000,
+       12
+      ],
+      [
+       2000000,
+       13
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "bloque",
+     "tramos": [
+      [
+       0,
+       1.5
+      ],
+      [
+       999999.99,
+       2
+      ]
+     ]
+    },
+    "norma": "DLeg 1/2014, arts. 10, 15 y 17 bis (redacción de junio de 2026)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925",
+    "red": "En Baleares el AJD baja al 1 % (0,5 % para menores de 36 años) en la primera vivienda habitual de hasta 270.151,20 € (art. 17 del DLeg 1/2014) y sube al 2 % si la vivienda vale 1.000.000 € o más (art. 17 bis); hay otros tipos reducidos por edad, familia numerosa, discapacidad o vivienda protegida que aquí no se aplican.",
+    "hab": [
+     {
+      "t": "nueva",
+      "max": 270151.2,
+      "k": "tipo",
+      "pct": 1,
+      "txt": "en Baleares el AJD baja al 1 % en la primera vivienda habitual de hasta 270.151,20 € (art. 17 del DLeg 1/2014)"
+     }
+    ]
+   },
+   "cantabria": {
+    "nombre": "Cantabria",
+    "itp": {
+     "tipo": "plano",
+     "pct": 9
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 62/2008, arts. 9 y 13",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028",
+    "red": "En Cantabria la vivienda habitual tributa por ITP al 7 % hasta 300.000 € (art. 9.2 del DLeg 62/2008), hay un 4 % de ITP para menores de 40 años (art. 9.3.c) y para familias numerosas, monoparentales o con discapacidad, y el AJD baja al 1 % en vivienda habitual (0,1 % para menores de 40 años y otros casos; art. 13.3 y 13.4).",
+    "hab": [
+     {
+      "t": "usada",
+      "max": 300000,
+      "k": "tipo",
+      "pct": 7,
+      "txt": "en Cantabria la vivienda habitual de hasta 300.000 € tributa por ITP al 7 % en lugar del 9 % (art. 9.2 del DLeg 62/2008)"
+     },
+     {
+      "t": "nueva",
+      "max": null,
+      "k": "tipo",
+      "pct": 1,
+      "txt": "en Cantabria la vivienda habitual tributa por AJD al 1 % en lugar del 1,5 % (art. 13.3 del DLeg 62/2008)"
+     }
+    ]
+   },
+   "clm": {
+    "nombre": "Castilla-La Mancha",
+    "itp": {
+     "tipo": "plano",
+     "pct": 9
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "Ley 8/2013, arts. 19 y 21 (texto consolidado de 2023) y Ley 1/2026 (DOCM-q-2026-90065)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368",
+    "red": "En Castilla-La Mancha, en la primera vivienda habitual de hasta 240.000 € financiada con hipoteca de más del 50 %, el AJD baja al 0,75 % (art. 21.2 de la Ley 8/2013, redacción de la Ley 1/2026) y el ITP al 6 % (art. 19.2)."
+   },
+   "cyl": {
+    "nombre": "Castilla y León",
+    "itp": {
+     "tipo": "escala",
+     "tramos": [
+      [
+       0,
+       8
+      ],
+      [
+       250000,
+       10
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2013, arts. 24 y 25",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254",
+    "orient": true,
+    "red": "En Castilla y León hay un 4 % de ITP en varios supuestos de vivienda habitual (art. 25.3 del DLeg 1/2013)."
+   },
+   "cataluna": {
+    "nombre": "Cataluña",
+    "itp": {
+     "tipo": "escala",
+     "tramos": [
+      [
+       0,
+       10
+      ],
+      [
+       600000,
+       11
+      ],
+      [
+       900000,
+       12
+      ],
+      [
+       1500000,
+       13
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2024, arts. 641-1 y 642-1",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951",
+    "red": "Esta comunidad tiene tipos reducidos para determinados casos (vivienda habitual, edad, familia numerosa, discapacidad o vivienda protegida) que aquí no se aplican."
+   },
+   "extremadura": {
+    "nombre": "Extremadura",
+    "itp": {
+     "tipo": "escala",
+     "tramos": [
+      [
+       0,
+       8
+      ],
+      [
+       360000,
+       10
+      ],
+      [
+       600000,
+       11
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2018, arts. 36 y 46",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159",
+    "red": "En Extremadura hay un 7 % para vivienda habitual de hasta 200.000 € con renta de hasta 30.000 € (55.000 € en conjunta), un 4 % para menores de 36 años y otros colectivos, y un 0,5 % de AJD en esos casos (arts. 40, 41 y 47 del DLeg 1/2018)."
+   },
+   "galicia": {
+    "nombre": "Galicia",
+    "itp": {
+     "tipo": "plano",
+     "pct": 8
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2011, arts. 14 y 15",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161",
+    "red": "En Galicia hay un 7 % de ITP y un 1 % de AJD para vivienda habitual con requisitos (arts. 14 y 15 del DLeg 1/2011)."
+   },
+   "madrid": {
+    "nombre": "Comunidad de Madrid",
+    "itp": {
+     "tipo": "plano",
+     "pct": 6
+    },
+    "ajd": {
+     "tipo": "bloque",
+     "tramos": [
+      [
+       0,
+       0.4
+      ],
+      [
+       120000,
+       0.5
+      ],
+      [
+       180000,
+       0.75
+      ]
+     ]
+    },
+    "norma": "DLeg 1/2010, arts. 28 y 32",
+    "url": "https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068",
+    "red": "En Madrid hay una bonificación del 10 % del ITP y del AJD si es tu vivienda habitual y vale hasta 250.000 € (arts. 30 bis y 38 bis del DLeg 1/2010), y un 4 % de ITP para la vivienda habitual de una familia numerosa (art. 29).",
+    "hab": [
+     {
+      "t": "usada",
+      "max": 250000,
+      "k": "bonif",
+      "pct": 10,
+      "txt": "en Madrid hay una bonificación del 10 % del ITP en la vivienda habitual de hasta 250.000 € (art. 30 bis del DLeg 1/2010)"
+     },
+     {
+      "t": "nueva",
+      "max": 250000,
+      "k": "bonif",
+      "pct": 10,
+      "txt": "en Madrid hay una bonificación del 10 % del AJD en la vivienda habitual de hasta 250.000 € (art. 38 bis del DLeg 1/2010)"
+     }
+    ]
+   },
+   "murcia": {
+    "nombre": "Región de Murcia",
+    "itp": {
+     "tipo": "plano",
+     "pct": 7.75
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.5
+    },
+    "norma": "DLeg 1/2010, arts. 6 y 7",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542",
+    "red": "Esta comunidad tiene tipos reducidos para determinados casos (vivienda habitual, edad, familia numerosa, discapacidad o vivienda protegida) que aquí no se aplican."
+   },
+   "rioja": {
+    "nombre": "La Rioja",
+    "itp": {
+     "tipo": "plano",
+     "pct": 7
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.0
+    },
+    "norma": "Ley 10/2017, arts. 44 y 48",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750",
+    "red": "En La Rioja hay un 5 % (o 3 % con requisitos) de ITP para la vivienda habitual de una familia numerosa (art. 45 de la Ley 10/2017)."
+   },
+   "valencia": {
+    "nombre": "Comunitat Valenciana",
+    "itp": {
+     "tipo": "bloque",
+     "tramos": [
+      [
+       0,
+       9
+      ],
+      [
+       1000000,
+       11
+      ]
+     ]
+    },
+    "ajd": {
+     "tipo": "plano",
+     "pct": 1.4
+    },
+    "norma": "Ley 13/1997, arts. 13 y 14",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202",
+    "red": "En la Comunitat Valenciana la escritura de adquisición de vivienda habitual tributa por AJD al 0,1 % en lugar del 1,4 % (art. 14.Uno de la Ley 13/1997), y hay un 8 % de ITP para jóvenes y otros casos.",
+    "hab": [
+     {
+      "t": "nueva",
+      "max": null,
+      "k": "tipo",
+      "pct": 0.1,
+      "txt": "en la Comunitat Valenciana la escritura de adquisición de vivienda habitual tributa por AJD al 0,1 % en lugar del 1,4 % (art. 14.Uno.a de la Ley 13/1997)"
+     }
+    ]
+   }
+  },
+  "tipos_tipo": "plano = tipo único; escala = tarifa progresiva por tramos [desde, %] (cada tramo sobre su parte; equivale a la tarifa con cuota íntegra de la norma); bloque = el tipo del tramo en que cae el valor se aplica a todo el valor [valor superior a, %]",
+  "excluidas": [
+   "País Vasco",
+   "Navarra",
+   "Canarias (IGIC)",
+   "Ceuta y Melilla"
+  ],
+  "supuestos": {
+   "nota": "Hipótesis del modelo (no son datos oficiales): los gastos de notaría, registro, gestoría y tasación son una estimación orientativa que el usuario debe sustituir por presupuestos; el diferencial y el plazo son supuestos editables.",
+   "precio": 250000,
+   "entrada_pct": 20,
+   "gastos_eur": 2500,
+   "anos": 5,
+   "rentabilidad_pct": 0,
+   "diferencial_pct": 1.0,
+   "plazo_hipoteca_anos": 25
+  }
  }
 }

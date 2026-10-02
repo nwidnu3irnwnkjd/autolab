@@ -3,7 +3,7 @@
   "params.clave.con.puntos"  -> data/params.json (ya con los datos vivos aplicados por merge_market)
   "live.<id>[.sub.ruta]"     -> data/live.json: datos[<id>].valor, o la subruta (p. ej. live.luz_pvpc.extra.media_mes)
 Opciones del input para "live.*": "default_factor" (multiplicador), "default_round" (decimales),
-"default_min_extra" ({campo: mínimo} sobre datos[<id>].extra, p. ej. {"dias_mes": 7}), "default_fallback" ("params.x").
+"default_add" (se suma tras el factor, p. ej. Euríbor + diferencial; también al fallback), "default_min_extra" ({campo: mínimo} sobre datos[<id>].extra, p. ej. {"dias_mes": 7}), "default_fallback" ("params.x").
 Si falta el dato vivo, no es ok, es viejo (45 días Euríbor, 7 el resto; o `max_edad_dias`) o no cumple el mínimo,
 se usa default_fallback (params) y si no, el `default` literal. Nunca rompe el build."""
 import json, os, datetime
@@ -47,7 +47,7 @@ def live_value(live, ref, i=None, today=None):
             if (d.get("extra") or {}).get(k, 0) < mn: return None
         v = d["valor"] if len(parts) == 1 else _dig(d, ".".join(parts[1:]))
         if not isinstance(v, (int, float)): return None
-        v = v * i.get("default_factor", 1)
+        v = v * i.get("default_factor", 1) + i.get("default_add", 0)
         if "default_round" in i: v = round(v, i["default_round"])
         return v, d["fecha_dato"], d.get("fuente") or {}
     except Exception:
@@ -80,7 +80,11 @@ def resolve_default(i, params, live=None, today=None):
         if r: return r[0]
         fb = i.get("default_fallback")
         if fb:
-            try: return _dig(params, fb[len("params."):] if fb.startswith("params.") else fb)
+            try:
+                v = _dig(params, fb[len("params."):] if fb.startswith("params.") else fb)
+                if "default_add" in i and isinstance(v, (int, float)): v = v + i["default_add"]
+                if "default_round" in i and isinstance(v, (int, float)): v = round(v, i["default_round"])
+                return v
             except Exception: pass
         return i.get("default")
     try:

@@ -1,8 +1,8 @@
 {
  "alquilar-o-comprar": [
+  "cuanto-ahorrar-para-comprar-casa",
   "amortizar-o-invertir",
-  "amortizar-plazo-o-cuota",
-  "hipoteca-fija-o-variable"
+  "amortizar-plazo-o-cuota"
  ],
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
@@ -13,6 +13,10 @@
   "amortizar-o-invertir",
   "hipoteca-fija-o-variable",
   "subrogar-hipoteca-merece-la-pena"
+ ],
+ "autonomo-o-asalariado": [
+  "declaracion-conjunta-o-individual",
+  "contado-o-financiar"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
@@ -26,9 +30,14 @@
   "guarderia-cuidadora-o-reducir-jornada",
   "plan-pensiones-o-fondo-indexado"
  ],
+ "cuanto-ahorrar-para-comprar-casa": [
+  "alquilar-o-comprar",
+  "amortizar-o-invertir",
+  "amortizar-plazo-o-cuota"
+ ],
  "declaracion-conjunta-o-individual": [
-  "contado-o-financiar",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "autonomo-o-asalariado",
+  "contado-o-financiar"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",

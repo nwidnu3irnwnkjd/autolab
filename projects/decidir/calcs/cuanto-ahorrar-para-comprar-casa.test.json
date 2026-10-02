@@ -1,0 +1,353 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 250000,
+    "ccaa": "madrid",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 15000.0,
+    "itp": 15000.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 50000.0,
+    "hipoteca": 200000.0,
+    "totalNecesario": 67500.0,
+    "ahorroMensual": 1125.0,
+    "cuotaHipoteca": 1077.88,
+    "costeTotal": 267500.0,
+    "pctExtra": 7.0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "ccaa": "madrid",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 26875.0,
+    "itp": 0.0,
+    "iva": 25000.0,
+    "ajd": 1875.0,
+    "entrada": 50000.0,
+    "hipoteca": 200000.0,
+    "totalNecesario": 79375.0,
+    "ahorroMensual": 1322.92,
+    "cuotaHipoteca": 1077.88,
+    "costeTotal": 279375.0,
+    "pctExtra": 11.75
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 100000,
+    "ccaa": "madrid",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 10400.0,
+    "itp": 0.0,
+    "iva": 10000.0,
+    "ajd": 400.0,
+    "entrada": 20000.0,
+    "hipoteca": 80000.0,
+    "totalNecesario": 32900.0,
+    "ahorroMensual": 548.33,
+    "cuotaHipoteca": 431.15,
+    "costeTotal": 112900.0,
+    "pctExtra": 12.9
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 1000000,
+    "ccaa": "cataluna",
+    "tipo": "usada",
+    "entrada": 30,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 105000.0,
+    "itp": 105000.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 300000.0,
+    "hipoteca": 700000.0,
+    "totalNecesario": 407500.0,
+    "ahorroMensual": 6791.67,
+    "cuotaHipoteca": 3772.6,
+    "costeTotal": 1107500.0,
+    "pctExtra": 10.75
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 300001,
+    "ccaa": "asturias",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 27000.09,
+    "itp": 27000.09,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 60000.2,
+    "hipoteca": 240000.8,
+    "totalNecesario": 89500.29,
+    "ahorroMensual": 1491.67,
+    "cuotaHipoteca": 1293.47,
+    "costeTotal": 329501.09,
+    "pctExtra": 9.83
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 0,
+    "ccaa": "madrid",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 0.0,
+    "itp": 0.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 0.0,
+    "hipoteca": 0.0,
+    "totalNecesario": 2500.0,
+    "ahorroMensual": 41.67,
+    "cuotaHipoteca": 0.0,
+    "costeTotal": 2500.0,
+    "pctExtra": 0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "ccaa": "valencia",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 10,
+    "rentab": 3,
+    "interes": 0
+   },
+   "expect": {
+    "impuestos": 22500.0,
+    "itp": 22500.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 50000.0,
+    "hipoteca": 200000.0,
+    "totalNecesario": 75000.0,
+    "ahorroMensual": 537.83,
+    "cuotaHipoteca": 666.67,
+    "costeTotal": 275000.0,
+    "pctExtra": 10.0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 750000,
+    "ccaa": "aragon",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 64500.0,
+    "itp": 64500.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 150000.0,
+    "hipoteca": 600000.0,
+    "totalNecesario": 217000.0,
+    "ahorroMensual": 3616.67,
+    "cuotaHipoteca": 3233.65,
+    "costeTotal": 817000.0,
+    "pctExtra": 8.93
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 400000,
+    "ccaa": "valencia",
+    "tipo": "nueva",
+    "entrada": 10,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 45600.0,
+    "itp": 0.0,
+    "iva": 40000.0,
+    "ajd": 5600.0,
+    "entrada": 40000.0,
+    "hipoteca": 360000.0,
+    "totalNecesario": 88100.0,
+    "ahorroMensual": 1468.33,
+    "cuotaHipoteca": 1940.19,
+    "costeTotal": 448100.0,
+    "pctExtra": 12.03
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 2500000,
+    "ccaa": "baleares",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "impuestos": 275000.0,
+    "itp": 275000.0,
+    "iva": 0.0,
+    "ajd": 0.0,
+    "entrada": 500000.0,
+    "hipoteca": 2000000.0,
+    "totalNecesario": 777500.0,
+    "ahorroMensual": 12958.33,
+    "cuotaHipoteca": 10778.85,
+    "costeTotal": 2777500.0,
+    "pctExtra": 11.1
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 1000000,
+    "ccaa": "baleares",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "ajd": 20000.0,
+    "iva": 100000.0,
+    "impuestos": 120000.0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 999999,
+    "ccaa": "baleares",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "ajd": 14999.99,
+    "iva": 99999.9
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 1200000,
+    "ccaa": "baleares",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "ajd": 24000.0,
+    "iva": 120000.0,
+    "impuestos": 144000.0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 120000,
+    "ccaa": "madrid",
+    "tipo": "nueva",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "ajd": 480.0,
+    "iva": 12000.0,
+    "impuestos": 12480.0
+   },
+   "tol": 0.02
+  },
+  {
+   "in": {
+    "precio": 400000,
+    "ccaa": "cyl",
+    "tipo": "usada",
+    "entrada": 20,
+    "gastos": 2500,
+    "anos": 5,
+    "rentab": 0,
+    "interes": 4.2
+   },
+   "expect": {
+    "itp": 35000.0,
+    "impuestos": 35000.0
+   },
+   "tol": 0.02
+  }
+ ]
+}

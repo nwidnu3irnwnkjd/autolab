@@ -1,0 +1,225 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "bruto": 30000,
+    "factura": 45000,
+    "gastos": 3000,
+    "ccaa": "madrid",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 23451.98,
+    "ssTrabajador": 1950.0,
+    "irpfAsalariado": 4598.02,
+    "costeEmpresa": 39195.0,
+    "netoAutonomo": 29551.84,
+    "cuotaReta": 5435.3,
+    "irpfAutonomo": 7012.86,
+    "facturaIgual": 36402.19,
+    "netoAutonomoAlCoste": 25507.21
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 17094,
+    "factura": 20000,
+    "gastos": 1000,
+    "ccaa": "andalucia",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 15982.89,
+    "ssTrabajador": 1111.11,
+    "irpfAsalariado": 0.0,
+    "costeEmpresa": 22333.31,
+    "netoAutonomo": 13577.84,
+    "cuotaReta": 3631.75,
+    "irpfAutonomo": 1790.41,
+    "facturaIgual": 23115.35,
+    "netoAutonomoAlCoste": 15379.16
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 19000,
+    "factura": 25000,
+    "gastos": 2000,
+    "ccaa": "valencia",
+    "hijos": 2,
+    "contrato": "temp"
+   },
+   "expect": {
+    "netoAsalariado": 17471.26,
+    "ssTrabajador": 1244.5,
+    "irpfAsalariado": 284.24,
+    "costeEmpresa": 25051.5,
+    "netoAutonomo": 17173.39,
+    "cuotaReta": 4323.53,
+    "irpfAutonomo": 1503.09,
+    "facturaIgual": 25384.42,
+    "netoAutonomoAlCoste": 17213.29
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 80000,
+    "factura": 120000,
+    "gastos": 10000,
+    "ccaa": "cataluna",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 52494.14,
+    "ssTrabajador": 4017.16,
+    "irpfAsalariado": 23488.7,
+    "costeEmpresa": 98952.69,
+    "netoAutonomo": 67248.11,
+    "cuotaReta": 7288.22,
+    "irpfAutonomo": 35463.67,
+    "facturaIgual": 93271.06,
+    "netoAutonomoAlCoste": 55675.85
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 120000,
+    "factura": 200000,
+    "gastos": 20000,
+    "ccaa": "galicia",
+    "hijos": 3,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 76792.56,
+    "ssTrabajador": 4109.61,
+    "irpfAsalariado": 39097.82,
+    "costeEmpresa": 139419.41,
+    "netoAutonomo": 108044.33,
+    "cuotaReta": 7288.22,
+    "irpfAutonomo": 64667.45,
+    "facturaIgual": 143178.6,
+    "netoAutonomoAlCoste": 74725.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 30000,
+    "factura": 0,
+    "gastos": 0,
+    "ccaa": "madrid",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 23451.98,
+    "ssTrabajador": 1950.0,
+    "irpfAsalariado": 4598.02,
+    "costeEmpresa": 39195.0,
+    "netoAutonomo": -2470.57,
+    "cuotaReta": 2470.57,
+    "irpfAutonomo": 0,
+    "facturaIgual": 33402.19,
+    "netoAutonomoAlCoste": 27487.64
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 18000,
+    "factura": 9000,
+    "gastos": 500,
+    "ccaa": "canarias",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 16238.42,
+    "ssTrabajador": 1170.0,
+    "irpfAsalariado": 591.58,
+    "costeEmpresa": 23517.0,
+    "netoAutonomo": 6029.43,
+    "cuotaReta": 2470.57,
+    "irpfAutonomo": 0,
+    "facturaIgual": 23557.59,
+    "netoAutonomoAlCoste": 16206.9
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 90000,
+    "factura": 150000,
+    "gastos": 15000,
+    "ccaa": "baleares",
+    "hijos": 1,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 59213.72,
+    "ssTrabajador": 4038.16,
+    "irpfAsalariado": 26748.11,
+    "costeEmpresa": 109056.69,
+    "netoAutonomo": 82075.08,
+    "cuotaReta": 7288.22,
+    "irpfAutonomo": 45636.7,
+    "facturaIgual": 108250.06,
+    "netoAutonomoAlCoste": 59663.42
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 40000,
+    "factura": 46000,
+    "gastos": 3000,
+    "ccaa": "madrid",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 30195.68,
+    "ssTrabajador": 2600.0,
+    "irpfAsalariado": 7204.32,
+    "costeEmpresa": 52260.0,
+    "netoAutonomo": 30258.72,
+    "cuotaReta": 5435.3,
+    "irpfAutonomo": 7305.98,
+    "facturaIgual": 46213.16,
+    "netoAutonomoAlCoste": 33919.18
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "bruto": 25000,
+    "factura": 17060,
+    "gastos": 2000,
+    "ccaa": "valencia",
+    "hijos": 0,
+    "contrato": "indef"
+   },
+   "expect": {
+    "netoAsalariado": 19997.61,
+    "ssTrabajador": 1625.0,
+    "irpfAsalariado": 3377.39,
+    "costeEmpresa": 32662.5,
+    "netoAutonomo": 10908.07,
+    "cuotaReta": 3211.75,
+    "irpfAutonomo": 940.17,
+    "facturaIgual": 30509.74,
+    "netoAutonomoAlCoste": 21545.02
+   },
+   "tol": 1
+  }
+ ]
+}
