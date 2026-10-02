@@ -2,7 +2,7 @@
 """Access token de Google para la cuenta de servicio, sin dependencias (firma RS256 con openssl)."""
 import json, base64, time, subprocess, urllib.request, urllib.parse, os, tempfile
 SA = os.path.expanduser("~/.config/autolab/google-sa.json")
-SCOPES = "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters.readonly"
+SCOPES = "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters"
 def b64(b): return base64.urlsafe_b64encode(b).rstrip(b"=")
 def token():
     sa = json.load(open(SA)); now = int(time.time())
