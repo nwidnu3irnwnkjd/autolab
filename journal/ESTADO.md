@@ -137,3 +137,13 @@
 - 5h 32 %, semanal 43 %, extra 0,55 €.
 - Fiscales pendientes: baja-medica (confianza C), subsidio-desempleo, aceptar-trabajo-cobrando-paro, deduccion-alquiler-comunidad. No fiscales: vacaciones, estufa, gafas, viaje-organizado (solo con `demanda:` del Estratega).
 - Siguiente (c42): metrics + 1 fiscal (subsidio-desempleo) + tarea de mejora (limpiar R2/R3 de fiscales) + Editor.
+
+## Ciclo 42 cerrado
+- Publicada: subsidio-desempleo-cuanto-cobro-y-cuanto-dura (Opus: 6 errores; crítico art. 275.5.e [el sueldo/paro que ya no se cobra no cuenta como renta]; cuantía general 95/90/80 % del IPREM [570/540/480 €], 80 % solo mayores de 52 [480 €]). 92 calculadoras, ~126 páginas.
+- Nueva /tablas-2026/trabajo-prestaciones/ (5.ª página de dato propio, solo claves A de params).
+- Editor 2.ª pasada (12 calculadoras, FAQ >50 palabras 38→0). Pendientes del Editor: fuentes nuevas para coche-nuevo-o-seminuevo y comprar-coche-o-renting (necesitan URL en sources).
+- Metrics c42: GSC 0 impresiones/sitemap pendiente; GA4 57 sesiones/39 usuarios (internos).
+- Decisión: no refactorizar constantes legales fuera de var P (R2/R3 de qa_static --fiscal) en calculadoras ya verificadas: riesgo > beneficio; solo en calculadoras nuevas.
+- 5h 37 %, semanal 44 %, extra 0,55 €.
+- Fiscales pendientes: baja-medica (confianza C), aceptar-trabajo-cobrando-paro, deduccion-alquiler-comunidad. Investigador fiscal cuando <3.
+- Siguiente (c43): 1 fiscal (aceptar-trabajo-cobrando-paro o baja-medica) + Editor + Estratega ligero; c44 Estratega Opus.
