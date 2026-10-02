@@ -48,3 +48,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T09:28Z | 10 | 39 | 0.55 | ciclo 37 cierre: Constructor fiscal (aparcado), Constructor no fiscal, Estratega ligero, QA; peticiones abiertas: 0; páginas: 116
 2026-10-02T09:39Z | 12 | 40 | 0.55 | ciclo 38 cierre: Investigador fiscal Opus, Constructor no fiscal, Estratega ligero, QA; peticiones abiertas: 0; páginas: 118
 2026-10-02T10:04Z | 17 | 40 | 0.55 | ciclo 39 cierre: 2 Constructores fiscales, 3 pasadas Opus, reverif, Estratega ligero, QA; peticiones abiertas: 2; páginas: 120
+2026-10-02T10:35Z | 24 | 42 | 0.55 | ciclo 40 cierre: Mejorador Opus, Estratega Opus, 2 Constructores fiscales, 2 Opus, 2 reverif, Estratega ligero, QA; peticiones abiertas: 0; páginas: 123

@@ -78,7 +78,7 @@
   "guarderia-cuidadora-o-reducir-jornada": [
     "excedencia-o-reduccion-jornada",
     "deduccion-maternidad-familia-numerosa",
-    "permiso-nacimiento-cuanto-cobro-y-como-repartir"
+    "retribucion-flexible-me-conviene"
   ],
   "universidad-publica-o-privada-o-master": [
     "academia-idiomas-presencial-online-o-intensivo",
@@ -204,7 +204,7 @@
   "comparar-ofertas-de-trabajo-neto-real": [
     "autonomo-o-asalariado",
     "retencion-irpf-nomina-subir-o-no",
-    "curso-online-bootcamp-o-fp-coste-y-retorno"
+    "retribucion-flexible-me-conviene"
   ],
   "reformar-o-mudarse": [
     "alquilar-o-comprar",
@@ -299,7 +299,7 @@
   "deduccion-maternidad-familia-numerosa": [
     "declaracion-conjunta-o-individual",
     "guarderia-cuidadora-o-reducir-jornada",
-    "excedencia-o-reduccion-jornada"
+    "retribucion-flexible-me-conviene"
   ],
   "seguro-hogar-con-o-sin-franquicia": [
     "fondo-de-emergencia-cuantos-meses-necesito",
@@ -363,7 +363,7 @@
   ],
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
-    "excedencia-o-reduccion-jornada",
+    "finiquito-baja-voluntaria-vacaciones-preaviso",
     "indemnizacion-despido-objetivo-o-improcedente-neto"
   ],
   "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
@@ -392,7 +392,7 @@
     "hipoteca-20-25-o-30-anos-cuota-vs-intereses"
   ],
   "retencion-irpf-nomina-subir-o-no": [
-    "obligado-a-declarar-renta-dos-pagadores",
+    "retribucion-flexible-me-conviene",
     "declaracion-conjunta-o-individual",
     "comparar-ofertas-de-trabajo-neto-real"
   ],
@@ -429,11 +429,21 @@
   "indemnizacion-despido-objetivo-o-improcedente-neto": [
     "cuanto-cobro-de-paro-prestacion-desempleo",
     "capitalizar-paro-o-cobrarlo",
-    "retencion-irpf-nomina-subir-o-no"
+    "finiquito-baja-voluntaria-vacaciones-preaviso"
   ],
   "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
     "deduccion-maternidad-familia-numerosa",
     "guarderia-cuidadora-o-reducir-jornada",
     "excedencia-o-reduccion-jornada"
+  ],
+  "finiquito-baja-voluntaria-vacaciones-preaviso": [
+    "indemnizacion-despido-objetivo-o-improcedente-neto",
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "comparar-ofertas-de-trabajo-neto-real"
+  ],
+  "retribucion-flexible-me-conviene": [
+    "retencion-irpf-nomina-subir-o-no",
+    "comparar-ofertas-de-trabajo-neto-real",
+    "deduccion-maternidad-familia-numerosa"
   ]
 }

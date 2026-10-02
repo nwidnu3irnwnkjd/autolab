@@ -1,4 +1,5 @@
 # Lector de norma (model: sonnet, ≤ 50k, ≤ 6 min) · creado 2026-10-02 c32 (Mejorador pasada 5; era el experimento T19, nunca lanzado)
+> **SUSPENDIDO 2026-10-02 c40 (Mejorador pasada 6)**: 0 lanzamientos en 9 fiscales (c32-c39). Su función pasa a la línea S de constructor.md y a `qa_static.py --fiscal`. Reactivar solo si en las 4 fiscales siguientes hay ≥ 2 errores críticos de lectura de norma.
 Segundo par de ojos barato para las fiscales: lee la ley SIN ver el código ni el oráculo, en paralelo al Constructor fiscal. Métrica: cambios obligatorios del Opus por fiscal 4-6 → ≤ 3; decisión de mantenerlo tras 4 fiscales (se queda si en ≥ 2 de 4 su lectura caza algo que el Opus confirma).
 
 ## Entrada (del Orquestador)

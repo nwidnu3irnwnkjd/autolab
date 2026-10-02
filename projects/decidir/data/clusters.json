@@ -107,7 +107,7 @@
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
   "retencion-irpf-nomina-subir-o-no",
-  "curso-online-bootcamp-o-fp-coste-y-retorno"
+  "retribucion-flexible-me-conviene"
  ],
  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
   "plan-pensiones-o-fondo-indexado",
@@ -141,7 +141,7 @@
  ],
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
-  "excedencia-o-reduccion-jornada",
+  "finiquito-baja-voluntaria-vacaciones-preaviso",
   "indemnizacion-despido-objetivo-o-improcedente-neto"
  ],
  "cuota-autonomos-ingresos-reales-regularizacion": [
@@ -162,7 +162,7 @@
  "deduccion-maternidad-familia-numerosa": [
   "declaracion-conjunta-o-individual",
   "guarderia-cuidadora-o-reducir-jornada",
-  "excedencia-o-reduccion-jornada"
+  "retribucion-flexible-me-conviene"
  ],
  "deposito-letras-o-fondo-monetario": [
   "fondo-de-emergencia-cuantos-meses-necesito",
@@ -194,6 +194,11 @@
   "movil-reacondicionado-o-nuevo",
   "suscripciones-cuanto-gasto-al-ano"
  ],
+ "finiquito-baja-voluntaria-vacaciones-preaviso": [
+  "indemnizacion-despido-objetivo-o-improcedente-neto",
+  "cuanto-cobro-de-paro-prestacion-desempleo",
+  "comparar-ofertas-de-trabajo-neto-real"
+ ],
  "fondo-de-emergencia-cuantos-meses-necesito": [
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
@@ -217,7 +222,7 @@
  "guarderia-cuidadora-o-reducir-jornada": [
   "excedencia-o-reduccion-jornada",
   "deduccion-maternidad-familia-numerosa",
-  "permiso-nacimiento-cuanto-cobro-y-como-repartir"
+  "retribucion-flexible-me-conviene"
  ],
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -257,7 +262,7 @@
  "indemnizacion-despido-objetivo-o-improcedente-neto": [
   "cuanto-cobro-de-paro-prestacion-desempleo",
   "capitalizar-paro-o-cobrarlo",
-  "retencion-irpf-nomina-subir-o-no"
+  "finiquito-baja-voluntaria-vacaciones-preaviso"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
   "declaracion-conjunta-o-individual",
@@ -365,9 +370,14 @@
   "pension-viudedad-cuanto-cobro"
  ],
  "retencion-irpf-nomina-subir-o-no": [
-  "obligado-a-declarar-renta-dos-pagadores",
+  "retribucion-flexible-me-conviene",
   "declaracion-conjunta-o-individual",
   "comparar-ofertas-de-trabajo-neto-real"
+ ],
+ "retribucion-flexible-me-conviene": [
+  "retencion-irpf-nomina-subir-o-no",
+  "comparar-ofertas-de-trabajo-neto-real",
+  "deduccion-maternidad-familia-numerosa"
  ],
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",

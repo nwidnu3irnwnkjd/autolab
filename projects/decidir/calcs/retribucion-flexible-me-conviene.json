@@ -1,0 +1,182 @@
+{
+ "slug": "retribucion-flexible-me-conviene",
+ "title": "Retribución flexible: ¿me conviene? Calcula tu ahorro",
+ "description": "Calcula el IRPF que ahorras con retribución flexible en 2026: seguro médico, tarjeta restaurante, transporte o guardería, con el tope exento de cada uno.",
+ "h1": "¿Me conviene la retribución flexible (seguro, comida, transporte, guardería)?",
+ "lead": "La retribución flexible te compensa si el producto tiene exención de IRPF y ya ibas a pagarlo: ahorras el tipo de IRPF que te toca sobre la parte exenta, pero la Seguridad Social se calcula sobre el total y no baja (con 30.000 € brutos en Madrid y un seguro de salud de 600 € al año solo 500 € están exentos y ahorras unos 139 €; con una tarjeta restaurante de 2.420 € al año, unos 673 €). Si el producto no tiene exención (gimnasio, móvil) o cedes más sueldo del permitido, no hay ahorro de impuestos. Elige producto, sueldo y comunidad y te damos el IRPF que ahorras y el veredicto.",
+ "veredicto": "Conviene cambiar sueldo por seguro de salud, tarjeta restaurante, transporte público o guardería si la parte exenta es grande y ya ibas a pagar el producto: con 30.000 € brutos en Madrid, un seguro de 600 € deja unos 139 € al año (solo 500 € están exentos) y una tarjeta restaurante de 2.420 € unos 673 €. Sin exención hay empate práctico con el mismo precio, no conviene si cedes más de lo que te costaría y no se puede ceder más del 30 % del sueldo ni dejar el dinero por debajo del salario mínimo.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "bruto",
+   "label": "Salario bruto anual (€, jornada completa)",
+   "default": 30000,
+   "min": 1,
+   "step": 500,
+   "default_from": "params.retribucion_flexible_2026.supuestos.bruto"
+  },
+  {
+   "id": "ccaa",
+   "label": "Comunidad autónoma donde resides",
+   "type": "select",
+   "options": [
+    {
+     "v": "madrid",
+     "t": "Comunidad de Madrid"
+    },
+    {
+     "v": "andalucia",
+     "t": "Andalucía"
+    },
+    {
+     "v": "aragon",
+     "t": "Aragón"
+    },
+    {
+     "v": "asturias",
+     "t": "Asturias"
+    },
+    {
+     "v": "baleares",
+     "t": "Illes Balears"
+    },
+    {
+     "v": "canarias",
+     "t": "Canarias"
+    },
+    {
+     "v": "cantabria",
+     "t": "Cantabria"
+    },
+    {
+     "v": "clm",
+     "t": "Castilla-La Mancha"
+    },
+    {
+     "v": "cyl",
+     "t": "Castilla y León"
+    },
+    {
+     "v": "cataluna",
+     "t": "Cataluña"
+    },
+    {
+     "v": "extremadura",
+     "t": "Extremadura"
+    },
+    {
+     "v": "galicia",
+     "t": "Galicia"
+    },
+    {
+     "v": "murcia",
+     "t": "Región de Murcia"
+    },
+    {
+     "v": "rioja",
+     "t": "La Rioja"
+    },
+    {
+     "v": "valencia",
+     "t": "Comunitat Valenciana"
+    },
+    {
+     "v": "foral",
+     "t": "País Vasco o Navarra (régimen foral: no calculado)"
+    }
+   ]
+  },
+  {
+   "id": "producto",
+   "label": "Producto que te ofrecen o quieres contratar",
+   "type": "select",
+   "options": [
+    {
+     "v": "seguro",
+     "t": "Seguro de salud (tú, tu cónyuge o tus hijos)"
+    },
+    {
+     "v": "comida",
+     "t": "Tarjeta restaurante o vales de comida"
+    },
+    {
+     "v": "transporte",
+     "t": "Transporte público (abono o tarjeta)"
+    },
+    {
+     "v": "guarderia",
+     "t": "Guardería (primer ciclo de educación infantil)"
+    },
+    {
+     "v": "otro",
+     "t": "Otro (gimnasio, móvil, cursos que eliges tú…)"
+    }
+   ]
+  },
+  {
+   "id": "coste",
+   "label": "Lo que te costaría ese producto al año si lo pagas tú (€)",
+   "default": 600,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.retribucion_flexible_2026.supuestos.coste"
+  },
+  {
+   "id": "sustituir",
+   "label": "Sueldo bruto anual que cederías por él (€; normalmente lo mismo que cuesta)",
+   "default": 600,
+   "min": 1,
+   "step": 50,
+   "default_from": "params.retribucion_flexible_2026.supuestos.sustituir"
+  },
+  {
+   "id": "personas",
+   "label": "Solo seguro de salud: personas cubiertas (nº)",
+   "default": 1,
+   "min": 1,
+   "max": 8,
+   "step": 1,
+   "default_from": "params.retribucion_flexible_2026.supuestos.personas"
+  },
+  {
+   "id": "discap",
+   "label": "Solo seguro de salud: de ellas, con discapacidad (nº)",
+   "default": 0,
+   "min": 0,
+   "max": 8,
+   "step": 1
+  },
+  {
+   "id": "dias",
+   "label": "Solo tarjeta restaurante: días de trabajo en que la usarás al año (nº)",
+   "default": 220,
+   "min": 0,
+   "max": 260,
+   "step": 1,
+   "default_from": "params.retribucion_flexible_2026.supuestos.dias"
+  }
+ ],
+ "faqs": [
+  [
+   "¿Cuánto IRPF ahorro con la retribución flexible?",
+   "El tipo de IRPF que te corresponde sobre la parte exenta del producto, no sobre todo el sueldo que cedes. Con 30.000 € brutos en Madrid: un seguro de salud de 600 € tiene exentos 500 € y ahorra unos 139 € al año; una tarjeta restaurante de 2.420 € (11 € al día durante 220 días), unos 673 €; una guardería de 3.000 €, hasta 834 € de IRPF, pero si ya aplicas el incremento de la deducción por maternidad por guardería (art. 81.2) pierdes hasta 1.000 € y el resultado queda en unos −166 €: cediendo 2.000 € ahorras unos 556 €. Es el IRPF final del año, no la retención de la nómina."
+  ],
+  [
+   "¿La retribución flexible reduce lo que cotizo a la Seguridad Social?",
+   "No. La base de cotización cuenta la remuneración total, en dinero o en especie, y solo excluye una lista cerrada de conceptos (artículo 147 de la Ley General de la Seguridad Social) en la que no están el seguro, la comida, el transporte ni la guardería. Con 30.000 € brutos pagas 1.950 € de Seguridad Social con o sin retribución flexible, y tus futuras prestaciones se calculan igual."
+  ],
+  [
+   "¿Cuánto sueldo puedo cambiar por retribución flexible?",
+   "Hasta el 30 % de tus percepciones salariales, sin dejar el dinero que cobras por debajo del salario mínimo (artículo 26.1 del Estatuto de los Trabajadores). Con 30.000 € brutos son 9.000 € al año; con 20.000 € lo marca el salario mínimo de 17.094 € y son 2.906 €. Además cuenta la especie que ya cobres, y normalmente se pacta contigo (un cambio impuesto tiene sus propias reglas, ET art. 41)."
+  ],
+  [
+   "¿Qué topes exentos tiene cada producto en 2026?",
+   "Seguro de salud: 500 € al año por persona (1.500 € con discapacidad). Tarjeta restaurante: 11 € por día de trabajo. Transporte público: 1.500 € al año. Guardería de primer ciclo de educación infantil autorizada: sin tope en la ley. Lo que supera el tope tributa como sueldo."
+  ],
+  [
+   "¿Y si el producto no está en la lista (gimnasio, móvil, ordenador)?",
+   "No hay exención: tributa como si cobraras ese dinero. Solo sale a cuenta si tu empresa lo consigue más barato que tu precio, por ejemplo con una póliza de grupo; usa el producto «Otro» con un coste por tu cuenta mayor que el sueldo que cedes."
+  ]
+ ],
+ "sources": "Modelo propio para 2026, consultado el 2/10/2026 en el BOE: Ley del IRPF, consolidada a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), art. 42.1 (el dinero para comprar el producto es renta dineraria), art. 42.3 letras a (comedor y fórmulas indirectas), b (guardería), c (seguro de enfermedad: 500 € por persona, 1.500 € con discapacidad) y e (transporte colectivo: 1.500 € al año), art. 81.2 (la guardería exenta no cuenta para el incremento de la deducción por maternidad) y arts. 19, 20, 63, 74 y DA 61.ª (IRPF del trabajo, como en comparar ofertas); Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820), arts. 45.2 (11 € diarios), 46 y 46 bis (136,36 € al mes y 1.500 € al año en tarjeta de transporte); Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), art. 147 (remuneración total en dinero o en especie; exclusiones cerradas); Estatuto de los Trabajadores (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430), arts. 26.1 (salario en especie: máximo 30 % y sin bajar del salario mínimo) y 41 (modificación sustancial de condiciones); salario mínimo de 17.094 € (Real Decreto 126/2026, https://www.boe.es/boe/dias/2026/02/19/pdfs/BOE-A-2026-3815.pdf); cotización: Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). El Real Decreto-ley 26/2026 no toca esos artículos y no se usa como fuente; no hay Presupuestos de 2026. Supuestos: contrato indefinido a jornada completa, un año completo, solo rentas del trabajo, la empresa paga el producto y lo valora por el sueldo que cedes. No cubre País Vasco ni Navarra, vehículos, vivienda, préstamos, planes de pensiones de empleo, acciones ni directivos. Ejemplo editable: 30.000 €, 600 €, 220 días. Información orientativa, no asesoramiento fiscal ni laboral."
+}

@@ -1,0 +1,351 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 24000, 14 pagas, 15 oct, 30 dias, 18 disfrutados",
+   "in": {
+    "bruto": 24000,
+    "pagas": 14,
+    "mes": 10,
+    "dia": 15,
+    "vacAnual": 30,
+    "vacDisf": 18,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 829.49,
+    "pagasPend": 996.89,
+    "vacDev": 23.67,
+    "vacPend": 5.67,
+    "vacImporte": 372.9,
+    "brutoDev": 2199.29,
+    "descAplicado": 0.0,
+    "cot": 87.14,
+    "irpf": 329.89,
+    "neto": 1782.25,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ultimo dia del mes (31 oct), 12 pagas",
+   "in": {
+    "bruto": 24000,
+    "pagas": 12,
+    "mes": 10,
+    "dia": 31,
+    "vacAnual": 30,
+    "vacDisf": 18,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 2000.0,
+    "pagasPend": 0.0,
+    "vacDev": 24.99,
+    "vacPend": 6.99,
+    "vacImporte": 459.37,
+    "brutoDev": 2459.37,
+    "descAplicado": 0.0,
+    "cot": 159.86,
+    "irpf": 368.91,
+    "neto": 1930.61,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "0 dias pendientes (disfrutadas = devengadas)",
+   "in": {
+    "bruto": 24000,
+    "pagas": 12,
+    "mes": 12,
+    "dia": 31,
+    "vacAnual": 30,
+    "vacDisf": 30,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "salMes": 2000.0,
+    "pagasPend": 0.0,
+    "vacDev": 30.0,
+    "vacPend": 0.0,
+    "vacImporte": 0.0,
+    "brutoDev": 2000.0,
+    "descAplicado": 0.0,
+    "cot": 130.0,
+    "irpf": 300.0,
+    "neto": 1570.0,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "preaviso incumplido 15 dias, 14 pagas",
+   "in": {
+    "bruto": 30000,
+    "pagas": 14,
+    "mes": 3,
+    "dia": 20,
+    "vacAnual": 30,
+    "vacDisf": 0,
+    "incumple": 15,
+    "tipo": 18
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "salMes": 1382.49,
+    "pagasPend": 935.28,
+    "vacDev": 6.49,
+    "vacPend": 6.49,
+    "vacImporte": 533.68,
+    "brutoDev": 2851.45,
+    "descAplicado": 1232.88,
+    "cot": 139.53,
+    "irpf": 513.26,
+    "neto": 965.79,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "exceso de vacaciones disfrutadas",
+   "in": {
+    "bruto": 24000,
+    "pagas": 12,
+    "mes": 3,
+    "dia": 31,
+    "vacAnual": 30,
+    "vacDisf": 20,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "salMes": 2000.0,
+    "pagasPend": 0.0,
+    "vacDev": 7.4,
+    "vacPend": 0.0,
+    "vacImporte": 0.0,
+    "brutoDev": 2000.0,
+    "descAplicado": 0.0,
+    "cot": 130.0,
+    "irpf": 300.0,
+    "neto": 1570.0,
+    "exceso": 12.6
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "14 pagas el 30 de junio (verano completa)",
+   "in": {
+    "bruto": 21000,
+    "pagas": 14,
+    "mes": 6,
+    "dia": 30,
+    "vacAnual": 30,
+    "vacDisf": 10,
+    "incumple": 0,
+    "tipo": 12
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 1500.0,
+    "pagasPend": 1500.0,
+    "vacDev": 14.88,
+    "vacPend": 4.88,
+    "vacImporte": 280.58,
+    "brutoDev": 3280.58,
+    "descAplicado": 0.0,
+    "cot": 131.99,
+    "irpf": 393.67,
+    "neto": 2754.92,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tope de cotizacion, sueldo alto",
+   "in": {
+    "bruto": 120000,
+    "pagas": 12,
+    "mes": 8,
+    "dia": 31,
+    "vacAnual": 30,
+    "vacDisf": 0,
+    "incumple": 0,
+    "tipo": 40
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 10000.0,
+    "pagasPend": 0.0,
+    "vacDev": 19.97,
+    "vacPend": 19.97,
+    "vacImporte": 6566.34,
+    "brutoDev": 16566.34,
+    "descAplicado": 0.0,
+    "cot": 663.16,
+    "irpf": 6626.53,
+    "neto": 9276.65,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "bloqueo: 31 de abril",
+   "in": {
+    "bruto": 24000,
+    "pagas": 12,
+    "mes": 4,
+    "dia": 31,
+    "vacAnual": 30,
+    "vacDisf": 0,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "bloqueado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "14 pagas, 1 de julio: paga de Navidad de 1 día",
+   "in": {
+    "bruto": 21000,
+    "pagas": 14,
+    "mes": 7,
+    "dia": 1,
+    "vacAnual": 30,
+    "vacDisf": 10,
+    "incumple": 0,
+    "tipo": 12
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 48.39,
+    "pagasPend": 8.15,
+    "vacDev": 14.96,
+    "vacPend": 4.96,
+    "vacImporte": 285.31,
+    "brutoDev": 341.85,
+    "descAplicado": 0.0,
+    "cot": 22.21,
+    "irpf": 41.02,
+    "neto": 278.61,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "febrero: 28 días del mes",
+   "in": {
+    "bruto": 18000,
+    "pagas": 12,
+    "mes": 2,
+    "dia": 28,
+    "vacAnual": 30,
+    "vacDisf": 0,
+    "incumple": 0,
+    "tipo": 2
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "salMes": 1500.0,
+    "pagasPend": 0.0,
+    "vacDev": 4.85,
+    "vacPend": 4.85,
+    "vacImporte": 239.14,
+    "brutoDev": 1739.14,
+    "descAplicado": 0.0,
+    "cot": 113.04,
+    "irpf": 34.78,
+    "neto": 1591.32,
+    "exceso": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ejemplo del texto (cifras redondeadas del lead, veredicto y FAQ)",
+   "in": {
+    "bruto": 24000,
+    "pagas": 14,
+    "mes": 10,
+    "dia": 15,
+    "vacAnual": 30,
+    "vacDisf": 18,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "escenario": 2,
+    "salMes": 829,
+    "pagasPend": 997,
+    "vacDev": 23.7,
+    "vacPend": 5.7,
+    "vacImporte": 373,
+    "brutoDev": 2199,
+    "cot": 87,
+    "irpf": 330,
+    "neto": 1782,
+    "salDia": 66,
+    "valorDiaNeto": 52
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ejemplo del texto con 15 días de preaviso incumplidos (escenario 3)",
+   "in": {
+    "bruto": 24000,
+    "pagas": 14,
+    "mes": 10,
+    "dia": 15,
+    "vacAnual": 30,
+    "vacDisf": 18,
+    "incumple": 15,
+    "tipo": 15
+   },
+   "expect": {
+    "escenario": 3,
+    "descuento": 986,
+    "descAplicado": 986,
+    "neto": 796,
+    "netoSinDesc": 1782
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "control 12 pagas (no regresión: sin prorrata de pagas)",
+   "in": {
+    "bruto": 24000,
+    "pagas": 12,
+    "mes": 10,
+    "dia": 15,
+    "vacAnual": 30,
+    "vacDisf": 18,
+    "incumple": 0,
+    "tipo": 15
+   },
+   "expect": {
+    "cot": 87.14,
+    "neto": 1052.41,
+    "brutoDev": 1340.64
+   },
+   "tol": 1
+  }
+ ]
+}

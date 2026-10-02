@@ -2,7 +2,7 @@
 Objetivo: más clic y más citas en buscadores e IA con lo que ya está publicado (71 calculadoras), sin cambiar cálculos. Solo lectura del código: escribe peticiones, no edita calcs/ ni content/.
 
 ## Cuándo
-- Cada 4 ciclos durante el sprint (c33, c37, …) y después 1 vez al día, siempre en ciclos SIN fiscal doble. Cada pasada revisa ≤ 12 calculadoras: primero las publicadas desde la pasada anterior y luego las más antiguas sin revisar (lleva la lista en journal/editorial.md).
+- (c40) **Cada ciclo sin fiscal doble** hasta cubrir las 88 calculadoras, después 1 vez al día. Solo **calculadoras** (calcs/<slug>.json + content/<slug>.html): las guías y la home no cuentan (c33-c34 se fueron a guías y no dejaron línea base). Cada pasada: ≤ 12 calculadoras, primero las publicadas desde la anterior y luego las más antiguas sin revisar. **journal/editorial.md es obligatorio** (1 línea por calculadora); sin él la pasada no cuenta y el Orquestador la repite.
 
 ## Qué mira por calculadora (lead, veredicto, FAQ, title, description; nada de HTML entero: usa grep/json)
 1. **Respuesta en la primera frase**: el lead responde la pregunta del título con una condición y una cifra del cálculo por defecto («Compensa si…; con los datos de ejemplo, X ahorra N €»). Es lo que citan los resúmenes de IA y los fragmentos destacados.

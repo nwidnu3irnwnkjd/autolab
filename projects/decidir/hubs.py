@@ -242,9 +242,9 @@ HUBS = {
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
-            ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
+            ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
-            ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
+            ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
         ],
         "steps": {
             "autonomo-o-asalariado": {
@@ -258,6 +258,14 @@ HUBS = {
             "cuota-autonomos-ingresos-reales-regularizacion": {
                 "name": "Cuota de autónomo por ingresos reales",
                 "text": "Cotizas por el rendimiento neto que prevés y, al cierre del año, la Seguridad Social regulariza la diferencia con el real: te devuelve o te pide. La calculadora da tu tramo y cuánto te regularizarán.",
+            },
+            "finiquito-baja-voluntaria-vacaciones-preaviso": {
+                "name": "Finiquito al dejar un trabajo",
+                "text": "Al irte cobras el sueldo del mes, las pagas pendientes y las vacaciones sin disfrutar, y si no das el preaviso del convenio te descuentan días. La calculadora da el finiquito bruto y neto con tus fechas.",
+            },
+            "retribucion-flexible-me-conviene": {
+                "name": "Retribución flexible",
+                "text": "Seguro médico, comida, transporte y guardería pagados desde la nómina dentro de los límites del artículo 42 de la Ley del IRPF te ahorran IRPF, no cotización. La calculadora da cuánto ahorras con tu tipo marginal.",
             },
             "comparar-ofertas-de-trabajo-neto-real": {
                 "name": "Comparar dos ofertas de trabajo",
@@ -290,6 +298,7 @@ HUBS = {
             "indemnizacion-despido-objetivo-o-improcedente-neto": {
                 "name": "Despido: indemnización neta",
                 "text": "Tras un despido, la indemnización legal está exenta de IRPF hasta un límite y el exceso tributa. La calculadora compara aceptar la oferta con reclamar la improcedente y da el neto de cada una con tus datos.",
+                "guia": "me-han-despedido-indemnizacion-paro-plazos",
             },
             "capitalizar-paro-o-cobrarlo": {
                 "name": "Capitalizar el paro o cobrarlo",

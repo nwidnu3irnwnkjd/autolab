@@ -147,3 +147,29 @@ Contexto: semanal 33 → 35 % en 8 ciclos (~0,3 pp/ciclo frente a 0,75 previsto)
 ### [ ] T24 · Páginas «dato propio» para enlaces y GEO (propuesta, dueño: Estratega Opus c36). Con presupuesto libre, lo que más tráfico potencial añade sin escalar contenido: 2-3 páginas con un dato que nadie publica, calculado de nuestras calculadoras y datos vivos (p. ej. «¿Cuándo compensa la tarifa indexada? mes a mes desde 2024», «coste real del coche por km en 2026 con gasolina viva»), con CSV descargable, citables por medios y por IA. Coste ~1 Opus 130k + 1 Sonnet 150k. Métrica: enlaces externos/citas (GSC «Enlaces») y menciones en respuestas de IA a 30 días.
 ### [ ] T14, T15 · siguen sin hacer (Orquestador). T14 gana valor con 2 fiscales/ciclo: hacerlo en el primer ciclo sin fiscal doble.
 ### [~] Rechazados (c32): lote 3 no fiscal (contenido escalado), Estratega Opus más frecuente sin impresiones (disparador ≥ 5 páginas con impresiones), 2.º Verificador Opus (0 errores de fórmula, 0 segundas pasadas).
+
+
+## Pasada 6 · 2026-10-02T10:20Z (ciclo 40, datos de c32-c39)
+Contexto: 9 fiscales en 8 ciclos (0 NO PUBLICABLE), 24 páginas nuevas, 88 calculadoras, **0 impresiones y 0 páginas conocidas por Google**; semanal 35 → 40 % (0,62 pp/ciclo, 2,0 pp/h), 5h ≤ 48 %, extra 0,55 €. Cambios aplicados en EQUIPO.md v3.4 (c40.1-6), loop-prompt (mix + cadencia) y roles (constructor, editor, verificador, estratega, investigador, lector suspendido). Estado de cada idea:
+### [x] c40.1 Mix cantidad → profundidad (aplicado). No fiscal 2 → 1 (0 con doble), solo con `demanda:` del Estratega; tarea de mejora en su lugar; Editor cada ciclo sin doble, solo calculadoras, editorial.md obligatorio. Métrica: % 5/5 ≥ 90 % el 5-oct; no fiscales ≤ 8/día.
+### [x] c40.2 Línea S de preverif (aplicado). Métrica: cambios por fiscal 4,9 → ≤ 3; críticos 4/9 → ≤ 1/4. Si no baja en 4 fiscales: reactivar el Lector de norma, esta vez con el Orquestador obligado a lanzarlo (o fundirlo en el paso 0 del Opus con +20k).
+### [x] T19/c32.3 Lector de norma → **suspendido** (0 de 9 lanzamientos).
+### [x] c40.4 Cadencia (aplicado): 0,80/0,50/0,25 y objetivo 78. Proyección: 55 % ~17:30Z → 600 s; sprint cierra ~60 %; 0,20 pp/h después; 70 % ~4-oct 23:00Z; reset 75-78 %. Re-medir en c48 sobre ≥ 8 ciclos.
+### [ ] T14 v3 · `qa_static.py --fiscal` (dueño: Orquestador, ops/*.py; ~60k Sonnet una vez; PRÓXIMO ciclo sin fiscal doble)
+Control automático de «solo cifras verificadas». Prototipo de medición (scratchpad, no en el repo) sobre las 21 calculadoras con bloque de params: **21/21 con algún aviso**; señal real ya vista: retención-irpf con `ss, ssTope, oblMulti, oblResto` en `var P` sin estar en params, conjunta con 14852/17094/17673.52 literales en el .js, `consulta` en texto libre («consultado el 2/10/2026») en todas. Reglas (por calculadora con `params.json -> <bloque>` en la cabecera del .js; nivel entre paréntesis):
+1. Bloque con `fuente`, `url` (BOE/AEAT/SS) y `consulta` en ISO `AAAA-MM-DD` (AVISO; BLOQUEANTE en fiscales nuevas desde el día de la regla). `consulta` > 120 días → AVISO «revisar vigencia».
+2. Cada número de `var P` existe en el bloque de params (BLOQUEANTE: cifra sin fuente). Excluir 0, 1, 12, 100, 365.
+3. Literales numéricos del .js fuera de `var P` (quitando comentarios, cadenas y enteros ≤ 12) → AVISO «cifra legal fuera de params».
+4. Página y json: absolutos sin condición (`siempre|nunca|garantiza|no existe|no se puede|en todos los casos|cualquier`) en la misma frase que un término legal (art., Ley, exento, tributa, cotiza) → AVISO; ≥ 3 → BLOQUEANTE.
+5. Fechas de vigencia: cada «desde el D de mes de AAAA» o «a partir de AAAA» del html aparece en params (`transitorias`/`consolidados`) o en preverif (AVISO).
+6. Fiscal (tiene preverif-<slug>.md): existen las líneas T, 8, N, R y ≥ 1 línea `S ·` con URL y fecha (AVISO; BLOQUEANTE en fiscales nuevas).
+7. Salida: solo BLOQUEANTE + recuento de AVISO + 5 primeros (T15). Criterio de hecho: marca los 3 casos reales anteriores y el «no existe» de traspasar en su estado previo al Opus (git show del commit de c34 menos 1).
+### [ ] T15 · 1 commit por ciclo: sigue sin hacer (c32-c39: 2 commits, «ciclo N» + «estado ciclo N»). Bajo valor ahora; después de T14.
+### [ ] T24 · Dato propio: 1 hecho (/tablas-2026/, c36); 2 más con la pasada Opus del Estratega (c40.6).
+### [ ] T25 · Brief del proyecto 2 (investigador.md, 1 vez post-sprint, ≤ 140k). No construir hasta 100 impresiones.
+### [~] Rechazados c40: 3 fiscales/ciclo; quitar la 2.ª pasada Opus; arrancar proyecto 2 ya; Analista de datos (T10: sigue 0 impresiones).
+
+**Las 3 tareas siguientes (en este orden):**
+1. **T14 v3 `qa_static --fiscal`** (Orquestador, próximo ciclo sin fiscal doble; criterio de hecho arriba). Después, pasarlo a las 21 calculadoras y abrir 1 petición por calculadora al Constructor (tarea de mejora).
+2. **Editor de calidad con línea base real** (c40.1): 1.ª pasada válida sobre 12 calculadoras con journal/editorial.md; sus peticiones las aplica la tarea de mejora del Constructor en ≤ 2 ciclos.
+3. **Medir la línea S en las 4 fiscales siguientes** (VEREDICTO con `S n`): si cambios ≤ 3 y críticos ≤ 1/4, se queda; si no, reactivar el Lector de norma. Revisión del Mejorador en c48 (también pp/ciclo y la proyección de cadencia).

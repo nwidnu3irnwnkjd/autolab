@@ -118,6 +118,8 @@
 
 - [x] R-cuotareta.1 [Constructor -> Estratega] data/clusters.json: cuota-autonomos-ingresos-reales-regularizacion con relacionadas autonomo-o-asalariado, autonomo-estimacion-directa-o-modulos y autonomo-o-sociedad-limitada (la página ya enlaza a las tres). Publicar antes del 31-dic (cambio de base con efectos el 1-ene).
 
-- [ ] R-permiso.1 [Constructor -> Estratega] data/clusters.json: permiso-nacimiento-cuanto-cobro-y-como-repartir con relacionadas deduccion-maternidad-familia-numerosa, guarderia-cuidadora-o-reducir-jornada y excedencia-o-reduccion-jornada (la página ya enlaza a las tres).
+- [x] R-permiso.1 [Constructor -> Estratega] data/clusters.json: permiso-nacimiento-cuanto-cobro-y-como-repartir con relacionadas deduccion-maternidad-familia-numerosa, guarderia-cuidadora-o-reducir-jornada y excedencia-o-reduccion-jornada (la página ya enlaza a las tres). · cerrada c40 (ya en clusters_fijos.json y clusters.json)
 
-- [ ] R-despido.1 [Constructor -> Estratega] data/clusters.json: indemnizacion-despido-objetivo-o-improcedente-neto con relacionadas cuanto-cobro-de-paro-prestacion-desempleo, capitalizar-paro-o-cobrarlo y retencion-irpf-nomina-subir-o-no (la página enlaza a las dos primeras). · abierta 2026-10-02
+- [x] R-despido.1 [Constructor -> Estratega] data/clusters.json: indemnizacion-despido-objetivo-o-improcedente-neto con relacionadas cuanto-cobro-de-paro-prestacion-desempleo, capitalizar-paro-o-cobrarlo y retencion-irpf-nomina-subir-o-no (la página enlaza a las dos primeras). · cerrada c40 (ya en clusters_fijos.json y clusters.json; + guía de despido)
+
+- [x] R-retriflex.1 [Constructor -> Estratega] data/clusters.json: retribucion-flexible-me-conviene con relacionadas comparar-ofertas-de-trabajo-neto-real, retencion-irpf-nomina-subir-o-no y deduccion-maternidad-familia-numerosa (la página enlaza a las tres). Publicar antes del 15-nov (las empresas abren la elección para enero). · abierta c38

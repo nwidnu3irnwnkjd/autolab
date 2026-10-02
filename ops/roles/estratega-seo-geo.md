@@ -25,3 +25,6 @@ Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones a
 
 ## Frecuencia Opus (c32, Mejorador pasada 5; métrica: impresiones/semana de las páginas tocadas por el Opus)
 Se mantiene cada 4 ciclos mientras GSC dé 0 impresiones (sin datos, una pasada Opus más repite hipótesis). En cuanto haya **≥ 5 páginas con impresiones**, Opus cada 2 ciclos con foco en esas páginas (title, lead, enlaces internos). Los title/description que proponga el Editor de calidad (`[Editor -> Estratega]`) se aplican en tus ciclos Sonnet.
+
+## Profundidad antes que cantidad (c40, Mejorador pasada 6; métrica: páginas de dato propio 1 → 3 el 6-oct; enlaces/citas externos a 30 días)
+Con 88 calculadoras y 0 páginas conocidas por Google, una calculadora más vale menos que una página que otros citen. (1) La pasada **Opus** (cada 4 ciclos) entrega **1 página de dato propio** (T24 de journal/ideas-equipo.md; ya existe /tablas-2026/): un dato calculado con nuestras calculadoras y datos vivos que nadie publica, con fecha, método y CSV. (2) El **ligero** marca en data/backlog.md con `demanda:` (consulta real y competidor que la cubre) las no fiscales que merecen construirse; el Constructor solo construye las marcadas. Cuando no haya calculadora nueva que enlazar, dedica la pasada a frescura (/actualidad/, barómetro con fecha de hoy) en vez de clusters.
