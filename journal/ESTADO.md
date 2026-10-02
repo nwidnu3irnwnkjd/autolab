@@ -46,3 +46,9 @@
 - c49 (mantenimiento): journal/vigencias.md creado (65 ids BOE; RDL 26/2026 sin Resolución en BOE); R48.1-R48.3 hechas; Editor pasada 4 (36+12 calculadoras revisadas); qa_static mide gzip (0 de 138 páginas > 30 KB).
 - 5h 4 %, semanal 49 %, extra 0,55 €.
 - Siguiente (c50): arrancar semana 1 del plan: /todas/, sitemaps por secciones, OG por página, titles de las 40 mejores, compartir, .ics, buscador, barra «Esta semana».
+
+## Ciclo 50 cerrado · FASE TRÁFICO, semana 1 (ver ops/PLAN-TRAFICO.md)
+- Hecho: /todas/ (directorio con filtro; 63 KB), sitemap.xml como índice + 4 sitemaps por sección, home con «Por situación» y «Novedades», 40 titles/descriptions reescritos (journal/escaparate-c50.md), WebApplication con dateModified/author/publisher, «Actualizado: fecha», 123 imágenes sociales PNG únicas (ops/og_raster.py; si se añade página: ejecutar og_raster y commitear projects/decidir/og/), botón Compartir con #v= y URL actualizada, «Añadir al calendario» (.ics) y eventos GA4 share_click/calc_used/calendar_add.
+- Google: sigue sin conocer ninguna URL (inspección: «no reconoce esta URL»); GSC 0 impresiones; sitemap pendiente. Esperar a que Andoni haga la indexación manual.
+- 5h 7 %, semanal 50 %, extra 0,55 €.
+- Siguiente (c51): semana 1 resto: barra «Esta semana» (BOE/luz/carburantes/Euríbor) diaria, página «Qué cambia el 1-ene-2027», estacionales (Navidad/lotería, Black Friday, calefacción), buscador por situación mejorado, «Plan completo» (R16.4). Vigilante: reconsultar BOE (RDL 26/2026).
