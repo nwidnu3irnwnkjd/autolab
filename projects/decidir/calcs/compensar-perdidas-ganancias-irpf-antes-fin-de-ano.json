@@ -1,0 +1,134 @@
+{
+ "slug": "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+ "title": "Vender con pérdidas antes de fin de año: cuánto ahorras",
+ "description": "Compensa pérdidas y ganancias del ahorro en el IRPF 2026: cuánto ahorras al vender con pérdidas antes del 31 de diciembre y qué pasa si recompras.",
+ "h1": "Vender con pérdidas antes de fin de año: cuánto IRPF ahorras en 2026",
+ "lead": "Vender con pérdidas antes del 31 de diciembre reduce tu IRPF de 2026 solo si este año tienes ganancias patrimoniales por ventas o dividendos e intereses que compensar y no recompras los mismos valores en los 2 meses anteriores o posteriores a la venta (1 año si no cotizan): en el ejemplo (12.000 € de ganancias, 2.000 € de pérdidas, 3.000 € de dividendos e intereses y una pérdida latente de 5.000 €) la cuota del ahorro baja de 2.610 € a 1.560 € y ahorras 1.050 €; con recompra el ahorro de este año es de 0 €; y este año solo se aprovechan 10.750 € de pérdida (10.000 € de ganancias netas más el 25 % de los 3.000 € de capital mobiliario). Es un aplazamiento más que un descuento si recompras el valor más barato. No incluye criptomonedas, derivados, el reparto por lotes (FIFO), retenciones, forales, pérdidas de no cotizados ni declaración conjunta.",
+ "veredicto": "Con estos datos, la base del ahorro tiene dos cajones que se compensan entre sí con el límite del 25 %: las ganancias y pérdidas por ventas, y los dividendos e intereses. Si tras vender te sale una pérdida neta, solo puede compensar hasta el 25 % de los dividendos e intereses del año; el resto se arrastra 4 años (el saldo de 2022 caduca tras 2026). Si hay recompra de los mismos valores en 2 meses (1 año si no cotizan), la pérdida no computa este año y el ahorro es de 0 €. Sin recompra, en el ejemplo (12.000 € de ganancias, 2.000 € de pérdidas, 3.000 € de dividendos e intereses) vender 5.000 € de pérdida ahorra 1.050 € (la cuota pasa de 2.610 € a 1.560 €); este año se aprovechan como máximo 10.750 € de pérdida y lo que supere esa cifra se arrastra. Sin ganancias y con solo dividendos e intereses de 8.000 €, vender 6.000 € de pérdida ahorra 420 € y deja 4.000 € para 2027-2030; sin dividendos ni ganancias, el ahorro es de 0 €. Si recompras más barato, lo que ahorras hoy lo pagarás después: es un aplazamiento salvo que tu ganancia futura tribute en un tramo más bajo.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "gp",
+   "label": "Ganancias patrimoniales realizadas en 2026 por ventas (€)",
+   "default": 12000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.gp",
+   "ayuda": "Suma de las ganancias de ventas de acciones, fondos y otros activos en 2026 (art. 46.b). Es un ejemplo editable."
+  },
+  {
+   "id": "perd",
+   "label": "Pérdidas patrimoniales ya realizadas en 2026 (€)",
+   "default": 2000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.perd",
+   "ayuda": "Pérdidas de ventas ya hechas este año que sí computan. Si hubo recompra de los mismos valores en 2 meses, no las incluyas: no se cuentan hasta que vendas lo recomprado."
+  },
+  {
+   "id": "rcm",
+   "label": "Dividendos e intereses de 2026 (€)",
+   "default": 3000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.rcm",
+   "ayuda": "Rendimientos del capital mobiliario del año (art. 25.1, 2 y 3), antes de impuestos y sin la retención."
+  },
+  {
+   "id": "prev",
+   "label": "Saldo negativo pendiente de años anteriores (€)",
+   "default": 0,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.prev",
+   "ayuda": "Pérdidas patrimoniales de ejercicios anteriores aún sin compensar, tal como figuran en tus declaraciones. Pon 0 si no tienes."
+  },
+  {
+   "id": "anio",
+   "label": "Año en que se generó ese saldo",
+   "type": "select",
+   "options": [
+    {
+     "v": "2022",
+     "t": "2022 (caduca tras este ejercicio)"
+    },
+    {
+     "v": "2023",
+     "t": "2023"
+    },
+    {
+     "v": "2024",
+     "t": "2024"
+    },
+    {
+     "v": "2025",
+     "t": "2025"
+    },
+    {
+     "v": "antes",
+     "t": "2021 o antes (ya caducado)"
+    }
+   ],
+   "default_from": "params.compensar_perdidas_2026.supuestos.anio",
+   "ayuda": "Se puede compensar en los 4 años siguientes (art. 49.1): el de 2022 vale hasta el ejercicio 2026. Si hay saldos de varios años, pon el del más antiguo."
+  },
+  {
+   "id": "recompra",
+   "label": "¿Vas a recomprar los mismos valores en los 2 meses antes o después (1 año si no cotizan)?",
+   "type": "select",
+   "options": [
+    {
+     "v": "no",
+     "t": "No, no recompro valores homogéneos"
+    },
+    {
+     "v": "si",
+     "t": "Sí, recompro los mismos valores u otros homogéneos"
+    }
+   ],
+   "default_from": "params.compensar_perdidas_2026.supuestos.recompra",
+   "ayuda": "Art. 33.5.f y g: si compraste o compras valores homogéneos dentro de los 2 meses anteriores o posteriores a la venta (1 año si no cotizan), la pérdida no computa en 2026. Si recompras solo una parte, solo deja de computar la parte correspondiente: esta calculadora lo trata como todo o nada."
+  },
+  {
+   "id": "perdida",
+   "label": "Pérdida latente que venderías antes del 31/12 (€)",
+   "default": 5000,
+   "min": 0,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.perdida",
+   "ayuda": "Diferencia entre lo que pagaste y lo que valen hoy los valores que venderías, con el lote más antiguo primero (art. 37.2). Es un ejemplo editable. Si lo vendes por traspaso entre fondos no hay pérdida computable (art. 94.1.a): tiene que ser un reembolso o una venta."
+  },
+  {
+   "id": "otras",
+   "label": "Otras rentas del ahorro de 2026 (€; con signo menos si son negativas)",
+   "default": 0,
+   "min": -100000,
+   "step": 500,
+   "default_from": "params.compensar_perdidas_2026.supuestos.otras",
+   "ayuda": "Otros rendimientos del capital mobiliario (rentas de seguros de ahorro, intereses de préstamos o pérdidas por impagos). Se suman a los dividendos e intereses; si el total es negativo, solo compensa el 25 % de las ganancias."
+  }
+ ],
+ "faqs": [
+  [
+   "¿Puedo compensar pérdidas de acciones con dividendos o intereses?",
+   "Sí, con un límite. La base del ahorro tiene dos compartimentos que se integran solo entre sí: los rendimientos del capital mobiliario (dividendos, intereses) y las ganancias y pérdidas por transmisiones. Si uno sale negativo, compensa como máximo el 25 % del saldo positivo del otro (art. 49.1 de la Ley del IRPF); lo que no cabe se arrastra 4 años. Con el ejemplo sin ganancias (8.000 € de dividendos e intereses y 6.000 € de pérdida vendida), se compensan 2.000 €, ahorras 420 € y quedan 4.000 € para 2027-2030."
+  ],
+  [
+   "¿Qué es la regla de los 2 meses y cómo afecta a vender con pérdidas?",
+   "Si vendes valores cotizados con pérdida y compras valores homogéneos dentro de los 2 meses anteriores o posteriores a la venta, la pérdida no se computa y se integra cuando vendas los valores que sigas teniendo (art. 33.5.f de la Ley del IRPF); para valores no cotizados el plazo es de 1 año (art. 33.5.g). Una venta el 20 de diciembre con recompra en enero cae dentro de esa ventana: en el ejemplo, el ahorro de 2026 pasa de 1.050 € a 0 €. Un traspaso entre fondos no genera pérdida computable (art. 94.1.a): hace falta reembolsar. Qué cuenta como valor homogéneo es una cuestión de detalle (mismo emisor y derechos equivalentes): si dudas, consúltalo con un asesor o con la Agencia Tributaria."
+  ],
+  [
+   "¿Cuántos años puedo arrastrar una pérdida patrimonial?",
+   "Los cuatro años siguientes al de la pérdida (art. 49.1 de la Ley del IRPF), usando en cada ejercicio la cuantía máxima posible. Un saldo negativo de 2022 puede aplicarse hasta la declaración de 2026 y caduca después; uno de 2021 o anterior ya no se puede usar. La calculadora lo recoge con el año de origen del saldo: si el saldo de 2022 vence este año y vendes otra pérdida, esta consume antes las ganancias del año y parte del saldo antiguo puede caducar sin usarse."
+  ],
+  [
+   "¿Ahorro de verdad o solo aplazo el impuesto?",
+   "Depende de qué hagas después. Si recompras el mismo valor más barato, tu ganancia futura será mayor justo en lo que hoy compensas, así que pagas el impuesto más tarde en vez de no pagarlo. El ahorro real aparece si esa ganancia futura tributa en un tramo más bajo (la escala va del 19 % al 30 %), si no llega a producirse o si la pérdida cubre ganancias que de otro modo pagarías hoy. En el ejemplo, los 1.050 € salen de compensar 5.000 € a tipos del 19 % y el 21 %."
+  ],
+  [
+   "¿Qué pasa si vendo con pérdidas y este año no tengo ganancias ni dividendos?",
+   "No bajas tu IRPF de 2026, pero la pérdida no se desperdicia: queda como saldo negativo para compensar ganancias o, con el límite del 25 %, dividendos e intereses de 2027 a 2030. En el ejemplo sin ganancias ni dividendos, vender 5.000 € de pérdida da 0 € de ahorro en 2026 y 5.000 € pendientes. Si el saldo de 2022 caduca este año, conviene tenerlo en cuenta antes de vender otra pérdida."
+  ]
+ ],
+ "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 33.5.f y g (pérdidas no computables si se recompran valores homogéneos en 2 meses, 1 año si no cotizan), art. 37.2 (valores homogéneos: se transmiten los adquiridos en primer lugar), art. 46 (renta del ahorro), art. 49 (integración y compensación en la base del ahorro, límite del 25 % y 4 años, redacción Ley 26/2014 vigente desde 1/1/2015), arts. 66.1 y 76 (escala del ahorro, redacción Ley 7/2024 vigente desde 1/1/2025), DA 12.ª (porcentaje de compensación escalonado en 2015-2017, fijo en el 25 % desde 2018), DT 7.ª.7 (saldos de 2011-2014, ya caducados), DA 39.ª (deuda subordinada y preferentes anteriores a 2015: caducada en 2026), art. 94.1.a (el traspaso entre fondos no genera pérdida computable) y, del Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266, sin convalidar, no modelado), el nuevo art. 95 ter (pérdidas de la Cuenta de Ahorro e Inversión Financia Europa, no integradas hasta la disposición). Orden de compensación: Agencia Tributaria, Manual práctico de Renta, base imponible del ahorro (fases 1.ª y 2.ª). Agencia Tributaria, ganancias y pérdidas patrimoniales (https://sede.agenciatributaria.gob.es/). Los importes del ejemplo son supuestos editables, no datos oficiales."
+}

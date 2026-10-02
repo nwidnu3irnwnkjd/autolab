@@ -10,7 +10,7 @@
     "hipoteca-fija-o-variable"
   ],
   "plan-pensiones-o-fondo-indexado": [
-    "autonomo-o-asalariado",
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
     "deposito-letras-o-fondo-monetario",
     "jubilacion-anticipada-o-demorada"
   ],
@@ -134,7 +134,7 @@
   "deposito-letras-o-fondo-monetario": [
     "fondo-de-emergencia-cuantos-meses-necesito",
     "plan-pensiones-o-fondo-indexado",
-    "amortizar-o-invertir"
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
   ],
   "seguro-vida-hipoteca-banco-o-externo": [
     "hipoteca-fija-o-variable",
@@ -149,7 +149,7 @@
   "rescate-plan-pensiones-capital-o-renta": [
     "plan-pensiones-o-fondo-indexado",
     "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-    "jubilacion-anticipada-o-demorada"
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
   ],
   "declaracion-conjunta-o-individual": [
     "deduccion-maternidad-familia-numerosa",
@@ -179,7 +179,7 @@
   "excedencia-o-reduccion-jornada": [
     "guarderia-cuidadora-o-reducir-jornada",
     "residencia-o-cuidador-a-domicilio",
-    "jubilacion-anticipada-o-demorada"
+    "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
   "caldera-reparar-o-cambiar": [
     "calefaccion-gas-aerotermia-electrica",
@@ -204,7 +204,7 @@
   "comparar-ofertas-de-trabajo-neto-real": [
     "autonomo-o-asalariado",
     "capitalizar-paro-o-cobrarlo",
-    "academia-idiomas-presencial-online-o-intensivo"
+    "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
   "reformar-o-mudarse": [
     "alquilar-o-comprar",
@@ -228,7 +228,7 @@
   ],
   "capitalizar-paro-o-cobrarlo": [
     "autonomo-o-sociedad-limitada",
-    "declaracion-conjunta-o-individual",
+    "cuanto-cobro-de-paro-prestacion-desempleo",
     "excedencia-o-reduccion-jornada"
   ],
   "suscripciones-cuanto-gasto-al-ano": [
@@ -360,5 +360,15 @@
     "cuanto-ahorrar-para-comprar-casa",
     "amortizar-plazo-o-cuota",
     "hipoteca-fija-o-variable"
+  ],
+  "cuanto-cobro-de-paro-prestacion-desempleo": [
+    "capitalizar-paro-o-cobrarlo",
+    "excedencia-o-reduccion-jornada",
+    "comparar-ofertas-de-trabajo-neto-real"
+  ],
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
+    "plan-pensiones-o-fondo-indexado",
+    "deposito-letras-o-fondo-monetario",
+    "rescate-plan-pensiones-capital-o-renta"
   ]
 }

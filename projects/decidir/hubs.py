@@ -237,9 +237,9 @@ HUBS = {
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
-            ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar"]),
+            ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
             ("Al presentar la declaración y en el futuro", ["obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "rescate-plan-pensiones-capital-o-renta"]),
-            ("Si cambia tu situación laboral", ["capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
+            ("Si cambia tu situación laboral", ["cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
             "autonomo-o-asalariado": {
@@ -270,6 +270,10 @@ HUBS = {
                 "name": "Deducción por maternidad y familia numerosa",
                 "text": "Con hijos menores de 3 años o familia numerosa, estas deducciones las abona Hacienda aunque superen tu cuota, y parte se puede cobrar por adelantado cada mes. La calculadora da cuánto te corresponde con tus cotizaciones y tu situación.",
             },
+            "cuanto-cobro-de-paro-prestacion-desempleo": {
+                "name": "Cuánto cobrarás de paro",
+                "text": "La prestación es el 70 % de tu base reguladora los primeros 180 días y el 60 % después, con un máximo y un mínimo que dependen de tus hijos a cargo. La calculadora da tu cuantía mensual y el total con tus datos.",
+            },
             "capitalizar-paro-o-cobrarlo": {
                 "name": "Capitalizar el paro o cobrarlo",
                 "text": "Si vas a hacerte autónomo, puedes cobrar la prestación mes a mes durante un máximo de 270 días o capitalizarla en un pago único. La calculadora compara ambas con tus meses restantes y tu inversión.",
@@ -282,6 +286,10 @@ HUBS = {
                 "name": "Aportar a un plan de pensiones",
                 "text": "La aportación reduce la base liquidable del año, dentro de un límite, pero el plan tributa al rescatarlo: compensa si tributarás menos entonces que ahora. La calculadora lo compara con un fondo indexado.",
                 "guia": "base-liquidable-tramos-irpf-2026",
+            },
+            "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": {
+                "name": "Vender con pérdidas antes de fin de año",
+                "text": "Las pérdidas de ventas de acciones o fondos compensan ganancias del mismo año en la base del ahorro, pero recomprar pronto puede bloquear la pérdida. La calculadora da cuánto IRPF ahorras en 2026 con tus datos.",
             },
             "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
                 "name": "Donativos",

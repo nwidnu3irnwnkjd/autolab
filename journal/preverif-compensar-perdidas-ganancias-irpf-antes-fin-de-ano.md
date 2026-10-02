@@ -1,0 +1,20 @@
+# Pre-verificación · compensar-perdidas-ganancias-irpf-antes-fin-de-ano · 2026-10-02 (Constructor fiscal)
+Interpretación: bloque INTERPRETACION en ops/verif/compensar-perdidas-ganancias-irpf-antes-fin-de-ano_oraculo.py. Oráculo: 14 fijos + 800 aleatorios, 0 discrepancias. Norma leída en la API del BOE (consolidado de la Ley 35/2006, 2/10/2026).
+HALLAZGO: el límite del art. 49.1 es el 25 % fijo en el texto vigente (únicas versiones: 2007 y 1/1/2015, Ley 26/2014); no hay calendario posterior en 2026. La compensación entre cajones NO es 100 %: solo 25 % del saldo positivo del otro.
+| # | Patrón | Estado / dónde |
+|---|---|---|
+| 1 | Absolutos | hecho: grep siempre/nunca/garantiza/solo tiene sentido/en todos los casos/cualquier sin hits en content y json (ver comando del informe) |
+| 2 | Mecánica que mueve la base | modelado: arts. 46 y 49.1.a-b (dos cajones, 25 %, 4 años, orden antiguo primero 49.2), 33.5.f-g (recompra), 37.2 (FIFO: el usuario da la pérdida del lote), 66/76. Declarado: mínimo personal sobre el ahorro (baja la cuota), saldo antiguo de capital mobiliario (raro), retenciones, base general negativa |
+| 3 | Territorial | forales declarados; escala del ahorro autonómica = art. 76 (común); sin deducciones autonómicas sobre el ahorro |
+| 4 | Redacción vigente / citas | a49 (v. 1/1/2015): «con el límite del 25 por ciento de dicho saldo positivo» y «en los cuatro años siguientes»; a33.5.f «dentro de los dos meses anteriores o posteriores»; 33.5.g «en el año anterior o posterior» (no cotizados); último párrafo 33.5: «las pérdidas patrimoniales se integrarán a medida que se transmitan los valores o participaciones que permanezcan en el patrimonio»; a37.2 «se considerará que los transmitidos por el contribuyente son aquéllos que adquirió en primer lugar»; a46.a/b; 66.1 tabla 0/570/5.190/22.440/35.940 |
+| 5 | Bordes | tests: nada que compensar, pérdida 0, base 6.000, saldo 2021 caducado, saldo 2022 que caduca, rcm negativo 25 %, cruce 50.000, importe negativo (inválido) |
+| 6 | Defaults/omitidos | defaults = ejemplos editables en params compensar_perdidas_2026.supuestos; nada «no verificado». Supuesto no de ley: saldo antiguo se aplica primero a ganancias del año y luego 25 % (orden 49.2) y el 25 % se calcula sobre el saldo positivo del otro cajón tras ese uso |
+| 7 | DT/DF | ver T |
+T · DT 7.ª.7 (saldos 2011-2014: caducados antes de 2026, no aplica en 2026) · DA 39.ª (anterior a 2015 + 4 años: caducada, no aplica en 2026) · DT 7.ª apartados 5-6: ídem caducados · No hay DT que module el 25 % en 2026.
+8 · Opción imposible: recompra = «sí» → la pérdida no computa (test 2); saldo de «2021 o antes» → no se usa (test 6); saldo del 2022 → caduca tras 2026 (test 5); sin rentas positivas → ahorro 0 y arrastre (test 4); importes negativos → inválido (test 13). La página avisa en cada caso.
+N · No modelado (en la página, «Qué no incluye» y nota): criptomonedas (reglas propias), derivados, FIFO por lotes (efecto: otro lote cambia el importe de la pérdida), retenciones, forales, no cotizados (plazo 1 año, solo avisado), pareja/conjunta, mínimo personal sobre el ahorro (baja la cuota), saldos antiguos de capital mobiliario, DA 39.ª.
+R · RDL 26/2026: no toca arts. 33, 37, 46, 48, 49, 66, 76 (versiones 2014/2015/2024; comprobado en la API). No se cita como fuente de cifras. PGE 2026: no hay; las cuantías de la ley vigente.
+Supuestos no de ley: «valores homogéneos» lo decide el usuario (input sí/no); el saldo pendiente se declara como de ganancias/pérdidas (no capital mobiliario); un solo año de origen para todo el saldo.
+Rúbrica compensar-perdidas-ganancias-irpf-antes-fin-de-ano: 1=2 2=2 3=0 (verificación Opus pendiente) 4=2 5=2 6=2 7=2 8=2 9=1 (clusters.json sin tocar: petición al Estratega) 10=2 → 17/20 con punto 3 a 0 hasta verificar.
+
+Correcciones del Verificador (c32): orden AEAT fases 1.ª/2.ª aplicado en JS y oráculo; traspaso de fondos (94.1.a) y no cotizados avisados; RDL 26/2026 sí añade art. 95 ter (confianza B, no modelado); DA 39.ª caducada; 25 % fijo desde 2018 (DA 12.ª).

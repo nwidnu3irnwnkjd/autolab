@@ -1,0 +1,414 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 10.000 € de ganancias netas absorben la pérdida de 5.000",
+   "in": {
+    "gp": 12000,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 5000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 13000.0,
+    "baseCon": 8000.0,
+    "cuotaSin": 2610.0,
+    "cuotaCon": 1560.0,
+    "ahorro": 1050.0,
+    "ahorroSinRecompra": 1050.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 10750.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "recompra en 2 meses: la pérdida no computa en 2026",
+   "in": {
+    "gp": 12000,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "si",
+    "perdida": 5000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 13000.0,
+    "baseCon": 13000.0,
+    "cuotaSin": 2610.0,
+    "cuotaCon": 2610.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 1050.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 10750.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "solo dividendos: límite del 25 % y arrastre",
+   "in": {
+    "gp": 0,
+    "perd": 0,
+    "rcm": 8000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 6000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 8000.0,
+    "baseCon": 6000.0,
+    "cuotaSin": 1560.0,
+    "cuotaCon": 1140.0,
+    "ahorro": 420.0,
+    "ahorroSinRecompra": 420.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 4000.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 2000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: nada que compensar, todo se arrastra",
+   "in": {
+    "gp": 0,
+    "perd": 0,
+    "rcm": 0,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 5000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 0.0,
+    "baseCon": 0.0,
+    "cuotaSin": 0.0,
+    "cuotaCon": 0.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 5000.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "saldo de 2022 que caduca: vender consume ganancias que lo absorbían",
+   "in": {
+    "gp": 3000,
+    "perd": 0,
+    "rcm": 0,
+    "prev": 8000,
+    "anio": "2022",
+    "recompra": "no",
+    "perdida": 2000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 0.0,
+    "baseCon": 0.0,
+    "cuotaSin": 0.0,
+    "cuotaCon": 0.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 5000.0,
+    "caducaCon": 7000.0,
+    "capacidad": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "saldo de 2021 o antes: caducado, no se usa",
+   "in": {
+    "gp": 12000,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 9000,
+    "anio": "antes",
+    "recompra": "no",
+    "perdida": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 13000.0,
+    "baseCon": 13000.0,
+    "cuotaSin": 2610.0,
+    "cuotaCon": 2610.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 10750.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "pérdida mayor que lo compensable: parcial",
+   "in": {
+    "gp": 3000,
+    "perd": 0,
+    "rcm": 4000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 9000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 7000.0,
+    "baseCon": 3000.0,
+    "cuotaSin": 1350.0,
+    "cuotaCon": 570.0,
+    "ahorro": 780.0,
+    "ahorroSinRecompra": 780.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 5000.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 4000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "capital mobiliario negativo compensa solo el 25 % de las ganancias",
+   "in": {
+    "gp": 20000,
+    "perd": 0,
+    "rcm": 0,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 0,
+    "otras": -10000
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 15000.0,
+    "baseCon": 15000.0,
+    "cuotaSin": 3030.0,
+    "cuotaCon": 3030.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 5000.0,
+    "arrastreCon": 5000.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 15000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "cruza el tramo de 50.000 €",
+   "in": {
+    "gp": 90000,
+    "perd": 0,
+    "rcm": 2000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 30000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 92000.0,
+    "baseCon": 62000.0,
+    "cuotaSin": 20040.0,
+    "cuotaCon": 13140.0,
+    "ahorro": 6900.0,
+    "ahorroSinRecompra": 6900.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 90500.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: pérdida 0",
+   "in": {
+    "gp": 12000,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 13000.0,
+    "baseCon": 13000.0,
+    "cuotaSin": 2610.0,
+    "cuotaCon": 2610.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 10750.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: base del ahorro exactamente 6.000 €",
+   "in": {
+    "gp": 6000,
+    "perd": 0,
+    "rcm": 0,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 6000.0,
+    "baseCon": 6000.0,
+    "cuotaSin": 1140.0,
+    "cuotaCon": 1140.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 6000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "saldo de 2023 vigente",
+   "in": {
+    "gp": 12000,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 3000,
+    "anio": "2023",
+    "recompra": "no",
+    "perdida": 1000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 10000.0,
+    "baseCon": 9000.0,
+    "cuotaSin": 1980.0,
+    "cuotaCon": 1770.0,
+    "ahorro": 210.0,
+    "ahorroSinRecompra": 210.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 0.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 7750.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "importe negativo: inválido",
+   "in": {
+    "gp": -1,
+    "perd": 2000,
+    "rcm": 3000,
+    "prev": 0,
+    "anio": "2025",
+    "recompra": "no",
+    "perdida": 5000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "orden AEAT: vender consume el año y caducan 2.000 del saldo de 2022",
+   "in": {
+    "gp": 0,
+    "perd": 0,
+    "rcm": 8000,
+    "prev": 2000,
+    "anio": "2022",
+    "recompra": "no",
+    "perdida": 6000,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 6000.0,
+    "baseCon": 6000.0,
+    "cuotaSin": 1140.0,
+    "cuotaCon": 1140.0,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 0.0,
+    "arrastreCon": 4000.0,
+    "caducaSin": 0.0,
+    "caducaCon": 2000.0,
+    "capacidad": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "orden AEAT: otras rentas negativas y saldo de 2023",
+   "in": {
+    "gp": 1000,
+    "perd": 0,
+    "rcm": 0,
+    "prev": 500,
+    "anio": "2023",
+    "recompra": "no",
+    "perdida": 0,
+    "otras": -1000
+   },
+   "expect": {
+    "invalido": 0,
+    "baseSin": 250.0,
+    "baseCon": 250.0,
+    "cuotaSin": 47.5,
+    "cuotaCon": 47.5,
+    "ahorro": 0.0,
+    "ahorroSinRecompra": 0.0,
+    "arrastreSin": 750.0,
+    "arrastreCon": 750.0,
+    "caducaSin": 0.0,
+    "caducaCon": 0.0,
+    "capacidad": 250.0
+   },
+   "tol": 1
+  }
+ ]
+}

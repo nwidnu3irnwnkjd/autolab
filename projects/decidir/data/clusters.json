@@ -76,7 +76,7 @@
  ],
  "capitalizar-paro-o-cobrarlo": [
   "autonomo-o-sociedad-limitada",
-  "declaracion-conjunta-o-individual",
+  "cuanto-cobro-de-paro-prestacion-desempleo",
   "excedencia-o-reduccion-jornada"
  ],
  "coche-nuevo-o-seminuevo": [
@@ -102,7 +102,12 @@
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
   "capitalizar-paro-o-cobrarlo",
-  "academia-idiomas-presencial-online-o-intensivo"
+  "cuanto-cobro-de-paro-prestacion-desempleo"
+ ],
+ "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
+  "plan-pensiones-o-fondo-indexado",
+  "deposito-letras-o-fondo-monetario",
+  "rescate-plan-pensiones-capital-o-renta"
  ],
  "comprar-coche-o-renting": [
   "coche-nuevo-o-seminuevo",
@@ -129,6 +134,11 @@
   "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
   "hipoteca-fija-o-variable"
  ],
+ "cuanto-cobro-de-paro-prestacion-desempleo": [
+  "capitalizar-paro-o-cobrarlo",
+  "excedencia-o-reduccion-jornada",
+  "comparar-ofertas-de-trabajo-neto-real"
+ ],
  "declaracion-conjunta-o-individual": [
   "deduccion-maternidad-familia-numerosa",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
@@ -142,7 +152,7 @@
  "deposito-letras-o-fondo-monetario": [
   "fondo-de-emergencia-cuantos-meses-necesito",
   "plan-pensiones-o-fondo-indexado",
-  "amortizar-o-invertir"
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "bici-electrica-o-transporte-publico",
@@ -162,7 +172,7 @@
  "excedencia-o-reduccion-jornada": [
   "guarderia-cuidadora-o-reducir-jornada",
   "residencia-o-cuidador-a-domicilio",
-  "jubilacion-anticipada-o-demorada"
+  "cuanto-cobro-de-paro-prestacion-desempleo"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
   "cambiar-de-operadora-compensa-permanencia",
@@ -265,7 +275,7 @@
   "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "plan-pensiones-o-fondo-indexado": [
-  "autonomo-o-asalariado",
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
   "deposito-letras-o-fondo-monetario",
   "jubilacion-anticipada-o-demorada"
  ],
@@ -297,7 +307,7 @@
  "rescate-plan-pensiones-capital-o-renta": [
   "plan-pensiones-o-fondo-indexado",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-  "jubilacion-anticipada-o-demorada"
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
  ],
  "residencia-o-cuidador-a-domicilio": [
   "excedencia-o-reduccion-jornada",
