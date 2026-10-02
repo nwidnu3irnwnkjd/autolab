@@ -1,0 +1,166 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "matricula": 6000,
+    "beca": 0,
+    "meses": 6,
+    "sueldo": 1500,
+    "renuncia": 50,
+    "busqueda": 3,
+    "subida": 500,
+    "anios": 5
+   },
+   "expect": {
+    "costeMatricula": 6000.0,
+    "costeTiempo": 4500.0,
+    "costeTotal": 10500.0,
+    "mesesRecuperar": 21.0,
+    "mesesGana": 51,
+    "valor": 15000.0,
+    "subidaMin": 205.88,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 6000,
+    "beca": 0,
+    "meses": 6,
+    "sueldo": 1500,
+    "renuncia": 50,
+    "busqueda": 3,
+    "subida": 120,
+    "anios": 5
+   },
+   "expect": {
+    "costeMatricula": 6000.0,
+    "costeTiempo": 4500.0,
+    "costeTotal": 10500.0,
+    "mesesRecuperar": 87.5,
+    "mesesGana": 51,
+    "valor": -4380.0,
+    "subidaMin": 205.88,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 0,
+    "beca": 0,
+    "meses": 6,
+    "sueldo": 1500,
+    "renuncia": 0,
+    "busqueda": 3,
+    "subida": 0,
+    "anios": 5
+   },
+   "expect": {
+    "costeMatricula": 0.0,
+    "costeTiempo": 0.0,
+    "costeTotal": 0.0,
+    "mesesRecuperar": -1,
+    "mesesGana": 51,
+    "valor": 0.0,
+    "subidaMin": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 6000,
+    "beca": 0,
+    "meses": 6,
+    "sueldo": 1500,
+    "renuncia": 50,
+    "busqueda": 3,
+    "subida": 206,
+    "anios": 5
+   },
+   "expect": {
+    "costeMatricula": 6000.0,
+    "costeTiempo": 4500.0,
+    "costeTotal": 10500.0,
+    "mesesRecuperar": 50.97,
+    "mesesGana": 51,
+    "valor": 6.0,
+    "subidaMin": 205.88,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 6000,
+    "beca": 0,
+    "meses": 6,
+    "sueldo": 1500,
+    "renuncia": 50,
+    "busqueda": 3,
+    "subida": 0,
+    "anios": 5
+   },
+   "expect": {
+    "costeMatricula": 6000.0,
+    "costeTiempo": 4500.0,
+    "costeTotal": 10500.0,
+    "mesesRecuperar": -1,
+    "mesesGana": 51,
+    "valor": -10500.0,
+    "subidaMin": 205.88,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 3000,
+    "beca": 100,
+    "meses": 1,
+    "sueldo": 1500,
+    "renuncia": 100,
+    "busqueda": 36,
+    "subida": 900,
+    "anios": 1
+   },
+   "expect": {
+    "costeMatricula": 0.0,
+    "costeTiempo": 1500.0,
+    "costeTotal": 1500.0,
+    "mesesRecuperar": 1.67,
+    "mesesGana": 0,
+    "valor": -1500.0,
+    "subidaMin": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "matricula": 6000,
+    "beca": 100,
+    "meses": 60,
+    "sueldo": 3000,
+    "renuncia": 100,
+    "busqueda": 36,
+    "subida": 1000,
+    "anios": 30
+   },
+   "expect": {
+    "costeMatricula": 0.0,
+    "costeTiempo": 180000.0,
+    "costeTotal": 180000.0,
+    "mesesRecuperar": 180.0,
+    "mesesGana": 264,
+    "valor": 84000.0,
+    "subidaMin": 681.82,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

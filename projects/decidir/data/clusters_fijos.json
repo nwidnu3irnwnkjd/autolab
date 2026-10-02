@@ -178,7 +178,7 @@
   ],
   "excedencia-o-reduccion-jornada": [
     "guarderia-cuidadora-o-reducir-jornada",
-    "residencia-o-cuidador-a-domicilio",
+    "curso-online-bootcamp-o-fp-coste-y-retorno",
     "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
   "caldera-reparar-o-cambiar": [
@@ -199,12 +199,12 @@
   "comprar-o-alquilar-trastero": [
     "comprar-o-alquilar-herramienta",
     "alquilar-o-comprar",
-    "mudanza-empresa-o-furgoneta"
+    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
   ],
   "comparar-ofertas-de-trabajo-neto-real": [
     "autonomo-o-asalariado",
     "retencion-irpf-nomina-subir-o-no",
-    "cuanto-cobro-de-paro-prestacion-desempleo"
+    "curso-online-bootcamp-o-fp-coste-y-retorno"
   ],
   "reformar-o-mudarse": [
     "alquilar-o-comprar",
@@ -224,7 +224,7 @@
   "alquilar-o-comprar": [
     "cuanto-ahorrar-para-comprar-casa",
     "reformar-o-mudarse",
-    "vivir-cerca-del-trabajo-o-mas-barato-lejos"
+    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
   ],
   "capitalizar-paro-o-cobrarlo": [
     "autonomo-o-sociedad-limitada",
@@ -415,5 +415,15 @@
     "cocinar-en-casa-o-comer-fuera",
     "marca-blanca-o-marca-ahorro-anual",
     "guarderia-cuidadora-o-reducir-jornada"
+  ],
+  "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
+    "comprar-o-alquilar-trastero",
+    "alquilar-o-comprar",
+    "coche-segunda-mano-particular-o-concesionario"
+  ],
+  "curso-online-bootcamp-o-fp-coste-y-retorno": [
+    "academia-idiomas-presencial-online-o-intensivo",
+    "comparar-ofertas-de-trabajo-neto-real",
+    "excedencia-o-reduccion-jornada"
   ]
 }

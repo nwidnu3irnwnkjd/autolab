@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 10,
+    "costes": 300,
+    "alq": 80,
+    "calle": 40,
+    "multas": 120,
+    "anios": 10,
+    "tasa": 3
+   },
+   "expect": {
+    "costeCompra": 7897.65,
+    "costeAlquiler": 8188.99,
+    "costeCalle": 5118.12,
+    "mejor": 2,
+    "ahorro": 2779.53,
+    "anioEq": -1,
+    "alqEq": 77.15,
+    "calleEq": 67.15,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 10,
+    "costes": 300,
+    "alq": 40,
+    "calle": 150,
+    "multas": 0,
+    "anios": 10,
+    "tasa": 3
+   },
+   "expect": {
+    "costeCompra": 7897.65,
+    "costeAlquiler": 4094.5,
+    "costeCalle": 15354.37,
+    "mejor": 1,
+    "ahorro": 3803.15,
+    "anioEq": -1,
+    "alqEq": 77.15,
+    "calleEq": 77.15,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 10,
+    "costes": 300,
+    "alq": 150,
+    "calle": 150,
+    "multas": 300,
+    "anios": 10,
+    "tasa": 3
+   },
+   "expect": {
+    "costeCompra": 7897.65,
+    "costeAlquiler": 15354.37,
+    "costeCalle": 17913.43,
+    "mejor": 0,
+    "ahorro": 7456.71,
+    "anioEq": 2,
+    "alqEq": 77.15,
+    "calleEq": 52.15,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 10,
+    "costes": 300,
+    "alq": 200,
+    "calle": 75,
+    "multas": 0,
+    "anios": 10,
+    "tasa": 3
+   },
+   "expect": {
+    "costeCompra": 7897.65,
+    "costeAlquiler": 20472.49,
+    "costeCalle": 7677.18,
+    "mejor": 2,
+    "ahorro": 220.47,
+    "anioEq": 13,
+    "alqEq": 77.15,
+    "calleEq": 77.15,
+    "ganador": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 10,
+    "costes": 300,
+    "alq": 80,
+    "calle": 0,
+    "multas": 0,
+    "anios": 1,
+    "tasa": 0
+   },
+   "expect": {
+    "costeCompra": 1800.0,
+    "costeAlquiler": 960.0,
+    "costeCalle": 0.0,
+    "mejor": 2,
+    "ahorro": 960.0,
+    "anioEq": -1,
+    "alqEq": 150.0,
+    "calleEq": 150.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 15000,
+    "gastosPct": 0,
+    "costes": 0,
+    "alq": 80,
+    "calle": 40,
+    "multas": 120,
+    "anios": 40,
+    "tasa": 0
+   },
+   "expect": {
+    "costeCompra": 0.0,
+    "costeAlquiler": 38400.0,
+    "costeCalle": 24000.0,
+    "mejor": 0,
+    "ahorro": 24000.0,
+    "anioEq": 1,
+    "alqEq": 0.0,
+    "calleEq": -10.0,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

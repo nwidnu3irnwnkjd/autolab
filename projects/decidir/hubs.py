@@ -342,9 +342,9 @@ HUBS = {
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
-            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
+            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -436,6 +436,10 @@ HUBS = {
                 "name": "Comprar o alquilar un trastero",
                 "text": "Comprar compensa cuando el alquiler de uno equivalente supera el alquiler de equilibrio que sale del precio, los gastos anuales y el valor que tendrá al venderlo.",
             },
+            "garaje-comprar-alquilar-o-aparcar-en-la-calle": {
+                "name": "Garaje: comprar, alquilar o aparcar en la calle",
+                "text": "Comprar plaza compensa cuando el alquiler y el aparcamiento en la calle que evitas superan el coste anual de tenerla; la calculadora da el punto de equilibrio con tus cifras.",
+            },
             "hotel-o-apartamento-viaje-en-grupo": {
                 "name": "Hotel o apartamento para un viaje en grupo",
                 "text": "El apartamento gana cuando su noche más la comida cocinada cuesta menos que las habitaciones más comer fuera; con pocas personas o pocas noches puede ganar el hotel. La calculadora da el coste por persona y noche.",
@@ -479,6 +483,10 @@ HUBS = {
             "academia-idiomas-presencial-online-o-intensivo": {
                 "name": "Idiomas: academia, online o inmersión",
                 "text": "Lo más barato para llegar a tu nivel depende del precio por hora y de cuánto rinde cada formato. La calculadora da el coste total y la eficacia mínima con la que compensa el online.",
+            },
+            "curso-online-bootcamp-o-fp-coste-y-retorno": {
+                "name": "Curso, bootcamp o FP: coste y retorno",
+                "text": "Formarte compensa en dinero si la mejora de sueldo que esperas recupera lo que cuesta (matrícula más ingresos que dejas de ganar) en pocos años; es una hipótesis, no una promesa.",
             },
         },
     },

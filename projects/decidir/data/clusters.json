@@ -1,8 +1,8 @@
 {
  "academia-idiomas-presencial-online-o-intensivo": [
+  "curso-online-bootcamp-o-fp-coste-y-retorno",
   "adoptar-o-comprar-perro-coste-anual",
-  "comprar-o-alquilar-trastero",
-  "gimnasio-o-entrenar-en-casa"
+  "comprar-o-alquilar-trastero"
  ],
  "adoptar-o-comprar-perro-coste-anual": [
   "seguro-mascota-merece-la-pena",
@@ -17,7 +17,7 @@
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
   "reformar-o-mudarse",
-  "vivir-cerca-del-trabajo-o-mas-barato-lejos"
+  "garaje-comprar-alquilar-o-aparcar-en-la-calle"
  ],
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
@@ -107,7 +107,7 @@
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
   "retencion-irpf-nomina-subir-o-no",
-  "cuanto-cobro-de-paro-prestacion-desempleo"
+  "curso-online-bootcamp-o-fp-coste-y-retorno"
  ],
  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
   "plan-pensiones-o-fondo-indexado",
@@ -127,7 +127,7 @@
  "comprar-o-alquilar-trastero": [
   "comprar-o-alquilar-herramienta",
   "alquilar-o-comprar",
-  "mudanza-empresa-o-furgoneta"
+  "garaje-comprar-alquilar-o-aparcar-en-la-calle"
  ],
  "contado-o-financiar": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -148,6 +148,11 @@
   "autonomo-o-asalariado",
   "autonomo-estimacion-directa-o-modulos",
   "autonomo-o-sociedad-limitada"
+ ],
+ "curso-online-bootcamp-o-fp-coste-y-retorno": [
+  "academia-idiomas-presencial-online-o-intensivo",
+  "comparar-ofertas-de-trabajo-neto-real",
+  "excedencia-o-reduccion-jornada"
  ],
  "declaracion-conjunta-o-individual": [
   "deduccion-maternidad-familia-numerosa",
@@ -181,7 +186,7 @@
  ],
  "excedencia-o-reduccion-jornada": [
   "guarderia-cuidadora-o-reducir-jornada",
-  "residencia-o-cuidador-a-domicilio",
+  "curso-online-bootcamp-o-fp-coste-y-retorno",
   "cuanto-cobro-de-paro-prestacion-desempleo"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
@@ -193,6 +198,11 @@
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
   "autonomo-estimacion-directa-o-modulos"
+ ],
+ "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
+  "comprar-o-alquilar-trastero",
+  "alquilar-o-comprar",
+  "coche-segunda-mano-particular-o-concesionario"
  ],
  "gasolinera-low-cost-compensa-desviarse": [
   "diesel-gasolina-hibrido-electrico",

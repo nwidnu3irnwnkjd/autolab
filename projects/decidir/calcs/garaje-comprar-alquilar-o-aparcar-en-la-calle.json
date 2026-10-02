@@ -1,0 +1,90 @@
+{
+  "slug": "garaje-comprar-alquilar-o-aparcar-en-la-calle",
+  "title": "Garaje: comprar, alquilar o aparcar en la calle",
+  "description": "Compara el coste a N años de comprar una plaza de garaje, alquilarla o aparcar en zona regulada, con la cuota de equilibrio de cada opción.",
+  "h1": "Plaza de garaje: comprar, alquilar o aparcar en la calle",
+  "lead": "Comprar una plaza de garaje compensa si el alquiler de una equivalente supera la cuota de equilibrio y la calle te cuesta más que la tarifa de equilibrio; con los ejemplos de la página (plaza de 15.000 €, 10 % de gastos de compra, 300 € al año de comunidad, IBI y seguro, 10 años y un coste de oportunidad del 3 %), comprar cuesta 7.898 € en euros de hoy: con un alquiler de 80 € al mes y la calle a 40 € al mes más 120 € al año de multas esperadas, gana la calle (5.118 €); con un alquiler de 150 € al mes y la calle a 150 € al mes más 300 € de multas, gana comprar. Pon tus datos para ver tu caso.",
+  "veredicto": "Comprar una plaza compensa cuando el alquiler de una equivalente supera la cuota de equilibrio y la tarifa de la calle (más tus multas esperadas) también supera la suya; por debajo de esos umbrales compensa alquilar o aparcar en la calle, y si la diferencia entre las dos opciones más baratas es menor del 5 %, es un empate práctico. Los impuestos de compra, la revalorización y la hipoteca no están incluidos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio de compra de la plaza (€; 15.000 € es un ejemplo, no un precio de mercado)",
+      "default": 15000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "gastosPct",
+      "label": "Gastos de compra totales (% del precio: ITP, notaría y registro; 10 % es un ejemplo, consulta los gastos de tu comunidad)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "costes",
+      "label": "Comunidad, IBI y seguro de la plaza comprada (€ al año; 300 € es un ejemplo)",
+      "default": 300,
+      "min": 0,
+      "step": 25
+    },
+    {
+      "id": "alq",
+      "label": "Alquiler mensual de una plaza equivalente (€ al mes; 80 € es un ejemplo)",
+      "default": 80,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "calle",
+      "label": "Tarifa de aparcar en la calle (€ al mes: abono de zona regulada o 0 si es gratis; 40 € es un ejemplo, consulta la ordenanza de tu ayuntamiento)",
+      "default": 40,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "multas",
+      "label": "Multas esperadas aparcando en la calle (€ al año; 120 € es una hipótesis tuya, 0 = ninguna)",
+      "default": 120,
+      "min": 0,
+      "step": 20
+    },
+    {
+      "id": "anios",
+      "label": "Horizonte (años que vas a tener coche; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tasa",
+      "label": "Coste de oportunidad del dinero (% al año: lo que ganarías con ese dinero si no lo gastas; 3 % es un ejemplo editable, no una rentabilidad garantizada; 0 = no contarlo)",
+      "default": 3,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo compensa comprar una plaza de garaje en vez de alquilarla?",
+      "Cuando el alquiler mensual de una plaza equivalente supera la cuota de equilibrio de tus datos. Con los ejemplos de la página es de unos 77 € al mes a 10 años: con 150 € al mes compensa comprar (7.898 € frente a 15.354 € de alquilar) y con 40 € al mes, alquilar (4.095 €). Con tus precios saldrá otra cifra."
+    ],
+    [
+      "¿Sale más barato aparcar en la calle que tener garaje?",
+      "Con los ejemplos de la página, la calle (40 € al mes más 120 € al año de multas) cuesta 5.118 € a 10 años frente a 7.898 € de comprar: gana la calle. Comprar compensaría si la tarifa de la calle superara unos 67 € al mes con esas multas. Es un cálculo sobre dinero: no cuenta el tiempo buscando sitio ni la seguridad del coche."
+    ],
+    [
+      "¿Qué gastos de compra debo poner?",
+      "El porcentaje total que te corresponda en tu comunidad: el Impuesto sobre Transmisiones Patrimoniales (ITP) si compras de segunda mano, notaría y registro. La calculadora no fija ningún porcentaje de impuestos: consulta los gastos de tu comunidad y escribe el total. El 10 % de la página es un ejemplo editable, no una cifra oficial."
+    ],
+    [
+      "¿Qué rentabilidad pongo como coste de oportunidad?",
+      "La que ganarías con ese dinero si no lo inviertes en la plaza, según tu caso: es una hipótesis tuya y no una promesa de rentabilidad. Con los ejemplos y un 3 %, comprar cuesta 7.898 € a 10 años; con 0 %, el coste de oportunidad no cuenta. Prueba varios valores para ver cuánto cambia el resultado."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye la revalorización de la plaza ni los gastos de venta (supone que la vendes al final por lo que pagaste), subidas del alquiler o de la tarifa, hipoteca, que haya plazas disponibles en tu zona, el tiempo buscando aparcamiento ni la seguridad del coche. Si la plaza se revaloriza, comprar sale mejor; si el alquiler o la tarifa suben, alquilar y la calle salen peor."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste de comprar = precio x (1 + gastos de compra %) + comunidad, IBI y seguro de cada año - valor al final (se supone igual al precio de compra); coste de alquilar = 12 x alquiler mensual de cada año; coste de la calle = 12 x tarifa mensual + multas esperadas de cada año. Los importes de cada año se descuentan a euros de hoy con el coste de oportunidad indicado (con 0 %, se suman sin descuento). Cuota de equilibrio de alquiler: alquiler mensual con el que alquilar y comprar cuestan lo mismo en el horizonte. Tarifa de equilibrio de la calle: tarifa mensual con la que la calle y comprar cuestan lo mismo, descontadas tus multas esperadas. Año de equilibrio: primer año desde el que comprar cuesta menos que la alternativa más barata y se mantiene así hasta los 40 años del modelo. Empate práctico: diferencia menor del 5 % entre la opción más barata y la siguiente. Los gastos de compra (ITP incluido) y las tarifas de zona regulada dependen de tu comunidad y de tu ayuntamiento: consulta la <a href=\"https://sede.agenciatributaria.gob.es/\" rel=\"noopener\">sede de la Agencia Tributaria</a> o la hacienda de tu comunidad para el ITP, y la ordenanza de aparcamiento de tu ayuntamiento para la tarifa. Supuestos de ejemplo, no oficiales ni precios de mercado, y editables: plaza de 15.000 €, 10 % de gastos, 300 € al año, alquiler de 80 € al mes, calle a 40 € al mes, 120 € al año de multas, 10 años y coste de oportunidad del 3 %. Información orientativa, no asesoramiento."
+}
