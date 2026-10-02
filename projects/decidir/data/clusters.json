@@ -75,7 +75,7 @@
   "luz-fija-o-indexada"
  ],
  "capitalizar-paro-o-cobrarlo": [
-  "autonomo-o-sociedad-limitada",
+  "indemnizacion-despido-objetivo-o-improcedente-neto",
   "cuanto-cobro-de-paro-prestacion-desempleo",
   "excedencia-o-reduccion-jornada"
  ],
@@ -142,7 +142,7 @@
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
   "excedencia-o-reduccion-jornada",
-  "pension-viudedad-cuanto-cobro"
+  "indemnizacion-despido-objetivo-o-improcedente-neto"
  ],
  "cuota-autonomos-ingresos-reales-regularizacion": [
   "autonomo-o-asalariado",
@@ -186,7 +186,7 @@
  ],
  "excedencia-o-reduccion-jornada": [
   "guarderia-cuidadora-o-reducir-jornada",
-  "curso-online-bootcamp-o-fp-coste-y-retorno",
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir",
   "cuanto-cobro-de-paro-prestacion-desempleo"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
@@ -217,7 +217,7 @@
  "guarderia-cuidadora-o-reducir-jornada": [
   "excedencia-o-reduccion-jornada",
   "deduccion-maternidad-familia-numerosa",
-  "comedor-escolar-o-tupper"
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir"
  ],
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -253,6 +253,11 @@
   "teletrabajo-o-oficina-coste-real",
   "pc-sobremesa-o-portatil-coste-a-5-anos",
   "reparar-o-comprar-electrodomestico"
+ ],
+ "indemnizacion-despido-objetivo-o-improcedente-neto": [
+  "cuanto-cobro-de-paro-prestacion-desempleo",
+  "capitalizar-paro-o-cobrarlo",
+  "retencion-irpf-nomina-subir-o-no"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
   "declaracion-conjunta-o-individual",
@@ -308,6 +313,11 @@
   "jubilacion-anticipada-o-demorada",
   "rescate-plan-pensiones-capital-o-renta",
   "jubilacion-activa-o-dejar-de-trabajar"
+ ],
+ "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
+  "deduccion-maternidad-familia-numerosa",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "excedencia-o-reduccion-jornada"
  ],
  "placas-solares-merece-la-pena": [
   "aire-acondicionado-inverter-o-ventilador-coste-verano",

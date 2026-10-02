@@ -78,7 +78,7 @@
   "guarderia-cuidadora-o-reducir-jornada": [
     "excedencia-o-reduccion-jornada",
     "deduccion-maternidad-familia-numerosa",
-    "comedor-escolar-o-tupper"
+    "permiso-nacimiento-cuanto-cobro-y-como-repartir"
   ],
   "universidad-publica-o-privada-o-master": [
     "academia-idiomas-presencial-online-o-intensivo",
@@ -178,7 +178,7 @@
   ],
   "excedencia-o-reduccion-jornada": [
     "guarderia-cuidadora-o-reducir-jornada",
-    "curso-online-bootcamp-o-fp-coste-y-retorno",
+    "permiso-nacimiento-cuanto-cobro-y-como-repartir",
     "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
   "caldera-reparar-o-cambiar": [
@@ -227,7 +227,7 @@
     "garaje-comprar-alquilar-o-aparcar-en-la-calle"
   ],
   "capitalizar-paro-o-cobrarlo": [
-    "autonomo-o-sociedad-limitada",
+    "indemnizacion-despido-objetivo-o-improcedente-neto",
     "cuanto-cobro-de-paro-prestacion-desempleo",
     "excedencia-o-reduccion-jornada"
   ],
@@ -364,7 +364,7 @@
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
     "excedencia-o-reduccion-jornada",
-    "pension-viudedad-cuanto-cobro"
+    "indemnizacion-despido-objetivo-o-improcedente-neto"
   ],
   "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
     "plan-pensiones-o-fondo-indexado",
@@ -424,6 +424,16 @@
   "curso-online-bootcamp-o-fp-coste-y-retorno": [
     "academia-idiomas-presencial-online-o-intensivo",
     "comparar-ofertas-de-trabajo-neto-real",
+    "excedencia-o-reduccion-jornada"
+  ],
+  "indemnizacion-despido-objetivo-o-improcedente-neto": [
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "capitalizar-paro-o-cobrarlo",
+    "retencion-irpf-nomina-subir-o-no"
+  ],
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
+    "deduccion-maternidad-familia-numerosa",
+    "guarderia-cuidadora-o-reducir-jornada",
     "excedencia-o-reduccion-jornada"
   ]
 }

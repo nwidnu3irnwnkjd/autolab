@@ -1,0 +1,114 @@
+{
+  "slug": "permiso-nacimiento-cuanto-cobro-y-como-repartir",
+  "title": "Permiso por nacimiento 2026: cuánto cobro y cómo repartir",
+  "description": "Permiso por nacimiento desde el 31-7-2025: cuánto cobras con 19 semanas por progenitor, lo que pierdes sobre la base máxima y cómo repartirlas.",
+  "h1": "Permiso por nacimiento 2026: cuánto cobro y cómo repartir las semanas entre los dos",
+  "lead": "Con sueldos brutos de 3.200 € y 2.400 € al mes y las 19 semanas cada uno, la Seguridad Social os paga el 100 % de la base de cotización: 14.186,67 € a un progenitor y 10.640,00 € al otro (24.826,67 € en total, exentos de IRPF), sin perder ingresos brutos frente al sueldo. Solo cobras menos que tu sueldo si este supera la base máxima de 5.101,20 € al mes y la empresa no lo completa: con 5.800 € brutos, 19 semanas cuestan 3.098,01 € brutos, y si tomas 6 semanas en vez de 19 la pérdida baja a 978,32 €. Cada progenitor tiene su derecho individual e intransferible (19 semanas, 32 si es monoparental; 6 obligatorias tras el parto), así que repartir solo mejora el dinero cuando uno de los dos gana por encima de la base máxima. La herramienta calcula la prestación de cada progenitor, el complemento de la empresa, la pérdida bruta y el reparto de menor pérdida; vale para nacimientos desde el 31-7-2025 y no incluye el neto, autónomos, tiempo parcial, adopción, funcionarios ni regímenes forales.",
+  "veredicto": "La prestación por nacimiento y cuidado de menor es el 100 % de la base de cotización por contingencias comunes del progenitor, dividida entre 30 y cobrada por cada día natural de descanso (art. 179.1 de la LGSS), con el tope de la base máxima de 5.101,20 € al mes en 2026. Cada progenitor tiene 19 semanas propias (32 si es monoparental), de las que 6 son obligatorias y seguidas tras el parto, 11 se reparten hasta los 12 meses del hijo y 2 hasta los 8 años (art. 48.4 del Estatuto de los Trabajadores); el derecho no se puede transferir al otro, salvo fallecimiento de un progenitor, en que el otro puede usar lo que reste. La herramienta vale para nacimientos desde el 31-7-2025. Si tu sueldo bruto no supera 5.101,20 € al mes, cobras el 100 % de tu sueldo y no pierdes ingresos brutos; si lo supera y la empresa no completa la diferencia, pierdes la parte que excede de esa base por cada semana, y conviene que tome más semanas el progenitor con menor pérdida por semana. Si los dos ganáis por debajo de la base máxima, la pérdida frente al sueldo es cero con el reparto que elijáis y se decide por cuidado, trabajo y empresa. Como familia monoparental solo cuenta un progenitor, y no hay reparto que optimizar. La prestación está exenta de IRPF (art. 7.h de la Ley del IRPF); el complemento de la empresa, no. Si no cumples la carencia de cotización o no estás de alta al empezar el descanso, no hay esta prestación.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "sueldoA",
+      "label": "Sueldo bruto mensual del progenitor A (€; con las pagas extra prorrateadas)",
+      "default": 3200,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.sueldo_a",
+      "ayuda": "Es tu base de cotización por contingencias comunes sin el tope: el bruto anual dividido entre 12. La prestación se calcula sobre ella con el tope de la base máxima."
+    },
+    {
+      "id": "sueldoB",
+      "label": "Sueldo bruto mensual del progenitor B (€; con las pagas extra prorrateadas)",
+      "default": 2400,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.sueldo_b",
+      "ayuda": "Déjalo como esté si la familia es monoparental: se ignora."
+    },
+    {
+      "id": "mono",
+      "label": "Familia monoparental (un único progenitor)",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No, hay dos progenitores"
+        },
+        {
+          "v": "si",
+          "t": "Sí, un único progenitor (32 semanas)"
+        }
+      ]
+    },
+    {
+      "id": "amp",
+      "label": "Semanas extra por progenitor (+1 por cada hijo además del primero y +1 si el hijo tiene discapacidad)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.ampliaciones",
+      "ayuda": "Parto o adopción múltiples y discapacidad del hijo (art. 48.6 del Estatuto de los Trabajadores). Con un solo progenitor, cada una suma 2 semanas."
+    },
+    {
+      "id": "semA",
+      "label": "Semanas que disfruta el progenitor A (0 si no disfruta; mínimo 6, máximo 19 más las extra)",
+      "default": 19,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.semanas_a",
+      "ayuda": "Las 6 primeras son obligatorias, seguidas y a jornada completa tras el parto. Con 1 a 5 semanas la herramienta te avisa."
+    },
+    {
+      "id": "semB",
+      "label": "Semanas que disfruta el progenitor B (0 si no disfruta; mínimo 6, máximo 19 más las extra)",
+      "default": 19,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.semanas_b",
+      "ayuda": "Cada progenitor tiene su derecho individual: las semanas de uno no pasan al otro, salvo fallecimiento de un progenitor."
+    },
+    {
+      "id": "complA",
+      "label": "Complemento de la empresa del progenitor A (% del sueldo hasta el que completa la prestación; 0 si no hay)",
+      "default": 0,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.complemento_a",
+      "ayuda": "Depende del convenio o de la empresa; no es de ley. El complemento tributa en el IRPF.",
+      "max": 100
+    },
+    {
+      "id": "complB",
+      "label": "Complemento de la empresa del progenitor B (% del sueldo hasta el que completa la prestación; 0 si no hay)",
+      "default": 0,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.permiso_nacimiento_2026.supuestos.complemento_b",
+      "ayuda": "Depende del convenio o de la empresa; no es de ley. El complemento tributa en el IRPF.",
+      "max": 100
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cobro de permiso por nacimiento en 2026?",
+      "Cobras el 100 % de tu base de cotización por contingencias comunes, dividida entre 30 y por cada día natural de descanso (art. 179.1 de la LGSS), hasta la base máxima de 5.101,20 € al mes en 2026. Con un sueldo bruto de 3.200 € al mes y 19 semanas, son 14.186,67 € (746,67 € por semana). Si ganas 5.800 € al mes, la prestación se queda en 5.101,20 € al mes y pierdes unos 3.098,01 € brutos en 19 semanas, salvo que la empresa complete la diferencia."
+    ],
+    [
+      "¿Cómo se reparten las 19 semanas entre los dos progenitores?",
+      "No se reparten: cada progenitor tiene sus 19 semanas (nacimientos desde el 31-7-2025), y el derecho es individual e intransferible (art. 48.4 del Estatuto de los Trabajadores). De ellas, 6 son obligatorias, seguidas y a jornada completa tras el parto; 11 se disfrutan a voluntad, por semanas, hasta que el hijo cumple 12 meses, y 2 hasta los 8 años. Las 6 obligatorias de los dos coinciden, inmediatamente después del parto; las voluntarias, a la vez o una detrás de otra: la prestación es la misma. El derecho no se transfiere, salvo fallecimiento de un progenitor, en que el otro puede usar lo que reste. Lo que sí podéis decidir es cuántas semanas toma cada uno: si uno de los dos gana más de 5.101,20 € al mes y el otro menos, y la empresa no completa la diferencia, pierdes menos dinero si el que gana más toma menos semanas."
+    ],
+    [
+      "¿Hay que pagar IRPF por la prestación de nacimiento?",
+      "La prestación de la Seguridad Social por nacimiento y cuidado de menor está exenta de IRPF (art. 7.h de la Ley 35/2006), así que no se practica retención. El complemento que pague la empresa por convenio no está exento: tributa como rendimiento del trabajo. La herramienta compara bruto con bruto y no calcula el neto, que depende de tu retención y tus cotizaciones."
+    ],
+    [
+      "¿Cuántas semanas tienen las familias monoparentales, el parto múltiple o un hijo con discapacidad?",
+      "Una familia con un único progenitor tiene 32 semanas (6 obligatorias, 22 hasta los 12 meses y 4 hasta los 8 años). Se suma 1 semana por progenitor por cada hijo además del primero y 1 más si el hijo tiene discapacidad; si hay un único progenitor, disfruta las ampliaciones completas, es decir, 2 semanas por cada una (art. 48.4 y 48.6 del Estatuto de los Trabajadores). Las 19 semanas valen para nacimientos desde el 31-7-2025; si el hijo nació entre el 2-8-2024 y el 30-7-2025, tenías 16 semanas más las 2 (4) hasta los 8 años, que se pueden pedir desde el 1-1-2026 y son las únicas que hoy quedan (RDL 9/2025, disposición transitoria única)."
+    ],
+    [
+      "¿Qué cotización necesito para cobrar la prestación por nacimiento?",
+      "Tienes que estar de alta o en situación asimilada al empezar cada periodo de descanso y acreditar cotización según tu edad el día del parto: con menos de 21 años, ninguna; entre 21 y 25, 90 días en los últimos 7 años o 180 días en toda tu vida laboral; con 26 o más, 180 días en los últimos 7 años o 360 días en toda tu vida laboral (art. 178 de la LGSS). Si no los reúnes, puede corresponder una prestación no contributiva por una cuantía de IPREM durante las 6 semanas obligatorias (art. 182), que esta herramienta no calcula."
+    ]
+  ],
+  "sources": "Modelo propio. Estatuto de los Trabajadores (RDL 2/2015), art. 48.4 y 48.6 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a48), redacción del Real Decreto-ley 9/2025 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-15741), convalidado por Resolución de 9-9-2025 (BOE-A-2025-17999). Ley General de la Seguridad Social (RDL 8/2015), arts. 177 a 179 y 182 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a179), art. 178.4 (alta, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a178), art. 180 (trabajo durante el descanso, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a180) y art. 248.1.b (tiempo parcial, no modelado, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a248). Ley 35/2006 del IRPF, art. 7.h (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a7). Orden PJC/297/2026, art. 2.1: base máxima de cotización de 5.101,20 € al mes en 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Seguridad Social: información sobre la prestación por nacimiento y cuidado de menor (https://www.seg-social.es). Hipótesis no oficiales y editables: sueldos de 3.200 € y 2.400 € al mes, 19 semanas cada uno, sin complemento de empresa. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

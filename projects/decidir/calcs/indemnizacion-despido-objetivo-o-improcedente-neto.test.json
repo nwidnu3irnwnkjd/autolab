@@ -1,0 +1,665 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: objetivo 8 años y oferta igual a la legal de 20 días (escenario 2)",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "oferta": 13150,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 13150.68,
+    "exento": 13150.0,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 13150.0,
+    "difBruta": -0.68,
+    "difNeta": -0.68,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "improcedente 8 años sin oferta (escenario 4)",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 21698.63,
+    "exento": 21698.63,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 21698.63,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "improcedente con oferta de 30.000 €: exceso tributa con reducción del 30 % (escenario 3)",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 30000,
+    "marginal": 37,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 21698.63,
+    "exento": 21698.63,
+    "trib": 8301.37,
+    "red": 2490.41,
+    "irpf": 2150.05,
+    "neto": 27849.95,
+    "difBruta": 8301.37,
+    "difNeta": 6151.32,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "objetivo con oferta inferior a la legal (escenario 1)",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "oferta": 10000,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 13150.68,
+    "exento": 10000.0,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 10000.0,
+    "difBruta": -3150.68,
+    "difNeta": -3150.68,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "contrato de 2008: 45 días hasta el 11-2-2012 y 33 después",
+   "in": {
+    "bruto": 36000,
+    "anios": 18,
+    "meses": 6,
+    "antes": 48,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 222,
+    "legalObj": 35506.85,
+    "legalImp": 64947.95,
+    "legal": 64947.95,
+    "exento": 64947.95,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 64947.95,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 29441.1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: alta exacta el 12-2-2012, todo a 33 días",
+   "in": {
+    "bruto": 36000,
+    "anios": 14,
+    "meses": 7,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 175,
+    "legalObj": 28767.12,
+    "legalImp": 47465.75,
+    "legal": 47465.75,
+    "exento": 47465.75,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 47465.75,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 18698.63
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: alta un mes antes del 12-2-2012, suma 1 día de salario",
+   "in": {
+    "bruto": 36000,
+    "anios": 14,
+    "meses": 7,
+    "antes": 1,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 175,
+    "legalObj": 28767.12,
+    "legalImp": 47564.38,
+    "legal": 47564.38,
+    "exento": 47564.38,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 47564.38,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 18797.26
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tope de 12 mensualidades en objetivo (25 años)",
+   "in": {
+    "bruto": 48000,
+    "anios": 25,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 300,
+    "legalObj": 47342.47,
+    "legalImp": 94684.93,
+    "legal": 47342.47,
+    "exento": 47342.47,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 47342.47,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 47342.47
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tope de 24 mensualidades en improcedente (30 años desde 2012)",
+   "in": {
+    "bruto": 48000,
+    "anios": 30,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 360,
+    "legalObj": 47342.47,
+    "legalImp": 94684.93,
+    "legal": 94684.93,
+    "exento": 94684.93,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 94684.93,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 47342.47
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tope de 42 mensualidades y límite exento de 180.000 €",
+   "in": {
+    "bruto": 60000,
+    "anios": 40,
+    "meses": 0,
+    "antes": 360,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 480,
+    "legalObj": 59178.08,
+    "legalImp": 207123.29,
+    "legal": 207123.29,
+    "exento": 180000.0,
+    "trib": 27123.29,
+    "red": 8136.99,
+    "irpf": 5695.89,
+    "neto": 201427.4,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 147945.21
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tramo de 45 días mayor de 720 días y menor de 1.260",
+   "in": {
+    "bruto": 60000,
+    "anios": 40,
+    "meses": 0,
+    "antes": 216,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 480,
+    "legalObj": 59178.08,
+    "legalImp": 133150.68,
+    "legal": 133150.68,
+    "exento": 133150.68,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 133150.68,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 73972.6
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "límite exento de 180.000 € con salario alto",
+   "in": {
+    "bruto": 400000,
+    "anios": 20,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 45,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 240,
+    "legalObj": 394520.55,
+    "legalImp": 723287.67,
+    "legal": 723287.67,
+    "exento": 180000.0,
+    "trib": 543287.67,
+    "red": 90000.0,
+    "irpf": 203979.45,
+    "neto": 519308.22,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 328767.12
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 2 años exactos, sin reducción del 30 %",
+   "in": {
+    "bruto": 30000,
+    "anios": 2,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 30000,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 24,
+    "legalObj": 3287.67,
+    "legalImp": 5424.66,
+    "legal": 5424.66,
+    "exento": 5424.66,
+    "trib": 24575.34,
+    "red": 0.0,
+    "irpf": 7372.6,
+    "neto": 22627.4,
+    "difBruta": 24575.34,
+    "difNeta": 17202.74,
+    "impMenosObj": 2136.99
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 2 años y 1 mes, con reducción del 30 %",
+   "in": {
+    "bruto": 30000,
+    "anios": 2,
+    "meses": 1,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 30000,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 25,
+    "legalObj": 3424.66,
+    "legalImp": 5650.68,
+    "legal": 5650.68,
+    "exento": 5650.68,
+    "trib": 24349.32,
+    "red": 7304.79,
+    "irpf": 5113.36,
+    "neto": 24886.64,
+    "difBruta": 24349.32,
+    "difNeta": 19235.96,
+    "impMenosObj": 2226.03
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "base de reducción limitada a 300.000 € y rendimiento sobre 1.000.000 € sin reducción",
+   "in": {
+    "bruto": 1500000,
+    "anios": 20,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 47,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 240,
+    "legalObj": 1479452.05,
+    "legalImp": 2712328.77,
+    "legal": 2712328.77,
+    "exento": 180000.0,
+    "trib": 2532328.77,
+    "red": 0.0,
+    "irpf": 1190194.52,
+    "neto": 1522134.25,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 1232876.71
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "fase de salida de la reducción entre 700.000 y 1.000.000 €",
+   "in": {
+    "bruto": 570000,
+    "anios": 20,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "improcedente",
+    "oferta": 0,
+    "marginal": 47,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "M": 240,
+    "legalObj": 562191.78,
+    "legalImp": 1030684.93,
+    "legal": 1030684.93,
+    "exento": 180000.0,
+    "trib": 850684.93,
+    "red": 44794.52,
+    "irpf": 378768.49,
+    "neto": 651916.44,
+    "difBruta": 0.0,
+    "difNeta": 0.0,
+    "impMenosObj": 468493.15
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "bloqueo: meses antes de 2012 mayores que la antigüedad",
+   "in": {
+    "bruto": 30000,
+    "anios": 1,
+    "meses": 0,
+    "antes": 13,
+    "tipo": "objetivo",
+    "oferta": 13150,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 1,
+    "escenario": 0,
+    "M": 0,
+    "legalObj": 0,
+    "legalImp": 0,
+    "legal": 0,
+    "exento": 0,
+    "trib": 0,
+    "red": 0,
+    "irpf": 0,
+    "neto": 0,
+    "difBruta": 0,
+    "difNeta": 0,
+    "impMenosObj": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "bloqueo: 12 meses sueltos",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 12,
+    "antes": 0,
+    "tipo": "objetivo",
+    "oferta": 13150,
+    "marginal": 30,
+    "causa": "eco"
+   },
+   "expect": {
+    "bloqueado": 1,
+    "escenario": 0,
+    "M": 0,
+    "legalObj": 0,
+    "legalImp": 0,
+    "legal": 0,
+    "exento": 0,
+    "trib": 0,
+    "red": 0,
+    "irpf": 0,
+    "neto": 0,
+    "difBruta": 0,
+    "difNeta": 0,
+    "impMenosObj": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "objetivo 52.c con oferta igual al improcedente: todo exento",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "causa": "eco",
+    "oferta": 21699,
+    "marginal": 30
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 13150.68,
+    "exento": 21698.63,
+    "trib": 0.37,
+    "red": 0.11,
+    "irpf": 0.08,
+    "neto": 21698.92,
+    "difBruta": 8548.32,
+    "difNeta": 8548.24,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "objetivo 52.c con oferta de 30.000 €: tributa lo que supera el improcedente",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "causa": "eco",
+    "oferta": 30000,
+    "marginal": 37
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 13150.68,
+    "exento": 21698.63,
+    "trib": 8301.37,
+    "red": 2490.41,
+    "irpf": 2150.05,
+    "neto": 27849.95,
+    "difBruta": 16849.32,
+    "difNeta": 14699.26,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "objetivo por otra causa con oferta de 21.699 €: tributa lo que supera los 20 días",
+   "in": {
+    "bruto": 30000,
+    "anios": 8,
+    "meses": 0,
+    "antes": 0,
+    "tipo": "objetivo",
+    "causa": "otra",
+    "oferta": 21699,
+    "marginal": 37
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 96,
+    "legalObj": 13150.68,
+    "legalImp": 21698.63,
+    "legal": 13150.68,
+    "exento": 13150.68,
+    "trib": 8548.32,
+    "red": 2564.49,
+    "irpf": 2214.01,
+    "neto": 19484.99,
+    "difBruta": 8548.32,
+    "difNeta": 6334.3,
+    "impMenosObj": 8547.95
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "objetivo 52.c con tramo de 45 días: oferta igual al improcedente, todo exento",
+   "in": {
+    "bruto": 36000,
+    "anios": 14,
+    "meses": 8,
+    "antes": 1,
+    "tipo": "objetivo",
+    "causa": "eco",
+    "oferta": 47564,
+    "marginal": 30
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "M": 176,
+    "legalObj": 28931.51,
+    "legalImp": 47835.62,
+    "legal": 28931.51,
+    "exento": 47564.0,
+    "trib": 0.0,
+    "red": 0.0,
+    "irpf": 0.0,
+    "neto": 47564.0,
+    "difBruta": 18632.49,
+    "difNeta": 18632.49,
+    "impMenosObj": 18904.11
+   },
+   "tol": 1
+  }
+ ]
+}

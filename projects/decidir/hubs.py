@@ -244,7 +244,7 @@ HUBS = {
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
-            ("Si cambia tu situación laboral", ["cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
+            ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
             "autonomo-o-asalariado": {
@@ -286,6 +286,10 @@ HUBS = {
             "cuanto-cobro-de-paro-prestacion-desempleo": {
                 "name": "Cuánto cobrarás de paro",
                 "text": "La prestación es el 70 % de tu base reguladora los primeros 180 días y el 60 % después, con un máximo y un mínimo que dependen de tus hijos a cargo. La calculadora da tu cuantía mensual y el total con tus datos.",
+            },
+            "indemnizacion-despido-objetivo-o-improcedente-neto": {
+                "name": "Despido: indemnización neta",
+                "text": "Tras un despido, la indemnización legal está exenta de IRPF hasta un límite y el exceso tributa. La calculadora compara aceptar la oferta con reclamar la improcedente y da el neto de cada una con tus datos.",
             },
             "capitalizar-paro-o-cobrarlo": {
                 "name": "Capitalizar el paro o cobrarlo",
@@ -344,7 +348,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
+            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -451,6 +455,10 @@ HUBS = {
             "deposito-letras-o-fondo-monetario": {
                 "name": "Depósito, Letras del Tesoro o fondo monetario",
                 "text": "Las tres tributan igual en la base del ahorro, así que deja más neto la de mayor rendimiento a tu plazo; el fondo tiene que rendir más para compensar que no garantiza el capital. La calculadora da el neto de cada una.",
+            },
+            "permiso-nacimiento-cuanto-cobro-y-como-repartir": {
+                "name": "Permiso por nacimiento",
+                "text": "Las 19 semanas se cobran al 100 % de tu base reguladora y la prestación está exenta de IRPF. La calculadora reparte las semanas entre los dos progenitores y da lo que cobras con tus bases.",
             },
             "guarderia-cuidadora-o-reducir-jornada": {
                 "name": "Guardería, cuidadora o reducir jornada",
