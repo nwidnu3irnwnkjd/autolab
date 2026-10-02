@@ -2,7 +2,7 @@
  "datos": {
   "diesel": {
    "extra": {
-    "detalle": "Media simple de 10742 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10741 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
@@ -13,12 +13,12 @@
    "historial": [
     [
      "2026-10-02",
-     1.9271
+     1.9268
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9271
+   "valor": 1.9268
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -147,7 +147,7 @@
   },
   "gasolina95": {
    "extra": {
-    "detalle": "Media simple de 10381 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10380 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
    "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
@@ -158,12 +158,12 @@
    "historial": [
     [
      "2026-10-02",
-     1.8323
+     1.8299
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8323
+   "valor": 1.8299
   },
   "luz_pvpc": {
    "anterior": 0.20613,
@@ -201,10 +201,10 @@
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 23.6,
-    "max_semana": 23.6,
-    "min_hoy": 16.1,
-    "min_semana": 13.7
+    "max_hoy": 23.3,
+    "max_semana": 23.3,
+    "min_hoy": 16.5,
+    "min_semana": 12.2
    },
    "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-10-02",
@@ -215,12 +215,12 @@
    "historial": [
     [
      "2026-10-02",
-     16.5
+     16.7
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 16.5
+   "valor": 16.7
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
