@@ -341,8 +341,8 @@ HUBS = {
                  "luego dónde guardar lo que ahorras y, por último, las decisiones de familia, trabajo y estudios que mueven más dinero al año. "
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
-            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
-            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
+            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
+            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
             ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
@@ -374,6 +374,14 @@ HUBS = {
             "marca-blanca-o-marca-ahorro-anual": {
                 "name": "Marca blanca o de fabricante",
                 "text": "Cambiar compensa si el ahorro al año (la parte de la compra que cambiarías por la diferencia de precio) supera el mínimo que te merece el cambio. La calculadora da la diferencia de precio mínima con la que compensa.",
+            },
+            "comedor-escolar-o-tupper": {
+                "name": "Comedor escolar o tupper",
+                "text": "El comedor compensa si su precio por día supera lo que cuesta preparar el tupper contando tu tiempo; si es menor, gana el comedor. La calculadora da el coste anual de cada opción con tus días lectivos y tu precio.",
+            },
+            "pc-sobremesa-o-portatil-coste-a-5-anos": {
+                "name": "PC de sobremesa o portátil: coste a 5 años",
+                "text": "Sale más barato el equipo de menor coste total a 5 años: precio inicial, consumo eléctrico y reposición o reparación. La calculadora compara sobremesa y portátil con tu uso y te da el ahorro total.",
             },
             "cocinar-en-casa-o-comer-fuera": {
                 "name": "Cocinar en casa o comer fuera",

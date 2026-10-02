@@ -1,0 +1,205 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 5,
+    "horas": 4,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 1228.54,
+    "totalPort": 1074.28,
+    "energiaSob": 278.54,
+    "energiaPort": 74.28,
+    "anualSob": 245.71,
+    "anualPort": 214.86,
+    "diferencia": 154.26,
+    "precioPortEq": 1054.26,
+    "extraSobEq": 95.74,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 1300,
+    "extraSob": 150,
+    "repPort": 100,
+    "anios": 5,
+    "horas": 4,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 1128.54,
+    "totalPort": 1474.28,
+    "energiaSob": 278.54,
+    "energiaPort": 74.28,
+    "anualSob": 225.71,
+    "anualPort": 294.86,
+    "diferencia": -345.74,
+    "precioPortEq": 954.26,
+    "extraSobEq": 495.74,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 5,
+    "horas": 4,
+    "precioKwh": 0.2,
+    "resid": 30
+   },
+   "expect": {
+    "totalSob": 1018.54,
+    "totalPort": 804.28,
+    "energiaSob": 278.54,
+    "energiaPort": 74.28,
+    "anualSob": 203.71,
+    "anualPort": 160.86,
+    "diferencia": 214.26,
+    "precioPortEq": 1206.09,
+    "extraSobEq": 35.74,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 1040,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 5,
+    "horas": 4,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 1228.54,
+    "totalPort": 1214.28,
+    "energiaSob": 278.54,
+    "energiaPort": 74.28,
+    "anualSob": 245.71,
+    "anualPort": 242.86,
+    "diferencia": 14.26,
+    "precioPortEq": 1054.26,
+    "extraSobEq": 235.74,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 8,
+    "horas": 12,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 2286.98,
+    "totalPort": 1356.53,
+    "energiaSob": 1336.98,
+    "energiaPort": 356.53,
+    "anualSob": 285.87,
+    "anualPort": 169.57,
+    "diferencia": 930.45,
+    "precioPortEq": 1830.45,
+    "extraSobEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 0,
+    "repPort": 0,
+    "anios": 5,
+    "horas": 0,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 700.0,
+    "totalPort": 900.0,
+    "energiaSob": 0.0,
+    "energiaPort": 0.0,
+    "anualSob": 140.0,
+    "anualPort": 180.0,
+    "diferencia": -200.0,
+    "precioPortEq": 700.0,
+    "extraSobEq": 200.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 5,
+    "horas": 4,
+    "precioKwh": 0,
+    "resid": 90
+   },
+   "expect": {
+    "totalSob": 321.32,
+    "totalPort": 190.35,
+    "energiaSob": 1.32,
+    "energiaPort": 0.35,
+    "anualSob": 64.26,
+    "anualPort": 38.07,
+    "diferencia": 130.97,
+    "precioPortEq": 2209.72,
+    "extraSobEq": 119.03,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precioSob": 700,
+    "precioPort": 900,
+    "extraSob": 250,
+    "repPort": 100,
+    "anios": 1,
+    "horas": 24,
+    "precioKwh": 0.2,
+    "resid": 0
+   },
+   "expect": {
+    "totalSob": 1284.25,
+    "totalPort": 1089.13,
+    "energiaSob": 334.25,
+    "energiaPort": 89.13,
+    "anualSob": 1284.25,
+    "anualPort": 1089.13,
+    "diferencia": 195.11,
+    "precioPortEq": 1095.11,
+    "extraSobEq": 54.89,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

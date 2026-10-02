@@ -78,7 +78,7 @@
   "guarderia-cuidadora-o-reducir-jornada": [
     "excedencia-o-reduccion-jornada",
     "deduccion-maternidad-familia-numerosa",
-    "universidad-publica-o-privada-o-master"
+    "comedor-escolar-o-tupper"
   ],
   "universidad-publica-o-privada-o-master": [
     "academia-idiomas-presencial-online-o-intensivo",
@@ -114,10 +114,10 @@
   "portatil-o-movil-comprar-renting-o-financiar": [
     "contado-o-financiar",
     "movil-reacondicionado-o-nuevo",
-    "fibra-y-movil-juntos-o-por-separado"
+    "pc-sobremesa-o-portatil-coste-a-5-anos"
   ],
   "teletrabajo-o-oficina-coste-real": [
-    "comparar-ofertas-de-trabajo-neto-real",
+    "pc-sobremesa-o-portatil-coste-a-5-anos",
     "impresora-tinta-o-laser-coste-por-pagina",
     "cocinar-en-casa-o-comer-fuera"
   ],
@@ -253,7 +253,7 @@
   ],
   "cocinar-en-casa-o-comer-fuera": [
     "marca-blanca-o-marca-ahorro-anual",
-    "suscripciones-cuanto-gasto-al-ano",
+    "comedor-escolar-o-tupper",
     "teletrabajo-o-oficina-coste-real"
   ],
   "irpf-alquilar-vivienda-rendimiento-neto": [
@@ -273,7 +273,7 @@
   ],
   "marca-blanca-o-marca-ahorro-anual": [
     "cocinar-en-casa-o-comer-fuera",
-    "navidad-cuanto-gastar-sin-endeudarte",
+    "comedor-escolar-o-tupper",
     "fondo-de-emergencia-cuantos-meses-necesito"
   ],
   "residencia-o-cuidador-a-domicilio": [
@@ -328,7 +328,7 @@
   ],
   "impresora-tinta-o-laser-coste-por-pagina": [
     "teletrabajo-o-oficina-coste-real",
-    "suscripciones-cuanto-gasto-al-ano",
+    "pc-sobremesa-o-portatil-coste-a-5-anos",
     "reparar-o-comprar-electrodomestico"
   ],
   "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
@@ -405,5 +405,15 @@
     "jubilacion-anticipada-o-demorada",
     "plan-pensiones-o-fondo-indexado",
     "pension-viudedad-cuanto-cobro"
+  ],
+  "pc-sobremesa-o-portatil-coste-a-5-anos": [
+    "teletrabajo-o-oficina-coste-real",
+    "reparar-o-comprar-electrodomestico",
+    "impresora-tinta-o-laser-coste-por-pagina"
+  ],
+  "comedor-escolar-o-tupper": [
+    "cocinar-en-casa-o-comer-fuera",
+    "marca-blanca-o-marca-ahorro-anual",
+    "guarderia-cuidadora-o-reducir-jornada"
   ]
 }

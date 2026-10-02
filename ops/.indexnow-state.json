@@ -39,6 +39,7 @@
  "https://entremuchos.com/decidir/contado-o-financiar/": "2026-10-02",
  "https://entremuchos.com/decidir/cuanto-ahorrar-para-comprar-casa/": "2026-10-02",
  "https://entremuchos.com/decidir/cuanto-cobro-de-paro-prestacion-desempleo/": "2026-10-02",
+ "https://entremuchos.com/decidir/cuota-autonomos-ingresos-reales-regularizacion/": "2026-10-02",
  "https://entremuchos.com/decidir/declaracion-conjunta-o-individual/": "2026-10-02",
  "https://entremuchos.com/decidir/deduccion-maternidad-familia-numerosa/": "2026-10-02",
  "https://entremuchos.com/decidir/deposito-letras-o-fondo-monetario/": "2026-10-02",
@@ -59,6 +60,7 @@
  "https://entremuchos.com/decidir/hotel-o-apartamento-viaje-en-grupo/": "2026-10-02",
  "https://entremuchos.com/decidir/impresora-tinta-o-laser-coste-por-pagina/": "2026-10-02",
  "https://entremuchos.com/decidir/irpf-alquilar-vivienda-rendimiento-neto/": "2026-10-02",
+ "https://entremuchos.com/decidir/jubilacion-activa-o-dejar-de-trabajar/": "2026-10-02",
  "https://entremuchos.com/decidir/jubilacion-anticipada-o-demorada/": "2026-10-02",
  "https://entremuchos.com/decidir/luz-fija-o-indexada/": "2026-10-02",
  "https://entremuchos.com/decidir/marca-blanca-o-marca-ahorro-anual/": "2026-10-02",
@@ -105,5 +107,10 @@
  "https://entremuchos.com/hipoteca/": "2026-10-02",
  "https://entremuchos.com/impuestos/": "2026-10-02",
  "https://entremuchos.com/politica-ia/": "2026-10-01",
- "https://entremuchos.com/privacidad/": "2026-10-01"
+ "https://entremuchos.com/privacidad/": "2026-10-01",
+ "https://entremuchos.com/tablas-2026/": "2026-10-02",
+ "https://entremuchos.com/tablas-2026/cuota-autonomos-tramos/": "2026-10-02",
+ "https://entremuchos.com/tablas-2026/itp-ajd-comunidades/": "2026-10-02",
+ "https://entremuchos.com/tablas-2026/smi-iprem-paro-pensiones/": "2026-10-02",
+ "https://entremuchos.com/tablas-2026/tramos-irpf-comunidades/": "2026-10-02"
 }

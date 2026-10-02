@@ -96,8 +96,13 @@
  ],
  "cocinar-en-casa-o-comer-fuera": [
   "marca-blanca-o-marca-ahorro-anual",
-  "suscripciones-cuanto-gasto-al-ano",
+  "comedor-escolar-o-tupper",
   "teletrabajo-o-oficina-coste-real"
+ ],
+ "comedor-escolar-o-tupper": [
+  "cocinar-en-casa-o-comer-fuera",
+  "marca-blanca-o-marca-ahorro-anual",
+  "guarderia-cuidadora-o-reducir-jornada"
  ],
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
@@ -202,7 +207,7 @@
  "guarderia-cuidadora-o-reducir-jornada": [
   "excedencia-o-reduccion-jornada",
   "deduccion-maternidad-familia-numerosa",
-  "universidad-publica-o-privada-o-master"
+  "comedor-escolar-o-tupper"
  ],
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -236,7 +241,7 @@
  ],
  "impresora-tinta-o-laser-coste-por-pagina": [
   "teletrabajo-o-oficina-coste-real",
-  "suscripciones-cuanto-gasto-al-ano",
+  "pc-sobremesa-o-portatil-coste-a-5-anos",
   "reparar-o-comprar-electrodomestico"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
@@ -261,7 +266,7 @@
  ],
  "marca-blanca-o-marca-ahorro-anual": [
   "cocinar-en-casa-o-comer-fuera",
-  "navidad-cuanto-gastar-sin-endeudarte",
+  "comedor-escolar-o-tupper",
   "fondo-de-emergencia-cuantos-meses-necesito"
  ],
  "movil-reacondicionado-o-nuevo": [
@@ -284,6 +289,11 @@
   "retencion-irpf-nomina-subir-o-no",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
+ "pc-sobremesa-o-portatil-coste-a-5-anos": [
+  "teletrabajo-o-oficina-coste-real",
+  "reparar-o-comprar-electrodomestico",
+  "impresora-tinta-o-laser-coste-por-pagina"
+ ],
  "pension-viudedad-cuanto-cobro": [
   "jubilacion-anticipada-o-demorada",
   "rescate-plan-pensiones-capital-o-renta",
@@ -302,7 +312,7 @@
  "portatil-o-movil-comprar-renting-o-financiar": [
   "contado-o-financiar",
   "movil-reacondicionado-o-nuevo",
-  "fibra-y-movil-juntos-o-por-separado"
+  "pc-sobremesa-o-portatil-coste-a-5-anos"
  ],
  "potencia-contratada-luz-bajar-compensa": [
   "luz-fija-o-indexada",
@@ -375,7 +385,7 @@
   "cambiar-de-operadora-compensa-permanencia"
  ],
  "teletrabajo-o-oficina-coste-real": [
-  "comparar-ofertas-de-trabajo-neto-real",
+  "pc-sobremesa-o-portatil-coste-a-5-anos",
   "impresora-tinta-o-laser-coste-por-pagina",
   "cocinar-en-casa-o-comer-fuera"
  ],

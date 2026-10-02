@@ -1,0 +1,105 @@
+{
+ "slug": "pc-sobremesa-o-portatil-coste-a-5-anos",
+ "title": "Sobremesa o portátil: coste a 5 años con extras y luz",
+ "description": "Compara el coste a 5 años de un PC de sobremesa o un portátil con tus extras, reparaciones, luz y valor residual, y el precio de equilibrio.",
+ "h1": "Sobremesa o portátil: coste a 5 años con ampliaciones, reparaciones y luz",
+ "lead": "El portátil sale más barato que el sobremesa cuando los periféricos, ampliaciones y reparaciones del sobremesa más su mayor consumo superan la diferencia de precio de compra: con los ejemplos de la página (700 € el sobremesa, 900 € el portátil, 250 € de extras del sobremesa, 100 € de reparaciones del portátil, 4 horas al día y 5 años) el portátil cuesta 1.074,28 € frente a 1.228,54 € del sobremesa, y el sobremesa solo igualaría con 95,74 € de extras o menos. Pon tus precios, tu uso y el valor residual que esperes.",
+ "veredicto": "El portátil compensa frente al sobremesa si su precio de compra más sus reparaciones queda por debajo de lo que cuestan el sobremesa, sus periféricos, ampliaciones y su mayor consumo eléctrico. El precio máximo del portátil para igualar sale de esa igualdad con tus datos.",
+ "tema": "ahorro",
+ "inputs": [
+  {
+   "id": "precioSob",
+   "label": "Precio del PC de sobremesa, solo la torre (€; 700 € es un ejemplo, no un precio de mercado)",
+   "default": 700,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.precio_sob"
+  },
+  {
+   "id": "precioPort",
+   "label": "Precio del portátil (€; 900 € es un ejemplo, no un precio de mercado)",
+   "default": 900,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.precio_port"
+  },
+  {
+   "id": "extraSob",
+   "label": "Periféricos adicionales, ampliaciones y reparaciones previstas del sobremesa (€ en total; monitor, teclado, ratón, más memoria o disco; 250 € es un ejemplo)",
+   "default": 250,
+   "min": 0,
+   "step": 25,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.extra_sob"
+  },
+  {
+   "id": "repPort",
+   "label": "Reparaciones y ampliaciones previstas del portátil (€ en total; batería, pantalla; 100 € es un ejemplo)",
+   "default": 100,
+   "min": 0,
+   "step": 25,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.rep_port"
+  },
+  {
+   "id": "anios",
+   "label": "Vida útil en la que repartes el coste (años, de 1 a 15; 5 es un ejemplo)",
+   "default": 5,
+   "min": 1,
+   "max": 15,
+   "step": 1,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.anios"
+  },
+  {
+   "id": "horas",
+   "label": "Horas de uso al día de media, todos los días del año (h; 4 es un ejemplo)",
+   "default": 4,
+   "min": 0,
+   "max": 24,
+   "step": 0.5,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.horas"
+  },
+  {
+   "id": "precioKwh",
+   "label": "Precio de la energía (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+   "default": 0.184,
+   "min": 0,
+   "step": 0.005,
+   "default_from": "live.luz_pvpc.extra.media_mes",
+   "default_min_extra": {
+    "dias_mes": 7
+   },
+   "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+  },
+  {
+   "id": "resid",
+   "label": "Valor residual opcional: % del precio de compra que recuperarías al venderlo (de 0 a 90; 0 es un ejemplo prudente)",
+   "default": 0,
+   "min": 0,
+   "max": 90,
+   "step": 5,
+   "default_from": "params.pc_sobremesa_portatil.supuestos.resid"
+  }
+ ],
+ "faqs": [
+  [
+   "¿Es más barato un PC de sobremesa o un portátil?",
+   "Depende de la suma de compra, extras y consumo en tu vida útil. Con los ejemplos de la página (700 € el sobremesa, 900 € el portátil, 250 € de extras del sobremesa, 100 € de reparaciones del portátil, 4 horas al día, 5 años y 0,20 €/kWh sin impuestos) el portátil cuesta 1.074,28 € y el sobremesa 1.228,54 €. Si el portátil costara 1.300 € y los extras del sobremesa fueran 150 €, ganaría el sobremesa por 345,74 €. La calculadora lo recalcula con tus datos."
+  ],
+  [
+   "¿Cuánto consume cada uno y cuánto pesa en el coste?",
+   "El modelo usa potencias medias en uso de 0,15 kW para el sobremesa y 0,04 kW para el portátil: son hipótesis, no datos de ningún fabricante, y la tuya puede ser distinta. Con 4 horas al día durante 5 años, la electricidad cuesta 278,54 € con el sobremesa y 74,28 € con el portátil, con el precio de la luz de la página. Con 12 horas al día y 8 años, el consumo sube a 1.336,98 € y 356,53 €."
+  ],
+  [
+   "¿Cuándo compensa más el sobremesa?",
+   "Cuando el portátil cuesta bastante más y tus extras del sobremesa son pocos. Con los ejemplos, el sobremesa igualaría al portátil si sus periféricos, ampliaciones y reparaciones sumaran 95,74 € o menos, o si el portátil costara 1.054,26 € o menos. Si ya tienes monitor, teclado y ratón, pon solo lo que vayas a comprar."
+  ],
+  [
+   "¿Qué valor residual debo poner?",
+   "Es opcional: el porcentaje del precio de compra que esperas recuperar al venderlo o reutilizarlo al final de la vida útil; déjalo en 0 si no lo sabes. Con un 30 % en los dos equipos y los demás ejemplos, el portátil sale 214,26 € más barato en 5 años; sin valor residual, 154,26 €. El valor real depende del estado y del mercado de segunda mano, y no se modela aparte."
+  ],
+  [
+   "¿Qué no incluye esta comparación?",
+   "No incluye la movilidad (un portátil te lo llevas), la potencia que necesites, la pantalla del sobremesa fuera de sus periféricos, el SAI, la obsolescencia anticipada ni descuentos financieros. Tampoco el término de potencia de la factura de luz. Se supone el mismo uso todos los días y el mismo valor residual porcentual en los dos equipos."
+  ]
+ ],
+ "sources": "Modelo propio: total = precio × (1 − valor residual) + extras + electricidad; electricidad = potencia media (kW) × horas al día × 365 × años × precio con impuestos; coste anual = total ÷ años. Se declara empate práctico si la diferencia es menor del 5 %. Precio por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026. Supuestos no oficiales y editables: precios, extras, 4 horas al día, 5 años y valor residual de 0 %; potencias medias de 0,15 kW (sobremesa) y 0,04 kW (portátil), hipótesis del modelo que no son datos de ningún fabricante. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

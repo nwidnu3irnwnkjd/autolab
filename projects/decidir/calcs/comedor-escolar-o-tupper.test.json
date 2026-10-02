@@ -1,0 +1,189 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 0,
+    "hijos": 1,
+    "compra": 3,
+    "minutos": 20,
+    "valorHora": 0,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 1020.0,
+    "tupper": 540.0,
+    "compra": 510,
+    "tiempo": 0.0,
+    "horas": 56.67,
+    "diferencia": 480.0,
+    "menuEq": 3.18,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 0,
+    "hijos": 1,
+    "compra": 3,
+    "minutos": 20,
+    "valorHora": 10,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 1020.0,
+    "tupper": 1106.67,
+    "compra": 510,
+    "tiempo": 566.67,
+    "horas": 56.67,
+    "diferencia": -86.67,
+    "menuEq": 6.51,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 50,
+    "hijos": 1,
+    "compra": 3,
+    "minutos": 20,
+    "valorHora": 0,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 510.0,
+    "tupper": 540.0,
+    "compra": 510,
+    "tiempo": 0.0,
+    "horas": 56.67,
+    "diferencia": -30.0,
+    "menuEq": 6.35,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 0,
+    "hijos": 2,
+    "compra": 3.5,
+    "minutos": 20,
+    "valorHora": 0,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 2040.0,
+    "tupper": 1220.0,
+    "compra": 1190.0,
+    "tiempo": 0.0,
+    "horas": 56.67,
+    "diferencia": 820.0,
+    "menuEq": 3.59,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 100,
+    "hijos": 1,
+    "compra": 3,
+    "minutos": 20,
+    "valorHora": 0,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 0.0,
+    "tupper": 540.0,
+    "compra": 510,
+    "tiempo": 0.0,
+    "horas": 56.67,
+    "diferencia": -540.0,
+    "menuEq": -1.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 3.2,
+    "dias": 170,
+    "desc": 0,
+    "hijos": 1,
+    "compra": 3,
+    "minutos": 20,
+    "valorHora": 0,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 544.0,
+    "tupper": 540.0,
+    "compra": 510,
+    "tiempo": 0.0,
+    "horas": 56.67,
+    "diferencia": 4.0,
+    "menuEq": 3.18,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 170,
+    "desc": 0,
+    "hijos": 1,
+    "compra": 0,
+    "minutos": 0,
+    "valorHora": 0,
+    "material": 0
+   },
+   "expect": {
+    "comedor": 1020.0,
+    "tupper": 0.0,
+    "compra": 0,
+    "tiempo": 0.0,
+    "horas": 0.0,
+    "diferencia": 1020.0,
+    "menuEq": 0.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "menu": 6,
+    "dias": 366,
+    "desc": 0,
+    "hijos": 10,
+    "compra": 3,
+    "minutos": 240,
+    "valorHora": 30,
+    "material": 30
+   },
+   "expect": {
+    "comedor": 21960.0,
+    "tupper": 54930.0,
+    "compra": 10980,
+    "tiempo": 43920.0,
+    "horas": 1464.0,
+    "diferencia": -32970.0,
+    "menuEq": 15.01,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}
