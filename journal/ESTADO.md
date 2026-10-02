@@ -83,3 +83,10 @@
 - 3 planes completos (/plan/compra-vivienda/, /plan/autonomo/, /plan/despido/) con mapa de ids compartidos en data/planes.json y bloque «Paso N de M».
 - 5h 29 %, semanal 54 %, extra 0,55 €. Contexto orquestador 87 %.
 - Siguiente (c56): mantenimiento Vigilante (semanal); Mejorador Opus (c56 según EQUIPO v3.5) para revisar el plan de tráfico con KPIs; Estratega Opus: GEO (respuestas citables) y estacionales (Black Friday 27-nov, Navidad); semana 2 del plan desde el 10-oct.
+
+## Ciclo 56 cerrado · CADENCIA POR PRESUPUESTO (EQUIPO v3.6)
+- Mejorador: cada ciclo ≈ 0,85 pp semanal porque el contexto del Orquestador es enorme (≈880k): el sprint termina YA. Cadencia: un ciclo cada ~3 h; despertares intermedios (3600 s) = solo `get_usage` y a dormir sin leer archivos ni lanzar agentes (ver loop-prompt §3.4). Alternar tráfico completo/ligero; máx. 15 turnos del Orquestador por ciclo.
+- Estratega: GEO en llms.txt (respuesta+cifra+fecha por calculadora, «Datos abiertos», «Cómo citar»), speakable, guía «Antes de fin de año», calendario editorial de 8 semanas y 8 consultas de cola larga (candidatas: paga extra [fiscal ya], plusvalía municipal [verificar tras derogación]).
+- Diagnóstico: Google no ha leído ni el sitemap (21 h); la cuenta de servicio es solo lectura (para enviar sitemaps por API: darle «Completo» en Search Console + cambiar SCOPES en ops/gauth.py). journal/PENDIENTE-ANDONI.md «LO PRIMERO» tiene 5 líneas. Plan B 15-oct en journal/ideas-equipo.md.
+- 5h 33 %, semanal 54 %, extra 0,55 €. Contexto 88 %.
+- Siguiente (c57, ~3 h): T27 (reducir contexto del Orquestador), descubrimiento propio, fiscal paga extra, kpis.
