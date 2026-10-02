@@ -122,3 +122,10 @@
 - 5h 17 %, semanal 40 %, extra 0,55 €.
 - Fiscales pendientes: finiquito-baja-voluntaria-vacaciones-preaviso, baja-medica-cuanto-cobro-incapacidad-temporal (confianza C 60/75 %: RD 53/1980, verificar), retribucion-flexible-me-conviene (antes 15-nov), subsidio-desempleo, aceptar-trabajo-cobrando-paro, kilometraje-y-dietas-exentas-irpf, deduccion-alquiler-comunidad. No fiscales: vacaciones, estufa, gafas, viaje-organizado.
 - Siguiente (c40): Mejorador Opus + Estratega Opus + 2 fiscales (retribucion-flexible, finiquito); revisar Mejorador qué reforzar con presupuesto sobrante.
+
+## Ciclo 40 cerrado
+- Publicadas (verificadas Opus; cambios aplicados): finiquito-baja-voluntaria-vacaciones-preaviso (crítico: la paga extra pendiente ya cotizó por prorrateo, RGC art. 23.1.A) y retribucion-flexible-me-conviene (crítico: guardería exenta hace perder el incremento de 1.000 € del art. 81.2 LIRPF: veredicto condicional). 90 calculadoras; guía «Me han despedido…» (Estratega Opus). 
+- EQUIPO v3.4 (Mejorador): Lector de norma suspendido y sustituido por línea S (supuestos) en preverif; no fiscal 1 por ciclo solo con `demanda:`; Editor en cada ciclo sin fiscal doble con editorial.md; pp/ciclo medido 0,80/0,50/0,25; objetivo semanal 78 %; T14 v3 (`qa_static --fiscal`) a implementar por el Orquestador en el próximo ciclo sin fiscal doble. Medido: 4 de 9 fiscales con error crítico = supuesto de norma sin leer.
+- 5h 24 %, semanal 42 %, extra 0,55 €.
+- Fiscales pendientes: baja-medica-cuanto-cobro-incapacidad-temporal, subsidio-desempleo-cuanto-cobro-y-cuanto-dura, aceptar-trabajo-cobrando-paro-o-subsidio, kilometraje-y-dietas-exentas-irpf, deduccion-alquiler-comunidad.
+- Siguiente (c41): ciclo SIN fiscal doble → implementar T14 v3 (qa_static --fiscal) + 1 fiscal + Editor + 1 no fiscal con demanda.
