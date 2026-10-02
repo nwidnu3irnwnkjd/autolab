@@ -1,0 +1,117 @@
+{
+  "slug": "cambiar-electrodomestico-antiguo-merece-la-pena",
+  "title": "Cambiar electrodoméstico antiguo por clase A: ¿compensa?",
+  "description": "¿Merece la pena cambiar tu nevera, lavadora o secadora por una clase A? Calcula años de amortización, ahorro en luz y kWh evitados con tus datos.",
+  "h1": "¿Compensa cambiar un electrodoméstico antiguo por uno clase A?",
+  "lead": "Cambiar un electrodoméstico que aún funciona por uno de clase A solo compensa por la luz si el ahorro anual en kWh por tu precio de la luz supera el precio neto del nuevo repartido en los años que lo vas a usar; con los ejemplos declarados (nevera de 300 kWh al año frente a 170 kWh, y 650 € de precio) no se cumple, y la calculadora te da los kWh mínimos que tendrías que ahorrar. Cambia los consumos por los de tu etiqueta y tu aparato.",
+  "veredicto": "Cambiar un electrodoméstico que funciona por uno de clase A compensa solo si el ahorro anual de luz, por tu precio del kWh, cubre el precio neto del nuevo en los años que cuentas; la calculadora te da los kWh al año mínimos que tendrías que ahorrar, y el ahorro real depende de tu uso.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "tipoSel",
+      "label": "Tipo de aparato (rellena los tres campos siguientes con un ejemplo editable, no con cifras oficiales)",
+      "type": "select",
+      "options": [
+        {
+          "v": "nevera",
+          "t": "Nevera: ejemplo 300 → 170 kWh/año, 650 €"
+        },
+        {
+          "v": "lavadora",
+          "t": "Lavadora: ejemplo 150 → 90 kWh/año, 500 €"
+        },
+        {
+          "v": "lavavajillas",
+          "t": "Lavavajillas: ejemplo 280 → 200 kWh/año, 550 €"
+        },
+        {
+          "v": "secadora",
+          "t": "Secadora: ejemplo 450 → 200 kWh/año, 700 €"
+        },
+        {
+          "v": "horno",
+          "t": "Horno: ejemplo 160 → 110 kWh/año, 500 €"
+        }
+      ]
+    },
+    {
+      "id": "act",
+      "label": "Consumo del aparato actual (kWh/año; estímalo con su etiqueta o un medidor enchufable)",
+      "default": 300,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "nue",
+      "label": "Consumo del aparato nuevo (kWh/año; de su etiqueta energética, convertido a un año de uso)",
+      "default": 170,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "coste",
+      "label": "Precio del aparato nuevo (€, con IVA e instalación)",
+      "default": 650,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "reventa",
+      "label": "Valor de reventa del viejo o ayuda confirmada (€; 0 si no tienes)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "luz",
+      "label": "Precio de la electricidad (€/kWh, con impuestos; por defecto, PVPC del mes en curso de Red Eléctrica)",
+      "default": 0.23,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_factor": 1.2718,
+      "default_round": 3,
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.electricidad_eur_kwh"
+    },
+    {
+      "id": "anos",
+      "label": "Años de horizonte (vida útil que cuentas del nuevo; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "resta",
+      "label": "Años que aún aguantaría el actual (0 si ya no funciona; 5 es un ejemplo)",
+      "default": 5,
+      "min": 0,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa cambiar un electrodoméstico antiguo por uno clase A?",
+      "Por la luz sola, solo si el ahorro anual en kWh por el precio del kWh supera el precio neto del aparato nuevo repartido en los años que lo vas a usar. La calculadora te dice los kWh al año mínimos para que ocurra y los compara con los tuyos. Si el aparato actual ya no funciona, la decisión es otra: elegir el nuevo más eficiente por precio y consumo."
+    ],
+    [
+      "¿Cómo sé cuánto consume mi electrodoméstico viejo?",
+      "Lo más fiable es medirlo con un medidor de consumo enchufable durante unos días y llevarlo a un año; la placa de características solo da la potencia. En un aparato nuevo, la etiqueta energética europea indica el consumo: en neveras, en kWh al año; en lavadoras y lavavajillas, por 100 ciclos, que tendrás que convertir según tus lavados."
+    ],
+    [
+      "¿Qué significan las clases A a G de la etiqueta energética?",
+      "Desde marzo de 2021 la etiqueta europea de neveras, lavadoras y lavavajillas usa una escala de la A (más eficiente) a la G, sin los antiguos A+++. Las letras nuevas son más exigentes, así que un aparato de hace diez años que era A+++ no equivale a una A de hoy: compara siempre los kWh, no la letra."
+    ],
+    [
+      "¿Y si el aparato viejo todavía funciona bien?",
+      "Entonces cambiarlo adelanta una compra que harías igualmente más adelante, y esa pérdida de vida útil cuenta contra el cambio. La calculadora lo refleja repartiendo el precio neto del nuevo en sus años de vida y comparándolo con el ahorro de luz. Si se ha estropeado, compara también con reparar o comprar."
+    ],
+    [
+      "¿Qué no incluye este cálculo?",
+      "No incluye el ahorro de agua o detergente, el transporte e instalación, ni el impacto ambiental de fabricar un aparato nuevo y reciclar el viejo. El ahorro real depende de cómo lo uses y el consumo de etiqueta es de laboratorio; los consumos de ejemplo son orientativos y editables."
+    ]
+  ],
+  "sources": "Modelo propio: ahorro anual = (kWh/año del actual - kWh/año del nuevo) x precio del kWh; precio neto = precio del nuevo - reventa o ayuda; amortización simple = precio neto / ahorro anual; ahorro neto = ahorro anual x años de horizonte - precio neto; kWh mínimos para compensar = precio neto / (años x precio del kWh); ventaja de cambiar ahora frente a esperar = años que aguantaría el actual x (ahorro anual - precio neto / años de horizonte). Etiqueta energética de neveras: Reglamento Delegado (UE) 2019/2016 de la Comisión, de 11 de marzo de 2019 (https://www.boe.es/buscar/doc.php?id=DOUE-L-2019-81876, consultado el 2/10/2026), que fija la etiqueta con la escala A a G que indica el consumo en kWh; esta página no usa consumos oficiales por modelo: el consumo de cada aparato lo escribes tú. Precio de la luz por defecto: PVPC medio del mes en curso (Red Eléctrica, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) con impuesto eléctrico e IVA vigentes en octubre de 2026 (x 1,2718); si aún no hay 7 días del mes, 0,23 €/kWh (PVPC medio de septiembre de 2026 con impuestos). Consumos, precios, horizonte y vida restante de los ejemplos son supuestos editables, no cifras oficiales ni medias de mercado. Información orientativa, no asesoramiento."
+}

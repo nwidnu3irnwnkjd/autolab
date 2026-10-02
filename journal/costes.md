@@ -19,3 +19,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-01T23:27Z | 10 | 21 | 0.55 | ciclo 9 inicio (T7 close_cycle.sh; Investigador T13; Constructor lote fiscal 3)
 2026-10-02T00:14Z | 17 | 23 | 0.55 | ciclo 9 cierre: Ingeniero T7 sonnet 120k; Investigador sonnet 100k; Constructor lote fiscal sonnet 318k; Verificadores Opus autonomo 140k + casa 169k; fixes sonnet 81k+95k; re-verif sonnet 93k; QA haiku 94k; peticiones abiertas: 5; páginas: 31
 2026-10-02T00:27Z | 20 | 23 | 0.55 | ciclo 10 cierre: Constructor sonnet 140k; Estratega sonnet 142k; Diseñador F14b sonnet 107k; QA haiku 92k; peticiones abiertas: 7; páginas: 35
+2026-10-02T00:39Z | 22 | 23 | 0.55 | ciclo 11 cierre: Constructor sonnet 141k; Diseñador sonnet 84k; QA haiku 106k; peticiones abiertas: 3; páginas: 37

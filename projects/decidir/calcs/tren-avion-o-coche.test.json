@@ -1,0 +1,167 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "dist": 620,
+    "viaj": 2,
+    "tren": 60,
+    "avion": 110,
+    "htren": 3.5,
+    "havion": 4.5,
+    "kmcoche": 0.2,
+    "extras": 40
+   },
+   "expect": {
+    "costeCoche": 164.0,
+    "costeTren": 120,
+    "costeAvion": 220,
+    "tiempoCoche": 7.29,
+    "barato": 1,
+    "rapido": 1,
+    "minViajerosTren": 3,
+    "minViajerosAvion": 2,
+    "tipoTrenCoche": 0,
+    "horaTrenCoche": 0.0,
+    "tipoAvionCoche": 2,
+    "horaAvionCoche": 10.02
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dist": 620,
+    "viaj": 4,
+    "tren": 60,
+    "avion": 110,
+    "htren": 3.5,
+    "havion": 4.5,
+    "kmcoche": 0.2,
+    "extras": 40
+   },
+   "expect": {
+    "costeCoche": 164.0,
+    "costeTren": 240,
+    "costeAvion": 440,
+    "tiempoCoche": 7.29,
+    "barato": 0,
+    "rapido": 1,
+    "minViajerosTren": 3,
+    "minViajerosAvion": 2,
+    "tipoTrenCoche": 2,
+    "horaTrenCoche": 5.01,
+    "tipoAvionCoche": 2,
+    "horaAvionCoche": 24.69
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dist": 620,
+    "viaj": 1,
+    "tren": 150,
+    "avion": 110,
+    "htren": 8,
+    "havion": 4.5,
+    "kmcoche": 0.2,
+    "extras": 40
+   },
+   "expect": {
+    "costeCoche": 164.0,
+    "costeTren": 150,
+    "costeAvion": 110,
+    "tiempoCoche": 7.29,
+    "barato": 2,
+    "rapido": 2,
+    "minViajerosTren": 2,
+    "minViajerosAvion": 2,
+    "tipoTrenCoche": 3,
+    "horaTrenCoche": 19.83,
+    "tipoAvionCoche": 0,
+    "horaAvionCoche": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dist": 0,
+    "viaj": 2,
+    "tren": 60,
+    "avion": 110,
+    "htren": 3.5,
+    "havion": 4.5,
+    "kmcoche": 0.2,
+    "extras": 40
+   },
+   "expect": {
+    "costeCoche": 40.0,
+    "costeTren": 120,
+    "costeAvion": 220,
+    "tiempoCoche": 0.0,
+    "barato": 0,
+    "rapido": 0,
+    "minViajerosTren": 1,
+    "minViajerosAvion": 1,
+    "tipoTrenCoche": 1,
+    "horaTrenCoche": 0.0,
+    "tipoAvionCoche": 1,
+    "horaAvionCoche": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dist": 620,
+    "viaj": 2,
+    "tren": 60,
+    "avion": 110,
+    "htren": 3.5,
+    "havion": 4.5,
+    "kmcoche": 0,
+    "extras": 0
+   },
+   "expect": {
+    "costeCoche": 0,
+    "costeTren": 120,
+    "costeAvion": 220,
+    "tiempoCoche": 7.29,
+    "barato": 0,
+    "rapido": 1,
+    "minViajerosTren": 1,
+    "minViajerosAvion": 1,
+    "tipoTrenCoche": 2,
+    "horaTrenCoche": 15.81,
+    "tipoAvionCoche": 2,
+    "horaAvionCoche": 39.37
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dist": 620,
+    "viaj": 1,
+    "tren": 0,
+    "avion": 0,
+    "htren": 3.5,
+    "havion": 4.5,
+    "kmcoche": 0.2,
+    "extras": 40
+   },
+   "expect": {
+    "costeCoche": 164.0,
+    "costeTren": 0,
+    "costeAvion": 0,
+    "tiempoCoche": 7.29,
+    "barato": 1,
+    "rapido": 1,
+    "minViajerosTren": -1,
+    "minViajerosAvion": -1,
+    "tipoTrenCoche": 0,
+    "horaTrenCoche": 0.0,
+    "tipoAvionCoche": 0,
+    "horaAvionCoche": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

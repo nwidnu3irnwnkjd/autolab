@@ -1,0 +1,95 @@
+{
+  "slug": "tren-avion-o-coche",
+  "title": "Tren, avión o coche: coste real y tiempo puerta a puerta",
+  "description": "Compara tren, avión y coche con tus precios: coste total para el grupo, tiempo puerta a puerta, nº de viajeros y valor de la hora que decide.",
+  "h1": "Viajar en tren, avión o coche: ¿cuál sale mejor?",
+  "lead": "El coche sale más barato que el tren o el avión cuando su coste total (km por coste por km, más peajes) queda por debajo de los billetes de todos los viajeros, y el tren o el avión compensan frente al coche si tu hora vale más que la diferencia de coste entre el tiempo que ahorran; con los ejemplos declarados de la página (620 km, 2 viajeros) el tren sale a la vez más barato y más rápido, y la calculadora te da los viajeros y el valor de la hora a partir de los cuales cambia. Pon tus billetes, tu distancia y tus tiempos.",
+  "veredicto": "El coche gana en coste cuando su gasto total, que no depende del número de viajeros, es menor que los billetes de todo el grupo; tren y avión compensan en tiempo solo si tu hora vale más que la diferencia de coste dividida entre las horas que ahorran, y la calculadora te da ese valor y el número de viajeros de equilibrio con tus datos.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "dist",
+      "label": "Distancia del viaje por carretera (km; si es ida y vuelta, suma ambos tramos; 620 km es un ejemplo)",
+      "default": 620,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "viaj",
+      "label": "Número de viajeros (de 1 a 5, un solo coche)",
+      "default": 2,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tren",
+      "label": "Billete de tren por persona (€; todo el viaje; 60 € es un ejemplo, no una cotización)",
+      "default": 60,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "avion",
+      "label": "Billete de avión por persona (€; todo el viaje, con tasas, equipaje de pago y traslados al aeropuerto; 110 € es un ejemplo)",
+      "default": 110,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "htren",
+      "label": "Tiempo puerta a puerta en tren (h; incluye llegar a la estación y esperas; 3,5 h es un ejemplo)",
+      "default": 3.5,
+      "min": 0.1,
+      "step": 0.25
+    },
+    {
+      "id": "havion",
+      "label": "Tiempo puerta a puerta en avión (h; incluye traslados, facturación y embarque; 4,5 h es un ejemplo)",
+      "default": 4.5,
+      "min": 0.1,
+      "step": 0.25
+    },
+    {
+      "id": "kmcoche",
+      "label": "Coste del coche por km (€/km; por defecto, gasolina 95 de hoy x 6,5 l/100 km + 0,08 €/km de desgaste)",
+      "default": 0.2,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.gasolina95",
+      "default_factor": 0.065,
+      "default_add": 0.08,
+      "default_round": 3,
+      "default_fallback": "params.viaje_combustible_eur_km"
+    },
+    {
+      "id": "extras",
+      "label": "Peajes y aparcamiento del coche (€, todo el viaje; 40 € es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "step": 5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es más barato viajar en coche, tren o avión?",
+      "Depende de cuántos viajes y de lo que cobre cada billete. El coche cuesta lo mismo vayan 1 o 4 personas (kilómetros por su coste, más peajes), mientras que tren y avión se pagan por persona, así que el coche gana a partir de un número de viajeros que la calculadora te da con tus billetes. Con un solo viajero puede ganar el billete, pero lo decide tu cuenta."
+    ],
+    [
+      "¿Cuántos viajeros hacen falta para que el coche salga más barato?",
+      "Los que superen el coste total del coche entre el precio del billete por persona. Por ejemplo, con un coche de 164 € y un billete de 60 €, hacen falta 3 viajeros; con tus datos, la calculadora lo calcula para tren y para avión. Si el resultado supera los 5 plazas de un coche, el coche no llega a ganar por coste."
+    ],
+    [
+      "¿Cómo se calcula el tiempo puerta a puerta?",
+      "En tren y avión lo escribes tú: suma el trayecto, llegar a la estación o al aeropuerto, esperas, facturación y recogida de equipaje. El del coche se calcula con la distancia entre 85 km/h de media, que incluye paradas. Es una simplificación: atascos y salidas en puente pueden alargarlo."
+    ],
+    [
+      "¿Cuánto vale mi hora a la hora de elegir?",
+      "Es lo que estarías dispuesto a pagar por cada hora ahorrada. La calculadora te dice a partir de qué valor de la hora, por persona, compensa pagar más por un modo más rápido, y hasta qué valor compensa un modo más barato aunque sea más lento. Es tu criterio personal, no un dato."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye emisiones de CO2, comodidad, seguro del viaje, alquiler de coche en el destino, ni el aparcamiento si no lo sumas en peajes y extras. Los precios de los billetes cambian con la antelación y la fecha: los valores de la página son ejemplos, no cotizaciones, y los pones tú."
+    ]
+  ],
+  "sources": "Modelo propio: coste del coche = distancia x coste por km + peajes y extras (no depende de los viajeros); coste de tren y avión = billete por persona x viajeros; tiempo del coche = distancia / 85 km/h; viajeros a partir de los cuales el coche es más barato = parte entera de (coste del coche / billete por persona) + 1; valor de la hora de equilibrio por persona = diferencia de coste / (viajeros x diferencia de horas). Coste por km por defecto: precio medio de la gasolina 95 (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 6,5 l/100 km + 0,08 €/km de desgaste (neumáticos y mantenimiento); si no hay dato vivo, 1,833 €/l de gasolina (consulta 2/10/2026). El consumo de 6,5 l/100 km, el desgaste de 0,08 €/km y la velocidad media de 85 km/h son supuestos de ejemplo, no oficiales y editables en el caso del coste por km. Billetes, peajes, tiempos de tren y avión y distancia de 620 km son ejemplos declarados, no cotizaciones ni datos de una ruta concreta: los pones tú. Información orientativa, no asesoramiento."
+}

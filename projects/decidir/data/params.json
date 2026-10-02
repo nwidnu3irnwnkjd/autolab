@@ -1544,5 +1544,13 @@
    "diferencial_pct": 1.0,
    "plazo_hipoteca_anos": 25
   }
+ },
+ "viaje_combustible_eur_km": 0.119,
+ "viaje_coche": {
+  "consumo_l_100km": 6.5,
+  "desgaste_eur_km": 0.08,
+  "velocidad_media_kmh": 85,
+  "nota": "Supuestos de ejemplo, no oficiales y editables. viaje_combustible_eur_km = gasolina_eur_l (1,833) x 6,5 / 100, respaldo si no hay dato vivo de gasolina95. El desgaste (neumáticos, mantenimiento) y la velocidad media (con paradas) son orientativos.",
+  "consulta": "2026-10-02"
  }
 }

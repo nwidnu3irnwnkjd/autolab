@@ -1,0 +1,131 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "act": 300,
+    "nue": 170,
+    "coste": 650,
+    "reventa": 0,
+    "luz": 0.23,
+    "anos": 10,
+    "resta": 5
+   },
+   "expect": {
+    "ahorroAnual": 29.9,
+    "neto": 650,
+    "anosAmort": 21.74,
+    "saldo": -351.0,
+    "minKwh": 282.61,
+    "ventajaAdelantar": -175.5,
+    "compensa": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 450,
+    "nue": 200,
+    "coste": 700,
+    "reventa": 100,
+    "luz": 0.27,
+    "anos": 10,
+    "resta": 5
+   },
+   "expect": {
+    "ahorroAnual": 67.5,
+    "neto": 600,
+    "anosAmort": 8.89,
+    "saldo": 75.0,
+    "minKwh": 222.22,
+    "ventajaAdelantar": 37.5,
+    "compensa": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 300,
+    "nue": 170,
+    "coste": 650,
+    "reventa": 650,
+    "luz": 0.23,
+    "anos": 10,
+    "resta": 5
+   },
+   "expect": {
+    "ahorroAnual": 29.9,
+    "neto": 0,
+    "anosAmort": 0.0,
+    "saldo": 299.0,
+    "minKwh": 0.0,
+    "ventajaAdelantar": 149.5,
+    "compensa": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 300,
+    "nue": 300,
+    "coste": 650,
+    "reventa": 0,
+    "luz": 0.23,
+    "anos": 10,
+    "resta": 5
+   },
+   "expect": {
+    "ahorroAnual": 0.0,
+    "neto": 650,
+    "anosAmort": -1.0,
+    "saldo": -650.0,
+    "minKwh": 282.61,
+    "ventajaAdelantar": -325.0,
+    "compensa": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 300,
+    "nue": 400,
+    "coste": 650,
+    "reventa": 0,
+    "luz": 0.23,
+    "anos": 10,
+    "resta": 5
+   },
+   "expect": {
+    "ahorroAnual": -23.0,
+    "neto": 650,
+    "anosAmort": -1.0,
+    "saldo": -880.0,
+    "minKwh": 282.61,
+    "ventajaAdelantar": -440.0,
+    "compensa": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 300,
+    "nue": 170,
+    "coste": 650,
+    "reventa": 0,
+    "luz": 0,
+    "anos": 10,
+    "resta": 0
+   },
+   "expect": {
+    "ahorroAnual": 0,
+    "neto": 650,
+    "anosAmort": -1.0,
+    "saldo": -650,
+    "minKwh": -1.0,
+    "ventajaAdelantar": -0.0,
+    "compensa": 0
+   },
+   "tol": 1
+  }
+ ]
+}

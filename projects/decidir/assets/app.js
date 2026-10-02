@@ -30,5 +30,21 @@
       });
     }
   }
+  /* Tablas de guías: etiqueta por celda (data-label) y roles ARIA para conservar la semántica al apilarse en tarjetas a ≤ 480 px */
+  function initTables() {
+    Array.prototype.forEach.call(document.querySelectorAll("article.guide table"), function (t) {
+      var hs = Array.prototype.map.call(t.querySelectorAll("thead th"), function (h) { return h.textContent.trim(); });
+      t.setAttribute("role", "table");
+      Array.prototype.forEach.call(t.querySelectorAll("thead,tbody"), function (g) { g.setAttribute("role", "rowgroup"); });
+      Array.prototype.forEach.call(t.rows, function (r) {
+        r.setAttribute("role", "row");
+        Array.prototype.forEach.call(r.cells, function (c, i) {
+          c.setAttribute("role", c.tagName === "TH" ? (c.parentNode.parentNode.tagName === "THEAD" ? "columnheader" : "rowheader") : "cell");
+          if (hs[i] && c.tagName === "TD") c.setAttribute("data-label", hs[i]);
+        });
+      });
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTables); else initTables();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initMotion); else initMotion();
 })();
