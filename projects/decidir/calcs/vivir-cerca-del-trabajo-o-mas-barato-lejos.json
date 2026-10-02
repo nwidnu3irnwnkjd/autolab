@@ -72,23 +72,23 @@
   "faqs": [
     [
       "¿Compensa vivir lejos del trabajo para ahorrar alquiler?",
-      "Depende de cuánto ahorres frente a lo que cuesta el desplazamiento extra y de cuánto valores tu tiempo. La calculadora resta al ahorro anual de alquiler o cuota el coste de ir y volver y, si lo pones, el valor de las horas extra, y te dice a partir de qué valor de tu hora deja de compensar."
+      "Depende de cuánto ahorres frente al coste del desplazamiento extra y de cuánto valores tu tiempo. La calculadora resta al ahorro anual el coste de ir y volver y, si lo pones, el valor de las horas extra, y te dice desde qué valor de tu hora deja de compensar."
     ],
     [
       "¿Cómo se calcula el coste del desplazamiento extra?",
-      "En coche, los km extra de ida por 2, por los días al año y por el coste por km (combustible y desgaste de ejemplo, editables). En transporte público, el sobrecoste mensual del abono por 12. Solo cuenta la diferencia entre vivir cerca y lejos, porque lo que pagas igual en ambos casos se cancela."
+      "En coche, los km extra de ida por 2, por los días al año y por el coste por km (combustible y desgaste de ejemplo, editables). En transporte público, el sobrecoste mensual del abono por 12. Solo cuenta la diferencia entre vivir cerca y lejos."
     ],
     [
       "¿Cuánto vale mi hora?",
-      "Es lo que pagarías por recuperar una hora de tu vida, y es tu criterio: no hay una cifra oficial. Si lo dejas en 0 no se valora el tiempo y la página te dice a partir de qué valor de la hora vivir lejos deja de compensar, para que lo contrastes con lo que tú piensas."
+      "Es lo que pagarías por recuperar una hora de tu vida, y es tu criterio: no hay cifra oficial. Si lo dejas en 0 no se valora el tiempo y la página te dice desde qué valor de la hora vivir lejos deja de compensar."
     ],
     [
       "¿A partir de cuántos km deja de compensar vivir lejos?",
-      "Cuando el coste de cada km extra de ida (coste por km más el tiempo valorado) multiplicado por 2 y por los días al año iguala el ahorro anual de alquiler. La calculadora da esa distancia con tus datos, suponiendo los mismos minutos por km. Si vas en transporte público, el equilibrio es el abono extra que absorbe el ahorro."
+      "Cuando el coste de cada km extra de ida (coste por km más tiempo valorado) por 2 y por los días al año iguala el ahorro anual de alquiler. La calculadora da esa distancia con tus datos. En transporte público, el equilibrio es el abono extra que absorbe el ahorro."
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No incluye el aparcamiento ni los peajes si no los sumas, el seguro, los gastos de vivienda que cambian de zona (suministros, comunidad, impuestos locales), la comida fuera, la conciliación familiar ni el entorno. Los precios de vivienda y transporte los pones tú: los valores de la página son ejemplos, no datos de una ciudad."
+      "No incluye aparcamiento ni peajes si no los sumas, seguro, gastos de vivienda que cambian de zona (suministros, comunidad, impuestos locales), comida fuera, conciliación ni entorno. Los precios los pones tú: los valores de la página son ejemplos, no datos de una ciudad."
     ]
   ],
   "sources": "Modelo propio: ahorro de alquiler o cuota = (precio cerca - precio lejos) x 12; desplazamiento extra = km extra de ida x 2 x días x coste por km + abono extra x 12; horas extra = minutos extra de ida x 2 x días / 60, valoradas a la hora que fijes; ahorro neto de vivir lejos = ahorro de alquiler - desplazamiento - tiempo valorado; valor de la hora de equilibrio = (ahorro de alquiler - desplazamiento) / horas extra; km de equilibrio = (ahorro de alquiler - abono) / (2 x días x (coste por km + valor de la hora x minutos por km / 60)). Empate práctico si la diferencia es menor del 5 % del mayor coste anual de vivienda más desplazamiento (criterio de la página). Coste por km por defecto: precio medio de la gasolina 95 (<a href=\"https://geoportalgasolineras.es/\" rel=\"noopener\">Geoportal de gasolineras, MITECO</a>, dato del día de la última actualización de la página) x 6,5 l/100 km + 0,08 €/km de desgaste; si no hay dato vivo, 1,833 €/l (consulta 2/10/2026). El consumo y el desgaste son supuestos de ejemplo, no oficiales. Alquileres, cuotas, distancias, minutos, días, abono y valor de la hora son ejemplos declarados y editables: no son datos de una ciudad ni de ninguna fuente oficial. Información orientativa, no asesoramiento."

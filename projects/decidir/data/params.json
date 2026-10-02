@@ -157,6 +157,7 @@
   "ejercicio": 2026,
   "consultado": "2026-10-02",
   "base_legal": "Ley 35/2006 del IRPF, texto consolidado a 30/09/2026",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
   "escala_estatal_general": {
    "fuente": "Ley 35/2006, art. 63.1 (redacción Ley 11/2020, vigente desde 1/1/2021)",
    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
@@ -1715,6 +1716,7 @@
   "ejercicio": 2026,
   "consultado": "2026-10-02",
   "base_legal": "Ley 49/2002 arts. 16, 17, 18, 19, 22 y 24 y Ley 35/2006 arts. 67, 68.3 y 69.1, textos consolidados a 02/10/2026",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-25039",
   "escala": {
    "fuente": "Ley 49/2002, art. 19.1 (redacción del RDL 6/2023, en vigor desde 1/1/2024): 80 % de los primeros 250 € de la base de deducción y 40 % del resto; 45 % del resto (el exceso sobre 250 € a favor de esa entidad) si en los dos periodos anteriores se donó a la misma entidad por importe igual o superior al del año anterior en cada uno",
    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-25039",
@@ -1766,6 +1768,7 @@
   "ejercicio": 2026,
   "consultado": "2026-10-02",
   "base_legal": "Ley 35/2006 (IRPF) arts. 25.2, 26, 37, 49, 56, 66, 76, 94 y 101.4/101.6; RD 439/2007 arts. 75.3.b y 97; RDL 16/2011 art. 10; RD 2606/1996; textos consolidados del BOE a 02/10/2026 (Ley 35/2006 y RD 439/2007: última actualización publicada el 30/09/2026; RD 2606/1996: 24/11/2021)",
+  "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
   "escala_ahorro": {"fuente": "Ley 35/2006, arts. 66.1 (estatal) y 76 (autonómica, igual): cuota acumulada 570/5.190/22.440/35.940 € por mitad; tipo total = doble: 19/21/23/27/30 %", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764", "consulta": "consultado el 2/10/2026", "confianza": "A", "tramos": [[0, 19], [6000, 21], [50000, 23], [200000, 27], [300000, 30]]},
   "retencion": {"fuente": "Ley 35/2006, art. 101.4 (rendimientos del capital mobiliario, 19 %) y art. 101.6 (ganancias por reembolso de fondos, 19 %); RD 439/2007, art. 75.3.b (sin retención en Letras del Tesoro, salvo cuentas basadas en Letras de entidades de crédito)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820", "consulta": "consultado el 2/10/2026", "confianza": "A", "pct": 19},
   "letras": {"fuente": "Tesoro Público, resultado de últimas subastas de Letras: tipo de interés simple base 360, precio P = 100/(1 + i·d/360); comprobado: 12 meses, precio medio 97,163, d = 371 días, i = 2,833 % frente a 2,832 % publicado", "url": "https://www.tesoro.es/deuda-publica/subastas/resultado-ultimas-subastas/letras-del-tesoro", "consulta": "consultado el 2/10/2026", "confianza": "A", "base": 360, "dias_anio": 365,

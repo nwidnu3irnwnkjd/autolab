@@ -67,7 +67,7 @@
     ],
     [
       "¿Hasta cuántos km de desvío compensa?",
-      "Hasta los km en que el ahorro bruto (litros por diferencia de precio) se iguala con el coste por km del desvío (consumo por precio del combustible, más tu tiempo si lo cuentas). La calculadora te da ese punto: más allá de él, el desvío cuesta más de lo que ahorras."
+      "Hasta los km en que el ahorro bruto (litros por diferencia de precio) iguala el coste por km del desvío (consumo por precio del combustible, más tu tiempo si lo cuentas). Más allá de ese punto, el desvío cuesta más de lo que ahorras."
     ],
     [
       "¿Cuántos litros necesito repostar para que compense?",

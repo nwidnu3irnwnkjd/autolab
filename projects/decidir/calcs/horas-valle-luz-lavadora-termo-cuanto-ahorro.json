@@ -88,23 +88,23 @@
   "faqs": [
     [
       "¿Cuáles son las horas valle de la luz?",
-      "En la tarifa 2.0TD el valle va de 0 a 8 h todos los días y todo el día en sábados, domingos y festivos nacionales; la punta es de lunes a viernes de 10 a 14 y de 18 a 22 h, y el resto es llano (Circular 3/2020 de la CNMC). Si ya pones los aparatos de noche o en fin de semana, ya estás en valle y no hay ahorro que sacar: baja el porcentaje desplazable."
+      "En la tarifa 2.0TD el valle va de 0 a 8 h todos los días y todo el día en fines de semana y festivos nacionales; la punta, de lunes a viernes de 10 a 14 y de 18 a 22 h. Si ya usas el valle, no hay ahorro."
     ],
     [
       "¿Cuánto se ahorra poniendo la lavadora en horas valle?",
-      "Depende de la diferencia de precio entre la franja de hoy y el valle. Con los precios medios del PVPC de los últimos 12 meses (valle 0,1194, llano 0,1331 y punta 0,2048 €/kWh sin impuestos) cada kWh que pasas del llano al valle ahorra unos 0,017 € con impuestos, y de la punta al valle unos 0,11 €. Con los ejemplos de la página (70 % movible) son unos 10 € al año desde el llano y unos 63 € desde la punta."
+      "Depende del precio entre tu franja y el valle. Con el PVPC medio de 12 meses, cada kWh movido ahorra unos 0,017 € desde el llano y 0,11 € desde la punta. Con los ejemplos: 10 € al año desde el llano y 63 € desde la punta."
     ],
     [
       "¿Compensa mover el termo a la noche?",
-      "Compensa si la diferencia de precio por los kWh que muevas supera tus molestias, y el termo es el aparato que más suele pesar porque calienta agua durante todo el día. Con los ejemplos (10 kWh por semana de termo) pesa más de la mitad de los kWh movidos. Un termo con programador puede calentar solo en el valle; ten en cuenta que el agua pierde algo de calor hasta que la usas."
+      "Compensa si la diferencia de precio por los kWh que muevas supera tus molestias; el termo suele pesar más porque calienta agua todo el día. Con los ejemplos (10 kWh por semana) pesa más de la mitad de lo movido. Con programador puede calentar solo en valle."
     ],
     [
       "¿Qué precios usa la calculadora para el valle, el llano y la punta?",
-      "Por defecto, la media de los últimos 12 meses (octubre de 2025 a septiembre de 2026) del precio de la energía del PVPC de Red Eléctrica en cada periodo, sin impuestos, a los que añade el Impuesto Especial sobre la Electricidad (5,11269632 %, con mínimo de 1 €/MWh) y el IVA del 21 %. Son editables: si tienes una tarifa libre con precios por periodo, pon los de tu contrato; si tu tarifa tiene un precio único, el ahorro sale cero."
+      "La media de 12 meses (octubre de 2025 a septiembre de 2026) del PVPC de Red Eléctrica por periodo, sin impuestos, más el Impuesto Especial sobre la Electricidad (5,11269632 %, mínimo 1 €/MWh) y el IVA del 21 %. Son editables; con precio único, el ahorro es cero."
     ],
     [
       "¿Qué no incluye esta estimación?",
-      "No incluye el término de potencia (no cambia por mover consumos), el ruido o la comodidad de poner aparatos de noche, el consumo de espera ni el posible coste de un programador. El PVPC varía cada hora, así que el ahorro de un año concreto puede salir distinto de la media de 12 meses. Es información orientativa para Península y Baleares."
+      "No incluye el término de potencia, el ruido o la comodidad de poner aparatos de noche, el consumo de espera ni el coste de un programador. El PVPC varía cada hora, así que un año concreto puede diferir de la media. Información orientativa para Península y Baleares."
     ]
   ],
   "sources": "Modelo propio: kWh al año = (kWh por uso × usos por semana + kWh de termo por semana) × 365 / 7; kWh movidos = kWh al año × % desplazable; ahorro = kWh movidos × (precio con impuestos de la franja de hoy − precio con impuestos del valle); precio con impuestos = (energía + Impuesto Especial sobre la Electricidad, con su mínimo por kWh) × (1 + IVA). Precios por defecto: media de 12 meses (octubre de 2025 a septiembre de 2026) del precio horario del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real), solo energía y sin impuestos: punta 0,2048, llano 0,1331 y valle 0,1194 €/kWh, calculados con las horas de cada periodo de la Circular 3/2020 de la CNMC (https://www.boe.es/buscar/act.php?id=BOE-A-2020-1066), consultado el 2/10/2026. Impuesto Especial sobre la Electricidad de 5,11269632 %: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: 1 kWh por uso, 6 usos por semana, 10 kWh de termo por semana y 70 % desplazable. Consultado el 2/10/2026. Información orientativa, no asesoramiento."

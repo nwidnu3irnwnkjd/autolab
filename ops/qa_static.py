@@ -12,7 +12,7 @@ Uso:
 Salida: `BLOQUEANTE|AVISO|OK · archivo:línea · mensaje`. Exit 1 solo si hay BLOQUEANTE.
 Parseadores: xml.etree (sitemap), html.parser (title, description, canonical, h1, JSON-LD, enlaces), json.loads. Sin regex para estructuras.
 """
-import datetime, glob, html, json, os, re, subprocess, sys
+import datetime, glob, gzip, html, json, os, re, subprocess, sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from urllib.parse import urlparse
@@ -20,7 +20,8 @@ from urllib.parse import urlparse
 OPS = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(OPS)
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
-PESO_AVISO = 60 * 1024
+PESO_AVISO = 60 * 1024   # raw: solo INFO (no cuenta como AVISO)
+GZIP_AVISO = 30 * 1024   # peso transferido (gzip -6, como GitHub Pages): AVISO
 PESO_BLOQ = int(float(os.environ.get("QA_PESO_BLOQ_KB", 90)) * 1024)  # override explícito si se acepta una página pesada
 MAX_EDAD, MAX_EDAD_ID = 7, {"euribor12m": 45}
 
@@ -211,16 +212,18 @@ def check_pages(only_urls=None):
             if not exists_in_dist(lp): add("BLOQUEANTE", f"{name}:{line}", f"enlace interno roto ({k}): {v}")
         # peso cargado (HTML + css + js locales, sin print.css)
         total = size_html; parts = [f"html {size_html/1024:.1f}"]
+        gz = len(gzip.compress(open(f, "rb").read(), 6)) if os.path.isfile(f) else 0
         for a in p.css + p.js:
             lp = local(a)
             if not lp or "print.css" in lp: continue
             fp = os.path.join(DIST, lp.lstrip("/"))
             if os.path.isfile(fp):
-                total += os.path.getsize(fp); parts.append(f"{os.path.basename(lp)} {os.path.getsize(fp)/1024:.1f}")
+                total += os.path.getsize(fp); gz += len(gzip.compress(open(fp, "rb").read(), 6)); parts.append(f"{os.path.basename(lp)} {os.path.getsize(fp)/1024:.1f}")
         n_checks += 1
         if not is404:
             if total > PESO_BLOQ: add("BLOQUEANTE", f"{name}:1", f"peso cargado {total/1024:.1f} KB > {PESO_BLOQ/1024:g} KB ({', '.join(parts)})")
-            elif total > PESO_AVISO: add("AVISO", f"{name}:1", f"peso cargado {total/1024:.1f} KB > 60 KB ({', '.join(parts)})")
+            elif total > PESO_AVISO: add("INFO", f"{name}:1", f"peso cargado {total/1024:.1f} KB raw > 60 KB ({', '.join(parts)}); gzip {gz/1024:.1f} KB")
+            if gz > GZIP_AVISO: add("AVISO", f"{name}:1", f"peso transferido gzip {gz/1024:.1f} KB > 30 KB (raw {total/1024:.1f} KB)")
         if not is404 and not p.noindex: indexables.append(urlp)
     return pages, indexables, n_checks
 
@@ -583,10 +586,10 @@ def main():
     n_live = check_live()
     n_ymyl = check_ymyl(slugs if CHANGED else None)
     # ordena: BLOQUEANTE primero
-    order = {"BLOQUEANTE": 0, "AVISO": 1}
+    order = {"BLOQUEANTE": 0, "AVISO": 1, "INFO": 2}
     for lvl, where, msg in sorted(out, key=lambda x: order[x[0]]): print(f"{lvl} · {where} · {msg}")
-    nb = sum(1 for o in out if o[0] == "BLOQUEANTE"); na = len(out) - nb
-    print(f"OK: {len(pages)} páginas, {n_page} comprobaciones de página, {n_sm} URLs en sitemap, {n_live} defaults vivos, {n_ymyl} fuentes YMYL; {nb} BLOQUEANTE, {na} AVISO")
+    nb = sum(1 for o in out if o[0] == "BLOQUEANTE"); ni = sum(1 for o in out if o[0] == "INFO"); na = len(out) - nb - ni
+    print(f"OK: {len(pages)} páginas, {n_page} comprobaciones de página, {n_sm} URLs en sitemap, {n_live} defaults vivos, {n_ymyl} fuentes YMYL; {nb} BLOQUEANTE, {na} AVISO, {ni} INFO")
     if CHANGED:
         print("Cambios (git): " + ("global (plantillas/assets/datos): " if glob_change else "") +
               ("; ".join(["/ (home)"] + paths) if paths or glob_change else "ninguna página afectada"))

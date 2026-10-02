@@ -67,3 +67,23 @@
 
 ## Resumen
 - FAQs > 50 p: 41 → 0 en las 12. Leads sin condición: 0/12. Pendiente: YMYL sin enlace en teletrabajo (aviso, no hay fuente citada). Verificado: build OK, check.py 8768/8768, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 4 · 2026-10-02 · 12 calculadoras no fiscales (distintas de pasadas 1-3; excluidas las 4 de otro agente)
+
+## Línea base (antes)
+- title ≤ 60 y description ≤ 155 en las 12; leads con condición 10/12 (navidad sin «si»; secadora usa «salvo que»); FAQs > 50 palabras: 38 respuestas en 9 calculadoras (freidora, radiador y secadora ya cumplían).
+
+## Después (solo calcs/*.json; sin cifras, lógica, .js ni test.json)
+- garaje-comprar-alquilar-o-aparcar-en-la-calle · 5 FAQs a ≤ 50 p · petición: no
+- gasolinera-low-cost-compensa-desviarse · 1 FAQ a ≤ 50 p
+- horas-valle-luz-lavadora-termo-cuanto-ahorro · 5 FAQs a ≤ 50 p
+- hotel-o-apartamento-viaje-en-grupo · 2 FAQs a ≤ 50 p
+- navidad-cuanto-gastar-sin-endeudarte · lead con condición («Si no quieres endeudarte…») + 5 FAQs a ≤ 50 p
+- placas-solares-merece-la-pena · 5 FAQs a ≤ 50 p (detalle del tope mensual de compensación y 25 años mantenidos en «Supuestos»/nota del resultado)
+- seguro-hogar-con-o-sin-franquicia · 3 FAQs a ≤ 50 p
+- termo-electrico-o-calentador-gas-o-aerotermia-agua · 5 FAQs a ≤ 50 p
+- vivir-cerca-del-trabajo-o-mas-barato-lejos · 4 FAQs a ≤ 50 p
+- freidora-de-aire-u-horno-cuanto-gasta, radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta, secadora-o-tendedero-coste-por-lavado · revisadas, 5 puntos ok, sin cambios
+
+## Resumen
+- FAQs > 50 p: 38 → 0; leads sin condición 1 → 0. Sin peticiones al Constructor (ninguna cifra nueva). Verificado: build OK, check.py 10523/10523, qa_static --changed 0 BLOQUEANTE.

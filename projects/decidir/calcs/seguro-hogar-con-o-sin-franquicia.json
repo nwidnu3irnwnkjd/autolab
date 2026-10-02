@@ -67,23 +67,23 @@
   "faqs": [
     [
       "¿Merece la pena un seguro de hogar con franquicia?",
-      "Compensa en valor esperado si la prima que ahorras al año es mayor que la frecuencia de siniestros pequeños por lo que pagas en cada uno. Con los ejemplos de la página, ahorras 60 € al año y el equilibrio está en 0,2 siniestros al año; con tu hipótesis de 0,15, la franquicia gana por 15 € al año. Si tienes más siniestros, sale mejor la póliza sin franquicia."
+      "Si la prima que ahorras al año supera lo que esperas pagar en franquicias. Con los ejemplos ahorras 60 € al año y el equilibrio está en 0,2 siniestros al año; con 0,15, la franquicia gana por 15 € al año. Con más siniestros, sale mejor sin franquicia."
     ],
     [
       "¿Cómo estimo la frecuencia de siniestros pequeños?",
-      "Es una hipótesis tuya: la página no usa estadísticas del sector. Mira tu historial (cuántos partes has dado en los últimos años), la antigüedad de tu casa y su instalación, y si vives en una vivienda con muchos usuarios. La calculadora te devuelve la frecuencia de equilibrio, para que compares tu estimación con ese umbral."
+      "Es una hipótesis tuya: la página no usa estadísticas del sector. Mira cuántos partes has dado en los últimos años, la antigüedad de la casa y su instalación. La calculadora devuelve la frecuencia de equilibrio para que compares tu estimación con ese umbral."
     ],
     [
       "¿Qué pasa si el siniestro es grande?",
-      "La franquicia pesa poco frente al coste total y la póliza paga el resto en ambos casos. Con los ejemplos, en el año 1 pagarías 300 € de franquicia y habrías ahorrado 60 € de prima: 240 € más que sin franquicia. Si tu fondo no cubre la franquicia, la póliza sin franquicia reduce ese riesgo aunque cueste más de media."
+      "Cuando la franquicia pesa poco frente al coste total y la póliza paga el resto. Con los ejemplos, en el año 1 pagarías 300 € de franquicia y habrías ahorrado 60 € de prima. Si tu fondo no cubre la franquicia, la póliza sin ella reduce ese riesgo."
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye las coberturas ni las exclusiones de ninguna póliza concreta, la regla proporcional por infraseguro (si la suma asegurada es inferior al valor, la póliza indemniza en proporción, art. 30 de la Ley 50/1980), la responsabilidad civil ni la subida de la prima con los años. Las primas y los costes son tuyos o ejemplos, no de aseguradoras concretas."
+      "No incluye coberturas ni exclusiones de ninguna póliza, la regla proporcional por infraseguro (art. 30 de la Ley 50/1980), la responsabilidad civil ni la subida de la prima con los años. Primas y costes son tuyos o ejemplos, no de aseguradoras concretas."
     ],
     [
       "¿Y si tengo hipoteca?",
-      "El banco puede exigir un seguro de hogar y vincularlo a bonificaciones del tipo de interés o a otros productos, así que antes de cambiar de póliza o de franquicia conviene consultar qué cobertura te piden y qué bonificación perderías. Esta calculadora no modela esas bonificaciones: compara solo la prima ahorrada con las franquicias esperadas."
+      "El banco puede exigir un seguro de hogar y vincularlo a bonificaciones del tipo de interés, así que antes de cambiar de póliza o franquicia consulta qué cobertura te piden y qué bonificación perderías. La calculadora no modela esas bonificaciones."
     ]
   ],
   "sources": "Modelo propio de valor esperado. Prima ahorrada al año = prima sin franquicia - prima con franquicia (se supone constante). Por cada siniestro pequeño pagas con franquicia el menor entre el coste medio y la franquicia, y 0 sin ella. Coste esperado de la franquicia al año = frecuencia x ese importe. Ventaja de la póliza con franquicia = prima ahorrada - coste esperado, al año y en el horizonte. Frecuencia de equilibrio = prima ahorrada / lo que pagas por siniestro; si es mayor, sale mejor la póliza sin franquicia. Peor escenario del año 1: franquicia - prima ahorrada. El capital asegurado solo se usa para mostrar la prima como tanto por mil, de forma informativa. La frecuencia y el coste de los siniestros son hipótesis del usuario y las primas, ejemplos declarados; no se usan cifras externas ni primas de aseguradoras. Regla proporcional (infraseguro): art. 30 de la Ley 50/1980, de Contrato de Seguro, https://www.boe.es/buscar/act.php?id=BOE-A-1980-22501 (consultado el 2/10/2026). Seguros vinculados a la hipoteca: Ley 5/2019, reguladora de los contratos de crédito inmobiliario, https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814 (consultado el 2/10/2026). No incluye coberturas ni exclusiones concretas, responsabilidad civil ni bonificaciones del banco. Información orientativa, no asesoramiento."
