@@ -30,3 +30,7 @@
 - No publicará nada en redes sociales ni similar: quitar de los planes cualquier tarea de redes/perfiles/posts y no proponer más (el kit de prensa en ops/prensa/ queda archivado, solo si él lo pide).
 - Titular del aviso legal: se MANTIENE «Editor independiente» (no pedir nombre legal).
 - Acceso online: Andoni puede abrir sesión él mismo en el navegador integrado de la app (Search Console, Bing, GoDaddy, GitHub) y el Orquestador opera ahí. Nunca teclear contraseñas ni códigos 2FA; las acciones que cambian permisos o ajustes de cuenta (añadir usuarios, DNS, descripción del repo) se confirman antes en el chat.
+
+
+## HECHO el 2-oct tarde (sesión de Claude en el navegador de Andoni)
+Indexación solicitada de las 5 URL clave, 5 sitemaps enviados, autolab-reader con permiso «Completo», sitemap.xml enviado en Bing. Solo quedan opcionales: CNAME www (GoDaddy) y descripción del repo de GitHub (necesita su «sí»).

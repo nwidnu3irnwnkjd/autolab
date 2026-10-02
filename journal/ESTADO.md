@@ -90,3 +90,9 @@
 - Diagnóstico: Google no ha leído ni el sitemap (21 h); la cuenta de servicio es solo lectura (para enviar sitemaps por API: darle «Completo» en Search Console + cambiar SCOPES en ops/gauth.py). journal/PENDIENTE-ANDONI.md «LO PRIMERO» tiene 5 líneas. Plan B 15-oct en journal/ideas-equipo.md.
 - 5h 33 %, semanal 54 %, extra 0,55 €. Contexto 88 %.
 - Siguiente (c57, ~3 h): T27 (reducir contexto del Orquestador), descubrimiento propio, fiscal paga extra, kpis.
+
+## 2-oct tarde · gestiones online hechas por una sesión de Claude en el navegador de Andoni
+- Search Console: indexación solicitada para /, /todas/, /decidir/, /barometro/, /guias/ (todas «se puede indexar», cola prioritaria); enviados feed.xml + 4 sitemaps hijos con URL completa; sitemap.xml ya enviado el 1-oct. La cuenta de servicio autolab-reader pasa a «Completo» y ops/gauth.py usa alcance webmasters (lectura y escritura): la API lista los 6 sitemaps (pendiente, 0 errores, sin descargar aún).
+- Bing: entremuchos.com ya estaba en Webmaster Tools; enviado sitemap.xml (Processing, hasta 48 h).
+- Pendiente humano: ya ninguno de «LO PRIMERO» (solo opcionales: www en GoDaddy; README del repo con su sí). Sin redes sociales (decisión suya). Titular legal «Editor independiente».
+- Seguimiento: kpis.py cada ciclo (URLs conocidas de la muestra de 12); revisar el estado de sitemaps por API (`gauth.get(.../sitemaps)`); si el 6-oct siguen sin descargarse, plan B de journal/ideas-equipo.md.
