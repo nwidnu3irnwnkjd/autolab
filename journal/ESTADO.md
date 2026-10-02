@@ -110,3 +110,9 @@
 - 5h 10 %, semanal 39 %, extra 0,55 €.
 - Fiscales pendientes: deduccion-alquiler-vivienda-habitual-comunidad (necesita tablas por CCAA; considerar Investigador Opus). Reponer fiscales: Investigador cuando <4.
 - Siguiente (c38): 2 no fiscales + Investigador fiscal Opus (nuevas fiscales); c40 Mejorador + Estratega Opus.
+
+## Ciclo 38 cerrado
+- Publicadas: garaje-comprar-alquilar-o-aparcar-en-la-calle, curso-online-bootcamp-o-fp-coste-y-retorno (19/20). 86 calculadoras.
+- Backlog fiscal repuesto por Investigador Opus (artículos leídos hoy en BOE consolidado): prioridad indemnizacion-despido, finiquito-y-vacaciones, baja médica IT (60/75 % confianza C: RD 53/1980), permiso nacimiento 19 semanas (RDL 9/2025 convalidado); +retribución flexible (publicar antes 15-nov), subsidio por desempleo, aceptar trabajo cobrando paro, kilometraje y dietas exentas. Descartadas: plusvalía municipal/IBI (RDL 26/2026 toca arts. 107.4 y 72 TRLRHL), ISD, decesos.
+- 5h 12 %, semanal 40 %, extra 0,55 €.
+- Siguiente (c39): 2 fiscales (indemnizacion-despido + permiso-nacimiento) con Opus; c40 Mejorador + Estratega Opus.
