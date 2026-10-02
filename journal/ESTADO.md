@@ -116,3 +116,9 @@
 - Backlog fiscal repuesto por Investigador Opus (artículos leídos hoy en BOE consolidado): prioridad indemnizacion-despido, finiquito-y-vacaciones, baja médica IT (60/75 % confianza C: RD 53/1980), permiso nacimiento 19 semanas (RDL 9/2025 convalidado); +retribución flexible (publicar antes 15-nov), subsidio por desempleo, aceptar trabajo cobrando paro, kilometraje y dietas exentas. Descartadas: plusvalía municipal/IBI (RDL 26/2026 toca arts. 107.4 y 72 TRLRHL), ISD, decesos.
 - 5h 12 %, semanal 40 %, extra 0,55 €.
 - Siguiente (c39): 2 fiscales (indemnizacion-despido + permiso-nacimiento) con Opus; c40 Mejorador + Estratega Opus.
+
+## Ciclo 39 cerrado
+- Publicadas (verificadas Opus; cambios aplicados): indemnizacion-despido-objetivo-o-improcedente-neto (error real: art. 7.e párr. 2 LIRPF exime el objetivo 52.c hasta la cifra del improcedente; selector de causa; 2 pasadas Opus) y permiso-nacimiento-cuanto-cobro-y-como-repartir (acotada a nacimientos desde 31-7-2025: los de 2-8-2024 a 30-7-2025 tienen 16+2 semanas). 88 calculadoras.
+- 5h 17 %, semanal 40 %, extra 0,55 €.
+- Fiscales pendientes: finiquito-baja-voluntaria-vacaciones-preaviso, baja-medica-cuanto-cobro-incapacidad-temporal (confianza C 60/75 %: RD 53/1980, verificar), retribucion-flexible-me-conviene (antes 15-nov), subsidio-desempleo, aceptar-trabajo-cobrando-paro, kilometraje-y-dietas-exentas-irpf, deduccion-alquiler-comunidad. No fiscales: vacaciones, estufa, gafas, viaje-organizado.
+- Siguiente (c40): Mejorador Opus + Estratega Opus + 2 fiscales (retribucion-flexible, finiquito); revisar Mejorador qué reforzar con presupuesto sobrante.
