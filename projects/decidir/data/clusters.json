@@ -17,7 +17,7 @@
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual",
-  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+  "comparar-ofertas-de-trabajo-neto-real"
  ],
  "bici-electrica-o-transporte-publico": [
   "tren-avion-o-coche",
@@ -46,8 +46,8 @@
  ],
  "capitalizar-paro-o-cobrarlo": [
   "comprar-o-alquilar-herramienta",
-  "contado-o-financiar",
-  "deposito-letras-o-fondo-monetario"
+  "comprar-o-alquilar-trastero",
+  "contado-o-financiar"
  ],
  "coche-nuevo-o-seminuevo": [
   "comprar-coche-o-renting",
@@ -59,6 +59,11 @@
   "tren-avion-o-coche",
   "teletrabajo-o-oficina-coste-real"
  ],
+ "comparar-ofertas-de-trabajo-neto-real": [
+  "autonomo-o-asalariado",
+  "teletrabajo-o-oficina-coste-real",
+  "excedencia-o-reduccion-jornada"
+ ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
   "diesel-gasolina-hibrido-electrico",
@@ -68,6 +73,11 @@
   "reparar-o-comprar-electrodomestico",
   "contado-o-financiar",
   "portatil-o-movil-comprar-renting-o-financiar"
+ ],
+ "comprar-o-alquilar-trastero": [
+  "comprar-o-alquilar-herramienta",
+  "alquilar-o-comprar",
+  "contado-o-financiar"
  ],
  "contado-o-financiar": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -128,6 +138,11 @@
   "calefaccion-gas-aerotermia-electrica",
   "placas-solares-merece-la-pena",
   "cambiar-ventanas-aislamiento-merece-la-pena"
+ ],
+ "navidad-cuanto-gastar-sin-endeudarte": [
+  "contado-o-financiar",
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "reparar-o-comprar-electrodomestico"
  ],
  "placas-solares-merece-la-pena": [
   "luz-fija-o-indexada",

@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 200,
+    "fondo": 4000,
+    "mesesFondo": 3,
+    "gasto": 600,
+    "meses": 3,
+    "tin": 18
+   },
+   "expect": {
+    "margen": 500,
+    "presupuesto": 1500,
+    "ahorroNecesario": 200.0,
+    "falta": 0,
+    "int3": 18.09,
+    "int6": 31.89,
+    "int12": 60.1,
+    "cuota12": 55.01,
+    "intFalta12": 0.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 200,
+    "fondo": 4000,
+    "mesesFondo": 3,
+    "gasto": 2000,
+    "meses": 3,
+    "tin": 18
+   },
+   "expect": {
+    "margen": 500,
+    "presupuesto": 1500,
+    "ahorroNecesario": 666.67,
+    "falta": 500,
+    "int3": 60.3,
+    "int6": 106.3,
+    "int12": 200.32,
+    "cuota12": 183.36,
+    "intFalta12": 50.08,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 200,
+    "fondo": 6000,
+    "mesesFondo": 3,
+    "gasto": 1800,
+    "meses": 3,
+    "tin": 18
+   },
+   "expect": {
+    "margen": 500,
+    "presupuesto": 1500,
+    "ahorroNecesario": 600.0,
+    "falta": 300,
+    "int3": 54.27,
+    "int6": 95.67,
+    "int12": 180.29,
+    "cuota12": 165.02,
+    "intFalta12": 30.05,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 900,
+    "fondo": 4000,
+    "mesesFondo": 3,
+    "gasto": 600,
+    "meses": 3,
+    "tin": 18
+   },
+   "expect": {
+    "margen": -200,
+    "presupuesto": 0,
+    "ahorroNecesario": 200.0,
+    "falta": 600,
+    "int3": 18.09,
+    "int6": 31.89,
+    "int12": 60.1,
+    "cuota12": 55.01,
+    "intFalta12": 60.1,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 200,
+    "fondo": 4000,
+    "mesesFondo": 3,
+    "gasto": 0,
+    "meses": 3,
+    "tin": 18
+   },
+   "expect": {
+    "margen": 500,
+    "presupuesto": 1500,
+    "ahorroNecesario": 0.0,
+    "falta": 0,
+    "int3": 0.0,
+    "int6": 0.0,
+    "int12": 0.0,
+    "cuota12": 0.0,
+    "intFalta12": 0.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "ingresos": 2200,
+    "gastos": 1500,
+    "ahorro": 200,
+    "fondo": 4000,
+    "mesesFondo": 3,
+    "gasto": 600,
+    "meses": 1,
+    "tin": 0
+   },
+   "expect": {
+    "margen": 500,
+    "presupuesto": 500,
+    "ahorroNecesario": 600.0,
+    "falta": 100,
+    "int3": 0.0,
+    "int6": 0.0,
+    "int12": 0.0,
+    "cuota12": 50.0,
+    "intFalta12": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}

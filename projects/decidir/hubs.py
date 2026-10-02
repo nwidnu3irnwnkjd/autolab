@@ -164,6 +164,51 @@ HUBS = {
             },
         },
     },
+    "impuestos": {
+        "path": "/impuestos/",
+        "tema": "impuestos",
+        "title": "Calculadoras de IRPF: renta, donativos y plan de pensiones",
+        "h1": "IRPF: decide con tus números (ejercicio 2026)",
+        "description": "Declaración conjunta o individual, donativos, plan de pensiones y rescate: las decisiones de IRPF del ejercicio 2026 en orden, con la normativa del BOE.",
+        "kicker": "Tema · Impuestos (IRPF)",
+        "nav": "Impuestos",
+        "all_title": "Todas las calculadoras de impuestos",
+        "baro": None,
+        "fechas": [],
+        "disclaimer": "Información orientativa, no constituye asesoramiento fiscal. Las cifras son las del IRPF del ejercicio 2026 (declaración de 2027) según la Ley 35/2006 y la Ley 49/2002 consultadas en el BOE el 2 de octubre de 2026, y pueden cambiar; no cubren País Vasco ni Navarra (régimen foral). Para tu caso concreto, consulta a un asesor fiscal o a la Agencia Tributaria.",
+        "lead": ("<strong>Respuesta corta:</strong> en el IRPF del ejercicio 2026 (la declaración que presentarás en 2027), las decisiones que dependen de ti son pocas y conviene mirarlas en este orden: "
+                 "si te conviene ser autónomo o asalariado, cuánto aportar a un plan de pensiones y cuánto donar (ambas solo cuentan para 2026 si las haces antes del 31 de diciembre de 2026), "
+                 "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
+        "groups": [
+            ("Antes de dar el paso", ["autonomo-o-asalariado"]),
+            ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar"]),
+            ("Al presentar la declaración y en el futuro", ["declaracion-conjunta-o-individual", "rescate-plan-pensiones-capital-o-renta"]),
+        ],
+        "steps": {
+            "autonomo-o-asalariado": {
+                "name": "Autónomo o asalariado",
+                "text": "Para cobrar lo mismo, un autónomo tiene que facturar más que el sueldo bruto de un asalariado. La calculadora da cuánto, con tu comunidad, tus gastos y las cuotas de 2026.",
+            },
+            "plan-pensiones-o-fondo-indexado": {
+                "name": "Aportar a un plan de pensiones",
+                "text": "La aportación reduce la base liquidable del año, dentro de un límite, pero el plan tributa al rescatarlo: compensa si tributarás menos entonces que ahora. La calculadora lo compara con un fondo indexado.",
+                "guia": "base-liquidable-tramos-irpf-2026",
+            },
+            "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
+                "name": "Donativos",
+                "text": "La deducción estatal es del 80 % de los primeros 250 € y del 40 % del resto, con un tope del 10 % de la base liquidable, y siempre te cuesta algo de dinero. La calculadora da lo que te cuesta de verdad donar.",
+            },
+            "declaracion-conjunta-o-individual": {
+                "name": "Declaración conjunta o individual",
+                "text": "La conjunta suele compensar cuando uno de los dos ingresa muy poco o nada; con dos sueldos normales suele salir mejor la individual. La calculadora compara la cuota de cada una con tus datos.",
+                "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+            },
+            "rescate-plan-pensiones-capital-o-renta": {
+                "name": "Rescatar un plan de pensiones",
+                "text": "Cobrar en renta suele pagar menos IRPF que rescatar de golpe cuando el saldo es grande frente a tus otras rentas, pero no siempre. La calculadora compara capital, renta y mixto.",
+            },
+        },
+    },
 }
 
 

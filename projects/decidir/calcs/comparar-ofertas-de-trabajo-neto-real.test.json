@@ -1,0 +1,343 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "brutoA": 32000,
+    "brutoB": 36000,
+    "ccaa": "madrid",
+    "pagas": 14,
+    "desplA": 600,
+    "desplB": 1800,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 24802.12,
+    "netoB": 27502.4,
+    "netoTrasA": 24202.12,
+    "netoTrasB": 25702.4,
+    "ssA": 2080.0,
+    "irpfA": 5117.88,
+    "ssB": 2340.0,
+    "irpfB": 6157.6,
+    "dif": 1500.28,
+    "netoPagaA": 1771.58,
+    "netoPagaB": 1964.46,
+    "ganNum": 2,
+    "brutoIgual": 34222.41,
+    "horaA": 13.429,
+    "horaB": 14.261
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 30000,
+    "brutoB": 30000,
+    "ccaa": "madrid",
+    "pagas": 14,
+    "desplA": 600,
+    "desplB": 1800,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 23451.98,
+    "netoB": 23451.98,
+    "netoTrasA": 22851.98,
+    "netoTrasB": 21651.98,
+    "ssA": 1950.0,
+    "irpfA": 4598.02,
+    "ssB": 1950.0,
+    "irpfB": 4598.02,
+    "dif": -1200.0,
+    "netoPagaA": 1675.14,
+    "netoPagaB": 1675.14,
+    "ganNum": 1,
+    "brutoIgual": 31777.59,
+    "horaA": 12.679,
+    "horaB": 12.014
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 0,
+    "brutoB": 0,
+    "ccaa": "madrid",
+    "pagas": 14,
+    "desplA": 0,
+    "desplB": 0,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 0.0,
+    "netoB": 0.0,
+    "netoTrasA": 0.0,
+    "netoTrasB": 0.0,
+    "ssA": 0.0,
+    "irpfA": 0.0,
+    "ssB": 0.0,
+    "irpfB": 0.0,
+    "dif": 0.0,
+    "netoPagaA": 0.0,
+    "netoPagaB": 0.0,
+    "ganNum": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 90000,
+    "brutoB": 130000,
+    "ccaa": "cataluna",
+    "pagas": 14,
+    "desplA": 0,
+    "desplB": 3000,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 58082.38,
+    "netoB": 79712.93,
+    "netoTrasA": 58082.38,
+    "netoTrasB": 76712.93,
+    "ssA": 4038.16,
+    "irpfA": 27879.46,
+    "ssB": 4133.61,
+    "irpfB": 46153.45,
+    "dif": 18630.55,
+    "netoPagaA": 4148.74,
+    "netoPagaB": 5693.78,
+    "ganNum": 2,
+    "brutoIgual": 124359.31,
+    "horaA": 32.227,
+    "horaB": 42.564
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 17094,
+    "brutoB": 20048.45,
+    "ccaa": "andalucia",
+    "pagas": 14,
+    "desplA": 600,
+    "desplB": 1800,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 15982.89,
+    "netoB": 16714.18,
+    "netoTrasA": 15382.89,
+    "netoTrasB": 14914.18,
+    "ssA": 1111.11,
+    "irpfA": 0.0,
+    "ssB": 1303.15,
+    "irpfB": 2031.12,
+    "dif": -468.71,
+    "netoPagaA": 1141.63,
+    "netoPagaB": 1193.87,
+    "ganNum": 1,
+    "brutoIgual": 21079.07,
+    "horaA": 8.535,
+    "horaB": 8.275
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 15000,
+    "brutoB": 19000,
+    "ccaa": "galicia",
+    "pagas": 14,
+    "desplA": 0,
+    "desplB": 0,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 14025.0,
+    "netoB": 16484.39,
+    "netoTrasA": 14025.0,
+    "netoTrasB": 16484.39,
+    "ssA": 975.0,
+    "irpfA": 0.0,
+    "ssB": 1235.0,
+    "irpfB": 1280.61,
+    "dif": 2459.39,
+    "netoPagaA": 1001.79,
+    "netoPagaB": 1177.46,
+    "ganNum": 2,
+    "brutoIgual": 19000.0,
+    "horaA": 7.782,
+    "horaB": 9.146
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 95000,
+    "brutoB": 150000,
+    "ccaa": "murcia",
+    "pagas": 12,
+    "desplA": 500,
+    "desplB": 500,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 61486.31,
+    "netoB": 91663.71,
+    "netoTrasA": 60986.31,
+    "netoTrasB": 91163.71,
+    "ssA": 4049.61,
+    "irpfA": 29464.07,
+    "ssB": 4181.61,
+    "irpfB": 54154.67,
+    "dif": 30177.4,
+    "netoPagaA": 5123.86,
+    "netoPagaB": 7638.64,
+    "ganNum": 2,
+    "brutoIgual": 150000.0,
+    "horaA": 33.838,
+    "horaB": 50.582
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 32000,
+    "brutoB": 36000,
+    "ccaa": "valencia",
+    "pagas": 14,
+    "desplA": 600,
+    "desplB": 1800,
+    "horasA": 37.5,
+    "horasB": 45
+   },
+   "expect": {
+    "netoA": 24623.42,
+    "netoB": 27256.38,
+    "netoTrasA": 24023.42,
+    "netoTrasB": 25456.38,
+    "ssA": 2080.0,
+    "irpfA": 5296.58,
+    "ssB": 2340.0,
+    "irpfB": 6403.62,
+    "dif": 1432.96,
+    "netoPagaA": 1758.82,
+    "netoPagaB": 1946.88,
+    "ganNum": 2,
+    "brutoIgual": 34176.96,
+    "horaA": 14.218,
+    "horaB": 12.555
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 32000,
+    "brutoB": 36000,
+    "ccaa": "extremadura",
+    "pagas": 14,
+    "desplA": 600,
+    "desplB": 1800,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 24595.12,
+    "netoB": 27119.62,
+    "netoTrasA": 23995.12,
+    "netoTrasB": 25319.62,
+    "ssA": 2080.0,
+    "irpfA": 5324.88,
+    "ssB": 2340.0,
+    "irpfB": 6540.38,
+    "dif": 1324.5,
+    "netoPagaA": 1756.79,
+    "netoPagaB": 1937.12,
+    "ganNum": 2,
+    "brutoIgual": 34098.63,
+    "horaA": 13.314,
+    "horaB": 14.049
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 18500,
+    "brutoB": 20000,
+    "ccaa": "andalucia",
+    "pagas": 14,
+    "desplA": 200,
+    "desplB": 900,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 16352.22,
+    "netoB": 16701.84,
+    "netoTrasA": 16152.22,
+    "netoTrasB": 15801.84,
+    "dif": -350.38,
+    "ganNum": 1,
+    "brutoIgual": 20791.74,
+    "horaB": 8.768,
+    "unaCero": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 61214.4,
+    "brutoB": 70000,
+    "ccaa": "baleares",
+    "pagas": 14,
+    "desplA": 500,
+    "desplB": 4000,
+    "horasA": 40,
+    "horasB": 35
+   },
+   "expect": {
+    "netoA": 42158.17,
+    "netoB": 47478.25,
+    "netoTrasA": 41658.17,
+    "netoTrasB": 43478.25,
+    "dif": 1820.08,
+    "ganNum": 2,
+    "brutoIgual": 64132.07,
+    "horaB": 27.57,
+    "unaCero": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "brutoA": 0,
+    "brutoB": 25000,
+    "ccaa": "asturias",
+    "pagas": 14,
+    "desplA": 0,
+    "desplB": 0,
+    "horasA": 40,
+    "horasB": 40
+   },
+   "expect": {
+    "netoA": 0.0,
+    "netoB": 19897.84,
+    "netoTrasA": 0.0,
+    "netoTrasB": 19897.84,
+    "dif": 19897.84,
+    "ganNum": 2,
+    "horaB": 11.04,
+    "unaCero": 1
+   },
+   "tol": 1
+  }
+ ]
+}

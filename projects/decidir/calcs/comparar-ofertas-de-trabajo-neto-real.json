@@ -1,0 +1,164 @@
+{
+ "slug": "comparar-ofertas-de-trabajo-neto-real",
+ "title": "Comparar ofertas de trabajo: cuál deja más neto real",
+ "description": "Compara dos ofertas de trabajo en neto real 2026: Seguridad Social, IRPF por comunidad, desplazamientos, neto por hora y el bruto que iguala a la mejor.",
+ "h1": "Cambiar de trabajo: compara dos ofertas en neto real",
+ "lead": "Una oferta con más bruto te deja más dinero solo si el neto extra supera lo que gastas de más en desplazarte: con 32.000 € brutos y 600 € de trayecto frente a 36.000 € y 1.800 € en Madrid, la segunda deja unos 1.500 € más al año (25.702 € frente a 24.202 €), pero con el mismo bruto de 30.000 €, 1.200 € más de trayecto restan 1.200 € netos, el equivalente a unos 1.780 € brutos. Pon tus dos ofertas y tu comunidad y la página te da el neto de cada una, el neto por hora y el bruto que necesitaría la peor para igualar a la mejor.",
+ "veredicto": "Conviene la oferta que deja más neto al año después de Seguridad Social, IRPF y desplazamientos, no la de más bruto: con 32.000 € brutos y 600 € de trayecto frente a 36.000 € y 1.800 € en Madrid, gana la segunda por unos 1.500 €; la calculadora da la diferencia, el neto por hora y el bruto de igualación con tus datos, sin incluir hijos, deducciones, estabilidad ni promoción.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "brutoA",
+   "label": "Oferta A: bruto anual (€, incluye el variable que esperas cobrar; por debajo de 17.094 € es orientativo)",
+   "default": 32000,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.comparar_ofertas_2026.supuestos.brutoA"
+  },
+  {
+   "id": "brutoB",
+   "label": "Oferta B: bruto anual (€, incluye el variable que esperas cobrar)",
+   "default": 36000,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.comparar_ofertas_2026.supuestos.brutoB"
+  },
+  {
+   "id": "ccaa",
+   "label": "Comunidad autónoma donde resides (régimen común)",
+   "type": "select",
+   "options": [
+    {
+     "v": "madrid",
+     "t": "Comunidad de Madrid"
+    },
+    {
+     "v": "andalucia",
+     "t": "Andalucía"
+    },
+    {
+     "v": "aragon",
+     "t": "Aragón"
+    },
+    {
+     "v": "asturias",
+     "t": "Asturias"
+    },
+    {
+     "v": "baleares",
+     "t": "Illes Balears"
+    },
+    {
+     "v": "canarias",
+     "t": "Canarias"
+    },
+    {
+     "v": "cantabria",
+     "t": "Cantabria"
+    },
+    {
+     "v": "clm",
+     "t": "Castilla-La Mancha"
+    },
+    {
+     "v": "cyl",
+     "t": "Castilla y León"
+    },
+    {
+     "v": "cataluna",
+     "t": "Cataluña"
+    },
+    {
+     "v": "extremadura",
+     "t": "Extremadura"
+    },
+    {
+     "v": "galicia",
+     "t": "Galicia"
+    },
+    {
+     "v": "murcia",
+     "t": "Región de Murcia"
+    },
+    {
+     "v": "rioja",
+     "t": "La Rioja"
+    },
+    {
+     "v": "valencia",
+     "t": "Comunitat Valenciana"
+    }
+   ]
+  },
+  {
+   "id": "pagas",
+   "label": "Pagas al año (solo cambia cómo se reparte el neto)",
+   "type": "select",
+   "options": [
+    {
+     "v": "14",
+     "t": "14 pagas"
+    },
+    {
+     "v": "12",
+     "t": "12 pagas"
+    }
+   ]
+  },
+  {
+   "id": "desplA",
+   "label": "Oferta A: gasto de desplazamiento al año (€; solo los días que te desplazas, descuenta el teletrabajo)",
+   "default": 600,
+   "min": 0,
+   "step": 100,
+   "default_from": "params.comparar_ofertas_2026.supuestos.despl_A"
+  },
+  {
+   "id": "desplB",
+   "label": "Oferta B: gasto de desplazamiento al año (€; solo los días que te desplazas, descuenta el teletrabajo)",
+   "default": 1800,
+   "min": 0,
+   "step": 100,
+   "default_from": "params.comparar_ofertas_2026.supuestos.despl_B"
+  },
+  {
+   "id": "horasA",
+   "label": "Oferta A: horas de trabajo a la semana (h; 0 si no quieres el neto por hora)",
+   "default": 40,
+   "min": 0,
+   "step": 0.5,
+   "default_from": "params.comparar_ofertas_2026.supuestos.horas_A"
+  },
+  {
+   "id": "horasB",
+   "label": "Oferta B: horas de trabajo a la semana (h; 0 si no quieres el neto por hora)",
+   "default": 40,
+   "min": 0,
+   "step": 0.5,
+   "default_from": "params.comparar_ofertas_2026.supuestos.horas_B"
+  }
+ ],
+ "faqs": [
+  [
+   "¿Cómo se comparan dos ofertas de trabajo en neto?",
+   "Restando a cada bruto anual la cotización del trabajador a la Seguridad Social (6,50 % en un contrato indefinido, hasta la base máxima de 5.101,20 € al mes) y el IRPF de tu comunidad, y luego los gastos de desplazarte. Con 32.000 € brutos y 600 € de trayecto quedan 24.202 € al año; con 36.000 € y 1.800 €, 25.702 €. Es el neto anual, no la retención de la nómina: la cifra final depende de tu declaración."
+  ],
+  [
+   "¿Cuánto neto me deja cada euro bruto de más?",
+   "Depende del tramo en el que estés y de tu comunidad. En los ejemplos de la calculadora, 4.000 € brutos más (de 32.000 a 36.000 € en Madrid) dejan unos 2.700 € netos; de 15.000 a 19.000 € en Galicia, unos 2.460 €, porque pierdes parte de la reducción por rendimientos del trabajo (art. 20 de la Ley del IRPF); y de 90.000 a 130.000 € en Cataluña, unos 21.630 € de 40.000. Por encima de la base máxima de cotización (61.214,40 € brutos al año) la Seguridad Social casi no sube, pero el IRPF sigue creciendo."
+  ],
+  [
+   "¿Cuánto bruto necesito para compensar un trayecto más largo?",
+   "Más de lo que cuesta el trayecto, porque lo pagas con dinero ya tributado. Con 30.000 € brutos en Madrid, 1.200 € más de desplazamiento al año equivalen a subir el bruto unos 1.780 €. La calculadora te da esa cifra con tus datos. Si una oferta incluye días de teletrabajo, escribe solo el coste de los días que te desplazas; para valorar el ahorro de comida y gasto en casa usa la calculadora de teletrabajo u oficina."
+  ],
+  [
+   "¿El neto por hora puede cambiar el ganador?",
+   "Sí, si las horas semanales son distintas. Con 32.000 € y 37,5 horas frente a 36.000 € y 45 horas en la Comunitat Valenciana, la segunda deja unos 1.430 € más al año, pero la primera sale a 14,22 € por hora y la segunda a 12,56 €. La calculadora supone unas 45 semanas de trabajo al año (365 días menos 30 de vacaciones y 14 fiestas, mínimo y máximo del Estatuto de los Trabajadores); si tu oferta da más vacaciones, el neto por hora sube."
+  ],
+  [
+   "¿Qué no incluye esta comparación?",
+   "Hijos y situación familiar (solo el mínimo personal), deducciones, retribución en especie o flexible, contratos temporales (cotizan al 6,55 %), indemnizaciones, cambios de convenio, estabilidad, promoción y el valor de tu tiempo salvo el neto por hora. Tampoco los 2.000 € adicionales si estabas en paro inscrito y aceptas un empleo que te obliga a mudarte de municipio (ese año y el siguiente, art. 19.2.f de la Ley del IRPF) ni la del 30 % para variable generado en más de dos años (art. 18), que favorecerían a la oferta que las genere. No cubre País Vasco ni Navarra, que tienen su propio IRPF, y por debajo del salario mínimo (17.094 €) rigen bases mínimas de cotización que no se modelan."
+  ]
+ ],
+ "sources": "Modelo anual de cada oferta por separado: el bruto (con el variable incluido) menos la cotización del trabajador (6,50 % de la base mensual con tope de 5.101,20 €, más la cotización adicional de solidaridad por encima del tope, Orden PJC/297/2026, arts. 2, 17 y 18) y menos el IRPF final del año: bruto menos cotización, menos 2.000 € de otros gastos (art. 19.2.f) y la reducción del art. 20 (umbral 19.747,50 € medido sobre ingresos menos cotizaciones), cuota por escala estatal y autonómica menos la de mínimo personal (5.550 € o el propio de la comunidad; arts. 57, 58, 63) y deducción de la DA 61.ª (590,89 € hasta 17.094 €, cero desde 20.048,45 €); el enfoque se copia de la calculadora autónomo o asalariado, ya verificada. El neto tras desplazamientos resta el gasto anual que introduces (no deducible) y el neto por hora divide entre 45,06 semanas al año (365/7 − 30/7 − 14/5: vacaciones de 30 días naturales, art. 38.1, y 14 fiestas, art. 37.2 del Estatuto de los Trabajadores). El bruto de igualación es el bruto de la oferta peor con el que su neto menos su desplazamiento alcanza el neto tras desplazamientos de la mejor. Fuentes: Orden PJC/297/2026, de cotización 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Ley 35/2006 del IRPF, consolidada a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Estatuto de los Trabajadores, arts. 34, 37 y 38, consolidado con última actualización del 04/12/2025 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430); AEAT, Manual práctico de Renta, rendimientos del trabajo (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html). No cubre País Vasco ni Navarra. Castilla y León, Región de Murcia y La Rioja con cifras autonómicas orientativas. Contrato indefinido, un año completo en cada oferta y sin otras rentas de más de 6.500 €. Hipótesis editables, no previsiones: 32.000 y 36.000 € brutos, 600 y 1.800 € de desplazamiento y 40 horas. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni laboral."
+}

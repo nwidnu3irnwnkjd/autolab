@@ -1784,5 +1784,25 @@
    "meses_hasta_ingresos": 6
   },
   "consulta_fecha": "2026-10-02"
+ },
+ "comparar_ofertas_2026": {
+  "fuente": "Orden PJC/297/2026, de 30 de marzo, de cotización 2026 (arts. 2, 17 y 18: base máxima 5.101,20 €/mes, tipo del trabajador 6,50 % en contrato indefinido, cotización adicional de solidaridad); Ley 35/2006 del IRPF (texto consolidado a 30/09/2026), arts. 19.2.a y 19.2.f, 20, 57, 58, 63 y DA 61.ª; Real Decreto Legislativo 2/2015 (Estatuto de los Trabajadores, consolidado, última actualización 04/12/2025), arts. 34.1 (40 horas de promedio anual), 37.2 (hasta 14 fiestas) y 38.1 (vacaciones no inferiores a 30 días naturales)",
+  "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+  "url_irpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+  "url_et": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A",
+  "reutiliza": "Escalas, mínimos, art. 20, DA 61.ª y cotización del trabajador: las mismas cifras de irpf_2026 y autonomo_2026 (verificadas por el Verificador en autonomo-o-asalariado); aquí solo mínimo personal (sin descendientes), contrato indefinido",
+  "semanas_efectivas": "365/7 − 30/7 − 14/5 ≈ 45,06 semanas al año (52,14 semanas menos 30 días naturales de vacaciones y 14 fiestas laborables); hipótesis del modelo, no oficial: el convenio puede dar más vacaciones",
+  "supuestos": {
+   "nota": "Hipótesis del modelo editables (no son datos oficiales)",
+   "brutoA": 32000,
+   "brutoB": 36000,
+   "despl_A": 600,
+   "despl_B": 1800,
+   "horas_A": 40,
+   "horas_B": 40,
+   "pagas": 14
+  }
  }
 }

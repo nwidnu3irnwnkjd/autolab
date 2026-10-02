@@ -34,6 +34,7 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical,
                           head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#")
     if og: out = out.replace("/assets/og.png", "/assets/" + og)
+    out = out.replace('<a href="/energia/">Energía</a>', '<a href="/energia/">Energía</a>' + ('<a href="/impuestos/">Impuestos</a>' if "impuestos" in ACTIVE_HUBS else ""), 1)  # TEMPORAL (Estratega, c18): pasar a base.html (petición al Diseñador en requests.md)
     out = minify.html(out)
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)

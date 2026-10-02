@@ -1,0 +1,90 @@
+{
+  "slug": "navidad-cuanto-gastar-sin-endeudarte",
+  "title": "Navidad y Black Friday: cuánto gastar sin deudas",
+  "description": "Calcula cuánto puedes gastar en Navidad y Black Friday sin endeudarte ni tocar tu fondo de emergencia, y qué cuesta financiarlo a 3, 6 o 12 cuotas.",
+  "h1": "Navidad y Black Friday: cuánto puedo gastar sin endeudarme",
+  "lead": "Puedes gastar en Navidad lo que ahorres con tu margen mensual libre hasta diciembre, sin pagar intereses ni tocar el fondo de emergencia; con los ejemplos de la página (2.200 € netos al mes, 1.500 € de gastos fijos, 200 € de ahorro objetivo y 3 meses) son 1.500 €, y con un gasto previsto de 2.000 € te faltarían 500 € y financiar los 2.000 € a 12 cuotas costaría unos 200 € de intereses con un TIN de ejemplo del 18 %. Pon tus ingresos, gastos y gasto previsto para ver tu presupuesto sin crédito.",
+  "veredicto": "El presupuesto de Navidad que no necesita crédito es tu margen mensual libre (ingresos menos gastos fijos y ahorro objetivo) por los meses que faltan hasta diciembre, sin tocar el fondo de emergencia; si tu gasto previsto lo supera, la diferencia solo se cubre recortando, usando el exceso de tu fondo sobre tu objetivo o pagando intereses.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "ingresos",
+      "label": "Ingresos netos mensuales (€ al mes; 2.200 € es un ejemplo)",
+      "default": 2200,
+      "min": 1,
+      "step": 50
+    },
+    {
+      "id": "gastos",
+      "label": "Gastos fijos mensuales (€ al mes, incluidas las cuotas de préstamos y tarjetas; 1.500 € es un ejemplo)",
+      "default": 1500,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "ahorro",
+      "label": "Ahorro mensual objetivo (€ al mes que quieres seguir apartando; 200 € es un ejemplo)",
+      "default": 200,
+      "min": 0,
+      "step": 25
+    },
+    {
+      "id": "fondo",
+      "label": "Fondo de emergencia actual (€; 4.000 € es un ejemplo)",
+      "default": 4000,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "mesesFondo",
+      "label": "Meses de gastos que quieres mantener en el fondo (meses; 3 es un ejemplo)",
+      "default": 3,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "gasto",
+      "label": "Gasto navideño previsto (€ en regalos, comidas, viajes y Black Friday; 600 € es un ejemplo)",
+      "default": 600,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "meses",
+      "label": "Meses restantes hasta diciembre (meses de antelación para ahorrarlo; 3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tin",
+      "label": "TIN de tarjeta o crédito (% anual; 18 % es un ejemplo declarado, pon el de tu contrato)",
+      "default": 18,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto puedo gastar en Navidad sin endeudarme?",
+      "Como máximo lo que ahorres de tu margen mensual libre hasta diciembre: ingresos netos menos gastos fijos y menos tu ahorro objetivo, por los meses que quedan. Con los ejemplos de la página son 500 € al mes por 3 meses, 1.500 €. Con tus datos saldrá otra cifra, y si el margen es negativo el presupuesto sin crédito es 0 €."
+    ],
+    [
+      "¿Qué cuesta financiar los regalos de Navidad con tarjeta o a plazos?",
+      "Depende del TIN y de las cuotas. Con el TIN de ejemplo del 18 % y un gasto de 2.000 €, los intereses son unos 60 € a 3 cuotas, unos 106 € a 6 y unos 200 € a 12. Ese TIN es un ejemplo editable, no el de ninguna entidad: pon el de tu contrato. La calculadora no incluye comisiones de aplazamiento."
+    ],
+    [
+      "¿Puedo usar el fondo de emergencia para Navidad?",
+      "La calculadora calcula el presupuesto sin tocar el fondo y te dice cuánto supera tu fondo al objetivo de meses de gastos que hayas puesto: solo ese exceso, si existe, podría usarse sin quedarte por debajo de tu colchón. Si tu fondo ya está por debajo de ese objetivo, el presupuesto no cuenta con él. Es una decisión personal."
+    ],
+    [
+      "¿Cuánto tengo que ahorrar al mes para llegar a diciembre?",
+      "El gasto previsto dividido entre los meses que quedan. Con 600 € previstos y 3 meses son 200 € al mes; con 2.000 € serían unos 667 € al mes, más de los 500 € de margen del ejemplo, así que no cabría sin recortar, usar el exceso del fondo o pagar intereses."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "Es una herramienta de planificación, no asesoramiento financiero. No incluye comisiones de aplazamiento, descuentos u ofertas de Black Friday, pagas extra, ingresos variables ni juegos de azar: contar con un premio de lotería o apuestas para pagar la Navidad no es un plan. Los gastos fijos deben incluir las cuotas de tus deudas."
+    ]
+  ],
+  "sources": "Modelo propio de planificación, sin cifras de mercado: margen mensual = ingresos netos - gastos fijos (con las cuotas de deudas) - ahorro objetivo; presupuesto sin crédito = margen (0 si es negativo) x meses restantes; objetivo de fondo = meses de gastos x gastos fijos; exceso del fondo = fondo - objetivo, si es positivo. Financiar: cuota constante (amortización francesa) con TIN/12 mensual en 3, 6 y 12 cuotas, sin comisiones. Valores de ejemplo editables, no oficiales: 2.200 € de ingresos, 1.500 € de gastos, 200 € de ahorro, 4.000 € de fondo, 3 meses de fondo, 600 € de gasto, 3 meses y TIN del 18 %. Para entender TIN y TAE, consulta el <a href=\"https://clientebancario.bde.es/\" rel=\"noopener\">Portal del Cliente Bancario del Banco de España</a>. Información orientativa, no asesoramiento."
+}

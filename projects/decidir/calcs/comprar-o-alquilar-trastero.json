@@ -1,0 +1,90 @@
+{
+  "slug": "comprar-o-alquilar-trastero",
+  "title": "Comprar o alquilar un trastero: coste a N años",
+  "description": "Compara el coste de comprar o alquilar un trastero o guardamuebles a N años: año de equilibrio, valor residual y alquiler con el que compensa comprar.",
+  "h1": "Comprar o alquilar un trastero (o guardamuebles): coste a N años",
+  "lead": "Comprar un trastero compensa si el alquiler mensual de uno equivalente supera el alquiler de equilibrio, que sale del precio con gastos, los costes anuales y el valor residual; con los ejemplos de la página (9.000 € de compra, 10 % de gastos, 250 € al año de comunidad, IBI y seguro, 10 años, revalorización del 1 % y coste de oportunidad del 2 %) el equilibrio está en unos 32 € al mes: con un alquiler de 70 € al mes compensa comprar y con 30 € al mes, alquilar. Pon tus datos para ver tu año de equilibrio.",
+  "veredicto": "Comprar un trastero compensa cuando el alquiler mensual de uno equivalente supera el alquiler de equilibrio (precio con gastos más costes anuales menos valor residual, repartido en los años de uso con la subida del alquiler); por debajo de ese umbral compensa alquilar. Los impuestos de compra, la plusvalía y la hipoteca no están incluidos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio de compra del trastero (€; 9.000 € es un ejemplo, no un precio de mercado)",
+      "default": 9000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "gastosPct",
+      "label": "Gastos de compra totales (% del precio: impuestos, notaría y registro de tu comunidad; 10 % es un ejemplo, consulta los gastos de tu comunidad)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "costes",
+      "label": "Comunidad, IBI y seguro (€ al año; 250 € es un ejemplo)",
+      "default": 250,
+      "min": 0,
+      "step": 25
+    },
+    {
+      "id": "alq",
+      "label": "Alquiler mensual de un trastero equivalente o del guardamuebles (€ al mes; 70 € es un ejemplo)",
+      "default": 70,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "subida",
+      "label": "Subida anual del alquiler (% al año; 3 % es un ejemplo)",
+      "default": 3,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "anios",
+      "label": "Horizonte (años que lo necesitarías; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "reval",
+      "label": "Revalorización anual esperada del trastero (% al año; 1 % es un ejemplo, puede ser negativa)",
+      "default": 1,
+      "min": -10,
+      "step": 0.5
+    },
+    {
+      "id": "tasa",
+      "label": "Coste de oportunidad del dinero (% al año: lo que ganarías con ese dinero si no lo gastas; 2 % es un ejemplo, 0 = no contarlo)",
+      "default": 2,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo compensa comprar un trastero en vez de alquilarlo?",
+      "Cuando el alquiler mensual de uno equivalente supera el alquiler de equilibrio de tus datos. Con los ejemplos de la página es de unos 32 € al mes a 10 años: con 70 € al mes compensa comprar y con 30 € al mes, alquilar. Con tus precios saldrá otra cifra."
+    ],
+    [
+      "¿En qué año compensa comprar un trastero?",
+      "La calculadora da el año desde el que comprar cuesta menos que alquilar y se mantiene así. Con los ejemplos y un alquiler de 70 € al mes es el año 2; con un alquiler de 30 € al mes es el año 13, más allá del horizonte de 10 años, por lo que en ese caso compensa alquilar. Es un cálculo con supuestos tuyos."
+    ],
+    [
+      "¿Qué gastos de compra debo poner?",
+      "El porcentaje total que te corresponda en tu comunidad: impuestos, notaría y registro. La calculadora no modela impuestos: los impuestos de compra de vivienda no tienen por qué coincidir con los de un trastero, así que consulta los gastos de tu comunidad y escribe el total. El 10 % de la página es un ejemplo editable, no una cifra oficial."
+    ],
+    [
+      "¿Cuenta el valor residual y la revalorización?",
+      "Sí, ambos son editables. El valor residual es el precio revalorizado el porcentaje anual durante los años del horizonte, y se resta del coste de comprar como si lo vendieras al final. Con los ejemplos son unos 9.942 € a 10 años. Una revalorización negativa baja el valor residual y sube el coste de comprar."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye impuestos de compra por separado, plusvalía ni gastos de venta, hipoteca, que haya oferta de trasteros disponibles en tu zona ni cambios de tamaño o de necesidad. Supone que los costes anuales son constantes, que el alquiler sube cada año lo que indiques y que los pagos se hacen a final de cada año."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste de comprar = precio x (1 + gastos de compra %) + comunidad, IBI y seguro de cada año - valor residual al final (precio x (1 + revalorización)^años); coste de alquilar = 12 x alquiler mensual, con la subida anual indicada, de cada año. Con coste de oportunidad mayor que 0, los importes de cada año se descuentan a euros de hoy con ese porcentaje anual. Año de equilibrio: primer año desde el que comprar cuesta menos que alquilar y se mantiene así hasta los 40 años del modelo. Alquiler de equilibrio: alquiler mensual con el que ambas opciones cuestan lo mismo en el horizonte. Supuestos de ejemplo, no oficiales ni precios de mercado, y editables: compra de 9.000 €, 10 % de gastos, 250 € al año, alquiler de 70 € al mes, subida del 3 %, 10 años, revalorización del 1 % y coste de oportunidad del 2 %. Información orientativa, no asesoramiento."
+}

@@ -1,0 +1,137 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 250,
+    "alq": 70,
+    "subida": 3,
+    "anios": 10,
+    "reval": 1,
+    "tasa": 2
+   },
+   "expect": {
+    "pvCompra": 3990.07,
+    "pvAlquiler": 8608.28,
+    "diferencia": 4618.21,
+    "valorResidual": 9941.6,
+    "anioEq": 2,
+    "alqEq": 32.45,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 250,
+    "alq": 30,
+    "subida": 3,
+    "anios": 10,
+    "reval": 1,
+    "tasa": 2
+   },
+   "expect": {
+    "pvCompra": 3990.07,
+    "pvAlquiler": 3689.26,
+    "diferencia": -300.81,
+    "valorResidual": 9941.6,
+    "anioEq": 13,
+    "alqEq": 32.45,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 250,
+    "alq": 70,
+    "subida": 3,
+    "anios": 1,
+    "reval": 1,
+    "tasa": 2
+   },
+   "expect": {
+    "pvCompra": 1233.33,
+    "pvAlquiler": 823.53,
+    "diferencia": -409.8,
+    "valorResidual": 9090.0,
+    "anioEq": 2,
+    "alqEq": 104.83,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 0,
+    "alq": 70,
+    "subida": 3,
+    "anios": 10,
+    "reval": 1,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": -41.6,
+    "pvAlquiler": 9629.66,
+    "diferencia": 9671.26,
+    "valorResidual": 9941.6,
+    "anioEq": 1,
+    "alqEq": -0.3,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 250,
+    "alq": 0,
+    "subida": 3,
+    "anios": 10,
+    "reval": 1,
+    "tasa": 2
+   },
+   "expect": {
+    "pvCompra": 3990.07,
+    "pvAlquiler": 0.0,
+    "diferencia": -3990.07,
+    "valorResidual": 9941.6,
+    "anioEq": -1,
+    "alqEq": 32.45,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 9000,
+    "gastosPct": 10,
+    "costes": 250,
+    "alq": 70,
+    "subida": 3,
+    "anios": 25,
+    "reval": -3,
+    "tasa": 2
+   },
+   "expect": {
+    "pvCompra": 12219.14,
+    "pvAlquiler": 23202.67,
+    "diferencia": 10983.53,
+    "valorResidual": 4202.77,
+    "anioEq": 5,
+    "alqEq": 36.86,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}
