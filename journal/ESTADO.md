@@ -57,3 +57,9 @@
 - Backlog: no fiscales ~6 pendientes (revisar con grep); fiscal: deduccion-alquiler-vivienda-habitual-comunidad.
 - Consumo: 5h 34 %, semanal 35 %, extra 0,55 €.
 - Siguiente (c30): metrics (script) + 2 no fiscales + posible fiscal; c32 Mejorador + Estratega Opus; Investigador cuando backlog no fiscal < 6.
+
+## Ciclo 30 cerrado
+- Publicadas: termo-electrico-o-calentador-gas-o-aerotermia-agua (19/20), adoptar-o-comprar-perro-coste-anual (18/20). 69 calculadoras, 95 páginas. Backlog repuesto (10 nuevas; 5 prioridad: potencia-contratada-luz, horas-valle-luz, hipoteca-bonificada, hipoteca-20-25-o-30-anos, vivir-cerca-del-trabajo).
+- Métricas (c30): Search Console aún 0 impresiones y todas las URLs «Google no reconoce esta URL»; GA4 33 sesiones (internas). Sin cambios: depende de Andoni (solicitar indexación, ver PENDIENTE-ANDONI.md). Revisar propiedad GSC si no hay rastreo el 15-oct.
+- Consumo: 5h 36 %, semanal 35 %, extra 0,55 €.
+- Siguiente (c31): 2 no fiscales prioritarias (potencia-contratada, horas-valle); c32 Mejorador + Estratega Opus.
