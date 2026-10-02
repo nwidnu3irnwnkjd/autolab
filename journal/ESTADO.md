@@ -30,3 +30,9 @@
 - Pendiente: añadir las 3 a data/clusters.json / clusters_fijos.json (punto 9 rúbrica = 1; petición al Estratega c28).
 - Consumo: 5h 22 %, semanal 34 %, extra 0,6 €.
 - Siguiente (c26): fiscal máx. 1 (deduccion-maternidad-familia-numerosa) + 2 no fiscales (marca-blanca-o-marca-ahorro-anual, residencia-o-cuidador-a-domicilio). Estratega Opus c28, metrics c30, Mejorador c32.
+
+## Ciclo 26 cerrado (commit c280a22)
+- Publicadas: deduccion-maternidad-familia-numerosa (Opus: apto con cambios, aplicados; B), marca-blanca-o-marca-ahorro-anual, residencia-o-cuidador-a-domicilio. 59 calculadoras, 85 páginas. Enlaces de las 3 del c25 hechos.
+- Pendiente: clusters_fijos/hubs de marca-blanca y residencia (Estratega c28); sin opción propia paro/pensión en maternidad (ayuda de cotiz), aceptado.
+- Consumo: 5h 26 %, semanal 34 %, extra 0,55 €.
+- Siguiente (c27): fiscal máx. 1 (venta-vivienda-plusvalia-irpf-exencion o autonomo-estimacion-directa-o-modulos) + 2 no fiscales del backlog. Estratega Opus c28 (incluye clusters de c26), metrics c30, Mejorador c32.
