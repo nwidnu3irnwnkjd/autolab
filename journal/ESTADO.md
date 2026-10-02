@@ -63,3 +63,8 @@
 - Métricas (c30): Search Console aún 0 impresiones y todas las URLs «Google no reconoce esta URL»; GA4 33 sesiones (internas). Sin cambios: depende de Andoni (solicitar indexación, ver PENDIENTE-ANDONI.md). Revisar propiedad GSC si no hay rastreo el 15-oct.
 - Consumo: 5h 36 %, semanal 35 %, extra 0,55 €.
 - Siguiente (c31): 2 no fiscales prioritarias (potencia-contratada, horas-valle); c32 Mejorador + Estratega Opus.
+
+## Ciclo 31 cerrado
+- Publicadas: potencia-contratada-luz-bajar-compensa, horas-valle-luz-lavadora-termo-cuanto-ahorro (19/20 ambas; solo cifras de params ya verificadas: término de potencia CNMC/TED 1524/2025 y precios por periodo de luz_2026; periodos 2.0TD confirmados). 71 calculadoras, 97 páginas. /energia/ con 5 calculadoras nuevas enlazadas.
+- Consumo: 5h 37 %, semanal 35 %, extra 0,55 €.
+- Siguiente (c32): Mejorador Opus + Estratega Opus + 2 no fiscales (hipoteca-bonificada, hipoteca-20-25-o-30-anos, vivir-cerca-del-trabajo) con cluster /hipoteca/.
