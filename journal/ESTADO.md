@@ -75,3 +75,9 @@
 - Backlog fiscal repuesto (Opus+web): prioridad compensar-perdidas-ganancias-irpf-antes-fin-de-ano (publicar antes 15-nov), cuota-autonomos-ingresos-reales-regularizacion (comprobar si el RDL 3/2026 está convalidado antes), cuanto-cobro-de-paro-prestacion-desempleo, tarifa-plana-autonomos-o-cuota-por-ingresos; +4 más. Riesgo: pasar normas a journal/fiscal-fuentes.md.
 - Consumo: 5h 39 %, semanal 36 %, extra 0,55 €.
 - Siguiente (c33): 2 fiscales (compensar-perdidas + cuanto-cobro-paro) con Constructor + Lector de norma + Opus; Editor de calidad 1.ª pasada.
+
+## Ciclo 33 cerrado
+- Publicadas (2 fiscales, verificadas por Opus y reverificadas): cuanto-cobro-de-paro-prestacion-desempleo (3 cambios de texto; SMI 1.221 € = RD 126/2026, BOE-A-2026-3815, falta pasarlo a params con fuente) y compensar-perdidas-ganancias-irpf-antes-fin-de-ano (error real corregido: orden de compensación AEAT; RDL 26/2026 art. 95 ter como no modelado, confianza B; publicada antes del 15-nov). 75 calculadoras, ~102 páginas.
+- Editor de calidad 1.ª pasada: 9 cambios en guías y /como-funciona/; pendientes en build.py: description de /como-funciona/ y home (journal/editor-notas.md).
+- 5h 43 % (reset 08:40Z), semanal 36 %, extra 0,55 €.
+- Siguiente (c34): 2 fiscales (cuota-autonomos-ingresos-reales-regularizacion [comprobar RDL 3/2026 convalidado antes], tarifa-plana-autonomos-o-cuota-por-ingresos) o 1 + no fiscales; arreglar descripciones en build.py; pasar SMI a params.
