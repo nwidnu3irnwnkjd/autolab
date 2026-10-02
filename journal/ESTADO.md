@@ -102,3 +102,8 @@
 - GoDaddy: SOLO el CNAME www cambiado a nwidnu3irnwnkjd.github.io (19 registros antes y después; A, MX, TXT, SPF, DKIM, DMARC intactos). dig confirma el CNAME en 8.8.8.8; https://www.entremuchos.com aún sin certificado (esperado hasta ~1 h).
 - Pendiente de seguimiento: comprobar `curl -sI https://www.entremuchos.com/` (debe dar 200/301 a la versión sin www); si en 2 h sigue sin certificado: en el repo → Settings → Pages, quitar y volver a poner el dominio personalizado (pedir a Andoni que su sesión de navegador lo haga, con su confirmación).
 - Ya no queda ningún pendiente humano.
+
+## 2-oct noche · MODO FIN DE SEMANA (ver ops/loop-prompt.md al final)
+- Andoni: aprovechar los límites de su plan Claude el fin de semana. Objetivo semanal ≈ 90 % el lunes 5-oct 07:00 CEST; sin gastar extra usage. KPIs (19:00Z): 147 URLs en sitemap, Google reconoce 2 de 12 (primera señal tras la indexación manual), 3 clics/imp.? ver journal/kpis.md.
+- Pilar ALQUILER en curso (Estratega Opus c57 investiga LAU/IRAV; luego calculadoras actualizacion-renta-alquiler-irav-ipc, fianza-y-garantias-adicionales-alquiler, gastos-alquiler-quien-paga + guía de cláusulas).
+- Contexto del Orquestador 92 %: compactará pronto; tras eso medir pp/ciclo.
