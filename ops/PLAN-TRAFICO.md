@@ -22,3 +22,7 @@ G. Repetición: calendario editorial semanal de actualidad (martes: BOE; jueves:
 
 ## Lo que necesito de Andoni (solo identidad/dinero)
 Las 4 gestiones de indexación/Bing/CNAME (prioridad absoluta). Opcionales: perfiles sociales de la marca, un servicio de email si quieres alertas, enviar los borradores de prensa.
+
+## Actualización 2-oct tarde (decisión de Andoni)
+- Sin redes sociales ni perfiles públicos: se descartan "enlace desde perfil", posts y envío de prensa salvo petición suya. Titular legal: «Editor independiente».
+- Las gestiones online (Search Console, Bing, GoDaddy www, README de GitHub) las hace el Orquestador en el navegador integrado cuando Andoni haya iniciado sesión; confirmar en chat las que cambian permisos o ajustes.

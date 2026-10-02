@@ -24,3 +24,9 @@
 - **Bing Webmaster Tools** (bing.com/webmasters): iniciar sesión con la cuenta de Workspace y "Importar desde Google Search Console". Bing alimenta a Copilot y a parte de ChatGPT; sin esto no nos ven.
 - **Licencia de los datos del Barómetro: APLICADA el 2026-10-02 (decisión del Estratega como director): CC BY 4.0** solo para las cifras propias (`/barometro/#descargas`, `datos.json`, `datos.csv`); las series oficiales (BCE, MITECO, REE) conservan sus condiciones. Ojo: quien ya haya descargado los datos con CC BY la conserva aunque se retire después. Si no estás de acuerdo, dilo y se quita el aviso.
 - **Search Console, 5 minutos (día 2: Google aún no ha leído el sitemap, las 6 URLs clave salen «Google no reconoce esta URL»):** (1) Inspección de URL → «Solicitar indexación» en `/`, `/decidir/`, `/barometro/`, `/guias/` y 2 calculadoras (la API no puede hacerlo); (2) Sitemaps → añadir `https://entremuchos.com/feed.xml` (feed Atom nuevo). (3) Opcional: un enlace a entremuchos.com desde un perfil público tuyo (LinkedIn/GitHub): hoy hay 0 enlaces externos y es la vía principal de descubrimiento.
+
+
+## DECISIONES DE ANDONI (2-oct, tarde)
+- No publicará nada en redes sociales ni similar: quitar de los planes cualquier tarea de redes/perfiles/posts y no proponer más (el kit de prensa en ops/prensa/ queda archivado, solo si él lo pide).
+- Titular del aviso legal: se MANTIENE «Editor independiente» (no pedir nombre legal).
+- Acceso online: Andoni puede abrir sesión él mismo en el navegador integrado de la app (Search Console, Bing, GoDaddy, GitHub) y el Orquestador opera ahí. Nunca teclear contraseñas ni códigos 2FA; las acciones que cambian permisos o ajustes de cuenta (añadir usuarios, DNS, descripción del repo) se confirman antes en el chat.
