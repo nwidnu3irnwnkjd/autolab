@@ -1,0 +1,88 @@
+{
+  "slug": "jubilarse-en-2026-o-en-2027-edad-y-pension",
+  "title": "¿Jubilarme en 2026 o en 2027? Edad y pensión",
+  "description": "Edad de jubilación en 2026 y 2027 según tus años cotizados, primer mes posible y pensión con las reglas de cada año. Con tu nacimiento y tus bases.",
+  "h1": "Jubilarse en 2026 o en 2027: ¿a qué edad y cuánto cobras?",
+  "lead": "Si cumples 66 años y 10 meses en 2026 con menos de 38 años y 3 meses cotizados, mira 2026 antes que 2027: con nacimiento en enero de 1960, 35 años cotizados y bases de 3.000 € en los últimos 5 años y 2.200 € antes, la herramienta estima 1.958 € al mes desde noviembre de 2026 (2.010 € desde la revalorización de enero, si es del 2,7 %) frente a 1.945 € desde enero de 2027, cuando la edad exigida sube a 67 años y el porcentaje baja del 96,77 % al 96,17 %. Si naces en marzo de 1960 con 37 años cotizados, en 2026 no llegas: tu primer mes posible es marzo de 2027, a los 67 años. Solo Régimen General, sin lagunas ni demora, y no es un cálculo oficial.",
+  "veredicto": "Con tus datos, la herramienta estima que jubilarte en noviembre de 2026 da 1.958 € al mes (2.010 € desde la revalorización de enero de 2027, supuesta del 2,7 %) frente a 1.945 € en enero de 2027: esperar baja la pensión unos 65 € al mes y retrasa el cobro dos meses; con otras fechas de nacimiento, años cotizados o bases el resultado cambia. Solo Régimen General, sin lagunas ni complemento por demora; no es un cálculo oficial.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "nac_a",
+      "label": "Año de nacimiento",
+      "default": 1960,
+      "min": 1955,
+      "max": 1966,
+      "step": 1,
+      "default_from": "params.jubilarse_2026_2027.supuestos.nac_a"
+    },
+    {
+      "id": "nac_m",
+      "label": "Mes de nacimiento (1 a 12)",
+      "default": 1,
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default_from": "params.jubilarse_2026_2027.supuestos.nac_m"
+    },
+    {
+      "id": "cot_a",
+      "label": "Años cotizados a día 1 del mes en curso (años completos; se supone que sigues cotizando hasta jubilarte)",
+      "default": 35,
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default_from": "params.jubilarse_2026_2027.supuestos.cot_a"
+    },
+    {
+      "id": "cot_m",
+      "label": "…y meses completos (0 a 11)",
+      "default": 0,
+      "min": 0,
+      "max": 11,
+      "step": 1,
+      "default_from": "params.jubilarse_2026_2027.supuestos.cot_m"
+    },
+    {
+      "id": "b_rec",
+      "label": "Base de cotización media mensual de tus últimos 5 años (€ de hoy; si son de hace años, súbelas con el IPC; máximo 5.101,20 €)",
+      "default": 3000,
+      "min": 1,
+      "max": 5101.2,
+      "step": 50,
+      "default_from": "params.jubilarse_2026_2027.supuestos.b_rec"
+    },
+    {
+      "id": "b_ant",
+      "label": "Base de cotización media mensual de los años anteriores, hasta 26 años atrás (€ de hoy; súbelas con el IPC)",
+      "default": 2200,
+      "min": 1,
+      "max": 5101.2,
+      "step": 50,
+      "default_from": "params.jubilarse_2026_2027.supuestos.b_ant"
+    }
+  ],
+  "faqs": [
+    [
+      "¿A qué edad me jubilo en 2026 y en 2027?",
+      "En 2026: 65 años con 38 años y 3 meses cotizados; si no, 66 años y 10 meses. Desde 2027: 65 años con 38 años y 6 meses; si no, 67 años (art. 205.1.a y disposición transitoria 7.ª). Cuenta el año en que se causa la pensión."
+    ],
+    [
+      "¿Cuántos meses cuentan para la base reguladora en 2027?",
+      "En 2026 se dividen entre 352,33 las 302 mejores bases de los últimos 304 meses; en 2027, entre 354,67 las 304 mejores de 308 (disposición transitoria 40.ª). Se aplica de oficio la regla de 300 meses entre 350 si te favorece (disposición transitoria 4.ª.7)."
+    ],
+    [
+      "¿Cambia el porcentaje de la pensión en 2027?",
+      "Sí (DT 9.ª). 2026: 50 % por 15 años, 0,21 % por cada uno de los primeros 49 meses extra, 0,19 % después. Desde 2027: 0,19 % hasta el mes 248, 0,18 % después. El 100 % exige 36 años y 6 meses en 2026 y 37 años en 2027."
+    ],
+    [
+      "¿Esperar a 2027 me sube la pensión?",
+      "En este modelo no. Con bases de 3.000 € recientes y 2.200 € antes, 1.958 € de 2026 pasan a 2.010 € con la revalorización de enero (2,7 %, hipótesis), frente a 1.945 € si esperas. Una base reguladora algo mayor en 2027 no compensa esa revalorización. Sin contar demora."
+    ],
+    [
+      "¿Y si ya he pasado mi edad ordinaria?",
+      "Puede corresponderte un complemento por demora: 4 % por año completo entre tu edad ordinaria y la jubilación (art. 210.2.a). Esta calculadora no lo incluye y lo avisa cuando llevas un año o más por encima de la edad exigida: usa la de jubilación anticipada o demorada."
+    ]
+  ],
+  "sources": "Ley General de la Seguridad Social, texto refundido aprobado por el [Real Decreto Legislativo 8/2015](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), texto consolidado del BOE consultado el 2/10/2026 (cada bloque en su versión de fecha de vigencia más alta): [art. 205.1](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a205) (65 años con 38 años y 6 meses o 67 años; 15 años de carencia; años y meses completos), [art. 209.1](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a209) (base reguladora, redacción de 1-1-2026), [art. 210.1 y 210.2](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a210) (porcentaje por años cotizados y complemento por demora), [disposición transitoria 7.ª](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dtseptima) (calendario de edad y cotización: 2026 y desde 2027), [disposición transitoria 9.ª](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dtnovena) (porcentaje por mes cotizado), [disposición transitoria 40.ª](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dt-11) (base reguladora gradual: 302 de 304 meses en 2026 y 304 de 308 en 2027), disposición transitoria 4.ª.7 (regla de 2023 si es más favorable) y disposición transitoria 41.ª (lagunas; no se modela). Pensión máxima de 2026 (3.359,60 € al mes): [Real Decreto 241/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977); la de 2027 no está publicada y el modelo usa la de 2026. Modelo propio: cotización continuada desde el día 1 del mes en curso (octubre de 2026 en los ejemplos; la comparación caduca en enero de 2027), revalorización de enero de 2027 supuesta igual a la de 2026 (art. 58.2), el año del hecho causante fija la edad y el porcentaje, bases en euros de hoy con una media para los últimos 5 años y otra para los anteriores, y primer mes posible de cada año. Hipótesis no oficiales y editables: nacimiento en enero de 1960, 35 años cotizados y bases de 3.000 € y 2.200 €. Información orientativa, no asesoramiento ni cálculo oficial: usa el simulador de la [Seguridad Social](https://www.seg-social.es/)."
+}

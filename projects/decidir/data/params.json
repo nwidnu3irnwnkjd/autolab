@@ -3855,6 +3855,16 @@
       "renta1": 800,
       "gastos": 7000,
       "tipo": 30
+    },
+    "imputacion_general_pct": 2,
+    "imputacion_revisado_pct": 1.1,
+    "imputacion_revision_periodos": 10,
+    "fuente_85": "Ley 35/2006 del IRPF, art. 85.1 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015): «el 2 por ciento al valor catastral, determinándose proporcionalmente al número de días» y «el porcentaje será el 1,1 por ciento» si los valores catastrales se revisaron y entraron en vigor «en el período impositivo o en el plazo de los diez períodos impositivos anteriores»; art. 24 en su redacción original de 2006 (BOE-A-2006-20764, vigente desde 1/1/2007): con arrendatario cónyuge o pariente hasta el tercer grado «el rendimiento neto total no podrá ser inferior al que resulte de las reglas del artículo 85». El consolidado del BOE muestra como última versión de los arts. 85 y 24 la del RDL 26/2026 (BOE-A-2026-20266, efectos 1/1/2027), derogado por BOE-A-2026-20526 (2/10/2026): no se aplica. Consultado el 2/10/2026. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. La DA 55.ª (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#da-10) vigente solo dice «durante el período impositivo 2023»; el Manual Renta 2025 aún dice «desde 2012» y no se sigue.",
+    "url_85": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a85",
+    "url_24": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a24",
+    "consulta_85": "consultado el 2/10/2026",
+    "supuestos_vacia": {
+      "dias_vacio": 0
     }
   },
   "renta_alquiler_2026": {
@@ -5001,60 +5011,206 @@
     }
   },
   "pagas_extra_prorrateo_2026": {
-   "fuente": "Estatuto de los Trabajadores (RDL 2/2015, BOE-A-2015-11430, consolidado a 2/10/2026): art. 31 (dos gratificaciones extraordinarias al año; la cuantía la fija el convenio y este puede acordar que se prorrateen en las doce mensualidades) y art. 49.2 (propuesta de documento de liquidación de las cantidades adeudadas); LGSS (RDL 8/2015, BOE-A-2015-11724, redacción vigente desde 1/1/2023): art. 147.1 (las percepciones de vencimiento superior al mensual se prorratean a lo largo de los doce meses del año) y art. 270.1 (base reguladora del paro: promedio de la base por la que se haya cotizado en los últimos 180 días); Decreto 1646/1972 (BOE-A-1972-944), art. 13.1, 13.2 y 13.4 (base reguladora de la incapacidad temporal: base de cotización del mes anterior dividida entre 30 si hay retribución mensual y alta todo el mes; las pagas extraordinarias entran por el promedio de su base de cotización de los doce meses anteriores); Reglamento del IRPF (RD 439/2007, BOE-A-2007-6820): art. 80.1 (retención = tipo sobre la cuantía total abonada), art. 83.2 regla 1.ª (cuantía total = suma de las retribuciones que vaya normalmente a percibir el contribuyente en el año natural), art. 86.1 (tipo con dos decimales) y art. 87 (regularización del tipo); Orden PJC/297/2026 (BOE-A-2026-7296), art. 2.1 (base máxima 5.101,20 €/mes) y tipos del trabajador (contingencias comunes 4,70 %, formación profesional 0,10 %, mecanismo de equidad intergeneracional 0,15 %, desempleo 1,55 % indefinido o 1,60 % duración determinada). Cuándo se cobran las pagas, si se devengan por días o por meses y si el convenio permite el prorrateo lo fija el convenio: no están en la ley y no se modelan como dato oficial",
-   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a31",
-   "url_lgss": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a147",
-   "url_decreto_1646_1972": "https://www.boe.es/buscar/act.php?id=BOE-A-1972-944",
-   "url_rirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820#a83",
-   "url_orden_cotizacion": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
-   "consulta": "consultado el 2/10/2026",
-   "confianza": "A (ley); el convenio no se verifica: lo da el usuario",
-   "base_max_mes": 5101.2,
-   "cotizacion_trabajador_indefinido_pct": 6.5,
-   "cotizacion_trabajador_temporal_pct": 6.55,
-   "cotizacion_desglose": "contingencias comunes 4,70 + formación profesional 0,10 + MEI 0,15 + desempleo 1,55 (indefinido) o 1,60 (duración determinada); coincide con retencion_irpf_nomina_2026.cotizacion_trabajador_pct y autonomo_2026.general",
-   "dias_base_reguladora_mes": 30,
-   "calendario_2026": {
-    "nota": "Calendario, no cifra legal: 2026 no es bisiesto",
-    "dias_por_mes": [
-     31,
-     28,
-     31,
-     30,
-     31,
-     30,
-     31,
-     31,
-     30,
-     31,
-     30,
-     31
-    ],
-    "dias_acumulados_al_inicio_de_cada_mes": [
-     0,
-     31,
-     59,
-     90,
-     120,
-     151,
-     181,
-     212,
-     243,
-     273,
-     304,
-     334
-    ]
-   },
-   "calendario_pagas_supuesto": "Supuesto del modelo (lo fija el convenio): n pagas extra se devengan en n periodos iguales del año y se cobran al cierre: 2 pagas en junio y diciembre; 3 en abril, agosto y diciembre; 4 en marzo, junio, septiembre y diciembre; devengo por días naturales",
-   "smi_anual_14_pagas": 17094,
-   "rdl_26_2026": "Derogado el 2-10-2026 (BOE-A-2026-20526); no toca ET 31, LGSS 147 y 270, RIRPF 80-87 ni el Decreto 1646/1972; no se cita como fuente",
-   "pge_2026": "No hay Presupuestos 2026",
-   "supuestos": {
-    "nota": "Ejemplo editable (no es dato oficial)",
-    "bruto": 24000,
-    "ret": 15,
-    "mes": 10,
-    "dia": 31
-   }
+    "fuente": "Estatuto de los Trabajadores (RDL 2/2015, BOE-A-2015-11430, consolidado a 2/10/2026): art. 31 (dos gratificaciones extraordinarias al año; la cuantía la fija el convenio y este puede acordar que se prorrateen en las doce mensualidades) y art. 49.2 (propuesta de documento de liquidación de las cantidades adeudadas); LGSS (RDL 8/2015, BOE-A-2015-11724, redacción vigente desde 1/1/2023): art. 147.1 (las percepciones de vencimiento superior al mensual se prorratean a lo largo de los doce meses del año) y art. 270.1 (base reguladora del paro: promedio de la base por la que se haya cotizado en los últimos 180 días); Decreto 1646/1972 (BOE-A-1972-944), art. 13.1, 13.2 y 13.4 (base reguladora de la incapacidad temporal: base de cotización del mes anterior dividida entre 30 si hay retribución mensual y alta todo el mes; las pagas extraordinarias entran por el promedio de su base de cotización de los doce meses anteriores); Reglamento del IRPF (RD 439/2007, BOE-A-2007-6820): art. 80.1 (retención = tipo sobre la cuantía total abonada), art. 83.2 regla 1.ª (cuantía total = suma de las retribuciones que vaya normalmente a percibir el contribuyente en el año natural), art. 86.1 (tipo con dos decimales) y art. 87 (regularización del tipo); Orden PJC/297/2026 (BOE-A-2026-7296), art. 2.1 (base máxima 5.101,20 €/mes) y tipos del trabajador (contingencias comunes 4,70 %, formación profesional 0,10 %, mecanismo de equidad intergeneracional 0,15 %, desempleo 1,55 % indefinido o 1,60 % duración determinada). Cuándo se cobran las pagas, si se devengan por días o por meses y si el convenio permite el prorrateo lo fija el convenio: no están en la ley y no se modelan como dato oficial",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a31",
+    "url_lgss": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a147",
+    "url_decreto_1646_1972": "https://www.boe.es/buscar/act.php?id=BOE-A-1972-944",
+    "url_rirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820#a83",
+    "url_orden_cotizacion": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A (ley); el convenio no se verifica: lo da el usuario",
+    "base_max_mes": 5101.2,
+    "cotizacion_trabajador_indefinido_pct": 6.5,
+    "cotizacion_trabajador_temporal_pct": 6.55,
+    "cotizacion_desglose": "contingencias comunes 4,70 + formación profesional 0,10 + MEI 0,15 + desempleo 1,55 (indefinido) o 1,60 (duración determinada); coincide con retencion_irpf_nomina_2026.cotizacion_trabajador_pct y autonomo_2026.general",
+    "dias_base_reguladora_mes": 30,
+    "calendario_2026": {
+      "nota": "Calendario, no cifra legal: 2026 no es bisiesto",
+      "dias_por_mes": [
+        31,
+        28,
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31
+      ],
+      "dias_acumulados_al_inicio_de_cada_mes": [
+        0,
+        31,
+        59,
+        90,
+        120,
+        151,
+        181,
+        212,
+        243,
+        273,
+        304,
+        334
+      ]
+    },
+    "calendario_pagas_supuesto": "Supuesto del modelo (lo fija el convenio): n pagas extra se devengan en n periodos iguales del año y se cobran al cierre: 2 pagas en junio y diciembre; 3 en abril, agosto y diciembre; 4 en marzo, junio, septiembre y diciembre; devengo por días naturales",
+    "smi_anual_14_pagas": 17094,
+    "rdl_26_2026": "Derogado el 2-10-2026 (BOE-A-2026-20526); no toca ET 31, LGSS 147 y 270, RIRPF 80-87 ni el Decreto 1646/1972; no se cita como fuente",
+    "pge_2026": "No hay Presupuestos 2026",
+    "supuestos": {
+      "nota": "Ejemplo editable (no es dato oficial)",
+      "bruto": 24000,
+      "ret": 15,
+      "mes": 10,
+      "dia": 31
+    }
+  },
+  "jubilarse_2026_2027": {
+    "fuente": "Ley General de la Seguridad Social (RDL 8/2015), texto consolidado del BOE (para cada bloque, versión de fecha de vigencia más alta): art. 205.1.a y b (65 años con 38 años y 6 meses cotizados o 67; 15 años de carencia; años y meses completos), art. 209.1 (base reguladora; redacción de 1-1-2026: 324 de 348 meses entre 378), art. 210.1 y 210.2.a (50 % por 15 años y porcentaje por mes adicional; 4 % por año completo de demora), DT 4.ª.7 (hechos causantes de 2026 a 2040: se aplica el art. 209.1 de 1-1-2023, 300 meses entre 350, si es más favorable), DT 7.ª (calendario de edad y cotización: 2026 y desde 2027), DT 9.ª (porcentaje por mes cotizado: 2023-2026 y desde 2027), DT 40.ª (base reguladora gradual: 2026 302 de 304 meses entre 352,33; 2027 304 de 308 entre 354,67; 2028-2036; desde 2037 el art. 209.1 íntegro) y DT 41.ª (integración de lagunas para mujeres y hombres con hijos; no se modela). Última versión de cada bloque: DT 7.ª 2-1-2016, DT 9.ª 2-1-2016, DT 40.ª 1-4-2023, DT 41.ª 1-1-2026, art. 205 2-1-2016, art. 209 1-1-2026, art. 210 1-4-2025, DT 4.ª 25-12-2024. El RDL 26/2026 no figura entre las versiones de esos bloques.",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+    "url_dt7": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dtseptima",
+    "url_dt40": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dt-11",
+    "url_dt9": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dtnovena",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A",
+    "nota_pension_maxima": "La pensión máxima y la base máxima de 2027 no están publicadas (no hay Presupuestos ni orden de cotización de 2027): el modelo usa los importes de 2026 de params.jubilacion_2026 (RD 241/2026) y lo dice en la página.",
+    "edad_ordinaria": {
+      "nota": "DT 7.ª, por año del hecho causante: [meses cotizados para jubilarse a los 65 años, edad en meses si no se llega]. 2026: 38 años y 3 meses o 66 años y 10 meses; desde 2027: 38 años y 6 meses o 67 años. Filas 2024 (38 años o 66 años y 6 meses) y 2025 (38 años y 3 meses o 66 años y 8 meses) de la DT 7.ª, usadas solo para la cota de demora (art. 210.2.a).",
+      "2026": [
+        459,
+        802
+      ],
+      "2027_en_adelante": [
+        462,
+        804
+      ],
+      "edad_ordinaria_meses": 780,
+      "2025": [
+        459,
+        800
+      ],
+      "2024": [
+        456,
+        798
+      ]
+    },
+    "carencia_meses": 180,
+    "porcentaje": {
+      "nota": "Art. 210.1 y DT 9.ª: 50 % por los primeros 15 años y, por cada mes adicional, [meses al tipo alto, tipo alto %, tipo bajo %]; tope 100 % (art. 210.1.b).",
+      "base_pct": 50,
+      "tope_pct": 100,
+      "2026": [
+        49,
+        0.21,
+        0.19
+      ],
+      "2027_en_adelante": [
+        248,
+        0.19,
+        0.18
+      ]
+    },
+    "demora": {
+      "nota": "Art. 210.2.a: 4 % por año completo entre la edad exigida y el hecho causante; desde el 2.º año completo, 2 % por un periodo superior a 6 meses e inferior a un año.",
+      "pct_por_año": 4,
+      "pct_medio_año": 2,
+      "meses_min_medio_año": 7,
+      "años_min_medio_año": 2
+    },
+    "dt40": {
+      "nota": "DT 40.ª: [mejores bases n, meses de la ventana N, divisor] por año del hecho causante; desde 2037 el art. 209.1 íntegro (324 de 348 entre 378).",
+      "2026": [
+        302,
+        304,
+        352.33
+      ],
+      "2027": [
+        304,
+        308,
+        354.67
+      ],
+      "2028": [
+        306,
+        312,
+        357.0
+      ],
+      "2029": [
+        308,
+        316,
+        359.33
+      ],
+      "2030": [
+        310,
+        320,
+        361.67
+      ],
+      "2031": [
+        312,
+        324,
+        364.0
+      ],
+      "2032": [
+        314,
+        328,
+        366.33
+      ],
+      "2033": [
+        316,
+        332,
+        368.67
+      ],
+      "2034": [
+        318,
+        336,
+        371.0
+      ],
+      "2035": [
+        320,
+        340,
+        373.33
+      ],
+      "2036": [
+        322,
+        344,
+        375.67
+      ],
+      "2037_en_adelante": [
+        324,
+        348,
+        378
+      ]
+    },
+    "regla_2023": {
+      "nota": "DT 4.ª.7: art. 209.1 de 1-1-2023 (300 meses entre 350), para hechos causantes entre 1-1-2026 y 31-12-2040 si resulta más favorable.",
+      "meses": 300,
+      "divisor": 350
+    },
+    "modelo": {
+      "nota": "Supuestos propios del modelo (no de ley): bases en euros de hoy; los últimos 60 meses a una base y los anteriores a otra; rango de nacimiento admitido y último año explorado. Fecha de referencia móvil: el mes en curso (nunca antes de octubre de 2026); desde enero de 2027 la comparación caduca.",
+      "meses_base_reciente": 60,
+      "nac_min": 1955,
+      "nac_max": 1966,
+      "horizonte_año": 2036,
+      "cot_max_años": 60,
+      "alt_desde_año": 2024
+    },
+    "supuestos": {
+      "nota": "Ejemplo editable (no es dato oficial)",
+      "nac_a": 1960,
+      "nac_m": 1,
+      "cot_a": 35,
+      "cot_m": 0,
+      "b_rec": 3000,
+      "b_ant": 2200
+    },
+    "ref_anio": 2026,
+    "ref_mes": 10,
+    "fecha_referencia": "1 de octubre de 2026 (fecha de consulta; las cotizaciones del usuario se cuentan a esa fecha)",
+    "base_maxima_mes": 5101.2,
+    "base_maxima_nota": "Base máxima de cotización de 2026 (Orden PJC/297/2026, BOE-A-2026-7296), igual que params.jubilacion_2026.tope_base_cotizacion_anual / 12; tope de los dos campos de base del modelo.",
+    "revalorizacion_hipotesis_2027_pct": 2.7,
+    "revalorizacion_nota": "Art. 58.2 LGSS: las pensiones se revalorizan al comienzo de cada año. La de 2027 no está publicada: hipótesis = la de 2026 (2,7 %, RD 241/2026, params.jubilacion_2026.revalorizacion_2026_pct), aplicada a la pensión causada en 2026 y a la pensión máxima de 2027."
   }
 }

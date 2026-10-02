@@ -24,10 +24,14 @@ def code(c):
 def block(c):
     """Bloque plegable «Insertar en tu web» al final del contenido de cada calculadora."""
     cd = html.escape(code(c))
+    cita = html.escape(f'<a href="{B}/decidir/{c["slug"]}/">{c["h1"]}</a> (Entre Muchos, entremuchos.com)')
     return f"""<details class="emb-ins" id="insertar"><summary>Insertar en tu web</summary>
 <div class="emb-in"><p>Gratis, con crédito y enlace a Entre Muchos. Copia este código en tu página:</p>
 <textarea readonly rows="3" aria-label="Código para insertar la calculadora" data-code>{cd}</textarea>
 <p><button type="button" class="btn2" data-copy>Copiar código</button> <span class="em-toast" role="status" aria-live="polite" data-copied></span></p>
+<div class="emb-cita"><p>¿Prefieres citarla? Enlace con fuente y fecha:</p>
+<textarea readonly rows="2" aria-label="Enlace para citar esta calculadora" data-code>{cita}</textarea>
+<p><button type="button" class="btn2" data-copy data-ev="cite_copy">Copiar enlace</button> <span class="em-toast" role="status" aria-live="polite" data-copied></span></p></div>
 <p class="note">La altura se ajusta sola con <a href="{PATH}#altura">este script opcional</a>. <a href="{PATH}">Condiciones de uso y ejemplos</a>.</p></div></details>"""
 
 

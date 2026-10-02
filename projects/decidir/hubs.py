@@ -28,7 +28,7 @@ HUBS = {
         "groups": [
             ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
-            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc", "gastos-alquiler-quien-paga", "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf"]),
+            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc", "gastos-alquiler-quien-paga", "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf", "vivienda-vacia-o-alquilarla-irpf"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
@@ -47,6 +47,10 @@ HUBS = {
             "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf": {
                 "name": "Renovar o firmar contrato nuevo (IRPF del casero)",
                 "text": "Si eres casero, prorrogar un contrato anterior a mayo de 2023 puede mantener una reducción del IRPF mayor que la de un contrato nuevo. La calculadora compara las dos opciones con tu renta y tu tipo.",
+            },
+            "vivienda-vacia-o-alquilarla-irpf": {
+                "name": "Vivienda vacía o alquilada (IRPF)",
+                "text": "Una vivienda vacía tributa por imputación de renta (1,1 % o 2 % del valor catastral) y una alquilada por su rendimiento neto. La calculadora compara las dos con tus gastos y los meses alquilados.",
             },
             "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
                 "name": "Plazo: 20, 25 o 30 años",
@@ -434,7 +438,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["cuanto-cuesta-un-bebe-el-primer-ano", "permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "empleada-hogar-cuanto-cuesta-contratar-cotizacion", "pension-viudedad-cuanto-cobro", "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
+            ("Familia, trabajo y estudios", ["cuanto-cuesta-un-bebe-el-primer-ano", "permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "empleada-hogar-cuanto-cuesta-contratar-cotizacion", "pension-viudedad-cuanto-cobro", "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar", "jubilacion-activa-o-dejar-de-trabajar", "jubilarse-en-2026-o-en-2027-edad-y-pension", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -569,6 +573,10 @@ HUBS = {
             "teletrabajo-o-oficina-coste-real": {
                 "name": "Teletrabajo u oficina",
                 "text": "Teletrabajar ahorra si lo que evitas cada día en desplazamiento y comida supera el gasto extra en casa. La calculadora da el ahorro anual y la compensación mínima de la empresa.",
+            },
+            "jubilarse-en-2026-o-en-2027-edad-y-pension": {
+                "name": "Jubilarse en 2026 o en 2027",
+                "text": "La edad, el porcentaje y los meses de la base reguladora cambian de un año a otro. La calculadora compara tu primer mes posible en 2026 y en 2027 y la pensión estimada en cada caso.",
             },
             "jubilacion-activa-o-dejar-de-trabajar": {
                 "name": "Jubilación activa: seguir trabajando y cobrar pensión",

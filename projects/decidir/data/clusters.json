@@ -324,6 +324,11 @@
   "rescate-plan-pensiones-capital-o-renta",
   "jubilacion-activa-o-dejar-de-trabajar"
  ],
+ "jubilarse-en-2026-o-en-2027-edad-y-pension": [
+  "jubilacion-anticipada-o-demorada",
+  "jubilacion-activa-o-dejar-de-trabajar",
+  "plan-pensiones-o-fondo-indexado"
+ ],
  "kilometraje-y-dietas-exentas-irpf": [
   "coche-propio-o-carsharing-o-vtc",
   "retencion-irpf-nomina-subir-o-no",
@@ -533,6 +538,11 @@
   "reformar-o-mudarse",
   "irpf-alquilar-vivienda-rendimiento-neto",
   "alquilar-o-comprar"
+ ],
+ "vivienda-vacia-o-alquilarla-irpf": [
+  "irpf-alquilar-vivienda-rendimiento-neto",
+  "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf",
+  "gastos-alquiler-quien-paga"
  ],
  "vivir-cerca-del-trabajo-o-mas-barato-lejos": [
   "bici-electrica-o-transporte-publico",

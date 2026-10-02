@@ -1,0 +1,480 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "ejemplo: 60.000 € catastral 1,1 %, 800 €/mes, tipo 30 %",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 390.0,
+    "resB": 2210.0,
+    "dif": 9408.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "imputación del 2 %",
+   "in": {
+    "cat": 60000,
+    "rev": "g",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 1200.0,
+    "cuotaA": 360.0,
+    "resA": -7360.0,
+    "cuotaB": 390.0,
+    "resB": 2210.0,
+    "dif": 9570.0,
+    "rstar": 783.3333,
+    "minimo": 1200.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: renta en el umbral (693,33 €/mes)",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 693.33,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 197.994,
+    "resB": 1121.966,
+    "dif": 8319.966,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con renta 650: tributa el mínimo (igual que vacío)",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 650,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": 602.0,
+    "dif": 7800.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con renta 800: el rendimiento supera el mínimo",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 390.0,
+    "resB": 2210.0,
+    "dif": 9408.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "60 días vacíos: imputación de los días sin inquilino",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 60,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 358.4384,
+    "resB": 663.4795,
+    "dif": 7861.4795,
+    "rstar": 693.3333,
+    "minimo": 551.5068,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: 364 días vacíos",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 364,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.526,
+    "resB": -7172.2247,
+    "dif": 25.7753,
+    "rstar": 693.3333,
+    "minimo": 1.8082,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "reducción del 90 %",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "90",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 78.0,
+    "resB": 2522.0,
+    "dif": 9720.0,
+    "rstar": 1133.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con 70 % y renta 600",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 600,
+    "gastos": 7000,
+    "contrato": "70",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": 2.0,
+    "dif": 7200.0,
+    "rstar": 766.6667,
+    "minimo": 660.0,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "pérdida: gastos 12.000 €",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 12000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -12198.0,
+    "cuotaB": 0.0,
+    "resB": -2400.0,
+    "dif": 9798.0,
+    "rstar": 1110.0,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: renta 0",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 0,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 0.0,
+    "resB": -7000.0,
+    "dif": 198.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: rendimiento neto exactamente 0",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 583.3333333333334,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 0.0,
+    "resB": 0.0,
+    "dif": 7198.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: tipo 0",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 0
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 0.0,
+    "resA": -7000.0,
+    "cuotaB": 0.0,
+    "resB": 2600.0,
+    "dif": 9600.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: familiar, renta 0, minimo",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 0,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": -7198.0,
+    "dif": 0.0,
+    "rstar": 693.3333,
+    "minimo": 660.0,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con 120 días vacíos",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 120,
+    "renta": 500,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": -3170.6027,
+    "dif": 4027.3973,
+    "rstar": 693.3333,
+    "minimo": 443.0137,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con pérdida",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 12000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -12198.0,
+    "cuotaB": 198.0,
+    "resB": -2598.0,
+    "dif": 9600.0,
+    "rstar": 1110.0,
+    "minimo": 660.0,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "familiar con 90 días vacíos, renta 600",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 90,
+    "renta": 600,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": -1773.3425,
+    "dif": 5424.6575,
+    "rstar": 693.3333,
+    "minimo": 497.2603,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "pérdida con 60 días vacíos (límite documentado)",
+   "in": {
+    "cat": 60000,
+    "rev": "r",
+    "dv": 60,
+    "renta": 800,
+    "gastos": 12000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -12198.0,
+    "cuotaB": 32.5479,
+    "resB": -4010.6301,
+    "dif": 8187.3699,
+    "rstar": 1110.0,
+    "minimo": 551.5068,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "imputación 2 % y familiar a 800",
+   "in": {
+    "cat": 60000,
+    "rev": "g",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 1200.0,
+    "cuotaA": 360.0,
+    "resA": -7360.0,
+    "cuotaB": 390.0,
+    "resB": 2210.0,
+    "dif": 9570.0,
+    "rstar": 783.3333,
+    "minimo": 1200.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  }
+ ]
+}

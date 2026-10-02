@@ -147,6 +147,7 @@ else
 fi
 
 step "IndexNow (su estado entra en el commit del ciclo siguiente)"
+python3 ops/websub_ping.py >/dev/null 2>&1 || true
 INDEXNOW="$(python3 ops/indexnow.py 2>&1 | tail -2 | tr '\n' ' ' || true)"
 echo "$INDEXNOW"
 

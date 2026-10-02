@@ -1,0 +1,129 @@
+{
+ "slug": "vivienda-vacia-o-alquilarla-irpf",
+ "title": "Piso vacío o alquilado: cuánto IRPF pagas en cada caso",
+ "description": "Calcula el IRPF de tener un piso vacío (imputación del 1,1 % o 2 %) frente a alquilarlo con reducción, y si es a un familiar.",
+ "h1": "Piso vacío o alquilado: cuánto IRPF pagas por la imputación y por el alquiler",
+ "lead": "Un piso vacío paga IRPF aunque no cobres nada, porque Hacienda te imputa como renta el 1,1 % del valor catastral (el 2 % si el catastro no se ha revisado en los últimos 10 años), y alquilarlo solo te hace pagar más IRPF si el rendimiento neto, ya reducido, supera esa imputación. En el ejemplo (valor catastral de 60.000 €, 800 € al mes durante todo el año, 7.000 € de gastos con amortización, reducción del 50 % y tipo marginal del 30 %), vacío pagas 198 € de IRPF y pierdes 7.198 € al año entre gastos e impuestos; alquilado pagas 390 € y te quedan 2.210 € netos. Con esos gastos, alquilar te cuesta más IRPF que dejarlo vacío a partir de 693,33 € al mes (783,33 € con la imputación del 2 %). Si se lo alquilas a un familiar hasta el tercer grado, cobrando 650 € al mes tributas igual que vacío (198 €), porque el rendimiento no puede ser inferior a la imputación. La calculadora aplica la redacción de la Ley del IRPF anterior al Real Decreto-ley 26/2026 (arts. 23.2, 24 y 85, DT 38.ª y DA 55.ª), derogado el 2 de octubre de 2026 (BOE-A-2026-20526). No incluye el recargo del IBI a viviendas vacías, la compensación de pérdidas ni las deducciones autonómicas.",
+ "veredicto": "Depende de tu renta y de tus gastos. En el ejemplo (catastral 60.000 €, 800 € al mes, 7.000 € de gastos, reducción del 50 %, tipo del 30 %) vacío pagas 198 € de IRPF (imputación del 1,1 %) y alquilado 390 €, pero te quedan 2.210 € frente a -7.198 €. Alquilar cuesta más IRPF que dejarlo vacío a partir de 693,33 € al mes; a un familiar, por debajo de esa renta tributas igual que vacío.",
+ "tema": "hipoteca",
+ "inputs": [
+  {
+   "id": "cat",
+   "label": "Valor catastral del piso (€, el del recibo del IBI)",
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.alquiler_irpf_2026.supuestos.cat",
+   "ayuda": "Es el valor catastral total (suelo y construcción) que figura en el recibo del IBI. Sin valor catastral notificado la ley usa otra base y no se calcula aquí."
+  },
+  {
+   "id": "rev",
+   "label": "Porcentaje de imputación de tu municipio",
+   "type": "select",
+   "options": [
+    {
+     "v": "r",
+     "t": "1,1 % (valores catastrales revisados y en vigor entre 2016 y 2026)"
+    },
+    {
+     "v": "g",
+     "t": "2 % (resto de casos)"
+    }
+   ],
+   "ayuda": "Art. 85.1: 1,1 % si los valores catastrales se revisaron por valoración colectiva y entraron en vigor entre 2016 y 2026 (el año y los diez anteriores); 2 % en los demás casos. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. Lo ves en el recibo del IBI o en la sede del Catastro."
+  },
+  {
+   "id": "dv",
+   "label": "Días del año que el piso está vacío aunque lo alquiles (0 a 364)",
+   "default_from": "params.alquiler_irpf_2026.supuestos_vacia.dias_vacio",
+   "min": 0,
+   "step": 1,
+   "ayuda": "Si lo alquilas todo el año, 0. Los días sin inquilino tributan por imputación y sus gastos no se deducen."
+  },
+  {
+   "id": "renta",
+   "label": "Renta mensual que cobrarías (€ al mes, sin IVA)",
+   "default_from": "params.alquiler_irpf_2026.supuestos.renta",
+   "min": 0,
+   "step": 50
+  },
+  {
+   "id": "gastos",
+   "label": "Gastos deducibles al año, con la amortización (€: IBI, comunidad, seguro, intereses, reparaciones y 3 % de la construcción)",
+   "default_from": "params.alquiler_irpf_2026.supuestos_renovar.gastos",
+   "min": 0,
+   "step": 100,
+   "ayuda": "La amortización es el 3 % del mayor entre lo que pagaste y el valor catastral, sin contar el suelo. Se deducen por los días alquilados."
+  },
+  {
+   "id": "contrato",
+   "label": "Reducción del rendimiento neto que te corresponde",
+   "type": "select",
+   "options": [
+    {
+     "v": "50",
+     "t": "50 % (caso general)"
+    },
+    {
+     "v": "60",
+     "t": "60 % (contrato anterior al 26/5/2023 o vivienda rehabilitada)"
+    },
+    {
+     "v": "70",
+     "t": "70 % (primera vez en zona tensionada con inquilino de 18 a 35 años, o alquiler social)"
+    },
+    {
+     "v": "90",
+     "t": "90 % (nuevo contrato en zona tensionada con renta rebajada más del 5 %)"
+    }
+   ],
+   "ayuda": "Art. 23.2 de la Ley del IRPF en la redacción de la Ley 12/2023 y disposición transitoria 38.ª. Si cumples varios supuestos se aplica el mayor."
+  },
+  {
+   "id": "fam",
+   "label": "¿El inquilino es tu cónyuge o un familiar hasta el tercer grado (incluidos afines)?",
+   "type": "select",
+   "options": [
+    {
+     "v": "no",
+     "t": "No"
+    },
+    {
+     "v": "si",
+     "t": "Sí"
+    }
+   ],
+   "ayuda": "Hijos, padres, hermanos, abuelos, nietos, tíos, sobrinos, bisabuelos y bisnietos, y los parientes por afinidad del mismo grado (art. 24)."
+  },
+  {
+   "id": "tipo",
+   "label": "Tu tipo marginal de IRPF (%)",
+   "default_from": "params.alquiler_irpf_2026.supuestos.tipo",
+   "min": 0,
+   "step": 1,
+   "ayuda": "Es aproximado: si el alquiler te cambia de tramo, la cuota real difiere."
+  }
+ ],
+ "faqs": [
+  [
+   "¿Tributa un piso vacío en el IRPF?",
+   "Sí, si no es tu vivienda habitual: se imputa como renta el 1,1 % del valor catastral (2 % si el catastro no se revisó en los últimos 10 años) por los días vacíos. Con 60.000 € de valor catastral y un tipo del 30 %, son 198 €."
+  ],
+  [
+   "¿Qué diferencia hay entre el 1,1 % y el 2 %?",
+   "El 1,1 % exige que la revisión catastral entrara en vigor entre 2016 y 2026; si fue entre 2012 y 2015, en 2026 es el 2 %, porque la ampliación desde 2012 (DA 55.ª) solo rige para 2023. Con 60.000 €: 660 € o 1.200 €."
+  ],
+  [
+   "¿Si alquilo el piso, dejo de pagar por la imputación?",
+   "Por los días alquilados sí: tributas por el rendimiento neto. Los días sin inquilino siguen imputándose y sus gastos no se deducen. Con 60 días vacíos, el ejemplo imputa unos 108 €."
+  ],
+  [
+   "¿Pagan menos impuestos los pisos alquilados a un familiar?",
+   "No: con un cónyuge o pariente hasta el tercer grado el rendimiento no puede ser inferior a la imputación. Con 650 € al mes en el ejemplo tributas lo mismo que vacío (198 €); con 800 €, 390 €."
+  ],
+  [
+   "¿Qué pasó con el Real Decreto-ley 26/2026?",
+   "Estuvo en vigor del 1 al 2 de octubre de 2026 y el Congreso lo derogó (BOE-A-2026-20526). Sus cambios en el art. 23.2, la DT 38.ª, la DA 55.ª y los arts. 24 y 85 no se aplican: se usan la Ley 12/2023 y la redacción anterior."
+  ]
+ ],
+ "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultado el 2/10/2026: art. 85 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015), art. 24 en su redacción original, art. 23.1 y 23.2 en la redacción de la Ley 12/2023 (BOE-A-2023-12203) y disposición transitoria 38.ª. La última versión del consolidado de los arts. 23, 24 y 85 es la del Real Decreto-ley 26/2026 (BOE-A-2026-20266), derogado por la Resolución del Congreso de 2/10/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526), que deja sin efecto esas modificaciones: se usa la versión anterior. Agencia Tributaria, Manual práctico de Renta 2025: imputación de rentas inmobiliarias, arrendamiento a parientes y amortización. Los importes del ejemplo y el tipo marginal son supuestos editables, no datos oficiales."
+}

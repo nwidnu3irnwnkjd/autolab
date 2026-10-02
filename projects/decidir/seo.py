@@ -338,7 +338,7 @@ def write_feed(dist, site, guides, notes, baro=None, baro_mod=None, hubs=(), ext
                   f"""<summary type="text">{x(e["summary"])}</summary></entry>\n""" for e in E)
     xml = (f'<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es-ES">\n'
            f'<id>{base}/</id><title>{x(FEED_TITLE)}</title><subtitle>Notas con datos oficiales, guías y el Barómetro mensual de {x(site["name"])}. Cada entrada lleva su fecha real.</subtitle>\n'
-           f'<link rel="self" type="application/atom+xml" href="{base}{FEED_PATH}"/><link rel="alternate" type="text/html" href="{base}/"/>\n'
+           f'<link rel="self" type="application/atom+xml" href="{base}{FEED_PATH}"/><link rel="alternate" type="text/html" href="{base}/"/><link rel="hub" href="https://pubsubhubbub.appspot.com/"/>\n'
            f'<updated>{_atom_dt(max(e["updated"] for e in E))}</updated><author><name>{AUTHOR}</name><uri>{base}/como-funciona/</uri></author>\n'
            f'<rights>Textos © {x(site["name"])}; cifras del Barómetro CC BY 4.0</rights>\n{ent}</feed>\n')
     open(os.path.join(dist, FEED_PATH.strip("/")), "w").write(xml)

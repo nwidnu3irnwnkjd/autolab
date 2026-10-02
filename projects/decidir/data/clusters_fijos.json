@@ -525,6 +525,11 @@
     "retencion-irpf-nomina-subir-o-no",
     "comparar-ofertas-de-trabajo-neto-real"
   ],
+  "vivienda-vacia-o-alquilarla-irpf": [
+    "irpf-alquilar-vivienda-rendimiento-neto",
+    "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf",
+    "gastos-alquiler-quien-paga"
+  ],
   "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf": [
     "irpf-alquilar-vivienda-rendimiento-neto",
     "actualizacion-renta-alquiler-irav-ipc",
@@ -534,5 +539,10 @@
     "paga-extra-navidad-cuanto-cobro-neto",
     "finiquito-baja-voluntaria-vacaciones-preaviso",
     "retencion-irpf-nomina-subir-o-no"
+  ],
+  "jubilarse-en-2026-o-en-2027-edad-y-pension": [
+    "jubilacion-anticipada-o-demorada",
+    "jubilacion-activa-o-dejar-de-trabajar",
+    "plan-pensiones-o-fondo-indexado"
   ]
 }

@@ -460,3 +460,4 @@ main:focus{outline:none}
 .plan-go{max-width:100%;text-align:center;line-height:1.25}
 .plan-t{flex:1 1 200px}
 .plan-one+.plan-one{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.emb-cita{margin-top:.75rem}
