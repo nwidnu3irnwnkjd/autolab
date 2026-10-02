@@ -25,19 +25,19 @@
   "subrogar-hipoteca-merece-la-pena"
  ],
  "autonomo-estimacion-directa-o-modulos": [
-  "autonomo-o-asalariado",
   "autonomo-o-sociedad-limitada",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "autonomo-o-asalariado",
+  "fondo-de-emergencia-cuantos-meses-necesito"
  ],
  "autonomo-o-asalariado": [
   "autonomo-o-sociedad-limitada",
   "comparar-ofertas-de-trabajo-neto-real",
-  "plan-pensiones-o-fondo-indexado"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "autonomo-o-sociedad-limitada": [
   "autonomo-o-asalariado",
   "capitalizar-paro-o-cobrarlo",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "bici-electrica-o-transporte-publico": [
   "tren-avion-o-coche",
@@ -53,6 +53,11 @@
   "caldera-reparar-o-cambiar",
   "luz-fija-o-indexada",
   "cambiar-ventanas-aislamiento-merece-la-pena"
+ ],
+ "cambiar-de-operadora-compensa-permanencia": [
+  "fibra-y-movil-juntos-o-por-separado",
+  "suscripciones-cuanto-gasto-al-ano",
+  "movil-reacondicionado-o-nuevo"
  ],
  "cambiar-electrodomestico-antiguo-merece-la-pena": [
   "reparar-o-comprar-electrodomestico",
@@ -155,14 +160,14 @@
   "jubilacion-anticipada-o-demorada"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
-  "portatil-o-movil-comprar-renting-o-financiar",
+  "cambiar-de-operadora-compensa-permanencia",
   "movil-reacondicionado-o-nuevo",
   "suscripciones-cuanto-gasto-al-ano"
  ],
  "fondo-de-emergencia-cuantos-meses-necesito": [
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
-  "navidad-cuanto-gastar-sin-endeudarte"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "gasolinera-low-cost-compensa-desviarse": [
   "diesel-gasolina-hibrido-electrico",
@@ -188,6 +193,11 @@
   "tren-avion-o-coche",
   "contado-o-financiar",
   "equipaje-y-asiento-avion-coste-real"
+ ],
+ "impresora-tinta-o-laser-coste-por-pagina": [
+  "teletrabajo-o-oficina-coste-real",
+  "suscripciones-cuanto-gasto-al-ano",
+  "reparar-o-comprar-electrodomestico"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
   "declaracion-conjunta-o-individual",
@@ -256,7 +266,7 @@
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "comprar-o-alquilar-herramienta",
+  "impresora-tinta-o-laser-coste-por-pagina",
   "contado-o-financiar"
  ],
  "rescate-plan-pensiones-capital-o-renta": [
@@ -302,11 +312,11 @@
  "suscripciones-cuanto-gasto-al-ano": [
   "fibra-y-movil-juntos-o-por-separado",
   "gimnasio-o-entrenar-en-casa",
-  "marca-blanca-o-marca-ahorro-anual"
+  "cambiar-de-operadora-compensa-permanencia"
  ],
  "teletrabajo-o-oficina-coste-real": [
   "excedencia-o-reduccion-jornada",
-  "bici-electrica-o-transporte-publico",
+  "impresora-tinta-o-laser-coste-por-pagina",
   "cocinar-en-casa-o-comer-fuera"
  ],
  "tren-avion-o-coche": [

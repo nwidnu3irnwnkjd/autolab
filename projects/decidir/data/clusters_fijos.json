@@ -2,7 +2,7 @@
  "autonomo-o-asalariado": [
   "autonomo-o-sociedad-limitada",
   "comparar-ofertas-de-trabajo-neto-real",
-  "plan-pensiones-o-fondo-indexado"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "cuanto-ahorrar-para-comprar-casa": [
   "alquilar-o-comprar",
@@ -36,7 +36,7 @@
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "comprar-o-alquilar-herramienta",
+  "impresora-tinta-o-laser-coste-por-pagina",
   "contado-o-financiar"
  ],
  "comprar-coche-o-renting": [
@@ -118,11 +118,11 @@
  ],
  "teletrabajo-o-oficina-coste-real": [
   "excedencia-o-reduccion-jornada",
-  "bici-electrica-o-transporte-publico",
+  "impresora-tinta-o-laser-coste-por-pagina",
   "cocinar-en-casa-o-comer-fuera"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
-  "portatil-o-movil-comprar-renting-o-financiar",
+  "cambiar-de-operadora-compensa-permanencia",
   "movil-reacondicionado-o-nuevo",
   "suscripciones-cuanto-gasto-al-ano"
  ],
@@ -219,7 +219,7 @@
  "autonomo-o-sociedad-limitada": [
   "autonomo-o-asalariado",
   "capitalizar-paro-o-cobrarlo",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -234,7 +234,7 @@
  "suscripciones-cuanto-gasto-al-ano": [
   "fibra-y-movil-juntos-o-por-separado",
   "gimnasio-o-entrenar-en-casa",
-  "marca-blanca-o-marca-ahorro-anual"
+  "cambiar-de-operadora-compensa-permanencia"
  ],
  "movil-reacondicionado-o-nuevo": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -289,7 +289,7 @@
  "fondo-de-emergencia-cuantos-meses-necesito": [
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
-  "navidad-cuanto-gastar-sin-endeudarte"
+  "autonomo-estimacion-directa-o-modulos"
  ],
  "venta-vivienda-plusvalia-irpf-exencion": [
   "reformar-o-mudarse",
@@ -315,5 +315,20 @@
   "coche-nuevo-o-seminuevo",
   "comprar-coche-o-renting",
   "seguro-todo-riesgo-o-terceros"
+ ],
+ "autonomo-estimacion-directa-o-modulos": [
+  "autonomo-o-sociedad-limitada",
+  "autonomo-o-asalariado",
+  "fondo-de-emergencia-cuantos-meses-necesito"
+ ],
+ "cambiar-de-operadora-compensa-permanencia": [
+  "fibra-y-movil-juntos-o-por-separado",
+  "suscripciones-cuanto-gasto-al-ano",
+  "movil-reacondicionado-o-nuevo"
+ ],
+ "impresora-tinta-o-laser-coste-por-pagina": [
+  "teletrabajo-o-oficina-coste-real",
+  "suscripciones-cuanto-gasto-al-ano",
+  "reparar-o-comprar-electrodomestico"
  ]
 }

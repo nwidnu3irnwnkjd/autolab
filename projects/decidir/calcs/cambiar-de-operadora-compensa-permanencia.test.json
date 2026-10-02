@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "act": 70,
+    "nueva": 45,
+    "promoM": 6,
+    "promo": 30,
+    "perm": 8,
+    "penal": 100,
+    "alta": 50,
+    "horiz": 24
+   },
+   "expect": {
+    "costeQuedarse": 1680,
+    "costeCambiar": 1140,
+    "costeEsperar": 1240,
+    "ahorroCambiar": 540,
+    "ahorroEsperar": 440,
+    "mesEq": 4,
+    "penalMax": 640,
+    "penalMaxEsperar": 200,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 70,
+    "nueva": 68,
+    "promoM": 0,
+    "promo": 68,
+    "perm": 8,
+    "penal": 100,
+    "alta": 50,
+    "horiz": 24
+   },
+   "expect": {
+    "costeQuedarse": 1680,
+    "costeCambiar": 1782,
+    "costeEsperar": 1698,
+    "ahorroCambiar": -102,
+    "ahorroEsperar": -18,
+    "mesEq": 75,
+    "penalMax": -2,
+    "penalMaxEsperar": 16,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 70,
+    "nueva": 45,
+    "promoM": 6,
+    "promo": 30,
+    "perm": 8,
+    "penal": 300,
+    "alta": 50,
+    "horiz": 12
+   },
+   "expect": {
+    "costeQuedarse": 840,
+    "costeCambiar": 800,
+    "costeEsperar": 730,
+    "ahorroCambiar": 40,
+    "ahorroEsperar": 110,
+    "mesEq": 11,
+    "penalMax": 340,
+    "penalMaxEsperar": 230,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 70,
+    "nueva": 45,
+    "promoM": 6,
+    "promo": 30,
+    "perm": 8,
+    "penal": 100,
+    "alta": 50,
+    "horiz": 6
+   },
+   "expect": {
+    "costeQuedarse": 420,
+    "costeCambiar": 330,
+    "costeEsperar": 420,
+    "ahorroCambiar": 90,
+    "ahorroEsperar": 0,
+    "mesEq": 4,
+    "penalMax": 190,
+    "penalMaxEsperar": 190,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 70,
+    "nueva": 45,
+    "promoM": 6,
+    "promo": 30,
+    "perm": 0,
+    "penal": 100,
+    "alta": 50,
+    "horiz": 24
+   },
+   "expect": {
+    "costeQuedarse": 1680,
+    "costeCambiar": 1040,
+    "costeEsperar": 1040,
+    "ahorroCambiar": 640,
+    "ahorroEsperar": 640,
+    "mesEq": 2,
+    "penalMax": 640,
+    "penalMaxEsperar": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "act": 70,
+    "nueva": 75,
+    "promoM": 3,
+    "promo": 60,
+    "perm": 8,
+    "penal": 100,
+    "alta": 50,
+    "horiz": 24
+   },
+   "expect": {
+    "costeQuedarse": 1680,
+    "costeCambiar": 1905,
+    "costeEsperar": 1765,
+    "ahorroCambiar": -225,
+    "ahorroEsperar": -85,
+    "mesEq": -1,
+    "penalMax": -125,
+    "penalMaxEsperar": -40,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}

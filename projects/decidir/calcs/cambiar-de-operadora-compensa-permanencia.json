@@ -1,0 +1,90 @@
+{
+  "slug": "cambiar-de-operadora-compensa-permanencia",
+  "title": "¿Compensa cambiar de operadora con permanencia?",
+  "description": "Calcula si compensa cambiar de operadora pagando la penalización por permanencia: ahorro neto, mes de equilibrio y si es mejor esperar a que acabe.",
+  "h1": "¿Compensa cambiar de operadora aunque tengas permanencia?",
+  "lead": "Cambiar de operadora compensa aun pagando la penalización si el ahorro de cuotas en tu horizonte supera la penalización más el coste de alta, y a veces es mejor esperar a que acabe la permanencia. Con los ejemplos de la página (cuota actual de 70 €, nueva de 45 € tras 6 meses de promoción a 30 €, 8 meses de permanencia, 100 € de penalización, 50 € de alta y 24 meses), cambiar ya ahorra 540 € y se recupera lo pagado en el mes 4, frente a 440 € si esperas; con una penalización de más de 200 € ya sale mejor esperar. Las promociones expiran: pon tus datos y mira la cuota completa.",
+  "veredicto": "Compensa cambiar de operadora aun pagando penalización cuando el ahorro de cuotas en tu horizonte (con la promoción y luego la cuota completa) supera la penalización más el alta; si la penalización es mayor que lo que ahorras de más frente a esperar, compensa esperar a que acabe la permanencia, y si la cuota completa nueva no es menor que la actual, compensa quedarte. La penalización y las condiciones de la promoción están en tu contrato.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "act",
+      "label": "Cuota actual (€ al mes; 70 € es un ejemplo, no una tarifa)",
+      "default": 70,
+      "min": 1,
+      "step": 5
+    },
+    {
+      "id": "nueva",
+      "label": "Cuota completa de la nueva oferta (€ al mes, la que pagarás cuando acabe la promoción; 45 € es un ejemplo)",
+      "default": 45,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "promoM",
+      "label": "Meses de promoción (0 si no hay; 6 es un ejemplo)",
+      "default": 6,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "promo",
+      "label": "Cuota durante la promoción (€ al mes; 30 € es un ejemplo)",
+      "default": 30,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "perm",
+      "label": "Meses de permanencia que te quedan (0 si no hay; 8 es un ejemplo)",
+      "default": 8,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "penal",
+      "label": "Penalización por irte antes (€; consulta tu contrato, 100 € es un ejemplo)",
+      "default": 100,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "alta",
+      "label": "Coste de alta o instalación de la nueva oferta (€; 50 € es un ejemplo)",
+      "default": 50,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "horiz",
+      "label": "Horizonte (meses que te quedarías con la nueva operadora; 24 es un ejemplo)",
+      "default": 24,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa cambiar de operadora si tengo que pagar penalización?",
+      "Compensa si el ahorro de cuotas en tu horizonte supera la penalización más el alta. Con los ejemplos de la página, cambiar ya ahorra 540 € en 24 meses y recuperas lo pagado en el mes 4; con una cuota completa nueva de 68 € frente a 70 €, cambiar cuesta 102 € más y no compensa. Con tus datos saldrá otra cifra."
+    ],
+    [
+      "¿Es mejor cambiar ya o esperar a que acabe la permanencia?",
+      "Depende de la penalización: la calculadora da la máxima con la que cambiar ya sigue ganando a esperar. Con los ejemplos son 200 €: con 100 € cambiar ya ahorra 540 € frente a 440 € de esperar, pero con 300 € de penalización y 12 meses de horizonte sale mejor esperar (110 € de ahorro frente a 40 €)."
+    ],
+    [
+      "¿Qué pasa cuando acaba la promoción?",
+      "La cuota pasa a la completa y el ahorro puede desaparecer. Con una promoción de 3 meses a 60 € y una cuota completa de 75 € frente a 70 € actuales, cambiar cuesta 225 € más en 24 meses. Por eso hay que mirar la cuota completa y no solo la promocional: las promociones expiran."
+    ],
+    [
+      "¿Cuánto es la penalización por permanencia?",
+      "Eso lo dice tu contrato, no esta calculadora: consulta tu contrato o pide la cifra a tu operadora y escríbela. El 100 € de la página es un ejemplo editable. Esta página no da cifras legales de penalizaciones ni de portabilidad; para tus derechos como usuario puedes consultar a la CNMC."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye diferencias de servicio, cobertura, velocidad o datos, subidas de precio posteriores, descuentos por llevar varios servicios ni periodos sin servicio durante el cambio. Supone que tu cuota actual no cambia y que todos los importes son los que indicas."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste de quedarte = meses del horizonte x cuota actual; coste de cambiar ya = penalización + alta + cuotas nuevas (cuota de promoción durante los meses de promoción y cuota completa después); coste de esperar = cuota actual durante la permanencia + alta + cuotas nuevas desde entonces. Sin permanencia, la penalización no se aplica. Mes de equilibrio: primer mes desde el que cambiar ya acumula un ahorro mayor o igual que 0 y se mantiene (calculado hasta 120 meses). La penalización y las condiciones de la promoción están en tu contrato; esta página no cita cifras legales de portabilidad ni de penalizaciones, y para tus derechos como usuario de telecomunicaciones puedes consultar a la <a href=\"https://www.cnmc.es/\">CNMC</a>. Todos los importes de la página son ejemplos declarados y editables, no tarifas de ninguna operadora. Relacionada: <a href=\"/decidir/fibra-y-movil-juntos-o-por-separado/\">fibra y móvil juntos o por separado</a>. Información orientativa, no asesoramiento."
+}

@@ -86,7 +86,7 @@ HUBS = {
                  "Hoy la gasolina 95 cuesta {{gasolina}} €/l y el diésel {{diesel}} €/l de media ({{fecha_carburantes_es}}; fuente: MITECO)."),
         "groups": [
             ("¿Necesitas coche?", ["coche-propio-o-carsharing-o-vtc", "bici-electrica-o-transporte-publico", "tren-avion-o-coche", "equipaje-y-asiento-avion-coste-real"]),
-            ("Si vas a tener coche", ["coche-nuevo-o-seminuevo", "diesel-gasolina-hibrido-electrico", "comprar-coche-o-renting", "seguro-todo-riesgo-o-terceros"]),
+            ("Si vas a tener coche", ["coche-nuevo-o-seminuevo", "diesel-gasolina-hibrido-electrico", "coche-segunda-mano-particular-o-concesionario", "comprar-coche-o-renting", "seguro-todo-riesgo-o-terceros", "gasolinera-low-cost-compensa-desviarse"]),
         ],
         "steps": {
             "coche-propio-o-carsharing-o-vtc": {
@@ -116,9 +116,17 @@ HUBS = {
                 "datos": "{{baro}} Precios de hoy: gasolina 95 a {{gasolina}} €/l y diésel a {{diesel}} €/l (MITECO).",
                 "fecha": ("fecha_carburantes", "Carburantes"),
             },
+            "coche-segunda-mano-particular-o-concesionario": {
+                "name": "Segunda mano: particular o concesionario",
+                "text": "El particular suele ser más barato, pero sin garantía ni revisión. La calculadora pone precio a ese riesgo y te dice cuánto más puedes pagar al concesionario antes de que deje de compensar.",
+            },
             "comprar-coche-o-renting": {
                 "name": "Comprar o renting",
                 "text": "Compara el coste real de comprar (préstamo, seguro, mantenimiento y lo que recuperas al venderlo) con la cuota del renting, que lo incluye casi todo. La calculadora da la cuota de renting de equilibrio.",
+            },
+            "gasolinera-low-cost-compensa-desviarse": {
+                "name": "Repostar: gasolinera low cost",
+                "text": "Ahorrar unos céntimos por litro no compensa si el desvío te cuesta más en combustible. La calculadora te dice cuántos kilómetros de desvío puedes hacer antes de perder el ahorro.",
             },
             "seguro-todo-riesgo-o-terceros": {
                 "name": "Seguro: todo riesgo o terceros",
@@ -286,12 +294,20 @@ HUBS = {
                  "luego dónde guardar lo que ahorras y, por último, las decisiones de familia, trabajo y estudios que mueven más dinero al año. "
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
-            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
-            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
+            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
+            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
             ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
+            "cambiar-de-operadora-compensa-permanencia": {
+                "name": "Cambiar de operadora y permanencia",
+                "text": "Cambiar compensa si el ahorro mensual de la nueva oferta, multiplicado por los meses que te quedan, supera la penalización por permanencia. La calculadora te da los meses de equilibrio con tus datos.",
+            },
+            "impresora-tinta-o-laser-coste-por-pagina": {
+                "name": "Impresora: tinta o láser",
+                "text": "La que sale más barata es la de menor coste total según las páginas que imprimes al año: precio de la impresora más consumibles. La calculadora compara el coste por página de cada tecnología con tu volumen.",
+            },
             "mudanza-empresa-o-furgoneta": {
                 "name": "Mudanza: empresa o furgoneta",
                 "text": "Con poco volumen y ayuda propia suele ganar la furgoneta; con mucho volumen, escaleras o distancia, la empresa. La calculadora compara el coste real según tus metros cúbicos, la distancia y la ayuda con la que cuentas.",

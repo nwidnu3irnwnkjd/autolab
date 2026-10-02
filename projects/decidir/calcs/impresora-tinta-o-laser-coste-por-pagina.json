@@ -1,0 +1,90 @@
+{
+  "slug": "impresora-tinta-o-laser-coste-por-pagina",
+  "title": "Impresora de tinta o láser: coste por página y a N años",
+  "description": "Compara el coste por página y total a N años de una impresora de tinta con cartuchos, de depósito recargable o láser, y las páginas al mes de equilibrio.",
+  "h1": "Impresora de tinta, de depósito o láser: coste por página y a N años",
+  "lead": "La impresora más barata depende de cuántas páginas imprimes al mes: con los ejemplos de la página (tinta con cartuchos de 60 € y 0,07 € por página, depósito de 200 € y 0,01 €, láser de 150 € y 0,03 €, a 3 años), la de cartuchos es la más barata hasta unas 62 páginas al mes, entre unas 62 y 69 gana la láser y a partir de unas 69 gana la de depósito. Con 40 páginas al mes salen 161 €, 214 € y 193 €. Pon tus precios y tus páginas para ver tu punto de equilibrio.",
+  "veredicto": "Compensa la impresora con equipo más caro pero consumible más barato por página cuando imprimes más páginas al mes que el punto de equilibrio entre ambas (diferencia de precio de las impresoras dividida entre el ahorro por página y los meses del horizonte); por debajo de ese número compensa la de equipo más barato. Papel, electricidad, tinta que se seca y averías no están incluidos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "pagMes",
+      "label": "Páginas que imprimes al mes (40 es un ejemplo)",
+      "default": 40,
+      "min": 1,
+      "step": 5
+    },
+    {
+      "id": "anios",
+      "label": "Horizonte (años que usarás la impresora; 3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "pT",
+      "label": "Tinta con cartuchos: precio de la impresora (€; 60 € es un ejemplo, no un precio de mercado)",
+      "default": 60,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "cT",
+      "label": "Tinta con cartuchos: coste de consumible por página (€; precio del cartucho dividido entre las páginas que rinde; 0,07 es un ejemplo)",
+      "default": 0.07,
+      "min": 0,
+      "step": 0.005
+    },
+    {
+      "id": "pD",
+      "label": "Tinta de depósito: precio de la impresora (€; 200 € es un ejemplo)",
+      "default": 200,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "cD",
+      "label": "Tinta de depósito: coste de consumible por página (€; precio de las botellas dividido entre las páginas que rinden; 0,01 es un ejemplo)",
+      "default": 0.01,
+      "min": 0,
+      "step": 0.005
+    },
+    {
+      "id": "pL",
+      "label": "Láser: precio de la impresora (€; 150 € es un ejemplo)",
+      "default": 150,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "cL",
+      "label": "Láser: coste de consumible por página (€; precio del tóner dividido entre las páginas que rinde; 0,03 es un ejemplo)",
+      "default": 0.03,
+      "min": 0,
+      "step": 0.005
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo compensa una impresora de tinta con cartuchos frente a una láser?",
+      "Cuando imprimes pocas páginas al mes. Con los ejemplos de la página y 3 años, los cartuchos y el láser cuestan lo mismo con unas 62 páginas al mes: con 40 páginas salen 161 € y 193 €, y con 65 páginas la láser sale algo más barata. Con tus precios saldrá otro umbral."
+    ],
+    [
+      "¿Cuándo compensa una impresora de depósito recargable?",
+      "Cuando imprimes muchas páginas, porque su impresora cuesta más pero cada página sale más barata. Con los ejemplos, el depósito gana a partir de unas 69 páginas al mes a 3 años (con 150 páginas al mes: 254 € frente a 438 € de cartuchos y 312 € de láser); con 40 páginas al mes es la más cara de las tres."
+    ],
+    [
+      "¿Cómo calculo el coste de consumible por página?",
+      "Divide el precio del cartucho, botella o tóner entre las páginas que indica que rinde, y haz la media de tu mezcla de blanco y negro y color: si imprimes más color, usa un coste más alto. El rendimiento declarado se mide en condiciones de laboratorio y el real puede ser menor. Los valores de la página son ejemplos editables."
+    ],
+    [
+      "¿Qué pasa si imprimo muy poco?",
+      "Con pocas páginas pesa más el precio de la impresora que el consumible, así que suele compensar la de equipo más barato. Con 1 página al mes y los ejemplos, los cartuchos salen más baratos a 3 años (unos 63 € frente a 151 € de láser). La calculadora no incluye que la tinta se seque si no se usa ni que el cabezal se obstruya, que es un coste extra posible de la tinta."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye papel, electricidad, tinta o cabezales que se estropean por no usarlos, averías, escáner o funciones adicionales, ni el valor de reventa. Supone un uso constante todos los meses y que el rendimiento de los consumibles es el que indicas."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste total = precio de la impresora + páginas totales (páginas al mes x 12 x años) x coste de consumible por página; coste por página = coste total / páginas totales. Punto de equilibrio entre dos tipos = diferencia de precio de las impresoras / (12 x años x diferencia de coste de consumible por página), solo cuando el equipo más caro tiene el consumible más barato. Todos los precios, rendimientos y páginas son ejemplos declarados y editables, no precios de mercado ni de ninguna marca. Más ahorros en el <a href=\"/ahorro/\">apartado de ahorro</a>. Información orientativa, no asesoramiento."
+}

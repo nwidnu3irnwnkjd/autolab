@@ -1,0 +1,187 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "pagMes": 40,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 200,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 1440,
+    "totTinta": 160.8,
+    "totDeposito": 214.4,
+    "totLaser": 193.2,
+    "pagTinta": 0.1117,
+    "pagDeposito": 0.1489,
+    "pagLaser": 0.1342,
+    "eqTintaLaser": 62.5,
+    "eqTintaDeposito": 64.8148,
+    "eqDepositoLaser": 69.4444,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 150,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 200,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 5400,
+    "totTinta": 438.0,
+    "totDeposito": 254.0,
+    "totLaser": 312.0,
+    "pagTinta": 0.0811,
+    "pagDeposito": 0.047,
+    "pagLaser": 0.0578,
+    "eqTintaLaser": 62.5,
+    "eqTintaDeposito": 64.8148,
+    "eqDepositoLaser": 69.4444,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 100,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 400,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 3600,
+    "totTinta": 312.0,
+    "totDeposito": 436.0,
+    "totLaser": 258.0,
+    "pagTinta": 0.0867,
+    "pagDeposito": 0.1211,
+    "pagLaser": 0.0717,
+    "eqTintaLaser": 62.5,
+    "eqTintaDeposito": 157.4074,
+    "eqDepositoLaser": 347.2222,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 0,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 200,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 0,
+    "totTinta": 60.0,
+    "totDeposito": 200.0,
+    "totLaser": 150.0,
+    "pagTinta": -1,
+    "pagDeposito": -1,
+    "pagLaser": -1,
+    "eqTintaLaser": 62.5,
+    "eqTintaDeposito": 64.8148,
+    "eqDepositoLaser": 69.4444,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 40,
+    "anios": 3,
+    "pT": 150,
+    "cT": 0.03,
+    "pD": 200,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 1440,
+    "totTinta": 193.2,
+    "totDeposito": 214.4,
+    "totLaser": 193.2,
+    "pagTinta": 0.1342,
+    "pagDeposito": 0.1489,
+    "pagLaser": 0.1342,
+    "eqTintaLaser": -1,
+    "eqTintaDeposito": 69.4444,
+    "eqDepositoLaser": 69.4444,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 40,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 60,
+    "cD": 0.07,
+    "pL": 300,
+    "cL": 0.2
+   },
+   "expect": {
+    "paginas": 1440,
+    "totTinta": 160.8,
+    "totDeposito": 160.8,
+    "totLaser": 588.0,
+    "pagTinta": 0.1117,
+    "pagDeposito": 0.1117,
+    "pagLaser": 0.4083,
+    "eqTintaLaser": -1,
+    "eqTintaDeposito": -1,
+    "eqDepositoLaser": -1,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pagMes": 65,
+    "anios": 3,
+    "pT": 60,
+    "cT": 0.07,
+    "pD": 200,
+    "cD": 0.01,
+    "pL": 150,
+    "cL": 0.03
+   },
+   "expect": {
+    "paginas": 2340,
+    "totTinta": 223.8,
+    "totDeposito": 223.4,
+    "totLaser": 220.2,
+    "pagTinta": 0.0956,
+    "pagDeposito": 0.0955,
+    "pagLaser": 0.0941,
+    "eqTintaLaser": 62.5,
+    "eqTintaDeposito": 64.8148,
+    "eqDepositoLaser": 69.4444,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}
