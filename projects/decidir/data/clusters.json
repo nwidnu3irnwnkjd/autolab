@@ -19,9 +19,9 @@
   "declaracion-conjunta-o-individual"
  ],
  "bici-electrica-o-transporte-publico": [
+  "coche-propio-o-carsharing-o-vtc",
   "diesel-gasolina-hibrido-electrico",
-  "luz-fija-o-indexada",
-  "coche-nuevo-o-seminuevo"
+  "luz-fija-o-indexada"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
@@ -42,6 +42,11 @@
   "comprar-coche-o-renting",
   "seguro-todo-riesgo-o-terceros",
   "contado-o-financiar"
+ ],
+ "coche-propio-o-carsharing-o-vtc": [
+  "comprar-coche-o-renting",
+  "diesel-gasolina-hibrido-electrico",
+  "bici-electrica-o-transporte-publico"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
@@ -82,6 +87,11 @@
   "cambiar-ventanas-aislamiento-merece-la-pena",
   "cambiar-electrodomestico-antiguo-merece-la-pena"
  ],
+ "placas-solares-merece-la-pena": [
+  "cambiar-electrodomestico-antiguo-merece-la-pena",
+  "cambiar-ventanas-aislamiento-merece-la-pena",
+  "calefaccion-gas-aerotermia-electrica"
+ ],
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
   "amortizar-o-invertir",
@@ -105,6 +115,11 @@
  "tren-avion-o-coche": [
   "bici-electrica-o-transporte-publico",
   "coche-nuevo-o-seminuevo",
-  "comprar-coche-o-renting"
+  "coche-propio-o-carsharing-o-vtc"
+ ],
+ "universidad-publica-o-privada-o-master": [
+  "contado-o-financiar",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "plan-pensiones-o-fondo-indexado"
  ]
 }

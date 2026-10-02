@@ -1,0 +1,179 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "viajes": 30,
+    "kmviaje": 15,
+    "fijos": 1200,
+    "deprec": 1500,
+    "kmcoche": 0.17,
+    "cskm": 0.45,
+    "cscuota": 5,
+    "vtckm": 1.2
+   },
+   "expect": {
+    "km": 5400.0,
+    "propio": 3618.0,
+    "carsharing": 2490.0,
+    "vtc": 6480.0,
+    "propioKm": 0.67,
+    "carsharingKm": 0.46,
+    "vtcKm": 1.2,
+    "barato": 1,
+    "tipoCS": 2,
+    "kmCS": 9428.57,
+    "tipoVTC": 2,
+    "kmVTC": 2621.36,
+    "viajesCS": 52.38,
+    "viajesVTC": 14.56
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "viajes": 70,
+    "kmviaje": 20,
+    "fijos": 1200,
+    "deprec": 1500,
+    "kmcoche": 0.17,
+    "cskm": 0.45,
+    "cscuota": 5,
+    "vtckm": 1.2
+   },
+   "expect": {
+    "km": 16800.0,
+    "propio": 5556.0,
+    "carsharing": 7620.0,
+    "vtc": 20160.0,
+    "propioKm": 0.33,
+    "carsharingKm": 0.45,
+    "vtcKm": 1.2,
+    "barato": 0,
+    "tipoCS": 2,
+    "kmCS": 9428.57,
+    "tipoVTC": 2,
+    "kmVTC": 2621.36,
+    "viajesCS": 39.29,
+    "viajesVTC": 10.92
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "viajes": 0,
+    "kmviaje": 15,
+    "fijos": 1200,
+    "deprec": 1500,
+    "kmcoche": 0.17,
+    "cskm": 0.45,
+    "cscuota": 5,
+    "vtckm": 1.2
+   },
+   "expect": {
+    "km": 0.0,
+    "propio": 2700.0,
+    "carsharing": 60.0,
+    "vtc": 0.0,
+    "propioKm": 0,
+    "carsharingKm": 0,
+    "vtcKm": 0,
+    "barato": 2,
+    "tipoCS": 2,
+    "kmCS": 9428.57,
+    "tipoVTC": 2,
+    "kmVTC": 2621.36,
+    "viajesCS": 52.38,
+    "viajesVTC": 14.56
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "viajes": 30,
+    "kmviaje": 15,
+    "fijos": 0,
+    "deprec": 0,
+    "kmcoche": 0.17,
+    "cskm": 0.45,
+    "cscuota": 5,
+    "vtckm": 1.2
+   },
+   "expect": {
+    "km": 5400.0,
+    "propio": 918.0,
+    "carsharing": 2490.0,
+    "vtc": 6480.0,
+    "propioKm": 0.17,
+    "carsharingKm": 0.46,
+    "vtcKm": 1.2,
+    "barato": 0,
+    "tipoCS": 0,
+    "kmCS": 0.0,
+    "tipoVTC": 0,
+    "kmVTC": 0.0,
+    "viajesCS": 0.0,
+    "viajesVTC": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "viajes": 30,
+    "kmviaje": 15,
+    "fijos": 1200,
+    "deprec": 1500,
+    "kmcoche": 0.17,
+    "cskm": 0.1,
+    "cscuota": 0,
+    "vtckm": 1.2
+   },
+   "expect": {
+    "km": 5400.0,
+    "propio": 3618.0,
+    "carsharing": 540.0,
+    "vtc": 6480.0,
+    "propioKm": 0.67,
+    "carsharingKm": 0.1,
+    "vtcKm": 1.2,
+    "barato": 1,
+    "tipoCS": 1,
+    "kmCS": 0.0,
+    "tipoVTC": 2,
+    "kmVTC": 2621.36,
+    "viajesCS": 0.0,
+    "viajesVTC": 14.56
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "viajes": 30,
+    "kmviaje": 15,
+    "fijos": 1200,
+    "deprec": 1500,
+    "kmcoche": 0.1,
+    "cskm": 0.45,
+    "cscuota": 5,
+    "vtckm": 0.1
+   },
+   "expect": {
+    "km": 5400.0,
+    "propio": 3240.0,
+    "carsharing": 2490.0,
+    "vtc": 540.0,
+    "propioKm": 0.6,
+    "carsharingKm": 0.46,
+    "vtcKm": 0.1,
+    "barato": 2,
+    "tipoCS": 2,
+    "kmCS": 7542.86,
+    "tipoVTC": 1,
+    "kmVTC": 0.0,
+    "viajesCS": 41.9,
+    "viajesVTC": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

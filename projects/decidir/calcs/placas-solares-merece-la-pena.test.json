@@ -1,0 +1,305 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 6000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 40,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorro1": 720.0,
+    "comp1": 256.32,
+    "anosAmort": 8.33,
+    "anosAmortDto": 9.74,
+    "ahorroNeto": 11995.89,
+    "tir": 11.14,
+    "anosSubida": 7.55,
+    "anosAutoMenos": 8.33,
+    "costeMaxVida": 17995.89
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 6000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 0,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorro1": 573.36,
+    "comp1": 573.36,
+    "anosAmort": 10.72,
+    "anosAmortDto": 13.2,
+    "ahorroNeto": 7505.95,
+    "tir": 7.75,
+    "anosSubida": 10.72,
+    "anosAutoMenos": 10.72,
+    "costeMaxVida": 13505.95
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 6000,
+    "subv": 0,
+    "consumo": 2000,
+    "pctAuto": 100,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorro1": 360.0,
+    "comp1": 0.0,
+    "anosAmort": 16.67,
+    "anosAmortDto": 23.45,
+    "ahorroNeto": 3000.0,
+    "tir": 3.4,
+    "anosSubida": 13.71,
+    "anosAutoMenos": 16.67,
+    "costeMaxVida": 9000.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 0,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 40,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 0,
+    "ahorro1": 720.0,
+    "comp1": 256.32,
+    "anosAmort": 0.0,
+    "anosAmortDto": 0.0,
+    "ahorroNeto": 17995.89,
+    "tir": -999.0,
+    "anosSubida": 0.0,
+    "anosAutoMenos": 0.0,
+    "costeMaxVida": 17995.89
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 3000,
+    "subv": 5000,
+    "consumo": 4000,
+    "pctAuto": 40,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 0.0,
+    "ahorro1": 720.0,
+    "comp1": 256.32,
+    "anosAmort": 0.0,
+    "anosAmortDto": 0.0,
+    "ahorroNeto": 17995.89,
+    "tir": -999.0,
+    "anosSubida": 0.0,
+    "anosAutoMenos": 0.0,
+    "costeMaxVida": 22995.89
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 6000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 40,
+    "prod": 0,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorro1": 0.0,
+    "comp1": 0.0,
+    "anosAmort": -1.0,
+    "anosAmortDto": -1.0,
+    "ahorroNeto": -6000.0,
+    "tir": -999.0,
+    "anosSubida": -1.0,
+    "anosAutoMenos": -1.0,
+    "costeMaxVida": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 6,
+    "coste": 12000,
+    "subv": 1500,
+    "consumo": 3000,
+    "pctAuto": 30,
+    "prod": 1280,
+    "precio": 0.25,
+    "comp": 0.1
+   },
+   "expect": {
+    "neto": 10500,
+    "ahorro1": 750.0,
+    "comp1": 174.0,
+    "anosAmort": 14.0,
+    "anosAmortDto": 18.43,
+    "ahorroNeto": 8250.0,
+    "tir": 5.07,
+    "anosSubida": 11.86,
+    "anosAutoMenos": 14.0,
+    "costeMaxVida": 20250.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 9000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 30,
+    "prod": 1165,
+    "precio": 0.13,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 9000,
+    "ahorro1": 472.16,
+    "comp1": 290.42,
+    "anosAmort": 19.98,
+    "anosAmortDto": -1.0,
+    "ahorroNeto": 2122.12,
+    "tir": 1.74,
+    "anosSubida": 17.86,
+    "anosAutoMenos": 20.87,
+    "costeMaxVida": 11122.12
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 12000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 30,
+    "prod": 1165,
+    "precio": 0.13,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 12000,
+    "ahorro1": 472.16,
+    "comp1": 290.42,
+    "anosAmort": -1.0,
+    "anosAmortDto": -1.0,
+    "ahorroNeto": -877.88,
+    "tir": -0.59,
+    "anosSubida": 23.22,
+    "anosAutoMenos": -1.0,
+    "costeMaxVida": 11122.12
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 8,
+    "coste": 9000,
+    "subv": 0,
+    "consumo": 3000,
+    "pctAuto": 20,
+    "prod": 1667,
+    "precio": 0.2,
+    "comp": 0.1
+   },
+   "expect": {
+    "neto": 9000,
+    "ahorro1": 600.0,
+    "comp1": 66.56,
+    "anosAmort": 15.0,
+    "anosAmortDto": 20.23,
+    "ahorroNeto": 6000.0,
+    "tir": 4.39,
+    "anosSubida": 12.57,
+    "anosAutoMenos": 15.0,
+    "costeMaxVida": 15000.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 5,
+    "coste": 5000,
+    "subv": 6000,
+    "consumo": 2000,
+    "pctAuto": 80,
+    "prod": 1600,
+    "precio": 0.18,
+    "comp": 0.06
+   },
+   "expect": {
+    "neto": 0.0,
+    "ahorro1": 360.0,
+    "comp1": 0.0,
+    "anosAmort": 0.0,
+    "anosAmortDto": 0.0,
+    "ahorroNeto": 9000.0,
+    "tir": -999.0,
+    "anosSubida": 0.0,
+    "anosAutoMenos": 0.0,
+    "costeMaxVida": 15000.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 4,
+    "coste": 6000,
+    "subv": 0,
+    "consumo": 4000,
+    "pctAuto": 0,
+    "prod": 1610,
+    "precio": 0.18,
+    "comp": 0.07
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorro1": 573.36,
+    "comp1": 573.36,
+    "anosAmort": 10.72,
+    "anosAmortDto": 13.2,
+    "ahorroNeto": 7505.95,
+    "tir": 7.75,
+    "anosSubida": 10.72,
+    "anosAutoMenos": 10.72,
+    "costeMaxVida": 13505.95
+   },
+   "tol": 1
+  }
+ ]
+}

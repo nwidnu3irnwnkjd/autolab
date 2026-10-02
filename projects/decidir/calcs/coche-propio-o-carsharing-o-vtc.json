@@ -1,0 +1,95 @@
+{
+  "slug": "coche-propio-o-carsharing-o-vtc",
+  "title": "Coche propio, carsharing o taxi/VTC: ¿cuál sale más barato?",
+  "description": "Compara coche propio, carsharing y taxi/VTC con tus km y tus tarifas: coste anual, por km y los km al año a partir de los que compensa tener coche.",
+  "h1": "Coche propio, carsharing o taxi/VTC según tus km: ¿cuál sale más barato?",
+  "lead": "El coche propio sale más barato que el carsharing y el taxi/VTC solo a partir de ciertos km al año, que dependen de lo que te cueste tenerlo parado (seguro, impuesto, ITV, parking y depreciación): con los ejemplos declarados de la página (2.700 € al año de costes fijos y depreciación, 0,17 € por km, carsharing a 0,45 € por km y 5 € al mes, taxi/VTC a 1,20 € por km) tener coche compensa frente al carsharing desde unos 9.429 km al año y frente al taxi/VTC desde unos 2.621. Con 5.400 km al año sale más barato el carsharing, y con 16.800 el coche propio. Pon tus costes y tus viajes y la calculadora te da tu punto de equilibrio.",
+  "veredicto": "Tener coche propio compensa frente al carsharing y al taxi/VTC solo si haces más km al año que el punto de equilibrio, que sale de dividir lo que cuesta tenerlo (fijos y depreciación, menos la cuota del carsharing) entre lo que ahorra cada km; por debajo de ese kilometraje sale más barato el carsharing o el taxi/VTC. Los costes y tarifas los pones tú, y el cálculo no incluye tiempo, disponibilidad, aparcamiento ni zonas de bajas emisiones.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "viajes",
+      "label": "Viajes al mes que harías en coche (nº; 30 es un ejemplo)",
+      "default": 30,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "kmviaje",
+      "label": "Km medios por viaje (km, ida y vuelta incluidos; 15 km es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "fijos",
+      "label": "Coste fijo anual del coche propio (€/año: seguro + impuesto + ITV + parking o garaje; 1.200 € es un ejemplo, no una cotización)",
+      "default": 1200,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "deprec",
+      "label": "Depreciación anual del coche propio (€/año: lo que pierde de valor cada año; 1.500 € es un ejemplo; 0 si ya no pierde valor para ti)",
+      "default": 1500,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "kmcoche",
+      "label": "Coste variable del coche propio por km (€/km; por defecto, gasolina 95 de hoy x 6,5 l/100 km + 0,05 €/km de mantenimiento)",
+      "default": 0.17,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.gasolina95",
+      "default_factor": 0.065,
+      "default_add": 0.05,
+      "default_round": 3,
+      "default_fallback": "params.coche_propio_carsharing_vtc.kmcoche_respaldo"
+    },
+    {
+      "id": "cskm",
+      "label": "Tarifa del carsharing por km (€/km, todo incluido; si tu tarifa es por minuto, conviértela con tu velocidad media; 0,45 € es un ejemplo, no una tarifa de ninguna empresa)",
+      "default": 0.45,
+      "min": 0,
+      "step": 0.01
+    },
+    {
+      "id": "cscuota",
+      "label": "Cuota mensual del carsharing (€/mes; 5 € es un ejemplo; 0 si no hay cuota)",
+      "default": 5,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "vtckm",
+      "label": "Precio medio del taxi/VTC por km (€/km, con bajada de bandera repartida; 1,20 € es un ejemplo, no una tarifa oficial)",
+      "default": 1.2,
+      "min": 0,
+      "step": 0.05
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuántos km al año hacen falta para que compense tener coche propio?",
+      "Los que superen el punto de equilibrio con tus datos. Para el carsharing sale de dividir tus costes fijos y de depreciación, menos 12 cuotas del carsharing, entre lo que ahorra cada km frente a su tarifa (tarifa por km menos coste variable de tu coche); para el taxi/VTC, igual pero sin cuota. Con los ejemplos de la página son unos 9.429 km al año frente al carsharing y unos 2.621 frente al taxi/VTC. Con tus datos pueden salir otros: si el carsharing por km es igual o más barato que tu coste variable, el coche propio no gana a ningún kilometraje."
+    ],
+    [
+      "¿Sale más barato el carsharing o el taxi/VTC?",
+      "Depende de tus tarifas y de tus km. El carsharing tiene una cuota mensual y un coste por km menor, mientras que el taxi/VTC no tiene cuota y su coste por km es mayor. Con los ejemplos de la página, el carsharing sale más barato desde que haces unos pocos viajes y el taxi/VTC solo si no haces ninguno (con 0 km no paga nada, y el carsharing paga su cuota). Con tus tarifas puede cambiar: ambas son entradas tuyas, no datos de ninguna empresa."
+    ],
+    [
+      "¿Qué costes fijos tiene un coche propio aunque no lo uses?",
+      "Seguro, impuesto de circulación, ITV, parking o garaje y la depreciación (lo que el coche pierde de valor cada año). Son los que cuentan en el coste fijo anual y la depreciación de la calculadora. Los importes de la página son ejemplos editables, no cifras oficiales: el seguro depende de tu perfil, el impuesto de tu ayuntamiento y la depreciación del coche."
+    ],
+    [
+      "¿Por qué cuenta la depreciación si no la pago cada año?",
+      "Porque es dinero que pierdes: si el coche vale menos cada año, o si lo vendes por menos de lo que costó, esa diferencia es un coste real del coche propio. Si no la quieres contar, ponla en 0, pero entonces el coche propio sale más barato de lo que es y el equilibrio con el carsharing baja. El coste de oportunidad del dinero invertido en el coche no está incluido."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye tu tiempo, la disponibilidad del carsharing o del VTC en tu zona y a tu hora, el aparcamiento, las restricciones de las zonas de bajas emisiones ni los viajes que solo puedes hacer con coche propio (carga, niños, viajes largos). Supone también que las tres opciones cubren los mismos km al año. Los precios son entradas tuyas, no tarifas de ninguna empresa."
+    ]
+  ],
+  "sources": "Modelo propio: km al año = viajes al mes x 12 x km por viaje; coche propio = costes fijos + depreciación + km x coste variable por km; carsharing = 12 x cuota mensual + km x tarifa por km; taxi/VTC = km x precio por km; punto de equilibrio del coche propio frente a otra opción = (fijos y depreciación del coche − cuota anual de la otra) / (coste por km de la otra − coste variable por km del coche propio), cuando el coche propio tiene menor coste por km. Coste variable por km por defecto: precio medio de la gasolina 95 (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 6,5 l/100 km + 0,05 €/km de mantenimiento; si no hay dato vivo, 0,169 €/km (gasolina 1,833 €/l, consulta 2/10/2026). El consumo de 6,5 l/100 km y el mantenimiento de 0,05 €/km son supuestos de ejemplo, no oficiales. Costes fijos, depreciación, tarifas de carsharing y precios de taxi/VTC son ejemplos declarados, no cotizaciones ni tarifas de ninguna empresa: los pones tú. Información orientativa, no asesoramiento."
+}

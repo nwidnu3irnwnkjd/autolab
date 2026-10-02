@@ -1,0 +1,105 @@
+{
+  "slug": "placas-solares-merece-la-pena",
+  "title": "Placas solares: ¿en cuántos años se amortizan?",
+  "description": "Calcula en cuántos años se amortizan unas placas solares de autoconsumo con tu consumo, tu producción, los excedentes y el precio de la luz.",
+  "h1": "Placas solares (autoconsumo): ¿en cuántos años se amortizan?",
+  "lead": "Las placas solares de autoconsumo compensan si la instalación cuesta menos que lo que ahorra en su vida útil, y se amortizan antes cuanta más energía consumes directamente en lugar de verterla, siempre que el kWh que evitas comprar valga más que el que te compensan por los excedentes. Con un ejemplo editable (4 kWp, 6.000 €, 4.000 kWh de consumo, 0,18 €/kWh evitado y 0,07 €/kWh de compensación sin impuestos) salen unos 8 años con un 40 % de autoconsumo y unos 10 con un 10 %. Calcula el plazo con tus datos.",
+  "veredicto": "Las placas se amortizan antes cuanto más autoconsumes y más valga el kWh que evitas comprar frente al que te compensan por los excedentes; compensan en su vida útil si la instalación cuesta menos que el ahorro acumulado, que aquí se estima con tus hipótesis (no es una previsión ni un presupuesto).",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "potencia",
+      "label": "Potencia instalada (kWp, hasta 100)",
+      "default": 4,
+      "min": 0.1,
+      "step": 0.1,
+      "default_from": "params.placas_2026.supuestos.potencia_kwp"
+    },
+    {
+      "id": "coste",
+      "label": "Coste de la instalación llave en mano, con legalización (€; ejemplo editable, pide presupuestos)",
+      "default": 6000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.placas_2026.supuestos.coste_eur"
+    },
+    {
+      "id": "subv",
+      "label": "Subvenciones o deducciones que vas a cobrar (€; 0 si no tienes confirmadas)",
+      "default": 0,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.placas_2026.supuestos.subvencion_eur"
+    },
+    {
+      "id": "consumo",
+      "label": "Consumo anual de la vivienda (kWh; suma de tus facturas)",
+      "default": 4000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.placas_2026.supuestos.consumo_kwh"
+    },
+    {
+      "id": "pctAuto",
+      "label": "% de lo que producen las placas que consumes directamente (hipótesis; sin batería es bajo)",
+      "default": 40,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.placas_2026.supuestos.pct_autoconsumo",
+      "max": 100
+    },
+    {
+      "id": "prod",
+      "label": "Producción anual por kWp (kWh/kWp; 1.610 es PVGIS para Madrid; mira la tabla de zonas)",
+      "default": 1610,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.placas_2026.supuestos.produccion_kwh_kwp"
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la electricidad que evitas comprar (€/kWh con impuestos; por defecto, PVPC de Red Eléctrica con impuestos). En Canarias, Ceuta y Melilla no hay IVA del 21 % (IGIC/IPSI): escribe tu precio con tus impuestos",
+      "default": 0.1812,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_factor": 1.2718,
+      "default_round": 4,
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.placas_2026.precio_evitado_ref_eur_kwh.valor"
+    },
+    {
+      "id": "comp",
+      "label": "Compensación por cada kWh vertido (€/kWh sin impuestos, como figura en tu contrato o en el PVPC; ejemplo editable)",
+      "default": 0.07,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.placas_2026.supuestos.compensacion_eur_kwh"
+    }
+  ],
+  "faqs": [
+    [
+      "¿En cuántos años se amortizan las placas solares?",
+      "Depende de cuánto cuesten, cuánto produzcan y cuánta energía consumas directamente. Con el ejemplo de la calculadora (4 kWp, 6.000 €, 1.610 kWh/kWp, 4.000 kWh de consumo, 0,18 €/kWh evitado y 0,07 €/kWh de compensación sin impuestos) salen unos 8 años con un 40 % de autoconsumo, unos 10 con un 10 % y unos 11 si todo se vierte a la red. Con 12.000 €, 1.165 kWh/kWp, 30 % de autoconsumo y 0,13 €/kWh no se amortiza en los 25 años considerados. Son ejemplos editables, no cifras oficiales: pon tu presupuesto y tu consumo."
+    ],
+    [
+      "¿Cuánto pagan por los excedentes de las placas?",
+      "No hay un precio oficial fijo. Con la compensación simplificada del Real Decreto 244/2019 (art. 14), si tu suministro es PVPC los excedentes se valoran cada hora al precio del mercado menos el coste de los desvíos; con una comercializadora libre, al precio que pactes en el contrato. La compensación se descuenta de la factura antes de impuestos, así que también ahorras impuesto eléctrico e IVA sobre ella (art. 14.6 del RD y art. 94.9 de la Ley 38/1992): por eso el precio de compensación del formulario es sin impuestos. Además, nunca puede superar el valor de la energía que consumes de la red en el periodo de facturación (máximo un mes): lo que sobra se pierde. La calculadora aplica ese tope sobre el año completo y con el precio con impuestos, así que el real es más estricto: con PVPC esa energía se valora solo con su coste, sin peajes ni cargos, y el periodo es mensual; en el ejemplo, el tope sería alrededor de un tercio menor (203 € anuales en la calculadora, unos 128 € con el cálculo mensual y sin peajes ni cargos). Solo existe hasta 100 kW y exige contrato de compensación. El 0,07 €/kWh del formulario es un ejemplo editable."
+    ],
+    [
+      "¿Qué porcentaje de autoconsumo es realista?",
+      "Es la hipótesis que más cambia el resultado y la calculadora no la fija por ti: depende de cuándo estás en casa y de lo que consumes a mediodía, porque las placas producen de día. Sin batería, parte de la producción se vierte a la red y se paga a precio de excedente. En el ejemplo de la calculadora, pasar de un 10 % a un 40 % de autoconsumo acorta la amortización de unos 10 a unos 8 años, siempre que el kWh que evitas comprar valga bastante más que el que te compensan. Mira tu curva de consumo (la tienes en la web de tu distribuidora) y prueba varios valores."
+    ],
+    [
+      "¿Hay ayudas o deducciones por instalar placas solares?",
+      "Hay una deducción estatal en el IRPF (disposición adicional 62.ª de la Ley del IRPF, añadida por el RDL 7/2026): 10 % de lo pagado, con una base máxima de 5.000 € al año (hasta 500 €); 20 % (hasta 1.000 €) si eres propietario en un edificio de viviendas donde se instala para la comunidad. Exige instalación terminada en 2026, sin pagos en efectivo, descontando subvenciones y con certificado de instalación eléctrica. Es incompatible con la deducción por eficiencia energética (DA 50.ª) para la misma obra, que puede ser mayor (40 %, base de 7.500 €) si un certificado energético acredita la mejora. Es IRPF estatal: no se aplica en País Vasco ni Navarra. Si terminas la instalación en 2027, hoy no hay deducción. Las bonificaciones de IBI e ICIO dependen de cada ayuntamiento y las ayudas autonómicas de tu comunidad: la calculadora no las modela. Si tienes confirmado un importe, escríbelo en subvenciones y se resta del coste."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye batería ni «batería virtual» (oferta comercial no regulada), autoconsumo colectivo, mantenimiento ni el cambio de inversor, el ICIO como coste (hasta el 4 % del presupuesto, art. 102.3 del texto refundido de Haciendas Locales, si no está incluido en el presupuesto), las bonificaciones municipales de IBI e ICIO, la deducción del IRPF salvo que metas su importe como subvención, cambios regulatorios, sombras en el tejado ni cambios de potencia contratada. Supone una degradación del 0,5 % anual, 25 años de vida y euros constantes (el precio de la luz no sube en el caso base; la nota del resultado calcula también el caso de un 3 % anual). Con esos supuestos el plazo es una estimación, no una garantía."
+    ]
+  ],
+  "sources": "Modelo propio: cada año se calcula la producción (kWp x kWh/kWp, con degradación compuesta de 0,5 % anual), el autoconsumo directo (porcentaje que escribes, limitado a tu consumo anual) y los excedentes (el resto). Ahorro = kWh autoconsumidos x precio de la electricidad con impuestos que escribes. Compensación = kWh vertidos x precio de compensación sin impuestos que escribes, con tope en el valor de la energía que sigues comprando a la red sin impuestos (el precio con impuestos dividido por 1,0511269632 x 1,21); la compensación se descuenta antes de impuestos, así que ahorras también IEE e IVA sobre ella (x 1,0511269632 x 1,21; RD 244/2019 art. 14.6.ii-iv; Ley 38/1992 art. 94.9, energía compensada exenta del IEE). Con PVPC el tope real usa la energía de la red valorada solo a su coste (sin peajes ni cargos, art. 14.3.ii.a) y mensual: más estricto que el modelado; estimación para el ejemplo con el perfil mensual de PVGIS para Madrid (verificación del 2/10/2026): tope anual 203 €, mensual 174 €, mensual con coste de la energía sin peajes ni cargos (unos 0,09 €/kWh) 128 €. Flujo anual = ahorro + compensación; amortización = año (interpolado) en que el acumulado iguala el coste menos las subvenciones; con descuento del 3 % anual; TIR por bisección; vida útil de 25 años; sin mantenimiento. Compensación de excedentes: Real Decreto 244/2019, arts. 4.2 y 14.3 (https://www.boe.es/buscar/act.php?id=BOE-A-2019-5089; consultado el 2/10/2026): con PVPC, Pmh menos CDSVh; con comercializadora libre, precio pactado; el valor de los excedentes no puede superar el de la energía consumida de la red en el periodo de facturación (máximo un mes); hasta 100 kW. Producción por kWp: PVGIS 5.3 de la Comisión Europea (https://re.jrc.ec.europa.eu/pvg_tools/es/), base PVGIS-SARAH3, silicio cristalino, inclinación de 30 grados, orientación sur, pérdidas del sistema del 14 %, consultado el 2/10/2026 para un punto de cada capital; las cifras por zona son orientativas porque el tejado real cambia la producción. Precio de la electricidad evitada: PVPC medio de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) multiplicado por 1,2718 (impuesto eléctrico de 5,11269632 % de la Ley 38/1992, art. 99, y IVA del 21 %, ambos vigentes en octubre de 2026): por defecto el mes en curso cuando hay 7 días de datos, si no la media de los últimos 12 meses (0,1425 x 1,2718 = 0,1812 €/kWh); un solo mes puede ser más caro o barato que la media. Deducción del IRPF por autoconsumo: disposición adicional 62.ª de la Ley 35/2006 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), añadida por el RDL 7/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6544); solo se cita, no se modela; base máxima de 5.000 € (deducción de hasta 500 €, 1.000 € en comunidad), alternativa DA 50.ª.2 (40 %, base 7.500 €), IRPF estatal (no aplica en País Vasco ni Navarra), sin deducción para instalaciones terminadas en 2027. ICIO: Texto refundido de la Ley de Haciendas Locales, art. 102.3 (hasta el 4 %). Canarias, Ceuta y Melilla tributan por IGIC/IPSI, no IVA: el x 1,2718 es de península y Baleares. Guías y ayudas de autoconsumo del IDAE: https://www.idae.es/ (no se toma de ahí ninguna cifra). Supuestos no oficiales y editables: coste de 6.000 € para 4 kWp, consumo de 4.000 kWh, 40 % de autoconsumo, compensación de 0,07 €/kWh, degradación, vida útil y descuento; no hay cifra oficial verificada de coste de instalación ni de precio de compensación. Bonificaciones de IBI e ICIO (potestativas de cada ayuntamiento) y deducciones autonómicas: no verificadas, fuera del cálculo. Consultado el 2/10/2026. Información orientativa, no asesoramiento ni presupuesto."
+}

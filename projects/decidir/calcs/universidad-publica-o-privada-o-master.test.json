@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "anos": 4,
+    "matpub": 1000,
+    "matpriv": 8000,
+    "vida": 0,
+    "ayuda": 0,
+    "dsal": 2000,
+    "ntrab": 10,
+    "tasa": 0
+   },
+   "expect": {
+    "matPub": 4000,
+    "matPriv": 32000,
+    "extra": 0,
+    "sobrecoste": 28000,
+    "pvSobrecoste": 28000.0,
+    "van": -8000.0,
+    "dsalMin": 2800.0,
+    "anosAmortizar": 14.0,
+    "mejor": 0,
+    "gananciaBruta": 20000
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "anos": 4,
+    "matpub": 1000,
+    "matpriv": 8000,
+    "vida": 0,
+    "ayuda": 0,
+    "dsal": 4000,
+    "ntrab": 10,
+    "tasa": 0
+   },
+   "expect": {
+    "matPub": 4000,
+    "matPriv": 32000,
+    "extra": 0,
+    "sobrecoste": 28000,
+    "pvSobrecoste": 28000.0,
+    "van": 12000.0,
+    "dsalMin": 2800.0,
+    "anosAmortizar": 7.0,
+    "mejor": 1,
+    "gananciaBruta": 40000
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "anos": 1,
+    "matpub": 1000,
+    "matpriv": 8000,
+    "vida": 0,
+    "ayuda": 0,
+    "dsal": 0,
+    "ntrab": 10,
+    "tasa": 0
+   },
+   "expect": {
+    "matPub": 1000,
+    "matPriv": 8000,
+    "extra": 0,
+    "sobrecoste": 7000,
+    "pvSobrecoste": 7000.0,
+    "van": -7000.0,
+    "dsalMin": 700.0,
+    "anosAmortizar": -1.0,
+    "mejor": 0,
+    "gananciaBruta": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "anos": 4,
+    "matpub": 1000,
+    "matpriv": 8000,
+    "vida": 0,
+    "ayuda": 0,
+    "dsal": -1500,
+    "ntrab": 10,
+    "tasa": 0
+   },
+   "expect": {
+    "matPub": 4000,
+    "matPriv": 32000,
+    "extra": 0,
+    "sobrecoste": 28000,
+    "pvSobrecoste": 28000.0,
+    "van": -43000.0,
+    "dsalMin": 2800.0,
+    "anosAmortizar": -1.0,
+    "mejor": 0,
+    "gananciaBruta": -15000
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "anos": 4,
+    "matpub": 1000,
+    "matpriv": 1000,
+    "vida": 0,
+    "ayuda": 0,
+    "dsal": 2000,
+    "ntrab": 10,
+    "tasa": 0
+   },
+   "expect": {
+    "matPub": 4000,
+    "matPriv": 4000,
+    "extra": 0,
+    "sobrecoste": 0,
+    "pvSobrecoste": 0.0,
+    "van": 20000.0,
+    "dsalMin": 0.0,
+    "anosAmortizar": 0.0,
+    "mejor": 1,
+    "gananciaBruta": 20000
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "anos": 4,
+    "matpub": 1000,
+    "matpriv": 8000,
+    "vida": 3000,
+    "ayuda": 0,
+    "dsal": 3500,
+    "ntrab": 10,
+    "tasa": 5
+   },
+   "expect": {
+    "matPub": 4000,
+    "matPriv": 32000,
+    "extra": 12000,
+    "sobrecoste": 40000,
+    "pvSobrecoste": 37232.48,
+    "van": -14998.06,
+    "dsalMin": 5860.9,
+    "anosAmortizar": 21.31,
+    "mejor": 0,
+    "gananciaBruta": 35000
+   },
+   "tol": 1
+  }
+ ]
+}

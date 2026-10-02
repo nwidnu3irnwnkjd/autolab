@@ -928,6 +928,56 @@
    "comision_fondo_pct": 0.2
   }
  },
+ "placas_2026": {
+  "fecha": "2026-10-02",
+  "nota": "Supuestos fijos y ejemplos editables; solo la producción por zona (PVGIS) y la norma tienen fuente. Nada de esto es cifra oficial de coste ni de compensación",
+  "fijos": {
+   "vida_util_anos": 25,
+   "degradacion_anual": 0.005,
+   "subida_precio_base": 0,
+   "subida_precio_sensibilidad": 0.03,
+   "descuento": 0.03,
+   "sens_autoconsumo_puntos": 10,
+   "mantenimiento_eur_ano": 0,
+   "nota": "Supuestos del modelo, declarados en la página: euros constantes (sin subida de precio en el caso base), degradación compuesta de 0,5 %/año, 25 años, descuento del 3 % solo para el cálculo con descuento"
+  },
+  "precio_evitado_ref_eur_kwh": {
+   "valor": 0.1812,
+   "derivacion": "PVPC medio de los últimos 12 meses (params.luz_2026.pvpc_media_12m = 0,1425 €/kWh, REData) x 1,0511269632 (impuesto eléctrico) x 1,21 (IVA) = 0,1812; con el dato vivo (live.luz_pvpc.extra.media_mes, con 7 días del mes) el formulario usa ese mes x 1,2718",
+   "fuente": "Red Eléctrica de España, REData; Ley 38/1992 art. 99 y Ley 37/1992",
+   "consulta": "consultado el 2/10/2026"
+  },
+  "produccion_kwh_kwp": {
+   "metodo": "PVGIS 5.3 (Comisión Europea, JRC), base de radiación PVGIS-SARAH3 (2005-2023), instalación fija de silicio cristalino, inclinación 30°, orientación sur (azimut 0), pérdidas del sistema 14 %, horizonte calculado",
+   "url": "https://re.jrc.ec.europa.eu/pvg_tools/es/",
+   "api": "https://re.jrc.ec.europa.eu/api/v5_3/PVcalc",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A- (dato de PVGIS para un punto de la capital; el tejado real depende de orientación, inclinación y sombras)",
+   "kwh_kwp_ano": {"Sevilla": 1667, "Valencia": 1622, "Madrid": 1610, "Palma de Mallorca": 1592, "Las Palmas de Gran Canaria": 1581, "Barcelona": 1558, "Santiago de Compostela": 1280, "Bilbao": 1165}
+  },
+  "supuestos": {
+   "nota": "Ejemplos editables, no datos oficiales",
+   "potencia_kwp": 4,
+   "coste_eur": 6000,
+   "subvencion_eur": 0,
+   "consumo_kwh": 4000,
+   "pct_autoconsumo": 40,
+   "produccion_kwh_kwp": 1610,
+   "compensacion_eur_kwh": 0.07
+  },
+  "norma": {
+   "compensacion": "RD 244/2019, art. 14.3 (compensación simplificada): con PVPC los excedentes se valoran a Pmh - CDSVh; con comercializadora libre, al precio pactado; en ningún caso superan el valor de la energía consumida de la red en el periodo de facturación (máximo un mes); requisitos del art. 4.2.a: potencia hasta 100 kW",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2019-5089",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A"
+  },
+  "deduccion_irpf": {
+   "texto": "DA 62.ª LIRPF: 10 % de hasta 5.000 € (20 % en edificio residencial) para instalaciones de autoconsumo terminadas en 2026 y pagadas del 1/1 al 31/12/2026; requiere certificado de instalación eléctrica; incompatible con la DA 50.ª para la misma instalación. Solo se cita como consulta de requisitos: no se modela",
+   "fuente": "journal/fiscal-fuentes.md §2.8 (RDL 7/2026, art. 36.3, convalidado)",
+   "confianza": "A"
+  },
+  "no_verificado": "IBI e ICIO (bonificaciones municipales potestativas, TRLRHL arts. 74.5 y 103.2); deducciones autonómicas; precio real de compensación; coste de instalación (no hay cifra oficial de IDAE/UNEF verificada)"
+ },
  "luz_2026": {
   "fecha": "2026-10-02",
   "potencia_regulada_eur_kw_ano": {
@@ -1572,6 +1622,27 @@
   "mantenimiento_eur_km": 0.02,
   "reventa_eur": 0,
   "nota": "Supuestos de ejemplo, no oficiales y editables. bici_carga_eur_km = 0,012 kWh/km x 0,22 €/kWh (respaldo si no hay dato vivo de luz_pvpc). Mantenimiento (cadena, neumáticos, frenos) 0,02 €/km. Reventa 0 € por prudencia. Abonos de transporte y ayudas dependen de la ciudad: los pone el usuario.",
+  "consulta": "2026-10-02"
+ },
+ "coche_propio_carsharing_vtc": {
+  "consumo_l_100km": 6.5,
+  "mantenimiento_eur_km": 0.05,
+  "kmcoche_respaldo": 0.169,
+  "nota": "Supuestos de ejemplo, ESTIMACIONES PROPIAS (no oficiales ni tarifas de empresas) y editables. kmcoche_respaldo = gasolina_eur_l (1,833) x 6,5 / 100 + 0,05 €/km de mantenimiento, si no hay dato vivo de gasolina95. Coste fijo, depreciación, tarifa de carsharing y precio de taxi/VTC los pone el usuario (ejemplos: 1.200 €/año de seguro, impuesto, ITV y parking; 1.500 €/año de depreciación; 0,45 €/km y 5 €/mes de carsharing; 1,20 €/km de taxi/VTC).",
+  "consulta": "2026-10-02"
+ },
+ "universidad_publica_privada": {
+  "nota": "Sin cifras oficiales: las matrículas públicas varían por comunidad autónoma, universidad, titulación y créditos (consulta tu universidad); las privadas fijan su precio. Ejemplos del modelo, ESTIMACIONES PROPIAS y editables: grado de 4 años, 1.000 €/año pública y 8.000 €/año privada, 0 € de vida extra y de diferencia de ayudas, 2.000 €/año de diferencia de salario como hipótesis, 10 años de trabajo, tasa de descuento 0 %. El retorno depende del sector, la nota y el mercado: no es una promesa.",
+  "fuentes": [
+   {
+    "nombre": "Becas y ayudas al estudio del Ministerio de Educación, FP y Deportes",
+    "url": "https://www.becaseducacion.gob.es/"
+   },
+   {
+    "nombre": "Ministerio de Ciencia, Innovación y Universidades",
+    "url": "https://www.ciencia.gob.es/"
+   }
+  ],
   "consulta": "2026-10-02"
  }
 }

@@ -1,0 +1,6 @@
+# Re-verificación · placas-solares-merece-la-pena · 2026-10-02 (Sonnet)
+VEREDICTO: APTA PARA PUBLICAR.
+A) C1 aplicado (JS flujos y oráculo: comp = min(e·comp, tope)·(1+IEE)(1+IVA); label «sin impuestos»; lead/FAQ/sources). C2 aplicado (TCUh sin peajes/cargos, mensual; 203/174/128 € en sources, 203 y 128 en HTML/FAQ 2). C3 aplicado (HTML y FAQ 4: base 5.000, 500/1.000 €, DA 50.ª 40 %/7.500, PV y Navarra, 2027 nada, requisitos). C4 aplicado (label precio, HTML supuestos, nota JS, sources). C5 aplicado (colectivo, batería virtual, ICIO ≤ 4 %, condición en lead). Casos nuevos: el 3.º del informe (4 kWp, 0 %) es idéntico al caso 2 (duplicado inofensivo, 573,36 € / 10,72 años); no falta ningún caso distinto.
+B) `python3 ops/verif/placas-solares-merece-la-pena.py` → «casos: 612 discrepancias: 0». Base 8,33 años; todo vertido 10,72; 10 % → 9,70; 8.000 € → 11,11; sin amortizar 12.000 €/1.165/30 %/0,13 (−878 €). Tabla HTML y lead/FAQ coinciden.
+C) Sin contradicciones veredicto/resultados (3 escenarios coherentes con ok/warn). Frases legales con fuente. Cifras acordes con params (0,1812 = 0,1425 × 1,2718). Repetición leve (párrafo tras la tabla repite el lead), no corregida por no ser errónea.
+D) build.py OK 42 páginas; check.py decidir: 1251/1251 OK.
