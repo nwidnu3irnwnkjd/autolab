@@ -19,6 +19,11 @@
   "declaracion-conjunta-o-individual",
   "comparar-ofertas-de-trabajo-neto-real"
  ],
+ "autonomo-o-sociedad-limitada": [
+  "autonomo-o-asalariado",
+  "capitalizar-paro-o-cobrarlo",
+  "comparar-ofertas-de-trabajo-neto-real"
+ ],
  "bici-electrica-o-transporte-publico": [
   "tren-avion-o-coche",
   "coche-propio-o-carsharing-o-vtc",
@@ -129,6 +134,11 @@
   "amortizar-plazo-o-cuota",
   "alquilar-o-comprar"
  ],
+ "hotel-o-apartamento-viaje-en-grupo": [
+  "tren-avion-o-coche",
+  "contado-o-financiar",
+  "navidad-cuanto-gastar-sin-endeudarte"
+ ],
  "jubilacion-anticipada-o-demorada": [
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta",
@@ -163,6 +173,11 @@
   "placas-solares-merece-la-pena",
   "diesel-gasolina-hibrido-electrico",
   "luz-fija-o-indexada"
+ ],
+ "reformar-o-mudarse": [
+  "alquilar-o-comprar",
+  "cambiar-ventanas-aislamiento-merece-la-pena",
+  "comprar-o-alquilar-trastero"
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",

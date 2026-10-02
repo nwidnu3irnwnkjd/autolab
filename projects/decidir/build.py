@@ -34,7 +34,6 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical,
                           head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#")
     if og: out = out.replace("/assets/og.png", "/assets/" + og)
-    out = out.replace('<a href="/energia/">Energía</a>', '<a href="/energia/">Energía</a>' + ('<a href="/impuestos/">Impuestos</a>' if "impuestos" in ACTIVE_HUBS else ""), 1)  # TEMPORAL (Estratega, c18): pasar a base.html (petición al Diseñador en requests.md)
     out = minify.html(out)
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)
@@ -83,7 +82,7 @@ def main():
     B = site["base_url"].rstrip("/")
     BARO = barometro.build(DIST, params, B)  # -> dist/barometro/datos.json (antes de render_calc: "Dato del mes")
     for c in calcs: render_calc(c, calcs)
-    cards = "".join(card(c) for c in calcs)
+    cards = ui.home_cards(calcs)  # R18.1/peso: solo destacadas en la home (resto: lazy desde /decidir/)
     B = site["base_url"].rstrip("/")
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."

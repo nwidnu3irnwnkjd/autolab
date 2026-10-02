@@ -1,0 +1,143 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "reforma": 20000,
+    "recup": 50,
+    "valor": 250000,
+    "gastosPct": 10,
+    "dif": 0,
+    "extras": 3000,
+    "mensual": -50,
+    "anios": 10
+   },
+   "expect": {
+    "costeReformar": 10000.0,
+    "fijoMudarse": 28000.0,
+    "costeMudarse": 22000.0,
+    "diferencia": 12000.0,
+    "anioEq": 30.0,
+    "cruce": 1,
+    "reformaMax": 44000.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "reforma": 20000,
+    "recup": 50,
+    "valor": 100000,
+    "gastosPct": 5,
+    "dif": 0,
+    "extras": 1000,
+    "mensual": -150,
+    "anios": 10
+   },
+   "expect": {
+    "costeReformar": 10000.0,
+    "fijoMudarse": 6000.0,
+    "costeMudarse": -12000.0,
+    "diferencia": -22000.0,
+    "anioEq": -1,
+    "cruce": -1,
+    "reformaMax": -24000.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "reforma": 0,
+    "recup": 50,
+    "valor": 250000,
+    "gastosPct": 10,
+    "dif": 0,
+    "extras": 3000,
+    "mensual": -50,
+    "anios": 10
+   },
+   "expect": {
+    "costeReformar": 0.0,
+    "fijoMudarse": 28000.0,
+    "costeMudarse": 22000.0,
+    "diferencia": 22000.0,
+    "anioEq": -1,
+    "cruce": -1,
+    "reformaMax": 44000.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "reforma": 20000,
+    "recup": 50,
+    "valor": 250000,
+    "gastosPct": 10,
+    "dif": 0,
+    "extras": 3000,
+    "mensual": -50,
+    "anios": 1
+   },
+   "expect": {
+    "costeReformar": 10000.0,
+    "fijoMudarse": 28000.0,
+    "costeMudarse": 27400.0,
+    "diferencia": 17400.0,
+    "anioEq": 30.0,
+    "cruce": 1,
+    "reformaMax": 54800.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "reforma": 20000,
+    "recup": 100,
+    "valor": 250000,
+    "gastosPct": 10,
+    "dif": 0,
+    "extras": 3000,
+    "mensual": 0,
+    "anios": 10
+   },
+   "expect": {
+    "costeReformar": 0.0,
+    "fijoMudarse": 28000.0,
+    "costeMudarse": 28000.0,
+    "diferencia": 28000.0,
+    "anioEq": -1,
+    "cruce": -1,
+    "reformaMax": -1,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "reforma": 60000,
+    "recup": 30,
+    "valor": 250000,
+    "gastosPct": 3,
+    "dif": 0,
+    "extras": 500,
+    "mensual": 80,
+    "anios": 10
+   },
+   "expect": {
+    "costeReformar": 42000.0,
+    "fijoMudarse": 8000.0,
+    "costeMudarse": 17600.0,
+    "diferencia": -24400.0,
+    "anioEq": 35.42,
+    "cruce": 0,
+    "reformaMax": 25142.86,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "personas": 6,
+    "noches": 5,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 190,
+    "limpieza": 90,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 2700,
+    "totalApto": 1460,
+    "ppnHotel": 90.0,
+    "ppnApto": 48.67,
+    "diferencia": 1240,
+    "nochesEq": 0.34,
+    "personasEq": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 2,
+    "noches": 5,
+    "habs": 1,
+    "precioHab": 100,
+    "precioApto": 190,
+    "limpieza": 90,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 850,
+    "totalApto": 1180,
+    "ppnHotel": 85.0,
+    "ppnApto": 118.0,
+    "diferencia": -330,
+    "nochesEq": -1,
+    "personasEq": 5.14,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "noches": 1,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 190,
+    "limpieza": 90,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 540,
+    "totalApto": 364,
+    "ppnHotel": 90.0,
+    "ppnApto": 60.67,
+    "diferencia": 176,
+    "nochesEq": 0.34,
+    "personasEq": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 1,
+    "noches": 5,
+    "habs": 1,
+    "precioHab": 110,
+    "precioApto": 190,
+    "limpieza": 90,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 725,
+    "totalApto": 1110,
+    "ppnHotel": 145.0,
+    "ppnApto": 222.0,
+    "diferencia": -385,
+    "nochesEq": -1,
+    "personasEq": 4.67,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "noches": 5,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 190,
+    "limpieza": 0,
+    "comerFuera": 14,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 2070,
+    "totalApto": 1370,
+    "ppnHotel": 69.0,
+    "ppnApto": 45.67,
+    "diferencia": 700,
+    "nochesEq": 0.0,
+    "personasEq": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "noches": 5,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 0,
+    "limpieza": 0,
+    "comerFuera": 35,
+    "cocinar": 0
+   },
+   "expect": {
+    "totalHotel": 2700,
+    "totalApto": 0,
+    "ppnHotel": 90.0,
+    "ppnApto": 0.0,
+    "diferencia": 2700,
+    "nochesEq": 0.0,
+    "personasEq": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "noches": 1,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 330,
+    "limpieza": 240,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 540,
+    "totalApto": 654,
+    "ppnHotel": 90.0,
+    "ppnApto": 109.0,
+    "diferencia": -114,
+    "nochesEq": 1.9,
+    "personasEq": 11.43,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "noches": 5,
+    "habs": 3,
+    "precioHab": 110,
+    "precioApto": 330,
+    "limpieza": 240,
+    "comerFuera": 35,
+    "cocinar": 14
+   },
+   "expect": {
+    "totalHotel": 2700,
+    "totalApto": 2310,
+    "ppnHotel": 90.0,
+    "ppnApto": 77.0,
+    "diferencia": 390,
+    "nochesEq": 1.9,
+    "personasEq": 2.29,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

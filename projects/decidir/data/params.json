@@ -1804,5 +1804,44 @@
    "horas_B": 40,
    "pagas": 14
   }
- }
+ },
+  "autonomo_sl_2026": {
+    "fuente": "Ley 27/2014 del Impuesto sobre Sociedades (texto consolidado, actualización de 02/09/2026), art. 29.1 (tipo general 25 %; tipo del 15 % para entidades de nueva creación con actividad económica en el primer período con base imponible positiva y en el siguiente, salvo grupo, entidad patrimonial y actividad previa de una persona física con más del 50 % de la sociedad; última redacción: Ley 7/2024, vigente desde 22/12/2024) y disposición transitoria 44.ª (añadida por la Ley 7/2024; períodos que se inicien en 2026: cifra de negocios del período anterior < 1 M€, 19 % hasta 50.000 € de base y 21 % el resto; entidades de reducida dimensión del art. 101, 23 %); Ley 35/2006 del IRPF, arts. 17.2.e (retribución de administradores = rendimiento del trabajo), 19.2.a y 19.2.f, 20 (reducción: sin otras rentas distintas de las del trabajo > 6.500 €), 25.1.a (dividendos = capital mobiliario), 49, 56.2, 63, 66 y 76 (base del ahorro y escala; el mínimo personal no absorbido por la base general pasa a la del ahorro), DA 61.ª (solo relación laboral o estatutaria); Ley General de la Seguridad Social, arts. 305.2.b (administrador o socio con control efectivo, en el RETA) y 308.1.a regla 4.ª y 308.1.c reglas 1.ª y 2.ª (rendimiento computable del autónomo societario: rendimientos íntegros por la participación en los fondos propios, con ≥ 33 % del capital o administrador con ≥ 25 %, más los rendimientos de trabajo en la sociedad, con deducción del 3 %; base mínima del grupo de cotización 7); Orden PJC/297/2026, arts. 3 (base mínima grupo 7: 1.424,40 €/mes) y 18 (tabla de bases y tipo RETA); Ley de Sociedades de Capital (RDLeg 1/2010), arts. 4 (capital mínimo de la SL: 1 €, Ley 18/2022), 217 (cargo gratuito salvo estatutos), 274 (reserva legal)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328",
+    "url_irpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+    "url_lgss": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+    "url_orden": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+    "url_lsc": "https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544",
+    "url_manual_aeat_art20": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html",
+    "consolidados": "LIS consolidada a 02/09/2026 (art. 29: última modificación 22/12/2024, Ley 7/2024; DT 44.ª añadida por la misma ley); LGSS consolidada a 31/07/2026 (art. 308: última modificación 1/1/2023); LIRPF consolidada a 30/09/2026 (arts. 66 y 76: Ley 7/2024, 1/1/2025)",
+    "consulta": "consultado el 2/10/2026",
+    "confianza": "A- (el texto legal es literal del BOE; la forma de contar los dividendos en la base de cotización la fija un reglamento que no hemos podido contrastar: ver interpretaciones en journal/verificacion-pendiente.md)",
+    "sociedades": {
+      "general": 25,
+      "nueva_creacion": 15,
+      "micro_tramo": 50000,
+      "micro_tipo_tramo": 19,
+      "micro_tipo_resto": 21,
+      "reducida_dimension": 23,
+      "nota": "Escala de microempresas (cifra de negocios del período anterior < 1 M€) de la DT 44.ª.2 para períodos iniciados en 2026; 17 %/20 % en el art. 29.1 desde 2029 y 20-22 % intermedios en 2027-2028: no modelados"
+    },
+    "societario": {
+      "deduccion_pct": 3,
+      "base_minima_grupo7": 1424.4,
+      "nota": "LGSS 308.1.c regla 2.ª: 3 % (no 7 %) para el administrador con ≥ 25 % o el socio con ≥ 33 %; regla 4.ª del 308.1.a: base mínima = base mínima del grupo 7 (Orden PJC/297/2026, art. 3: 1.424,40 €/mes)"
+    },
+    "irpf_extra": {
+      "otras_rentas_art20": 6500,
+      "nota": "Art. 20 LIRPF: no se aplica la reducción si las rentas distintas de las del trabajo superan 6.500 € (AEAT: suma algebraica de rendimientos netos, incluido el capital mobiliario)"
+    },
+    "capital_minimo_sl": 1,
+    "supuestos": {
+      "nota": "Hipótesis del modelo editables (no son datos oficiales)",
+      "beneficio": 60000,
+      "retribucion": 24000,
+      "pct_dividendos": 50,
+      "costes_sl": 1800,
+      "ccaa": "madrid"
+    }
+  }
 }

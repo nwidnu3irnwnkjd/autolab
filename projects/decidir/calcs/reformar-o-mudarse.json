@@ -1,0 +1,90 @@
+{
+  "slug": "reformar-o-mudarse",
+  "title": "Reformar o mudarse: coste total y años de equilibrio",
+  "description": "Compara reformar tu casa o mudarte: coste neto de cada opción a N años, año de equilibrio y presupuesto máximo con el que reformar compensa.",
+  "h1": "Reformar la casa (baño/cocina) o mudarse: coste total y años de equilibrio",
+  "lead": "Reformar compensa frente a mudarse cuando el presupuesto de la obra, una vez restado el valor que recuperas al vender, queda por debajo del coste de mudarte (gastos de compraventa, diferencia de precio, mudanza y obras de adecuación) más la variación de gastos mensuales de los años que vivas allí; con los ejemplos de la página (reforma de 20.000 €, 50 % recuperado al vender, vivienda de 250.000 €, 10 % de gastos de compraventa, 3.000 € de mudanza y obras, 50 € menos al mes y 10 años) reformar cuesta 10.000 € netos frente a 22.000 € de mudarse, y seguiría compensando hasta un presupuesto de 44.000 €. Pon tus datos para ver tu año de equilibrio.",
+  "veredicto": "Reformar compensa frente a mudarse mientras el coste neto de la reforma (presupuesto menos el valor que recuperas al vender, que es una hipótesis tuya) sea menor que el coste de mudarte más la variación mensual de gastos de los años que vivas; la calculadora da el año de equilibrio y el presupuesto máximo con el que reformar sigue ganando. Impuestos de compraventa, plusvalía, deducciones e hipoteca no están incluidos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "reforma",
+      "label": "Presupuesto de la reforma (€; 20.000 € es un ejemplo, no un precio de mercado)",
+      "default": 20000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "recup",
+      "label": "Valor que recuperas al vender gracias a la reforma (% del presupuesto; 50 % es una hipótesis de ejemplo, consulta una tasación)",
+      "default": 50,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "valor",
+      "label": "Valor de tu vivienda y de la de destino (€; 250.000 € es un ejemplo; base de los gastos de compraventa)",
+      "default": 250000,
+      "min": 1,
+      "step": 5000
+    },
+    {
+      "id": "gastosPct",
+      "label": "Gastos de compraventa totales (% del valor: impuestos, notaría, registro y agencia; 10 % es un ejemplo, consulta los de tu comunidad)",
+      "default": 10,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "dif",
+      "label": "Diferencia de precio de la vivienda de destino (€; positiva si es más cara y no la recuperarías; 0 si es equivalente; 0 es un ejemplo)",
+      "default": 0,
+      "min": -1000000,
+      "step": 1000
+    },
+    {
+      "id": "extras",
+      "label": "Mudanza y obras de adecuación de la nueva vivienda (€; 3.000 € es un ejemplo)",
+      "default": 3000,
+      "min": 0,
+      "step": 500
+    },
+    {
+      "id": "mensual",
+      "label": "Variación de gastos mensuales al mudarte (€ al mes: comunidad, IBI, cuota; negativa si bajan; -50 € es un ejemplo)",
+      "default": -50,
+      "min": -2000,
+      "step": 10
+    },
+    {
+      "id": "anios",
+      "label": "Años que piensas seguir viviendo en la casa (horizonte; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo compensa reformar en vez de mudarse?",
+      "Cuando el coste neto de la reforma (presupuesto menos el valor que recuperas al vender) es menor que el coste de mudarte más la variación mensual de gastos de tus años de horizonte. Con los ejemplos de la página, reformar cuesta 10.000 € netos y mudarse 22.000 € a 10 años, y reformar compensa mientras el presupuesto no pase de 44.000 €. Con tus cifras saldrá otra."
+    ],
+    [
+      "¿Qué es el año de equilibrio?",
+      "Es el número de años en que las dos opciones cuestan lo mismo: mudarse tiene un coste inicial alto pero puede bajar los gastos mensuales (o subirlos). Con los ejemplos sale a los 30 años: mudarse ahorra 600 € al año y no compensa los 18.000 € de diferencia inicial hasta entonces. Si no hay cruce en 40 años, una opción cuesta menos en todo ese plazo."
+    ],
+    [
+      "¿Qué porcentaje de la reforma se recupera al vender?",
+      "No hay una cifra única: depende de la vivienda, la zona y el estado del mercado. Por eso es un dato que pones tú (50 % es solo un ejemplo declarado) y es la hipótesis que más mueve el resultado; consulta una tasación de tu vivienda antes y después de la obra. Con 0 % la reforma cuesta todo su presupuesto."
+    ],
+    [
+      "¿Qué gastos de compraventa debo poner?",
+      "El porcentaje total que te corresponda: impuestos de la compra, notaría, registro y comisión de agencia al vender. La calculadora no modela impuestos por comunidad autónoma: consulta los de tu comunidad y escribe el total. El 10 % de la página es un ejemplo editable, no una cifra oficial."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye impuestos de compraventa por separado, plusvalía municipal, deducciones por reforma o eficiencia energética (dependen de requisitos: consúltalos), hipoteca ni lo no monetizable: barrio, colegio, trayecto o las molestias de la obra. Tampoco descuenta el dinero en el tiempo. Es una estimación con supuestos tuyos, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste neto de reformar = presupuesto x (1 - % recuperado al vender); coste de mudarse = valor x gastos de compraventa % + diferencia de precio + mudanza y obras + 12 x variación mensual x años. Año de equilibrio: años en que ambas opciones cuestan lo mismo, si es menor o igual que 40. Presupuesto máximo: coste de mudarse dividido entre (1 - % recuperado). Sin descuento financiero. Supuestos de ejemplo, no oficiales ni precios de mercado, y editables: reforma de 20.000 €, 50 % recuperado, vivienda de 250.000 €, 10 % de gastos, 3.000 € de mudanza y obras, -50 € al mes y 10 años. Impuestos de compraventa (consulta los de tu comunidad autónoma): Agencia Tributaria <a href=\"https://sede.agenciatributaria.gob.es\" rel=\"noopener\">sede.agenciatributaria.gob.es</a> y Registradores de España <a href=\"https://www.registradores.org\" rel=\"noopener\">www.registradores.org</a>. Deducciones por reforma o eficiencia energética (consulta requisitos vigentes): <a href=\"https://sede.agenciatributaria.gob.es\" rel=\"noopener\">sede.agenciatributaria.gob.es</a> y IDAE <a href=\"https://www.idae.es\" rel=\"noopener\">www.idae.es</a>. Información orientativa, no asesoramiento."
+}

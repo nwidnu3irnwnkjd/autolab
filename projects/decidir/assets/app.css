@@ -186,6 +186,7 @@ ul.cards p{margin:8px 0 0;font-size:var(--t-sm);color:var(--muted);line-height:1
 .ico{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;margin-bottom:14px;background:var(--accent-soft);color:var(--accent-ink)}
 @media (prefers-color-scheme:dark){.ico{color:var(--accent)}}
 .ico svg{width:24px;height:24px}
+.more{margin:18px 0 0;font-weight:600}
 .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--muted);margin-top:12px}
 .tag::after{content:" →";color:var(--accent)}
 

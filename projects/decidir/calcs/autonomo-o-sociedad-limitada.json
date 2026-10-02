@@ -1,0 +1,154 @@
+{
+  "slug": "autonomo-o-sociedad-limitada",
+  "title": "Autónomo o SL: a partir de qué beneficio compensa en 2026",
+  "description": "Calcula desde qué beneficio compensa una SL frente a ser autónomo en 2026: IRPF, Impuesto sobre Sociedades, dividendos y cuota del socio. Con tus datos.",
+  "h1": "Autónomo o SL: ¿a partir de qué beneficio compensa la sociedad?",
+  "lead": "En el modelo de esta herramienta, una SL compensa frente a ser autónomo cuando el beneficio es alto y cobras en mano casi todo lo que gana: en Madrid, con 24.000 € de sueldo, 1.800 € de costes de la SL, la escala de microempresa (19 % y 21 %) y el 100 % de dividendos, la SL deja más neto desde unos 135.281 € de beneficio al año; con el 15 % de nueva creación, desde unos 79.419 € (solo si la actividad es nueva: si ya la ejercías tú como autónomo el año anterior y tienes más del 50 % de la SL, no se aplica (Ley 27/2014, art. 29.1.b), y dura dos periodos). Con 60.000 € de beneficio y la mitad en dividendos, el autónomo se queda con 40.487 € en mano y la SL con 27.506 €, y otros 13.851 € quedan en la sociedad sin repartir. El umbral cambia con tu comunidad, tu sueldo y lo que repartas: calcúlalo con tus datos. No incluye la responsabilidad limitada; consulta con un asesor.",
+  "veredicto": "Depende de tu beneficio, de la retribución que te pagues y de cuánto repartas. En el ejemplo base (Madrid, 60.000 € de beneficio, 24.000 € de sueldo, 50 % de dividendos, 1.800 € de costes de la SL) ser autónomo deja 40.487 € en mano y la SL 27.506 €, más 13.851 € que quedan en la sociedad. Repartiendo el 100 %, la SL deja más neto que el autónomo a partir de unos 135.281 € de beneficio al año, y con el tipo del 15 % de nueva creación, a partir de unos 79.419 € (solo si la actividad es nueva: si ya la ejercías tú como autónomo el año anterior y tienes más del 50 % de la SL, no se aplica (Ley 27/2014, art. 29.1.b), y dura dos periodos); con 60.000 € y el 100 % repartido, el autónomo sigue dejando más (40.487 € frente a 37.588 €). El umbral cambia con la comunidad y con el sueldo (con 58.200 € de sueldo baja a unos 83.036 €).",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "benef",
+      "label": "Beneficio anual de la actividad antes de impuestos (€; en la SL, antes de tu retribución)",
+      "default": 60000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.autonomo_sl_2026.supuestos.beneficio"
+    },
+    {
+      "id": "retrib",
+      "label": "Retribución anual bruta que te pagas como administrador de la SL (€)",
+      "default": 24000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.autonomo_sl_2026.supuestos.retribucion",
+      "ayuda": "Debe estar en los estatutos para ser deducible."
+    },
+    {
+      "id": "pct",
+      "label": "% del beneficio de la SL que repartes en dividendos (0 a 100)",
+      "default": 50,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.autonomo_sl_2026.supuestos.pct_dividendos"
+    },
+    {
+      "id": "costes",
+      "label": "Costes extra de la SL (€ al año: gestoría contable, registro, cuentas anuales)",
+      "default": 1800,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.autonomo_sl_2026.supuestos.costes_sl",
+      "ayuda": "Importe de ejemplo, no oficial: pide presupuesto a tu gestoría."
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo del Impuesto sobre Sociedades de la SL en 2026",
+      "type": "select",
+      "options": [
+        {
+          "v": "micro",
+          "t": "Microempresa: 19 % hasta 50.000 € y 21 % el resto"
+        },
+        {
+          "v": "nueva",
+          "t": "Nueva creación con actividad nueva (no si la ejercías tú el año anterior): 15 %"
+        },
+        {
+          "v": "reducida",
+          "t": "Reducida dimensión (1 a 10 M€ de cifra de negocios): 23 %"
+        }
+      ]
+    },
+    {
+      "id": "ccaa",
+      "label": "Comunidad autónoma donde resides (régimen común)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "canarias",
+          "t": "Canarias"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿A partir de qué beneficio compensa una SL frente a ser autónomo?",
+      "No hay una cifra única: depende de tu comunidad, de tu retribución, de cuánto reparta la SL y del tipo del Impuesto sobre Sociedades. En el ejemplo (Madrid, 24.000 € de sueldo, 1.800 € de costes, microempresa y 100 % de dividendos) la SL deja más neto en mano que el autónomo desde unos 135.281 € de beneficio al año; con el 15 % de nueva creación, desde unos 79.419 € (solo si la actividad es nueva: si ya la ejercías tú como autónomo el año anterior y tienes más del 50 % de la SL, no se aplica (Ley 27/2014, art. 29.1.b), y dura dos periodos); con 58.200 € de sueldo, desde unos 83.036 €. Con 60.000 € y el 100 % repartido, el autónomo deja 40.487 € y la SL 37.588 €. Lo que la SL no reparte no cuenta como neto en mano: sigue en la sociedad y tributará al repartirlo."
+    ],
+    [
+      "¿Qué tipo del Impuesto sobre Sociedades paga una SL en 2026?",
+      "Depende de la sociedad. El tipo general es el 25 % (Ley 27/2014, art. 29.1). Las de nueva creación con actividad económica tributan al 15 % en el primer periodo con base imponible positiva y en el siguiente, salvo que formen parte de un grupo, sean patrimoniales o la actividad la ejerciera el año anterior una persona física con más del 50 % de la sociedad. En periodos iniciados en 2026, con cifra de negocios anterior inferior a 1 millón de euros, se aplica el 19 % hasta 50.000 € de base y el 21 % el resto, y el 23 % a las entidades de reducida dimensión (disposición transitoria 44.ª, Ley 7/2024). La herramienta no comprueba los requisitos."
+    ],
+    [
+      "¿Cuánto cotiza el socio-administrador de una SL?",
+      "Quien administra la SL y tiene su control efectivo cotiza en el RETA como autónomo societario (LGSS, art. 305.2.b). Su rendimiento computable suma los rendimientos de trabajo en la sociedad y los dividendos, con una deducción del 3 %, y la base mínima no baja de la del grupo de cotización 7: 1.424,40 € al mes en 2026 (LGSS, art. 308; Orden PJC/297/2026), con el 31,5 % de tipo. Son 5.384 € al año como mínimo; en el ejemplo base, 5.435 € con el 50 % de dividendos y 6.547 € con el 100 %. Según el art. 308.1.c, regla 1.ª, cuentan todos los rendimientos íntegros por la participación en la sociedad, así que la herramienta suma los dividendos percibidos en el año. La deducción del 3 % exige llevar al menos 90 días de alta en el año, y la base nunca baja de la del grupo 7."
+    ],
+    [
+      "¿Tengo que pagarme un sueldo como administrador?",
+      "El cargo de administrador es gratuito salvo que los estatutos establezcan lo contrario y determinen el sistema de remuneración (Ley de Sociedades de Capital, art. 217), y la junta debe aprobar el importe máximo. La herramienta supone que la retribución es gasto deducible de la SL, lo que exige que esté prevista en los estatutos. En el ejemplo con el 100 % repartido, subir el sueldo de 24.000 € a 58.200 € baja el beneficio de la SL a cero, el Impuesto sobre Sociedades de 6.498 € a 0 y el umbral de 135.281 € a unos 83.036 €."
+    ],
+    [
+      "¿Qué no incluye la comparación y qué pasa con la responsabilidad limitada?",
+      "La responsabilidad limitada es una ventaja jurídica que no se puede poner en euros y la herramienta no la valora. El capital mínimo de una SL es de 1 € (Ley de Sociedades de Capital, art. 4, reformado por la Ley 18/2022); mientras no llegue a 3.000 € hay que destinar el 20 % del beneficio a reserva legal y, en liquidación, los socios responden de la diferencia hasta esa cifra. Si la SL presta servicios profesionales (Sección 2.ª del IAE) y estás en el RETA, lo que cobras por esos servicios es rendimiento de actividad económica y no del trabajo (Ley del IRPF, art. 27.1), sin la reducción del art. 20, y debe pagarse a valor de mercado: la herramienta lo trata como rendimiento del trabajo. Tampoco incluye IVA, retenciones, módulos, deducciones, tarifa plana, gastos deducibles distintos, tributación al vender la SL, Impuesto sobre el Patrimonio, varios socios ni hijos."
+    ]
+  ],
+  "sources": "Modelo propio con cifras de 2026. Impuesto sobre Sociedades: Ley 27/2014, art. 29.1 (tipo general del 25 %; 15 % de nueva creación en el primer periodo con base positiva y en el siguiente, con las exclusiones de grupo, entidad patrimonial y actividad previa de una persona física con más del 50 %; texto consolidado a 02/09/2026, última redacción de la Ley 7/2024) y disposición transitoria 44.ª (periodos iniciados en 2026: cifra de negocios anterior inferior a 1 millón de euros, 19 % hasta 50.000 € y 21 % el resto; entidades de reducida dimensión del art. 101, 23 %). IRPF (Ley 35/2006, consolidada a 30/09/2026): arts. 17.2.e (retribución de administradores), 19.2 y 20 (reducción sin otras rentas distintas del trabajo por encima de 6.500 €, incluido el capital mobiliario según el Manual de Renta de la AEAT), 25.1.a, 49, 56.2, 66 y 76 (dividendos en la base del ahorro, 19 % a 30 %); escalas generales y mínimos como en «Autónomo o asalariado»; la DA 61.ª no se aplica a administradores. Seguridad Social: Ley General de la Seguridad Social, arts. 305.2.b (administrador o socio con control efectivo, en el RETA) y 308.1.a regla 4.ª y 308.1.c reglas 1.ª y 2.ª (rendimientos de trabajo y por la participación en la sociedad, deducción del 3 %, base mínima del grupo de cotización 7); Orden PJC/297/2026, arts. 3 (1.424,40 €/mes) y 18 (tabla de bases y tipo del 31,5 %); autónomo individual con la cuota por tramos, el 5 % por gastos de difícil justificación y la reducción del art. 32.2.3.º como en «Autónomo o asalariado». Ley del IRPF, art. 27.1 (rendimientos de actividad de servicios profesionales prestados a través de la sociedad). Ley de Sociedades de Capital, arts. 4, 217 y 274. Se supone un socio único con control efectivo y retribución deducible; lo no repartido no cuenta como neto en mano; el umbral se busca con barrido de 100 € hasta 400.000 € y bisección. No cubre País Vasco ni Navarra; Castilla y León, Región de Murcia y La Rioja con cifras autonómicas orientativas. Fuentes: Ley 27/2014 (https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328); Ley 35/2006 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Manual de Renta de la AEAT (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-3-determinacion-rendimiento-neto-reducido.html); Seguridad Social, cotización por ingresos reales (https://www.seg-social.es/wps/portal/wss/internet/HerramientasWeb/9d2fd4f1-ab0f-42a6-8d10-2e74b378ee24). Hipótesis editables, no previsiones: 60.000 € de beneficio, 24.000 € de sueldo, 50 % de dividendos y 1.800 € de costes anuales de la SL (ejemplo de gestoría, registro y cuentas; el tuyo puede ser distinto). Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni mercantil."
+}

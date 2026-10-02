@@ -2,7 +2,8 @@
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "comparar-ofertas-de-trabajo-neto-real",
+  "autonomo-o-sociedad-limitada"
  ],
  "cuanto-ahorrar-para-comprar-casa": [
   "alquilar-o-comprar",
@@ -111,7 +112,8 @@
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",
   "bici-electrica-o-transporte-publico",
-  "diesel-gasolina-hibrido-electrico"
+  "diesel-gasolina-hibrido-electrico",
+  "hotel-o-apartamento-viaje-en-grupo"
  ],
  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
   "declaracion-conjunta-o-individual",
@@ -215,5 +217,20 @@
   "autonomo-o-asalariado",
   "teletrabajo-o-oficina-coste-real",
   "excedencia-o-reduccion-jornada"
+ ],
+ "reformar-o-mudarse": [
+  "alquilar-o-comprar",
+  "cambiar-ventanas-aislamiento-merece-la-pena",
+  "comprar-o-alquilar-trastero"
+ ],
+ "hotel-o-apartamento-viaje-en-grupo": [
+  "tren-avion-o-coche",
+  "contado-o-financiar",
+  "navidad-cuanto-gastar-sin-endeudarte"
+ ],
+ "autonomo-o-sociedad-limitada": [
+  "autonomo-o-asalariado",
+  "capitalizar-paro-o-cobrarlo",
+  "comparar-ofertas-de-trabajo-neto-real"
  ]
 }

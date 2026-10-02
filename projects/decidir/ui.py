@@ -28,8 +28,21 @@ def tema(c):
     return "ahorro"
 def card(c):
     t = tema(c); name, svg = ICONS[t]
-    q = html.escape(f'{c["h1"]} {c["description"]} {name} {c["slug"].replace("-", " ")}', quote=True)
-    return f'<li data-q="{q}" data-t="{t}">{ill(t, "ill-s", 88, 66)}<a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
+    k = c["slug"].replace("-", " ")  # el buscador usa textContent + data-k (antes data-q repetía título, descripción y tema: ~11 KB en la home)
+    return f'<li data-k="{k}" data-t="{t}"><svg class="ill-s" viewBox="0 0 160 120" aria-hidden="true"><use href="/assets/illustrations.svg#{t}"/></svg><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
+
+HOME_N = 12
+def home_cards(calcs, n=HOME_N):
+    """Home: n tarjetas destacadas (reparto por tema, orden estable) + enlace al catálogo; el resto se carga de /decidir/ al buscar o pulsar (home.js, data-more)."""
+    by = {}
+    for c in calcs: by.setdefault(tema(c), []).append(c)
+    pick, i = [], 0
+    while len(pick) < min(n, len(calcs)):
+        for lst in by.values():
+            if i < len(lst) and len(pick) < n: pick.append(lst[i])
+        i += 1
+    keep = {c["slug"] for c in pick}
+    return "".join(card(c) for c in calcs if c["slug"] in keep)
 
 def catalog_body(calcs):
     """Cuerpo de /decidir/ (D3): buscador + chips por tema + contador + estado vacío."""
@@ -69,7 +82,7 @@ def head_extra():
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={site["adsense_client"]}" crossorigin="anonymous"></script>')
     return "\n".join(out)
 
-HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/"}  # hubs.HUBS (R16.1); resto de temas: ancla del catálogo
+HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/", "impuestos": "/impuestos/"}  # hubs.HUBS (R16.1); resto de temas: ancla del catálogo
 
 def calc_header(c):
     """Cabecera .ph de una calculadora."""

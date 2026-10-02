@@ -3,7 +3,7 @@
   "use strict";
   var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
   function reduced() { return !!(RM && RM.matches); }
-  /* Filtro instantáneo de tarjetas: <input data-filter="#lista"> filtra <li data-q="..."> */
+  /* Filtro instantáneo de tarjetas: <input data-filter="#lista"> filtra <li data-k="palabras extra"> (texto + data-k) */
   function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
   function initFilters() {
     Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (inp) {
@@ -19,10 +19,29 @@
         chips.forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-t") === t ? "true" : "false"); });
         if (!silent) { try { history.replaceState(null, "", t ? "#" + t : location.pathname + location.search); } catch (e) {} }
       }
+      var more = list.getAttribute("data-more"), loading = null, moreLink = document.getElementById("more");
+      /* Home: solo hay destacadas; el resto de tarjetas se trae de /decidir/ la primera vez que se busca o se pulsa «Ver todas». */
+      function loadMore() {
+        if (!more) return Promise.resolve();
+        if (loading) return loading;
+        return loading = fetch(more).then(function (r) { return r.text(); }).then(function (t) {
+          var doc = new DOMParser().parseFromString(t, "text/html"), have = {};
+          Array.prototype.forEach.call(list.querySelectorAll("a"), function (a) { have[a.getAttribute("href")] = 1; });
+          Array.prototype.forEach.call(doc.querySelectorAll("#calcs > li"), function (li) {
+            var a = li.querySelector("a"); if (a && !have[a.getAttribute("href")]) list.appendChild(document.importNode(li, true));
+          });
+          if (moreLink && moreLink.parentNode) moreLink.parentNode.hidden = true;
+          more = null;
+        }).catch(function () { loading = null; });
+      }
+      if (more) {
+        if (moreLink) moreLink.addEventListener("click", function (e) { e.preventDefault(); moreLink.textContent = "Cargando…"; loadMore().then(function () { apply(); }); });
+        inp.addEventListener("focus", loadMore, { once: true });
+      }
       function apply() {
         var q = norm(inp.value.trim()).split(/\s+/).filter(Boolean), shown = 0;
         Array.prototype.forEach.call(list.children, function (li) {
-          var hay = norm(li.getAttribute("data-q") || li.textContent);
+          var hay = norm((li.textContent || "") + " " + (li.getAttribute("data-k") || ""));
           var ok = q.every(function (w) { return hay.indexOf(w) >= 0; }) && (!tema || li.getAttribute("data-t") === tema);
           li.hidden = !ok; if (ok) shown++;
         });
@@ -33,11 +52,12 @@
       chips.forEach(function (c) { c.addEventListener("click", function () { setTema(c.getAttribute("data-t")); apply(); }); });
       var reset = document.getElementById("reset");
       if (reset) reset.addEventListener("click", function () { inp.value = ""; setTema(""); apply(); inp.focus(); });
-      inp.addEventListener("input", apply);
+      inp.addEventListener("input", function () { loadMore().then(apply); apply(); });
       var m = /[?&]q=([^&]*)/.exec(location.search);
       if (m) { try { inp.value = decodeURIComponent(m[1].replace(/\+/g, " ")); } catch (e) {} }
       var h = location.hash.slice(1);
       if (h && chips.some(function (c) { return c.getAttribute("data-t") === h; })) setTema(h, true);
+      if (inp.value) loadMore().then(apply);
       apply();
     });
   }

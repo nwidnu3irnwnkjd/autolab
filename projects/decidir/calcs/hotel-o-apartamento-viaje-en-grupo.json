@@ -1,0 +1,90 @@
+{
+  "slug": "hotel-o-apartamento-viaje-en-grupo",
+  "title": "Hotel o apartamento turístico en grupo: coste por persona",
+  "description": "Compara hotel y apartamento turístico para tu grupo: coste total y por persona y noche, noches de equilibrio y efecto de comer fuera o cocinar.",
+  "h1": "Hotel o apartamento turístico para familia o grupo: coste real por persona",
+  "lead": "El apartamento sale más barato que el hotel cuando el precio por noche más la comida cocinada de todo el grupo queda por debajo de las habitaciones más la comida fuera, una vez repartida la limpieza entre las noches; con los ejemplos de la página (6 personas, 5 noches, 3 habitaciones de 110 €, apartamento de 190 € la noche, 90 € de limpieza, 35 € de comer fuera y 14 € de cocinar por persona y día) el hotel cuesta 2.700 € y el apartamento 1.460 €, y con 2 personas en una habitación el hotel gana. Pon tus precios para ver tu coste por persona y las noches de equilibrio.",
+  "veredicto": "El apartamento compensa frente al hotel cuando su precio por noche más la comida cocinada del grupo es menor que las habitaciones más la comida fuera, y la limpieza se reparte entre las noches; con pocas personas o pocas noches puede ganar el hotel, y la calculadora da el coste por persona y noche y las noches de equilibrio con tus datos. Tasas, parking y tarifa flexible van dentro del precio de la noche.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "personas",
+      "label": "Número de personas (todas pagan comida; 6 es un ejemplo)",
+      "default": 6,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "noches",
+      "label": "Número de noches (5 es un ejemplo)",
+      "default": 5,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "habs",
+      "label": "Habitaciones de hotel necesarias (3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "precioHab",
+      "label": "Precio por habitación y noche del hotel (€; incluye tasa turística y parking si los pagas; consulta tu destino; 110 € es un ejemplo, no una cotización)",
+      "default": 110,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "precioApto",
+      "label": "Precio del apartamento por noche (€; incluye tasa turística y parking si los pagas; 190 € es un ejemplo, no una cotización)",
+      "default": 190,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "limpieza",
+      "label": "Limpieza final del apartamento (€, pago único; la fianza se devuelve y no cuenta; 90 € es un ejemplo)",
+      "default": 90,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "comerFuera",
+      "label": "Comer fuera en el hotel (€ por persona y día; 35 € es un ejemplo)",
+      "default": 35,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "cocinar",
+      "label": "Cocinar en el apartamento (€ por persona y día; 14 € es un ejemplo)",
+      "default": 14,
+      "min": 0,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué sale más barato, hotel o apartamento turístico?",
+      "Sale más barato el apartamento cuando su precio por noche más la comida cocinada de todo el grupo es menor que las habitaciones de hotel más la comida fuera, repartiendo la limpieza entre las noches. Con los ejemplos de la página (6 personas, 5 noches) el hotel cuesta 2.700 € y el apartamento 1.460 €; con 2 personas y una habitación de 100 € el hotel gana. Con tus precios saldrá otra cifra."
+    ],
+    [
+      "¿Cuántas noches hacen falta para que compense el apartamento?",
+      "La calculadora da las noches de equilibrio: la limpieza se paga una vez, así que con pocas noches pesa más. Con los ejemplos y un apartamento de 330 € con 240 € de limpieza, 1 noche sale más barato el hotel y desde 1,9 noches, el apartamento. Si el apartamento ya es más barato por noche, gana desde la primera."
+    ],
+    [
+      "¿Cuenta la comida?",
+      "Sí: es la parte que más cambia el resultado en grupos. Pones lo que gastas por persona y día comiendo fuera y cocinando; cuantas más personas, más pesa. Los importes son ejemplos editables, no precios de tu destino. El modelo cuenta un día de comida por noche."
+    ],
+    [
+      "¿Dónde pongo la tasa turística, el parking y la cancelación flexible?",
+      "Dentro del precio por noche de cada opción, si los pagas allí: la tasa turística depende de tu destino (consúltala) y la calculadora no inventa ninguna. Si pagas tarifa flexible, súmala también al precio. La fianza del apartamento se devuelve y no se cuenta como coste."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye comisiones de plataformas por separado, tasas, parking ni cancelación flexible salvo que los sumes al precio por noche, ni la comodidad (espacios comunes, servicio, desayuno incluido). Supone el mismo número de habitaciones al calcular las personas de equilibrio. Es una estimación con supuestos tuyos, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste del hotel = habitaciones x precio x noches + comer fuera x personas x noches; coste del apartamento = precio por noche x noches + limpieza + cocinar x personas x noches. Coste por persona y noche = total / (personas x noches). Noches de equilibrio = limpieza / (diferencia de precio por noche entre hotel y apartamento incluida la comida), si el hotel es más caro por noche. Supuestos de ejemplo, no oficiales ni precios de plataformas, y editables: 6 personas, 5 noches, 3 habitaciones a 110 €, apartamento a 190 € la noche, 90 € de limpieza, 35 € de comer fuera y 14 € de cocinar por persona y día. Tasas turísticas (consulta tu destino): Ministerio de Industria y Turismo <a href=\"https://turismo.gob.es\" rel=\"noopener\">turismo.gob.es</a> y Instituto de Turismo de España <a href=\"https://www.tourspain.es\" rel=\"noopener\">www.tourspain.es</a>. Consumidores y reservas: <a href=\"https://consumo.gob.es\" rel=\"noopener\">consumo.gob.es</a>. Información orientativa, no asesoramiento."
+}
