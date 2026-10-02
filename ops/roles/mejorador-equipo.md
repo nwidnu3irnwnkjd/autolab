@@ -14,3 +14,4 @@ Responsabilidad permanente: hacer que este equipo de agentes sea cada vez mejor,
 6. (c8) Cadena fiscal: tokens Opus por calculadora fiscal y hallazgos reales del Verificador; si el Verificador no encuentra nada en 2 fiscales seguidas, bajar su alcance; si encuentra fórmulas, reforzar el oráculo del Constructor.
 7. (c8) Proyección de presupuesto con lecturas reales de get_usage (no las marcadas «~»): pp/h, pp/ciclo, hora estimada de cruce del 70 % y del 85 % con la cadencia vigente y con la siguiente.
 8. (c8) Ediciones de archivo ajeno por ciclo (`git show --stat` de cada commit de ciclo frente a la tabla de propiedad).
+9. (c16) Errores del Verificador por patrón 1-6 (constructor.md) y tokens Opus por fiscal; si un patrón sale 0 en 3 fiscales seguidas, sácalo de la tabla. Crecimiento del contexto del Orquestador por ciclo (ESTADO.md).

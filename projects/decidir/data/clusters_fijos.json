@@ -35,9 +35,9 @@
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "luz-fija-o-indexada",
-  "contado-o-financiar",
-  "calefaccion-gas-aerotermia-electrica"
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "seguro-mascota-merece-la-pena",
+  "luz-fija-o-indexada"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
@@ -53,6 +53,7 @@
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
   "coche-nuevo-o-seminuevo",
+  "seguro-mascota-merece-la-pena",
   "diesel-gasolina-hibrido-electrico"
  ],
  "coche-nuevo-o-seminuevo": [
@@ -61,19 +62,19 @@
   "contado-o-financiar"
  ],
  "coche-propio-o-carsharing-o-vtc": [
-  "comprar-coche-o-renting",
   "bici-electrica-o-transporte-publico",
-  "tren-avion-o-coche"
+  "tren-avion-o-coche",
+  "teletrabajo-o-oficina-coste-real"
  ],
  "bici-electrica-o-transporte-publico": [
   "tren-avion-o-coche",
   "coche-propio-o-carsharing-o-vtc",
-  "diesel-gasolina-hibrido-electrico"
+  "teletrabajo-o-oficina-coste-real"
  ],
  "contado-o-financiar": [
-  "universidad-publica-o-privada-o-master",
-  "amortizar-o-invertir",
-  "comprar-coche-o-renting"
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "comprar-coche-o-renting",
+  "universidad-publica-o-privada-o-master"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
@@ -104,5 +105,31 @@
   "coche-propio-o-carsharing-o-vtc",
   "bici-electrica-o-transporte-publico",
   "diesel-gasolina-hibrido-electrico"
+ ],
+ "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
+  "declaracion-conjunta-o-individual",
+  "plan-pensiones-o-fondo-indexado",
+  "rescate-plan-pensiones-capital-o-renta"
+ ],
+ "portatil-o-movil-comprar-renting-o-financiar": [
+  "contado-o-financiar",
+  "fibra-y-movil-juntos-o-por-separado",
+  "reparar-o-comprar-electrodomestico"
+ ],
+ "teletrabajo-o-oficina-coste-real": [
+  "coche-propio-o-carsharing-o-vtc",
+  "fibra-y-movil-juntos-o-por-separado",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "luz-fija-o-indexada"
+ ],
+ "fibra-y-movil-juntos-o-por-separado": [
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "teletrabajo-o-oficina-coste-real",
+  "contado-o-financiar"
+ ],
+ "seguro-mascota-merece-la-pena": [
+  "seguro-todo-riesgo-o-terceros",
+  "reparar-o-comprar-electrodomestico",
+  "contado-o-financiar"
  ]
 }

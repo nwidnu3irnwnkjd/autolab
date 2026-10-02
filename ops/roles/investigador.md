@@ -7,3 +7,6 @@ Cada vez que te llamen: elige un foco (competencia directa de la calculadora en 
 - Llamar solo si data/backlog.md tiene < 6 pendientes no fiscales o cada 6 ciclos (antes: cada 3). Con 12 pendientes y 2 calculadoras/ciclo hay backlog para ~6 ciclos.
 - Un foco por llamada, ≤ 6 min. Si el foco es «competencia de la calculadora X», Sonnet con búsqueda web basta; Opus para ideas de proyecto nuevo o de formato.
 - Criterio de «hecho»: cada idea del backlog con keyword principal, intención, por qué ganamos (dato o cálculo que el competidor no da) y si es fiscal/legal. No repetir ideas ya presentes (grep en backlog e ideas.md).
+
+## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
+Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).

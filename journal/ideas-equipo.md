@@ -77,3 +77,33 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 
 ### [ ] T13 · Investigador en el ciclo 9
 - Tras c8 (pensiones + luz) el backlog queda con 1 no fiscal (placas) y 3 fiscales: la regla «< 6 no fiscales» ya se cumple. Foco Sonnet con web: 6 calculadoras no fiscales de alto volumen («X o Y» de hogar, coche, energía) para no depender de la cadena fiscal cara.
+
+## Pasada 3 · 2026-10-02T02:30Z (ciclo 16, datos de c8-c15)
+
+### [>] T8 · estado c16
+- Abaratamiento hecho (Opus 484k → 150k por fiscal). Pipeline no bloqueante: NO hecho; las fiscales siguen alargando el ciclo (24-29 min frente a ~13). Tras el sprint, con ciclos espaciados por presupuesto, el pipeline pierde valor: **se aparca** salvo que vuelva una cadencia alta.
+
+### [ ] T14 · `ops/qa_static.py --fiscal`: chequeos deterministas de los patrones 1, 3 y 4 (dueño: Orquestador; Sonnet ~50k una vez)
+- (a) Absolutos sin condición: frases de content/<slug>.html y de lead/veredicto/faq de calcs/<slug>.json con `siempre|nunca|garantiza|solo tiene sentido|en todos los casos` y sin `si |salvo|con la|sin |cuando|excepto` en la misma frase → AVISO. Habría marcado donativos, rescate y autónomo (3 de 8).
+- (b) Cifras legales: cada número con `€|%` en una frase con `art\.|Ley|RDL|RD |DA ` debe estar en params.json bajo una clave con `_fuente` (y fecha de consolidación) → AVISO si no. Sustituye al YMYL actual «sin enlace en la sección», que da 64 AVISO de ruido.
+- (c) Ámbito: toda calc con `"fiscal": true` debe mencionar País Vasco/Navarra y Canarias (y Ceuta/Melilla si hay IVA/IGIC/IPSI) en página o sources → AVISO.
+- Beneficio: ~1-2 cambios menos por fiscal para el Opus (~−20k Opus, ~−0,02 pp por fiscal) y que el aviso YMYL vuelva a ser leíble (0-3 por ciclo en vez de 64). Coste: ~50k una vez. Criterio de hecho: sobre el estado de c14 (antes de las correcciones del rescate) marca «nunca paga más».
+
+### [ ] T15 · Cierre de verdad en 1 commit y con poca salida (dueño: Orquestador; ~20k)
+- Medido c9-15: 2 commits por ciclo porque ESTADO.md y el journal se escriben DESPUÉS de close_cycle.sh. Arreglo: el Orquestador escribe ESTADO.md y journal antes (con los datos que ya tiene) y el script los incluye en su `git add -A`; el resumen de 5 líneas solo corrige ESTADO en el ciclo siguiente.
+- close_cycle.sh imprime con `tee` toda la salida de qa_static (64 AVISO ≈ 4k tokens en el contexto del Orquestador por cierre): imprimir solo BLOQUEANTE, el recuento de AVISO y los 5 primeros.
+- Peticiones > 1 ciclo: el script ya las lista pero nadie las cierra porque el dueño no se lanza ese ciclo (Estratega solo pares). Regla: si una petición llega a 3 ciclos y el dueño no está en el ciclo, el Orquestador la resuelve si es ≤ 2 min o la marca `[~]` con motivo. Métrica: > 1 ciclo 6 → ≤ 1.
+- Beneficio: −1 commit/ciclo, −4-8k tokens de contexto/ciclo, cumplir T7.
+
+### [ ] T16 · «Editor de calidad» de contenido: pasada única, no rol permanente
+- Coste/beneficio: rol por ciclo ≈ 80k Sonnet (~0,08 pp, ~1,8 pp/día al ritmo del sprint) para textos que casi no cambian entre ciclos; lo que de verdad falla (absolutos, cifras legales) lo cubren T14 y la pre-verificación. Inconsistencias que sí hay entre 29 calculadoras (disclaimer, «Supuestos y fuentes», formato del veredicto, tuteo, nombres de impuestos) se arreglan mejor de una vez.
+- Propuesta: tras el sprint, en un ciclo ligero, 1 Sonnet ~150k lee lead/veredicto/FAQ de todas las calculadoras (no el HTML entero) y abre peticiones al Constructor con una guía de estilo de 15 líneas en ops/roles/rubrica-calculadora.md. Repetir solo si se superan 50 calculadoras.
+
+### [ ] T10 · «Analista de datos» (actualizado c16): sigue sin activar
+- GA4 y GSC existen pero 0 indexadas / 0 impresiones; metrics.py cada 6 ciclos basta. Disparador sin cambios: ≥ 100 impresiones/semana o ≥ 5 páginas con impresiones → Sonnet ~40k cada 6 ciclos (o 1 vez/día tras el sprint), salida 3 páginas a mejorar al Estratega.
+
+### [ ] T17 · Pestañas del navegador (anotado c15): medir antes de hacer más
+- Regla de c15 en qa.md (1 pestaña por agente, tabs_close, el Orquestador limpia al empezar). Si en c17-c20 vuelve un falso positivo de consola, el QA usa `read_console_messages` con `pattern` del archivo de la página y el Orquestador ejecuta los builds en serie (nadie hace build mientras el QA mide). Coste 0.
+
+### [ ] T18 · Contexto del Orquestador (70 % de 1M a c15)
+- Aplicado c16.5 (informes ≤ 5 líneas). Además, fuera de mi permiso (Orquestador): no releer requests.md/SEO-GEO.md/EQUIPO.md enteros cada ciclo (`grep '^- \[ \]'`, `tail`), leer de los verificadores solo la línea VEREDICTO, y antes de la autocompactación dejar ESTADO.md al día (ya es la memoria). Métrica: % de contexto por ciclo anotado en ESTADO.md; ≤ 25k/ciclo.

@@ -1,0 +1,90 @@
+{
+  "slug": "fibra-y-movil-juntos-o-por-separado",
+  "title": "Fibra y móvil: pack o por separado, ¿cuál sale mejor?",
+  "description": "Compara el pack de fibra y móvil con contratarlos por separado: coste total en tu horizonte, salto tras la promoción y riesgo de permanencia.",
+  "h1": "Fibra y móvil: ¿pack convergente o por separado?",
+  "lead": "El pack de fibra y móvil compensa mientras dura la promoción y mientras su precio posterior no supere lo que pagarías por separado, así que depende del horizonte: con los ejemplos de la página, el pack ahorra 56 € a 12 meses pero a 36 meses cuesta 112 € más y su ventaja se agota en el mes 21. Pon el precio del pack con y sin promoción, lo que pagarías por separado, la permanencia y cuántos meses piensas quedarte, y verás el coste total, el coste medio al mes y el mes en que el pack deja de compensar.",
+  "veredicto": "El pack sale más barato mientras dure la promoción y su precio posterior no supere lo que pagarías por separado; si lo supera, la ventaja se agota en un mes que la calculadora te da, y el pack solo compensa si te quedas menos tiempo. Depende de tu horizonte y de tu permanencia.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "packPromo",
+      "label": "Precio del pack durante la promoción (€/mes; 50 € es un ejemplo, no una oferta)",
+      "default": 50,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "promoMeses",
+      "label": "Meses que dura la promoción (0 si no hay; 12 es un ejemplo)",
+      "default": 12,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "packTras",
+      "label": "Precio del pack después de la promoción (€/mes; si no hay promoción, el mismo que arriba; 65 € es un ejemplo)",
+      "default": 65,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "suelto",
+      "label": "Lo que pagarías por separado (€/mes: fibra más la suma de tus líneas móviles, sin promoción; 58 € es un ejemplo)",
+      "default": 58,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "permanencia",
+      "label": "Permanencia del pack (meses; 0 si no hay; 12 es un ejemplo)",
+      "default": 12,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "unico",
+      "label": "Coste único de pasarte al pack (€: instalación, router y, si la hay, penalización de tu contrato actual; 40 € es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "horizonte",
+      "label": "Cuántos meses piensas mantenerlo (de 1 a 120; 36 es un ejemplo)",
+      "default": 36,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "subida",
+      "label": "Subida anual de precios que esperas (%; se aplica por igual a los dos desde el mes 13; 0 si no cuentas con ella)",
+      "default": 0,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor contratar fibra y móvil en un pack o por separado?",
+      "Depende del horizonte. El pack compensa mientras dura la promoción y mientras su precio posterior no supere el de ir por separado; con los ejemplos de la página gana 56 € a 12 meses y pierde 112 € a 36 meses. Si el precio tras la promoción es igual o menor que lo que pagarías por separado, el pack sigue ganando después. La calculadora te da el mes en que su ventaja se agota con tus datos."
+    ],
+    [
+      "¿Qué pasa cuando termina la promoción del pack?",
+      "El precio salta al que indiques tras la promoción. Si ese precio es mayor que lo que pagarías por separado, cada mes el pack te cuesta más que la alternativa desde ese mes, y la ventaja acumulada se va agotando. Con los ejemplos de la página, el salto llega en el mes 13 y la ventaja se agota en el mes 21."
+    ],
+    [
+      "¿Cómo influye la permanencia?",
+      "La permanencia te obliga a mantener el pack o a pagar una penalización si te vas antes. La página suma lo que pagarías de más durante los meses de permanencia que caen dentro de tu horizonte, si el pack cuesta más que ir por separado. Si tu permanencia es mayor que tu horizonte, la penalización por irte antes no se calcula: súmala al coste único. Para tu contrato, consulta sus condiciones."
+    ],
+    [
+      "¿Qué precio debo poner para ir por separado?",
+      "El que te cobraría hoy cada servicio contratado por su cuenta, sin promoción: la fibra más la suma de tus líneas móviles. No usamos tarifas de ninguna operadora: todos los precios de la página son ejemplos que debes cambiar por los tuyos."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye ofertas de operadoras concretas, la calidad del servicio, la cobertura, los datos o la velocidad de cada opción, ni la posibilidad de renegociar o encadenar promociones. Los precios por separado se suponen sin promoción y todos los precios suben la misma subida anual a partir del mes 13. Es información orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio, mes a mes: coste del pack = coste único + suma de las cuotas mensuales (precio con promoción durante los meses de promoción y precio posterior después); coste por separado = suma de las cuotas mensuales de lo que pagarías sin promoción. Los precios indicados son los del primer año; a partir del mes 13 ambos suben cada año el porcentaje de subida anual indicado (escalón anual, el mismo para los dos). Ventaja del pack = coste por separado - coste del pack (positivo = el pack ahorra). Mes en que la ventaja acumulada se agota: primer mes en que, habiendo ido por delante, el acumulado pasa a ser negativo (calculado hasta 600 meses). Riesgo de permanencia: suma de lo que el pack cuesta de más por mes durante los meses de permanencia que caen dentro del horizonte. Todos los precios, la promoción, la permanencia, el coste único y la subida son ejemplos declarados y editables, no tarifas de ninguna operadora ni datos de mercado; no se usan cifras externas. No incluye calidad, cobertura, datos o velocidad ni renegociaciones. Información orientativa, no asesoramiento."
+}

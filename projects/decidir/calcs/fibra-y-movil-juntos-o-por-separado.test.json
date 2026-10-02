@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "packPromo": 50,
+    "promoMeses": 12,
+    "packTras": 65,
+    "suelto": 58,
+    "permanencia": 12,
+    "unico": 40,
+    "horizonte": 36,
+    "subida": 0
+   },
+   "expect": {
+    "costePack": 2200.0,
+    "costeSuelto": 2088.0,
+    "medioPack": 61.11,
+    "ventaja": -112.0,
+    "ventaja12": 56.0,
+    "ventaja24": -28.0,
+    "ventaja36": -112.0,
+    "mesRecupera": 5,
+    "mesAgota": 21,
+    "mesCaro": 13,
+    "exposicion": 0,
+    "mesesAtrapado": 0,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "packPromo": 50,
+    "promoMeses": 12,
+    "packTras": 55,
+    "suelto": 58,
+    "permanencia": 12,
+    "unico": 40,
+    "horizonte": 24,
+    "subida": 3
+   },
+   "expect": {
+    "costePack": 1319.8,
+    "costeSuelto": 1412.88,
+    "medioPack": 54.99,
+    "ventaja": 93.08,
+    "ventaja12": 56.0,
+    "ventaja24": 93.08,
+    "ventaja36": 131.27,
+    "mesRecupera": 5,
+    "mesAgota": 0,
+    "mesCaro": 0,
+    "exposicion": 0,
+    "mesesAtrapado": 0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "packPromo": 65,
+    "promoMeses": 0,
+    "packTras": 65,
+    "suelto": 58,
+    "permanencia": 12,
+    "unico": 0,
+    "horizonte": 1,
+    "subida": 0
+   },
+   "expect": {
+    "costePack": 65.0,
+    "costeSuelto": 58.0,
+    "medioPack": 65.0,
+    "ventaja": -7.0,
+    "ventaja12": -84.0,
+    "ventaja24": -168.0,
+    "ventaja36": -252.0,
+    "mesRecupera": 0,
+    "mesAgota": 1,
+    "mesCaro": 1,
+    "exposicion": 7.0,
+    "mesesAtrapado": 1,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "packPromo": 45,
+    "promoMeses": 12,
+    "packTras": 45,
+    "suelto": 45,
+    "permanencia": 12,
+    "unico": 0,
+    "horizonte": 36,
+    "subida": 0
+   },
+   "expect": {
+    "costePack": 1620.0,
+    "costeSuelto": 1620.0,
+    "medioPack": 45.0,
+    "ventaja": 0.0,
+    "ventaja12": 0.0,
+    "ventaja24": 0.0,
+    "ventaja36": 0.0,
+    "mesRecupera": 1,
+    "mesAgota": 0,
+    "mesCaro": 0,
+    "exposicion": 0,
+    "mesesAtrapado": 0,
+    "mejor": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "packPromo": 50,
+    "promoMeses": 12,
+    "packTras": 65,
+    "suelto": 58,
+    "permanencia": 24,
+    "unico": 0,
+    "horizonte": 12,
+    "subida": 0
+   },
+   "expect": {
+    "costePack": 600.0,
+    "costeSuelto": 696.0,
+    "medioPack": 50.0,
+    "ventaja": 96.0,
+    "ventaja12": 96.0,
+    "ventaja24": 12.0,
+    "ventaja36": -72.0,
+    "mesRecupera": 1,
+    "mesAgota": 26,
+    "mesCaro": 13,
+    "exposicion": 0,
+    "mesesAtrapado": 0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "packPromo": 50,
+    "promoMeses": 12,
+    "packTras": 65,
+    "suelto": 58,
+    "permanencia": 0,
+    "unico": 40,
+    "horizonte": 60,
+    "subida": 5
+   },
+   "expect": {
+    "costePack": 4169.99,
+    "costeSuelto": 3845.84,
+    "medioPack": 69.5,
+    "ventaja": -324.15,
+    "ventaja12": 56.0,
+    "ventaja24": -32.2,
+    "ventaja36": -124.81,
+    "mesRecupera": 5,
+    "mesAgota": 20,
+    "mesCaro": 13,
+    "exposicion": 0,
+    "mesesAtrapado": 0,
+    "mejor": 1
+   },
+   "tol": 1
+  }
+ ]
+}

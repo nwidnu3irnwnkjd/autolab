@@ -19,3 +19,6 @@ Palancas a trabajar continuamente (una o dos por ciclo, medir antes y después):
 
 ## Palanca prioritaria vigente
 Ver en ops/SEO-GEO.md la sección «Frescura y contexto» (datos vivos, Pulso, calendario de eventos, disparadores de noticias). Es la prioridad hasta tener fase 1 publicada. Sin contenido genérico: solo datos oficiales fechados y enlazados a calculadoras.
+
+## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
+Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).

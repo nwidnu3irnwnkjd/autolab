@@ -16,3 +16,6 @@ Aplica ops/DESIGN.md, tarea por tarea. Objetivo: UI/UX espectacular, rápida, ac
 - Captura de pantalla: solo las vistas que cambiaste (no todo el sitio) a 375 px claro y 1280 px oscuro; el resto, `read_page`/consola.
 ## Criterio de «hecho»
 - Build OK; sin errores de consola; sin scroll horizontal a 375 px; página más pesada < 60 KB; `[x]` en DESIGN.md con una línea de lo hecho; peticiones `-> Diseñador` abiertas resueltas o respondidas.
+
+## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
+Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).

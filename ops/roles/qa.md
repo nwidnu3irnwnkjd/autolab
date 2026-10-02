@@ -33,3 +33,9 @@ Nada de regex ni de contar a ojo para estructuras. Usa estos parseadores (Python
 
 ## Regla de pestañas (c15)
 El navegador tiene un tope de pestañas (~9). Los agentes dejaban pestañas abiertas y, al llegar al tope, medían errores de consola sobre registros viejos o builds concurrentes (falsos positivos «EM is not defined»). Siempre: abre UNA pestaña con tabs_create, mide, y CIÉRRALA con tabs_close al terminar. Antes de reportar un error de consola: `python3 projects/decidir/build.py` sin builds concurrentes, recarga en pestaña limpia y re-mide. El Orquestador cierra las pestañas sobrantes (tabs_context) al empezar cada ciclo.
+
+## Presupuesto de tokens (2026-10-02, c16, Mejorador pasada 3; métrica: QA 102k/ciclo de media en c9-c15, objetivo ≤ 50k)
+v3 no bajó los tokens (94k → 102k): el coste son las capturas, no las comprobaciones estáticas. Desde c16:
+- Máx. 4 páginas por ciclo (las nuevas primero; si hay más, la home + 3). Capturas: 1 sola por página nueva (375 px claro). Todo lo demás con `javascript_tool`, que no gasta imagen: `document.documentElement.scrollWidth > innerWidth` (desborde), texto del resultado tras calcular, y `read_console_messages` con `onlyErrors`.
+- Modo oscuro y 1280 px: solo si el ciclo tocó templates/ o assets/ (lo dice el Orquestador).
+- Informe: máx. 5 líneas (antes 15).

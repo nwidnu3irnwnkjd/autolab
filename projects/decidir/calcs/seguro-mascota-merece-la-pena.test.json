@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "prima": 300,
+    "franq": 100,
+    "limite": 3000,
+    "carencia": 2,
+    "prob": 10,
+    "coste": 1500,
+    "horizonte": 10
+   },
+   "expect": {
+    "cobertura": 1400,
+    "esperadoSin": 150.0,
+    "esperadoCon": 310.0,
+    "ahorroEsperado": -160.0,
+    "esperadoConTotal": 3100.0,
+    "probEquilibrio": 21.43,
+    "anoConEventoCon": 400,
+    "mesesHucha": 60.0,
+    "golpeMes1Con": 1500,
+    "gastoAno1Con": 175.0,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 300,
+    "franq": 100,
+    "limite": 3000,
+    "carencia": 2,
+    "prob": 25,
+    "coste": 1500,
+    "horizonte": 10
+   },
+   "expect": {
+    "cobertura": 1400,
+    "esperadoSin": 375.0,
+    "esperadoCon": 325.0,
+    "ahorroEsperado": 50.0,
+    "esperadoConTotal": 3250.0,
+    "probEquilibrio": 21.43,
+    "anoConEventoCon": 400,
+    "mesesHucha": 60.0,
+    "golpeMes1Con": 1500,
+    "gastoAno1Con": 175.0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 300,
+    "franq": 100,
+    "limite": 3000,
+    "carencia": 2,
+    "prob": 10,
+    "coste": 0,
+    "horizonte": 10
+   },
+   "expect": {
+    "cobertura": 0.0,
+    "esperadoSin": 0.0,
+    "esperadoCon": 300.0,
+    "ahorroEsperado": -300.0,
+    "esperadoConTotal": 3000.0,
+    "probEquilibrio": -1,
+    "anoConEventoCon": 300.0,
+    "mesesHucha": 0.0,
+    "golpeMes1Con": 0,
+    "gastoAno1Con": 75.0,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 300,
+    "franq": 100,
+    "limite": 3000,
+    "carencia": 2,
+    "prob": 0,
+    "coste": 1500,
+    "horizonte": 10
+   },
+   "expect": {
+    "cobertura": 1400,
+    "esperadoSin": 0.0,
+    "esperadoCon": 300.0,
+    "ahorroEsperado": -300.0,
+    "esperadoConTotal": 3000.0,
+    "probEquilibrio": 21.43,
+    "anoConEventoCon": 400,
+    "mesesHucha": 60.0,
+    "golpeMes1Con": 1500,
+    "gastoAno1Con": 175.0,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 300,
+    "franq": 100,
+    "limite": 3000,
+    "carencia": 0,
+    "prob": 100,
+    "coste": 1500,
+    "horizonte": 1
+   },
+   "expect": {
+    "cobertura": 1400,
+    "esperadoSin": 1500.0,
+    "esperadoCon": 400.0,
+    "ahorroEsperado": 1100.0,
+    "esperadoConTotal": 400.0,
+    "probEquilibrio": 21.43,
+    "anoConEventoCon": 400,
+    "mesesHucha": 60.0,
+    "golpeMes1Con": 100,
+    "gastoAno1Con": 125.0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "prima": 300,
+    "franq": 2000,
+    "limite": 500,
+    "carencia": 12,
+    "prob": 10,
+    "coste": 1500,
+    "horizonte": 10
+   },
+   "expect": {
+    "cobertura": 0.0,
+    "esperadoSin": 150.0,
+    "esperadoCon": 450.0,
+    "ahorroEsperado": -300.0,
+    "esperadoConTotal": 4500.0,
+    "probEquilibrio": -1,
+    "anoConEventoCon": 1800.0,
+    "mesesHucha": 60.0,
+    "golpeMes1Con": 1500,
+    "gastoAno1Con": 1500,
+    "mejor": 1
+   },
+   "tol": 1
+  }
+ ]
+}

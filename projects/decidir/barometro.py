@@ -284,24 +284,34 @@ def csv_text(D):
 
 def _historico_html(D):
     lic = D["licencia"]; eu = D["series_oficiales"].get("euribor12m")
-    rows_m = "".join(f'<tr><th scope="row">{mes_es(m["fecha_datos"])}{" (provisional)" if m["estado"] == "provisional" else ""}</th><td>{pct(m["euribor_12m"], 3)}</td><td>{pct(m["euribor_equilibrio"])}</td><td>{m["coche_ganador_15000km"]} ({num(m["coche_eur_km_ganador"], 2)} €/km)</td><td>{pct(m["rentabilidad_equilibrio_hipoteca_3pct_plazo"]) if m["rentabilidad_equilibrio_hipoteca_3pct_plazo"] is not None else "—"}</td></tr>' for m in reversed(D["historico"]))
+    rows_m = "".join(f'<tr><th scope="row">{mes_es(m["fecha_datos"])}{" (provisional)" if m["estado"] == "provisional" else ""}</th><td>{pct(m["euribor_12m"], 3)}</td><td>{pct(m["euribor_equilibrio"])}</td><td>{m["coche_ganador_15000km"]} ({num(m["coche_eur_km_ganador"], 2)} €/km)</td><td>{pct(m["rentabilidad_equilibrio_hipoteca_3pct_plazo"]) if m["rentabilidad_equilibrio_hipoteca_3pct_plazo"] is not None else "—"}</td><td>{pct(m["tipo_fijo_referencia"]) if m.get("tipo_fijo_referencia") is not None else "—"}</td><td>{num(m["gasolina_eur_l"], 3) + " €/l" if m.get("gasolina_eur_l") is not None else "—"}</td></tr>' for m in reversed(D["historico"]))
     out = f"""
 <h2 id="historico">Serie histórica del Barómetro</h2>
 <p>Una fila por mes con las cifras de cabecera. El mes en curso es provisional (se recalcula con cada dato nuevo); al acabar el mes queda congelado con su último cálculo.</p>
 <div class="em-tw"><table>
-<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m</th><th scope="col">Euríbor de equilibrio (fija de referencia)</th><th scope="col">Coche más barato a 15.000 km</th><th scope="col">Rentabilidad que bate a amortizar al 3 %</th></tr></thead>
+<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m</th><th scope="col">Euríbor de equilibrio (fija de referencia)</th><th scope="col">Coche más barato a 15.000 km</th><th scope="col">Rentabilidad que bate a amortizar al 3 %</th><th scope="col">Tipo fijo medio (BCE)</th><th scope="col">Gasolina 95</th></tr></thead>
 <tbody>{rows_m}</tbody>
 </table></div>"""
+    tf = D["series_oficiales"].get("tipo_hipoteca_fija")
+    tfd = dict(tf["puntos"]) if tf else {}
+    if eu and tf:  # «Dato del mes»: último mes con las dos series oficiales (mismo mes, sin mezclar periodos)
+        com = [p for p, _ in eu["puntos"] if p in tfd]
+        if com:
+            mm = com[-1]; ev = dict(eu["puntos"])[mm]; fv = tfd[mm]; dif = round(fv - ev, 3)
+            rel = "por debajo" if dif < 0 else ("por encima" if dif > 0 else "igual que")
+            out += f"""
+<div class="box" id="dato-del-mes"><p><strong>Dato del mes ({mes_es(mm + "-01")}):</strong> el tipo medio de las nuevas hipotecas fijas a más de 10 años en España fue del <strong>{pct(fv)}</strong>, {num(abs(dif), 2) + " puntos " + rel if dif else rel} del Euríbor a 12 meses de ese mismo mes ({pct(ev, 3)}). Es el último mes con las dos series publicadas por el BCE; la tabla de abajo muestra cómo ha cambiado esa distancia.</p>
+<p class="note">Fuentes: <a href="{html.escape((tf["fuente"] or {}).get("url", ""))}" rel="noopener">BCE, MIR (tipo anual acordado, no TAE)</a> y <a href="{html.escape((eu["fuente"] or {}).get("url", ""))}" rel="noopener">BCE, Euríbor 1 año</a>. Medias de mercado: la oferta que te hagan depende de tu perfil.</p></div>"""
     if eu and len(eu["puntos"]) >= 2:
         pts = eu["puntos"][-12:]
-        rows_e = "".join(f'<tr><th scope="row">{mes_es(p + "-01")}</th><td>{pct(v, 3)}</td></tr>' for p, v in reversed(pts))
+        rows_e = "".join(f'<tr><th scope="row">{mes_es(p + "-01")}</th><td>{pct(v, 3)}</td><td>{pct(tfd[p]) if p in tfd else "—"}</td></tr>' for p, v in reversed(pts))
         out += f"""
-<h3 id="euribor-mensual">Euríbor a 12 meses: media mensual de los últimos {len(pts)} meses</h3>
+<h3 id="euribor-mensual">Euríbor a 12 meses y tipo fijo medio: últimos {len(pts)} meses</h3>
 <div class="em-tw"><table>
-<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m (media mensual)</th></tr></thead>
+<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m (media mensual)</th><th scope="col">Tipo fijo medio, nuevas hipotecas &gt; 10 años (España)</th></tr></thead>
 <tbody>{rows_e}</tbody>
 </table></div>
-<p class="note">Fuente: <a href="{html.escape((eu["fuente"] or {}).get("url", ""))}" rel="noopener">{html.escape((eu["fuente"] or {}).get("nombre", ""))}</a>. Los {len(eu["puntos"])} meses disponibles están en el CSV.</p>"""
+<p class="note">Fuente: <a href="{html.escape((eu["fuente"] or {}).get("url", ""))}" rel="noopener">{html.escape((eu["fuente"] or {}).get("nombre", ""))}</a>{(' y <a href="' + html.escape((tf["fuente"] or {}).get("url", "")) + '" rel="noopener">' + html.escape((tf["fuente"] or {}).get("nombre", "")) + "</a>") if tf else ""}. «—»: mes aún no publicado. Las series completas están en el CSV.</p>"""
     out += f"""
 <h2 id="descargas">Descarga los datos y licencia</h2>
 <ul>

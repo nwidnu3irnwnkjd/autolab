@@ -36,10 +36,10 @@
 - [ ] jubilacion-anticipada-o-demorada — Jubilación anticipada o demorada: pensión acumulada y edad de equilibrio [fiscal/regulada, YMYL alto; c10]
 - [ ] deposito-letras-o-fondo-monetario — Depósito, Letras del Tesoro o fondo monetario: rentabilidad neta tras impuestos [fiscal; c10]
 - [x] portatil-o-movil-comprar-renting-o-financiar — Portátil o móvil: comprar, renting o financiar (coste total a N años) [no fiscal; c10; Black Friday]
-- [ ] fibra-y-movil-juntos-o-por-separado — Fibra y móvil: pack convergente o por separado (coste a 24 meses, precios del usuario) [no fiscal; c10]
+- [x] fibra-y-movil-juntos-o-por-separado — Fibra y móvil: pack convergente o por separado (coste a 24 meses, precios del usuario) [no fiscal; c10]
 - [ ] seguro-vida-hipoteca-banco-o-externo — Seguro de vida de la hipoteca: banco o póliza externa (ahorro a N años) [no fiscal; verificar competencia; c10]
 - [x] teletrabajo-o-oficina-coste-real — Teletrabajo u oficina: cuánto ahorras de verdad al año [no fiscal; c10]
 - [ ] seguro-salud-privado-merece-la-pena — Seguro de salud privado: ¿merece la pena? prima acumulada vs pago por uso [no fiscal, YMYL medio; c10]
-- [ ] seguro-mascota-merece-la-pena — Seguro de mascota: coste anual del perro/gato y si compensa asegurarlo [no fiscal; c10]
+- [x] seguro-mascota-merece-la-pena — Seguro de mascota: coste anual del perro/gato y si compensa asegurarlo [no fiscal; c10]
 - [ ] comprar-o-alquilar-herramienta — Comprar o alquilar herramienta o maquinaria: nº de usos de equilibrio [no fiscal; evidencia débil, validar; c10]
 - nota Investigador 2026-10-02 (c10): detalle de evidencia en journal/ideas.md «Ciclo 10». Reserva fiscal: deduccion-alquiler-vivienda-por-comunidad (solo con tabla BOE verificada).

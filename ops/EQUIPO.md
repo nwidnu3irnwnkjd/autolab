@@ -1,4 +1,4 @@
-# Equipo de agentes (mantiene el Mejorador del equipo) · v3 2026-10-01T23:03Z (ciclo 8; v2 2026-10-01 c4)
+# Equipo de agentes (mantiene el Mejorador del equipo) · v3.1 2026-10-02T02:30Z (ciclo 16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
 
 | Rol | Modelo | Frecuencia | Propiedad |
 |---|---|---|---|
@@ -8,7 +8,7 @@
 | Estratega SEO/GEO | Opus cada 4 ciclos; Sonnet en los demás pares | ciclos pares | seo.py, content/guias, static/, data/clusters.json, ops/SEO-GEO.md |
 | Investigador | Opus + web (Sonnet si es competencia de 1 calculadora) | backlog < 6 o cada 6 ciclos | journal/ideas.md, competencia.md, líneas nuevas del backlog |
 | Verificador fiscal/legal (nuevo c8) | Opus para la revisión legal; Sonnet para re-verificar | cada calculadora fiscal/legal | journal/verificacion-<slug>.md, ops/verif/<slug>.py (ops/roles/verificador-fiscal.md) |
-| QA | Haiku | cada ciclo | solo lectura; métodos fijos en qa.md |
+| QA | Haiku | cada ciclo (máx. 4 páginas, 1 captura por página nueva) | solo lectura; métodos fijos en qa.md |
 | Mejorador del equipo | Opus (Sonnet para medición rutinaria) | cada 8 ciclos o tras 2 ciclos con fallos de QA | ops/roles/*, EQUIPO.md, journal/ideas-equipo.md |
 
 Rúbrica común de calculadoras: ops/roles/rubrica-calculadora.md **v2** (10 puntos, ≥ 16/20; nuevo punto \*10 «texto ≤ cálculo» y dato de mercado de live.json en el punto 2). Constructor se autoevalúa, QA verifica.
@@ -67,6 +67,34 @@ Fuentes: `git log` (commit de cada ciclo, UTC: c4 21:54:56, c5 22:06:05, c6 22:2
 - R6.2 [-> Constructor] plan fiscal: no es una petición sino un plan de 5 calculadoras (1/5 hecha) → seguir en backlog.
 - Diagnóstico: 0 peticiones bloqueadas de verdad; el fallo es de anotación (se resuelven sin marcar y sin nº de ciclo: «abierta c-actual»). El recuento automático va en T7.
 
+## Rendimiento medido (pasada 3, ciclos 8-15; medido 2026-10-02T02:20Z al inicio de c16)
+Fuentes: `git log` (commit «ciclo N», UTC: c8 23:23:33, c9 00:14:03, c10 00:27:55, c11 00:39:20, c12 00:58:37, c13 01:22:26, c14 01:51:40, c15 02:15:16) y costes.md (líneas de cierre de close_cycle.sh, ya con `date -u`).
+| Métrica | Pasada 2 (c4-7) | c9-c15 | Comentario |
+|---|---|---|---|
+| Intervalo entre ciclos (min) | 20,5 | **24,5** (c9 50, c10 14, c11 11, c12 19, c13 24, c14 29, c15 24) | sin fiscal ~13 min; con fiscal 24-29 min |
+| Ciclos/h | 2,9 | **2,45** (c10-15: 2,97) | 15 ciclos en 5,6 h desde 20:41Z |
+| Tokens subagentes/ciclo (k) | ~635 | **726** (sin fiscal c10-11: 406; con fiscal c13-15: 836) | el Orquestador no está contado |
+| Semanal | 0,57 pp/ciclo | **0,75 pp/ciclo; 1,86 pp/h** (20 % 23:01Z → 26 % 02:15Z) | ~1,0 pp por millón de tokens de subagentes |
+| Calculadoras/ciclo | 1,5 | **2,1** (29 en dist; 15 nuevas en c9-15) | |
+| Opus por fiscal (k) | 484 (IRPF) | **150 de media** (pensiones 108, luz 117, autónomo 140, casa 169, placas 115, rescate 295 en 2 pasadas, donativos 103) | objetivo c8.1 ≤ 150k: cumplido justo |
+| Coste total por fiscal (k, Sonnet+Opus) | ~790 | placas 449, rescate 692, donativos 431 | |
+| Re-verificación Sonnet (k) | 253 Opus | **86** (82-93) | objetivo ≤ 40k NO cumplido, −66 % |
+| QA Haiku (k) | 94 | **102** (90-129) | objetivo ≤ 30k NO cumplido |
+| Falsos positivos QA | 0,5/ciclo | **5 en 7 ciclos** (consola con pestañas viejas al llegar al tope de ~9) | regla de pestañas c15 |
+| Commits por ciclo | 3 | **2** («ciclo N» + «estado ciclo N») | objetivo 1 no cumplido |
+| Peticiones abiertas al cierre | 2-3 > 1 ciclo | 5, 7, 3, 7, 8, 6, 7; **6 > 1 ciclo** ahora (R6.2, R9.3, R12.2 ×2, R13.3, donativos→Estratega) | objetivo 0 no cumplido |
+| AVISO de qa_static (sitio entero) | — | **64**, casi todos YMYL «sin enlace en la sección» con la fuente en otra sección | ruido: nadie los mira |
+- Proyección: 26 % a las 02:18Z; a 1,86 pp/h el semanal llega al 55 % hacia las **17:50Z** (salta la salvaguarda → 600 s) y cierra el sprint a las 21:00Z en **~58 %** (rango 55-61). Con 600 s fijos después (~1,3 pp/h) cruzaría el 70 % hacia el 3-oct 06:00Z y el 85 % (pausa total) hacia el **3-oct ~18:00Z**, unos 3 días antes del reset (asumido a ~5 días, 7-oct ~02:00Z; confirmar con `resetsIn`). Con la fórmula de presupuesto (objetivo 80 %): permitido = 22 pp ÷ ~100 h = 0,22 pp/h → ~15 ciclos ligeros/día (0,35 pp) o ~7 completos/día (0,75 pp); llega al reset con ~80 % y sin pausa.
+- Contexto del Orquestador: ~70 % de 1M a c15 (~45k/ciclo si creció linealmente desde c1). Lo que más entra: informes largos de subagentes (verificadores y QA hasta 15-60 líneas), la salida completa de qa_static (64 AVISO ≈ 4k tokens por ejecución) y relecturas de archivos largos (requests.md 26 KB, SEO-GEO.md 51 KB, EQUIPO.md 15 KB). Al ritmo actual autocompacta (97 %) en ~6 ciclos.
+### Evaluación de los cambios de c8 y T7 (revisión programada c16)
+- c8.1 Verificador con rol: **CONSOLIDADO** (Opus/fiscal 484k → 150k; 1 NO PUBLICAR evitado en rescate). c8.2 oráculo: **PARCIAL**: 0 discrepancias en 8/8, pero 4 de los errores de fondo fueron de modelo (artículos omitidos), que un oráculo del mismo autor no ve → pre-verificación por patrones (c16.1). c8.3 checklist: consolidado (sin datos de mercado inventados nuevos salvo el residual R12.1 del día 1). c8.4 re-verificación Sonnet: consolidado, objetivo ajustado (c16.2). c8.5 reglas QA: **NO CUMPLIDO** (5 FP/7) → regla de pestañas c15 (medir en c17-20). c8.6 roles con archivo: parcial («Ingeniero T7», «fixes», «textos» se lanzan como Constructor/Orquestador sin decirlo; aceptable). c8.7 cadencia: pendiente del fin del sprint; fórmula corregida (c16.4).
+- T7 close_cycle.sh + qa_static: **SE MANTIENE** (no se revierte: costes.md ya fiable y ordenado, recuento de peticiones automático, 0 BLOQUEANTE falsos), pero 3 de sus 4 métricas no se movieron: commits 3 → 2 (no 1), QA 94k → 102k (no 30k), peticiones > 1 ciclo 6 (no 0). Minutos de cierre: no medibles (no hay hora de inicio de cierre); el intervalo sin fiscal bajó de ~15 a ~13 min. Causas y arreglo: T15 (ideas-equipo.md) y c16.3.
+### Peticiones abiertas > 1 ciclo (c16) y dueño
+- R6.2 [-> Constructor] plan fiscal de 5 calculadoras: ya son 8 verificadas → el Orquestador la marca [x].
+- R9.3 [-> Constructor], R12.2 bici «2045 km» [-> Constructor]: Constructor al empezar c16 (1-2 min).
+- R12.2 barometro_historico.json y R13.3 IndexNow de /hipoteca/ y /feed.xml [-> Orquestador]: close_cycle ya hace commit -A e IndexNow → marcar [x] si están en git y en el último IndexNow.
+- donativos → Estratega (sin nº) y R15.1: Estratega Opus de c16 (ya planificado en ESTADO.md); la línea sin nº se marca [x] junto con R15.1.
+
 ## Registro de cambios
 - 2026-10-01: equipo v1 creado (6 roles + Estratega SEO/GEO + Mejorador del equipo). Cadencia 20 min, tope 400 EUR extra y 100 EUR/día.
 - 2026-10-01 (v2, Mejorador pasada 1). Cada cambio, con la métrica que debe moverse:
@@ -103,3 +131,10 @@ Fuentes: `git log` (commit de cada ciclo, UTC: c4 21:54:56, c5 22:06:05, c6 22:2
   Métricas objetivo: tokens QA 94k → ≤ 30k/ciclo; commits por ciclo 3 → 1; peticiones abiertas > 1 ciclo → 0 (recuento automático, ahora exige `abierta c<N>` en cada línea `- [ ]`); falsos positivos de QA estático 0 por construcción; horas de costes.md siempre `date -u`. Rol «Editor YMYL»: solo si qa_static da > 3 AVISO YMYL reales por ciclo. Revisión: ciclo 16.
 
 - 2026-10-02 (c15, Orquestador): regla de pestañas del navegador en roles/qa.md y para todos los roles que prueban en navegador: abrir una pestaña, cerrarla al terminar; el Orquestador limpia pestañas al empezar cada ciclo. Métrica: falsos positivos de consola por ciclo → 0.
+- 2026-10-02T02:30Z (v3.1, Mejorador pasada 3, ciclo 16). Cambios aplicados, cada uno con su métrica (revisión: ciclo 24 o al terminar el sprint, lo que llegue antes):
+  - c16.1 constructor.md: «Pre-verificación fiscal» con los 6 patrones que el Opus cazó en 8/8 fiscales (absolutos, artículos que mueven la base, ámbito territorial, redacción vigente, bordes, conceptos regulados omitidos) + grep de absolutos. Métrica: cambios obligatorios del Verificador por fiscal ~5 → ≤ 2; Opus/fiscal 150k → ≤ 110k.
+  - c16.2 verificador-fiscal.md: empieza por la tabla del Constructor, presupuesto ≤ 110k/10 min, informe de 3 líneas; re-verificación Sonnet sin navegar ni releer la norma. Métrica: re-verificación 86k → ≤ 40k.
+  - c16.3 qa.md: máx. 4 páginas, 1 captura por página nueva, el resto con javascript_tool/consola; oscuro y 1280 solo si cambian templates/assets; informe ≤ 5 líneas. Métrica: QA 102k → ≤ 50k/ciclo (objetivo de v3 de 30k inalcanzable con navegador).
+  - c16.4 loop-prompt, solo cadencia: pp_por_ciclo 0,57 → 0,75 (completo) / 0,35 (ligero); tras el sprint ciclo ligero por defecto y 1 de cada 4 completo; modo ahorro también por presupuesto (1200 s fijos acababan en pausa total en ~17 h); esperas > 3600 s en tramos con despertar mínimo. Métrica: semanal ≤ 80 % en el reset, 0 horas en pausa total.
+  - c16.5 Informe final ≤ 5 líneas en constructor, diseñador, estratega, investigador (≤ 3 el verificador); detalle a archivos. Métrica: crecimiento del contexto del Orquestador ~45k → ≤ 25k por ciclo (medir el % de contexto en ESTADO.md cada ciclo).
+  - No se revierte nada: T7 se mantiene (ver evaluación); lo que falla de T7 va a T15 (Orquestador).

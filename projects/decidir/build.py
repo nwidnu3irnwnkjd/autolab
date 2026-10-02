@@ -34,6 +34,8 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical,
                           head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#")
     if og: out = out.replace("/assets/og.png", "/assets/" + og)
+    # TEMPORAL (Estratega, c16): pie con los hubs nuevos (/coche/, /energia/) hasta que el Diseñador los lleve a templates/base.html (R16.2); entonces borrar esta línea
+    out = out.replace('<a href="/hipoteca/">Hipotecas</a><a href="/barometro/">', '<a href="/hipoteca/">Hipotecas</a>' + hubs.footer_links(ACTIVE_HUBS) + '<a href="/barometro/">', 1)
     out = minify.html(out)
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)
@@ -101,7 +103,7 @@ def main():
           jsonld=barometro.jsonld(BARO, B, bmod, seo.published("barometro.py"), bdesc, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=bmod)
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
-        hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_text=(barometro.answers_text(BARO) or [""])[0])
+        hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [])
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
     if GUIDES:

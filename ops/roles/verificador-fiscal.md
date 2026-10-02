@@ -23,3 +23,10 @@ Sonnet (no Opus): ejecuta ops/verif/<slug>.py y el oráculo del Constructor cont
 - Obligatorio para todo lo fiscal/legal (CLAUDE.md, YMYL). Una calculadora fiscal ≈ 0,15-0,2 pp semanales con este protocolo frente a ~0,5 pp en c7.
 - Calculadoras con norma pero sin impuestos (p. ej. topes de comisiones de la Ley 5/2019): solo pasos 1, 2 y 5, Sonnet basta si las cifras ya están en params con fuente y fecha.
 - No se paga por casos «de nicho» que no cambian el ganador: si una rama afecta a < 1 % de los usuarios plausibles y no cambia el veredicto, se declara como límite en la página en vez de modelarla.
+
+## Pasada 3 del Mejorador (2026-10-02, c16): enfoque por patrones y presupuesto
+Medido en 8 fiscales (c7-c15): Opus 103-169k por fiscal (media 150k con el rescate, que necesitó 2 pasadas Opus porque cambió la interpretación: 295k); 0 discrepancias de oráculo en todas, pero el Opus encontró de media ~5 cambios obligatorios, casi todos de los 6 patrones de constructor.md («Pre-verificación fiscal»). Errores reales de fórmula: 1 (Baleares, borde); de modelo (arts. omitidos): 4; de texto absoluto: 6; ámbito territorial: 5; redacción legal desactualizada: 5.
+- Empieza por la tabla de pre-verificación del Constructor: verifica sus 6 líneas (sobre todo la 2, artículos que mueven la base: es donde estuvo el único NO PUBLICAR) y no rehagas lo que ya está demostrado con fuente.
+- Presupuesto: ≤ 110k tokens y ≤ 10 min. Métrica: Opus por fiscal 150k → ≤ 110k sin perder hallazgos de las clases 2 y 3.
+- Informe al Orquestador: 3 líneas (VEREDICTO · nº de cambios obligatorios por patrón 1-6 · ruta del journal). La tabla completa, solo en journal/verificacion-<slug>.md.
+- Re-verificación (Sonnet): sin navegar ni releer la norma; solo ejecutar ops/verif/<slug>.py + el oráculo y releer las frases marcadas. Objetivo ≤ 40k (c8-c15: 82-93k).
