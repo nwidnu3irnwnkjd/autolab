@@ -66,7 +66,7 @@
     "gasolinera-low-cost-compensa-desviarse"
   ],
   "bici-electrica-o-transporte-publico": [
-    "tren-avion-o-coche",
+    "vivir-cerca-del-trabajo-o-mas-barato-lejos",
     "coche-propio-o-carsharing-o-vtc",
     "teletrabajo-o-oficina-coste-real"
   ],
@@ -164,7 +164,7 @@
   "amortizar-o-invertir": [
     "amortizar-plazo-o-cuota",
     "deposito-letras-o-fondo-monetario",
-    "traspasar-fondo-o-reembolsar-irpf"
+    "hipoteca-mas-entrada-o-conservar-ahorros"
   ],
   "jubilacion-anticipada-o-demorada": [
     "plan-pensiones-o-fondo-indexado",
@@ -203,7 +203,7 @@
   ],
   "comparar-ofertas-de-trabajo-neto-real": [
     "autonomo-o-asalariado",
-    "capitalizar-paro-o-cobrarlo",
+    "retencion-irpf-nomina-subir-o-no",
     "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
   "reformar-o-mudarse": [
@@ -224,7 +224,7 @@
   "alquilar-o-comprar": [
     "cuanto-ahorrar-para-comprar-casa",
     "reformar-o-mudarse",
-    "irpf-alquilar-vivienda-rendimiento-neto"
+    "vivir-cerca-del-trabajo-o-mas-barato-lejos"
   ],
   "capitalizar-paro-o-cobrarlo": [
     "autonomo-o-sociedad-limitada",
@@ -243,7 +243,7 @@
   ],
   "obligado-a-declarar-renta-dos-pagadores": [
     "declaracion-conjunta-o-individual",
-    "irpf-alquilar-vivienda-rendimiento-neto",
+    "retencion-irpf-nomina-subir-o-no",
     "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
   ],
   "gimnasio-o-entrenar-en-casa": [
@@ -359,7 +359,7 @@
   "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
     "cuanto-ahorrar-para-comprar-casa",
     "amortizar-plazo-o-cuota",
-    "hipoteca-fija-o-variable"
+    "hipoteca-mas-entrada-o-conservar-ahorros"
   ],
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
@@ -380,5 +380,20 @@
     "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
     "plan-pensiones-o-fondo-indexado",
     "amortizar-o-invertir"
+  ],
+  "vivir-cerca-del-trabajo-o-mas-barato-lejos": [
+    "bici-electrica-o-transporte-publico",
+    "alquilar-o-comprar",
+    "teletrabajo-o-oficina-coste-real"
+  ],
+  "hipoteca-mas-entrada-o-conservar-ahorros": [
+    "amortizar-o-invertir",
+    "amortizar-plazo-o-cuota",
+    "hipoteca-20-25-o-30-anos-cuota-vs-intereses"
+  ],
+  "retencion-irpf-nomina-subir-o-no": [
+    "obligado-a-declarar-renta-dos-pagadores",
+    "declaracion-conjunta-o-individual",
+    "comparar-ofertas-de-trabajo-neto-real"
   ]
 }

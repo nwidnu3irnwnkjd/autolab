@@ -1,0 +1,171 @@
+{
+ "slug": "retencion-irpf-nomina-subir-o-no",
+ "title": "¿Subir la retención del IRPF en la nómina? Calcula cuánto",
+ "description": "Calcula si te sale a pagar o a devolver en la Renta 2026 y qué % de retención en la nómina lo deja en 0, con hijos, 2.º pagador y tu comunidad.",
+ "h1": "¿Me conviene subir la retención del IRPF en la nómina?",
+ "lead": "Subir la retención del Impuesto sobre la Renta (IRPF) en tu nómina no cambia la cuota del impuesto, solo adelanta el pago: suele convenir si la calculadora te sale a pagar en la Renta y estás obligado a declarar, porque evitas pagar de golpe aunque adelantar el dinero tiene un coste (con 30.000 € brutos en Madrid y una retención del 12 % saldrían unos 998 € a pagar y un 15,33 % lo dejaría en 0) y no conviene si ya te sale a devolver ni, en general, si no estás obligado a declarar (con el 19 % sobre esos 30.000 € te devolverían unos 1.102 €, dinero que habrías prestado a Hacienda sin intereses). En territorio común; País Vasco y Navarra tienen sus propias normas.",
+ "veredicto": "En territorio común, conviene pedir un tipo de retención mayor (art. 88.5 del Reglamento del IRPF) si tus datos dan un pago en la Renta: unos 998 € con 30.000 € brutos, el 12 % y vivir en Madrid, y un 15,33 % lo deja en 0. No conviene si te sale devolución (unos 1.102 € con el 19 %) y da igual si la diferencia es menor de 100 €. Con un segundo pagador que cobra menos de 15.876 € la retención suele quedarse corta (30.000 € más 6.000 € con el 16,42 %: unos 1.232 € a pagar). Si no estás obligado a declarar (20.000 € con el 6 %: unos 671 € de diferencia, límite 22.000 €), no tendrías que pagar esa diferencia.",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "bruto",
+   "label": "Salario bruto anual (€, suma de todas las pagas)",
+   "default": 30000,
+   "min": 1,
+   "step": 500,
+   "default_from": "params.retencion_irpf_nomina_2026.supuestos.bruto"
+  },
+  {
+   "id": "ret",
+   "label": "Retención actual que ves en tu nómina (%)",
+   "default": 12,
+   "min": 0,
+   "max": 47,
+   "step": 0.01,
+   "default_from": "params.retencion_irpf_nomina_2026.supuestos.ret"
+  },
+  {
+   "id": "hijos",
+   "label": "Hijos menores de 25 años que conviven contigo y ganan hasta 8.000 € (nº)",
+   "default": 0,
+   "min": 0,
+   "max": 10,
+   "step": 1
+  },
+  {
+   "id": "menores3",
+   "label": "De ellos, menores de 3 años (nº)",
+   "default": 0,
+   "min": 0,
+   "max": 10,
+   "step": 1
+  },
+  {
+   "id": "reparto",
+   "label": "Cómo cuentas a tus hijos",
+   "type": "select",
+   "options": [
+    {
+     "v": "entero",
+     "t": "Los reclamo yo solos (soy el único progenitor o el otro no los usa)"
+    },
+    {
+     "v": "mitad",
+     "t": "A medias con el otro progenitor"
+    }
+   ]
+  },
+  {
+   "id": "pagador2",
+   "label": "Segundo pagador: importe bruto al año (€; 0 si solo tienes uno)",
+   "default": 0,
+   "min": 0,
+   "step": 500
+  },
+  {
+   "id": "ccaa",
+   "label": "Comunidad autónoma donde resides",
+   "type": "select",
+   "options": [
+    {
+     "v": "madrid",
+     "t": "Comunidad de Madrid"
+    },
+    {
+     "v": "andalucia",
+     "t": "Andalucía"
+    },
+    {
+     "v": "aragon",
+     "t": "Aragón"
+    },
+    {
+     "v": "asturias",
+     "t": "Asturias"
+    },
+    {
+     "v": "baleares",
+     "t": "Illes Balears"
+    },
+    {
+     "v": "canarias",
+     "t": "Canarias"
+    },
+    {
+     "v": "cantabria",
+     "t": "Cantabria"
+    },
+    {
+     "v": "clm",
+     "t": "Castilla-La Mancha"
+    },
+    {
+     "v": "cyl",
+     "t": "Castilla y León"
+    },
+    {
+     "v": "cataluna",
+     "t": "Cataluña"
+    },
+    {
+     "v": "extremadura",
+     "t": "Extremadura"
+    },
+    {
+     "v": "galicia",
+     "t": "Galicia"
+    },
+    {
+     "v": "murcia",
+     "t": "Región de Murcia"
+    },
+    {
+     "v": "rioja",
+     "t": "La Rioja"
+    },
+    {
+     "v": "valencia",
+     "t": "Comunitat Valenciana"
+    },
+    {
+     "v": "foral",
+     "t": "País Vasco o Navarra (régimen foral: no calculado)"
+    }
+   ]
+  },
+  {
+   "id": "euribor",
+   "label": "Rentabilidad a la que podrías ahorrar ese dinero (% anual)",
+   "default": 3.247,
+   "min": 0,
+   "max": 20,
+   "step": 0.001,
+   "default_from": "live.euribor12m",
+   "default_round": 3,
+   "default_fallback": "params.euribor_12m"
+  }
+ ],
+ "faqs": [
+  [
+   "¿Subir la retención me hace pagar más impuestos?",
+   "No cambia la cuota del impuesto, solo cuánto adelantas a Hacienda a lo largo del año. Con 30.000 € brutos en Madrid la cuota estimada es de 4.598 € tanto si te retienen el 12 % como el 19 %; lo que cambia es el resultado de la Renta: unos 998 € a pagar con el 12 % y unos 1.102 € a devolver con el 19 %. La retención es un pago a cuenta y la diferencia se liquida en la declaración (art. 103 de la Ley del IRPF)."
+  ],
+  [
+   "¿Cómo le pido a mi empresa que me retenga más?",
+   "Por escrito a tu pagador, con al menos cinco días de antelación a la confección de la nómina; está obligado a atenderlo. El tipo que pides se aplica como mínimo hasta fin de año y en los años siguientes mientras no lo renuncies por escrito o pidas otro superior (art. 88.5 del Reglamento del IRPF). Como solo se aplica a las nóminas que quedan, si lo pides a mitad de año el tipo tiene que ser más alto que el que sale aquí para llegar al mismo importe."
+  ],
+  [
+   "Tengo dos pagadores: ¿por qué me sale a pagar?",
+   "Porque cada pagador calcula su retención sin saber lo que cobras del otro y el Reglamento no reparte ningún exceso entre ellos. Si el segundo te paga menos de 15.876 € al año, con la situación más habitual y un contrato de un año o más no te retiene nada (art. 81 del Reglamento; si dura menos, retiene al menos el 2 % por el art. 86.2) y el tipo del primero no cubre el total. Con 30.000 € más 6.000 € y el 16,42 % del primero salen unos 1.232 € a pagar; un 20,53 % sobre los 30.000 € lo deja en 0. Además, si el segundo y siguientes (los de menor cuantía) suman más de 1.500 €, el límite para estar obligado a declarar baja de 22.000 a 15.876 € (art. 96.3.a de la Ley)."
+  ],
+  [
+   "Si me retienen de más, ¿cuánto tarda Hacienda en devolvérmelo y paga intereses?",
+   "Hacienda dispone de seis meses desde el fin del plazo de presentación para ordenar la devolución y, pasado ese plazo, paga intereses de demora si el retraso es imputable a la Administración (art. 103.1 y 103.4 de la Ley del IRPF). Por retener de más no paga ningún interés: prestarle 1.000 € durante un año equivale a dejar de ganar 30 € si tu ahorro rinde el 3 %, un coste que la calculadora estima con la rentabilidad que indiques."
+  ],
+  [
+   "¿Qué retención me corresponde por ley y puedo pedir menos?",
+   "El tipo sale del procedimiento general de los arts. 82 a 86 del Reglamento con tus circunstancias comunicadas en el modelo 145: para 30.000 € brutos, sin hijos, es el 16,42 %, sea cual sea la comunidad (la escala de retención es única). El Reglamento solo permite pedir un tipo superior (art. 88.5); uno inferior solo es posible comunicando cambios en tu situación personal o familiar que bajen el tipo (art. 88.4)."
+  ]
+ ],
+ "sources": "Modelo propio simplificado, para el ejercicio 2026 (declaración a presentar en 2027), con el Reglamento del IRPF (RD 439/2007, texto consolidado a 30/9/2026, https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820), consultado el 2/10/2026: arts. 80 a 86 (procedimiento general: base, mínimo, escala de retención del art. 85.1, límite del 43 % del art. 85.3, límites del art. 81 para no retener y tipo con dos decimales), art. 88.2 (sin comunicación no se tienen en cuenta las circunstancias) y art. 88.5 (tipo superior a petición del trabajador); y con la Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): escala estatal (art. 63), escalas y mínimos autonómicos (art. 74), mínimos personal y familiar (arts. 57, 58 y 61), gastos y reducción por rendimientos del trabajo (arts. 19 y 20), deducción de la disposición adicional 61.ª (redacción del RDL 5/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-3810), obligación de declarar (art. 96) y devolución (art. 103). El Real Decreto-ley 26/2026 (BOE-A-2026-20266) no modifica ninguno de esos artículos y no se usa como fuente de las cifras; no hay Presupuestos de 2026. Supuestos: declaración individual con solo rentas del trabajo; cotización del trabajador del 6,50 % (4,70 + 1,55 + 0,10 + 0,15) con el tope de base de 2026; el primer pagador aplica el tipo que has indicado y el segundo retiene lo que le correspondería sin conocer tus circunstancias; situación del contribuyente «otras situaciones» del art. 81; menor de 65 años; los hijos se cuentan por mitad en la retención y en la declaración si eliges «a medias»; la diferencia de 100 € se considera dentro del margen del modelo; el coste de adelantar el dinero supone 12 meses al tipo que indiques (supuesto, no es un dato oficial). Excluidos: País Vasco y Navarra (régimen foral), Canarias, Ceuta y Melilla (retenciones y deducciones propias), discapacidad, ascendientes, pensión compensatoria y alimentos, deducción por vivienda habitual anterior a 2013 (reduce el tipo en 2 puntos, art. 86.1), contratos de menos de un año (tipo mínimo del 2 %, art. 86.2), planes de pensiones y demás reducciones de la base, ahorro y alquileres, autónomos, deducciones autonómicas y estatales y cambios de situación durante el año. Los planes de pensiones y las deducciones reducen el impuesto pero no la retención, así que con ellos la devolución real sería mayor que la estimada. Información orientativa, no asesoramiento fiscal."
+}

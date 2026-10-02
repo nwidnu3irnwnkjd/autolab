@@ -1,0 +1,379 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 30.000 € en Madrid con el 12 %, sale a pagar",
+   "in": {
+    "bruto": 30000,
+    "ret": 12,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "cuota": 4598.02,
+    "retenido": 3600.0,
+    "resultado": 998.02,
+    "tipo0": 15.33,
+    "tipoLegal": 16.42,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "dos hijos a medias, 40.000 € en Madrid",
+   "in": {
+    "bruto": 40000,
+    "ret": 14,
+    "hijos": 2,
+    "menores3": 0,
+    "reparto": "mitad",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "cuota": 6729.44,
+    "retenido": 5600.0,
+    "resultado": 1129.44,
+    "tipo0": 16.82,
+    "tipoLegal": 18.15,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "segundo pagador de 6.000 € que no retiene",
+   "in": {
+    "bruto": 30000,
+    "ret": 16.42,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 6000,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "cuota": 6157.6,
+    "retenido": 4926.0,
+    "resultado": 1231.6,
+    "tipo0": 20.53,
+    "tipoLegal": 16.42,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 15.876 € exactos, no hay retención ni cuota",
+   "in": {
+    "bruto": 15876,
+    "ret": 0,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "cuota": 0.0,
+    "retenido": 0.0,
+    "resultado": 0.0,
+    "tipo0": 0.0,
+    "tipoLegal": 0.0,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 15.877 €, retención del 1 % y devolución",
+   "in": {
+    "bruto": 15877,
+    "ret": 1,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "cuota": 0.0,
+    "retenido": 158.77,
+    "resultado": -158.77,
+    "tipo0": 0.0,
+    "tipoLegal": 0.0,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "devolución: 30.000 € en Madrid con el 19 %",
+   "in": {
+    "bruto": 30000,
+    "ret": 19,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "cuota": 4598.02,
+    "retenido": 5700.0,
+    "resultado": -1101.98,
+    "tipo0": 15.33,
+    "tipoLegal": 16.42,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "no obligado: 20.000 € con el 6 % sale a pagar pero no obliga",
+   "in": {
+    "bruto": 20000,
+    "ret": 6,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 4,
+    "cuota": 1871.35,
+    "retenido": 1200.0,
+    "resultado": 671.35,
+    "tipo0": 9.36,
+    "tipoLegal": 8.87,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tres hijos, uno menor de 3, Cataluña, 55.000 €",
+   "in": {
+    "bruto": 55000,
+    "ret": 20,
+    "hijos": 3,
+    "menores3": 1,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "cataluna",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "cuota": 10661.12,
+    "retenido": 11000.0,
+    "resultado": -338.88,
+    "tipo0": 19.38,
+    "tipoLegal": 18.55,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ajustada: 30.000 € con el 15,33 %",
+   "in": {
+    "bruto": 30000,
+    "ret": 15.33,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 3,
+    "cuota": 4598.02,
+    "retenido": 4599.0,
+    "resultado": -0.98,
+    "tipo0": 15.33,
+    "tipoLegal": 16.42,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "alto: 120.000 € en la Comunitat Valenciana (tope de cotización)",
+   "in": {
+    "bruto": 120000,
+    "ret": 30,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "valencia",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 1,
+    "cuota": 43139.76,
+    "retenido": 36000.0,
+    "resultado": 7139.76,
+    "tipo0": 35.95,
+    "tipoLegal": 34.3,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 22.000 € exactos no obligan",
+   "in": {
+    "bruto": 22000,
+    "ret": 14,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "cuota": 2576.61,
+    "retenido": 3080.0,
+    "resultado": -503.39,
+    "tipo0": 11.71,
+    "tipoLegal": 11.97,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 22.001 € obligan",
+   "in": {
+    "bruto": 22001,
+    "ret": 14,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 0,
+    "escenario": 2,
+    "cuota": 2576.82,
+    "retenido": 3080.14,
+    "resultado": -503.32,
+    "tipo0": 11.71,
+    "tipoLegal": 11.97,
+    "obligado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "régimen foral bloqueado",
+   "in": {
+    "bruto": 30000,
+    "ret": 12,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "foral",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 1,
+    "escenario": 0,
+    "cuota": 0,
+    "retenido": 0,
+    "resultado": 0,
+    "tipo0": 0,
+    "tipoLegal": 0,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "menores de 3 mayores que hijos bloqueado",
+   "in": {
+    "bruto": 30000,
+    "ret": 12,
+    "hijos": 1,
+    "menores3": 2,
+    "reparto": "entero",
+    "pagador2": 0,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "bloqueado": 1,
+    "escenario": 0,
+    "cuota": 0,
+    "retenido": 0,
+    "resultado": 0,
+    "tipo0": 0,
+    "tipoLegal": 0,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "V1: pagador menor de 1.000 € y mayor de 20.000 €, el límite es 22.000 €",
+   "in": {
+    "bruto": 1000,
+    "ret": 0,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 20000,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "limiteObl": 22000,
+    "obligado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "V3: tipo voluntario del 2.º pagador acotado a 100 %",
+   "in": {
+    "bruto": 20000,
+    "ret": 0,
+    "hijos": 0,
+    "menores3": 0,
+    "reparto": "entero",
+    "pagador2": 1000,
+    "ccaa": "madrid",
+    "euribor": 3.247
+   },
+   "expect": {
+    "limiteObl": 22000,
+    "obligado": 0,
+    "tipo0p2": 100,
+    "alcanza2": 0
+   },
+   "tol": 1
+  }
+ ]
+}

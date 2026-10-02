@@ -1,0 +1,179 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 30000,
+    "tin": 2.76,
+    "baja": 0,
+    "plazo": 25,
+    "anos": 10,
+    "rent": 2
+   },
+   "expect": {
+    "capitalA": 120000,
+    "cuotaA": 554.19,
+    "cuotaB": 692.73,
+    "saldoA": 81606.46,
+    "saldoB": 102008.08,
+    "ahorroA": 18370.87,
+    "valorAhorro": 36569.83,
+    "patrimonioA": -63235.59,
+    "patrimonioB": -65438.24,
+    "dif": 2202.66,
+    "interesesA": 28108.96,
+    "interesesB": 35136.2,
+    "rentEq": 2.8,
+    "mesEq": 0,
+    "tipo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 30000,
+    "tin": 2.76,
+    "baja": 0,
+    "plazo": 25,
+    "anos": 10,
+    "rent": 5
+   },
+   "expect": {
+    "capitalA": 120000,
+    "cuotaA": 554.19,
+    "cuotaB": 692.73,
+    "saldoA": 81606.46,
+    "saldoB": 102008.08,
+    "ahorroA": 21386.53,
+    "valorAhorro": 48866.84,
+    "patrimonioA": -60219.93,
+    "patrimonioB": -53141.24,
+    "dif": -7078.69,
+    "interesesA": 28108.96,
+    "interesesB": 35136.2,
+    "rentEq": 2.8,
+    "mesEq": 0,
+    "tipo": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 30000,
+    "tin": 2.76,
+    "baja": 0,
+    "plazo": 25,
+    "anos": 5,
+    "rent": 2.8
+   },
+   "expect": {
+    "capitalA": 120000,
+    "cuotaA": 554.19,
+    "cuotaB": 692.73,
+    "saldoA": 102124.2,
+    "saldoB": 127655.24,
+    "ahorroA": 8903.81,
+    "valorAhorro": 34441.88,
+    "patrimonioA": -93220.39,
+    "patrimonioB": -93213.37,
+    "dif": -7.02,
+    "interesesA": 15375.45,
+    "interesesB": 19219.31,
+    "rentEq": 2.8,
+    "mesEq": 0,
+    "tipo": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 30000,
+    "tin": 2.76,
+    "baja": 0.4,
+    "plazo": 25,
+    "anos": 10,
+    "rent": 3
+   },
+   "expect": {
+    "capitalA": 120000,
+    "cuotaA": 529.92,
+    "cuotaB": 692.73,
+    "saldoA": 80264.07,
+    "saldoB": 102008.08,
+    "ahorroA": 22704.34,
+    "valorAhorro": 40317.49,
+    "patrimonioA": -57559.73,
+    "patrimonioB": -61690.58,
+    "dif": 4130.86,
+    "interesesA": 23854.3,
+    "interesesB": 35136.2,
+    "rentEq": 4.39,
+    "mesEq": 0,
+    "tipo": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 30000,
+    "tin": 0,
+    "baja": 0,
+    "plazo": 25,
+    "anos": 10,
+    "rent": 0
+   },
+   "expect": {
+    "capitalA": 120000,
+    "cuotaA": 400.0,
+    "cuotaB": 500.0,
+    "saldoA": 72000.0,
+    "saldoB": 90000.0,
+    "ahorroA": 12000.0,
+    "valorAhorro": 30000.0,
+    "patrimonioA": -60000.0,
+    "patrimonioB": -60000.0,
+    "dif": 0.0,
+    "interesesA": 0.0,
+    "interesesB": 0.0,
+    "rentEq": -0.0,
+    "mesEq": 0,
+    "tipo": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "extra": 149000,
+    "tin": 2.76,
+    "baja": 0,
+    "plazo": 25,
+    "anos": 25,
+    "rent": 2
+   },
+   "expect": {
+    "capitalA": 1000,
+    "cuotaA": 4.62,
+    "cuotaB": 692.73,
+    "saldoA": 0,
+    "saldoB": 0,
+    "ahorroA": 266902.59,
+    "valorAhorro": 244450.29,
+    "patrimonioA": 266902.59,
+    "patrimonioB": 244450.29,
+    "dif": 22452.3,
+    "interesesA": 385.47,
+    "interesesB": 57820.32,
+    "rentEq": 2.8,
+    "mesEq": 0,
+    "tipo": 0
+   },
+   "tol": 1
+  }
+ ]
+}

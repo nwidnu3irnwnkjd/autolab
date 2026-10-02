@@ -26,7 +26,7 @@ HUBS = {
                  "cambiarla de banco, amortizar plazo o cuota y amortizar o invertir. Hoy el Euríbor a 12 meses está en el {{euribor_12m}} % "
                  "(media de {{periodo_euribor_es}}) y las hipotecas fijas nuevas a más de 10 años se firman de media al {{tipo_fijo}} % ({{periodo_tipo_fijo_es}}); fuente: BCE."),
         "groups": [
-            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
+            ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
@@ -34,6 +34,10 @@ HUBS = {
             "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
                 "name": "Plazo: 20, 25 o 30 años",
                 "text": "Un plazo más corto paga menos intereses pero sube la cuota. El que te conviene es el más corto cuya cuota, sumada a tus otras deudas, quepa en el tope de esfuerzo que fijes; la calculadora lo elige y, si no cabe ninguno, te da el plazo mínimo.",
+            },
+            "hipoteca-mas-entrada-o-conservar-ahorros": {
+                "name": "Más entrada o conservar ahorros",
+                "text": "Aportar más entrada baja la hipoteca y los intereses, pero deja el dinero atado al piso. La calculadora compara el patrimonio a N años de cada opción y la rentabilidad de equilibrio, y avisa si te quedas sin liquidez.",
             },
             "hipoteca-bonificada-o-sin-vinculaciones": {
                 "name": "Bonificada o sin vinculaciones",
@@ -238,7 +242,7 @@ HUBS = {
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
-            ("Al presentar la declaración y en el futuro", ["obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
+            ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
@@ -261,6 +265,10 @@ HUBS = {
             "venta-vivienda-plusvalia-irpf-exencion": {
                 "name": "Vender tu vivienda: IRPF y exención",
                 "text": "La ganancia (venta menos compra, gastos y mejoras) tributa en la base del ahorro; si es tu vivienda habitual puede quedar excluida reinvirtiendo en otra o, con 65 años o más, sin reinvertir. La calculadora da la ganancia, la parte exenta y la cuota con tus datos.",
+            },
+            "retencion-irpf-nomina-subir-o-no": {
+                "name": "Retención de IRPF en la nómina: ¿subirla o no?",
+                "text": "La retención es un anticipo, no el impuesto final: si es menor que tu cuota saldrá a pagar y si es mayor te devolverán la diferencia. La calculadora compara tu retención con tu cuota estimada y te dice si te conviene pedir que te la cambien.",
             },
             "obligado-a-declarar-renta-dos-pagadores": {
                 "name": "¿Estás obligado a declarar? (dos pagadores)",
@@ -331,9 +339,13 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
+            "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
+                "name": "Vivir cerca del trabajo o más barato lejos",
+                "text": "Vivir lejos solo compensa si lo que ahorras en alquiler o cuota supera el desplazamiento anual y el valor de tu tiempo. La calculadora da la distancia que lo equilibra con tus datos.",
+            },
             "cambiar-de-operadora-compensa-permanencia": {
                 "name": "Cambiar de operadora y permanencia",
                 "text": "Cambiar compensa si el ahorro mensual de la nueva oferta, multiplicado por los meses que te quedan, supera la penalización por permanencia. La calculadora te da los meses de equilibrio con tus datos.",

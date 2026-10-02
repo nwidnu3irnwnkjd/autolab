@@ -1,0 +1,167 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 750,
+    "km": 22,
+    "min": 30,
+    "cpk": 0.2,
+    "abono": 0,
+    "dias": 220,
+    "vh": 0
+   },
+   "expect": {
+    "ahorroAlquiler": 3000,
+    "desplaz": 1936.0,
+    "horas": 220.0,
+    "tiempoVal": 0.0,
+    "neto": 1064.0,
+    "netoSin": 1064.0,
+    "costeCerca": 12000,
+    "costeLejos": 10936.0,
+    "tipo": 0,
+    "vhEq": 4.84,
+    "alqEq": 911.33,
+    "kmEq": 34.09
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 750,
+    "km": 22,
+    "min": 30,
+    "cpk": 0.2,
+    "abono": 0,
+    "dias": 220,
+    "vh": 12
+   },
+   "expect": {
+    "ahorroAlquiler": 3000,
+    "desplaz": 1936.0,
+    "horas": 220.0,
+    "tiempoVal": 2640.0,
+    "neto": -1576.0,
+    "netoSin": 1064.0,
+    "costeCerca": 12000,
+    "costeLejos": 13576.0,
+    "tipo": 1,
+    "vhEq": 4.84,
+    "alqEq": 1131.33,
+    "kmEq": 14.42
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 750,
+    "km": 22,
+    "min": 30,
+    "cpk": 0,
+    "abono": 90,
+    "dias": 220,
+    "vh": 6
+   },
+   "expect": {
+    "ahorroAlquiler": 3000,
+    "desplaz": 1080,
+    "horas": 220.0,
+    "tiempoVal": 1320.0,
+    "neto": 600.0,
+    "netoSin": 1920,
+    "costeCerca": 12000,
+    "costeLejos": 11400.0,
+    "tipo": 0,
+    "vhEq": 8.73,
+    "alqEq": 950.0,
+    "kmEq": 32.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 1000,
+    "km": 22,
+    "min": 30,
+    "cpk": 0.2,
+    "abono": 0,
+    "dias": 220,
+    "vh": 0
+   },
+   "expect": {
+    "ahorroAlquiler": 0,
+    "desplaz": 1936.0,
+    "horas": 220.0,
+    "tiempoVal": 0.0,
+    "neto": -1936.0,
+    "netoSin": -1936.0,
+    "costeCerca": 12000,
+    "costeLejos": 13936.0,
+    "tipo": 1,
+    "vhEq": -1,
+    "alqEq": 1161.33,
+    "kmEq": -1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 750,
+    "km": 0,
+    "min": 0,
+    "cpk": 0.2,
+    "abono": 0,
+    "dias": 220,
+    "vh": 0
+   },
+   "expect": {
+    "ahorroAlquiler": 3000,
+    "desplaz": 0.0,
+    "horas": 0.0,
+    "tiempoVal": 0.0,
+    "neto": 3000.0,
+    "netoSin": 3000.0,
+    "costeCerca": 12000,
+    "costeLejos": 9000.0,
+    "tipo": 0,
+    "vhEq": -1,
+    "alqEq": 750.0,
+    "kmEq": 34.09
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "alq_cerca": 1000,
+    "alq_lejos": 700,
+    "km": 10,
+    "min": 10,
+    "cpk": 0.1,
+    "abono": 0,
+    "dias": 100,
+    "vh": 0
+   },
+   "expect": {
+    "ahorroAlquiler": 3600,
+    "desplaz": 200.0,
+    "horas": 33.33,
+    "tiempoVal": 0.0,
+    "neto": 3400.0,
+    "netoSin": 3400.0,
+    "costeCerca": 12000,
+    "costeLejos": 8600.0,
+    "tipo": 0,
+    "vhEq": 102.0,
+    "alqEq": 716.67,
+    "kmEq": 180.0
+   },
+   "tol": 1
+  }
+ ]
+}
