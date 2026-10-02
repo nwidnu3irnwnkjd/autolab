@@ -10,3 +10,5 @@ T · Transitorias: DT 36.ª (requisito 94.2.a.3.º no aplica a IIC adquiridas an
 8 · Opción imposible: ETF/acción y SICAV que no cumple (500 socios, 5 %) -> traspasable=0, veredicto «traspasar no existe» (tests 2 y oráculo 10); si el dinero pasa por la cuenta del usuario no hay diferimiento (aviso en página y FAQ). Destino ETF también imposible (declarado en nota y FAQ 1).
 N · No modelado: retenciones, arrastre 4 años (favorece traspasar con pérdida), regla 33.5.g si recompra el mismo fondo, FIFO parcial, gasto de suscripción, forales, extranjero, Cuenta Financia Europa, deducciones. Todo en «Qué no incluye» con su efecto.
 R · RDL 26/2026 (BOE-A-2026-20266): toca art. 95 ter (nuevo, Cuenta Financia Europa, apdo. 6: no aplica 94.1.a dentro de la cuenta) y no los arts. 94, 35, 37, 49, 66, 76, 101.6; citado por artículo como B, sin convalidar, NO modelado. No hay PGE 2026: la escala del ahorro sigue la de la Ley 7/2024.
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

@@ -9,6 +9,7 @@ import barometro  # /barometro/ con datos propios fechados (Estratega)
 import directorio, asistente  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
+import embed  # widget insertable /embed/<slug>/ y /inserta/ (Diseñador)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
 from ui import asset_v, ill, ILL, ICONS, tema, card, catalog_body, notfound_body, head_extra
 
@@ -65,6 +66,7 @@ def render_calc(c, all_calcs):
 <h2>Supuestos y fuentes</h2>
 <p class="note">{c["sources"]} Parámetros actualizados el {params["fecha"]}. Los cálculos se hacen en tu navegador; no enviamos tus datos a ningún servidor.</p>
 <p class="disclaimer">Esta herramienta es orientativa y no constituye asesoramiento financiero. Comprueba las condiciones concretas de tu contrato y, si la decisión es importante, consulta con un profesional. Lee nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
+{embed.block(c)}
 {rel_html}
 """
     jsonld = [
@@ -117,6 +119,9 @@ def main():
     tdesc = "Tablas oficiales 2026 con fuente: IRPF por comunidad, cuota de autónomos, ITP y AJD, SMI, paro, pensiones, despido y permisos. Con CSV."
     write(tablas.INDEX, "Tablas 2026: IRPF, autónomos, ITP, pensiones y trabajo", tdesc, tablas.index_page(TAB, tmod, seo.AUTHOR),
           jsonld=tablas.index_jsonld(B, tmod, tpub, seo.org(B), seo.breadcrumbs, tdesc), priority="0.7", lastmod=tmod)
+    ebody, eld, edesc = embed.page(calcs)  # /inserta/ + /embed/<slug>/ (estos últimos noindex y fuera de sitemap: no pasan por write())
+    write(embed.PATH, "Inserta una calculadora en tu web — Entre Muchos", edesc, ebody, jsonld=eld, priority="0.5", lastmod=seo.lastmod("embed.py"))
+    embed.build(DIST, calcs)
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
         hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))

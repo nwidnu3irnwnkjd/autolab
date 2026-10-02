@@ -12,3 +12,5 @@ CORRECCIONES AL ENCARGO: (a) guardería = incremento de hasta 1.000 €/año por
 | 7 | DT/DF | art. 81 mod. Ley 31/2022 (en vigor 2023) sin DT que module 2026; art. 81 bis sin DT; RIRPF 60 bis mod. RD 1008/2023. No aplica |
 | 8 | ¿La opción existe? | bloqueado: general <3 hijos, especial <4, n3 > hijos, mono2 con n3 > 2. Maternidad exige ser mujer (padre solo en fallecimiento/custodia exclusiva: dicho en input y FAQ) |
 SUPUESTOS NO TODOS DE LEY (para el Verificador): (1) mínimo de la especial = 5 (con 4 por partos múltiples/ingresos podría ser 4; efecto al alza no modelado, declarado); (2) 81 y 81 bis acumulables (ningún precepto las excluye; AEAT las trata como deducciones distintas); (3) mismos meses y gasto para todos los hijos <3; (4) guardería meses ≤ meses con derecho (se excluye la ampliación post-3 años); (5) el anticipo mensual no se recorta por el tope de cotizaciones (así lo dice el RIRPF; se regulariza).
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

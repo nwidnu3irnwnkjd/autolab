@@ -13,3 +13,12 @@ Interpretación: bloque INTERPRETACION en ops/verif/venta-vivienda-plusvalia-irp
 | 8 | ¿Opción existe? | reinversión solo con vivienda habitual (RIRPF 41 bis: 3 años o 2 años de plazo); 65+ solo habitual; si hipoteca > transmisión el formulario avisa. 65+ requiere ser quien vende; pareja ganancial fuera |
 Supuestos no de ley: «importe obtenido» neto de gastos de venta (arriba); otras rentas del ahorro > 0 afectan al tramo; mínimo personal absorbido por la base general; el JS no valida reinversión con rehabilitación.
 Rúbrica venta-vivienda-plusvalia-irpf-exencion: 1=2 2=2 3=0 (verificación Opus pendiente) 4=2 5=2 6=2 7=2 8=2 9=1 (clusters.json sin tocar: petición al Estratega) 10=2 → 17/20 con punto 3 a 0 hasta verificar.
+
+## Revisión c53 tras derogación RDL 26/2026 (2026-10-02, Constructor)
+Fuente: Resolución del Congreso BOE-A-2026-20526 (BOE núm. 245, 2-10-2026); BOE-A-2026-20266 consolidado: estatus «Derogada» (fecha_derogacion 2026-10-02). Los consolidados de LIRPF (BOE-A-2006-20764) y RIRPF (BOE-A-2007-6820) leídos por API el 2-10-2026 15:38Z aún figuran «Desactualizado» y muestran las versiones del RDL (41 bis.3, DA 65.ª, 95 ter): se tratan como no vigentes por la Resolución (art. 86.2 CE, sin retroactividad). Texto previo de 41 bis.3 = versión RD 960/2013 (BOE-A-2013-12771), leída en el propio consolidado.
+T · DT/DF: DT 9.ª declarada, no modelada (sin cambio). RDL 26/2026 DF 3.ª.Uno (41 bis.3), DA 65.ª y DA 66.ª: derogadas; retiradas de lead, veredicto, FAQ 2 y 3, nota del JS, html, sources y params. Nota con fecha en sources y en el html.
+8 · Opción imposible: sin cambio; el traslado de 65+/dependientes a centro o familiar ya no amplía «vivienda habitual» (la herramienta no lo modelaba: no hay input). Tests sin cambios (el cálculo no dependía del RDL; ninguna cifra, veredicto ni test.json lo usaba).
+N · No modelado: art. 38.3 (renta vitalicia) y DT 9.ª y 68.4 siguen declarados; DA 65.ª ya no existe como límite que declarar.
+R · RDL 26/2026: citado solo como nota de derogación (estuvo en vigor del 1 al 2 de octubre de 2026; BOE-A-2026-20526). Sin PGE 2026.
+S · 41 bis.3 · art. 41 bis.3 RIRPF · «...hubiera tenido tal consideración hasta cualquier día de los dos años anteriores a la fecha de transmisión.» · https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820 · consultado 2026-10-02 (versión 2013 vigente de nuevo).
+Rúbrica venta-vivienda-plusvalia-irpf-exencion: 1=2 2=2 3=0 (revisión Opus pendiente tras c53) 4=2 5=2 6=2 7=2 8=2 9=1 10=2 → 17/20 con punto 3 a 0.

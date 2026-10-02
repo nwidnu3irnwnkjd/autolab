@@ -33,3 +33,5 @@ S · Cotización del gestor por jubilación en el de mayores de 52 (base: 125 % 
 S · CAE: 80/60/40/30/20 % del IPREM por trimestre (jornada completa), máximo 180 días, consume días del subsidio · LGSS art. 282.3 · «Su duración máxima será de ciento ochenta días» / «se consumirán tantos días de la duración del subsidio» · https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a282 · consultado 2026-10-02 (solo citado, no calculado)
 S · Supuestos propios sin literal (declarados en la página): mes = 30 días; edad exacta 45 se trata como «>45»; al menos un miembro más en la unidad cuando se acreditan cargas; edad del subsidio de mayores acotada entre 65 y 67 años; «6 años cotizados por desempleo + requisitos de jubilación» se resume en una sola pregunta del formulario.
 Rúbrica subsidio-desempleo-cuanto-cobro-y-cuanto-dura: ver informe (punto 3 = 0 hasta la verificación Opus).
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

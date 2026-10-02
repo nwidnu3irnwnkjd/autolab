@@ -34,13 +34,14 @@ def run(root, dist):
             if f.endswith(".html"):
                 p = os.path.join(dp, f); h = open(p).read()
                 if "/assets/app.css" not in h: continue
-                if 'class="calc"' in h: kind = "calc"
+                if 'class="emb"' in h: kind = "embed"  # /embed/<slug>/: solo em.js (+ gráfico), sin app.js ni cabecera/pie
+                elif 'class="calc"' in h: kind = "calc"
                 elif p == os.path.join(dist, "index.html"): kind = "home"
                 elif "data-filter" in h: kind = "cat"
                 elif "guide hub dir" in h: kind = "dir"  # /todas/: su propio recorte de CSS (la lista es pesada)
                 else: kind = "page"
-                chart = kind == "calc" and bool(re.search(r"lineChart|\bline\s*:", h))
-                use = ["app.js"] + (["em.js", "em-x.js"] if kind == "calc" else []) + (["chart.js"] if chart else []) + (["home.js"] if kind in ("home", "cat") else [])
+                chart = kind in ("calc", "embed") and bool(re.search(r"lineChart|\bline\s*:", h))
+                use = ([] if kind == "embed" else ["app.js"]) + (["em.js", "em-x.js"] if kind == "calc" else ["em.js"] if kind == "embed" else []) + (["chart.js"] if chart else []) + (["home.js"] if kind in ("home", "cat") else [])
                 pages[p] = (h, kind + ("-chart" if chart else ""), use)
     pools = {}
     for p, (h, key, use) in pages.items():
@@ -60,6 +61,6 @@ def run(root, dist):
         # em-x.js (compartir/PDF) y chart.js (gráfico) se cargan bajo demanda desde em.js: van como data-* en su etiqueta
         lazy = {"em-x.js": "x", "chart.js": "chart"}
         tags = "".join(f'<script src="/assets/{u}?v={jsv[u]}"' + ("".join(f' data-{k}="/assets/{l}?v={jsv[l]}"' for l, k in lazy.items() if l in use) if u == "em.js" else "") + "></script>" for u in use if u not in lazy)
-        h = re.sub(r'<script src="/assets/app\.js[^"]*"></script>', tags, h)
+        h = re.sub(r'<script src="/assets/(?:app|em)\.js[^"]*"></script>', tags, h, count=1)
         open(p, "w").write(h)
     return {k: v[0] for k, v in cssf.items()}

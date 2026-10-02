@@ -3,8 +3,8 @@
   "title": "IRPF por alquilar una vivienda: calculadora de la reducción",
   "description": "Calcula el rendimiento neto y el IRPF por alquilar tu vivienda, con la reducción del 50 al 90 % según tu caso. Con tu renta y tus gastos.",
   "h1": "IRPF por alquilar una vivienda: rendimiento neto y reducción del 50 al 90 %",
-  "lead": "Alquilar una vivienda te hace tributar solo por una parte del rendimiento neto: con un contrato firmado entre el 26 de mayo de 2023 y el 1 de diciembre de 2026 la reducción es del 50 % en el caso general y solo sube al 60, 70 o 90 % si se cumple el supuesto concreto (vivienda rehabilitada, primera vez en zona tensionada con inquilino de 18 a 35 años, o renta rebajada más del 5 % en zona tensionada); con un contrato anterior al 26 de mayo de 2023 es del 60 %. En el ejemplo (800 € al mes durante 12 meses, 900 € de IBI, comunidad y seguro, 2.500 € de intereses y reparaciones, amortización del 3 % sobre 120.000 € y un tipo marginal del 30 %) el rendimiento neto de 2.600 € baja a 1.300 €, pagas unos 390 € y te quedan 5.810 € netos. Rebajar la renta más del 5 % para llegar al 90 % no compensa en ese ejemplo (la rebaja máxima que compensa es el 3,4 %), pero con 1.500 € al mes y un tipo del 37 % sí compensa hasta el 9,4 %. Los contratos firmados después del 1 de diciembre de 2026 se rigen por un texto nuevo (Real Decreto-ley 26/2026) que esta herramienta no calcula; los gastos pendientes de años anteriores, la renta imputada de los meses sin alquilar y el IVA tampoco están incluidos.",
-  "veredicto": "Depende de la fecha y del supuesto de tu contrato. Con un contrato firmado entre el 26/5/2023 y el 1/12/2026 la reducción es del 50 % (caso general), 60 % (rehabilitada), 70 % (primera vez en zona tensionada con inquilino de 18 a 35 años, o alquiler social) o 90 % (nuevo contrato en zona tensionada con la renta rebajada más del 5 %); antes del 26/5/2023, el 60 %. En el ejemplo (800 € al mes, 12 meses, tipo marginal del 30 %) el neto después de IRPF es de 5.810 € con el 50 % y de 6.122 € con el 90 %, y rebajar la renta más del 5 % para llegar al 90 % no compensa (máximo que compensa: 3,4 %); con 1.500 € al mes y un 37 % de tipo compensa hasta el 9,4 %.",
+  "lead": "Alquilar una vivienda te hace tributar solo por una parte del rendimiento neto: con un contrato firmado desde el 26 de mayo de 2023 la reducción es del 50 % en el caso general y solo sube al 60, 70 o 90 % si se cumple el supuesto concreto (vivienda rehabilitada, primera vez en zona tensionada con inquilino de 18 a 35 años, o renta rebajada más del 5 % en zona tensionada); con un contrato anterior al 26 de mayo de 2023 es del 60 %. En el ejemplo (800 € al mes durante 12 meses, 900 € de IBI, comunidad y seguro, 2.500 € de intereses y reparaciones, amortización del 3 % sobre 120.000 € y un tipo marginal del 30 %) el rendimiento neto de 2.600 € baja a 1.300 €, pagas unos 390 € y te quedan 5.810 € netos. Rebajar la renta más del 5 % para llegar al 90 % no compensa en ese ejemplo (la rebaja máxima que compensa es el 3,4 %), pero con 1.500 € al mes y un tipo del 37 % sí compensa hasta el 9,4 %. El Real Decreto-ley 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado (BOE-A-2026-20526); esta calculadora aplica el régimen vigente de la Ley 12/2023. Los gastos pendientes de años anteriores, la renta imputada de los meses sin alquilar y el IVA tampoco están incluidos.",
+  "veredicto": "Depende de la fecha y del supuesto de tu contrato. Con un contrato firmado desde el 26/5/2023 la reducción es del 50 % (caso general), 60 % (rehabilitada), 70 % (primera vez en zona tensionada con inquilino de 18 a 35 años, o alquiler social) o 90 % (nuevo contrato en zona tensionada con la renta rebajada más del 5 %); antes del 26/5/2023, el 60 %. En el ejemplo (800 € al mes, 12 meses, tipo marginal del 30 %) el neto después de IRPF es de 5.810 € con el 50 % y de 6.122 € con el 90 %, y rebajar la renta más del 5 % para llegar al 90 % no compensa (máximo que compensa: 3,4 %); con 1.500 € al mes y un 37 % de tipo compensa hasta el 9,4 %.",
   "tema": "impuestos",
   "inputs": [
     {
@@ -14,7 +14,7 @@
       "options": [
         {
           "v": "b50",
-          "t": "Firmado del 26/5/2023 al 1/12/2026, caso general: 50 %"
+          "t": "Firmado desde el 26/5/2023, caso general: 50 %"
         },
         {
           "v": "a60",
@@ -22,27 +22,23 @@
         },
         {
           "v": "b60",
-          "t": "Del 26/5/2023 al 1/12/2026, vivienda rehabilitada (obras terminadas en los 2 años previos al contrato): 60 %"
+          "t": "Desde el 26/5/2023, vivienda rehabilitada (obras terminadas en los 2 años previos al contrato): 60 %"
         },
         {
           "v": "b70",
-          "t": "Del 26/5/2023 al 1/12/2026, alquilada por primera vez, zona tensionada e inquilino de 18 a 35 años: 70 %"
+          "t": "Desde el 26/5/2023, alquilada por primera vez, zona tensionada e inquilino de 18 a 35 años: 70 %"
         },
         {
           "v": "b70s",
-          "t": "Del 26/5/2023 al 1/12/2026, inquilino Administración o entidad sin fines lucrativos (alquiler social o programa público): 70 %"
+          "t": "Desde el 26/5/2023, alquiler social a Administración o entidad sin fines lucrativos, o vivienda acogida a un programa público con renta limitada: 70 %"
         },
         {
           "v": "b90",
-          "t": "Del 26/5/2023 al 1/12/2026, nuevo contrato en zona tensionada con renta rebajada más del 5 %: 90 %"
+          "t": "Desde el 26/5/2023, nuevo contrato en zona tensionada con renta rebajada más del 5 %: 90 %"
         },
         {
           "v": "n0",
           "t": "Sin reducción (no es vivienda, incumple el art. 17.6 de la LAU o regularizado por Hacienda)"
-        },
-        {
-          "v": "c",
-          "t": "Firmado después del 1/12/2026 (texto nuevo, no calculado)"
         }
       ],
       "ayuda": "Si cumples varios supuestos se aplica el mayor porcentaje (art. 23.2). La zona tensionada es la que declara el Ministerio de Vivienda. Con varios inquilinos, el 70 % de joven (18 a 35 años) solo se aplica a la parte que corresponde a quienes cumplen la edad."
@@ -111,15 +107,15 @@
   "faqs": [
     [
       "¿Qué reducción se aplica al alquiler de una vivienda en el IRPF 2026?",
-      "Depende de cuándo firmaste el contrato y del supuesto. Si lo firmaste antes del 26 de mayo de 2023, el 60 % (texto del art. 23.2 vigente a 31/12/2021, disposición transitoria 38.ª.1 de la Ley del IRPF). Si lo firmaste entre el 26/5/2023 y el 1/12/2026, se aplica el texto vigente a 31/12/2025 (disposición transitoria 38.ª.2): 90 % si es un nuevo contrato en zona tensionada con la renta inicial rebajada más del 5 % sobre la última renta del contrato anterior; 70 % si la alquilas por primera vez en zona tensionada a un inquilino de 18 a 35 años, o a una Administración o entidad sin fines lucrativos para alquiler social o con renta limitada por un programa público; 60 % si la vivienda se rehabilitó en los dos años anteriores al contrato; 50 % en los demás casos. Si cumples varios supuestos, se aplica el mayor porcentaje."
+      "Depende de cuándo firmaste el contrato y del supuesto. Si lo firmaste antes del 26 de mayo de 2023, el 60 % (texto del art. 23.2 vigente a 31/12/2021, disposición transitoria 38.ª de la Ley del IRPF, añadida por la Ley 12/2023). Si lo firmaste desde el 26/5/2023, se aplica el art. 23.2 en la redacción de la Ley 12/2023 (en vigor para estos contratos): 90 % si es un nuevo contrato en zona tensionada con la renta inicial rebajada más del 5 % sobre la última renta del contrato anterior; 70 % si la alquilas por primera vez en zona tensionada a un inquilino de 18 a 35 años, o a una Administración o entidad sin fines lucrativos para alquiler social, o si la vivienda está acogida a un programa público que limita la renta; 60 % si la vivienda se rehabilitó en los dos años anteriores al contrato; 50 % en los demás casos. Si cumples varios supuestos, se aplica el mayor porcentaje."
     ],
     [
       "¿Qué gastos puedo deducir y cuánto puedo amortizar?",
       "Los necesarios para obtener el alquiler (art. 23.1 y art. 13 del Reglamento): IBI y otros tributos no estatales, tasas, comunidad, seguros, servicios de terceros y los intereses y gastos de financiación y de reparación y conservación. Estos dos últimos no pueden superar en conjunto los ingresos del año; el exceso se aplica en los cuatro años siguientes. La amortización es como máximo el 3 % anual del mayor entre el coste de adquisición satisfecho y el valor catastral, sin contar el suelo (art. 23.1.b y art. 14 del Reglamento). La herramienta la reparte por meses alquilados, el criterio de la Agencia Tributaria (proporcional a los días alquilados), porque el reglamento solo habla de «cada año»; las ampliaciones y mejoras no son gasto, solo se amortizan."
     ],
     [
-      "¿Qué pasa si firmo el contrato después del 1 de diciembre de 2026?",
-      "El Real Decreto-ley 26/2026, en vigor desde el 1 de octubre de 2026, reescribió el art. 23.2 de la Ley del IRPF con reducciones del 100, 95, 90, 85, 80, 70, 60 y 50 % según la renta frente al contrato anterior o al índice de referencia, la zona tensionada, la edad del inquilino y si eres gran tenedor. Se aplica a los contratos posteriores a esa fecha, y esta herramienta no los calcula porque algunos requisitos no se pueden comprobar con los datos que pide. Como es un real decreto-ley, el Congreso debe convalidarlo y puede modificarlo; los contratos anteriores al 1/12/2026 conservan el texto de 2025 según la disposición transitoria 38.ª. Si el Congreso no lo convalida, los porcentajes que calcula esta herramienta no cambian y los contratos posteriores al 1/12/2026 seguirían con el texto de 2024-2025."
+      "¿Qué pasó con el Real Decreto-ley 26/2026 y los contratos nuevos?",
+      "El Real Decreto-ley 26/2026, que reescribía el art. 23.2 de la Ley del IRPF con reducciones de hasta el 100 %, estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado por el Congreso el 2 de octubre (Resolución publicada en el BOE n.º 245, BOE-A-2026-20526), sin efectos retroactivos. Por eso los contratos firmados después del 1 de diciembre de 2026 no tienen un régimen distinto: siguen con las mismas reducciones de la Ley 12/2023 que los firmados desde el 26/5/2023 (50, 60, 70 o 90 %), que son las que calcula esta herramienta."
     ],
     [
       "¿Pierdo la reducción si presento la declaración fuera de plazo o Hacienda me regulariza?",
@@ -127,8 +123,8 @@
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye la reducción del 80 % por prórroga tácita (art. 10.1 de la LAU) cuando el plazo mínimo de 5 años acaba después del 1/12/2026, el mobiliario cedido (art. 14.2.b del Reglamento), alquiler turístico o de temporada, locales, IVA, pérdidas compensables con otras rentas, gastos pendientes de años anteriores, la renta imputada de los meses sin alquilar (art. 85), plusvalía de venta, ITP/AJD, no residentes ni País Vasco y Navarra, y las deducciones autonómicas. Tampoco calcula el tramo exacto de tu IRPF: usa el tipo marginal que tú indicas, así que si el alquiler te cambia de tramo la cuota real será distinta. No es asesoramiento fiscal; confirma el resultado en el programa de la Agencia Tributaria."
+      "No incluye el mobiliario cedido (art. 14.2.b del Reglamento), alquiler turístico o de temporada, locales, IVA, pérdidas compensables con otras rentas, gastos pendientes de años anteriores, la renta imputada de los meses sin alquilar (art. 85), plusvalía de venta, ITP/AJD, no residentes ni País Vasco y Navarra, y las deducciones autonómicas. Tampoco calcula el tramo exacto de tu IRPF: usa el tipo marginal que tú indicas, así que si el alquiler te cambia de tramo la cuota real será distinta. No es asesoramiento fiscal; confirma el resultado en el programa de la Agencia Tributaria."
     ]
   ],
-  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026 (el consolidado aún muestra el art. 23 y la disposición transitoria 38.ª en su versión de 1/1/2024): art. 22 (rendimiento íntegro), art. 23.1 (gastos deducibles, límite de intereses y reparaciones, amortización del 3 %), art. 23.2 (reducciones por alquiler de vivienda, versiones vigentes a 31/12/2021 y a 31/12/2025) y disposición transitoria 38.ª (qué texto se aplica según la fecha del contrato). Real Decreto-ley 26/2026, de 29 de septiembre, art. 6.Segundo.Dos (nuevo art. 23.2) y .Catorce (disposición transitoria 38.ª), en vigor desde el 1/10/2026 y pendiente de convalidación (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266); si no se convalida, los porcentajes calculados no cambian. Reglamento del IRPF, arts. 13 y 14 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). Ley 12/2023 por el derecho a la vivienda, en vigor desde el 26/5/2023 (https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Ley 29/1994 de Arrendamientos Urbanos, art. 17.6 (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003). Cuadro de reducciones y manual de la Agencia Tributaria (https://sede.agenciatributaria.gob.es/). Los importes del ejemplo y el tipo marginal son supuestos editables, no datos oficiales. Art. 27 de la Ley General Tributaria, recargos por declaración extemporánea (https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186). Ley de Arrendamientos Urbanos, art. 10.1, prórroga tácita (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003). Reglamento del IRPF, art. 14.2.b, amortización de bienes muebles cedidos (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820)."
+  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 22 (rendimiento íntegro), art. 23.1 (gastos deducibles, límite de intereses y reparaciones, amortización del 3 %), art. 23.2 en la redacción vigente desde el 1/1/2024 por la Ley 12/2023 (reducciones del 50, 60, 70 y 90 %) y disposición transitoria 38.ª en esa misma redacción (contratos anteriores al 26/5/2023: texto vigente a 31/12/2021, 60 %). El Real Decreto-ley 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado por Resolución del Congreso de 2/10/2026 (BOE n.º 245, BOE-A-2026-20526, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526), que deja sin efecto sus modificaciones de la Ley del IRPF; a 2/10/2026 el consolidado del BOE aún no había reflejado la reversión y mostraba la versión del decreto, por lo que el texto aplicado es el de 1/1/2024 leído en el propio consolidado. Reglamento del IRPF, arts. 13 y 14 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). Ley 12/2023 por el derecho a la vivienda, en vigor desde el 26/5/2023 (https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Ley 29/1994 de Arrendamientos Urbanos, art. 17.6 (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003). Cuadro de reducciones y manual de la Agencia Tributaria (https://sede.agenciatributaria.gob.es/). Los importes del ejemplo y el tipo marginal son supuestos editables, no datos oficiales. Art. 27 de la Ley General Tributaria, recargos por declaración extemporánea (https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186). Reglamento del IRPF, art. 14.2.b, amortización de bienes muebles cedidos (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820)."
 }

@@ -23,3 +23,5 @@ Supuesto de interpretación a validar por el Verificador: «kilometraje pagado p
 Rúbrica kilometraje-y-dietas-exentas-irpf: 1=2 2=2 3=0 (verificación Opus pendiente) 4=2 5=2 6=2 7=2 8=2 9=1 (clusters sin tocar: petición al Estratega) 10=2 → 17/20 con punto 3 a 0 hasta verificar.
 
 Verificación Opus aplicada (3 cambios): lead/veredicto con centro habitual y «en general»; 9.A.3 vs kilometraje en «Ten los justificantes»; tipo marginal = base liquidable 20.200-35.200 (bruto ~24.000-40.000). S/R del Verificador: sin líneas nuevas (RDL 26/2026 no toca 9 RIRPF, 17/19 LIRPF, 147 LGSS; transportistas 15/25 € declarados como excluidos).
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

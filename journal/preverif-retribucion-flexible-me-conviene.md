@@ -21,3 +21,5 @@ Norma leída (consolidados BOE descargados el 2/10/2026): LIRPF art. 42 (y 43, 8
 4. Resultado = IRPF final (no retención); art. 20 y DA 61.ª copiados de comparar-ofertas (verificado por Opus).
 5. Umbral de empate: 5 % del coste por tu cuenta (regla de Estilo c32), no de ley.
 Rúbrica retribucion-flexible-me-conviene: 1=2 2=2 3=0 (hasta Opus) 4=2 5=2 6=2 7=2 8=2 9=1 10=2 → 17/20 con el punto 3 a 0 (19/20 cuando el Opus lo cierre); petición de clusters abierta en ops/requests.md.
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

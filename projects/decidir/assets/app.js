@@ -69,4 +69,14 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initIcs); else initIcs();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTables); else initTables();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initMotion); else initMotion();
+  /* «Copiar código» de los bloques de inserción (embed.py): copia el textarea[data-code] más cercano */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-copy]"); if (!b) return;
+    var box = b.closest("details,section,article"), t = box && box.querySelector("textarea[data-code]"), m = box && box.querySelector("[data-copied]");
+    if (!t) return;
+    function ok(v) { if (m) { m.textContent = v ? "Código copiado" : "Selecciona y copia (Ctrl+C)"; setTimeout(function () { m.textContent = ""; }, 2500); } }
+    t.select();
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(function () { ok(1); }, function () { ok(0); });
+    else { var r = false; try { r = document.execCommand("copy"); } catch (x) {} ok(r); }
+  });
 })();

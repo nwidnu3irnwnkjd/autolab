@@ -46,6 +46,7 @@ def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, note
     secs.append(f'<section class="grp"><h2>Tablas 2026 ({len(tablas_pages)})</h2><ul class="guides">{"".join(lis)}</ul></section>')
     extra = [("/barometro/", "Barómetro de hipoteca, coche y ahorro", "Datos propios del mes con su fecha."),
              ("/calendario/", "Calendario de decisiones", "Fechas que mueven una decisión de dinero en España, con fuente oficial.")]
+    extra.append(("/inserta/", "Inserta una calculadora en tu web", "Widget gratis con crédito y enlace, con código para copiar."))  # embed.py (Diseñador)
     extra.append((semana.PATH2027, "Qué cambia el 1 de enero de 2027", "Cifras de 2026 y estado de las de 2027."))
     if notes: extra.append(("/actualidad/", "Actualidad: datos que cambian decisiones", "Notas breves con datos oficiales."))
     for k, h in active_hubs.items(): extra.append((h["path"], h["h1"], _short(h["description"])))

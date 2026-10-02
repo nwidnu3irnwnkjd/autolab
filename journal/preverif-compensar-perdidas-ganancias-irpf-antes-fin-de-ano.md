@@ -18,3 +18,11 @@ Supuestos no de ley: «valores homogéneos» lo decide el usuario (input sí/no)
 Rúbrica compensar-perdidas-ganancias-irpf-antes-fin-de-ano: 1=2 2=2 3=0 (verificación Opus pendiente) 4=2 5=2 6=2 7=2 8=2 9=1 (clusters.json sin tocar: petición al Estratega) 10=2 → 17/20 con punto 3 a 0 hasta verificar.
 
 Correcciones del Verificador (c32): orden AEAT fases 1.ª/2.ª aplicado en JS y oráculo; traspaso de fondos (94.1.a) y no cotizados avisados; RDL 26/2026 sí añade art. 95 ter (confianza B, no modelado); DA 39.ª caducada; 25 % fijo desde 2018 (DA 12.ª).
+
+## Revisión c53 tras derogación RDL 26/2026 (2026-10-02, Constructor)
+Fuente: BOE-A-2026-20526 (BOE núm. 245, 2-10-2026); BOE-A-2026-20266 consolidado «Derogada» desde 2026-10-02. El consolidado LIRPF (BOE-A-2006-20764, 2-10-2026 15:38Z) aún figura «Desactualizado» y muestra el art. 95 ter (versión BOE-A-2026-20266): no vigente por la Resolución, sin retroactividad.
+T · DT/DF: DT 7.ª.7 y DA 39.ª sin cambio (declaradas); art. 95 ter retirado de JSON, html y params; nota con fecha en sources y params («estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado, BOE-A-2026-20526»).
+8 · Opción imposible: sin cambio (no dependía del RDL). N · No modelado: Cuenta Financia Europa ya no existe, línea eliminada; resto de N sin cambio.
+R · RDL 26/2026 no tocaba arts. 33, 37, 46, 48, 49, 66, 76; ahora derogado; la línea «sí añade art. 95 ter (confianza B)» queda sin efecto. Sin PGE 2026. Cifras, veredicto, FAQ y test.json no dependían del decreto: sin cambios de cálculo ni de oráculo.
+S · Sin cambios (no usa 95 ter).
+Rúbrica compensar-perdidas-ganancias-irpf-antes-fin-de-ano: punto 3 = 0 hasta revisión Opus; resto sin cambios.

@@ -27,3 +27,5 @@ S · SMI anual 17.094 € a prorrata de la jornada · RD 126/2026 art. 3.1 y RD 
 S · Jornada ordinaria máxima 40 h/semana · RD 1620/2011 art. 9.1 · «La jornada máxima semanal de carácter ordinario será de cuarenta horas de trabajo efectivo» · https://www.boe.es/buscar/act.php?id=BOE-A-2011-17975 · consultado 2026-10-02
 S · IT común: el empleador paga los días 4 a 8 (no modelado, declarado) · LGSS art. 251.a · «estando a cargo del empleador el abono de la prestación al trabajador desde los días cuarto al octavo» · https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724 · consultado 2026-10-02
 S · SUPUESTO PROPIO (sin literal): horas/mes = semanales x 52 / 12; cada paga extra = una mensualidad (RD 1620 art. 8.4 deja la cuantía a las partes); 20 % sobre CC (literal DA 1.ª.1); 45 % aplicado solo a CC aunque la DA 3.ª bis dice «cuotas a cargo del empleador» (lectura prudente, coste real algo menor); MEI sin reducir; sueldos por debajo del mínimo se calculan con su retribución real y el aviso lo declara. Declarados en la página y en params.convenciones_propias.
+
+R · RDL 26/2026 derogado el 2-10-2026 · BOE-A-2026-20526 · revisado c53

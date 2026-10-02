@@ -177,6 +177,10 @@ def check_pages(only_urls=None):
             else:
                 lp = local(p.canon)
                 if lp is None: add("BLOQUEANTE", f"{name}:1", f"canonical fuera del dominio: {p.canon}")
+                elif urlp.startswith("/embed/"):  # widget insertable (embed.py): noindex y canonical a la calculadora completa; HTML <= 40 KB
+                    if lp != "/decidir/" + urlp[len("/embed/"):]: add("BLOQUEANTE", f"{name}:1", f"canonical del embed {lp} no apunta a su calculadora completa")
+                    if not p.noindex: add("BLOQUEANTE", f"{name}:1", "el embed debe ser noindex,follow")
+                    if size_html > 40960: add("BLOQUEANTE", f"{name}:1", f"embed de {size_html/1024:.1f} KB > 40 KB")
                 elif lp != urlp: add("BLOQUEANTE", f"{name}:1", f"canonical {lp} no coincide con la ruta de la página {urlp}")
         # h1
         n_checks += 1
