@@ -28,6 +28,7 @@ HUBS = {
         "groups": [
             ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-fija-o-variable"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
+            ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
             "cuanto-ahorrar-para-comprar-casa": {
@@ -53,6 +54,10 @@ HUBS = {
                 "name": "Amortizar: plazo o cuota",
                 "text": "Con la misma cantidad, reducir plazo ahorra más intereses; reducir cuota solo compensa si necesitas respirar cada mes. Antes de pagar, mira qué comisión máxima te puede cobrar el banco.",
                 "guia": "amortizacion-anticipada-comisiones",
+            },
+            "reformar-o-mudarse": {
+                "name": "Reformar o mudarte",
+                "text": "Reformar compensa frente a mudarte mientras el coste neto de la obra sea menor que el de cambiar de casa. La calculadora da el año de equilibrio y el presupuesto máximo con el que reformar sigue ganando; el valor que recuperas al vender es una hipótesis tuya.",
             },
             "amortizar-o-invertir": {
                 "name": "Amortizar o invertir",
@@ -130,7 +135,7 @@ HUBS = {
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
             ("Sin obra: lo primero", ["luz-fija-o-indexada", "calefaccion-gas-aerotermia-electrica"]),
-            ("Con inversión: cuándo se amortiza", ["cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico"]),
+            ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico"]),
         ],
         "steps": {
             "luz-fija-o-indexada": {
@@ -146,6 +151,10 @@ HUBS = {
                 "datos": "Gas con la tarifa regulada TUR.2: {{gas_kwh}} €/kWh con impuestos en {{periodo_gas_es}} (BOE).",
                 "fecha": ("fecha_gas", "Tarifa del gas"),
             },
+            "caldera-reparar-o-cambiar": {
+                "name": "Reparar o cambiar la caldera",
+                "text": "Cambiarla sale más barato que repararla cuando el presupuesto de la reparación supera el punto de equilibrio que sale de tu consumo de gas, tu rendimiento actual y el precio de la nueva. Es una estimación económica; el diagnóstico lo hace un técnico autorizado.",
+            },
             "cambiar-ventanas-aislamiento-merece-la-pena": {
                 "name": "Ventanas y aislamiento",
                 "text": "El ahorro real depende de la vivienda y no se puede prometer, así que la calculadora da el porcentaje mínimo de ahorro que necesitas para recuperar la obra con tu gasto en calefacción.",
@@ -153,6 +162,10 @@ HUBS = {
             "placas-solares-merece-la-pena": {
                 "name": "Placas solares",
                 "text": "Se amortizan antes cuanto más energía consumes en el momento en que la produces. La calculadora estima los años de amortización con tu consumo, tu producción y los excedentes.",
+            },
+            "punto-de-carga-casa-con-o-sin-placas": {
+                "name": "Punto de carga en casa (coche eléctrico)",
+                "text": "Un punto de carga en casa compensa si haces más kilómetros al año de los que lo amortizan y el kWh de casa sale más barato que el de la carga pública. La calculadora da el ahorro, los años de amortización y el efecto de tener placas.",
             },
             "cambiar-electrodomestico-antiguo-merece-la-pena": {
                 "name": "Cambiar un electrodoméstico que funciona",
@@ -180,14 +193,31 @@ HUBS = {
                  "si te conviene ser autónomo o asalariado, cuánto aportar a un plan de pensiones y cuánto donar (ambas solo cuentan para 2026 si las haces antes del 31 de diciembre de 2026), "
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
-            ("Antes de dar el paso", ["autonomo-o-asalariado"]),
+            ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar"]),
             ("Al presentar la declaración y en el futuro", ["declaracion-conjunta-o-individual", "rescate-plan-pensiones-capital-o-renta"]),
+            ("Si cambia tu situación laboral", ["capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
             "autonomo-o-asalariado": {
                 "name": "Autónomo o asalariado",
                 "text": "Para cobrar lo mismo, un autónomo tiene que facturar más que el sueldo bruto de un asalariado. La calculadora da cuánto, con tu comunidad, tus gastos y las cuotas de 2026.",
+            },
+            "autonomo-o-sociedad-limitada": {
+                "name": "Autónomo o sociedad limitada",
+                "text": "Depende de tu beneficio, de la retribución que te pagues y de cuánto repartas en dividendos. La calculadora compara lo que te queda en mano como autónomo y con una SL, con el IRPF, el Impuesto sobre Sociedades y las cuotas de 2026.",
+            },
+            "comparar-ofertas-de-trabajo-neto-real": {
+                "name": "Comparar dos ofertas de trabajo",
+                "text": "Conviene la oferta que deja más neto al año después de Seguridad Social, IRPF y desplazamientos, no la de más bruto. La calculadora da la diferencia, el neto por hora y el bruto que iguala a la mejor.",
+            },
+            "capitalizar-paro-o-cobrarlo": {
+                "name": "Capitalizar el paro o cobrarlo",
+                "text": "Si vas a hacerte autónomo, puedes cobrar la prestación mes a mes durante un máximo de 270 días o capitalizarla en un pago único. La calculadora compara ambas con tus meses restantes y tu inversión.",
+            },
+            "jubilacion-anticipada-o-demorada": {
+                "name": "Jubilación anticipada o demorada",
+                "text": "La edad de equilibrio depende de cuánto cobres y de cuántos años coticen. La calculadora compara tu pensión anticipada, ordinaria o demorada y la edad a partir de la cual compensa esperar.",
             },
             "plan-pensiones-o-fondo-indexado": {
                 "name": "Aportar a un plan de pensiones",

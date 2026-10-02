@@ -157,3 +157,49 @@ Estado: ya publicadas (marcadas [x]) donativos, portátil/móvil, fibra+móvil, 
 | 16 | comparar-ofertas-de-trabajo-neto-real (F) + actualización params 2027; llamar al Investigador | Parámetros 2027 |
 | 17 | autonomo-o-sociedad-limitada (F) + deduccion-alquiler-vivienda-por-comunidad (F; solo con tabla BOE verificada, si no comprar-o-alquilar-trastero); guía 2 Renta | Pico abr-jun |
 | 18 | comprar-o-alquilar-trastero o herramienta (NF, validar con Search Console) + ciclo de refuerzo con datos reales | Reponer con impresiones |
+
+# Ciclo 11 · 2026-10-02 — 14 calculadoras nuevas (Investigador, Sonnet con web)
+Volumen = estimación cualitativa (sin Keyword Planner); «evidencia» = lo visto en SERP hoy. Validar con Search Console a 28 días.
+Deduplicado contra calcs/*.json y backlog: se descartó «coche de segunda mano vs renting» (solapa con comprar-coche-o-renting y coche-nuevo-o-seminuevo) y «cambiar de operadora» (solapa con fibra-y-movil).
+
+## No fiscales (8)
+| Slug | Keyword | Volumen / evidencia | Por qué ganaríamos | Datos y fuente | YMYL | Publicar |
+|---|---|---|---|---|---|---|
+| suscripciones-cuanto-gasto-al-ano | cuánto gasto en suscripciones al año | Medio-alto (estimación). Hoy: costomas.com, Sharingful (lanzó «primera calculadora» de ahorro por compartir, abr-2026), webtech360; dato: 286 €/hogar/año en audiovisual (EFE/Crónica Global, abr-2026) | Lista precargada de precios por plataforma con fecha, % de uso real y «coste por hora»; competencia es suma simple o vende compartir cuentas | Precios públicos de plataformas (fechar); resto = entrada | Bajo | dic-ene |
+| gimnasio-o-entrenar-en-casa | gimnasio o entrenar en casa | Alto estacional enero (estimación). SERP: Infobae (abr-2026), Pulzo, vivemasvidas, blogs fitness; tarifa media 49,10 €/mes citada sin fuente clara | Coste por visita real según asistencia y años de amortización del equipo; todo son artículos | Cuota y equipo = entrada; media orientativa a verificar | Bajo | antes del 15-dic |
+| cocinar-en-casa-o-comer-fuera | cuánto ahorro cocinando en casa | Medio (estimación, sin evidencia SERP revisada) | Coste por ración con tiempo valorado y menú del día; veredicto por frecuencia | Entrada del usuario; IPC alimentos INE como referencia | Bajo | ene |
+| movil-reacondicionado-o-nuevo | móvil reacondicionado merece la pena | Alto en Black Friday (estimación). Enlaza con portatil-o-movil-comprar-renting-o-financiar | Coste por año de vida útil y garantía (3 años legal en nuevo vs 1 año mínimo... verificar plazos en TRLGDCU art. 120 antes de afirmar) | Precios = entrada; garantía: TRLGDCU | Bajo | nov |
+| equipaje-y-asiento-avion-coste-real | equipaje de mano precio low cost / cuánto cuesta facturar | Alto en picos (Navidad, verano) (estimación) | Suma tarifa + maleta + asiento + embarque vs tarifa completa; la tarifa de cada aerolínea es dato volátil, va como entrada con ejemplos fechados | Entrada; no precargar tarifas | Bajo | dic y may |
+| marca-blanca-o-marca-ahorro-anual | marca blanca o marca ahorro | Medio (estimación). OCU publica comparativas | Ahorro anual con tu cesta y % de categorías donde compensa; sin calculadora conocida | Entrada; OCU como contexto | Bajo | ene |
+| residencia-o-cuidador-a-domicilio | residencia o cuidador a domicilio coste | Medio-alto y creciente (estimación) | Coste mensual y a N años, incluyendo cotización del cuidador y copago; veredicto sin sesgo comercial | Precios = entrada; ayudas de dependencia por CCAA no cifrar sin fuente | Medio: no recomendar cuidado, solo coste; aviso | feb |
+| mudanza-empresa-o-furgoneta | cuánto cuesta una mudanza | Alto (estimación). SERP: N26, Cetelem, Habitissimo, Iberfurgo, Sirelo, Calculy: empresa 500-900 € local vs furgoneta 120-250 € (cifras de terceros sin metodología común) | Incluye tu tiempo, ayudantes, combustible, seguro y riesgo de daños; veredicto por m³ y distancia | Entrada; rangos solo como referencia | Bajo | may (pico jun-sep) |
+
+## Fiscales / reguladas (6). Cadena: Constructor deja parámetros + 3 casos; Verificador Opus valida norma
+| Slug | Keyword | Volumen / evidencia | Por qué ganaríamos | Datos y fuente | YMYL | Publicar |
+|---|---|---|---|---|---|---|
+| obligado-a-declarar-renta-dos-pagadores | quién está obligado a declarar la renta / dos pagadores | Muy alto en abr-jun (estimación, es el clásico de campaña) | Resultado sí/no con límites 22.000/15.000 € ya verificados (art. 96 LIRPF) y casos de excepción | LIRPF art. 96; verificado | Medio | indexar en enero |
+| irpf-alquilar-vivienda-rendimiento-neto | tributación alquiler vivienda IRPF | Alto (estimación) | Reducción **vigente 2026** según AEAT cuadro art. 23.2: 50 % general; 60 % rehabilitada en 2 años previos; 70 % zona tensionada + joven 18-35 o vivienda social; 90 % zona tensionada con rebaja de renta > 5 %; contratos desde 26-may-2023. Calculadora con gastos deducibles y amortización 3 % | AEAT cuadro-resumen reducciones (sede.agenciatributaria.gob.es, manual IRPF 2024); verificar zonas tensionadas por CCAA como entrada | Medio-alto | dic-ene |
+| deduccion-maternidad-familia-numerosa | deducción por maternidad / familia numerosa renta | Alto (estimación) | Reúne maternidad (art. 81), familia numerosa y mínimo por descendientes en un solo resultado | LIRPF arts. 58, 81 y 81 bis; **verificar importes 2026 en BOE**; autonómicas fuera | Medio | dic-ene |
+| venta-vivienda-plusvalia-irpf-exencion | vender vivienda IRPF plusvalía exención | Alto (estimación) | Ganancia patrimonial neta (gastos, mejoras), exención por reinversión en vivienda habitual y por mayores de 65 (arts. 33, 38 LIRPF); competencia son artículos | LIRPF y reglamento; confirmar tramos del ahorro | Alto | feb-mar |
+| autonomo-estimacion-directa-o-modulos | estimación directa o módulos autónomo | Medio-alto (estimación) | Cuota IRPF trimestral por modelo; módulos solo si la Orden de módulos vigente es verificable | Orden anual de módulos (BOE); **no publicar si no se verifica** | Medio-alto | ene (params 2027) |
+| deduccion-alquiler-vivienda-habitual-comunidad | deducción alquiler vivienda habitual comunidad | Muy alto en campaña (estimación) | Estatal ya no existe para contratos nuevos (solo régimen transitorio pre-2015); es autonómica. Sin tabla BOE verificada de 15 CCAA: calculadora genérica (% y límite del usuario) | Leyes autonómicas: **sin tabla verificada hoy** | Medio-alto | feb |
+Herencia/donación: no se incluye (sin fuente verificable del conjunto de CCAA); queda en reserva.
+
+## Dos guías de apoyo
+1. **Renta 2027: cómo ordenar tus papeles** (borrador de datos fiscales, certificados de retenciones, alquileres, hijos, donativos, plan de pensiones; enlaza a obligado-a-declarar, conjunta-o-individual, donativos, deducción de alquiler). Publicar en enero. Aviso: no es asesoramiento fiscal.
+2. **Coste real de tener un hijo / mascota / coche** (tres bloques con cifras de las calculadoras guardería, seguro mascota, comprar-coche y coche propio vs carsharing; cada cifra con fecha y entrada del usuario). Publicar en nov.
+
+## Revisión de competencia (c11)
+Sin Keyword Planner y con una sola ronda de búsqueda hoy, no se re-consultaron hipotecas, coche, IRPF ni luz: no hay evidencia nueva. Último estado conocido (c10): Calcuribor y Bankinter se acercan al euríbor de equilibrio en fija/variable; en luz nadie con veredicto personalizado sobre histórico real. Pendiente: reconsultar al llamar de nuevo (c16).
+
+## Priorización de los siguientes 8 ciclos (11-18; 2 por ciclo; F = fiscal, máx. 1 por ciclo; F pasa por Constructor + Verificador Opus; si no cierra, se sustituye por una NF)
+| Ciclo | Construir | Motivo |
+|---|---|---|
+| 11 | academia-idiomas-presencial-online-o-intensivo (NF) + seguro-hogar-con-o-sin-franquicia (NF) | En construcción; pico sep y ene |
+| 12 | suscripciones-cuanto-gasto-al-ano (NF) + obligado-a-declarar-renta-dos-pagadores (F, límites ya verificados) | Dic-ene; indexar para Renta 2027 |
+| 13 | gimnasio-o-entrenar-en-casa (NF) + deduccion-maternidad-familia-numerosa (F) | Antes del 15-dic; verificar importes 2026 |
+| 14 | cocinar-en-casa-o-comer-fuera (NF) + irpf-alquilar-vivienda-rendimiento-neto (F) | Enero; reducciones ya localizadas en AEAT |
+| 15 | movil-reacondicionado-o-nuevo (NF) + venta-vivienda-plusvalia-irpf-exencion (F, doble verificación) | Black Friday si el calendario lo permite; si no, ene |
+| 16 | equipaje-y-asiento-avion-coste-real (NF) + autonomo-estimacion-directa-o-modulos (F) + params 2027; llamar al Investigador | Parámetros 2027 |
+| 17 | residencia-o-cuidador-a-domicilio (NF) + deduccion-alquiler-vivienda-habitual-comunidad (F; si no hay tabla, versión genérica) | Pico abr-jun |
+| 18 | marca-blanca-o-marca-ahorro-anual (NF) + mudanza-empresa-o-furgoneta (NF) + refuerzo con datos de Search Console | Reponer con impresiones |

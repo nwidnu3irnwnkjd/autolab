@@ -1,0 +1,90 @@
+{
+  "slug": "academia-idiomas-presencial-online-o-intensivo",
+  "title": "Idiomas: academia, online o inmersión: coste por nivel",
+  "description": "Compara el coste total, por hora y los meses hasta tu objetivo en academia, curso online e inmersión, con el punto de equilibrio de eficacia del online.",
+  "h1": "Idiomas: academia, online o inmersión: coste por nivel",
+  "lead": "Aprender un idioma cuesta menos online que en academia solo si el online te rinde al menos lo que marca su punto de equilibrio, y eso depende de tu disciplina y de tu objetivo: con los ejemplos de la página (200 horas necesarias, 4 horas por semana, academia a 15 € la hora con un 10 % de descuento y 2 € de desplazamiento, online a 8 € la hora y eficacia estimada del 80 %), el online cuesta 2.000 €, la academia 3.100 € y una inmersión de 900 € por semana, 9.000 €; el online compensa mientras rinda al menos el 52 % de la academia. Pon tus horas, tu tiempo semanal, tus precios y tu eficacia estimada, y verás el coste total, el coste por hora de aprendizaje, los meses hasta el objetivo y el punto de equilibrio.",
+  "veredicto": "La opción más barata para llegar a tu objetivo depende del precio por hora y de cuánto rinda cada formato respecto a la academia presencial; el online compensa mientras su eficacia supere el punto de equilibrio que calcula la página, y la inmersión solo es la más barata si su coste semanal queda por debajo del umbral que calcula la página. Depende de tu disciplina y de tu objetivo.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "horas",
+      "label": "Horas de aprendizaje necesarias para tu nivel objetivo (hipótesis tuya, no una cifra oficial; 200 es un ejemplo)",
+      "default": 200,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "hs",
+      "label": "Horas por semana que puedes dedicar (4 es un ejemplo)",
+      "default": 4,
+      "min": 0.5,
+      "step": 0.5
+    },
+    {
+      "id": "acad",
+      "label": "Precio por hora en academia presencial (€ por hora de clase, con matrícula prorrateada; 15 € es un ejemplo, no un precio de academia)",
+      "default": 15,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "desp",
+      "label": "Desplazamiento a la academia (€ por hora de clase, ida y vuelta; 2 € es un ejemplo)",
+      "default": 2,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "desc",
+      "label": "Descuento por matrícula completa o pago del curso entero (% sobre el precio de la academia; 10 es un ejemplo)",
+      "default": 10,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "onl",
+      "label": "Precio por hora de curso online (€ por hora lectiva; 8 € es un ejemplo, no un precio de plataforma)",
+      "default": 8,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "inm",
+      "label": "Inmersión: coste por semana con viaje, curso y alojamiento (€ por semana; 900 € es un ejemplo, con 20 horas lectivas por semana)",
+      "default": 900,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "ef",
+      "label": "Eficacia estimada del online respecto a la academia presencial (% por hora de clase; 80 es una hipótesis tuya, no un dato científico)",
+      "default": 80,
+      "min": 1,
+      "step": 5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué sale más barato, academia, online o inmersión?",
+      "Depende de tu precio por hora y de cuánto rinda cada formato. Con los ejemplos de la página, el online es lo más barato (2.000 € frente a 3.100 € de la academia y 9.000 € de la inmersión), pero solo mientras rinda al menos el 52 % de la academia; con una eficacia menor, la academia pasa a ser más barata. Depende de tu disciplina y de tu objetivo."
+    ],
+    [
+      "¿Cuántas horas necesito para llegar a mi nivel?",
+      "La página no da una cifra: depende del idioma, de tu punto de partida, de tu objetivo y de cómo estudies, y por eso es un dato que escribes tú como hipótesis. Para ubicar tu nivel objetivo puedes usar los niveles del Marco Común Europeo de Referencia para las lenguas (A1 a C2), cuya descripción oficial enlazamos en las fuentes; las horas que necesites estimarlas tú o tu profesor."
+    ],
+    [
+      "¿Cómo se estima la eficacia del online respecto a la academia?",
+      "No hay una cifra científica única: es una hipótesis tuya, por ejemplo cuántas de tus horas online equivalen a una hora de clase presencial según tu disciplina y tus hábitos. La calculadora te da el punto de equilibrio (con los ejemplos, el 52 %) para que compares tu estimación con ese umbral en vez de fiarte de una cifra ajena."
+    ],
+    [
+      "¿Compensa una inmersión en el extranjero?",
+      "En coste por hora, solo si su precio semanal es bajo: con los ejemplos de la página la inmersión sale por 9.000 € y solo pasaría a ser la más barata si su coste semanal cayera por debajo de 200 €. Su ventaja es el plazo (con 20 horas lectivas por semana, unos 2,3 meses frente a 11,5 en la academia con 4 horas semanales) y que las horas fuera de clase no se cuentan, así que la comparación no es completa."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "No incluye precios de academias ni de plataformas concretas, el material, los exámenes oficiales, el coste de oportunidad del tiempo, el tiempo de desplazamiento ni las horas de práctica fuera de clase. Las horas necesarias, la eficacia y los precios son hipótesis o ejemplos tuyos, y la página no promete resultados. Es información orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio de coste. Academia: horas necesarias x (precio por hora x (1 - descuento) + desplazamiento por hora de clase). Online: horas necesarias / eficacia x precio por hora, porque con una eficacia menor del 100 % necesitas más horas lectivas para el mismo aprendizaje. Inmersión: horas necesarias / 20 horas lectivas por semana (supuesto del modelo) x coste semanal con viaje, curso y alojamiento. Meses = horas / horas por semana / (52/12) para academia y online; semanas / (52/12) para la inmersión, que se supone a tiempo completo. Punto de equilibrio del online = precio online / precio por hora de la academia con descuento y desplazamiento; el de la inmersión = coste de la opción más barata de las otras dos / semanas de inmersión. Las horas necesarias, la eficacia relativa (hipótesis editable, no científica), las 20 horas por semana y todos los precios son ejemplos declarados; no se usan cifras externas ni precios de academias concretas. Niveles A1 a C2: Marco común europeo de referencia para las lenguas, Instituto Cervantes: https://cvc.cervantes.es/ensenanza/biblioteca_ele/marco/ (consultado el 2/10/2026); la página no toma de él cifras de horas. No incluye exámenes, material, coste de oportunidad, tiempo de desplazamiento ni práctica fuera de clase. Información orientativa, sin promesa de resultados."
+}

@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "horas": 200,
+    "hs": 4,
+    "acad": 15,
+    "desp": 2,
+    "desc": 10,
+    "onl": 8,
+    "inm": 900,
+    "ef": 80
+   },
+   "expect": {
+    "costeAcad": 3100.0,
+    "costeOnl": 2000.0,
+    "costeInm": 9000.0,
+    "mesesAcad": 11.54,
+    "mesesOnl": 14.42,
+    "mesesInm": 2.31,
+    "efEquilibrio": 51.61,
+    "inmEquilibrio": 200.0,
+    "mejor": 1,
+    "ahorro": 1100.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "horas": 200,
+    "hs": 4,
+    "acad": 15,
+    "desp": 2,
+    "desc": 10,
+    "onl": 20,
+    "inm": 900,
+    "ef": 80
+   },
+   "expect": {
+    "costeAcad": 3100.0,
+    "costeOnl": 5000.0,
+    "costeInm": 9000.0,
+    "mesesAcad": 11.54,
+    "mesesOnl": 14.42,
+    "mesesInm": 2.31,
+    "efEquilibrio": 129.03,
+    "inmEquilibrio": 310.0,
+    "mejor": 0,
+    "ahorro": 1900.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "horas": 200,
+    "hs": 4,
+    "acad": 15,
+    "desp": 2,
+    "desc": 10,
+    "onl": 8,
+    "inm": 200,
+    "ef": 80
+   },
+   "expect": {
+    "costeAcad": 3100.0,
+    "costeOnl": 2000.0,
+    "costeInm": 2000.0,
+    "mesesAcad": 11.54,
+    "mesesOnl": 14.42,
+    "mesesInm": 2.31,
+    "efEquilibrio": 51.61,
+    "inmEquilibrio": 200.0,
+    "mejor": 1,
+    "ahorro": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "horas": 200,
+    "hs": 4,
+    "acad": 0,
+    "desp": 0,
+    "desc": 10,
+    "onl": 8,
+    "inm": 900,
+    "ef": 80
+   },
+   "expect": {
+    "costeAcad": 0.0,
+    "costeOnl": 2000.0,
+    "costeInm": 9000.0,
+    "mesesAcad": 11.54,
+    "mesesOnl": 14.42,
+    "mesesInm": 2.31,
+    "efEquilibrio": -1,
+    "inmEquilibrio": 0.0,
+    "mejor": 0,
+    "ahorro": 2000.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "horas": 1,
+    "hs": 1,
+    "acad": 15,
+    "desp": 2,
+    "desc": 100,
+    "onl": 8,
+    "inm": 900,
+    "ef": 100
+   },
+   "expect": {
+    "costeAcad": 2.0,
+    "costeOnl": 8.0,
+    "costeInm": 45.0,
+    "mesesAcad": 0.23,
+    "mesesOnl": 0.23,
+    "mesesInm": 0.01,
+    "efEquilibrio": 400.0,
+    "inmEquilibrio": 40.0,
+    "mejor": 0,
+    "ahorro": 6.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "horas": 3000,
+    "hs": 60,
+    "acad": 15,
+    "desp": 2,
+    "desc": 10,
+    "onl": 8,
+    "inm": 900,
+    "ef": 300
+   },
+   "expect": {
+    "costeAcad": 46500.0,
+    "costeOnl": 8000.0,
+    "costeInm": 135000.0,
+    "mesesAcad": 11.54,
+    "mesesOnl": 3.85,
+    "mesesInm": 34.62,
+    "efEquilibrio": 51.61,
+    "inmEquilibrio": 53.33,
+    "mejor": 1,
+    "ahorro": 38500.0
+   },
+   "tol": 1
+  }
+ ]
+}

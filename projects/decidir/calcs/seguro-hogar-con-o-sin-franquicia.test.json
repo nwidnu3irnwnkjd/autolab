@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 240,
+    "franq": 300,
+    "frec": 0.15,
+    "coste": 400,
+    "capital": 100000,
+    "horizonte": 10,
+    "fondo": 2000
+   },
+   "expect": {
+    "ahorroAnual": 60,
+    "perdidaAnual": 45.0,
+    "netoAnual": 15.0,
+    "netoTotal": 150.0,
+    "frecEquilibrio": 0.2,
+    "siniestrosEquilibrio": 2.0,
+    "peorAno1": 240,
+    "fondoCubre": 1,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 240,
+    "franq": 300,
+    "frec": 0.5,
+    "coste": 400,
+    "capital": 100000,
+    "horizonte": 10,
+    "fondo": 2000
+   },
+   "expect": {
+    "ahorroAnual": 60,
+    "perdidaAnual": 150.0,
+    "netoAnual": -90.0,
+    "netoTotal": -900.0,
+    "frecEquilibrio": 0.2,
+    "siniestrosEquilibrio": 2.0,
+    "peorAno1": 240,
+    "fondoCubre": 1,
+    "mejor": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 240,
+    "franq": 300,
+    "frec": 0,
+    "coste": 400,
+    "capital": 100000,
+    "horizonte": 10,
+    "fondo": 2000
+   },
+   "expect": {
+    "ahorroAnual": 60,
+    "perdidaAnual": 0,
+    "netoAnual": 60,
+    "netoTotal": 600,
+    "frecEquilibrio": 0.2,
+    "siniestrosEquilibrio": 2.0,
+    "peorAno1": 240,
+    "fondoCubre": 1,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 240,
+    "franq": 300,
+    "frec": 0.15,
+    "coste": 0,
+    "capital": 100000,
+    "horizonte": 10,
+    "fondo": 2000
+   },
+   "expect": {
+    "ahorroAnual": 60,
+    "perdidaAnual": 0.0,
+    "netoAnual": 60.0,
+    "netoTotal": 600.0,
+    "frecEquilibrio": -1,
+    "siniestrosEquilibrio": -1,
+    "peorAno1": 240,
+    "fondoCubre": 1,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 240,
+    "franq": 300,
+    "frec": 0.15,
+    "coste": 400,
+    "capital": 100000,
+    "horizonte": 1,
+    "fondo": 100
+   },
+   "expect": {
+    "ahorroAnual": 60,
+    "perdidaAnual": 45.0,
+    "netoAnual": 15.0,
+    "netoTotal": 15.0,
+    "frecEquilibrio": 0.2,
+    "siniestrosEquilibrio": 0.2,
+    "peorAno1": 240,
+    "fondoCubre": 0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "primaSin": 300,
+    "primaCon": 320,
+    "franq": 300,
+    "frec": 0.15,
+    "coste": 400,
+    "capital": 100000,
+    "horizonte": 10,
+    "fondo": 2000
+   },
+   "expect": {
+    "ahorroAnual": -20,
+    "perdidaAnual": 45.0,
+    "netoAnual": -65.0,
+    "netoTotal": -650.0,
+    "frecEquilibrio": -0.07,
+    "siniestrosEquilibrio": -0.67,
+    "peorAno1": 320,
+    "fondoCubre": 1,
+    "mejor": 1
+   },
+   "tol": 1
+  }
+ ]
+}

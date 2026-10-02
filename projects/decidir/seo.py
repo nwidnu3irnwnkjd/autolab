@@ -99,6 +99,10 @@ def load_guides(params):
     if _lv("luz_pvpc"):
         d = _lv("luz_pvpc"); ex["pvpc_hoy"] = _n(d["valor"]); ex["fecha_pvpc_es"] = fecha_es(d["fecha_dato"])
         if (d.get("extra") or {}).get("media_mes"): ex["pvpc_media_mes"] = _n(d["extra"]["media_mes"]); ex["mes_pvpc_es"] = _mes(d["extra"]["mes"])
+    mt = _lv("madrid_tiempo")
+    if mt and (mt.get("extra") or {}).get("min_semana") is not None:
+        ex["temp_madrid"] = _n(mt["valor"], 1); ex["min_semana_madrid"] = _n(mt["extra"]["min_semana"], 1); ex["fecha_tiempo_es"] = fecha_es(mt["fecha_dato"])
+    if params.get("fecha_calefaccion"): ex["fecha_gas_es"] = fecha_es(params["fecha_calefaccion"])
     if _lv("gasolina95"): ex["fecha_gasolina_es"] = fecha_es(_lv("gasolina95")["fecha_dato"])
     ex["fecha_datos_es"] = fecha_es(params.get("fecha") or TODAY)
     pm.update(ex)
