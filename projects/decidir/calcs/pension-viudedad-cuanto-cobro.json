@@ -1,0 +1,133 @@
+{
+  "slug": "pension-viudedad-cuanto-cobro",
+  "title": "Pensión de viudedad 2026: cuánto cobraré (52, 60 o 70 %)",
+  "description": "Calcula cuánto cobrarás de pensión de viudedad en 2026: 52, 60 o 70 % de la base reguladora, según edad, hijos e ingresos, y su comparación con el mínimo.",
+  "h1": "Pensión de viudedad 2026: cuánto cobraré y qué porcentaje me corresponde",
+  "lead": "Con una base reguladora de 1.600 € al mes, 66 años, sin ingresos ni otra pensión pública y 30 años de matrimonio, cobrarías el 60 % de la base reguladora: 960 € brutos al mes en 14 pagas (13.440 € al año), por encima del mínimo de 936,20 € al mes. El porcentaje sería del 52 % (832 € al mes) si trabajas, cobras otra pensión pública o tienes menos de 65 años, y del 70 % si tienes hijos a tu cargo, la pensión es tu principal fuente de ingresos y tus ingresos son bajos. La herramienta calcula el porcentaje que te corresponde y por qué, la pensión mensual y anual bruta, la comparación con el mínimo de 2026 y si el derecho es vitalicio o temporal; no incluye la retención del IRPF, la orfandad, el complemento por brecha de género ni los casos de separados o divorciados.",
+  "veredicto": "La pensión de viudedad es el 52 % de la base reguladora del fallecido (art. 31.1 del Decreto 3158/1966). Sube al 60 % si tienes 65 años o más, no cobras otra pensión pública, no trabajas y tus rendimientos de capital no superan 9.442 € al año (RD 900/2018), y al 70 % si tienes cargas familiares, la pensión es al menos la mitad de tus ingresos y estos no superan el límite (art. 31.2); no se acumulan y se aplica el más favorable. Se cobra en 14 pagas, es compatible con el trabajo (art. 223.1 de la LGSS) y tiene como tope 3.359,60 € al mes sumada a otras pensiones. Si el fallecido no cumple el período de cotización, o la pareja de hecho no llega a 5 años de convivencia sin hijos en común, no hay pensión de viudedad.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "br",
+      "label": "Base reguladora mensual del fallecido (€; la indica la resolución de la Seguridad Social)",
+      "default": 1600,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.viudedad_2026.supuestos.base_reguladora",
+      "ayuda": "Es la base sobre la que se aplica el porcentaje; no es la pensión del fallecido. Si no la tienes, puedes pedir una simulación en la Seguridad Social."
+    },
+    {
+      "id": "causante",
+      "label": "Situación del fallecido",
+      "type": "select",
+      "options": [
+        {
+          "v": "pensionista",
+          "t": "Cobraba una pensión de jubilación o de incapacidad permanente"
+        },
+        {
+          "v": "alta500",
+          "t": "Estaba en alta y cotizó 500 días en los 5 años anteriores"
+        },
+        {
+          "v": "accidente",
+          "t": "Murió por accidente (laboral o no) o enfermedad profesional"
+        },
+        {
+          "v": "no_alta15",
+          "t": "No estaba en alta ni cobraba pensión, pero cotizó 15 años o más"
+        },
+        {
+          "v": "nocumple",
+          "t": "No cumple ninguna de las anteriores"
+        }
+      ]
+    },
+    {
+      "id": "ingresos",
+      "label": "Tus ingresos propios al año (€; trabajo, alquileres, intereses; sin pensiones)",
+      "default": 0,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.viudedad_2026.supuestos.ingresos",
+      "ayuda": "Rendimientos brutos de un año. Las pensiones públicas que cobres van en el campo de abajo."
+    },
+    {
+      "id": "edad",
+      "label": "Tu edad (años)",
+      "default": 66,
+      "min": 16,
+      "step": 1,
+      "default_from": "params.viudedad_2026.supuestos.edad"
+    },
+    {
+      "id": "hijos",
+      "label": "Hijos a tu cargo (menores de 26 años o incapacitados que conviven contigo y sin ingresos propios)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.viudedad_2026.supuestos.hijos",
+      "ayuda": "Se suponen hijos comunes con el fallecido. Cuentan también los menores acogidos."
+    },
+    {
+      "id": "union",
+      "label": "Tipo de unión con el fallecido",
+      "type": "select",
+      "options": [
+        {
+          "v": "matrimonio",
+          "t": "Matrimonio"
+        },
+        {
+          "v": "pareja",
+          "t": "Pareja de hecho inscrita o formalizada en documento público 2 años o más antes del fallecimiento"
+        },
+        {
+          "v": "pareja_corta",
+          "t": "Pareja de hecho inscrita o formalizada hace menos de 2 años"
+        }
+      ]
+    },
+    {
+      "id": "anos",
+      "label": "Años de matrimonio (o de convivencia ininterrumpida si es pareja de hecho)",
+      "default": 30,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.viudedad_2026.supuestos.anos",
+      "ayuda": "En matrimonio, cuenta solo el tiempo casados (sin convivencia anterior). En pareja de hecho, los años empadronados juntos de forma continuada hasta el fallecimiento."
+    },
+    {
+      "id": "otra",
+      "label": "Otra pensión pública propia (€ brutos al mes en 14 pagas; 0 si no cobras)",
+      "default": 0,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.viudedad_2026.supuestos.otra_pension",
+      "ayuda": "Jubilación, incapacidad u otra pensión pública a tu nombre. Cuenta para el 60 %, para el 70 % y para el límite de 3.359,60 € al mes."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto se cobra de pensión de viudedad con una base reguladora de 1.600 euros?",
+      "Con una base reguladora de 1.600 € al mes, el 52 % da 832 € brutos al mes en 14 pagas (11.648 € al año), el 60 % da 960 € (13.440 € al año) y el 70 % da 1.120 € (15.680 € al año). Cuál te corresponde depende de tu edad, tus ingresos, otras pensiones y tus hijos a cargo. Son importes brutos: se descuenta la retención del IRPF, que esta herramienta no calcula."
+    ],
+    [
+      "¿Cuándo me corresponde el 52, el 60 o el 70 % de la base reguladora?",
+      "El 52 % es el porcentaje general (art. 31.1 del Decreto 3158/1966). El 60 % exige tener 65 años o más, no tener derecho a otra pensión pública, no trabajar y que los rendimientos de capital, de actividades económicas y las ganancias patrimoniales no superen 9.442 € al año (RD 900/2018, art. 2). El 70 % exige cargas familiares (hijos menores de 26 años o incapacitados que conviven contigo, con ingresos de la unidad familiar por miembro de hasta el 75 % del salario mínimo sin pagas extra, 10.989 € en 2026), que la pensión sea al menos el 50 % de tus ingresos y que tus rendimientos no superen el límite (art. 31.2: 9.442 € más el mínimo de viudedad según tu edad, entre 19.373,60 y 22.548,80 € al año). No se acumulan: se aplica el más favorable (RD 900/2018, art. 7)."
+    ],
+    [
+      "¿Es compatible la pensión de viudedad con trabajar o con otra pensión?",
+      "Con el trabajo, sí: la pensión de viudedad es compatible con las rentas de trabajo (art. 223.1 de la LGSS), aunque trabajar te quita el 60 % y te deja en el 52 % o, con hijos y bajos ingresos, en el 70 % si cumples sus condiciones. Con otra pensión propia, como una jubilación, puedes cobrar ambas, pero la suma de las pensiones causadas en 2026 no puede superar 3.359,60 € al mes (RD 241/2026, art. 3). Si te casas o formas una nueva pareja de hecho, la pensión se extingue (art. 223.2), con las excepciones que fija el reglamento."
+    ],
+    [
+      "¿Qué requisitos necesito para cobrar la pensión de viudedad?",
+      "Que el fallecido cumpla el período de cotización del art. 219.1 de la LGSS: era pensionista de jubilación o incapacidad permanente, o estaba en alta con 500 días cotizados en los últimos 5 años, o no estaba en alta pero había cotizado 15 años; si murió por accidente o enfermedad profesional no se exige período previo. Si estabais casados y la muerte fue por enfermedad común, se exige un año de matrimonio o hijos en común (art. 219.2); si no, se cobra una prestación temporal de 24 meses (art. 222). Como pareja de hecho, hacen falta 5 años de convivencia ininterrumpida acreditada con el empadronamiento, salvo que haya hijos en común, y la inscripción o el documento público al menos 2 años antes de la muerte (art. 221.2)."
+    ],
+    [
+      "¿Cuál es la pensión mínima de viudedad en 2026?",
+      "Según el anexo I del RD 241/2026, el mínimo anual es de 17.592,40 € con cargas familiares (1.256,60 € al mes en 14 pagas), 13.106,80 € con 65 años o más (936,20 € al mes), 12.262,60 € entre 60 y 64 años (875,90 € al mes) y 9.931,60 € con menos de 60 años (709,40 € al mes). Si tu pensión queda por debajo y tus ingresos sin ella no superan 9.442 € al año, puedes pedir el complemento por mínimos, que esta calculadora no calcula porque tiene límites propios."
+    ]
+  ],
+  "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): arts. 217 y 219 (sujetos causantes y período de cotización), 221 y 222 (pareja de hecho y prestación temporal), 223 (compatibilidad y extinción), 59 y 60 (mínimos y brecha de género; no modelados). Decreto 3158/1966, art. 31 (52 % y 70 % de la base reguladora; https://www.boe.es/buscar/act.php?id=BOE-A-1966-21116). Real Decreto 900/2018, arts. 2, 3, 5 y 7 (60 %; https://www.boe.es/buscar/act.php?id=BOE-A-2018-10397). Real Decreto 241/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977): anexo I (mínimos de viudedad), límite de ingresos de 9.442 €, límite de 3.359,60 € al mes (art. 3). Salario mínimo 2026: 1.221 € al mes en 14 pagas (RD 126/2026). Hipótesis no oficiales y editables: base reguladora de 1.600 €, 66 años, sin ingresos, sin hijos, 30 años de matrimonio. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

@@ -22,7 +22,7 @@
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
   "deposito-letras-o-fondo-monetario",
-  "hipoteca-fija-o-variable"
+  "traspasar-fondo-o-reembolsar-irpf"
  ],
  "amortizar-plazo-o-cuota": [
   "amortizar-o-invertir",
@@ -107,7 +107,7 @@
  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
   "plan-pensiones-o-fondo-indexado",
   "deposito-letras-o-fondo-monetario",
-  "rescate-plan-pensiones-capital-o-renta"
+  "traspasar-fondo-o-reembolsar-irpf"
  ],
  "comprar-coche-o-renting": [
   "coche-nuevo-o-seminuevo",
@@ -137,7 +137,7 @@
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
   "excedencia-o-reduccion-jornada",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "pension-viudedad-cuanto-cobro"
  ],
  "declaracion-conjunta-o-individual": [
   "deduccion-maternidad-familia-numerosa",
@@ -237,7 +237,7 @@
  "jubilacion-anticipada-o-demorada": [
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta",
-  "residencia-o-cuidador-a-domicilio"
+  "pension-viudedad-cuanto-cobro"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
@@ -269,6 +269,11 @@
   "irpf-alquilar-vivienda-rendimiento-neto",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
+ "pension-viudedad-cuanto-cobro": [
+  "jubilacion-anticipada-o-demorada",
+  "rescate-plan-pensiones-capital-o-renta",
+  "residencia-o-cuidador-a-domicilio"
+ ],
  "placas-solares-merece-la-pena": [
   "aire-acondicionado-inverter-o-ventilador-coste-verano",
   "punto-de-carga-casa-con-o-sin-placas",
@@ -276,7 +281,7 @@
  ],
  "plan-pensiones-o-fondo-indexado": [
   "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
-  "deposito-letras-o-fondo-monetario",
+  "traspasar-fondo-o-reembolsar-irpf",
   "jubilacion-anticipada-o-demorada"
  ],
  "portatil-o-movil-comprar-renting-o-financiar": [
@@ -312,7 +317,7 @@
  "residencia-o-cuidador-a-domicilio": [
   "excedencia-o-reduccion-jornada",
   "jubilacion-anticipada-o-demorada",
-  "seguro-salud-privado-merece-la-pena"
+  "pension-viudedad-cuanto-cobro"
  ],
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",
@@ -358,6 +363,11 @@
   "calefaccion-gas-aerotermia-electrica",
   "caldera-reparar-o-cambiar",
   "horas-valle-luz-lavadora-termo-cuanto-ahorro"
+ ],
+ "traspasar-fondo-o-reembolsar-irpf": [
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+  "plan-pensiones-o-fondo-indexado",
+  "amortizar-o-invertir"
  ],
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",

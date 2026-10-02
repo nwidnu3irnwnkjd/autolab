@@ -117,7 +117,7 @@ def main():
             write(f"/actualidad/{n['slug']}/", n["title"], n["description"], nbody, jsonld=nld, priority="0.6", lastmod=n["modified"])
         write("/actualidad/", "Actualidad: datos que cambian decisiones", "Notas breves con datos oficiales cuando el Euríbor, los carburantes, la luz o el tiempo se mueven lo bastante para cambiar una decisión.",
               seo.actualidad_index(NOTES), priority="0.6", lastmod=max(n["modified"] for n in NOTES))
-    for slug, title, desc in [("como-funciona", "Cómo funciona", "Qué hacemos, qué no, y cómo se calculan los resultados."),
+    for slug, title, desc in [("como-funciona", "Cómo funciona", "Cómo calculamos: fuentes oficiales (BOE, BCE, INE), Barómetro con datos del mes y verificación de cada cifra antes de publicar. Qué hacemos y qué no."),
                               ("aviso-legal", "Aviso legal", "Titular, condiciones de uso y limitación de responsabilidad."),
                               ("privacidad", "Política de privacidad", "Qué datos tratamos (casi ninguno) y con qué base legal."),
                               ("cookies", "Política de cookies", "Cookies que usa el sitio y cómo gestionarlas."),

@@ -1,0 +1,266 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 30.000 € de ganancia, 15 años al 4 %, traspasar gana por poco",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 15,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 96926.78,
+    "impuestoFinalReem": 8932.42,
+    "netoReem": 87994.36,
+    "valorTras": 108056.61,
+    "impuestoFinalTras": 16833.02,
+    "netoTras": 91223.59,
+    "ventaja": 3229.23,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ETF: la opción de traspasar no existe",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 15,
+    "vehiculo": "etf",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 0,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 96926.78,
+    "impuestoFinalReem": 8932.42,
+    "netoReem": 87994.36,
+    "valorTras": 0.0,
+    "impuestoFinalTras": 0.0,
+    "netoTras": 0.0,
+    "ventaja": 0.0,
+    "nEq": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: ganancia 0, nada que diferir",
+   "in": {
+    "valor": 60000,
+    "coste": 60000,
+    "rent": 4,
+    "anios": 15,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 0,
+    "impuestoHoy": 0.0,
+    "reinvertido": 60000.0,
+    "valorReem": 108056.61,
+    "impuestoFinalReem": 9971.89,
+    "netoReem": 98084.72,
+    "valorTras": 108056.61,
+    "impuestoFinalTras": 9971.89,
+    "netoTras": 98084.72,
+    "ventaja": 0.0,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: pérdida latente de 15.000 € con 10.000 € de otras rentas (compensa el 25 %)",
+   "in": {
+    "valor": 60000,
+    "coste": 75000,
+    "rent": 4,
+    "anios": 15,
+    "vehiculo": "fondo",
+    "otras": 10000,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": -15000,
+    "impuestoHoy": -525.0,
+    "reinvertido": 60525.0,
+    "valorReem": 109002.11,
+    "impuestoFinalReem": 10349.73,
+    "netoReem": 98652.37,
+    "valorTras": 108056.61,
+    "impuestoFinalTras": 6941.89,
+    "netoTras": 101114.72,
+    "ventaja": 2462.35,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 1 año",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 1,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 55972.8,
+    "impuestoFinalReem": 409.03,
+    "netoReem": 55563.77,
+    "valorTras": 62400.0,
+    "impuestoFinalTras": 6684.0,
+    "netoTras": 55716.0,
+    "ventaja": 152.23,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 30 años, ventaja grande",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 30,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 174559.65,
+    "impuestoFinalReem": 26650.12,
+    "netoReem": 147909.53,
+    "valorTras": 194603.85,
+    "impuestoFinalTras": 36738.89,
+    "netoTras": 157864.96,
+    "ventaja": 9955.43,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "comisión de traspaso de 4.000 €: reembolsar gana a 2 años",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 2,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 4000,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 58211.71,
+    "impuestoFinalReem": 834.43,
+    "netoReem": 57377.29,
+    "valorTras": 60569.6,
+    "impuestoFinalTras": 6299.62,
+    "netoTras": 54269.98,
+    "ventaja": -3107.3,
+    "nEq": 31
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "otras rentas del ahorro de 45.000 €: la ganancia cruza el tramo de 50.000 €",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 4,
+    "anios": 15,
+    "vehiculo": "fondo",
+    "otras": 45000,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6800.0,
+    "reinvertido": 53200.0,
+    "valorReem": 95810.19,
+    "impuestoFinalReem": 9700.34,
+    "netoReem": 86109.85,
+    "valorTras": 108056.61,
+    "impuestoFinalTras": 17853.02,
+    "netoTras": 90203.59,
+    "ventaja": 4093.74,
+    "nEq": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: rentabilidad 0 %, traspasar no gana nada",
+   "in": {
+    "valor": 60000,
+    "coste": 30000,
+    "rent": 0,
+    "anios": 15,
+    "vehiculo": "fondo",
+    "otras": 0,
+    "comT": 0,
+    "comR": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "traspasable": 1,
+    "ganancia": 30000,
+    "impuestoHoy": 6180.0,
+    "reinvertido": 53820.0,
+    "valorReem": 53820.0,
+    "impuestoFinalReem": 0.0,
+    "netoReem": 53820.0,
+    "valorTras": 60000.0,
+    "impuestoFinalTras": 6180.0,
+    "netoTras": 53820.0,
+    "ventaja": 0.0,
+    "nEq": 1
+   },
+   "tol": 1
+  }
+ ]
+}

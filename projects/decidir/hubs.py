@@ -238,7 +238,7 @@ HUBS = {
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"]),
-            ("Al presentar la declaración y en el futuro", ["obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "rescate-plan-pensiones-capital-o-renta"]),
+            ("Al presentar la declaración y en el futuro", ["obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
         ],
         "steps": {
@@ -300,6 +300,10 @@ HUBS = {
                 "text": "La conjunta suele compensar cuando uno de los dos ingresa muy poco o nada; con dos sueldos normales suele salir mejor la individual. La calculadora compara la cuota de cada una con tus datos.",
                 "guia": "renta-2027-ejercicio-2026-paso-a-paso",
             },
+            "traspasar-fondo-o-reembolsar-irpf": {
+                "name": "Traspasar o reembolsar un fondo",
+                "text": "Traspasar un fondo de inversión a otro no tributa hasta que reembolsas, mientras que reembolsar liquida el IRPF de la ganancia ya. La calculadora da cuánto IRPF difieres y si la ventaja compensa.",
+            },
             "rescate-plan-pensiones-capital-o-renta": {
                 "name": "Rescatar un plan de pensiones",
                 "text": "Cobrar en renta suele pagar menos IRPF que rescatar de golpe cuando el saldo es grande frente a tus otras rentas, pero no siempre. La calculadora compara capital, renta y mixto.",
@@ -327,7 +331,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
             "cambiar-de-operadora-compensa-permanencia": {
@@ -430,6 +434,10 @@ HUBS = {
             "teletrabajo-o-oficina-coste-real": {
                 "name": "Teletrabajo u oficina",
                 "text": "Teletrabajar ahorra si lo que evitas cada día en desplazamiento y comida supera el gasto extra en casa. La calculadora da el ahorro anual y la compensación mínima de la empresa.",
+            },
+            "pension-viudedad-cuanto-cobro": {
+                "name": "Pensión de viudedad",
+                "text": "El porcentaje de la base reguladora (52, 60 o 70 %) depende de tu edad, tus hijos y tus ingresos, y se compara con el mínimo. La calculadora te da cuánto cobrarías con tus datos.",
             },
             "residencia-o-cuidador-a-domicilio": {
                 "name": "Residencia o cuidador a domicilio",

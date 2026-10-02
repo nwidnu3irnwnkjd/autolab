@@ -11,7 +11,7 @@
   ],
   "plan-pensiones-o-fondo-indexado": [
     "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
-    "deposito-letras-o-fondo-monetario",
+    "traspasar-fondo-o-reembolsar-irpf",
     "jubilacion-anticipada-o-demorada"
   ],
   "luz-fija-o-indexada": [
@@ -164,12 +164,12 @@
   "amortizar-o-invertir": [
     "amortizar-plazo-o-cuota",
     "deposito-letras-o-fondo-monetario",
-    "hipoteca-fija-o-variable"
+    "traspasar-fondo-o-reembolsar-irpf"
   ],
   "jubilacion-anticipada-o-demorada": [
     "plan-pensiones-o-fondo-indexado",
     "rescate-plan-pensiones-capital-o-renta",
-    "residencia-o-cuidador-a-domicilio"
+    "pension-viudedad-cuanto-cobro"
   ],
   "comprar-o-alquilar-herramienta": [
     "reparar-o-comprar-electrodomestico",
@@ -279,7 +279,7 @@
   "residencia-o-cuidador-a-domicilio": [
     "excedencia-o-reduccion-jornada",
     "jubilacion-anticipada-o-demorada",
-    "seguro-salud-privado-merece-la-pena"
+    "pension-viudedad-cuanto-cobro"
   ],
   "aire-acondicionado-inverter-o-ventilador-coste-verano": [
     "luz-fija-o-indexada",
@@ -364,11 +364,21 @@
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
     "excedencia-o-reduccion-jornada",
-    "comparar-ofertas-de-trabajo-neto-real"
+    "pension-viudedad-cuanto-cobro"
   ],
   "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
     "plan-pensiones-o-fondo-indexado",
     "deposito-letras-o-fondo-monetario",
-    "rescate-plan-pensiones-capital-o-renta"
+    "traspasar-fondo-o-reembolsar-irpf"
+  ],
+  "pension-viudedad-cuanto-cobro": [
+    "jubilacion-anticipada-o-demorada",
+    "rescate-plan-pensiones-capital-o-renta",
+    "residencia-o-cuidador-a-domicilio"
+  ],
+  "traspasar-fondo-o-reembolsar-irpf": [
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+    "plan-pensiones-o-fondo-indexado",
+    "amortizar-o-invertir"
   ]
 }

@@ -1,0 +1,124 @@
+{
+ "slug": "traspasar-fondo-o-reembolsar-irpf",
+ "title": "Traspasar fondo o reembolsar: cuánto IRPF difieres",
+ "description": "Traspasar un fondo de inversión a otro, sin que el dinero pase por tu cuenta, no tributa hasta reembolsar (art. 94.1.a). Calcula el IRPF que difieres.",
+ "h1": "Fondo de inversión: ¿traspasar o reembolsar? Cuánto IRPF difieres y cuánto ganas",
+ "lead": "Si tu fondo es traspasable (un fondo de inversión, o una SICAV con más de 500 socios en la que no has superado el 5 % del capital en ningún momento de los 12 meses anteriores) y el dinero pasa directo a otro fondo que no es un ETF, traspasarlo en vez de reembolsarlo no te cuesta IRPF hoy y, a 15 años y un 4 % anual te deja unos 3.229 € netos más que reembolsar y reinvertir: 91.224 € frente a 87.994 € (3,5 % del valor final, un empate práctico), porque difieres 6.180 € de impuesto sobre una ganancia de 30.000 € (60.000 € de valor menos 30.000 € de coste). Esa ventaja crece con los años y baja con las comisiones del traspaso: a 30 años es de 9.955 €, y con 4.000 € de comisión y 2 años gana reembolsar. Si lo que tienes es un ETF o una acción, la opción de traspasar no existe, salvo ETF extranjeros comprados antes de 2022 y no cotizados en bolsa española (DT 36.ª, no modelado): vender tributa. No incluye forales, criptoactivos, planes de pensiones, seguros unit linked, cuentas en el extranjero, derivados ni no residentes.",
+ "veredicto": "Con estos datos (60.000 € de valor, 30.000 € de coste, 15 años al 4 %), traspasar deja 91.224 € netos frente a 87.994 € si reembolsas hoy y reinviertes: una ventaja de 3.229 € (3,5 % del valor final), empate práctico, porque difieres 6.180 € de IRPF sobre una ganancia de 30.000 €. A 30 años la ventaja sube a 9.955 € (6,3 %) y gana traspasar; con 1 año es de 152 € y no hay diferencia práctica. Con 4.000 € de comisión de traspaso y 2 años, gana reembolsar por 3.107 € (traspasar solo iguala a partir del año 31). Si el vehículo es un ETF o una acción, traspasar no existe (salvo ETF extranjeros comprados antes de 2022 y no cotizados en bolsa española, DT 36.ª, que la calculadora no modela): vender hoy cuesta 6.180 € de IRPF y reinvirtiendo quedan 87.994 € netos a 15 años. Sin ganancia latente no hay nada que diferir, y con pérdida latente reembolsar la computa y traspasar no (en el ejemplo con 10.000 € de otras rentas, el ahorro de reembolsar es de 525 €).",
+ "tema": "impuestos",
+ "inputs": [
+  {
+   "id": "valor",
+   "label": "Valor actual del fondo (€)",
+   "default": 60000,
+   "min": 1,
+   "step": 1000,
+   "default_from": "params.traspasar_fondo_2026.supuestos.valor",
+   "ayuda": "Lo que valdría tu inversión si reembolsas hoy (valor liquidativo por participaciones). Es un ejemplo editable."
+  },
+  {
+   "id": "coste",
+   "label": "Coste de adquisición (€)",
+   "default": 30000,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.traspasar_fondo_2026.supuestos.coste",
+   "ayuda": "Lo que pagaste por las participaciones que moverías, con sus gastos de compra. Si tienes varias compras, el reembolso o traspaso parcial se entiende que sale de las más antiguas (art. 94.1.a y 37.2): pon el coste de ese tramo."
+  },
+  {
+   "id": "rent",
+   "label": "Rentabilidad anual esperada, neta de comisiones (%)",
+   "default": 4,
+   "min": -20,
+   "max": 30,
+   "step": 0.5,
+   "default_from": "params.traspasar_fondo_2026.supuestos.rent",
+   "ayuda": "Es una hipótesis tuya, no una previsión: el cálculo la supone constante cada año y ya descontadas las comisiones de gestión. Puede ser negativa."
+  },
+  {
+   "id": "anios",
+   "label": "Años hasta el reembolso final",
+   "default": 15,
+   "min": 1,
+   "max": 40,
+   "step": 1,
+   "default_from": "params.traspasar_fondo_2026.supuestos.anios",
+   "ayuda": "Cuándo reembolsarías de verdad, entre 1 y 40 años."
+  },
+  {
+   "id": "vehiculo",
+   "label": "Tipo de vehículo",
+   "type": "select",
+   "options": [
+    {
+     "v": "fondo",
+     "t": "Fondo de inversión"
+    },
+    {
+     "v": "sicav",
+     "t": "SICAV con más de 500 socios y yo sin superar el 5 % en 12 meses"
+    },
+    {
+     "v": "sicav_no",
+     "t": "SICAV que no cumple esos requisitos"
+    },
+    {
+     "v": "etf",
+     "t": "ETF (fondo cotizado) o acción"
+    }
+   ],
+   "default_from": "params.traspasar_fondo_2026.supuestos.vehiculo",
+   "ayuda": "Art. 94.1.a: solo los reembolsos de fondos de inversión y las transmisiones de SICAV con esos requisitos pueden diferirse. Los ETF y las acciones tributan al venderlos y el traspaso no existe (salvo ETF extranjeros comprados antes de 2022 y no cotizados en bolsa española, DT 36.ª, no modelado)."
+  },
+  {
+   "id": "otras",
+   "label": "Dividendos e intereses del año (€)",
+   "default": 0,
+   "min": 0,
+   "step": 1000,
+   "default_from": "params.traspasar_fondo_2026.supuestos.otras",
+   "ayuda": "Solo dividendos, intereses y otros rendimientos del capital mobiliario del año, antes de impuestos: marcan el tramo de la escala del ahorro. No incluyas otras ganancias patrimoniales: no se modelan (si las tienes, una pérdida las compensa entera y reembolsar te ahorra más de lo que muestra). Se supone igual el año del reembolso final."
+  },
+  {
+   "id": "comT",
+   "label": "Comisiones del traspaso (€)",
+   "default": 0,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.traspasar_fondo_2026.supuestos.comT",
+   "ayuda": "Lo que te cobraría la gestora o el banco por cambiar de fondo, si algo. Se descuenta del importe que sigue invertido. Pon el importe de tu contrato, no una cifra de mercado."
+  },
+  {
+   "id": "comR",
+   "label": "Comisión de reembolso (€)",
+   "default": 0,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.traspasar_fondo_2026.supuestos.comR",
+   "ayuda": "Comisión de reembolso o gastos de la venta, si tu fondo los cobra. Minora la ganancia (art. 35) y el dinero que reinviertes."
+  }
+ ],
+ "faqs": [
+  [
+   "¿Se puede traspasar un ETF sin pagar impuestos?",
+   "En general no. El diferimiento del art. 94.1.a de la Ley del IRPF no se aplica cuando la transmisión, el reembolso o la suscripción tienen por objeto fondos de inversión cotizados (ETF) o acciones de sociedades del mismo tipo, ni como origen ni como destino. La DT 36.ª exceptúa algunas participaciones extranjeras adquiridas antes del 1/1/2022 y no cotizadas en bolsa española, si no se reinvierte en ETF; la calculadora no lo modela. En el ejemplo, vender hoy cuesta 6.180 € de IRPF sobre 30.000 € de ganancia."
+  ],
+  [
+   "¿Qué requisitos tiene un traspaso entre fondos para no tributar?",
+   "El importe del reembolso debe destinarse a suscribir otro fondo o SICAV, sin que se ponga a tu disposición por ningún medio. Solo se difiere en reembolsos de fondos de inversión y en transmisiones de SICAV con más de 500 socios si no has tenido más del 5 % del capital en ningún momento de los 12 meses anteriores. Las instituciones extranjeras exigen estar armonizadas (UCITS), inscritas en la CNMV y operarse a través de un comercializador inscrito, cumplir los 500 socios y el 5 % por compartimento o subfondo, y que el destino no sea análogo a un ETF (art. 94.2). Si dudas, pregunta a tu gestora si la operación se tramita como traspaso."
+  ],
+  [
+   "¿Cuánto me ahorro traspasando en vez de reembolsar el fondo?",
+   "No ahorras el impuesto: lo aplazas. Al traspasar no pagas el IRPF de la ganancia de hoy y sigues invirtiendo ese dinero; lo pagas al reembolsar de verdad, sobre toda la ganancia acumulada. En el ejemplo (60.000 € de valor, 30.000 € de coste, 15 años al 4 %), difieres 6.180 € y terminas con 91.224 € netos frente a 87.994 €, una ventaja de 3.229 €. Con 1 año es de 152 € y con 30 años, de 9.955 €. Depende de la rentabilidad que supongas y de las comisiones."
+  ],
+  [
+   "¿Compensa traspasar si el fondo está en pérdidas?",
+   "Traspasar no computa la pérdida: el art. 94.1.a dice que no procede computar ganancia ni pérdida, y las nuevas participaciones conservan el valor de adquisición, de modo que la pérdida reduce tu ganancia futura. Para aprovecharla hoy hay que reembolsar. Según el art. 49.1.b, la pérdida compensa primero sin límite las ganancias patrimoniales del año y solo el saldo restante compensa hasta el 25 % de dividendos e intereses (el resto se arrastra 4 años); la calculadora solo modela esto último, así que si tienes otras ganancias este año, reembolsar te ahorra más de lo que muestra. Si compras participaciones homogéneas del mismo fondo en el año anterior o posterior, la pérdida se aplaza hasta que las vendas (art. 33.5.g). Para ver cuánto vale vender con pérdidas, usa la calculadora de compensar pérdidas y ganancias."
+  ],
+  [
+   "¿Paga retención un traspaso y qué pasa si solo traspaso una parte?",
+   "El art. 101.6 de la Ley del IRPF dice que no se practica retención cuando no procede computar la ganancia, que es el caso del traspaso. Si traspasas solo una parte, se entiende que sales de las participaciones que compraste primero (art. 94.1.a y 37.2), así que el coste que importa es el de ese tramo, no el medio. La calculadora no reparte lotes: pon el coste de las participaciones que mueves."
+  ]
+ ],
+ "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 94.1.a (traspaso entre instituciones de inversión colectiva sin computar ganancia ni pérdida; fondos de inversión y SICAV con más de 500 socios y 5 % o menos; excluidos los fondos cotizados; sin disposición del dinero; FIFO), art. 94.2 y DT 36.ª (instituciones extranjeras UCITS), art. 35 (valor de adquisición y de transmisión), art. 37.2 (valores homogéneos), art. 33.5.g (la pérdida se aplaza hasta transmitir los valores si se adquieren homogéneos no cotizados en el año anterior o posterior), art. 49.1.b (la pérdida compensa sin límite las ganancias del año; el saldo, el 25 % de los rendimientos del capital, 4 años), arts. 66.1 y 76 (escala del ahorro, redacción Ley 7/2024 vigente desde 1/1/2025), art. 101.6 (sin retención si no se computa la ganancia) y, del Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266, sin convalidar, confianza B, no modelado), el nuevo art. 95 ter (Cuenta de Ahorro e Inversión Financia Europa; su apartado 6 excluye el art. 94.1.a dentro de la cuenta). Modelo propio: la rentabilidad es constante, neta de comisiones de gestión, y se aplica la misma escala del ahorro (estatal más autonómica) y las mismas otras rentas del ahorro hoy y en el reembolso final, sin retenciones ni inflación. Los importes, la rentabilidad y los años del ejemplo son supuestos editables, no datos oficiales ni previsiones. Información orientativa, no asesoramiento fiscal ni financiero."
+}
