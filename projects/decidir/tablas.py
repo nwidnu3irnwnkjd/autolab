@@ -5,7 +5,7 @@ propio reproducible (cuota íntegra del IRPF por comunidad, cuota anual de autó
 vivienda por comunidad), fecha de revisión, fuente enlazada, enlaces a las calculadoras, JSON-LD Dataset +
 Table + Article + BreadcrumbList y CSV descargable (/tablas-2026/<slug>/datos.csv; todo en /tablas-2026/datos.json).
 Revertir: quitar las llamadas a tablas.* en build.py (y la clave `datos` de hubs.HUBS)."""
-import csv, io, json, os, html
+import csv, io, json, os, html, re
 from barometro import num, pct, eur, fecha_es
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -383,7 +383,7 @@ def trabajo_md(D):
 
 # ---------- páginas ----------
 PAGES = [
-    dict(slug="tramos-irpf-comunidades", compute=irpf, body=irpf_body, md=irpf_md,
+    dict(slug="tramos-irpf-comunidades", guias=["base-liquidable-tramos-irpf-2026", "renta-2027-ejercicio-2026-paso-a-paso"], compute=irpf, body=irpf_body, md=irpf_md,
          title="Tramos del IRPF 2026 por comunidad autónoma: tablas",
          h1="Tramos del IRPF 2026: escala estatal y de cada comunidad",
          description="Escala estatal y autonómica del IRPF 2026 con fuente del BOE, tipo marginal por comunidad y cuánto se paga con 20.000, 30.000 o 50.000 € de base.",
@@ -391,7 +391,7 @@ PAGES = [
          calcs=["retencion-irpf-nomina-subir-o-no", "declaracion-conjunta-o-individual", "comparar-ofertas-de-trabajo-neto-real", "autonomo-o-asalariado"],
          variables=["Escala estatal del IRPF (%)", "Escala autonómica por comunidad (%)", "Cuota íntegra por comunidad y base liquidable (€)", "Tipo marginal combinado (%)", "Escala del ahorro (%)"],
          keywords=["tramos IRPF 2026", "escala autonómica IRPF", "IRPF por comunidad autónoma", "tipo marginal IRPF"]),
-    dict(slug="cuota-autonomos-tramos", compute=autonomos, body=autonomos_body, md=autonomos_md,
+    dict(slug="cuota-autonomos-tramos", guias=["autonomo-2026-cuota-regularizacion-modulos"], compute=autonomos, body=autonomos_body, md=autonomos_md,
          title="Cuota de autónomos 2026 por tramos: tabla oficial",
          h1="Cuota de autónomos 2026: tabla de tramos, bases y cuotas",
          description="Los 15 tramos de cotización de autónomos en 2026 (Orden PJC/297/2026) con base mínima y máxima y la cuota mensual y anual que sale de cada una.",
@@ -407,7 +407,7 @@ PAGES = [
          calcs=["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros"],
          variables=["Tipo de ITP por comunidad (%)", "Tipo de AJD por comunidad (%)", "Impuestos de compra de vivienda usada y nueva (€)"],
          keywords=["ITP por comunidades 2026", "impuesto transmisiones patrimoniales vivienda", "AJD vivienda nueva", "impuestos comprar casa"]),
-    dict(slug="smi-iprem-paro-pensiones", compute=cuantias, body=cuantias_body, md=cuantias_md,
+    dict(slug="smi-iprem-paro-pensiones", guias=["me-han-despedido-indemnizacion-paro-plazos"], compute=cuantias, body=cuantias_body, md=cuantias_md,
          title="SMI, IPREM, paro y pensiones 2026: cuantías oficiales",
          h1="SMI, IPREM, paro y pensiones 2026: todas las cuantías oficiales",
          description="SMI, IPREM, paro máximo y mínimo, pensión máxima y mínimas, base máxima de cotización e interés legal de 2026, cada cifra con su fuente oficial enlazada.",
@@ -415,7 +415,7 @@ PAGES = [
          calcs=["cuanto-cobro-de-paro-prestacion-desempleo", "jubilacion-anticipada-o-demorada", "pension-viudedad-cuanto-cobro", "capitalizar-paro-o-cobrarlo"],
          variables=["SMI (€)", "IPREM (€)", "Paro máximo y mínimo (€/mes)", "Pensión máxima y mínimas (€)", "Base máxima de cotización (€/mes)", "Interés legal del dinero (%)"],
          keywords=["SMI 2026", "IPREM 2026", "pensión máxima 2026", "paro máximo 2026", "pensión mínima 2026"]),
-    dict(slug="trabajo-prestaciones", compute=trabajo, body=trabajo_body, md=trabajo_md,
+    dict(slug="trabajo-prestaciones", guias=["me-han-despedido-indemnizacion-paro-plazos"], compute=trabajo, body=trabajo_body, md=trabajo_md,
          title="Trabajo y prestaciones 2026: paro, despido, permisos",
          h1="Trabajo y prestaciones 2026: paro, permiso de nacimiento, despido y dietas",
          description="Paro máximo y mínimo y su duración, permiso de nacimiento, jubilación activa, despido, kilometraje, dietas y finiquito en 2026, con fuente.",
@@ -451,6 +451,14 @@ def page(slug, T, calcs, card, modified, author):
     p = BY[slug]; D = T[slug]; by = {c["slug"]: c for c in calcs}
     rel = [by[s] for s in p["calcs"] if s in by]
     others = "".join(f'<li><a href="{path(q["slug"])}">{e(q["h1"])}</a></li>' for q in PAGES if q["slug"] != slug)
+    gdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "content/guias")  # guías de apoyo (solo si existe el .html: sin enlaces rotos)
+    gl = []
+    for gs in p.get("guias", []):
+        f = os.path.join(gdir, gs + ".html")
+        if os.path.exists(f):
+            m = re.search(r'"h1":\s*"([^"]+)"', open(f).read(2000))
+            if m: gl.append(f'<li><a href="/guias/{gs}/">{e(m.group(1))}</a></li>')
+    guias = f'<h2>Guías para entenderlo</h2><ul class="guides">{"".join(gl)}</ul>' if gl else ""
     return f"""<article class="guide barometro tablas">
 <p class="kicker"><a href="{INDEX}">Tablas 2026</a> · Datos oficiales verificados</p>
 <h1>{e(p["h1"])}</h1>
@@ -459,6 +467,7 @@ def page(slug, T, calcs, card, modified, author):
 
 <h2>Calcúlalo con tus números</h2>
 <ul class="cards">{"".join(card(c) for c in rel)}</ul>
+{guias}
 
 <h2 id="descargas">Descargas, metodología y cómo citar</h2>
 <ul>

@@ -230,7 +230,7 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
     if guides:
         lines.append("\n## Guías\n")
         lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']}" for g in guides]
-    lines.append(f"\n## Calendario\n\n- [Calendario de decisiones]({base}/calendario/): fechas que mueven una decisión de dinero (revisión de la TUR de gas, Euríbor mensual, cambio de hora, Black Friday, Renta) con su fuente oficial.")
+    lines.append(f"\n## Calendario\n\n- [Calendario de decisiones]({base}/calendario/): fechas que mueven una decisión de dinero (revisión de la TUR de gas, Euríbor mensual, cambio de hora, Black Friday, retribución flexible, cierre del IRPF y ventas con pérdidas, cambio de base y regularización de autónomos, renuncia a módulos, Renta, y lo pendiente de norma: SMI, IPREM y pensiones de 2027) con su fuente oficial.")
     if notes:
         lines.append("\n## Actualidad\n")
         lines += [f"- [{n['h1']}]({base}/actualidad/{n['slug']}/): {n['description']}" for n in notes[:10]]
@@ -466,6 +466,14 @@ def load_events(path=EVENTS_PATH):
         return []
     return [e for e in ev if str(e.get("fuente", {}).get("url", "")).startswith("https://") and e.get("calc") and e.get("titulo")]
 
+def load_pendientes(path=EVENTS_PATH):
+    """Lo que llegará sin fecha verificable (pendiente de norma o de notificación): solo para /calendario/, nunca en el banner."""
+    try:
+        pe = json.load(open(path)).get("pendientes", [])
+    except Exception:
+        return []
+    return [e for e in pe if str(e.get("fuente", {}).get("url", "")).startswith("https://") and e.get("calc") and e.get("titulo") and e.get("aviso")]
+
 def _d(iso): return datetime.date.fromisoformat(iso)
 
 def _ocurrencias(e, hoy):
@@ -538,7 +546,7 @@ def calendario_page(calcs, base, hoy=None, events=None):
             if e.get("tipo") == "fechas" and len(e["fechas"]) > 1:
                 sig = [f for f in e["fechas"] if _d(f) > r["fecha"]][:1]
                 if sig: cuando += f' (siguiente: <time datetime="{sig[0]}">{fecha_es(sig[0])}</time>)'
-            ld.append({"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": r["fecha"].isoformat(),
+            if e.get("estado") != "por confirmar": ld.append({"@context": "https://schema.org", "@type": "Event", "name": e["titulo"], "startDate": r["fecha"].isoformat(),
                        "endDate": r["fecha"].isoformat(), "eventStatus": "https://schema.org/EventScheduled",
                        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
                        "location": {"@type": "VirtualLocation", "url": f'{base}/decidir/{e["calc"]}/'},
@@ -546,14 +554,22 @@ def calendario_page(calcs, base, hoy=None, events=None):
         else:
             cuando = f'<time datetime="{r["inicio"].isoformat()}">{_rango_es(r["inicio"], r["fin"])}</time>'
             if e.get("periodo_habitual"): cuando += f' · periodo habitual: {e["periodo_habitual"]}'
-        estado = '<span class="pulso-meta">Activo ahora</span>' if r["activo"] else ""
+        estado = ('<span class="pulso-meta">Activo ahora</span>' if r["activo"] else "") + (' <span class="pulso-meta">Fecha por confirmar</span>' if e.get("estado") == "por confirmar" else "")
         items.append(f'<article class="box"><h2>{html.escape(e["titulo"])}</h2><p class="note">{cuando} {estado}</p>'
                      f'<p><strong>Decisión que toca:</strong> {html.escape(e["decision"])}.</p><p><strong>Qué hacer:</strong> {html.escape(e["que_hacer"])}</p>'
                      f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a></p>'
                      f'<p class="note">{html.escape(e["aviso"])} Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</p></article>')
+    # «pendientes» de events.json: sin fecha verificable (pendiente de norma o de notificación); solo aquí, nunca en el banner
+    pend = [e for e in load_pendientes() if e["calc"] in names] if events is None else []
+    ptxt = ("<h2>Pendiente de fecha o de norma</h2><p>Lo que llegará pero aún no tiene fecha oficial ni cifras publicadas. No damos fecha hasta que exista la norma o la notificación.</p>"
+            + "".join(f'<article class="box"><h3>{html.escape(e["titulo"])}</h3><p class="note"><span class="pulso-meta">Pendiente de norma o de fecha</span></p>'
+                      f'<p><strong>Decisión que toca:</strong> {html.escape(e["decision"])}.</p><p><strong>Qué hacer:</strong> {html.escape(e["que_hacer"])}</p>'
+                      f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a></p>'
+                      f'<p class="note">{html.escape(e["aviso"])} Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</p></article>' for e in pend)) if pend else ""
     body = ('<h1>Calendario de decisiones</h1><p class="lead">Fechas que mueven una decisión de dinero en España, con su fuente oficial: '
-            'cuándo mirar tu hipoteca, tu calefacción, tu declaración o una compra a plazos. Solo incluimos lo que podemos verificar; '
-            'lo recurrente sin fecha oficial se marca como periodo habitual.</p>' + "".join(items)
+            'cuándo mirar tu hipoteca, tu calefacción, tu declaración, tu cuota de autónomo o una compra a plazos. Solo incluimos lo que podemos verificar; '
+            'lo recurrente sin fecha oficial se marca como periodo habitual o «por confirmar», y lo que depende de una norma aún no publicada va al final, sin fecha. '
+            'Tablas con las cifras oficiales de 2026: <a href="/tablas-2026/">Tablas 2026</a>.</p>' + "".join(items) + ptxt
             + '<p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a>.</p>')
     jl = [breadcrumbs(base, [("Inicio", "/"), ("Calendario", None)])] + ld
     return body, jl, lastmod("data/events.json", "seo.py")

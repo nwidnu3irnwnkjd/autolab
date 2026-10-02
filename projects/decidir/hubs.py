@@ -240,7 +240,7 @@ HUBS = {
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
-            ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion"]),
+            ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
@@ -251,14 +251,22 @@ HUBS = {
             "autonomo-o-asalariado": {
                 "name": "Autónomo o asalariado",
                 "text": "Para cobrar lo mismo, un autónomo tiene que facturar más que el sueldo bruto de un asalariado. La calculadora da cuánto, con tu comunidad, tus gastos y las cuotas de 2026.",
+                "guia": "autonomo-2026-cuota-regularizacion-modulos",
             },
             "autonomo-o-sociedad-limitada": {
                 "name": "Autónomo o sociedad limitada",
                 "text": "Depende de tu beneficio, de la retribución que te pagues y de cuánto repartas en dividendos. La calculadora compara lo que te queda en mano como autónomo y con una SL, con el IRPF, el Impuesto sobre Sociedades y las cuotas de 2026.",
+                "guia": "autonomo-2026-cuota-regularizacion-modulos",
+            },
+            "autonomo-estimacion-directa-o-modulos": {
+                "name": "Estimación directa o módulos",
+                "text": "Módulos sale mejor cuando tus gastos reales son bajos y la estimación directa cuando son altos. La calculadora da el punto de equilibrio con tus ingresos y gastos; la renuncia se decide en diciembre y dura al menos 3 años.",
+                "guia": "autonomo-2026-cuota-regularizacion-modulos",
             },
             "cuota-autonomos-ingresos-reales-regularizacion": {
                 "name": "Cuota de autónomo por ingresos reales",
                 "text": "Cotizas por el rendimiento neto que prevés y, al cierre del año, la Seguridad Social regulariza la diferencia con el real: te devuelve o te pide. La calculadora da tu tramo y cuánto te regularizarán.",
+                "guia": "autonomo-2026-cuota-regularizacion-modulos",
             },
             "finiquito-baja-voluntaria-vacaciones-preaviso": {
                 "name": "Finiquito al dejar un trabajo",

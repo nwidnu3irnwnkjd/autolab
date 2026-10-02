@@ -1,86 +1,239 @@
 {
  "esquema": 1,
- "nota": "Calendario de eventos con fuente oficial. Ningún evento sin fuente ni sin fecha verificable: lo recurrente sin fecha oficial del próximo año se marca como periodo habitual. Lo consume seo.eventos_activos().",
+ "nota": "Calendario de eventos con fuente oficial. Ningún evento sin fuente ni sin fecha verificable: lo recurrente sin fecha oficial del próximo año se marca como periodo habitual. Lo consume seo.eventos_activos(). 'pendientes': lo que no tiene fecha verificable (pendiente de norma o de notificación); solo se lista al final de /calendario/, nunca en el banner. 'estado': 'por confirmar' marca una fecha habitual sin norma que la fije.",
  "eventos": [
   {
    "id": "tur-gas-trimestral",
    "titulo": "Revisión trimestral de la tarifa regulada del gas (TUR)",
    "tipo": "fechas",
-   "fechas": ["2026-10-01", "2027-01-01", "2027-04-01"],
-   "antes": 7, "despues": 14,
+   "fechas": [
+    "2026-10-01",
+    "2027-01-01",
+    "2027-04-01"
+   ],
+   "antes": 7,
+   "despues": 14,
    "decision": "Calefacción: gas, aerotermia o eléctrica",
    "que_hacer": "Si calientas tu casa con gas, mira cuánto cambia tu factura con el nuevo precio y compara con aerotermia o calefacción eléctrica con tus metros y tu zona.",
    "calc": "calefaccion-gas-aerotermia-electrica",
    "texto_antes": "Se acerca la revisión trimestral de la tarifa regulada del gas (TUR), que el BOE publica el último día del trimestre.",
    "texto_despues": "La tarifa regulada del gas (TUR) se revisó el {fecha} (BOE): comprueba cuánto cambia tu calefacción.",
-   "fuente": {"nombre": "BOE: Resolución de 30 de septiembre de 2026 (TUR de gas natural)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389"},
+   "fuente": {
+    "nombre": "BOE: Resolución de 30 de septiembre de 2026 (TUR de gas natural)",
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389"
+   },
    "aviso": "La TUR se revisa cada trimestre (1 de enero, abril, julio y octubre). Las fechas de 2027 son las de revisión previstas; las nuevas cifras solo se conocen cuando el BOE publica la resolución."
   },
   {
    "id": "euribor-mensual",
    "titulo": "Nueva media mensual del Euríbor",
    "tipo": "mensual",
-   "dia_desde": 1, "dia_hasta": 10,
+   "dia_desde": 1,
+   "dia_hasta": 10,
    "decision": "Hipoteca fija o variable",
    "que_hacer": "Con la nueva media mensual del Euríbor a 12 meses, calcula cuánto cambiaría tu cuota en la próxima revisión y si ahora compensa una fija.",
    "calc": "hipoteca-fija-o-variable",
    "texto": "Ya se conoce la media mensual del Euríbor a 12 meses del mes anterior: calcula qué haría tu cuota variable.",
-   "fuente": {"nombre": "Banco Central Europeo (Data Portal): Euribor a 12 meses, media mensual", "url": "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"},
+   "fuente": {
+    "nombre": "Banco Central Europeo (Data Portal): Euribor a 12 meses, media mensual",
+    "url": "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"
+   },
    "aviso": "La media del mes se publica en los primeros días del mes siguiente; la fecha exacta puede variar unos días."
   },
   {
    "id": "calefaccion-temporada",
    "titulo": "Temporada de calefacción",
    "tipo": "anual",
-   "desde": "10-01", "hasta": "11-30",
+   "desde": "10-01",
+   "hasta": "11-30",
    "periodo_habitual": "octubre a abril",
    "decision": "Calefacción: gas, aerotermia o eléctrica",
    "que_hacer": "Antes de encender la calefacción de forma continua, calcula qué sistema te sale más barato este invierno con tu vivienda y tarifas actuales.",
    "calc": "calefaccion-gas-aerotermia-electrica",
    "texto": "Empieza la temporada de calefacción (periodo habitual, sin fecha oficial): momento de comparar sistemas.",
-   "fuente": {"nombre": "IDAE: ahorro y eficiencia energética en el hogar", "url": "https://www.idae.es/"},
+   "fuente": {
+    "nombre": "IDAE: ahorro y eficiencia energética en el hogar",
+    "url": "https://www.idae.es/"
+   },
    "aviso": "No existe una fecha oficial de inicio: es el periodo habitual en la mayor parte de España (octubre a abril); cada comunidad de vecinos decide la fecha de la calefacción central."
   },
   {
    "id": "cambio-hora-octubre",
    "titulo": "Cambio al horario de invierno",
    "tipo": "fechas",
-   "fechas": ["2026-10-25"],
-   "antes": 14, "despues": 3,
+   "fechas": [
+    "2026-10-25"
+   ],
+   "antes": 14,
+   "despues": 3,
    "decision": "Calefacción: gas, aerotermia o eléctrica",
    "que_hacer": "El último domingo de octubre a las 3:00 vuelven a ser las 2:00. Revisa el reloj del termostato programable y las horas en que enciendes la calefacción; con tarifa por horas, comprueba cuáles son las más baratas.",
    "calc": "calefaccion-gas-aerotermia-electrica",
    "texto_antes": "El {fecha} cambia la hora (a las 3:00 vuelven a ser las 2:00): revisa la programación de tu calefacción.",
    "texto_despues": "El {fecha} cambió la hora al horario de invierno: revisa la programación de tu calefacción.",
-   "fuente": {"nombre": "Directiva 2000/84/CE sobre las disposiciones relativas a la hora de verano (EUR-Lex)", "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32000L0084"},
+   "fuente": {
+    "nombre": "Directiva 2000/84/CE sobre las disposiciones relativas a la hora de verano (EUR-Lex)",
+    "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32000L0084"
+   },
    "aviso": "La directiva fija el cambio en el último domingo de octubre y de marzo. El de marzo de 2027 será el domingo 28."
   },
   {
    "id": "black-friday",
    "titulo": "Black Friday",
    "tipo": "fechas",
-   "fechas": ["2026-11-27", "2027-11-26"],
-   "antes": 10, "despues": 3,
+   "fechas": [
+    "2026-11-27",
+    "2027-11-26"
+   ],
+   "antes": 10,
+   "despues": 3,
    "decision": "Pagar al contado o financiar",
    "que_hacer": "Antes de aceptar «paga en cómodas cuotas», calcula el coste real de la financiación frente a pagar al contado con el descuento.",
    "calc": "contado-o-financiar",
    "texto_antes": "El {fecha} es el Black Friday: antes de financiar una compra, compara con pagar al contado.",
    "texto_despues": "Black Friday ({fecha}): si financiaste una compra, comprueba cuánto te cuesta realmente.",
-   "fuente": {"nombre": "BOE: Ley 16/2011, de contratos de crédito al consumo", "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2011-10970"},
+   "fuente": {
+    "nombre": "BOE: Ley 16/2011, de contratos de crédito al consumo",
+    "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2011-10970"
+   },
    "aviso": "El Black Friday es el cuarto viernes de noviembre (fecha calculada, no oficial). La fuente enlazada regula el crédito al consumo, incluido el derecho de desistimiento de 14 días."
   },
   {
    "id": "campana-renta",
    "titulo": "Campaña de la Renta",
    "tipo": "anual",
-   "desde": "04-01", "hasta": "06-30",
+   "desde": "04-01",
+   "hasta": "06-30",
    "periodo_habitual": "abril a junio",
    "decision": "Declaración conjunta o individual",
    "que_hacer": "Antes de confirmar el borrador, calcula si te sale mejor la declaración conjunta o la individual con tus ingresos.",
    "calc": "declaracion-conjunta-o-individual",
    "texto": "Campaña de la Renta (periodo habitual, abril a junio): compara declaración conjunta e individual antes de confirmar el borrador.",
-   "fuente": {"nombre": "Agencia Tributaria: inicio de la Campaña de Renta 2025 (8 de abril a 30 de junio de 2026)", "url": "https://sede.agenciatributaria.gob.es/Sede/todas-noticias/2026/abril/8/inicio-campana-renta-patrimonio-2025.html"},
+   "fuente": {
+    "nombre": "Agencia Tributaria: inicio de la Campaña de Renta 2025 (8 de abril a 30 de junio de 2026)",
+    "url": "https://sede.agenciatributaria.gob.es/Sede/todas-noticias/2026/abril/8/inicio-campana-renta-patrimonio-2025.html"
+   },
    "aviso": "La Agencia Tributaria aún no ha anunciado las fechas de la campaña de 2027: se muestra el periodo habitual. La última campaña fue del 8 de abril al 30 de junio de 2026."
+  },
+  {
+   "id": "retribucion-flexible-plazo-empresa",
+   "titulo": "Plazo de tu empresa para elegir la retribución flexible del año siguiente",
+   "tipo": "anual",
+   "desde": "10-15",
+   "hasta": "11-30",
+   "periodo_habitual": "otoño; lo fija cada empresa",
+   "estado": "por confirmar",
+   "decision": "Retribución flexible: seguro, comida, transporte o guardería",
+   "que_hacer": "Antes de que cierre el plazo de tu empresa, calcula cuánto IRPF te ahorra cada producto con tu sueldo y si ya pagabas ese gasto por tu cuenta.",
+   "calc": "retribucion-flexible-me-conviene",
+   "texto": "Muchas empresas abren en otoño la elección de la retribución flexible del año siguiente (plazo por confirmar con la tuya): mira cuánto IRPF te ahorra.",
+   "fuente": {
+    "nombre": "BOE: Ley 35/2006 del IRPF, art. 42.3 (rentas en especie exentas), texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
+   },
+   "aviso": "No hay fecha legal: la ventana de adhesión la fija cada empresa; pregunta a Recursos Humanos (el «15 de noviembre» que circula como referencia no es una norma). Los topes exentos son anuales: 500 € de seguro de salud por persona, 11 € por día de trabajo en comida y 1.500 € de transporte público (art. 42.3 de la Ley del IRPF y arts. 45 y 46 bis del Reglamento)."
+  },
+  {
+   "id": "fin-ejercicio-irpf",
+   "titulo": "Cierre del ejercicio del IRPF: ventas con pérdidas",
+   "tipo": "fechas",
+   "fechas": [
+    "2026-12-31",
+    "2027-12-31"
+   ],
+   "antes": 45,
+   "despues": 0,
+   "decision": "Vender con pérdidas antes de fin de año",
+   "que_hacer": "Si este año tienes ganancias por ventas o dividendos, calcula cuánto IRPF ahorras vendiendo una posición en pérdidas antes del 31 de diciembre, y sin recomprarla en 2 meses.",
+   "calc": "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+   "texto_antes": "El {fecha} cierra el ejercicio del IRPF: una venta con pérdidas solo compensa las ganancias de este año si se hace antes (y sin recomprar en 2 meses).",
+   "texto_despues": "El {fecha} cerró el ejercicio del IRPF: las ventas desde hoy cuentan para el año siguiente.",
+   "fuente": {
+    "nombre": "BOE: Ley 35/2006 del IRPF, arts. 12, 14.1.c, 33.5 y 49, texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
+   },
+   "aviso": "El periodo impositivo del IRPF es el año natural (art. 12) y la ganancia o pérdida se imputa al año de la venta (art. 14.1.c). Si recompras valores homogéneos en los 2 meses anteriores o posteriores (1 año si no cotizan), la pérdida no computa ese año (art. 33.5.f y g). Un saldo negativo de 2022 caduca tras la declaración de 2026 (art. 49)."
+  },
+  {
+   "id": "autonomo-cambio-base",
+   "titulo": "Plazo para cambiar la base de cotización de autónomo",
+   "tipo": "fechas",
+   "fechas": [
+    "2026-10-31",
+    "2026-12-31",
+    "2027-02-28",
+    "2027-04-30",
+    "2027-06-30",
+    "2027-08-31"
+   ],
+   "antes": 30,
+   "despues": 0,
+   "decision": "Cuota de autónomo por ingresos reales",
+   "que_hacer": "Si tus ingresos de este año van por encima o por debajo de lo previsto, ajusta la base al tramo de tu rendimiento real: es lo que reduce la regularización posterior.",
+   "calc": "cuota-autonomos-ingresos-reales-regularizacion",
+   "texto_antes": "Hasta el {fecha} puedes pedir el cambio de tu base de cotización de autónomo, con efecto el día 1 del mes siguiente: ajústala a lo que vas a ganar.",
+   "texto_despues": "El {fecha} cerró el plazo de cambio de base de autónomo; el siguiente cierra dentro de dos meses.",
+   "fuente": {
+    "nombre": "BOE: Reglamento General de Cotización (RD 2064/1995), art. 45.1, texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579"
+   },
+   "aviso": "Hasta seis cambios al año (art. 45.1 del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo."
+  },
+  {
+   "id": "renuncia-modulos",
+   "titulo": "Renuncia a módulos para el año siguiente",
+   "tipo": "anual",
+   "desde": "12-01",
+   "hasta": "12-31",
+   "periodo_habitual": "diciembre",
+   "estado": "por confirmar",
+   "decision": "Autónomo: estimación directa o módulos",
+   "que_hacer": "Antes de renunciar (o de quedarte), compara lo que te deja cada régimen con tus gastos reales: la renuncia dura al menos 3 años.",
+   "calc": "autonomo-estimacion-directa-o-modulos",
+   "texto": "En diciembre se presenta la renuncia a módulos para el año siguiente (plazo de 2027 por confirmar en su Orden): compara directa y módulos con tus gastos.",
+   "fuente": {
+    "nombre": "BOE: Reglamento del IRPF (RD 439/2007), art. 33, texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820"
+   },
+   "aviso": "Por reglamento, la renuncia se presenta en diciembre del año anterior o con el pago fraccionado del primer trimestre en la forma de la estimación directa (art. 33.1) y dura como mínimo 3 años (art. 33.3). La Orden de módulos de 2027, que fija su plazo, no estaba publicada el 2 de octubre de 2026, y el límite de ingresos de 2027 es el de la ley (150.000 €) salvo prórroga."
+  }
+ ],
+ "pendientes": [
+  {
+   "id": "regularizacion-cuotas-autonomos-2026",
+   "titulo": "Regularización de las cuotas de autónomo de 2026",
+   "decision": "Cuota de autónomo por ingresos reales",
+   "que_hacer": "Calcula ya si te tocará pagar o te devolverán, con tu rendimiento real del año y la base que has cotizado.",
+   "calc": "cuota-autonomos-ingresos-reales-regularizacion",
+   "fuente": {
+    "nombre": "BOE: Ley General de la Seguridad Social, art. 308.1.c, texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724"
+   },
+   "aviso": "Fecha por confirmar: la Tesorería General de la Seguridad Social regulariza las cuotas de 2026 en 2027, cuando la Agencia Tributaria le comunica tus rendimientos tras la declaración de la Renta. Si te toca pagar, tienes hasta el último día del mes siguiente a la notificación; si te devuelven, es de oficio y sin intereses."
+  },
+  {
+   "id": "cuotas-autonomos-2027",
+   "titulo": "Tabla de cuotas de autónomos de 2027",
+   "decision": "Cuota de autónomo por ingresos reales",
+   "que_hacer": "Hasta que se publique, usa la tabla de 2026 para elegir tu base y revisa la cuota cuando salga la de 2027.",
+   "calc": "cuota-autonomos-ingresos-reales-regularizacion",
+   "fuente": {
+    "nombre": "BOE: Real Decreto-ley 3/2026, art. 3.4 (tabla de 2026)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2026-2548"
+   },
+   "aviso": "Pendiente de norma: la tabla de tramos posterior a 2025 la tiene que fijar el Gobierno (RDL 13/2022, disposición transitoria 1.ª) y la de 2026 repite la de 2025 hasta que haya Presupuestos (RDL 3/2026). La cuantía de la tarifa plana de 2026 tampoco la hemos podido verificar en una fuente oficial (la Ley 20/2007, art. 38 ter, remite a la Ley de Presupuestos), así que no la usamos."
+  },
+  {
+   "id": "cuantias-2027",
+   "titulo": "SMI, IPREM y pensiones de 2027",
+   "decision": "Paro, pensión y salario mínimo",
+   "que_hacer": "Hasta que se publiquen las de 2027, las calculadoras usan las cuantías de 2026; calcula tu caso con ellas y repítelo cuando salgan las nuevas.",
+   "calc": "cuanto-cobro-de-paro-prestacion-desempleo",
+   "fuente": {
+    "nombre": "BOE: Real Decreto 126/2026 (SMI de 2026)",
+    "url": "https://www.boe.es/boe/dias/2026/02/19/pdfs/BOE-A-2026-3815.pdf"
+   },
+   "aviso": "Pendiente de norma: las cuantías de 2027 no están publicadas y no damos fecha. Las de 2026 se aprobaron ya entrado el año: el SMI, por el Real Decreto 126/2026 (BOE del 19 de febrero de 2026), y la revalorización del 2,7 % de las pensiones, por el Real Decreto 241/2026. Cuando salgan las de 2027 se actualizarán las Tablas y las calculadoras."
   }
  ]
 }
