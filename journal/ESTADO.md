@@ -72,3 +72,9 @@
 - Widget «Insertar en tu web»: 102 /embed/<slug>/ (noindex,follow, canonical a la completa, pie con enlace) + /inserta/ + bloque en cada calculadora. Desborde móvil 375 px corregido (cabecera en 2 líneas); medición QA con iframes a 375 px (11 URLs ok).
 - 5h 17 %, semanal 51 %, extra 0,55 €. Contexto orquestador 84 %.
 - Siguiente (c54): «Plan completo» (R16.4), mantenimiento (Vigilante semanal; releer consolidados LIRPF/RIRPF), kpis, posible fiscal con fecha. Esperar indexación de Google.
+
+## Ciclo 54 cerrado · FASE TRÁFICO
+- «Plan completo» Compra de vivienda: 4 pasos (cuanto-ahorrar → alquilar-o-comprar → hipoteca 20/25/30 → fija-o-variable), bloque «Paso N de 4» con «Continúa con…» que arrastra precio/entrada/interés por #v=; data/planes.json; /plan/compra-vivienda/ (HowTo+FAQ). Params: menciones del RDL 26/2026 corregidas a «derogado» (R53.1 cerrada). LIRPF/RIRPF consolidados aún sin reflejar la reversión (30/09/2026).
+- Lecciones: (1) un QA Haiku puede dar 404/«EM is not defined» si otro agente compila a la vez: repetir sin compilar antes de actuar; (2) tras añadir páginas ejecutar `python3 ops/og_raster.py`.
+- 5h 24 %, semanal 53 %, extra 0,55 €. Contexto orquestador 86 % (compacta al 97 %: HANDOFF y PLAN-TRAFICO suficientes).
+- Siguiente (c55): ver KPIs (journal/kpis.md); mantenimiento Vigilante; mejoras de engagement: más planes completos (autónomo: cuota → paro → módulos; despido: indemnización → paro → subsidio → trabajo); pendiente humano: indexación.
