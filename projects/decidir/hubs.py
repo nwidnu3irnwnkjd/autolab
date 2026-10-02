@@ -255,6 +255,7 @@ HUBS = {
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos", "paro-autonomos-cese-actividad-cuanto-cobro"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
+            ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
@@ -357,6 +358,10 @@ HUBS = {
             "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": {
                 "name": "Vender con pérdidas antes de fin de año",
                 "text": "Las pérdidas de ventas de acciones o fondos compensan ganancias del mismo año en la base del ahorro, pero recomprar pronto puede bloquear la pérdida. La calculadora da cuánto IRPF ahorras en 2026 con tus datos.",
+            },
+            "loteria-navidad-premio-neto-hacienda": {
+                "name": "Premio de lotería",
+                "text": "Los premios de Loterías y Apuestas del Estado hasta 40.000 € por décimo están exentos y el exceso tributa al 20 %. La calculadora te dice cuánto te queda neto, también si compartes el décimo.",
             },
             "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
                 "name": "Donativos",

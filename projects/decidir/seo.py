@@ -574,7 +574,7 @@ def calendario_page(calcs, base, hoy=None, events=None):
     ptxt = ("<h2>Pendiente de fecha o de norma</h2><p>Lo que llegará pero aún no tiene fecha oficial ni cifras publicadas. No damos fecha hasta que exista la norma o la notificación.</p>"
             + "".join(f'<article class="box"><h3>{html.escape(e["titulo"])}</h3><p class="note"><span class="pulso-meta">Pendiente de norma o de fecha</span></p>'
                       f'<p><strong>Decisión que toca:</strong> {html.escape(e["decision"])}.</p><p><strong>Qué hacer:</strong> {html.escape(e["que_hacer"])}</p>'
-                      f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a></p>'
+                      f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a>' + (f' · <a href="{e["pagina"]}">Ver cifras de 2026 y estado de 2027</a>' if e.get("pagina") else "") + '</p>'
                       f'<p class="note">{html.escape(e["aviso"])} Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</p></article>' for e in pend)) if pend else ""
     body = ('<h1>Calendario de decisiones</h1><p class="lead">Fechas que mueven una decisión de dinero en España, con su fuente oficial: '
             'cuándo mirar tu hipoteca, tu calefacción, tu declaración, tu cuota de autónomo o una compra a plazos. Solo incluimos lo que podemos verificar; '

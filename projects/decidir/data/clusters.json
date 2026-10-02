@@ -192,7 +192,7 @@
  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
   "declaracion-conjunta-o-individual",
   "plan-pensiones-o-fondo-indexado",
-  "rescate-plan-pensiones-capital-o-renta"
+  "loteria-navidad-premio-neto-hacienda"
  ],
  "empleada-hogar-cuanto-cuesta-contratar-cotizacion": [
   "residencia-o-cuidador-a-domicilio",
@@ -222,7 +222,7 @@
  "fondo-de-emergencia-cuantos-meses-necesito": [
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
-  "baja-medica-cuanto-cobro-incapacidad-temporal"
+  "loteria-navidad-premio-neto-hacienda"
  ],
  "freidora-de-aire-u-horno-cuanto-gasta": [
   "cocinar-en-casa-o-comer-fuera",
@@ -314,6 +314,11 @@
   "retencion-irpf-nomina-subir-o-no",
   "comparar-ofertas-de-trabajo-neto-real"
  ],
+ "loteria-navidad-premio-neto-hacienda": [
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "fondo-de-emergencia-cuantos-meses-necesito",
+  "navidad-cuanto-gastar-sin-endeudarte"
+ ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
   "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta",
@@ -337,7 +342,7 @@
  "navidad-cuanto-gastar-sin-endeudarte": [
   "fondo-de-emergencia-cuantos-meses-necesito",
   "contado-o-financiar",
-  "hotel-o-apartamento-viaje-en-grupo"
+  "loteria-navidad-premio-neto-hacienda"
  ],
  "obligado-a-declarar-renta-dos-pagadores": [
   "declaracion-conjunta-o-individual",

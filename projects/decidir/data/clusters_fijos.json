@@ -177,8 +177,7 @@
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
     "declaracion-conjunta-o-individual",
     "plan-pensiones-o-fondo-indexado",
-    "rescate-plan-pensiones-capital-o-renta",
-    "obligado-a-declarar-renta-dos-pagadores"
+    "loteria-navidad-premio-neto-hacienda"
   ],
   "equipaje-y-asiento-avion-coste-real": [
     "tren-avion-o-coche",
@@ -203,7 +202,7 @@
   "fondo-de-emergencia-cuantos-meses-necesito": [
     "deposito-letras-o-fondo-monetario",
     "seguro-hogar-con-o-sin-franquicia",
-    "baja-medica-cuanto-cobro-incapacidad-temporal"
+    "loteria-navidad-premio-neto-hacienda"
   ],
   "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
     "comprar-o-alquilar-trastero",
@@ -308,7 +307,7 @@
   "navidad-cuanto-gastar-sin-endeudarte": [
     "fondo-de-emergencia-cuantos-meses-necesito",
     "contado-o-financiar",
-    "hotel-o-apartamento-viaje-en-grupo"
+    "loteria-navidad-premio-neto-hacienda"
   ],
   "obligado-a-declarar-renta-dos-pagadores": [
     "declaracion-conjunta-o-individual",
@@ -500,5 +499,10 @@
     "cuota-autonomos-ingresos-reales-regularizacion",
     "cuanto-cobro-de-paro-prestacion-desempleo",
     "autonomo-o-asalariado"
+  ],
+  "loteria-navidad-premio-neto-hacienda": [
+    "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+    "fondo-de-emergencia-cuantos-meses-necesito",
+    "navidad-cuanto-gastar-sin-endeudarte"
   ]
 }

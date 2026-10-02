@@ -1,0 +1,77 @@
+{
+  "slug": "loteria-navidad-premio-neto-hacienda",
+  "title": "Lotería de Navidad: cuánto te queda tras Hacienda",
+  "description": "Calcula cuánto te queda de un décimo premiado tras la retención del 20 % sobre lo que supera 40.000 €, y cuánto toca a cada persona si lo compartís.",
+  "h1": "Lotería de Navidad: cuánto te queda de un premio después de Hacienda",
+  "lead": "Si tu décimo de Lotería de Navidad lleva 400.000 € (el importe del Gordo en 2025, que aquí puedes cambiar) y lo cobras tú solo, te quedan 328.000 € netos: Loterías y Apuestas del Estado te retiene 72.000 €, el 20 % de los 360.000 € que superan los 40.000 € exentos por décimo, y ese impuesto es definitivo. Si el premio de cada décimo es de 40.000 € o menos, no se retiene nada. Si el décimo es compartido, los 40.000 € exentos se reparten entre los cotitulares en lugar de multiplicarse: con 10 cotitulares a partes iguales son 32.800 € netos para cada uno, y el mismo impuesto total que si cobrara una sola persona. La herramienta calcula, por décimo y en total, el premio íntegro, la parte exenta, la sujeta, la retención y el neto, y lo divide entre las personas que lo comparten; no incluye el Impuesto sobre Sucesiones y Donaciones si repartes el premio, los premios de loterías públicas de otros Estados de la UE o del EEE (modelo 136), los no residentes, los premios de empresa ni los regímenes forales de País Vasco y Navarra.",
+  "veredicto": "El premio de la Lotería de Navidad no se declara en el IRPF ni suma a tu base imponible: tributa por un gravamen especial independiente para cada décimo (disposición adicional 33.ª de la Ley 35/2006). Si el premio íntegro de un décimo es de 40.000 € o menos, está exento y no se retiene nada; si lo supera, el exceso tributa al 20 % y Loterías y Apuestas del Estado lo retiene al pagarte, así que lo que cobras es ya el neto definitivo. Con un décimo de 400.000 € quedan 328.000 € netos (72.000 € de retención). Si el décimo es compartido, la exención de 40.000 € y la base se prorratean entre los cotitulares según su cuota: compartir no multiplica la exención y el impuesto total es el mismo que si cobrara una sola persona. Si en cambio cobra uno solo y reparte después, según el criterio de la Agencia Tributaria, si no se acredita la cotitularidad al cobrar, el gravamen recae sobre quien cobra y lo que entregue a los demás puede ser una donación sujeta al Impuesto sobre Sucesiones y Donaciones de su comunidad. Cada décimo tiene su propia exención de 40.000 €. La herramienta no incluye ese impuesto, los no residentes, los premios de empresa ni los regímenes forales de País Vasco y Navarra, y los importes del sorteo de 2026 se publican en noviembre.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "premio",
+      "label": "Premio íntegro de un décimo (€; ejemplo: el Gordo de 2025, editable)",
+      "default": 400000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.loteria_navidad_2026.supuestos.premio",
+      "ayuda": "Es el importe bruto que figura en la lista oficial del sorteo, antes de la retención. El del Gordo de 2025 era de 400.000 € por décimo (4.000.000 € por serie). Los premios del sorteo de 2026 se publican en noviembre: cámbialo por el tuyo."
+    },
+    {
+      "id": "decimos",
+      "label": "Décimos premiados con ese importe (n.º)",
+      "default": 1,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.loteria_navidad_2026.supuestos.decimos",
+      "ayuda": "La exención de 40.000 € se aplica a cada décimo por separado, así que dos décimos del mismo número tienen 80.000 € exentos en total."
+    },
+    {
+      "id": "personas",
+      "label": "Personas que comparten el premio (n.º; tú incluido)",
+      "default": 1,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.loteria_navidad_2026.supuestos.personas",
+      "ayuda": "Se supone un reparto a partes iguales. Pon 1 si el décimo es solo tuyo."
+    },
+    {
+      "id": "cobro",
+      "label": "Cómo se cobra (solo importa si sois más de una persona)",
+      "type": "select",
+      "options": [
+        {
+          "v": "cotitulares",
+          "t": "Todos figuramos como cotitulares al cobrar"
+        },
+        {
+          "v": "uno",
+          "t": "Cobra una persona y luego reparte"
+        }
+      ],
+      "ayuda": "El impuesto total es el mismo en los dos casos. Si cobra uno y reparte, lo que entrega a los demás puede ser una donación sujeta al Impuesto sobre Sucesiones y Donaciones."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto me queda si me toca un décimo de 400.000 €?",
+      "Te quedan 328.000 € netos: están exentos los primeros 40.000 € del décimo y Hacienda retiene el 20 % de los 360.000 € restantes, es decir, 72.000 €. Lo que te pagan ya es el neto definitivo."
+    ],
+    [
+      "¿Hay que declarar el premio de la Lotería de Navidad en la renta?",
+      "No se integra en la base imponible del IRPF: tributa por un gravamen especial, y si te han retenido no hay que presentar otra autoliquidación (disposición adicional 33.ª de la Ley 35/2006)."
+    ],
+    [
+      "¿Los 40.000 € exentos son por persona o por décimo?",
+      "Son por décimo, no por persona. Si el décimo es compartido, la exención y la base se prorratean entre los cotitulares según su cuota, así que compartir no multiplica la exención."
+    ],
+    [
+      "¿Pagamos más si uno cobra todo y reparte después?",
+      "El gravamen total es el mismo, pero recae sobre quien cobra. Lo que entregue a los demás puede ser una donación sujeta al Impuesto sobre Sucesiones y Donaciones de su comunidad, que esta herramienta no calcula."
+    ],
+    [
+      "¿Y si el premio es de 40.000 € o menos?",
+      "Si el premio íntegro de ese décimo es de 40.000 € o menos, está exento del gravamen especial y se cobra sin retención. Solo tributa la parte que supera esa cifra."
+    ]
+  ],
+  "sources": "Modelo propio. Ley 35/2006 del IRPF, disposición adicional 33.ª, «Gravamen especial sobre los premios de determinadas loterías y apuestas» (exención de 40.000 € por décimo, tipo y retención del 20 %, prorrateo en titularidad compartida, premios fuera de la base imponible; https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#datrigesimatercera). Ley 6/2018, art. 67.1, que fija los 40.000 € (https://www.boe.es/buscar/act.php?id=BOE-A-2018-9268). Agencia Tributaria, «Premios del sorteo de la lotería de Navidad» (https://sede.agenciatributaria.gob.es/Sede/todas-noticias/2025/diciembre/15/premios-sorteo-loteria-navidad.html) y gravamen especial para no residentes (https://sede.agenciatributaria.gob.es/Sede/no-residentes/irnr-sin-establecimiento-permanente/gravamen-especial-sobre-premios-loterias-apuestas.html). Loterías y Apuestas del Estado, premios del Sorteo Extraordinario de Navidad: Gordo de 4.000.000 € a la serie y décimo de 20 € en 2025 (https://www.loteriasyapuestas.es/es/loteria-nacional/historia-del-juego/el-sorteo-extraordinario-de-navidad-y-sus-premios). Hipótesis no oficiales y editables: premio de 400.000 € por décimo (el Gordo de 2025, no un dato de 2026), 1 décimo, 1 persona. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni financiero."
+}

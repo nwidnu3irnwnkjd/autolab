@@ -132,6 +132,7 @@ tr.em-strong th,tr.em-strong td{font-weight:800}
 .pk-t{grid-column:1/-1;color:var(--muted);line-height:1.45;font-size:14px;margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .pk .pulso-meta{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35;display:block}
 .pk .pulso-meta a{color:inherit;text-decoration:underline}
+.pk-old{opacity:.85}.sem-old{font-weight:700;color:var(--warn)}
 .pk-l{grid-column:1/-1;font-weight:600;margin-top:6px;font-size:14px}
 .pulso>.pulso-meta{display:block;font-size:12px;color:var(--muted);margin-top:8px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

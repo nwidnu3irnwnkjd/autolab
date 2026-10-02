@@ -99,6 +99,28 @@
    "aviso": "El Black Friday es el cuarto viernes de noviembre (fecha calculada, no oficial). La fuente enlazada regula el crédito al consumo, incluido el derecho de desistimiento de 14 días."
   },
   {
+   "id": "sorteo-navidad",
+   "titulo": "Sorteo Extraordinario de Navidad: 22 de diciembre",
+   "tipo": "fechas",
+   "fechas": [
+    "2026-12-22",
+    "2027-12-22"
+   ],
+   "antes": 30,
+   "despues": 3,
+   "estado": "por confirmar",
+   "decision": "Premio de la Lotería de Navidad: cuánto te queda tras Hacienda",
+   "que_hacer": "Si compartes décimos o te toca un premio, calcula cuánto retiene Hacienda (20% sobre lo que excede de 40.000 € por décimo) y cuánto te queda neto.",
+   "calc": "loteria-navidad-premio-neto-hacienda",
+   "texto_antes": "El sorteo de Navidad se celebra habitualmente el 22 de diciembre (fecha de 2026 por confirmar): calcula cuánto te quedaría de un premio tras el gravamen de Hacienda.",
+   "texto_despues": "Tras el sorteo de Navidad: calcula cuánto te queda neto de un premio una vez descontado el gravamen especial.",
+   "fuente": {
+    "nombre": "BOE: Ley 35/2006 del IRPF, disposición adicional 33.ª, texto consolidado",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#datrigesimatercera"
+   },
+   "aviso": "El sorteo extraordinario de Navidad se celebra el 22 de diciembre cada año; no se pudo verificar la fecha de 2026 en la web oficial de Loterías y Apuestas del Estado (la prensa y los administradores la dan para el martes 22 de diciembre), por eso figura como por confirmar. Premios hasta 40.000 € por décimo exentos; el exceso tributa al 20%."
+  },
+  {
    "id": "campana-renta",
    "titulo": "Campaña de la Renta",
    "tipo": "anual",
@@ -152,7 +174,8 @@
     "nombre": "BOE: Ley 35/2006 del IRPF, arts. 12, 14.1.c, 33.5 y 49, texto consolidado",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764"
    },
-   "aviso": "El periodo impositivo del IRPF es el año natural (art. 12) y la ganancia o pérdida se imputa al año de la venta (art. 14.1.c). Si recompras valores homogéneos en los 2 meses anteriores o posteriores (1 año si no cotizan), la pérdida no computa ese año (art. 33.5.f y g). Un saldo negativo de 2022 caduca tras la declaración de 2026 (art. 49)."
+   "aviso": "El periodo impositivo del IRPF es el año natural (art. 12) y la ganancia o pérdida se imputa al año de la venta (art. 14.1.c). Si recompras valores homogéneos en los 2 meses anteriores o posteriores (1 año si no cotizan), la pérdida no computa ese año (art. 33.5.f y g). Un saldo negativo de 2022 caduca tras la declaración de 2026 (art. 49).",
+   "plazo": true
   },
   {
    "id": "autonomo-cambio-base",
@@ -177,7 +200,8 @@
     "nombre": "BOE: Reglamento General de Cotización (RD 2064/1995), art. 45.1, texto consolidado",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579"
    },
-   "aviso": "Hasta seis cambios al año (art. 45.1 del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo."
+   "aviso": "Hasta seis cambios al año (art. 45.1 del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo.",
+   "plazo": true
   },
   {
    "id": "renuncia-modulos",
@@ -233,7 +257,8 @@
     "nombre": "BOE: Real Decreto 126/2026 (SMI de 2026)",
     "url": "https://www.boe.es/boe/dias/2026/02/19/pdfs/BOE-A-2026-3815.pdf"
    },
-   "aviso": "Pendiente de norma: las cuantías de 2027 no están publicadas y no damos fecha. Las de 2026 se aprobaron ya entrado el año: el SMI, por el Real Decreto 126/2026 (BOE del 19 de febrero de 2026), y la revalorización del 2,7 % de las pensiones, por el Real Decreto 241/2026. Cuando salgan las de 2027 se actualizarán las Tablas y las calculadoras."
+   "aviso": "Pendiente de norma: las cuantías de 2027 no están publicadas y no damos fecha. Las de 2026 se aprobaron ya entrado el año: el SMI, por el Real Decreto 126/2026 (BOE del 19 de febrero de 2026), y la revalorización del 2,7 % de las pensiones, por el Real Decreto 241/2026. Cuando salgan las de 2027 se actualizarán las Tablas y las calculadoras.",
+   "pagina": "/que-cambia-1-enero-2027/"
   }
  ]
 }

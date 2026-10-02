@@ -107,7 +107,7 @@ ok(seo.eventos_activos(D(2026, 8, 15), []) == [], "sin eventos no hay banner")
 ok(not seo.ahora_html("alquilar-o-comprar", D(2026, 10, 2)), "banner solo en calculadora afín")
 ok(seo.ahora_html(None, D(2026, 10, 2)).count("<p ") == 1 and "Ahora:" in seo.ahora_html(None, D(2026, 10, 2)), "home: 1 banner Ahora")
 evs = json.load(open(os.path.join(ROOT, "projects/decidir/data/events.json")))["eventos"]
-ok(0 < len(evs) <= 10 and all(e.get("fuente", {}).get("url", "").startswith("https://") and e.get("aviso") for e in evs), "events.json: <= 10, todos con fuente y aviso")
+ok(0 < len(evs) <= 16 and all(e.get("fuente", {}).get("url", "").startswith("https://") and e.get("aviso") for e in evs), "events.json: <= 16, todos con fuente y aviso")
 
 # ---- Tipo medio de hipoteca fija (BCE, MIR): ventana de 60 días, respaldo a params, Barómetro y subrogar coherentes ----
 import calcs_loader, barometro

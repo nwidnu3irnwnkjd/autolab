@@ -7,6 +7,7 @@ import seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, 
 import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
 import directorio  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
+import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
 from ui import asset_v, ill, ILL, ICONS, tema, card, catalog_body, notfound_body, head_extra
@@ -95,7 +96,7 @@ def main():
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + seo.pulso_html(LIVE) + barometro.home_teaser(BARO)),
+          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE) + barometro.home_teaser(BARO)),
           priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
@@ -120,6 +121,11 @@ def main():
         hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
+    s27body, s27ld = semana.cambios_page(params, calcs, card, seo.lastmod(*semana.FILES), seo.AUTHOR)  # /que-cambia-1-enero-2027/ (c51)
+    s27mod = seo.lastmod(*semana.FILES); s27pub = seo.published("semana.py")
+    write(semana.PATH2027, semana.H2027, semana.D2027, s27body, priority="0.8", lastmod=s27mod, og_tema="impuestos",
+          jsonld=[seo.article(semana.H2027, semana.D2027, B + semana.PATH2027, s27pub, s27mod, B), seo.breadcrumbs(B, [("Inicio", "/"), ("Qué cambia en 2027", None)])] + s27ld)
+    HUB_PAGES.append(dict(path=semana.PATH2027, h1=semana.H2027, description=semana.D2027, modified=s27mod, published=s27pub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
           dbody, jsonld=dld, priority="0.8", lastmod=dmod)
@@ -135,7 +141,7 @@ def main():
             nbody, nld = seo.actualidad_page(n, calcs, card, B)
             write(f"/actualidad/{n['slug']}/", n["title"], n["description"], nbody, jsonld=nld, priority="0.6", lastmod=n["modified"])
         write("/actualidad/", "Actualidad: datos que cambian decisiones", "Notas breves con datos oficiales cuando el Euríbor, los carburantes, la luz o el tiempo se mueven lo bastante para cambiar una decisión.",
-              seo.actualidad_index(NOTES), priority="0.6", lastmod=max(n["modified"] for n in NOTES))
+              semana.block(LIVE) + seo.actualidad_index(NOTES), priority="0.6", lastmod=max(n["modified"] for n in NOTES))
     for slug, title, desc in [("como-funciona", "Cómo funciona", "Cómo calculamos: fuentes oficiales (BOE, BCE, INE), Barómetro con datos del mes y verificación de cada cifra antes de publicar. Qué hacemos y qué no."),
                               ("aviso-legal", "Aviso legal", "Titular, condiciones de uso y limitación de responsabilidad."),
                               ("privacidad", "Política de privacidad", "Qué datos tratamos (casi ninguno) y con qué base legal."),
