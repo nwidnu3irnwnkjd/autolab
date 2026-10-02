@@ -1,0 +1,152 @@
+{
+  "slug": "deduccion-maternidad-familia-numerosa",
+  "title": "Deducción por maternidad y familia numerosa 2026",
+  "description": "Calcula cuánto te devuelve Hacienda por maternidad (hasta 1.200 € por hijo), guardería (hasta 1.000 €) y familia numerosa (1.200 a 2.400 €), mes a mes.",
+  "h1": "Deducción por maternidad y familia numerosa: cuánto te devuelve Hacienda",
+  "lead": "Si tienes un hijo menor de 3 años y cobrabas paro al nacer, o en ese momento o después estuviste de alta con 30 días cotizados (no hace falta seguir de alta), Hacienda te devuelve hasta 1.200 € al año por hijo (100 € al mes si pides el abono anticipado) más hasta 1.000 € si pagas guardería autorizada, y con título de familia numerosa suma 1.200 € (2.400 € en la categoría especial) más 600 € por cada hijo que supere el mínimo. En el ejemplo (un hijo menor de 3 años, 12 meses de alta, 10 meses de guardería con 3.000 € de gasto, familia numerosa general de 3 hijos y 3.500 € de cotizaciones) salen 3.233 € al año, de los que 200 € al mes se cobran por adelantado. Es una deducción reembolsable que no depende de lo que pagues de IRPF; solo la parte básica de familia numerosa tiene como tope las cotizaciones del año (sin tope con paro o pensión). No incluye deducciones autonómicas, discapacidad a cargo, tutela, familias de 2 hijos equiparadas a numerosas ni País Vasco y Navarra.",
+  "veredicto": "Con un hijo menor de 3 años y el requisito de actividad cumplido (paro al nacer, o alta con 30 días cotizados en ese momento o después), la deducción por maternidad es de hasta 1.200 € al año por hijo (100 € al mes si la anticipas) y hasta 1.000 € más por guardería autorizada, con tope en el gasto; la de familia numerosa añade 1.200 € (2.400 € en categoría especial) y 600 € por cada hijo sobre el mínimo, y su parte básica no puede superar tus cotizaciones del año (sin tope con paro o pensión). En el ejemplo (1 hijo menor de 3 años, 12 meses, guardería 10 meses con 3.000 €, familia numerosa general de 3 hijos, 3.500 € de cotizaciones) Hacienda te devuelve 3.233 € al año, de los que 200 € al mes se cobran por adelantado y 833 € llegan con la declaración; con cotizaciones de 0 € la parte básica de familia numerosa baja a 0 €, pero los incrementos de categoría especial y por hijos adicionales se mantienen.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "n3",
+      "label": "Hijos menores de 3 años que te dan derecho (los cuenta mes a mes: el mes en que cumplen 3 años ya no)",
+      "type": "select",
+      "options": [
+        {
+          "v": "1",
+          "t": "1"
+        },
+        {
+          "v": "0",
+          "t": "0"
+        },
+        {
+          "v": "2",
+          "t": "2"
+        },
+        {
+          "v": "3",
+          "t": "3"
+        },
+        {
+          "v": "4",
+          "t": "4"
+        }
+      ],
+      "ayuda": "Para la maternidad no hace falta seguir de alta: basta haber cobrado paro al nacer el hijo, o haber estado de alta con 30 días cotizados en ese momento o después, y tener derecho al mínimo por descendientes. Es para la madre; el padre solo la aplica si fallece la madre o la custodia es solo suya. Un hijo que ya tiene 3 años cumplidos al empezar el año no cuenta."
+    },
+    {
+      "id": "mesesMat",
+      "label": "Meses del año con hijo menor de 3 años y derecho al mínimo por descendientes, ya cumplido el requisito de actividad (0 a 12)",
+      "default": 12,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.maternidad_familia_2026.supuestos.mesesMat",
+      "max": 12,
+      "ayuda": "Maternidad (art. 81): cuenta los meses posteriores al momento en que cumples el requisito de actividad; el hijo se mira el último día de cada mes."
+    },
+    {
+      "id": "guarMeses",
+      "label": "Meses completos de guardería o centro de educación infantil autorizado (0 a 12)",
+      "default": 10,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.maternidad_familia_2026.supuestos.guarMeses",
+      "max": 12,
+      "ayuda": "Solo cuentan los meses pagados completos (incluidos los no lectivos de un contrato por meses). No puede superar los meses de maternidad."
+    },
+    {
+      "id": "guarGasto",
+      "label": "Gasto en guardería por hijo y año, sin la parte subvencionada (€)",
+      "default": 3000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.maternidad_familia_2026.supuestos.guarGasto",
+      "ayuda": "Es un ejemplo. El incremento de cada hijo no puede superar este gasto; el pagado por el otro progenitor también cuenta (art. 60.1 del Reglamento)."
+    },
+    {
+      "id": "fam",
+      "label": "Familia numerosa (título oficial)",
+      "type": "select",
+      "options": [
+        {
+          "v": "general",
+          "t": "Categoría general (3 o 4 hijos), solo yo"
+        },
+        {
+          "v": "generalx2",
+          "t": "Categoría general (3 o 4 hijos), los dos progenitores con derecho"
+        },
+        {
+          "v": "no",
+          "t": "No tengo título de familia numerosa"
+        },
+        {
+          "v": "especial",
+          "t": "Categoría especial (5 o más hijos, o 4 en los casos de la Ley 40/2003), solo yo"
+        },
+        {
+          "v": "especialx2",
+          "t": "Categoría especial, los dos progenitores con derecho"
+        },
+        {
+          "v": "mono2",
+          "t": "Ascendiente separado o sin vínculo con 2 hijos, sin pensión de alimentos y con todo el mínimo por descendientes"
+        }
+      ],
+      "ayuda": "Hace falta estar de alta en la Seguridad Social o cobrar paro o pensión. Con dos progenitores con derecho, el importe se reparte a partes iguales (o se cede a uno). Las familias de 2 hijos equiparadas a numerosas (art. 2.2 de la Ley 40/2003) no se calculan."
+    },
+    {
+      "id": "hijosFam",
+      "label": "Hijos que forman la familia numerosa (3 a 12; no se usa si no tienes título)",
+      "default": 3,
+      "min": 2,
+      "step": 1,
+      "default_from": "params.maternidad_familia_2026.supuestos.hijosFam",
+      "max": 12,
+      "ayuda": "La categoría general exige 3 y la especial 5 (con 4 solo en los supuestos de la Ley 40/2003). Cada hijo por encima de ese mínimo suma 600 € al año."
+    },
+    {
+      "id": "mesesFam",
+      "label": "Meses del año con título de familia numerosa y de alta en la Seguridad Social, o cobrando paro o pensión (0 a 12)",
+      "default": 12,
+      "min": 0,
+      "step": 1,
+      "max": 12,
+      "default_from": "params.maternidad_familia_2026.supuestos.mesesFam",
+      "ayuda": "Solo para la deducción de familia numerosa (art. 81 bis); el alta cuenta si ocurre cualquier día del mes. Pon 0 si no tienes título."
+    },
+    {
+      "id": "cotiz",
+      "label": "Cotizaciones y cuotas de la Seguridad Social del año desde que se cumplen los requisitos (€)",
+      "default": 3500,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.maternidad_familia_2026.supuestos.cotiz",
+      "ayuda": "Es el tope de la parte básica de 1.200 € de familia numerosa (art. 81 bis.2), por su importe íntegro, sin bonificaciones. Si cobras paro o pensión no hay tope: escribe 1.200 € o más. No afecta a la maternidad."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto me devuelve Hacienda por tener un hijo menor de 3 años y pagar guardería?",
+      "Hasta 1.200 € al año por hijo menor de 3 años (art. 81.1 de la Ley del IRPF), calculados por meses: son 100 € por cada mes en que cumples los requisitos. Si pagas una guardería o centro de educación infantil autorizado, se suma un incremento de hasta 1.000 € al año por hijo (art. 81.2), proporcional a los meses completos de guardería y con tope en el gasto efectivo no subvencionado de ese hijo (art. 60.1 del Reglamento). Con 12 meses de alta, 10 de guardería y 3.000 € de gasto por hijo salen 1.200 € + 833 € = 2.033 €. Es una deducción de la cuota diferencial: si no pagas IRPF, Hacienda te ingresa la cantidad."
+    ],
+    [
+      "¿Quién puede aplicar la deducción por maternidad?",
+      "Las mujeres con hijos menores de 3 años que tengan derecho al mínimo por descendientes (art. 58), y que cobraran paro en el momento del nacimiento o estén de alta en la Seguridad Social o mutualidad con al menos 30 días cotizados, en ese momento o después (art. 81.1); no hace falta seguir de alta después. Si fallece la madre o la custodia es solo del padre, o de un tutor, este puede aplicar la deducción pendiente. En adopción o acogimiento se cuenta desde la inscripción en el Registro Civil, durante tres años. Los meses en que alguno de los progenitores cobre el complemento de ayuda para la infancia del ingreso mínimo vital no dan derecho (art. 81.3); esta calculadora no lo descuenta por ti."
+    ],
+    [
+      "¿Cuánto es la deducción por familia numerosa y qué límite tiene?",
+      "El art. 81 bis.1.c da hasta 1.200 € al año, que son 2.400 € en la categoría especial, más hasta 600 € por cada hijo que supere el mínimo de la categoría (3 en la general, 5 en la especial). Exige estar de alta en la Seguridad Social o cobrar paro o pensión. Se calcula por meses y la parte básica de 1.200 € no puede superar las cotizaciones y cuotas de la Seguridad Social del año (art. 81 bis.2): con 0 € de cotizaciones se pierde esa parte, pero no el incremento de la categoría especial ni los 600 € por hijo, que no cuentan para el tope. Si los dos progenitores tienen derecho, el importe se reparte a partes iguales."
+    ],
+    [
+      "¿Puedo cobrarla mes a mes sin esperar a la declaración?",
+      "Sí: puedes pedir a la Agencia Tributaria el abono anticipado con el modelo 140 (maternidad) y el modelo 143 (familia numerosa). Son 100 € al mes por hijo menor de 3 años; en familia numerosa, 100 € (200 € en la especial) más 50 € por cada hijo sobre el mínimo, divididos entre los titulares (art. 60 y 60 bis del Reglamento). El incremento por guardería no se anticipa: se reclama en la declaración. Lo cobrado por adelantado no se vuelve a restar de la cuota diferencial, y si cobras más de lo que te corresponde lo regularizas en la declaración sin intereses cuando no es por tu culpa."
+    ],
+    [
+      "¿Es compatible con el mínimo por descendientes y con las deducciones autonómicas?",
+      "La deducción por maternidad no sustituye al mínimo por descendientes: lo exige como requisito (art. 81.1) y se suma a su ahorro, porque el mínimo (2.400 € para el primer hijo más 2.800 € si es menor de 3 años, art. 58) reduce la base y la deducción reduce la cuota. La ley no declara incompatibles la deducción por maternidad y la de familia numerosa, así que esta calculadora las suma. Las deducciones autonómicas para hijos, guardería o familia numerosa dependen de cada comunidad y no están incluidas; en el País Vasco y Navarra rigen normas forales."
+    ]
+  ],
+  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026 (última actualización publicada el 30/09/2026): art. 81 (deducción por maternidad, redacción vigente desde 1/1/2023), art. 81 bis (familia numerosa y personas con discapacidad a cargo, redacción vigente desde 5/7/2018) y art. 58 (mínimo por descendientes). Reglamento del IRPF, arts. 60 y 60 bis (cómputo por meses, abono anticipado y tope de cotizaciones) (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). Ley 40/2003 de Protección a las Familias Numerosas, art. 4, categorías (https://www.boe.es/buscar/act.php?id=BOE-A-2003-21052). Real Decreto-ley 26/2026, de 29 de septiembre (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266): no modifica estos artículos (comprobado el 2/10/2026). Agencia Tributaria, deducción por maternidad y abono anticipado, modelos 140 y 143 (https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-maternidad.html). Los meses, el gasto de guardería, el número de hijos y las cotizaciones del ejemplo son supuestos editables, no datos oficiales."
+}

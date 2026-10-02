@@ -1,0 +1,166 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 6,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 6000,
+    "anios": 5,
+    "fam": 400,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 2847.0,
+    "adaptMes": 100.0,
+    "costeResi": 2500,
+    "costeDom": 3347.0,
+    "costeDomEfectivo": 2947.0,
+    "diferencia": -847.0,
+    "horasEquilibrio": 4.21,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 16,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 6000,
+    "anios": 5,
+    "fam": 400,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 7592.0,
+    "adaptMes": 100.0,
+    "costeResi": 2500,
+    "costeDom": 8092.0,
+    "costeDomEfectivo": 7692.0,
+    "diferencia": -5592.0,
+    "horasEquilibrio": 4.21,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 0,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 0,
+    "anios": 5,
+    "fam": 0,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 0.0,
+    "adaptMes": 0.0,
+    "costeResi": 2500,
+    "costeDom": 0.0,
+    "costeDomEfectivo": 0.0,
+    "diferencia": 2500.0,
+    "horasEquilibrio": 5.27,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 2,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 6000,
+    "anios": 5,
+    "fam": 0,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 949.0,
+    "adaptMes": 100.0,
+    "costeResi": 2500,
+    "costeDom": 1049.0,
+    "costeDomEfectivo": 1049.0,
+    "diferencia": 1451.0,
+    "horasEquilibrio": 5.06,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 0,
+    "horas": 6,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 6000,
+    "anios": 5,
+    "fam": 400,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 2847.0,
+    "adaptMes": 100.0,
+    "costeResi": 0,
+    "costeDom": 3347.0,
+    "costeDomEfectivo": 2947.0,
+    "diferencia": -3347.0,
+    "horasEquilibrio": 0.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 6,
+    "costeh": 12,
+    "cotiz": 30,
+    "adapt": 6000,
+    "anios": 1,
+    "fam": 400,
+    "ayudas": 500
+   },
+   "expect": {
+    "cuidadorMes": 2847.0,
+    "adaptMes": 500.0,
+    "costeResi": 2000,
+    "costeDom": 3247.0,
+    "costeDomEfectivo": 2847.0,
+    "diferencia": -1247.0,
+    "horasEquilibrio": 3.37,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "resi": 2500,
+    "horas": 0,
+    "costeh": 0,
+    "cotiz": 30,
+    "adapt": 0,
+    "anios": 5,
+    "fam": 2500,
+    "ayudas": 0
+   },
+   "expect": {
+    "cuidadorMes": 0.0,
+    "adaptMes": 0.0,
+    "costeResi": 2500,
+    "costeDom": 2500.0,
+    "costeDomEfectivo": 0.0,
+    "diferencia": 0.0,
+    "horasEquilibrio": -1,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}

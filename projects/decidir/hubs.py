@@ -81,7 +81,7 @@ HUBS = {
                  "cómo pagarlo (comprar o renting) y qué seguro. El combustible es solo una parte del coste: la depreciación, el seguro y la financiación pesan aunque el coche esté parado. "
                  "Hoy la gasolina 95 cuesta {{gasolina}} €/l y el diésel {{diesel}} €/l de media ({{fecha_carburantes_es}}; fuente: MITECO)."),
         "groups": [
-            ("¿Necesitas coche?", ["coche-propio-o-carsharing-o-vtc", "bici-electrica-o-transporte-publico", "tren-avion-o-coche"]),
+            ("¿Necesitas coche?", ["coche-propio-o-carsharing-o-vtc", "bici-electrica-o-transporte-publico", "tren-avion-o-coche", "equipaje-y-asiento-avion-coste-real"]),
             ("Si vas a tener coche", ["coche-nuevo-o-seminuevo", "diesel-gasolina-hibrido-electrico", "comprar-coche-o-renting", "seguro-todo-riesgo-o-terceros"]),
         ],
         "steps": {
@@ -96,6 +96,10 @@ HUBS = {
             "tren-avion-o-coche": {
                 "name": "Para viajar: tren, avión o coche",
                 "text": "En un viaje largo el coche cuesta lo mismo vayas solo o acompañado, y los billetes se multiplican por viajero. La calculadora te dice con cuántos viajeros gana el coche y cuánto tiene que valer tu hora para que compense ir más rápido.",
+            },
+            "equipaje-y-asiento-avion-coste-real": {
+                "name": "Avión: equipaje y asiento",
+                "text": "La tarifa low cost solo es la más barata hasta que sumas maleta, asiento y embarque prioritario. La calculadora compara el coste real por viaje con las tarifas que tú introduces y te dice cuándo compensa la tarifa completa.",
             },
             "coche-nuevo-o-seminuevo": {
                 "name": "Nuevo o seminuevo",
@@ -194,6 +198,7 @@ HUBS = {
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
+            ("Si alquilas una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar"]),
             ("Al presentar la declaración y en el futuro", ["declaracion-conjunta-o-individual", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada"]),
@@ -210,6 +215,10 @@ HUBS = {
             "comparar-ofertas-de-trabajo-neto-real": {
                 "name": "Comparar dos ofertas de trabajo",
                 "text": "Conviene la oferta que deja más neto al año después de Seguridad Social, IRPF y desplazamientos, no la de más bruto. La calculadora da la diferencia, el neto por hora y el bruto que iguala a la mejor.",
+            },
+            "irpf-alquilar-vivienda-rendimiento-neto": {
+                "name": "IRPF por alquilar una vivienda",
+                "text": "Lo que tributa es el rendimiento neto: ingresos menos gastos deducibles y, si cumples los requisitos, la reducción del 50 al 90 % del artículo 23.2 de la Ley del IRPF. La calculadora da el rendimiento neto, la base y la cuota con tus datos.",
             },
             "capitalizar-paro-o-cobrarlo": {
                 "name": "Capitalizar el paro o cobrarlo",
@@ -258,11 +267,15 @@ HUBS = {
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
-            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "comprar-o-alquilar-trastero", "hotel-o-apartamento-viaje-en-grupo"]),
+            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Dónde guardar lo que ahorras", ["deposito-letras-o-fondo-monetario"]),
             ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
         ],
         "steps": {
+            "mudanza-empresa-o-furgoneta": {
+                "name": "Mudanza: empresa o furgoneta",
+                "text": "Con poco volumen y ayuda propia suele ganar la furgoneta; con mucho volumen, escaleras o distancia, la empresa. La calculadora compara el coste real según tus metros cúbicos, la distancia y la ayuda con la que cuentas.",
+            },
             "suscripciones-cuanto-gasto-al-ano": {
                 "name": "Suscripciones",
                 "text": "Las candidatas a rotar o cancelar son las que te cuestan más por hora de uso que la media de las tuyas; el plan anual solo compensa con descuento y si la usas todo el año. La calculadora suma tu gasto anual y lo que ahorras rotando.",

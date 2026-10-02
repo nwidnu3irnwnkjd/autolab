@@ -1,0 +1,137 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 40,
+    "dif": 25,
+    "excl": 20,
+    "personas": 3,
+    "meses": 12,
+    "minimo": 100
+   },
+   "expect": {
+    "gastoAnual": 6240.0,
+    "baseCambio": 1996.8,
+    "ahorroAnual": 499.2,
+    "ahorroMes": 41.6,
+    "pctGasto": 8.0,
+    "porPersona": 166.4,
+    "difEquilibrio": 5.01,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 40,
+    "dif": 3,
+    "excl": 20,
+    "personas": 3,
+    "meses": 12,
+    "minimo": 100
+   },
+   "expect": {
+    "gastoAnual": 6240.0,
+    "baseCambio": 1996.8,
+    "ahorroAnual": 59.9,
+    "ahorroMes": 4.99,
+    "pctGasto": 0.96,
+    "porPersona": 19.97,
+    "difEquilibrio": 5.01,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 0,
+    "dif": 25,
+    "excl": 20,
+    "personas": 3,
+    "meses": 12,
+    "minimo": 100
+   },
+   "expect": {
+    "gastoAnual": 6240.0,
+    "baseCambio": 0.0,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "pctGasto": 0.0,
+    "porPersona": 0.0,
+    "difEquilibrio": -1,
+    "ganador": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 40,
+    "dif": 0,
+    "excl": 20,
+    "personas": 3,
+    "meses": 12,
+    "minimo": 0
+   },
+   "expect": {
+    "gastoAnual": 6240.0,
+    "baseCambio": 1996.8,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "pctGasto": 0.0,
+    "porPersona": 0.0,
+    "difEquilibrio": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 40,
+    "dif": 25,
+    "excl": 100,
+    "personas": 3,
+    "meses": 12,
+    "minimo": 100
+   },
+   "expect": {
+    "gastoAnual": 6240.0,
+    "baseCambio": 0.0,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "pctGasto": 0.0,
+    "porPersona": 0.0,
+    "difEquilibrio": -1,
+    "ganador": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 120,
+    "pct": 40,
+    "dif": 25,
+    "excl": 20,
+    "personas": 1,
+    "meses": 1,
+    "minimo": 100
+   },
+   "expect": {
+    "gastoAnual": 520.0,
+    "baseCambio": 166.4,
+    "ahorroAnual": 41.6,
+    "ahorroMes": 41.6,
+    "pctGasto": 8.0,
+    "porPersona": 41.6,
+    "difEquilibrio": 60.1,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

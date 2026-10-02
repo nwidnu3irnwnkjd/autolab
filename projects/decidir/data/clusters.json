@@ -7,7 +7,7 @@
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
   "reformar-o-mudarse",
-  "comprar-o-alquilar-trastero"
+  "irpf-alquilar-vivienda-rendimiento-neto"
  ],
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
@@ -92,7 +92,7 @@
  "comprar-o-alquilar-trastero": [
   "comprar-o-alquilar-herramienta",
   "alquilar-o-comprar",
-  "contado-o-financiar"
+  "mudanza-empresa-o-furgoneta"
  ],
  "contado-o-financiar": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -108,6 +108,11 @@
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
   "autonomo-o-asalariado",
   "rescate-plan-pensiones-capital-o-renta"
+ ],
+ "deduccion-maternidad-familia-numerosa": [
+  "autonomo-o-asalariado",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "autonomo-o-sociedad-limitada"
  ],
  "deposito-letras-o-fondo-monetario": [
   "plan-pensiones-o-fondo-indexado",
@@ -126,8 +131,8 @@
  ],
  "equipaje-y-asiento-avion-coste-real": [
   "tren-avion-o-coche",
-  "bici-electrica-o-transporte-publico",
-  "coche-nuevo-o-seminuevo"
+  "hotel-o-apartamento-viaje-en-grupo",
+  "contado-o-financiar"
  ],
  "excedencia-o-reduccion-jornada": [
   "guarderia-cuidadora-o-reducir-jornada",
@@ -157,12 +162,12 @@
  "hotel-o-apartamento-viaje-en-grupo": [
   "tren-avion-o-coche",
   "contado-o-financiar",
-  "navidad-cuanto-gastar-sin-endeudarte"
+  "equipaje-y-asiento-avion-coste-real"
  ],
  "irpf-alquilar-vivienda-rendimiento-neto": [
-  "comparar-ofertas-de-trabajo-neto-real",
-  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-  "autonomo-o-asalariado"
+  "declaracion-conjunta-o-individual",
+  "obligado-a-declarar-renta-dos-pagadores",
+  "alquilar-o-comprar"
  ],
  "jubilacion-anticipada-o-demorada": [
   "plan-pensiones-o-fondo-indexado",
@@ -174,15 +179,20 @@
   "placas-solares-merece-la-pena",
   "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
+ "marca-blanca-o-marca-ahorro-anual": [
+  "cocinar-en-casa-o-comer-fuera",
+  "suscripciones-cuanto-gasto-al-ano",
+  "teletrabajo-o-oficina-coste-real"
+ ],
  "movil-reacondicionado-o-nuevo": [
   "portatil-o-movil-comprar-renting-o-financiar",
   "fibra-y-movil-juntos-o-por-separado",
   "reparar-o-comprar-electrodomestico"
  ],
  "mudanza-empresa-o-furgoneta": [
-  "academia-idiomas-presencial-online-o-intensivo",
-  "capitalizar-paro-o-cobrarlo",
-  "cocinar-en-casa-o-comer-fuera"
+  "reformar-o-mudarse",
+  "alquilar-o-comprar",
+  "comprar-o-alquilar-trastero"
  ],
  "navidad-cuanto-gastar-sin-endeudarte": [
   "contado-o-financiar",
@@ -191,7 +201,7 @@
  ],
  "obligado-a-declarar-renta-dos-pagadores": [
   "declaracion-conjunta-o-individual",
-  "comparar-ofertas-de-trabajo-neto-real",
+  "irpf-alquilar-vivienda-rendimiento-neto",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "placas-solares-merece-la-pena": [
@@ -217,7 +227,7 @@
  "reformar-o-mudarse": [
   "alquilar-o-comprar",
   "comprar-o-alquilar-trastero",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "mudanza-empresa-o-furgoneta"
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
@@ -228,6 +238,11 @@
   "plan-pensiones-o-fondo-indexado",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
   "jubilacion-anticipada-o-demorada"
+ ],
+ "residencia-o-cuidador-a-domicilio": [
+  "gimnasio-o-entrenar-en-casa",
+  "hotel-o-apartamento-viaje-en-grupo",
+  "teletrabajo-o-oficina-coste-real"
  ],
  "seguro-hogar-con-o-sin-franquicia": [
   "jubilacion-anticipada-o-demorada",
@@ -272,7 +287,7 @@
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",
   "hotel-o-apartamento-viaje-en-grupo",
-  "bici-electrica-o-transporte-publico"
+  "equipaje-y-asiento-avion-coste-real"
  ],
  "universidad-publica-o-privada-o-master": [
   "guarderia-cuidadora-o-reducir-jornada",

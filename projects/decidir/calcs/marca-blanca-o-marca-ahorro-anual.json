@@ -1,0 +1,87 @@
+{
+  "slug": "marca-blanca-o-marca-ahorro-anual",
+  "title": "Marca blanca o de fabricante: cuánto ahorras al año",
+  "description": "Calcula el ahorro anual de cambiar parte de tu compra a marca blanca con tu gasto semanal, la diferencia de precio y los productos que no cambiarías.",
+  "h1": "Marca blanca o marca de fabricante: cuánto ahorras al año con tu cesta",
+  "lead": "Cambiar a marca blanca compensa si el ahorro anual de la parte de la compra que cambiarías supera el mínimo que te merece el esfuerzo, y eso depende de una diferencia de precio que debes comprobar tú: con los ejemplos de la página (120 € a la semana, 40 % de la cesta cambiable, 20 % de eso que no cambiarías y una diferencia media del 25 %, hipótesis declarada) el ahorro sería de unos 499 € al año, unos 42 € al mes y el 8 % del gasto; con una diferencia del 3 % bajaría a unos 60 € y no llegaría a un mínimo de 100 €. Compensaría mientras la diferencia no baje del 5,0 %. Pon tu gasto y una diferencia que hayas comparado en tu supermercado.",
+  "veredicto": "Cambiar a marca blanca compensa si el ahorro anual, que sale de la parte de tu compra que cambiarías multiplicada por la diferencia media de precio, supera el mínimo que te merece el cambio. La diferencia de precio es una hipótesis tuya: la página calcula la diferencia mínima con la que compensa.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "gasto",
+      "label": "Gasto semanal en supermercado (€/semana; 120 € es un ejemplo)",
+      "default": 120,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "pct",
+      "label": "Parte de la cesta que podrías cambiar a marca blanca (%; 40 es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "step": 5,
+      "max": 100
+    },
+    {
+      "id": "dif",
+      "label": "Diferencia media de precio entre marca blanca y de fabricante (%; 25 es una hipótesis tuya: compruébala con unos productos)",
+      "default": 25,
+      "min": 0,
+      "step": 1,
+      "max": 100
+    },
+    {
+      "id": "excl",
+      "label": "De lo cambiable, parte en productos donde no cambiarías (%; 20 es un ejemplo)",
+      "default": 20,
+      "min": 0,
+      "step": 5,
+      "max": 100
+    },
+    {
+      "id": "personas",
+      "label": "Personas del hogar (para el ahorro por persona)",
+      "default": 3,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "meses",
+      "label": "Meses de compra en el periodo (12 para un año)",
+      "default": 12,
+      "min": 1,
+      "step": 1,
+      "max": 12
+    },
+    {
+      "id": "minimo",
+      "label": "Ahorro anual mínimo que te compensa el cambio (€; 100 es un ejemplo; 0 si todo ahorro te vale)",
+      "default": 100,
+      "min": 0,
+      "step": 10
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto se ahorra al cambiar a marca blanca?",
+      "Depende de tu gasto, de la parte de la compra que cambies y de la diferencia de precio que encuentres. Con los ejemplos de la página (120 € a la semana, 40 % cambiable, 20 % de eso descartado, diferencia del 25 %) el ahorro sería de unos 499 € al año, el 8 % de lo que gastas. La diferencia es una hipótesis tuya, no un dato de mercado: la calculadora lo recalcula con la que tú compruebes."
+    ],
+    [
+      "¿Qué diferencia de precio hace falta para que compense?",
+      "Es el punto de equilibrio: tu ahorro mínimo dividido entre la parte de la compra que cambiarías. Con los ejemplos son 100 € entre 1.997 € de compra cambiable, es decir, una diferencia del 5,0 %. Si la diferencia real que encuentras es menor, por ejemplo del 3 %, el ahorro baja a unos 60 € al año y no llega a ese mínimo."
+    ],
+    [
+      "¿Cómo saco la diferencia media de precio?",
+      "Elige unos pocos productos que compras con frecuencia, anota su precio por kilo o por litro en la marca de fabricante y en la blanca de tu supermercado habitual, y calcula la diferencia media. Esta página no usa precios de mercado ni nombra marcas: todas las cifras son ejemplos editables."
+    ],
+    [
+      "¿Qué productos conviene no cambiar?",
+      "Los que tú notes que cambian de calidad o sabor, o que usas de forma que importe la marca. Por eso el cálculo te deja descartar un porcentaje de lo cambiable: cuanto más descartes, menos ahorro y mayor diferencia necesitas para llegar a tu mínimo."
+    ],
+    [
+      "¿Qué no incluye este cálculo?",
+      "No incluye la calidad o el gusto, ofertas y promociones que igualen precios, desplazarte a otro establecimiento, cambios de precio durante el año ni el ahorro de comprar en otro formato. Supone un gasto semanal constante. Es una estimación orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio: gasto del periodo = gasto semanal x meses x 52 / 12; compra que cambiarías = gasto x % cambiable x (1 - % descartado); ahorro = compra que cambiarías x diferencia de precio; ahorro por mes = ahorro / meses; diferencia de equilibrio = ahorro mínimo / compra que cambiarías. Todas las cifras de la página (120 €, 40 %, 20 %, 25 %, 100 €, 3 personas, 12 meses) son ejemplos declarados y editables; la diferencia de precio es una hipótesis del usuario, no un dato de mercado, y no se usan precios ni marcas concretas. Para comparar productos y conocer tus derechos como consumidor: Organización de Consumidores y Usuarios, https://www.ocu.org (consultada el 2/10/2026; no se usan sus cifras en el cálculo), y Ministerio de Consumo, https://www.consumo.gob.es (consultado el 2/10/2026). Información orientativa, no asesoramiento financiero."
+}

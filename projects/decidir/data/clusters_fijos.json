@@ -105,7 +105,7 @@
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",
   "hotel-o-apartamento-viaje-en-grupo",
-  "bici-electrica-o-transporte-publico"
+  "equipaje-y-asiento-avion-coste-real"
  ],
  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
   "declaracion-conjunta-o-individual",
@@ -205,7 +205,7 @@
  "comprar-o-alquilar-trastero": [
   "comprar-o-alquilar-herramienta",
   "alquilar-o-comprar",
-  "contado-o-financiar"
+  "mudanza-empresa-o-furgoneta"
  ],
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
@@ -215,12 +215,12 @@
  "reformar-o-mudarse": [
   "alquilar-o-comprar",
   "comprar-o-alquilar-trastero",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "mudanza-empresa-o-furgoneta"
  ],
  "hotel-o-apartamento-viaje-en-grupo": [
   "tren-avion-o-coche",
   "contado-o-financiar",
-  "navidad-cuanto-gastar-sin-endeudarte"
+  "equipaje-y-asiento-avion-coste-real"
  ],
  "autonomo-o-sociedad-limitada": [
   "autonomo-o-asalariado",
@@ -230,7 +230,7 @@
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
   "reformar-o-mudarse",
-  "comprar-o-alquilar-trastero"
+  "irpf-alquilar-vivienda-rendimiento-neto"
  ],
  "capitalizar-paro-o-cobrarlo": [
   "autonomo-o-sociedad-limitada",
@@ -250,7 +250,7 @@
  ],
  "obligado-a-declarar-renta-dos-pagadores": [
   "declaracion-conjunta-o-individual",
-  "comparar-ofertas-de-trabajo-neto-real",
+  "irpf-alquilar-vivienda-rendimiento-neto",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "gimnasio-o-entrenar-en-casa": [
@@ -262,5 +262,20 @@
   "suscripciones-cuanto-gasto-al-ano",
   "teletrabajo-o-oficina-coste-real",
   "navidad-cuanto-gastar-sin-endeudarte"
+ ],
+ "irpf-alquilar-vivienda-rendimiento-neto": [
+  "declaracion-conjunta-o-individual",
+  "obligado-a-declarar-renta-dos-pagadores",
+  "alquilar-o-comprar"
+ ],
+ "mudanza-empresa-o-furgoneta": [
+  "reformar-o-mudarse",
+  "alquilar-o-comprar",
+  "comprar-o-alquilar-trastero"
+ ],
+ "equipaje-y-asiento-avion-coste-real": [
+  "tren-avion-o-coche",
+  "hotel-o-apartamento-viaje-en-grupo",
+  "contado-o-financiar"
  ]
 }

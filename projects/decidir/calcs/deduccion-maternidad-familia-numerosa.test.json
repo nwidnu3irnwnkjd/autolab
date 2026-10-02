@@ -1,0 +1,410 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 1 hijo <3, guardería 10 meses, familia general de 3 hijos",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "general",
+    "hijosFam": 3,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 833.33,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 3233.33,
+    "recorte": 0.0,
+    "anticipoMes": 200.0,
+    "anticipoAnual": 2400.0,
+    "resto": 833.33
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "solo maternidad, 12 meses, sin guardería",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 0,
+    "guarMeses": 0,
+    "guarGasto": 0,
+    "fam": "no",
+    "hijosFam": 3,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 0.0,
+    "fam": 0.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 1200.0,
+    "recorte": 0.0,
+    "anticipoMes": 100.0,
+    "anticipoAnual": 1200.0,
+    "resto": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 0 hijos y sin familia numerosa",
+   "in": {
+    "n3": 0,
+    "mesesMat": 12,
+    "mesesFam": 0,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "no",
+    "hijosFam": 3,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 0.0,
+    "guar": 0.0,
+    "fam": 0.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 0.0,
+    "recorte": 0.0,
+    "anticipoMes": 0.0,
+    "anticipoAnual": 0.0,
+    "resto": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: cotización 0, especial 6 hijos (se conservan los incrementos)",
+   "in": {
+    "n3": 0,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "especial",
+    "hijosFam": 6,
+    "cotiz": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 0.0,
+    "guar": 0.0,
+    "fam": 0,
+    "especial": 1200.0,
+    "exceso": 600.0,
+    "deduccion": 1800.0,
+    "recorte": 1200.0,
+    "anticipoMes": 250.0,
+    "anticipoAnual": 3000.0,
+    "resto": -1200.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: cotización 0, general (se pierde la parte básica, no los 1.200 € de maternidad)",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "general",
+    "hijosFam": 3,
+    "cotiz": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 833.33,
+    "fam": 0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 2033.33,
+    "recorte": 1200.0,
+    "anticipoMes": 200.0,
+    "anticipoAnual": 2400.0,
+    "resto": -366.67
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "gasto de guardería menor que el tope de 1.000 €",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 400,
+    "fam": "general",
+    "hijosFam": 3,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 400,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 2800.0,
+    "recorte": 0.0,
+    "anticipoMes": 200.0,
+    "anticipoAnual": 2400.0,
+    "resto": 400.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "especial 5 hijos, dos progenitores, 2 hijos <3",
+   "in": {
+    "n3": 2,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "especialx2",
+    "hijosFam": 5,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 2400.0,
+    "guar": 1666.67,
+    "fam": 600.0,
+    "especial": 600.0,
+    "exceso": 0.0,
+    "deduccion": 5266.67,
+    "recorte": 0.0,
+    "anticipoMes": 300.0,
+    "anticipoAnual": 3600.0,
+    "resto": 1666.67
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "general 5 hijos, 7 meses, cotización 500 €",
+   "in": {
+    "n3": 2,
+    "mesesMat": 7,
+    "mesesFam": 7,
+    "guarMeses": 7,
+    "guarGasto": 3000,
+    "fam": "general",
+    "hijosFam": 5,
+    "cotiz": 500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1400.0,
+    "guar": 1166.67,
+    "fam": 500,
+    "especial": 0.0,
+    "exceso": 700.0,
+    "deduccion": 3766.67,
+    "recorte": 200.0,
+    "anticipoMes": 400.0,
+    "anticipoAnual": 2800.0,
+    "resto": 966.67
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "ascendiente separado con 2 hijos",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "mono2",
+    "hijosFam": 2,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 833.33,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 3233.33,
+    "recorte": 0.0,
+    "anticipoMes": 200.0,
+    "anticipoAnual": 2400.0,
+    "resto": 833.33
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "inválido: general con 2 hijos",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "general",
+    "hijosFam": 2,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 1,
+    "mat": 0,
+    "guar": 0,
+    "fam": 0,
+    "especial": 0,
+    "exceso": 0,
+    "deduccion": 0,
+    "recorte": 0,
+    "anticipoMes": 0,
+    "anticipoAnual": 0,
+    "resto": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: 12 meses de guardería, 3 hijos <3, general 4 hijos",
+   "in": {
+    "n3": 3,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 12,
+    "guarGasto": 5000,
+    "fam": "general",
+    "hijosFam": 4,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 3600.0,
+    "guar": 3000.0,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 600.0,
+    "deduccion": 8400.0,
+    "recorte": 0.0,
+    "anticipoMes": 450.0,
+    "anticipoAnual": 5400.0,
+    "resto": 3000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "maternidad 12 meses y familia numerosa 6 meses (meses separados)",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 6,
+    "guarMeses": 10,
+    "guarGasto": 3000,
+    "fam": "general",
+    "hijosFam": 3,
+    "cotiz": 2000
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 833.33,
+    "fam": 600.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 2633.33,
+    "recorte": 0.0,
+    "anticipoMes": 200.0,
+    "anticipoAnual": 1800.0,
+    "resto": 833.33
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "B: paro o pensión todo el año; el diseño no tiene opción de paro, se escribe cotiz 1.200 o más (con 0 se pierde la base: ver caso de cotización 0)",
+   "in": {
+    "n3": 0,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 0,
+    "guarGasto": 0,
+    "fam": "general",
+    "hijosFam": 3,
+    "cotiz": 1200
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 0.0,
+    "guar": 0.0,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 1200.0,
+    "recorte": 0.0,
+    "anticipoMes": 100.0,
+    "anticipoAnual": 1200.0,
+    "resto": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "solo maternidad con alta ya terminada (0 meses de familia) y guardería 12 meses",
+   "in": {
+    "n3": 1,
+    "mesesMat": 12,
+    "mesesFam": 0,
+    "guarMeses": 12,
+    "guarGasto": 5000,
+    "fam": "no",
+    "hijosFam": 3,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 1200.0,
+    "guar": 1000.0,
+    "fam": 0.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 2200.0,
+    "recorte": 0.0,
+    "anticipoMes": 100.0,
+    "anticipoAnual": 1200.0,
+    "resto": 1000.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "D: ascendiente separado con 2 hijos, un solo titular (2 titulares no existe en el formulario: no hay opción mono2x2)",
+   "in": {
+    "n3": 0,
+    "mesesMat": 12,
+    "mesesFam": 12,
+    "guarMeses": 0,
+    "guarGasto": 0,
+    "fam": "mono2",
+    "hijosFam": 2,
+    "cotiz": 3500
+   },
+   "expect": {
+    "invalido": 0,
+    "mat": 0.0,
+    "guar": 0.0,
+    "fam": 1200.0,
+    "especial": 0.0,
+    "exceso": 0.0,
+    "deduccion": 1200.0,
+    "recorte": 0.0,
+    "anticipoMes": 100.0,
+    "anticipoAnual": 1200.0,
+    "resto": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}
