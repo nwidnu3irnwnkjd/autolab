@@ -147,3 +147,10 @@
 - 5h 37 %, semanal 44 %, extra 0,55 €.
 - Fiscales pendientes: baja-medica (confianza C), aceptar-trabajo-cobrando-paro, deduccion-alquiler-comunidad. Investigador fiscal cuando <3.
 - Siguiente (c43): 1 fiscal (aceptar-trabajo-cobrando-paro o baja-medica) + Editor + Estratega ligero; c44 Estratega Opus.
+
+## Ciclo 43 cerrado
+- Publicada: aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad (Opus: 5 cambios; crítico: DA 59.ª.4 LGSS [paro > 12 meses reconocido desde 1-4-2025] cambia el CAE del subsidio: select con bloqueo; LISOS 25.4.a/47.1.b rechazo de oferta adecuada). Nota de DA 59.ª.4 añadida al subsidio-desempleo (cuanto-cobro-de-paro sin cambios). 93 calculadoras.
+- Editor 3.ª pasada (12 calculadoras, FAQ >50 palabras recortadas).
+- 5h 44 % (reset 13:40Z), semanal 45 %, extra 0,55 €.
+- Fiscales pendientes: baja-medica (confianza C: RD 53/1980), deduccion-alquiler-comunidad. Reponer (Investigador Opus) en c44.
+- Siguiente (c44): Estratega Opus + Investigador fiscal Opus (reponer) + Editor; después del sprint (21:00Z) pasar a cadencia de presupuesto.
