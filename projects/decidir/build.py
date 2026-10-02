@@ -128,7 +128,9 @@ def main():
     HUB_PAGES = []
     for k, spec in ACTIVE_HUBS.items():  # hubs temáticos (hubs.py): mapa en orden de decisión con datos vivos
         hbody, hld, hmod = hubs.page(k, spec, calcs, GUIDES, params, LIVE, card, B, baro_texts=barometro.answers_text(BARO) or [], tablas_items=tablas.hub_items(k))
-        if k == "hipoteca": hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", plan.hub_link(spec["path"]))
+        if k in ("hipoteca", "impuestos"):
+            pl = "".join(plan.hub_link(spec["path"], pk) for pk in (["compra-vivienda"] if k == "hipoteca" else ["autonomo", "despido"]))
+            hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", pl)
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
     s27body, s27ld = semana.cambios_page(params, calcs, card, seo.lastmod(*semana.FILES), seo.AUTHOR)  # /que-cambia-1-enero-2027/ (c51)
@@ -136,12 +138,14 @@ def main():
     write(semana.PATH2027, semana.H2027, semana.D2027, s27body, priority="0.8", lastmod=s27mod, og_tema="impuestos",
           jsonld=[seo.article(semana.H2027, semana.D2027, B + semana.PATH2027, s27pub, s27mod, B), seo.breadcrumbs(B, [("Inicio", "/"), ("Qué cambia en 2027", None)])] + s27ld)
     HUB_PAGES.append(dict(path=semana.PATH2027, h1=semana.H2027, description=semana.D2027, modified=s27mod, published=s27pub))
-    pmod = seo.lastmod(*plan.FILES); ppub = seo.published("plan.py"); pp = plan.PLANES["compra-vivienda"]
-    pbody, pld = plan.page("compra-vivienda", calcs, card, B, ppub, pmod)
-    write(pp["path"], pp["title"], pp["description"], pbody, jsonld=pld, priority="0.8", lastmod=pmod, og="og-hipoteca.png")
-    HUB_PAGES.append(dict(path=pp["path"], h1=pp["h1"], description=pp["description"], modified=pmod, published=ppub))
+    pmod = seo.lastmod(*plan.FILES); ppub = seo.published("plan.py")
+    for pk, pp in plan.PLANES.items():  # planes completos (Diseñador, R16.4): compra de vivienda, autónomo, despido
+        if pk.startswith("_"): continue
+        pbody, pld = plan.page(pk, calcs, card, B, ppub, pmod)
+        write(pp["path"], pp["title"], pp["description"], pbody, jsonld=pld, priority="0.8", lastmod=pmod, og=f"og-{'hipoteca' if pk == 'compra-vivienda' else 'impuestos'}.png")
+        HUB_PAGES.append(dict(path=pp["path"], h1=pp["h1"], description=pp["description"], modified=pmod, published=ppub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
-    dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', plan.dir_li())  # plan completo (Diseñador)
+    dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(plan.dir_li(k) for k in plan.PLANES if not k.startswith('_')))  # planes completos (Diseñador)
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
           seo.insert_before(dbody, '<div class="search" role="search">', ASIS), jsonld=dld, priority="0.8", lastmod=dmod)
     if GUIDES:
