@@ -88,3 +88,9 @@
 - 5h 48 % (reset 08:40Z), semanal 37 %, extra 0,55 €.
 - Fiscales pendientes: cuota-autonomos-ingresos-reales-regularizacion, tarifa-plana-autonomos (comprobar RDL 3/2026 convalidado antes), jubilacion-activa-o-dejar-de-trabajar, retencion-irpf-nomina-subir-o-no, deduccion-alquiler-vivienda-habitual-comunidad.
 - Siguiente (c35): con 5h reseteado, 2 fiscales o 1 fiscal + 2 no fiscales (vivir-cerca-del-trabajo etc.); Estratega ligero; c36 Estratega Opus + T24 (páginas de dato propio).
+
+## Ciclo 35 cerrado
+- Publicadas: retencion-irpf-nomina-subir-o-no (Opus: 7 cambios, entre ellos el segundo pagador por orden de cuantía art. 96.3.a.1.º), vivir-cerca-del-trabajo-o-mas-barato-lejos, hipoteca-mas-entrada-o-conservar-ahorros (19/20). 80 calculadoras.
+- 5h 1 % (reseteado), semanal 38 %, extra 0,55 €.
+- Andoni pidió pasos para: indexación home, feed.xml en GSC, Bing Webmaster, CNAME www. Respondido en chat (punto 5 enlaces externos descartado por él).
+- Siguiente (c36): Estratega Opus + T24 páginas de dato propio; fiscales: cuota-autonomos y tarifa-plana (comprobar RDL 3/2026), jubilacion-activa, deduccion-alquiler-comunidad.
