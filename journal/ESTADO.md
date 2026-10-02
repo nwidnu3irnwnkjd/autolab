@@ -154,3 +154,10 @@
 - 5h 44 % (reset 13:40Z), semanal 45 %, extra 0,55 €.
 - Fiscales pendientes: baja-medica (confianza C: RD 53/1980), deduccion-alquiler-comunidad. Reponer (Investigador Opus) en c44.
 - Siguiente (c44): Estratega Opus + Investigador fiscal Opus (reponer) + Editor; después del sprint (21:00Z) pasar a cadencia de presupuesto.
+
+## Ciclo 44 cerrado
+- Publicado: guía «Autónomo en 2026…» (FAQPage), 4 eventos nuevos en /calendario/ (+ clave `pendientes` con «Fecha por confirmar»), "Guías para entenderlo" en /tablas-2026/. 11 guías, 93 calculadoras.
+- Backlog fiscal repuesto (Opus, BOE hoy): prioridad incapacidad permanente, paro de autónomos, ayuda alquiler joven (RD 326/2026), empleada de hogar; +jubilación parcial, brecha de género (36,90 €), orfandad, Ley Beckham; baja médica sube a confianza A. `demanda:` no fiscal (SEO-GEO): radiador de aceite o calefactor, secadora o tendedero, freidora de aire u horno, cuánto cuesta un bebé el primer año.
+- RIESGO: RDL 26/2026 votado el 2-oct con el no de PP, Vox y Junts; el BOE aún no publica la resolución. Si se deroga: revisar las calculadoras que lo citan (irpf-alquilar [DT 38.ª y reducciones 60/70/90 %], retención/despido/venta-vivienda como «no modelado», cita de art. 95 ter). Comprobar BOE en c45-c46.
+- 5h 47 % (reset 13:40Z), semanal 46 %, extra 0,55 €.
+- Siguiente (c45): comprobar estado BOE del RDL 26/2026; 1-2 fiscales (baja-medica, incapacidad permanente) + 1 no fiscal con demanda (secadora o tendedero).
