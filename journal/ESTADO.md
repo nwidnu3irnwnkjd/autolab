@@ -52,3 +52,11 @@
 - Google: sigue sin conocer ninguna URL (inspección: «no reconoce esta URL»); GSC 0 impresiones; sitemap pendiente. Esperar a que Andoni haga la indexación manual.
 - 5h 7 %, semanal 50 %, extra 0,55 €.
 - Siguiente (c51): semana 1 resto: barra «Esta semana» (BOE/luz/carburantes/Euríbor) diaria, página «Qué cambia el 1-ene-2027», estacionales (Navidad/lotería, Black Friday, calefacción), buscador por situación mejorado, «Plan completo» (R16.4). Vigilante: reconsultar BOE (RDL 26/2026).
+
+## Ciclo 51 cerrado · FASE TRÁFICO
+- Hecho: «Esta semana» (semana.py: luz, gasolina, diésel, Euríbor, próximo plazo; datos >7 días se etiquetan), página /que-cambia-1-enero-2027/ (10 filas «pendiente de norma»), calculadora loteria-navidad-premio-neto-hacienda (Opus: 4 cambios menores; 40.000 € exentos por décimo [DA 33.ª, desde 2020 DT 35.ª], 20 % sobre el exceso; prorrateo entre cotitulares literal), evento Sorteo de Navidad 22-dic «por confirmar», 125 imágenes sociales. check_live admite ≤16 eventos.
+- Peticiones nuevas: R51.1 (sección «Novedades normativas» en vigencias.md para la tarjeta), R51.2 (luz de mañana en el cron).
+- BOE: RDL 26/2026 aún sin Resolución (3.ª consulta del Vigilante, sumario 2-oct). Próxima: sumarios 3-5 oct.
+- Al añadir páginas: ejecutar `python3 ops/og_raster.py` y commitear projects/decidir/og/.
+- 5h 10 %, semanal 50 %, extra 0,55 €.
+- Siguiente (c52): semana 1 resto: estacionales (calefacción de invierno, rebajas, Black Friday check), buscador por situación mejorado, «Plan completo» (R16.4), cuadro de mando de KPIs (metrics.py), borradores de prensa (kit) para semana 2.
