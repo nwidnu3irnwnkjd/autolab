@@ -17,7 +17,7 @@
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual",
-  "rescate-plan-pensiones-capital-o-renta"
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "bici-electrica-o-transporte-publico": [
   "tren-avion-o-coche",
@@ -66,12 +66,18 @@
  ],
  "declaracion-conjunta-o-individual": [
   "rescate-plan-pensiones-capital-o-renta",
-  "autonomo-o-asalariado"
+  "autonomo-o-asalariado",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
   "seguro-todo-riesgo-o-terceros",
   "luz-fija-o-indexada"
+ ],
+ "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
+  "autonomo-o-asalariado",
+  "declaracion-conjunta-o-individual",
+  "rescate-plan-pensiones-capital-o-renta"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
@@ -98,6 +104,11 @@
   "amortizar-o-invertir",
   "declaracion-conjunta-o-individual"
  ],
+ "portatil-o-movil-comprar-renting-o-financiar": [
+  "contado-o-financiar",
+  "reparar-o-comprar-electrodomestico",
+  "guarderia-cuidadora-o-reducir-jornada"
+ ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
   "luz-fija-o-indexada",
@@ -105,7 +116,8 @@
  ],
  "rescate-plan-pensiones-capital-o-renta": [
   "declaracion-conjunta-o-individual",
-  "autonomo-o-asalariado"
+  "autonomo-o-asalariado",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
@@ -116,6 +128,11 @@
   "hipoteca-fija-o-variable",
   "amortizar-plazo-o-cuota",
   "amortizar-o-invertir"
+ ],
+ "teletrabajo-o-oficina-coste-real": [
+  "contado-o-financiar",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "plan-pensiones-o-fondo-indexado"
  ],
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",

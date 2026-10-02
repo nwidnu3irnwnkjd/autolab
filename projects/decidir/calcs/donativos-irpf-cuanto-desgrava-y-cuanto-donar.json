@@ -1,0 +1,93 @@
+{
+  "slug": "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "title": "Donativos y IRPF 2026: cuánto desgrava y cuánto donar",
+  "description": "Calcula cuánto desgrava donar a una ONG en el IRPF 2026 (80 % hasta 250 €, 40 % o 45 % el resto), el límite del 10 % y lo que te cuesta de verdad.",
+  "h1": "Donativos y IRPF: cuánto desgrava y cuánto donar",
+  "lead": "Donar a una entidad de la Ley 49/2002 desgrava en la cuota del IRPF el 80 % de los primeros 250 € y el 40 % del resto (45 % si donas a la misma entidad tres años seguidos por un importe igual o creciente), con un tope del 10 % de tu base liquidable; pero con la deducción estatal siempre te cuesta dinero (alguna deducción autonómica puede dejar el primer tramo a coste 0, nunca en ganancia): con 300 € donados la cuota baja 220 € y la donación te cuesta 80 € netos. Con base liquidable baja, la cuota limita la deducción. Calcula con tus datos cuánto te desgrava y cuánto te cuesta.",
+  "veredicto": "Donar desgrava el 80 % de los primeros 250 € y el 40 % del resto (45 % con tres años seguidos a la misma entidad), hasta el 10 % de tu base liquidable, pero no es un negocio (con la deducción estatal siempre te cuesta dinero; alguna autonómica, como la valenciana, puede dejar los primeros 250 € a coste 0, nunca en ganancia): con 300 € donados te desgravan 220 € y te cuestan 80 € netos. El mejor tramo es el de los primeros 250 € (cada euro cuesta 0,20 €) y por encima cada euro cuesta 0,60 € (0,55 € si eres recurrente) hasta el tope del 10 %.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "donado",
+      "label": "Importe donado (o que vas a donar) este año a la entidad (€)",
+      "default": 300,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "recurrente",
+      "label": "¿Donaste a esa misma entidad en los dos años anteriores, y este año y el pasado donas cada uno igual o más que el año previo?",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "No"
+        },
+        {
+          "v": "1",
+          "t": "Sí (3 años seguidos; este año ≥ el pasado ≥ el anterior)"
+        }
+      ]
+    },
+    {
+      "id": "bl",
+      "label": "Tu base liquidable, general más del ahorro (€ al año; casillas 0500 y 0510 de la renta, o 0505 y 0510 si compensas bases negativas)",
+      "default": 25000,
+      "min": 0,
+      "step": 1000
+    },
+    {
+      "id": "adicional",
+      "label": "Importe adicional que estás pensando donar (€; 0 si ninguno)",
+      "default": 200,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "ambito",
+      "label": "Dónde tributas por IRPF",
+      "type": "select",
+      "options": [
+        {
+          "v": "comun",
+          "t": "Régimen común (cualquier comunidad salvo las tres siguientes)"
+        },
+        {
+          "v": "vasco",
+          "t": "País Vasco (haciendas forales)"
+        },
+        {
+          "v": "navarra",
+          "t": "Navarra (hacienda foral)"
+        },
+        {
+          "v": "ceutamelilla",
+          "t": "Ceuta o Melilla (se calcula igual, con aviso)"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto desgrava donar a una ONG en la renta?",
+      "Si la entidad está acogida a la Ley 49/2002, el 80 % de los primeros 250 € donados en el año y el 40 % del resto, y el 45 % del resto si donaste a esa misma entidad en los dos años anteriores y el importe de este año y el del año pasado es, cada uno, igual o superior al del ejercicio inmediatamente anterior (art. 19.1 de la Ley 49/2002). La deducción se resta de la cuota íntegra, no de la base. Ejemplo: con 300 € donados sin recurrencia la deducción es de 220 € (200 € por los primeros 250 € y 20 € por los 50 € restantes) y el coste neto de la donación, 80 €. Con 250 € exactos, 200 € de deducción y 50 € de coste neto."
+    ],
+    [
+      "¿Qué es donar de forma recurrente?",
+      "Que en los dos ejercicios anteriores hayas hecho donativos con derecho a deducción a la misma entidad y que el importe de este año y el del año pasado sea, cada uno, igual o superior al del ejercicio inmediatamente anterior. Es decir, tres años seguidos con importes iguales o crecientes. Solo mejora el porcentaje de lo que supere 250 € a favor de esa entidad: pasa del 40 % al 45 %. Por ejemplo, con 2.000 € donados y base liquidable de 20.000 €, la deducción es de 987,50 € con recurrencia frente a 900 € sin ella."
+    ],
+    [
+      "¿Hay un límite a lo que puedo deducir por donar?",
+      "Sí: la base de la deducción no puede superar el 10 % de la base liquidable (art. 69.1 de la Ley del IRPF y art. 19.2 de la Ley 49/2002). Con una base liquidable de 20.000 €, solo cuentan 2.000 € donados: si donas 3.000 €, el exceso de 1.000 € no desgrava. En el IRPF la norma no prevé arrastrar ese exceso a ejercicios posteriores; la compensación a diez años que recoge la Ley 49/2002 es la del Impuesto sobre Sociedades (art. 20). Además, como la deducción se resta de la cuota, si tu cuota es baja puede que no la aproveches entera."
+    ],
+    [
+      "¿Qué tengo que hacer para poder deducirlo?",
+      "Donar a una entidad beneficiaria del art. 16 de la Ley 49/2002 y que el donativo sea irrevocable, puro y simple. La entidad debe darte un certificado con tu NIF y el suyo, la mención de que está acogida a esa ley, la fecha y el importe (art. 24); la deducción se aplica en el ejercicio en que haces la donación, así que lo que dones antes del 31 de diciembre cuenta para esta renta. Si recibes algo a cambio, solo vale si es simbólico y no supera el 15 % del donativo ni 25.000 € (art. 17.2). Guarda también el justificante del pago."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "Cubre a personas físicas (en Ceuta y Melilla calcula lo mismo con un aviso: el 60 % del art. 68.4 reduce la cuota, no la deducción por donativos) con donativos a entidades de la Ley 49/2002 en régimen común: no incluye el País Vasco ni Navarra (haciendas forales), donativos a partidos políticos, empresas ni deducciones autonómicas por donativos, que existen en algunas comunidades y se suman a la estatal: consulta la tuya. Tampoco modela las actividades prioritarias de mecenazgo, donde la Ley de Presupuestos puede subir hasta cinco puntos los porcentajes y el límite (art. 22), ni las fundaciones fuera de la Ley 49/2002 (10 %), ni el límite por la cuota: la deducción no puede dejar la cuota por debajo de 0 €, y con base liquidable menor de 5.550 € la cuota es 0 € y no desgrava nada. Se supone que todo lo donado va a una sola entidad."
+    ]
+  ],
+  "sources": "Modelo propio de la deducción por donativos del IRPF del ejercicio 2026 (declaración de 2027), calculado con la Ley 49/2002 de régimen fiscal de las entidades sin fines lucrativos y de los incentivos fiscales al mecenazgo, texto consolidado a 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2002-25039), consultada el 2/10/2026: art. 19 (escala 80 % hasta 250 € y 40 % el resto, 45 % con recurrencia; redacción del Real Decreto-ley 6/2023, en vigor desde el 1/1/2024), arts. 16, 17, 18 y 24 (entidades, donativos deducibles, base y certificado), art. 22 (actividades prioritarias, no modelado) y art. 20 (arrastre de 10 años, solo Impuesto sobre Sociedades); y la Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 68.3 (deducciones por donativos), art. 69.1 (límite del 10 % de la base liquidable), art. 67 (cuota líquida) y art. 68.4 (Ceuta y Melilla). Agencia Tributaria, Manual práctico de Renta 2025: porcentajes (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c16-deducciones-generales-cuota/deducciones-donativos-otras-aportaciones/donativos-realizados-entidades-incluidas/general-donativos-donaciones-entidades-beneficiarias-mecenazgo/porcentajes-deduccion.html), límite aplicable (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c16-deducciones-generales-cuota/deducciones-donativos-otras-aportaciones/limite-aplicable.html) y requisitos (https://sede.agenciatributaria.gob.es/Sede/eu_es/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c16-deducciones-generales-cuota/deducciones-donativos-otras-aportaciones/requisitos-comunes-deducciones-donativos.html), consultados el 2/10/2026. Supuestos: persona física; todo lo donado va a una sola entidad (con varias, el 45 % solo mejora lo donado a la que cumple la recurrencia); los 250 € al 80 % se aplican al conjunto de donativos; la base liquidable es la del ejercicio 2026 y se indica sin las deducciones; no se limita por la cuota (la deducción real es menor si la cuota es baja; con base liquidable inferior a 5.550 € es 0 €, art. 57 Ley 35/2006). Excluidos: País Vasco y Navarra, partidos políticos, empresas, deducciones autonómicas, actividades prioritarias de mecenazgo y fundaciones fuera de la Ley 49/2002. Información orientativa, no asesoramiento fiscal."
+}

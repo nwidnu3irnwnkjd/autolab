@@ -24,8 +24,6 @@ LIVE = seo.load_live()  # data/live.json (ops/refresh_data.py): Pulso / «Dato d
 NOTES = seo.load_actualidad()  # content/actualidad/*.html (ops/triggers.py): solo si hay notas
 BARO = None  # datos del Barómetro (main)
 ACTIVE_HUBS = {}  # hubs que cumplen el disparador (main)
-# enlace al hub en el pie: edición por build mientras la plantilla no lo lleve (Diseñador puede moverlo a base.html y borrar esta línea)
-BASE = Template(BASE.template.replace('<a href="/barometro/">Barómetro</a>', '<a href="/hipoteca/">Hipotecas</a><a href="/barometro/">Barómetro</a>', 1)) if '/hipoteca/' not in BASE.template else BASE
 
 def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None):
     """path: '/' o '/decidir/slug/'. Genera index.html en esa carpeta."""

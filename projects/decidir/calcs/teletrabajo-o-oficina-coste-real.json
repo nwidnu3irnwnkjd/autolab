@@ -1,0 +1,97 @@
+{
+  "slug": "teletrabajo-o-oficina-coste-real",
+  "title": "Teletrabajo u oficina: cuánto ahorras o gastas al año",
+  "description": "Calcula con tus datos cuánto te ahorra o te cuesta teletrabajar: desplazamiento, comida, gasto en casa, compensación de la empresa y días de equilibrio.",
+  "h1": "Teletrabajo u oficina: ¿cuánto te cuesta o te ahorra de verdad?",
+  "lead": "Teletrabajar ahorra dinero cuando lo que dejas de gastar en desplazamiento y comida fuera supera lo que gastas de más en casa y en equipamiento, y la compensación de la empresa, si existe, inclina la balanza; con 6 € de desplazamiento y 5 € de comida por día y 0,70 € de gasto extra en casa, 2 días a la semana ahorran 873 € al año, pero con solo 2 € de gasto extra por día y sin desplazamiento ni comida que evitar cuesta 184 €. Pon tus días y tus gastos y la página te da el balance, los días de equilibrio y la compensación mínima.",
+  "veredicto": "Teletrabajar ahorra dinero si lo que evitas por día (desplazamiento y comida) supera tu gasto extra en casa, y el equipamiento y la compensación de la empresa mueven el resultado; la calculadora te da el ahorro o coste anual, los días de equilibrio y la compensación mínima con tus datos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "dias",
+      "label": "Días de teletrabajo por semana (de 0,5 a 5; 2 es un ejemplo)",
+      "default": 2,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "desp",
+      "label": "Desplazamiento que evitas por día (€, ida y vuelta; por defecto, 30 km con la gasolina 95 de hoy, 6,5 l/100 km y 0,08 €/km de desgaste; si usas abono, solo ahorras lo que de verdad dejas de pagar)",
+      "default": 6,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "live.gasolina95",
+      "default_factor": 1.95,
+      "default_add": 2.4,
+      "default_round": 2
+    },
+    {
+      "id": "min",
+      "label": "Tiempo de desplazamiento ida y vuelta por día (minutos; 60 es un ejemplo)",
+      "default": 60,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "valorHora",
+      "label": "Valor de tu hora (€/h; opcional, 0 si no quieres valorar el tiempo)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "casa",
+      "label": "Gasto extra en casa por día de teletrabajo (€; luz, calefacción e internet; por defecto, 3 kWh por el PVPC medio de hoy sin impuestos, un supuesto de ejemplo)",
+      "default": 0.7,
+      "min": 0,
+      "step": 0.1,
+      "default_from": "live.luz_pvpc",
+      "default_factor": 3,
+      "default_round": 2
+    },
+    {
+      "id": "comida",
+      "label": "Cuánto más cuesta comer fuera que en casa (€/día; 5 € es un ejemplo)",
+      "default": 5,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "comp",
+      "label": "Compensación de la empresa por teletrabajar (€/mes; 0 si no hay)",
+      "default": 0,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "equip",
+      "label": "Equipamiento que compras para teletrabajar (€ una vez: silla, monitor...; se reparte en 4 años; 300 € es un ejemplo)",
+      "default": 300,
+      "min": 0,
+      "step": 50
+    }
+  ],
+  "faqs": [
+    [
+      "¿Teletrabajar ahorra dinero?",
+      "Depende de lo que evites y de lo que gastes de más. Ahorras cuando el desplazamiento y la comida fuera que dejas de pagar superan el gasto extra en casa (luz, calefacción, internet) y el equipamiento. Con los ejemplos de la página, 2 días a la semana ahorran 873 € al año; con un gasto en casa mayor que lo que evitas, cuesta dinero. Con tus datos, la calculadora lo decide."
+    ],
+    [
+      "¿Cuántos días de teletrabajo hacen falta para que compense?",
+      "El balance es una recta: cada día suma lo que evitas menos lo que gastas en casa, y la inversión en equipamiento y la compensación son costes o ingresos fijos. Si el día ahorra pero el equipamiento supera la compensación, hay un mínimo de días; si el día cuesta dinero, la compensación solo lo cubre hasta cierto número de días. La página calcula ese número con tus datos y avisa si pasa de 5."
+    ],
+    [
+      "¿Qué compensación de la empresa necesito para no perder dinero?",
+      "La que cubra la diferencia entre el equipamiento repartido y lo que ya ahorras por día. La calculadora la da en euros al mes: si sale 0, ya no pierdes dinero sin compensación; si no, es el mínimo que debería aportar la empresa para que el balance sea cero."
+    ],
+    [
+      "¿Cuenta el tiempo que ahorro en desplazarme?",
+      "La página muestra las horas al año que ahorras y, si pones el valor de tu hora, lo que valen y el balance con tiempo. No lo suma al balance en euros por defecto, porque es tu valoración personal y no un gasto."
+    ],
+    [
+      "¿Qué no incluye este cálculo?",
+      "No incluye la deducibilidad fiscal de gastos de teletrabajo (consulta con tu empresa o asesor), la productividad, el bienestar ni cambios de salario. Cuenta 46 semanas al año (descontando vacaciones y festivos), reparte el equipamiento en 4 años y supone que el desplazamiento que ahorras es gasto que de verdad evitas: un abono mensual solo se ahorra si lo das de baja."
+    ]
+  ],
+  "sources": "Modelo propio: balance anual = días por semana x 46 semanas x (desplazamiento evitado + comida fuera evitada - gasto extra en casa) + compensación mensual x 12 - equipamiento / 4 años; con 0 días no hay teletrabajo y la compensación y el equipamiento no se cuentan. Días de equilibrio = punto donde el balance se hace cero entre 0 y 5 días; compensación mínima = equipamiento anual menos lo que ya ahorras, entre 12 meses. Desplazamiento por defecto: precio medio de la gasolina 95 (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 6,5 l/100 km x 30 km + 0,08 €/km x 30 km; si no hay dato vivo, 6 €. Gasto en casa por defecto: PVPC medio del día (Red Eléctrica de España, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) x 3 kWh por día de teletrabajo; si no hay dato vivo, 0,70 €. Los 30 km, los 6,5 l/100 km, el desgaste, los 3 kWh, las 46 semanas, los 4 años de amortización, la comida, los minutos, el equipamiento y todo lo demás son supuestos o ejemplos declarados y editables, no datos oficiales. No se modelan la deducibilidad fiscal de gastos de teletrabajo, la productividad, el bienestar ni cambios de salario. Información orientativa, no asesoramiento."
+}

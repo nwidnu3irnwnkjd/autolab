@@ -393,3 +393,17 @@ article.guide thead th{font-size:13px}
   article.guide td[data-label]::before{content:attr(data-label);flex:none;max-width:45%;text-align:left;font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;padding-top:2px}
   article.guide tbody tr>:last-child{border-bottom:0}
 }
+/* Hub /hipoteca/: stepper vertical */
+article.hub{counter-reset:paso}
+article.hub section.box{position:relative;counter-increment:paso;margin:0 0 0 18px;padding:18px 18px 18px 38px;background:var(--surface);border:1px solid var(--card-border);border-left:0;border-radius:0 var(--r) var(--r) 0;box-shadow:var(--shadow);margin-top:14px}
+article.hub section.box::before{content:"";position:absolute;left:-1px;top:-14px;bottom:-14px;width:3px;background:var(--line)}
+article.hub section.box::after{content:counter(paso);position:absolute;left:-16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-fg);font:700 15px/32px var(--font);text-align:center;box-shadow:0 0 0 4px var(--bg)}
+article.hub section.box h3{margin:0 0 6px;font-size:1.05rem;color:var(--fg)}
+article.hub section.box p{margin:8px 0 0}
+article.hub section.box .note:not(.hub-link){display:block;padding:10px 12px;border-radius:var(--r-sm);background:var(--accent-soft);color:var(--fg);border-left:3px solid var(--accent);font-weight:500}
+article.hub section.box .note time{font-weight:700}
+article.hub section.box .btn2{margin:4px 12px 4px 0}
+article.hub h2+section.box::before{top:0}
+p.hub-link.note{padding:12px 16px;border:1.5px solid var(--accent);border-radius:var(--r-sm);background:var(--accent-soft);color:var(--fg)}
+p.hub-link.note a{font-weight:700;color:var(--accent-ink)}
+@media (max-width:480px){article.hub section.box{margin-left:14px;padding-left:30px}article.hub section.box .btn2{width:100%;margin-right:0}}

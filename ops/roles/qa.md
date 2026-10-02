@@ -30,3 +30,6 @@ Nada de regex ni de contar a ojo para estructuras. Usa estos parseadores (Python
 - Navegador (375/1280, claro/oscuro) solo para las páginas creadas o cambiadas este ciclo y la home; el resto, con los parseadores.
 - El Orquestador te pasa la lista exacta de páginas cambiadas (`git diff --name-only`); no recorras dist/ entero en el navegador. Sin capturas a 1280 claro/375 oscuro salvo que la página cambie de diseño: 2 vistas (375 claro, 1280 oscuro) bastan.
 - Cuando exista ops/qa_static.py, tu trabajo estático es ejecutarlo y reproducir sus BLOQUEANTE; no repitas sus comprobaciones a mano.
+
+## Regla de pestañas (c15)
+El navegador tiene un tope de pestañas (~9). Los agentes dejaban pestañas abiertas y, al llegar al tope, medían errores de consola sobre registros viejos o builds concurrentes (falsos positivos «EM is not defined»). Siempre: abre UNA pestaña con tabs_create, mide, y CIÉRRALA con tabs_close al terminar. Antes de reportar un error de consola: `python3 projects/decidir/build.py` sin builds concurrentes, recarga en pestaña limpia y re-mide. El Orquestador cierra las pestañas sobrantes (tabs_context) al empezar cada ciclo.

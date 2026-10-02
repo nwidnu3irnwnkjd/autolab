@@ -71,7 +71,7 @@ def head_extra():
 
 def calc_header(c):
     """Cabecera .ph de una calculadora."""
-    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="/decidir/#{tema(c)}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
+    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="{"/hipoteca/" if tema(c) == "hipoteca" else "/decidir/#" + tema(c)}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
 <h1>{c["h1"]}</h1>
 <p class="lead">{c["lead"]}</p></header>"""
 

@@ -1,0 +1,167 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "dias": 2,
+    "desp": 6,
+    "min": 60,
+    "valorHora": 0,
+    "casa": 0.7,
+    "comida": 5,
+    "comp": 0,
+    "equip": 300
+   },
+   "expect": {
+    "ahorroDesplazamiento": 552.0,
+    "ahorroComida": 460.0,
+    "costeCasa": 64.4,
+    "compensacionAnual": 0,
+    "equipamientoAnual": 75.0,
+    "netoAnual": 873.0,
+    "netoMensual": 72.717,
+    "horasAhorradas": 92.0,
+    "netoConTiempo": 873.0,
+    "tipoDias": 1,
+    "diasEquilibrio": 0.158,
+    "compensacionEquilibrio": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dias": 2,
+    "desp": 0,
+    "min": 60,
+    "valorHora": 0,
+    "casa": 2,
+    "comida": 0,
+    "comp": 0,
+    "equip": 0
+   },
+   "expect": {
+    "ahorroDesplazamiento": 0.0,
+    "ahorroComida": 0.0,
+    "costeCasa": 184.0,
+    "compensacionAnual": 0,
+    "equipamientoAnual": 0.0,
+    "netoAnual": -184.0,
+    "netoMensual": -15.333,
+    "horasAhorradas": 92.0,
+    "netoConTiempo": -184.0,
+    "tipoDias": 3,
+    "diasEquilibrio": 0.0,
+    "compensacionEquilibrio": 15.333
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dias": 0,
+    "desp": 6,
+    "min": 60,
+    "valorHora": 0,
+    "casa": 0.7,
+    "comida": 5,
+    "comp": 0,
+    "equip": 300
+   },
+   "expect": {
+    "ahorroDesplazamiento": 0.0,
+    "ahorroComida": 0.0,
+    "costeCasa": 0.0,
+    "compensacionAnual": 0.0,
+    "equipamientoAnual": 0.0,
+    "netoAnual": 0.0,
+    "netoMensual": 0.0,
+    "horasAhorradas": 0.0,
+    "netoConTiempo": 0.0,
+    "tipoDias": 1,
+    "diasEquilibrio": 0.158,
+    "compensacionEquilibrio": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dias": 2,
+    "desp": 0,
+    "min": 60,
+    "valorHora": 0,
+    "casa": 0,
+    "comida": 0,
+    "comp": 0,
+    "equip": 0
+   },
+   "expect": {
+    "ahorroDesplazamiento": 0.0,
+    "ahorroComida": 0.0,
+    "costeCasa": 0.0,
+    "compensacionAnual": 0,
+    "equipamientoAnual": 0.0,
+    "netoAnual": 0.0,
+    "netoMensual": 0.0,
+    "horasAhorradas": 92.0,
+    "netoConTiempo": 0.0,
+    "tipoDias": 3,
+    "diasEquilibrio": 0.0,
+    "compensacionEquilibrio": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dias": 2,
+    "desp": 2,
+    "min": 60,
+    "valorHora": 0,
+    "casa": 5,
+    "comida": 1,
+    "comp": 20,
+    "equip": 0
+   },
+   "expect": {
+    "ahorroDesplazamiento": 184.0,
+    "ahorroComida": 92.0,
+    "costeCasa": 460.0,
+    "compensacionAnual": 240,
+    "equipamientoAnual": 0.0,
+    "netoAnual": 56.0,
+    "netoMensual": 4.667,
+    "horasAhorradas": 92.0,
+    "netoConTiempo": 56.0,
+    "tipoDias": 2,
+    "diasEquilibrio": 2.609,
+    "compensacionEquilibrio": 15.333
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "dias": 5,
+    "desp": 1,
+    "min": 60,
+    "valorHora": 15,
+    "casa": 0.5,
+    "comida": 0,
+    "comp": 0,
+    "equip": 900
+   },
+   "expect": {
+    "ahorroDesplazamiento": 230.0,
+    "ahorroComida": 0.0,
+    "costeCasa": 115.0,
+    "compensacionAnual": 0,
+    "equipamientoAnual": 225.0,
+    "netoAnual": -110.0,
+    "netoMensual": -9.167,
+    "horasAhorradas": 230.0,
+    "netoConTiempo": 3340.0,
+    "tipoDias": 1,
+    "diasEquilibrio": 9.783,
+    "compensacionEquilibrio": 9.167
+   },
+   "tol": 1
+  }
+ ]
+}

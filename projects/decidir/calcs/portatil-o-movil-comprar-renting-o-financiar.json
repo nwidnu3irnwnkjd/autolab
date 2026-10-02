@@ -1,0 +1,90 @@
+{
+  "slug": "portatil-o-movil-comprar-renting-o-financiar",
+  "title": "Portátil o móvil: contado, financiar o renting",
+  "description": "Compara comprar al contado, financiar o renting un portátil o móvil: coste total y por año, TAE real con comisión y cuota de renting de equilibrio.",
+  "h1": "Portátil o móvil: ¿comprar al contado, financiar o renting?",
+  "lead": "Pagar al contado sale más barato que financiar siempre que la financiación lleve algún interés, comisión o te haga perder un descuento (con los ejemplos de la página, financiar cuesta 89 € más), y el renting solo compensa si su cuota mensual baja del punto de equilibrio que calcula la página (14 €/mes con esos ejemplos frente a los 45 € de partida). Pon tu precio, tu financiación, tu cuota de renting y la reventa que esperas, y verás el coste total y por año de cada opción.",
+  "veredicto": "Comprar al contado cuesta menos que financiar salvo que la financiación no tenga intereses, comisión ni te quite descuento (entonces empatan); el renting compensa solo si su cuota mensual es menor que el coste neto de la mejor compra repartido entre los meses de uso, y la calculadora te da esa cuota con tus datos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio del equipo (€; 900 € es un ejemplo, no un precio de mercado)",
+      "default": 900,
+      "min": 1,
+      "step": 50
+    },
+    {
+      "id": "descuento",
+      "label": "Descuento por pagar al contado (%; 0 si no hay; 5 % es un ejemplo)",
+      "default": 5,
+      "min": 0,
+      "step": 0.5
+    },
+    {
+      "id": "tin",
+      "label": "TIN de la financiación (%; 9 % es un ejemplo, no la oferta de un comercio)",
+      "default": 9,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "comision",
+      "label": "Comisión de apertura (% del importe financiado; 0 si no hay)",
+      "default": 0,
+      "min": 0,
+      "step": 0.1
+    },
+    {
+      "id": "meses",
+      "label": "Meses de financiación (no más que los meses de uso)",
+      "default": 12,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "renting",
+      "label": "Cuota de renting o suscripción (€/mes; 45 € es un ejemplo)",
+      "default": 45,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "reventa",
+      "label": "Valor de reventa estimado al final (% del precio; estimación tuya, 20 % es un ejemplo)",
+      "default": 20,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "vida",
+      "label": "Años que lo usarás (de 1 a 10; el renting se compara por el mismo periodo)",
+      "default": 4,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor comprar al contado, financiar o hacer renting de un portátil o móvil?",
+      "Con el modelo de la página, el contado nunca sale más caro que financiar: financiar suma intereses y comisión y puede quitarte el descuento por pago al contado. Financiar solo empata si no hay intereses, comisión ni descuento perdido. El renting gana cuando su cuota mensual es menor que el coste neto de la mejor compra dividido entre los meses de uso; con tus datos la calculadora te da esa cuota. Si el renting incluye servicios que valoras, suma su valor aparte."
+    ],
+    [
+      "¿Un 0 % de interés es gratis?",
+      "No siempre. Si el comercio ofrece un descuento por pagar al contado y la financiación al 0 % se hace sobre el precio sin descuento, ese descuento es el coste. Con los ejemplos de la página, un 8 % de descuento perdido equivale a 72 € de sobrecoste. Compara siempre el precio financiado con el precio al contado."
+    ],
+    [
+      "¿Qué es la TAE real de la financiación?",
+      "Es el coste anual efectivo de las cuotas, contando la comisión de apertura. La calculadora da dos cifras: la TAE con comisión sobre el precio de lista y el coste efectivo anual si lo comparas con el precio al contado con descuento, que es más alto cuando pierdes un descuento. Se calcula por bisección sobre las cuotas."
+    ],
+    [
+      "¿Qué valor de reventa debo poner?",
+      "Uno prudente, que no es un dato: depende del modelo, del estado y del mercado de segunda mano. Pon 0 % si no piensas revenderlo. El valor de reventa solo reduce el coste de comprar y financiar; el renting no lo tiene porque devuelves el equipo."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye reparaciones, garantía, seguro, el rendimiento que tendría tu dinero si no lo gastas (para eso está contado o financiar), servicios incluidos en el renting ni la fiscalidad de autónomos o empresas (IVA, amortización o deducción: consulta a tu asesor). Los precios, descuentos, intereses y cuotas de la página son ejemplos, no ofertas de ningún comercio."
+    ]
+  ],
+  "sources": "Modelo propio: coste neto de contado = precio x (1 - descuento) - reventa; financiar = cuotas francesas sobre el precio de lista (sin entrada) + comisión - reventa; renting = cuota mensual x 12 x años de uso, sin reventa; cuota de renting de equilibrio = menor coste neto de las dos compras / (12 x años). TAE con comisión: tipo anual que iguala las cuotas con el importe recibido menos la comisión (bisección); coste efectivo con descuento perdido: lo mismo contra el precio al contado. Todos los precios, descuentos, intereses, comisiones, cuotas de renting y porcentajes de reventa de la página son ejemplos declarados y editables, no datos de mercado ni ofertas de comercios concretos; no se usan cifras externas. No se descuenta el valor temporal del dinero ni se modelan reparaciones, garantía, seguros, servicios del renting o fiscalidad de autónomos. Para tu oferta consulta la Ficha Europea de Información Normalizada (FEIN); la normativa de crédito al consumo es la Ley 16/2011 y el Banco de España publica información para el cliente bancario (https://clientebancario.bde.es/). Información orientativa, no asesoramiento financiero."
+}

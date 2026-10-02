@@ -1662,5 +1662,46 @@
    }
   ],
   "consulta": "2026-10-02"
+ },
+ "donativos_2026": {
+  "ejercicio": 2026,
+  "consultado": "2026-10-02",
+  "base_legal": "Ley 49/2002 arts. 16, 17, 18, 19, 22 y 24 y Ley 35/2006 arts. 67, 68.3 y 69.1, textos consolidados a 02/10/2026",
+  "escala": {
+   "fuente": "Ley 49/2002, art. 19.1 (redacción del RDL 6/2023, en vigor desde 1/1/2024): 80 % de los primeros 250 € de la base de deducción y 40 % del resto; 45 % del resto (el exceso sobre 250 € a favor de esa entidad) si en los dos periodos anteriores se donó a la misma entidad por importe igual o superior al del año anterior en cada uno",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-25039",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "tramo_euros": 250,
+   "pct_tramo": 80,
+   "pct_resto": 40,
+   "pct_resto_recurrente": 45,
+   "recurrencia": "este año >= año pasado >= hace dos años, misma entidad",
+   "anos_recurrencia": 3
+  },
+  "limite": {
+   "fuente": "Ley 35/2006, art. 69.1 (la base de las deducciones del art. 68.3 no podrá exceder del 10 % de la base liquidable) y Ley 49/2002, art. 19.2; AEAT, Manual práctico de Renta 2025, «Límite aplicable»",
+   "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c16-deducciones-generales-cuota/deducciones-donativos-otras-aportaciones/limite-aplicable.html",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "pct_base_liquidable": 10,
+   "minimo_personal": 5550,
+   "aviso_base_nota": 15000,
+   "arrastre_irpf": "La norma no prevé arrastrar el exceso en el IRPF: la compensación a 10 años del exceso figura solo en el art. 20 (Impuesto sobre Sociedades) de la Ley 49/2002"
+  },
+  "no_modelado": {
+   "prioritario": "Ley 49/2002, art. 22: la Ley de Presupuestos puede elevar hasta cinco puntos los porcentajes y el límite (15 %) para actividades prioritarias de mecenazgo; no modelado",
+   "fundaciones_no_ley49": "Ley 35/2006, art. 68.3.b: 10 % de lo donado a fundaciones y asociaciones de utilidad pública fuera de la Ley 49/2002; no modelado",
+   "partidos": "Ley 35/2006, art. 68.3.c: 20 % con base máxima de 600 €; excluido",
+   "ceuta_melilla": "Ley 35/2006, art. 68.4: deducción del 60 % de la cuota por rentas obtenidas en Ceuta o Melilla; la deducción por donativos es la misma, se calcula con aviso (el 60 % solo reduce la cuota disponible)",
+   "cuota": "Ley 35/2006, arts. 67.1.b y 67.2: la deducción se reparte al 50 % entre la cuota estatal y la autonómica y la cuota líquida de cada una no puede ser negativa; no modelado: con base liquidable < 5.550 € (mínimo personal, art. 57) la cuota íntegra es 0 y se avisa en el veredicto; < 15.000 € se avisa en la nota (el resultado es la deducción máxima)"
+  },
+  "requisitos": {
+   "fuente": "Ley 49/2002, arts. 16, 17 y 24; AEAT, Manual práctico de Renta 2025, «Requisitos comunes de las deducciones por donativos»",
+   "url": "https://sede.agenciatributaria.gob.es/Sede/eu_es/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c16-deducciones-generales-cuota/deducciones-donativos-otras-aportaciones/requisitos-comunes-deducciones-donativos.html",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "texto": "donativo irrevocable, puro y simple a una entidad del art. 16; justificación con certificación de la entidad con NIF del donante, mención de estar acogida a la Ley 49/2002, fecha e importe; si hay contraprestación simbólica, que no supere el 15 % del donativo y 25.000 € (art. 17.2)"
+  }
  }
 }

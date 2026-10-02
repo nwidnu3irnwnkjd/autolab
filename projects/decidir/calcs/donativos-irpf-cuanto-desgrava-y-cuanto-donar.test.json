@@ -1,0 +1,393 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "300 € a una ONG, no recurrente (ejemplo clásico 300 → 220)",
+   "in": {
+    "donado": 300,
+    "recurrente": 0,
+    "bl": 25000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2500.0,
+    "baseDeduccion": 300,
+    "exceso": 0,
+    "deduccion": 220.0,
+    "costeNeto": 80.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 220.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "0 € donados",
+   "in": {
+    "donado": 0,
+    "recurrente": 0,
+    "bl": 25000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2500.0,
+    "baseDeduccion": 0,
+    "exceso": 0,
+    "deduccion": 0.0,
+    "costeNeto": 0.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 0.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "250 € exactos: todo al 80 %",
+   "in": {
+    "donado": 250,
+    "recurrente": 0,
+    "bl": 25000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2500.0,
+    "baseDeduccion": 250,
+    "exceso": 0,
+    "deduccion": 200.0,
+    "costeNeto": 50.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 200.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "251 €: el euro 251 al 40 %",
+   "in": {
+    "donado": 251,
+    "recurrente": 0,
+    "bl": 25000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2500.0,
+    "baseDeduccion": 251,
+    "exceso": 0,
+    "deduccion": 200.4,
+    "costeNeto": 50.6,
+    "importeTramo80": 250,
+    "deduccionTotal": 200.4,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "251 € recurrente: el exceso al 45 %",
+   "in": {
+    "donado": 251,
+    "recurrente": 1,
+    "bl": 25000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2500.0,
+    "baseDeduccion": 251,
+    "exceso": 0,
+    "deduccion": 200.45,
+    "costeNeto": 50.55,
+    "importeTramo80": 250,
+    "deduccionTotal": 200.45,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "3.000 € con base 20.000: supera el límite del 10 %",
+   "in": {
+    "donado": 3000,
+    "recurrente": 0,
+    "bl": 20000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2000.0,
+    "baseDeduccion": 2000.0,
+    "exceso": 1000.0,
+    "deduccion": 900.0,
+    "costeNeto": 2100.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 900.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "2.000 € recurrente con base 20.000 (justo en el límite)",
+   "in": {
+    "donado": 2000,
+    "recurrente": 1,
+    "bl": 20000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 2000.0,
+    "baseDeduccion": 2000,
+    "exceso": 0.0,
+    "deduccion": 987.5,
+    "costeNeto": 1012.5,
+    "importeTramo80": 250,
+    "deduccionTotal": 987.5,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Base liquidable 0: no hay deducción",
+   "in": {
+    "donado": 500,
+    "recurrente": 0,
+    "bl": 0,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 0.0,
+    "baseDeduccion": 0.0,
+    "exceso": 500.0,
+    "deduccion": 0.0,
+    "costeNeto": 500.0,
+    "importeTramo80": 0.0,
+    "deduccionTotal": 0.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Importe adicional previsto sin margen (base 1.000)",
+   "in": {
+    "donado": 100,
+    "recurrente": 0,
+    "bl": 1000,
+    "adicional": 150,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 100.0,
+    "baseDeduccion": 100,
+    "exceso": 0.0,
+    "deduccion": 80.0,
+    "costeNeto": 20.0,
+    "importeTramo80": 100.0,
+    "deduccionTotal": 80.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 150.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Importe adicional previsto con margen",
+   "in": {
+    "donado": 300,
+    "recurrente": 0,
+    "bl": 40000,
+    "adicional": 700,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 4000.0,
+    "baseDeduccion": 300,
+    "exceso": 0,
+    "deduccion": 220.0,
+    "costeNeto": 80.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 500.0,
+    "deduccionAdicional": 280.0,
+    "costeNetoAdicional": 420.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "País Vasco/Navarra: fuera de alcance",
+   "in": {
+    "donado": 1000,
+    "recurrente": 0,
+    "bl": 30000,
+    "adicional": 0,
+    "ambito": "vasco"
+   },
+   "expect": {
+    "invalido": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Base 1.800 y 400 €: tope por cuota, aviso en veredicto (avisoBase 2)",
+   "in": {
+    "donado": 400,
+    "recurrente": 0,
+    "bl": 1800,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 180.0,
+    "baseDeduccion": 180.0,
+    "exceso": 220.0,
+    "deduccion": 144.0,
+    "costeNeto": 256.0,
+    "importeTramo80": 180.0,
+    "deduccionTotal": 144.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0,
+    "avisoBase": 2
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Base 12.000 y 150 €: aviso en nota (avisoBase 1)",
+   "in": {
+    "donado": 150,
+    "recurrente": 0,
+    "bl": 12000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 1200.0,
+    "baseDeduccion": 150,
+    "exceso": 0,
+    "deduccion": 120.0,
+    "costeNeto": 30.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 120.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0,
+    "avisoBase": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "15.000 € recurrente con base 90.000 (límite 9.000)",
+   "in": {
+    "donado": 15000,
+    "recurrente": 1,
+    "bl": 90000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 9000.0,
+    "baseDeduccion": 9000.0,
+    "exceso": 6000.0,
+    "deduccion": 4137.5,
+    "costeNeto": 10862.5,
+    "importeTramo80": 250,
+    "deduccionTotal": 4137.5,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0,
+    "avisoBase": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Ceuta/Melilla: se calcula como régimen común",
+   "in": {
+    "donado": 1000,
+    "recurrente": 0,
+    "bl": 30000,
+    "adicional": 0,
+    "ambito": "ceutamelilla"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 3000.0,
+    "baseDeduccion": 1000,
+    "exceso": 0,
+    "deduccion": 500.0,
+    "costeNeto": 500.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 500.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0,
+    "avisoBase": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Adicional sin efecto: ya en el tope del 10 % (base 12.000)",
+   "in": {
+    "donado": 1200,
+    "recurrente": 0,
+    "bl": 12000,
+    "adicional": 200,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 1200.0,
+    "baseDeduccion": 1200,
+    "exceso": 0.0,
+    "deduccion": 580.0,
+    "costeNeto": 620.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 580.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 200.0,
+    "avisoBase": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "Recurrencia no cumplida (100/200/150): 40 %, no 45 %",
+   "in": {
+    "donado": 1000,
+    "recurrente": 0,
+    "bl": 30000,
+    "adicional": 0,
+    "ambito": "comun"
+   },
+   "expect": {
+    "invalido": 0,
+    "limite": 3000.0,
+    "baseDeduccion": 1000,
+    "exceso": 0,
+    "deduccion": 500.0,
+    "costeNeto": 500.0,
+    "importeTramo80": 250,
+    "deduccionTotal": 500.0,
+    "deduccionAdicional": 0.0,
+    "costeNetoAdicional": 0.0,
+    "avisoBase": 0
+   },
+   "tol": 1
+  }
+ ]
+}

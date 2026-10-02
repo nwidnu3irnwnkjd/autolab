@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 5,
+    "tin": 9,
+    "comision": 0,
+    "meses": 12,
+    "renting": 45,
+    "reventa": 20,
+    "vida": 4
+   },
+   "expect": {
+    "costeContado": 675.0,
+    "costeFinanciar": 764.0,
+    "costeRenting": 2160,
+    "anoContado": 168.75,
+    "cuota": 78.706,
+    "sobrecosteFinanciar": 89.0,
+    "tae": 9.381,
+    "taeConDescuento": 20.49,
+    "cuotaRentingEquilibrio": 14.062,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 5,
+    "tin": 9,
+    "comision": 0,
+    "meses": 12,
+    "renting": 10,
+    "reventa": 20,
+    "vida": 4
+   },
+   "expect": {
+    "costeContado": 675.0,
+    "costeFinanciar": 764.0,
+    "costeRenting": 480,
+    "anoContado": 168.75,
+    "cuota": 78.706,
+    "sobrecosteFinanciar": 89.0,
+    "tae": 9.381,
+    "taeConDescuento": 20.49,
+    "cuotaRentingEquilibrio": 14.062,
+    "mejor": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 0,
+    "tin": 0,
+    "comision": 0,
+    "meses": 12,
+    "renting": 45,
+    "reventa": 20,
+    "vida": 4
+   },
+   "expect": {
+    "costeContado": 720.0,
+    "costeFinanciar": 720.0,
+    "costeRenting": 2160,
+    "anoContado": 180.0,
+    "cuota": 75.0,
+    "sobrecosteFinanciar": 0.0,
+    "tae": -0.0,
+    "taeConDescuento": -0.0,
+    "cuotaRentingEquilibrio": 15.0,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 8,
+    "tin": 0,
+    "comision": 0,
+    "meses": 12,
+    "renting": 45,
+    "reventa": 20,
+    "vida": 4
+   },
+   "expect": {
+    "costeContado": 648.0,
+    "costeFinanciar": 720.0,
+    "costeRenting": 2160,
+    "anoContado": 162.0,
+    "cuota": 75.0,
+    "sobrecosteFinanciar": 72.0,
+    "tae": -0.0,
+    "taeConDescuento": 16.858,
+    "cuotaRentingEquilibrio": 13.5,
+    "mejor": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 5,
+    "tin": 12,
+    "comision": 2.5,
+    "meses": 6,
+    "renting": 45,
+    "reventa": 20,
+    "vida": 1
+   },
+   "expect": {
+    "costeContado": 675.0,
+    "costeFinanciar": 774.0,
+    "costeRenting": 540,
+    "anoContado": 675.0,
+    "cuota": 155.294,
+    "sobrecosteFinanciar": 99.0,
+    "tae": 23.023,
+    "taeConDescuento": 47.924,
+    "cuotaRentingEquilibrio": 56.25,
+    "mejor": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 900,
+    "descuento": 0,
+    "tin": 9,
+    "comision": 0,
+    "meses": 12,
+    "renting": 0,
+    "reventa": 0,
+    "vida": 4
+   },
+   "expect": {
+    "costeContado": 900.0,
+    "costeFinanciar": 944.0,
+    "costeRenting": 0,
+    "anoContado": 225.0,
+    "cuota": 78.706,
+    "sobrecosteFinanciar": 44.0,
+    "tae": 9.381,
+    "taeConDescuento": 9.381,
+    "cuotaRentingEquilibrio": 18.75,
+    "mejor": 2
+   },
+   "tol": 1
+  }
+ ]
+}
