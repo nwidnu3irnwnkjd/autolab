@@ -66,3 +66,9 @@
 - KPIs hoy: 140 URLs en sitemap; 0/12 conocidas por Google; 0 clics/impresiones; GA4 18 sesiones (propias).
 - 5h 13 %, semanal 51 %, extra 0,55 €.
 - Siguiente (c53): «Plan completo» (R16.4 piloto hipoteca), widget embebible + página «Inserta», vigilar BOE 3-5 oct (RDL 26/2026), revisar KPIs; después fiscal con fecha (retención/Renta no; ver ayuda alquiler joven RD 326/2026).
+
+## Ciclo 53 cerrado · FASE TRÁFICO
+- RDL 26/2026 y 27/2026 DEROGADOS en el BOE (Resolución del Congreso 2-oct, BOE-A-2026-20526; sin retroactividad: rigieron 1-2 oct). Revisadas por constructores y verificadas por Opus: irpf-alquilar (mismos porcentajes 90/70/60/50 de la Ley 12/2023; cambios solo de texto), venta-vivienda (41 bis.3 previo; salvedad de ventas del 1-2 oct), compensar (95 ter ya no existe); 10 calculadoras con nota «revisado c53». El consolidado de LIRPF/RIRPF aparece «Desactualizado» en el BOE: el Vigilante debe releerlo cuando se actualice. El RDL también ampliaba la DA 55.ª (imputación de rentas 1,1 %): ninguna calculadora la modela.
+- Widget «Insertar en tu web»: 102 /embed/<slug>/ (noindex,follow, canonical a la completa, pie con enlace) + /inserta/ + bloque en cada calculadora. Desborde móvil 375 px corregido (cabecera en 2 líneas); medición QA con iframes a 375 px (11 URLs ok).
+- 5h 17 %, semanal 51 %, extra 0,55 €. Contexto orquestador 84 %.
+- Siguiente (c54): «Plan completo» (R16.4), mantenimiento (Vigilante semanal; releer consolidados LIRPF/RIRPF), kpis, posible fiscal con fecha. Esperar indexación de Google.
