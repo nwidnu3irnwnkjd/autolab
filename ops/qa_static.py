@@ -231,7 +231,15 @@ def check_sitemap(indexables):
     sm = os.path.join(DIST, "sitemap.xml")
     if not os.path.isfile(sm): add("BLOQUEANTE", "dist/sitemap.xml:1", "no existe sitemap.xml"); return 0
     try:
-        locs = [l.text.strip() for l in ET.parse(sm).iter(SM_NS + "loc")]
+        root = ET.parse(sm).getroot()
+        if root.tag == SM_NS + "sitemapindex":  # índice -> sitemap-<sección>.xml (c50)
+            locs = []
+            for sl in root.iter(SM_NS + "loc"):
+                lp = local(sl.text.strip()); fp = os.path.join(DIST, (lp or "/").strip("/"))
+                if lp is None or not os.path.isfile(fp): add("BLOQUEANTE", "dist/sitemap.xml:1", f"sitemap hijo inexistente: {sl.text.strip()}"); continue
+                locs += [l.text.strip() for l in ET.parse(fp).iter(SM_NS + "loc")]
+        else:
+            locs = [l.text.strip() for l in root.iter(SM_NS + "loc")]
     except ET.ParseError as e:
         add("BLOQUEANTE", "dist/sitemap.xml:1", f"XML inválido: {e}"); return 0
     paths = {}

@@ -58,3 +58,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T13:23Z | 59 | 48 | 0.55 | ciclo 47 cierre: Constructor fiscal+Opus+reverif, Constructor no fiscal, Estratega ligero, QA; peticiones abiertas: 0; páginas: 135
 2026-10-02T13:52Z | 2 | 49 | 0.55 | ciclo 48 cierre: Mejorador Opus, Estratega Opus, Constructor fiscal+Opus+reverif, comprobador BOE, Estratega ligero, QA x2; peticiones abiertas: 4; páginas: 137
 2026-10-02T14:12Z | 4 | 49 | 0.55 | ciclo 49 cierre: Vigilante, Constructor mejora, Editor, Ingeniero herramientas, QA; peticiones abiertas: 1; páginas: 137
+2026-10-02T14:44Z | 7 | 50 | 0.55 | ciclo 50 cierre: Diseñador, Estratega x2, Escaparate, Ingeniero OG, QA; peticiones abiertas: 1; páginas: 138

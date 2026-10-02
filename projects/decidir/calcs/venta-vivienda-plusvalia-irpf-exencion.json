@@ -1,118 +1,118 @@
 {
- "slug": "venta-vivienda-plusvalia-irpf-exencion",
- "title": "Vender tu vivienda: IRPF, exención y reinversión 2026",
- "description": "Calcula la ganancia al vender tu vivienda, la exención por reinversión o por ser mayor de 65 años, el IRPF estimado y cuánto reinvertir para no pagar.",
- "h1": "Vender tu vivienda: ganancia patrimonial, exención y cuánto IRPF pagas",
- "lead": "Si vendes tu vivienda habitual y reinviertes todo lo obtenido (precio menos gastos de venta y menos la hipoteca pendiente) en otra vivienda habitual en el plazo de 2 años, o si tienes 65 años o más (o dependencia severa), no pagas IRPF por la ganancia (arts. 33.4.b y 38 de la Ley del IRPF); si no reinviertes o la vivienda no era tu habitual, la ganancia tributa en la base del ahorro entre el 19 % y el 30 %. En el ejemplo (320.000 € de venta, 180.000 € de compra, 16.000 € de gastos de compra, 9.000 € de gastos de venta y 60.000 € de hipoteca pendiente) la ganancia es de 115.000 €: reinvirtiendo 150.000 € pagas 9.658 € de IRPF, reinvirtiendo 251.000 € o más no pagas nada, y sin exención serían 25.450 €. No incluye la plusvalía municipal (IIVTNU), los no residentes (tributan por el IRNR), la deducción del 60 % de Ceuta y Melilla (art. 68.4), el abatimiento de lo comprado antes de 1995, la subrogación de hipoteca, herencias, donaciones, la venta de vivienda vacía a entes públicos (DA 65.ª, RDL 26/2026), la renta vitalicia del art. 38.3, pareja con vivienda ganancial ni País Vasco y Navarra.",
- "veredicto": "Con estos datos la ganancia se calcula como precio de venta menos gastos de venta, menos precio de compra, gastos y mejoras (menos amortizaciones si estuvo alquilada) y tributa en la base del ahorro (19 a 30 %). Si es una pérdida o no hay ganancia, no pagas IRPF. Si vendes tu vivienda habitual con menos de 65 años y reinviertes en otra vivienda habitual al menos lo obtenido (precio menos gastos de venta y menos la hipoteca pendiente) en 2 años, la ganancia queda excluida: en el ejemplo (115.000 € de ganancia) hay que reinvertir 251.000 € para no pagar nada. Con una reinversión parcial (150.000 €) se excluye la parte proporcional y pagas 9.658 € en vez de 25.450 €. Con 65 años o más, la ganancia de tu vivienda habitual está exenta sin reinvertir. Si la vivienda no era tu habitual no hay exención por reinversión y pagas 25.450 € en el ejemplo, aunque reinviertas (salvo los supuestos no calculados de la DA 65.ª y del art. 38.3); si la compraste antes de 1995, el abatimiento no calculado puede bajarlo.",
- "tema": "impuestos",
- "inputs": [
-  {
-   "id": "venta",
-   "label": "Precio de venta de la vivienda (€)",
-   "default": 320000,
-   "min": 0,
-   "step": 5000,
-   "default_from": "params.venta_vivienda_2026.supuestos.venta",
-   "ayuda": "El importe real de la venta (art. 35.2); si fuera inferior al valor normal de mercado, prevalece el valor de mercado. Es un ejemplo editable."
-  },
-  {
-   "id": "adq",
-   "label": "Precio de compra de la vivienda (€)",
-   "default": 180000,
-   "min": 0,
-   "step": 5000,
-   "default_from": "params.venta_vivienda_2026.supuestos.adq",
-   "ayuda": "El importe que pagaste al comprar (art. 35.1.a). Si la heredaste o te la donaron, no es este caso: el valor sale del Impuesto de Sucesiones y Donaciones y la calculadora no lo modela."
-  },
-  {
-   "id": "gcomp",
-   "label": "Gastos y tributos de la compra más mejoras acreditadas, menos amortizaciones (€)",
-   "default": 16000,
-   "min": -1000000,
-   "step": 500,
-   "default_from": "params.venta_vivienda_2026.supuestos.gcomp",
-   "ayuda": "Suma notaría, registro, ITP o AJD y gestoría de la compra (sin intereses de la hipoteca) y las obras de mejora con factura (art. 35.1.b). Si la vivienda estuvo alquilada, resta las amortizaciones deducidas o deducibles (usa un signo menos si el total sale negativo)."
-  },
-  {
-   "id": "gventa",
-   "label": "Gastos de venta pagados por ti: agencia, plusvalía municipal pagada, certificados… (€)",
-   "default": 9000,
-   "min": 0,
-   "step": 500,
-   "default_from": "params.venta_vivienda_2026.supuestos.gventa",
-   "ayuda": "Se restan del precio de venta (art. 35.2: gastos y tributos satisfechos por el transmitente). La plusvalía municipal solo entra si la pagas tú, y su cálculo no está incluido."
-  },
-  {
-   "id": "hipoteca",
-   "label": "Principal pendiente de la hipoteca con la que compraste esta vivienda, al vender (€)",
-   "default": 60000,
-   "min": 0,
-   "step": 5000,
-   "default_from": "params.venta_vivienda_2026.supuestos.hipoteca",
-   "ayuda": "Solo cuenta para la reinversión: el importe a reinvertir es el precio menos gastos de venta y menos este principal (art. 41.1 del Reglamento). No puede superar lo que te queda de la venta."
-  },
-  {
-   "id": "sit",
-   "label": "¿Qué vivienda vendes?",
-   "type": "select",
-   "options": [
+  "slug": "venta-vivienda-plusvalia-irpf-exencion",
+  "title": "Vender tu vivienda: IRPF, plusvalía y exención. Calculadora",
+  "description": "Calcula el IRPF y la plusvalía municipal al vender tu vivienda, y si te libras con la exención por reinversión. Con tus fechas y precios.",
+  "h1": "Vender tu vivienda: ganancia patrimonial, exención y cuánto IRPF pagas",
+  "lead": "Si vendes tu vivienda habitual y reinviertes todo lo obtenido (precio menos gastos de venta y menos la hipoteca pendiente) en otra vivienda habitual en el plazo de 2 años, o si tienes 65 años o más (o dependencia severa), no pagas IRPF por la ganancia (arts. 33.4.b y 38 de la Ley del IRPF); si no reinviertes o la vivienda no era tu habitual, la ganancia tributa en la base del ahorro entre el 19 % y el 30 %. En el ejemplo (320.000 € de venta, 180.000 € de compra, 16.000 € de gastos de compra, 9.000 € de gastos de venta y 60.000 € de hipoteca pendiente) la ganancia es de 115.000 €: reinvirtiendo 150.000 € pagas 9.658 € de IRPF, reinvirtiendo 251.000 € o más no pagas nada, y sin exención serían 25.450 €. No incluye la plusvalía municipal (IIVTNU), los no residentes (tributan por el IRNR), la deducción del 60 % de Ceuta y Melilla (art. 68.4), el abatimiento de lo comprado antes de 1995, la subrogación de hipoteca, herencias, donaciones, la venta de vivienda vacía a entes públicos (DA 65.ª, RDL 26/2026), la renta vitalicia del art. 38.3, pareja con vivienda ganancial ni País Vasco y Navarra.",
+  "veredicto": "Con estos datos la ganancia se calcula como precio de venta menos gastos de venta, menos precio de compra, gastos y mejoras (menos amortizaciones si estuvo alquilada) y tributa en la base del ahorro (19 a 30 %). Si es una pérdida o no hay ganancia, no pagas IRPF. Si vendes tu vivienda habitual con menos de 65 años y reinviertes en otra vivienda habitual al menos lo obtenido (precio menos gastos de venta y menos la hipoteca pendiente) en 2 años, la ganancia queda excluida: en el ejemplo (115.000 € de ganancia) hay que reinvertir 251.000 € para no pagar nada. Con una reinversión parcial (150.000 €) se excluye la parte proporcional y pagas 9.658 € en vez de 25.450 €. Con 65 años o más, la ganancia de tu vivienda habitual está exenta sin reinvertir. Si la vivienda no era tu habitual no hay exención por reinversión y pagas 25.450 € en el ejemplo, aunque reinviertas (salvo los supuestos no calculados de la DA 65.ª y del art. 38.3); si la compraste antes de 1995, el abatimiento no calculado puede bajarlo.",
+  "tema": "impuestos",
+  "inputs": [
     {
-     "v": "hab",
-     "t": "Mi vivienda habitual y tengo menos de 65 años cumplidos"
+      "id": "venta",
+      "label": "Precio de venta de la vivienda (€)",
+      "default": 320000,
+      "min": 0,
+      "step": 5000,
+      "default_from": "params.venta_vivienda_2026.supuestos.venta",
+      "ayuda": "El importe real de la venta (art. 35.2); si fuera inferior al valor normal de mercado, prevalece el valor de mercado. Es un ejemplo editable."
     },
     {
-     "v": "hab65",
-     "t": "Mi vivienda habitual y tengo 65 años o más (o dependencia severa o gran dependencia)"
+      "id": "adq",
+      "label": "Precio de compra de la vivienda (€)",
+      "default": 180000,
+      "min": 0,
+      "step": 5000,
+      "default_from": "params.venta_vivienda_2026.supuestos.adq",
+      "ayuda": "El importe que pagaste al comprar (art. 35.1.a). Si la heredaste o te la donaron, no es este caso: el valor sale del Impuesto de Sucesiones y Donaciones y la calculadora no lo modela."
     },
     {
-     "v": "nohab",
-     "t": "No era mi vivienda habitual (segunda vivienda, alquilada, heredada vacía…)"
+      "id": "gcomp",
+      "label": "Gastos y tributos de la compra más mejoras acreditadas, menos amortizaciones (€)",
+      "default": 16000,
+      "min": -1000000,
+      "step": 500,
+      "default_from": "params.venta_vivienda_2026.supuestos.gcomp",
+      "ayuda": "Suma notaría, registro, ITP o AJD y gestoría de la compra (sin intereses de la hipoteca) y las obras de mejora con factura (art. 35.1.b). Si la vivienda estuvo alquilada, resta las amortizaciones deducidas o deducibles (usa un signo menos si el total sale negativo)."
+    },
+    {
+      "id": "gventa",
+      "label": "Gastos de venta pagados por ti: agencia, plusvalía municipal pagada, certificados… (€)",
+      "default": 9000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.venta_vivienda_2026.supuestos.gventa",
+      "ayuda": "Se restan del precio de venta (art. 35.2: gastos y tributos satisfechos por el transmitente). La plusvalía municipal solo entra si la pagas tú, y su cálculo no está incluido."
+    },
+    {
+      "id": "hipoteca",
+      "label": "Principal pendiente de la hipoteca con la que compraste esta vivienda, al vender (€)",
+      "default": 60000,
+      "min": 0,
+      "step": 5000,
+      "default_from": "params.venta_vivienda_2026.supuestos.hipoteca",
+      "ayuda": "Solo cuenta para la reinversión: el importe a reinvertir es el precio menos gastos de venta y menos este principal (art. 41.1 del Reglamento). No puede superar lo que te queda de la venta."
+    },
+    {
+      "id": "sit",
+      "label": "¿Qué vivienda vendes?",
+      "type": "select",
+      "options": [
+        {
+          "v": "hab",
+          "t": "Mi vivienda habitual y tengo menos de 65 años cumplidos"
+        },
+        {
+          "v": "hab65",
+          "t": "Mi vivienda habitual y tengo 65 años o más (o dependencia severa o gran dependencia)"
+        },
+        {
+          "v": "nohab",
+          "t": "No era mi vivienda habitual (segunda vivienda, alquilada, heredada vacía…)"
+        }
+      ],
+      "ayuda": "Habitual es la que fue tu residencia continuada al menos 3 años y lo era al vender o lo fue hasta algún día de los 2 años anteriores (art. 41 bis del Reglamento). El plazo de 3 años admite excepciones (matrimonio, separación, traslado laboral, fallecimiento u otras causas justificadas).",
+      "default_from": "params.venta_vivienda_2026.supuestos.sit"
+    },
+    {
+      "id": "reinv",
+      "label": "Importe que reinviertes en tu nueva vivienda habitual (€; pon 0 si no vas a reinvertir)",
+      "default": 150000,
+      "min": 0,
+      "step": 5000,
+      "default_from": "params.venta_vivienda_2026.supuestos.reinv",
+      "ayuda": "Solo para vivienda habitual con menos de 65 años. Cuenta lo que destines a comprar otra vivienda habitual en los 2 años siguientes a la venta o que ya pagaste en los 2 años anteriores (art. 41.3 del Reglamento). Cuenta todo lo que pagas por la nueva vivienda habitual dentro del plazo, aunque lo financies con una hipoteca nueva o subrogada: no hace falta usar el dinero de la venta (doctrina del Tribunal Supremo, 2024)."
+    },
+    {
+      "id": "otras",
+      "label": "Otras rentas del ahorro de ese año: intereses, dividendos y otras ganancias (€)",
+      "default": 3000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.venta_vivienda_2026.supuestos.otras",
+      "ayuda": "Se suman a la ganancia no exenta para saber en qué tramos de la escala del ahorro cae. Pon 0 si no tienes."
     }
-   ],
-   "ayuda": "Habitual es la que fue tu residencia continuada al menos 3 años y lo era al vender o lo fue hasta algún día de los 2 años anteriores (art. 41 bis del Reglamento). El plazo de 3 años admite excepciones (matrimonio, separación, traslado laboral, fallecimiento u otras causas justificadas).",
-   "default_from": "params.venta_vivienda_2026.supuestos.sit"
-  },
-  {
-   "id": "reinv",
-   "label": "Importe que reinviertes en tu nueva vivienda habitual (€; pon 0 si no vas a reinvertir)",
-   "default": 150000,
-   "min": 0,
-   "step": 5000,
-   "default_from": "params.venta_vivienda_2026.supuestos.reinv",
-   "ayuda": "Solo para vivienda habitual con menos de 65 años. Cuenta lo que destines a comprar otra vivienda habitual en los 2 años siguientes a la venta o que ya pagaste en los 2 años anteriores (art. 41.3 del Reglamento). Cuenta todo lo que pagas por la nueva vivienda habitual dentro del plazo, aunque lo financies con una hipoteca nueva o subrogada: no hace falta usar el dinero de la venta (doctrina del Tribunal Supremo, 2024)."
-  },
-  {
-   "id": "otras",
-   "label": "Otras rentas del ahorro de ese año: intereses, dividendos y otras ganancias (€)",
-   "default": 3000,
-   "min": 0,
-   "step": 500,
-   "default_from": "params.venta_vivienda_2026.supuestos.otras",
-   "ayuda": "Se suman a la ganancia no exenta para saber en qué tramos de la escala del ahorro cae. Pon 0 si no tienes."
-  }
- ],
- "faqs": [
-  [
-   "¿Cuánto IRPF pago al vender mi vivienda?",
-   "Pagas por la ganancia patrimonial, que es el precio de venta menos tus gastos de venta, menos el precio de compra, los gastos y tributos de la compra (sin intereses) y las mejoras acreditadas, y menos las amortizaciones si estuvo alquilada (arts. 34 y 35 de la Ley del IRPF). Esa ganancia va a la base del ahorro y tributa por la escala del art. 66 y 76, que suma la parte estatal y la autonómica: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima. Con el ejemplo (320.000 € de venta, 180.000 € de compra, 16.000 € de gastos de compra, 9.000 € de gastos de venta y 3.000 € de otras rentas del ahorro), la ganancia es de 115.000 € y, sin exención, la cuota sale en 25.450 €. Si hay pérdida, no pagas IRPF por esta venta."
   ],
-  [
-   "¿Cómo evito pagar impuestos al vender mi vivienda habitual?",
-   "Reinvirtiendo en otra vivienda habitual. Si lo obtenido se reinvierte entero en un plazo máximo de dos años desde la venta (o ya se pagó en los dos años anteriores), la ganancia se excluye de gravamen (art. 38.1 de la Ley y art. 41 del Reglamento). Cuenta todo lo que pagas por la nueva vivienda habitual en plazo, aunque lo financies con una hipoteca nueva o subrogada (doctrina del Tribunal Supremo, 2024); no hace falta usar el dinero de la venta. Lo obtenido es el valor de transmisión menos el principal pendiente de la hipoteca con la que compraste la vivienda vendida, así que cancelar la hipoteca baja lo que tienes que reinvertir. Si reinviertes menos, solo se excluye la parte proporcional de la ganancia. En el ejemplo, hay que reinvertir 251.000 € para no pagar nada; con 150.000 € salen 9.658 € de IRPF en vez de 25.450 €. Si luego incumples algún requisito, la ganancia pasa a tributar con una autoliquidación complementaria e intereses de demora."
+  "faqs": [
+    [
+      "¿Cuánto IRPF pago al vender mi vivienda?",
+      "Pagas por la ganancia patrimonial, que es el precio de venta menos tus gastos de venta, menos el precio de compra, los gastos y tributos de la compra (sin intereses) y las mejoras acreditadas, y menos las amortizaciones si estuvo alquilada (arts. 34 y 35 de la Ley del IRPF). Esa ganancia va a la base del ahorro y tributa por la escala del art. 66 y 76, que suma la parte estatal y la autonómica: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima. Con el ejemplo (320.000 € de venta, 180.000 € de compra, 16.000 € de gastos de compra, 9.000 € de gastos de venta y 3.000 € de otras rentas del ahorro), la ganancia es de 115.000 € y, sin exención, la cuota sale en 25.450 €. Si hay pérdida, no pagas IRPF por esta venta."
+    ],
+    [
+      "¿Cómo evito pagar impuestos al vender mi vivienda habitual?",
+      "Reinvirtiendo en otra vivienda habitual. Si lo obtenido se reinvierte entero en un plazo máximo de dos años desde la venta (o ya se pagó en los dos años anteriores), la ganancia se excluye de gravamen (art. 38.1 de la Ley y art. 41 del Reglamento). Cuenta todo lo que pagas por la nueva vivienda habitual en plazo, aunque lo financies con una hipoteca nueva o subrogada (doctrina del Tribunal Supremo, 2024); no hace falta usar el dinero de la venta. Lo obtenido es el valor de transmisión menos el principal pendiente de la hipoteca con la que compraste la vivienda vendida, así que cancelar la hipoteca baja lo que tienes que reinvertir. Si reinviertes menos, solo se excluye la parte proporcional de la ganancia. En el ejemplo, hay que reinvertir 251.000 € para no pagar nada; con 150.000 € salen 9.658 € de IRPF en vez de 25.450 €. Si luego incumples algún requisito, la ganancia pasa a tributar con una autoliquidación complementaria e intereses de demora."
+    ],
+    [
+      "¿Estoy exento si tengo 65 años o más?",
+      "Con 65 años o más, la ganancia por vender tu vivienda habitual está exenta sin límite de importe y sin tener que reinvertir (art. 33.4.b de la Ley del IRPF), igual que si tienes dependencia severa o gran dependencia reconocida. Hace falta que la vivienda fuera tu habitual según el art. 41 bis del Reglamento: residencia continuada de al menos 3 años, y que lo fuera al vender o hasta algún día de los 2 años anteriores. El Real Decreto-ley 26/2026 añade que, si te trasladaste por edad o dependencia a un centro especializado o a casa de un familiar, vale hasta ese traslado; está en vigor desde el 1/10/2026 y pendiente de convalidación. La exención del art. 33.4.b no alcanza a una segunda vivienda. Si tienes 65 años o más y vendes una vivienda que no era tu habitual (u otro bien), el art. 38.3 permite excluir la ganancia si destinas lo obtenido en 6 meses a una renta vitalicia asegurada a tu favor, con un máximo de 240.000 €; tampoco se calcula."
+    ],
+    [
+      "¿Qué pasa si no era mi vivienda habitual?",
+      "No hay exención por reinversión ni por edad: la ganancia tributa por la escala del ahorro sin esa exención, aunque reinviertas en otra vivienda (el art. 38.1 y el art. 33.4.b solo cubren la vivienda habitual). Aviso: el Real Decreto-ley 26/2026 (pendiente de convalidación) añade la DA 65.ª de la Ley del IRPF: entre el 1/10/2026 y el 31/12/2027, la venta de una vivienda desocupada durante 2 años sin causa justificada a un ente público de vivienda social puede quedar exenta (del todo si el valor de transmisión es de 200.000 € o menos, y en proporción hasta 800.000 €); no se calcula. Si tienes 65 años o más y vendes una vivienda que no era tu habitual (u otro bien), el art. 38.3 permite excluir la ganancia si destinas lo obtenido en 6 meses a una renta vitalicia asegurada a tu favor, con un máximo de 240.000 €; tampoco se calcula. En el ejemplo, la cuota es de 25.450 € por una ganancia de 115.000 €. Una vivienda deja de ser habitual si pasan más de dos años desde que dejaste de vivir en ella, o si no la ocupaste de forma efectiva y permanente en los doce meses siguientes a comprarla o terminar las obras (art. 41 bis del Reglamento)."
+    ],
+    [
+      "¿Qué gastos se restan, qué pasa con la plusvalía municipal y si compré antes de 1995?",
+      "Se restan del precio de venta los gastos y tributos que pagues tú como vendedor (art. 35.2): agencia, certificado energético y, según la doctrina de la Dirección General de Tributos, la plusvalía municipal (IIVTNU) si la pagas tú; esta calculadora no la calcula: tú la metes como gasto. En la compra se suman los gastos y tributos (ITP o AJD, notaría, registro), sin intereses, y las mejoras con factura. Si compraste antes del 31/12/1994 y la ganancia no está exenta, la disposición transitoria 9.ª aplica coeficientes de abatimiento a la parte generada hasta el 19/1/2006, y solo si el valor de transmisión acumulado desde 2015 de lo vendido con este régimen no supera 400.000 € (por encima, la reducción es parcial o nula); no se calcula aquí, así que tu cuota real sería igual o menor que la mostrada."
+    ]
   ],
-  [
-   "¿Estoy exento si tengo 65 años o más?",
-   "Con 65 años o más, la ganancia por vender tu vivienda habitual está exenta sin límite de importe y sin tener que reinvertir (art. 33.4.b de la Ley del IRPF), igual que si tienes dependencia severa o gran dependencia reconocida. Hace falta que la vivienda fuera tu habitual según el art. 41 bis del Reglamento: residencia continuada de al menos 3 años, y que lo fuera al vender o hasta algún día de los 2 años anteriores. El Real Decreto-ley 26/2026 añade que, si te trasladaste por edad o dependencia a un centro especializado o a casa de un familiar, vale hasta ese traslado; está en vigor desde el 1/10/2026 y pendiente de convalidación. La exención del art. 33.4.b no alcanza a una segunda vivienda. Si tienes 65 años o más y vendes una vivienda que no era tu habitual (u otro bien), el art. 38.3 permite excluir la ganancia si destinas lo obtenido en 6 meses a una renta vitalicia asegurada a tu favor, con un máximo de 240.000 €; tampoco se calcula."
-  ],
-  [
-   "¿Qué pasa si no era mi vivienda habitual?",
-   "No hay exención por reinversión ni por edad: la ganancia tributa por la escala del ahorro sin esa exención, aunque reinviertas en otra vivienda (el art. 38.1 y el art. 33.4.b solo cubren la vivienda habitual). Aviso: el Real Decreto-ley 26/2026 (pendiente de convalidación) añade la DA 65.ª de la Ley del IRPF: entre el 1/10/2026 y el 31/12/2027, la venta de una vivienda desocupada durante 2 años sin causa justificada a un ente público de vivienda social puede quedar exenta (del todo si el valor de transmisión es de 200.000 € o menos, y en proporción hasta 800.000 €); no se calcula. Si tienes 65 años o más y vendes una vivienda que no era tu habitual (u otro bien), el art. 38.3 permite excluir la ganancia si destinas lo obtenido en 6 meses a una renta vitalicia asegurada a tu favor, con un máximo de 240.000 €; tampoco se calcula. En el ejemplo, la cuota es de 25.450 € por una ganancia de 115.000 €. Una vivienda deja de ser habitual si pasan más de dos años desde que dejaste de vivir en ella, o si no la ocupaste de forma efectiva y permanente en los doce meses siguientes a comprarla o terminar las obras (art. 41 bis del Reglamento)."
-  ],
-  [
-   "¿Qué gastos se restan, qué pasa con la plusvalía municipal y si compré antes de 1995?",
-   "Se restan del precio de venta los gastos y tributos que pagues tú como vendedor (art. 35.2): agencia, certificado energético y, según la doctrina de la Dirección General de Tributos, la plusvalía municipal (IIVTNU) si la pagas tú; esta calculadora no la calcula: tú la metes como gasto. En la compra se suman los gastos y tributos (ITP o AJD, notaría, registro), sin intereses, y las mejoras con factura. Si compraste antes del 31/12/1994 y la ganancia no está exenta, la disposición transitoria 9.ª aplica coeficientes de abatimiento a la parte generada hasta el 19/1/2006, y solo si el valor de transmisión acumulado desde 2015 de lo vendido con este régimen no supera 400.000 € (por encima, la reducción es parcial o nula); no se calcula aquí, así que tu cuota real sería igual o menor que la mostrada."
-  ]
- ],
- "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 33.4.b (exención de mayores de 65 años o dependientes, redacción Ley 26/2014), arts. 34 y 35 (ganancia patrimonial, valores de adquisición y transmisión), art. 38.1 (reinversión en vivienda habitual), art. 49 (compensación de pérdidas), arts. 66.1 y 76 (escala del ahorro, redacción Ley 7/2024 vigente desde 1/1/2025) y disposición transitoria 9.ª (abatimiento, no calculado). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 41 (reinversión: principal pendiente, plazo de 2 años, reinversión parcial) y art. 41 bis (vivienda habitual). Real Decreto-ley 26/2026, de 29 de septiembre (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266), disposición final 3.ª.Uno: amplía el art. 41 bis.3 del Reglamento para mayores de 65 años y dependientes; en vigor desde el 1/10/2026, pendiente de convalidación, y no cambia las ramas calculadas. El mismo real decreto-ley añade la DA 65.ª y la DA 66.ª de la Ley del IRPF (venta de vivienda desocupada a entes públicos de vivienda, no calculada). Art. 38.3 (renta vitalicia de mayores de 65 años) y art. 68.4 (deducción de Ceuta y Melilla) no calculados. Agencia Tributaria, ganancias y pérdidas patrimoniales por la venta de la vivienda habitual (https://sede.agenciatributaria.gob.es/). Los importes de venta, compra, gastos, hipoteca, reinversión y otras rentas del ejemplo son supuestos editables, no datos oficiales."
+  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultada el 2/10/2026: art. 33.4.b (exención de mayores de 65 años o dependientes, redacción Ley 26/2014), arts. 34 y 35 (ganancia patrimonial, valores de adquisición y transmisión), art. 38.1 (reinversión en vivienda habitual), art. 49 (compensación de pérdidas), arts. 66.1 y 76 (escala del ahorro, redacción Ley 7/2024 vigente desde 1/1/2025) y disposición transitoria 9.ª (abatimiento, no calculado). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 41 (reinversión: principal pendiente, plazo de 2 años, reinversión parcial) y art. 41 bis (vivienda habitual). Real Decreto-ley 26/2026, de 29 de septiembre (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266), disposición final 3.ª.Uno: amplía el art. 41 bis.3 del Reglamento para mayores de 65 años y dependientes; en vigor desde el 1/10/2026, pendiente de convalidación, y no cambia las ramas calculadas. El mismo real decreto-ley añade la DA 65.ª y la DA 66.ª de la Ley del IRPF (venta de vivienda desocupada a entes públicos de vivienda, no calculada). Art. 38.3 (renta vitalicia de mayores de 65 años) y art. 68.4 (deducción de Ceuta y Melilla) no calculados. Agencia Tributaria, ganancias y pérdidas patrimoniales por la venta de la vivienda habitual (https://sede.agenciatributaria.gob.es/). Los importes de venta, compra, gastos, hipoteca, reinversión y otras rentas del ejemplo son supuestos editables, no datos oficiales."
 }

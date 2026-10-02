@@ -43,17 +43,23 @@
 
     var toast = box.querySelector(".em-toast");
     var say = function (m) { toast.textContent = m; clearTimeout(box._t); box._t = setTimeout(function () { toast.textContent = ""; }, 2500); };
-    var copy = function (txt, msg) {
+    var copy = function (txt, msg, bad) {
       var done = function () { say(msg); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { fb(); });
       else fb();
-      function fb() { var ta = document.createElement("textarea"); ta.value = txt; ta.style.cssText = "position:fixed;opacity:0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { say("No se pudo copiar"); } document.body.removeChild(ta); }
+      function fb() { var ta = document.createElement("textarea"); ta.value = txt; ta.style.cssText = "position:fixed;opacity:0"; document.body.appendChild(ta); ta.select(); var ok = 0; try { ok = document.execCommand("copy"); } catch (e) {} document.body.removeChild(ta); say(ok ? msg : (bad || "No se pudo copiar")); }
     };
     var act = b.getAttribute("data-act");
     if (act === "print") { printReport(); return; }
-    var txt = shareText();
+    var txt = shareText(), v = [];
+    Array.prototype.forEach.call(document.querySelectorAll("#f input[id],#f select[id]"), function (e) { v.push(encodeURIComponent(e.id) + ":" + encodeURIComponent(e.value)); });
+    var link = location.href.split("#")[0] + "#v=" + v.join("~");
+    b.setAttribute("data-share-url", link);
+    try { history.replaceState(null, "", location.pathname + location.search + "#v=" + v.join("~")); } catch (e) {}
     if (act === "share") {
-      navigator.share({ title: document.title, text: txt.split("\n")[0], url: location.href.split("#")[0] }).catch(function (err) { if (err && err.name !== "AbortError") copy(location.href.split("#")[0], "Enlace copiado"); });
+      try { if (window.gtag) gtag("event", "share_click", { calc: location.pathname.replace(/\/$/, "").split("/").pop() }); } catch (e) {}
+      if (navigator.share) navigator.share({ title: document.title, text: txt.split("\n")[0], url: link }).catch(function (err) { if (err && err.name !== "AbortError") copy(link, "Enlace copiado", "Enlace listo en la barra de direcciones"); });
+      else copy(link, "Enlace copiado", "Enlace listo en la barra de direcciones");
     } else copy(txt, "Resultado copiado");
   }
   window.EM._x = { act: doAct, print: printReport };

@@ -102,7 +102,7 @@
     if (o.rows && o.rows.length) h += table(o.cols || (o.bars || []).map(function (b) { return esc(b.label); }), o.rows);
     if (o.note) h += '<div class="em-note">' + o.note + '</div>';
     h += '<div class="em-share"><button type="button" class="btn2" data-act="copy">' + ICON.copy + 'Copiar resultado</button>' +
-      (navigator.share ? '<button type="button" class="btn2" data-act="share">' + ICON.share + 'Compartir</button>' : '') +
+      '<button type="button" class="btn2" data-act="share">' + ICON.share + 'Compartir mi resultado</button>' +
       '<button type="button" class="btn2" data-act="print">' + ICON.pdf + 'Descargar informe (PDF)</button>' +
       '<span class="em-toast" role="status" aria-live="polite"></span></div>';
     h += '</div>';
@@ -140,14 +140,17 @@
     if (typeof inputs === "string") list = document.querySelectorAll(inputs);
     else if (inputs && inputs.tagName === "FORM") list = inputs.querySelectorAll("input,select,textarea");
     else list = inputs || [];
-    var t = null;
+    var t = null, used = 0;
+    var m = /[#&]v=([^&]*)/.exec(location.hash);
+    if (m) m[1].split("~").forEach(function (p) { var k = p.split(":"), e = document.getElementById(decodeURIComponent(k[0])); if (e && e.form && k[1] !== undefined) e.value = decodeURIComponent(k[1]); });
+    function used1() { if (used) return; used = 1; try { if (window.gtag) gtag("event", "calc_used", { calc: location.pathname.replace(/\/$/, "").split("/").pop() }); } catch (e) {} }
     function run() { clearTimeout(t); t = null; fn(); }
     function deb() { clearTimeout(t); t = setTimeout(run, wait || 250); }
     Array.prototype.forEach.call(list, function (i) {
       if (typeof i === "string") i = document.getElementById(i);
       if (!i) return;
-      i.addEventListener("input", deb);
-      i.addEventListener("change", run);
+      i.addEventListener("input", function () { used1(); deb(); });
+      i.addEventListener("change", function () { used1(); run(); });
     });
     run();
     return run;

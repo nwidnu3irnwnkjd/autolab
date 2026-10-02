@@ -1,163 +1,163 @@
 {
- "slug": "autonomo-o-asalariado",
- "title": "Autónomo o asalariado: cuánto facturar para cobrar lo mismo",
- "description": "Calcula cuánto debe facturar un autónomo para quedarse con el mismo neto que un asalariado: cuota RETA 2026, IRPF por comunidad y coste para la empresa.",
- "h1": "Autónomo o asalariado: ¿cuánto tienes que facturar para cobrar lo mismo?",
- "lead": "Sin contar la tarifa plana del primer año, un autónomo tiene que facturar más que el sueldo bruto de un asalariado para quedarse con el mismo dinero neto: con 30.000 € brutos en Madrid y 3.000 € de gastos, unos 36.400 € al año sin IVA, unos 3.030 € al mes. Con tu sueldo, tus gastos, tu comunidad y tus hijos la cifra cambia: calcúlala y compárala con lo que de verdad podrías facturar.",
- "veredicto": "Para cobrar lo mismo que como asalariado, sin contar la tarifa plana del primer año, un autónomo (persona física, sin sociedad) debe facturar más que el sueldo bruto de ese asalariado: con 30.000 € brutos en Madrid y 3.000 € de gastos, unos 36.400 € al año sin IVA; la calculadora da la cifra exacta con tu comunidad, tus gastos, tus hijos y tu tipo de contrato, sin incluir IVA ni prestaciones.",
- "tema": "impuestos",
- "inputs": [
-  {
-   "id": "bruto",
-   "label": "Salario bruto anual como asalariado (€, jornada completa; mínimo 17.094 €)",
-   "default": 30000,
-   "min": 17094,
-   "step": 1000,
-   "default_from": "params.autonomo_2026.supuestos.bruto"
-  },
-  {
-   "id": "factura",
-   "label": "Facturación anual que prevés como autónomo (€, sin IVA)",
-   "default": 45000,
-   "min": 0,
-   "step": 1000,
-   "default_from": "params.autonomo_2026.supuestos.factura"
-  },
-  {
-   "id": "gastos",
-   "label": "Gastos deducibles del autónomo (€ al año, sin contar la cuota de la Seguridad Social)",
-   "default": 3000,
-   "min": 0,
-   "step": 500,
-   "default_from": "params.autonomo_2026.supuestos.gastos"
-  },
-  {
-   "id": "ccaa",
-   "label": "Comunidad autónoma donde resides (régimen común)",
-   "type": "select",
-   "options": [
+  "slug": "autonomo-o-asalariado",
+  "title": "¿Autónomo o asalariado? Cuánto facturar para cobrar igual",
+  "description": "Calcula cuánto debes facturar como autónomo para igualar el neto de un sueldo por cuenta ajena. Con cuota, IRPF y gastos, según tu caso.",
+  "h1": "Autónomo o asalariado: ¿cuánto tienes que facturar para cobrar lo mismo?",
+  "lead": "Sin contar la tarifa plana del primer año, un autónomo tiene que facturar más que el sueldo bruto de un asalariado para quedarse con el mismo dinero neto: con 30.000 € brutos en Madrid y 3.000 € de gastos, unos 36.400 € al año sin IVA, unos 3.030 € al mes. Con tu sueldo, tus gastos, tu comunidad y tus hijos la cifra cambia: calcúlala y compárala con lo que de verdad podrías facturar.",
+  "veredicto": "Para cobrar lo mismo que como asalariado, sin contar la tarifa plana del primer año, un autónomo (persona física, sin sociedad) debe facturar más que el sueldo bruto de ese asalariado: con 30.000 € brutos en Madrid y 3.000 € de gastos, unos 36.400 € al año sin IVA; la calculadora da la cifra exacta con tu comunidad, tus gastos, tus hijos y tu tipo de contrato, sin incluir IVA ni prestaciones.",
+  "tema": "impuestos",
+  "inputs": [
     {
-     "v": "madrid",
-     "t": "Comunidad de Madrid"
+      "id": "bruto",
+      "label": "Salario bruto anual como asalariado (€, jornada completa; mínimo 17.094 €)",
+      "default": 30000,
+      "min": 17094,
+      "step": 1000,
+      "default_from": "params.autonomo_2026.supuestos.bruto"
     },
     {
-     "v": "andalucia",
-     "t": "Andalucía"
+      "id": "factura",
+      "label": "Facturación anual que prevés como autónomo (€, sin IVA)",
+      "default": 45000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.autonomo_2026.supuestos.factura"
     },
     {
-     "v": "aragon",
-     "t": "Aragón"
+      "id": "gastos",
+      "label": "Gastos deducibles del autónomo (€ al año, sin contar la cuota de la Seguridad Social)",
+      "default": 3000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.autonomo_2026.supuestos.gastos"
     },
     {
-     "v": "asturias",
-     "t": "Asturias"
+      "id": "ccaa",
+      "label": "Comunidad autónoma donde resides (régimen común)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "canarias",
+          "t": "Canarias"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
     },
     {
-     "v": "baleares",
-     "t": "Illes Balears"
+      "id": "hijos",
+      "label": "Hijos a tu cargo (mayores de 3 años)",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Ninguno"
+        },
+        {
+          "v": "1",
+          "t": "1 hijo"
+        },
+        {
+          "v": "2",
+          "t": "2 hijos"
+        },
+        {
+          "v": "3",
+          "t": "3 hijos"
+        }
+      ]
     },
     {
-     "v": "canarias",
-     "t": "Canarias"
-    },
-    {
-     "v": "cantabria",
-     "t": "Cantabria"
-    },
-    {
-     "v": "clm",
-     "t": "Castilla-La Mancha"
-    },
-    {
-     "v": "cyl",
-     "t": "Castilla y León"
-    },
-    {
-     "v": "cataluna",
-     "t": "Cataluña"
-    },
-    {
-     "v": "extremadura",
-     "t": "Extremadura"
-    },
-    {
-     "v": "galicia",
-     "t": "Galicia"
-    },
-    {
-     "v": "murcia",
-     "t": "Región de Murcia"
-    },
-    {
-     "v": "rioja",
-     "t": "La Rioja"
-    },
-    {
-     "v": "valencia",
-     "t": "Comunitat Valenciana"
+      "id": "contrato",
+      "label": "Tu contrato como asalariado",
+      "type": "select",
+      "options": [
+        {
+          "v": "indef",
+          "t": "Indefinido"
+        },
+        {
+          "v": "temp",
+          "t": "Temporal"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "hijos",
-   "label": "Hijos a tu cargo (mayores de 3 años)",
-   "type": "select",
-   "options": [
-    {
-     "v": "0",
-     "t": "Ninguno"
-    },
-    {
-     "v": "1",
-     "t": "1 hijo"
-    },
-    {
-     "v": "2",
-     "t": "2 hijos"
-    },
-    {
-     "v": "3",
-     "t": "3 hijos"
-    }
-   ]
-  },
-  {
-   "id": "contrato",
-   "label": "Tu contrato como asalariado",
-   "type": "select",
-   "options": [
-    {
-     "v": "indef",
-     "t": "Indefinido"
-    },
-    {
-     "v": "temp",
-     "t": "Temporal"
-    }
-   ]
-  }
- ],
- "faqs": [
-  [
-   "¿Cuánto tengo que facturar como autónomo para cobrar lo mismo que un asalariado?",
-   "Más que el sueldo bruto del asalariado. Con los supuestos de la calculadora (Madrid, sin hijos, contrato indefinido y 3.000 € de gastos), un sueldo de 20.000 € brutos equivale a facturar unos 26.700 € sin IVA, 30.000 € a unos 36.400 € y 60.000 € a unos 65.600 €: el recargo baja del 33 % al 9 % según sube el sueldo. Cada euro de gastos del negocio hay que facturarlo además. Es un cálculo con IRPF y Seguridad Social de 2026, sin IVA, tarifa plana ni prestaciones."
   ],
-  [
-   "¿Cuánto paga un autónomo de Seguridad Social en 2026?",
-   "El tipo total es del 31,50 % (28,30 % contingencias comunes, 1,30 % profesionales, 0,90 % cese de actividad, 0,10 % formación y 0,90 % MEI) sobre una base que depende de los rendimientos netos mensuales, con 15 tramos: la base mínima va de 653,59 € (cuota de unos 206 € al mes) a 1.928,10 € en el último tramo, y la máxima es 5.101,20 € al mes. Los rendimientos para elegir tramo son el rendimiento neto más las cuotas, menos una deducción del 7 % por gastos genéricos (art. 308 de la Ley General de la Seguridad Social; Orden PJC/297/2026)."
+  "faqs": [
+    [
+      "¿Cuánto tengo que facturar como autónomo para cobrar lo mismo que un asalariado?",
+      "Más que el sueldo bruto del asalariado. Con los supuestos de la calculadora (Madrid, sin hijos, contrato indefinido y 3.000 € de gastos), un sueldo de 20.000 € brutos equivale a facturar unos 26.700 € sin IVA, 30.000 € a unos 36.400 € y 60.000 € a unos 65.600 €: el recargo baja del 33 % al 9 % según sube el sueldo. Cada euro de gastos del negocio hay que facturarlo además. Es un cálculo con IRPF y Seguridad Social de 2026, sin IVA, tarifa plana ni prestaciones."
+    ],
+    [
+      "¿Cuánto paga un autónomo de Seguridad Social en 2026?",
+      "El tipo total es del 31,50 % (28,30 % contingencias comunes, 1,30 % profesionales, 0,90 % cese de actividad, 0,10 % formación y 0,90 % MEI) sobre una base que depende de los rendimientos netos mensuales, con 15 tramos: la base mínima va de 653,59 € (cuota de unos 206 € al mes) a 1.928,10 € en el último tramo, y la máxima es 5.101,20 € al mes. Los rendimientos para elegir tramo son el rendimiento neto más las cuotas, menos una deducción del 7 % por gastos genéricos (art. 308 de la Ley General de la Seguridad Social; Orden PJC/297/2026)."
+    ],
+    [
+      "¿Cuánto le cuesta a la empresa un asalariado?",
+      "Su bruto más la Seguridad Social a cargo de la empresa: un 30,65 % de la base en un contrato indefinido (31,85 % en uno temporal), sin contar la prima de accidentes de trabajo, que depende de la actividad. Con 30.000 € brutos son unos 39.200 € al año. Compáralo con lo que facturaría el autónomo: con 20.000 € brutos, el autónomo que iguala tu neto factura unos 26.700 € frente a un coste de empresa de 26.100 €; con 30.000 €, unos 36.400 € frente a 39.200 €."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "El IVA (la facturación se entiende sin IVA), la tarifa plana (Ley 20/2007, art. 38 ter) y las bonificaciones de nuevos autónomos, la reducción del 20 % del IRPF del primer año con beneficios y del siguiente (art. 32.3), la reducción para autónomos con un único cliente (art. 32.2.1.º), las sociedades, las deducciones autonómicas, la pluriactividad y las cotizaciones por encima de la base mínima de tu tramo. Tampoco valora las prestaciones: baja por enfermedad, cese de actividad (la cuota ya lo incluye), paro y jubilación se generan de forma distinta según cotices como asalariado o como autónomo."
+    ],
+    [
+      "¿Cómo tributa en el IRPF un autónomo frente a un asalariado?",
+      "El asalariado resta la Seguridad Social, 2.000 € de otros gastos y la reducción por rendimientos del trabajo (hasta 7.302 € si gana poco) y aplica la deducción de la DA 61.ª si cobra menos de 20.048,45 €. El autónomo en estimación directa simplificada resta sus gastos, la cuota de la Seguridad Social y una deducción de difícil justificación del 5 % con máximo de 2.000 € (la del 7 % es solo de la base de cotización); si sus rentas son bajas, además, hasta 1.620 € de reducción (si sus rentas no llegan a 12.000 €); si trabaja para un único cliente y cumple los requisitos del art. 32.2.1.º, en lugar del 5 % resta 2.000 € y hasta 6.498 € más. Ambos usan la misma escala estatal y autonómica y los mismos mínimos personales y familiares."
+    ]
   ],
-  [
-   "¿Cuánto le cuesta a la empresa un asalariado?",
-   "Su bruto más la Seguridad Social a cargo de la empresa: un 30,65 % de la base en un contrato indefinido (31,85 % en uno temporal), sin contar la prima de accidentes de trabajo, que depende de la actividad. Con 30.000 € brutos son unos 39.200 € al año. Compáralo con lo que facturaría el autónomo: con 20.000 € brutos, el autónomo que iguala tu neto factura unos 26.700 € frente a un coste de empresa de 26.100 €; con 30.000 €, unos 36.400 € frente a 39.200 €."
-  ],
-  [
-   "¿Qué no incluye esta comparación?",
-   "El IVA (la facturación se entiende sin IVA), la tarifa plana (Ley 20/2007, art. 38 ter) y las bonificaciones de nuevos autónomos, la reducción del 20 % del IRPF del primer año con beneficios y del siguiente (art. 32.3), la reducción para autónomos con un único cliente (art. 32.2.1.º), las sociedades, las deducciones autonómicas, la pluriactividad y las cotizaciones por encima de la base mínima de tu tramo. Tampoco valora las prestaciones: baja por enfermedad, cese de actividad (la cuota ya lo incluye), paro y jubilación se generan de forma distinta según cotices como asalariado o como autónomo."
-  ],
-  [
-   "¿Cómo tributa en el IRPF un autónomo frente a un asalariado?",
-   "El asalariado resta la Seguridad Social, 2.000 € de otros gastos y la reducción por rendimientos del trabajo (hasta 7.302 € si gana poco) y aplica la deducción de la DA 61.ª si cobra menos de 20.048,45 €. El autónomo en estimación directa simplificada resta sus gastos, la cuota de la Seguridad Social y una deducción de difícil justificación del 5 % con máximo de 2.000 € (la del 7 % es solo de la base de cotización); si sus rentas son bajas, además, hasta 1.620 € de reducción (si sus rentas no llegan a 12.000 €); si trabaja para un único cliente y cumple los requisitos del art. 32.2.1.º, en lugar del 5 % resta 2.000 € y hasta 6.498 € más. Ambos usan la misma escala estatal y autonómica y los mismos mínimos personales y familiares."
-  ]
- ],
- "sources": "Modelo propio y anual: el asalariado cotiza sobre su bruto entre 12 (base máxima 5.101,20 € al mes; tipos del trabajador del 6,50 % en contrato indefinido y 6,55 % en temporal, más cotización adicional de solidaridad por encima de la base máxima) y el autónomo, por la base mínima del tramo que corresponde a su rendimiento computable (rendimiento neto más cuotas menos el 7 % de gastos genéricos), resuelto por punto fijo porque la deducción de difícil justificación depende de la cuota. IRPF: escalas estatal y autonómica de 2026 de las 15 comunidades de régimen común, mínimo personal y por descendientes (todos con más de 3 años, a cargo de ti solo), art. 20 y DA 61.ª para el asalariado, art. 30.2.4.ª LIRPF y art. 30.2.ª RIRPF (5 %, máximo 2.000 €) y art. 32.2.3.º (1.620 €) para el autónomo. La facturación de equivalencia es la cifra a partir de la cual el neto del autónomo alcanza el del asalariado y ya no baja de él (el neto cae en cada salto de tramo de la cuota). Fuentes: Orden PJC/297/2026, de cotización 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Ley General de la Seguridad Social, art. 308 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Ley 35/2006 del IRPF, consolidada a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Reglamento del IRPF, art. 30 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). No cubre País Vasco ni Navarra. Castilla y León, Región de Murcia y La Rioja con cifras autonómicas orientativas. Hipótesis editables, no previsiones: sueldo de 30.000 €, facturación de 45.000 € y gastos de 3.000 €. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni laboral."
+  "sources": "Modelo propio y anual: el asalariado cotiza sobre su bruto entre 12 (base máxima 5.101,20 € al mes; tipos del trabajador del 6,50 % en contrato indefinido y 6,55 % en temporal, más cotización adicional de solidaridad por encima de la base máxima) y el autónomo, por la base mínima del tramo que corresponde a su rendimiento computable (rendimiento neto más cuotas menos el 7 % de gastos genéricos), resuelto por punto fijo porque la deducción de difícil justificación depende de la cuota. IRPF: escalas estatal y autonómica de 2026 de las 15 comunidades de régimen común, mínimo personal y por descendientes (todos con más de 3 años, a cargo de ti solo), art. 20 y DA 61.ª para el asalariado, art. 30.2.4.ª LIRPF y art. 30.2.ª RIRPF (5 %, máximo 2.000 €) y art. 32.2.3.º (1.620 €) para el autónomo. La facturación de equivalencia es la cifra a partir de la cual el neto del autónomo alcanza el del asalariado y ya no baja de él (el neto cae en cada salto de tramo de la cuota). Fuentes: Orden PJC/297/2026, de cotización 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296); Ley General de la Seguridad Social, art. 308 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Ley 35/2006 del IRPF, consolidada a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Reglamento del IRPF, art. 30 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). No cubre País Vasco ni Navarra. Castilla y León, Región de Murcia y La Rioja con cifras autonómicas orientativas. Hipótesis editables, no previsiones: sueldo de 30.000 €, facturación de 45.000 € y gastos de 3.000 €. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni laboral."
 }

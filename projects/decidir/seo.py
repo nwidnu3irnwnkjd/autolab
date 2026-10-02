@@ -180,6 +180,13 @@ def breadcrumbs(base, items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         dict({"@type": "ListItem", "position": i + 1, "name": n}, **({"item": base + p} if p else {})) for i, (n, p) in enumerate(items)]}
 
+def webapp(c, base, mod):
+    return {"@context": "https://schema.org", "@type": "WebApplication", "name": c["h1"], "description": c["description"],
+            "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requiere JavaScript",
+            "inLanguage": "es-ES", "url": f"{base}/decidir/{c['slug']}/", "dateModified": mod,
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+            "author": {"@type": "Organization", "name": "Entre Muchos", "url": base + "/"}, "publisher": org(base)}
+
 def calc_jsonld(c, base, params):
     url = f"{base}/decidir/{c['slug']}/"
     out = [article(c["h1"], c["description"], url, published(*calc_files(c["slug"])), calc_lastmod(c["slug"], params), base)]

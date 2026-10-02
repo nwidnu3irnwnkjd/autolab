@@ -1,156 +1,156 @@
 {
- "slug": "finiquito-baja-voluntaria-vacaciones-preaviso",
- "title": "Finiquito por baja voluntaria: vacaciones, preaviso y neto",
- "description": "Calcula tu finiquito al irte de la empresa: salario, pagas extra, vacaciones no disfrutadas, descuento por preaviso, cotización e IRPF y el neto.",
- "h1": "¿Cuánto me pagan de finiquito si me voy de la empresa y qué pasa con las vacaciones y el preaviso?",
- "lead": "Al irte por baja voluntaria cobras el salario de los días trabajados del mes, la parte proporcional de las pagas extra y las vacaciones devengadas y no disfrutadas, y la empresa puede descontar el preaviso incumplido si tu convenio o contrato lo prevé: con 24.000 € brutos en 14 pagas, salida el 15 de octubre y 18 de 30 días de vacaciones disfrutados, el finiquito bruto es de 2.199 € y quedan unos 1.782 € netos tras la cotización y un IRPF del 15 %. Son importes estimados: el convenio puede cambiar los días de vacaciones, el preaviso y su descuento.",
- "veredicto": "Con tus datos (24.000 € brutos al año en 14 pagas, salida el 15 de octubre), el finiquito bruto es de 2.199 € (salario del mes 829 €, pagas extra 997 €, vacaciones 373 €) y te quedarían unos 1.782 € netos tras 87 € de cotización y 330 € de IRPF estimado. Te pagan 5,7 días de vacaciones sin disfrutar (unos 52 € netos por día); si la empresa te deja disfrutarlas antes de irte, cobras tu salario de esos días en nómina y descansas. Si tu convenio prevé descontar el preaviso, cada día incumplido son 66 € brutos menos: con 15 días, 986 € menos y 796 € netos en total.",
- "tema": "impuestos",
- "sources": "Modelo propio simplificado, consultado el 2/10/2026. Estatuto de los Trabajadores (RDL 2/2015, texto consolidado a 30/9/2026, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430): art. 29 (liquidación y pago del salario), art. 31 (pagas extraordinarias), art. 38.1 (vacaciones de al menos 30 días naturales, no sustituibles por compensación económica; la compensación de las devengadas y no disfrutadas al extinguirse el contrato la establece el art. 11 del Convenio 132 de la OIT, ratificado por España, https://www.boe.es/diario_boe/txt.php?id=BOE-A-1974-1055, y la aplica el Tribunal Supremo), art. 49.1.d (dimisión con el preaviso que señalen los convenios o la costumbre del lugar), art. 49.2 (propuesta de liquidación y presencia de un representante legal al firmar el finiquito), art. 50 (extinción por voluntad del trabajador con causa justa) y art. 59.1 (un año para reclamar). Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): art. 147.1 (las vacaciones devengadas y no disfrutadas que se retribuyen al extinguirse la relación se liquidan y cotizan aparte, sin prorrateo y con el tope del mes o meses afectados) y art. 267.1.a (situación legal de desempleo: la resolución voluntaria solo en los supuestos de los arts. 40, 41.3, 49.1.m y 50 del Estatuto, este último con extinción pedida al juez). Ley del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 17.1.a (los sueldos y salarios son rendimientos del trabajo). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 80.1 (la retención es el tipo aplicado a la cuantía total de las retribuciones que se abonan), 86.1 y 87.2.3.º (tipo único regularizable por variaciones en las retribuciones). Cotización: Reglamento General de Cotización (RD 2064/1995, https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579) art. 23.1.A (las percepciones de vencimiento superior al mensual se prorratean en los doce meses: la parte pendiente de las pagas ya cotizó); Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296) y RDL 3/2026 (tope de 5.101,20 € al mes): 6,5 % a cargo del trabajador con contrato indefinido. Supuestos que no son literales de la ley: el salario del mes se prorratea por días naturales del mes; con 14 pagas, la de verano se devenga de enero a junio y la de Navidad de julio a diciembre (con verano de julio a junio y Navidad por año natural, las pagas pendientes del ejemplo serían unos 1.855 € en vez de 997 €); un día natural de vacaciones o de preaviso vale el bruto anual entre 365; trabajaste todo el año desde el 1 de enero; la cotización (salario del mes, prorrata de pagas de ese mes y vacaciones) y el IRPF se calculan antes del descuento por preaviso; el descuento por preaviso solo existe si el convenio o el contrato lo prevén; el IRPF se estima con el tipo que escribes. El Real Decreto-ley 26/2026 no toca estos artículos. No hay Presupuestos de 2026.",
- "inputs": [
-  {
-   "id": "bruto",
-   "label": "Salario bruto anual (€, incluidas las pagas extra)",
-   "default": 24000,
-   "min": 1,
-   "step": 500,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.bruto"
-  },
-  {
-   "id": "pagas",
-   "label": "Número de pagas",
-   "type": "select",
-   "options": [
+  "slug": "finiquito-baja-voluntaria-vacaciones-preaviso",
+  "title": "Finiquito por baja voluntaria: vacaciones y preaviso",
+  "description": "Calcula tu finiquito al dejar la empresa: vacaciones no disfrutadas, pagas prorrateadas, preaviso y neto. Con tu salario y tu fecha de salida.",
+  "h1": "¿Cuánto me pagan de finiquito si me voy de la empresa y qué pasa con las vacaciones y el preaviso?",
+  "lead": "Al irte por baja voluntaria cobras el salario de los días trabajados del mes, la parte proporcional de las pagas extra y las vacaciones devengadas y no disfrutadas, y la empresa puede descontar el preaviso incumplido si tu convenio o contrato lo prevé: con 24.000 € brutos en 14 pagas, salida el 15 de octubre y 18 de 30 días de vacaciones disfrutados, el finiquito bruto es de 2.199 € y quedan unos 1.782 € netos tras la cotización y un IRPF del 15 %. Son importes estimados: el convenio puede cambiar los días de vacaciones, el preaviso y su descuento.",
+  "veredicto": "Con tus datos (24.000 € brutos al año en 14 pagas, salida el 15 de octubre), el finiquito bruto es de 2.199 € (salario del mes 829 €, pagas extra 997 €, vacaciones 373 €) y te quedarían unos 1.782 € netos tras 87 € de cotización y 330 € de IRPF estimado. Te pagan 5,7 días de vacaciones sin disfrutar (unos 52 € netos por día); si la empresa te deja disfrutarlas antes de irte, cobras tu salario de esos días en nómina y descansas. Si tu convenio prevé descontar el preaviso, cada día incumplido son 66 € brutos menos: con 15 días, 986 € menos y 796 € netos en total.",
+  "tema": "impuestos",
+  "sources": "Modelo propio simplificado, consultado el 2/10/2026. Estatuto de los Trabajadores (RDL 2/2015, texto consolidado a 30/9/2026, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430): art. 29 (liquidación y pago del salario), art. 31 (pagas extraordinarias), art. 38.1 (vacaciones de al menos 30 días naturales, no sustituibles por compensación económica; la compensación de las devengadas y no disfrutadas al extinguirse el contrato la establece el art. 11 del Convenio 132 de la OIT, ratificado por España, https://www.boe.es/diario_boe/txt.php?id=BOE-A-1974-1055, y la aplica el Tribunal Supremo), art. 49.1.d (dimisión con el preaviso que señalen los convenios o la costumbre del lugar), art. 49.2 (propuesta de liquidación y presencia de un representante legal al firmar el finiquito), art. 50 (extinción por voluntad del trabajador con causa justa) y art. 59.1 (un año para reclamar). Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): art. 147.1 (las vacaciones devengadas y no disfrutadas que se retribuyen al extinguirse la relación se liquidan y cotizan aparte, sin prorrateo y con el tope del mes o meses afectados) y art. 267.1.a (situación legal de desempleo: la resolución voluntaria solo en los supuestos de los arts. 40, 41.3, 49.1.m y 50 del Estatuto, este último con extinción pedida al juez). Ley del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 17.1.a (los sueldos y salarios son rendimientos del trabajo). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 80.1 (la retención es el tipo aplicado a la cuantía total de las retribuciones que se abonan), 86.1 y 87.2.3.º (tipo único regularizable por variaciones en las retribuciones). Cotización: Reglamento General de Cotización (RD 2064/1995, https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579) art. 23.1.A (las percepciones de vencimiento superior al mensual se prorratean en los doce meses: la parte pendiente de las pagas ya cotizó); Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296) y RDL 3/2026 (tope de 5.101,20 € al mes): 6,5 % a cargo del trabajador con contrato indefinido. Supuestos que no son literales de la ley: el salario del mes se prorratea por días naturales del mes; con 14 pagas, la de verano se devenga de enero a junio y la de Navidad de julio a diciembre (con verano de julio a junio y Navidad por año natural, las pagas pendientes del ejemplo serían unos 1.855 € en vez de 997 €); un día natural de vacaciones o de preaviso vale el bruto anual entre 365; trabajaste todo el año desde el 1 de enero; la cotización (salario del mes, prorrata de pagas de ese mes y vacaciones) y el IRPF se calculan antes del descuento por preaviso; el descuento por preaviso solo existe si el convenio o el contrato lo prevén; el IRPF se estima con el tipo que escribes. El Real Decreto-ley 26/2026 no toca estos artículos. No hay Presupuestos de 2026.",
+  "inputs": [
     {
-     "v": "14",
-     "t": "14 pagas (dos extra, sin prorratear)"
+      "id": "bruto",
+      "label": "Salario bruto anual (€, incluidas las pagas extra)",
+      "default": 24000,
+      "min": 1,
+      "step": 500,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.bruto"
     },
     {
-     "v": "12",
-     "t": "12 pagas (extras prorrateadas en la nómina)"
+      "id": "pagas",
+      "label": "Número de pagas",
+      "type": "select",
+      "options": [
+        {
+          "v": "14",
+          "t": "14 pagas (dos extra, sin prorratear)"
+        },
+        {
+          "v": "12",
+          "t": "12 pagas (extras prorrateadas en la nómina)"
+        }
+      ]
+    },
+    {
+      "id": "mes",
+      "label": "Mes de salida (último mes que trabajas)",
+      "type": "select",
+      "options": [
+        {
+          "v": "1",
+          "t": "Enero"
+        },
+        {
+          "v": "2",
+          "t": "Febrero"
+        },
+        {
+          "v": "3",
+          "t": "Marzo"
+        },
+        {
+          "v": "4",
+          "t": "Abril"
+        },
+        {
+          "v": "5",
+          "t": "Mayo"
+        },
+        {
+          "v": "6",
+          "t": "Junio"
+        },
+        {
+          "v": "7",
+          "t": "Julio"
+        },
+        {
+          "v": "8",
+          "t": "Agosto"
+        },
+        {
+          "v": "9",
+          "t": "Septiembre"
+        },
+        {
+          "v": "10",
+          "t": "Octubre"
+        },
+        {
+          "v": "11",
+          "t": "Noviembre"
+        },
+        {
+          "v": "12",
+          "t": "Diciembre"
+        }
+      ]
+    },
+    {
+      "id": "dia",
+      "label": "Día de salida (último día trabajado; 28-31 si es fin de mes)",
+      "default": 15,
+      "min": 1,
+      "max": 31,
+      "step": 1,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.dia"
+    },
+    {
+      "id": "vacAnual",
+      "label": "Días de vacaciones al año (naturales; 30 como mínimo legal, según convenio)",
+      "default": 30,
+      "min": 30,
+      "max": 90,
+      "step": 1,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.vac_anual"
+    },
+    {
+      "id": "vacDisf",
+      "label": "Días de vacaciones ya disfrutados este año (naturales)",
+      "default": 18,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.vac_disf"
+    },
+    {
+      "id": "incumple",
+      "label": "Días de preaviso que no vas a cumplir (según convenio; 0 si cumples)",
+      "default": 0,
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.incumple"
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo de retención de IRPF de tu nómina (%, aproximado; puede variar al regularizarse)",
+      "default": 15,
+      "min": 0,
+      "max": 47,
+      "step": 0.5,
+      "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.tipo"
     }
-   ]
-  },
-  {
-   "id": "mes",
-   "label": "Mes de salida (último mes que trabajas)",
-   "type": "select",
-   "options": [
-    {
-     "v": "1",
-     "t": "Enero"
-    },
-    {
-     "v": "2",
-     "t": "Febrero"
-    },
-    {
-     "v": "3",
-     "t": "Marzo"
-    },
-    {
-     "v": "4",
-     "t": "Abril"
-    },
-    {
-     "v": "5",
-     "t": "Mayo"
-    },
-    {
-     "v": "6",
-     "t": "Junio"
-    },
-    {
-     "v": "7",
-     "t": "Julio"
-    },
-    {
-     "v": "8",
-     "t": "Agosto"
-    },
-    {
-     "v": "9",
-     "t": "Septiembre"
-    },
-    {
-     "v": "10",
-     "t": "Octubre"
-    },
-    {
-     "v": "11",
-     "t": "Noviembre"
-    },
-    {
-     "v": "12",
-     "t": "Diciembre"
-    }
-   ]
-  },
-  {
-   "id": "dia",
-   "label": "Día de salida (último día trabajado; 28-31 si es fin de mes)",
-   "default": 15,
-   "min": 1,
-   "max": 31,
-   "step": 1,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.dia"
-  },
-  {
-   "id": "vacAnual",
-   "label": "Días de vacaciones al año (naturales; 30 como mínimo legal, según convenio)",
-   "default": 30,
-   "min": 30,
-   "max": 90,
-   "step": 1,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.vac_anual"
-  },
-  {
-   "id": "vacDisf",
-   "label": "Días de vacaciones ya disfrutados este año (naturales)",
-   "default": 18,
-   "min": 0,
-   "step": 1,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.vac_disf"
-  },
-  {
-   "id": "incumple",
-   "label": "Días de preaviso que no vas a cumplir (según convenio; 0 si cumples)",
-   "default": 0,
-   "min": 0,
-   "max": 90,
-   "step": 1,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.incumple"
-  },
-  {
-   "id": "tipo",
-   "label": "Tipo de retención de IRPF de tu nómina (%, aproximado; puede variar al regularizarse)",
-   "default": 15,
-   "min": 0,
-   "max": 47,
-   "step": 0.5,
-   "default_from": "params.finiquito_baja_voluntaria_2026.supuestos.tipo"
-  }
- ],
- "faqs": [
-  [
-   "¿Cómo se calcula el finiquito si me voy de la empresa por baja voluntaria?",
-   "Se suma el salario de los días trabajados del mes, la parte proporcional de las pagas extra (si no están prorrateadas) y las vacaciones devengadas y no disfrutadas (arts. 29, 31 y 38 del Estatuto de los Trabajadores), y se restan la cotización a la Seguridad Social y la retención de IRPF. Con 24.000 € brutos en 14 pagas, salida el 15 de octubre y 18 de 30 días de vacaciones disfrutados, el finiquito bruto es de 2.199 € (829 € de salario, 997 € de pagas y 373 € de vacaciones) y quedan unos 1.782 € netos con un IRPF del 15 %."
   ],
-  [
-   "¿Me pagan las vacaciones que no he disfrutado cuando dejo la empresa?",
-   "Sí, las devengadas y no disfrutadas se compensan en dinero al extinguirse el contrato: el art. 38.1 del Estatuto prohíbe sustituir las vacaciones por dinero durante la relación, pero al terminar no se pueden disfrutar y se pagan (lo establece el art. 11 del Convenio 132 de la OIT, ratificado por España, lo aplica el Tribunal Supremo y lo presupone el art. 147.1 de la Ley General de la Seguridad Social). Se calculan por días trabajados del año: con 30 días al año y salida el 15 de octubre se han devengado 23,7 días; si has disfrutado 18, te pagan 5,7 días, unos 373 € brutos con 24.000 € de sueldo. El convenio puede dar más días o fijar cómo se valora cada día."
-  ],
-  [
-   "¿Qué pasa si no cumplo el preaviso al dejar el trabajo?",
-   "El Estatuto exige el preaviso que señalen los convenios colectivos o la costumbre del lugar (art. 49.1.d), y la consecuencia de no darlo la fija el convenio o el contrato; si la prevén, la empresa puede descontar del finiquito el salario de los días incumplidos. Con 24.000 € brutos, cada día son unos 66 € brutos: 15 días incumplidos suponen 986 € menos y el neto del ejemplo baja de 1.782 € a 796 €. Si ni el convenio ni el contrato prevén ese descuento, pregunta en qué se basa antes de firmar."
-  ],
-  [
-   "¿Cuánto IRPF y Seguridad Social se descuentan del finiquito?",
-   "La empresa retiene IRPF aplicando un tipo único a todo lo que te paga (art. 80.1 del Reglamento del IRPF); al extinguirse el contrato suele regularizarlo con las retribuciones reales del año (arts. 86.1 y 87.2.3.º), así que puede diferir del de tu nómina, y descuenta la cotización del trabajador: 6,5 % con contrato indefinido (4,70 % contingencias comunes, 1,55 % desempleo, 0,10 % formación y 0,15 % MEI). En el ejemplo son 330 € de IRPF al 15 % y 87 € de cotización: la parte pendiente de las pagas extra ya cotizó mes a mes por prorrata (art. 23.1.A del Reglamento General de Cotización), así que solo cotizan el salario del mes, la prorrata de ese mes y las vacaciones. La retención es un anticipo: se regulariza en la declaración de la Renta, y el tipo de la calculadora es una aproximación que escribes tú."
-  ],
-  [
-   "¿En qué se diferencia el finiquito de una baja voluntaria del de un despido?",
-   "El finiquito (salario, pagas y vacaciones pendientes) se calcula igual, pero el despido objetivo (20 días por año) o improcedente (33) añade la indemnización (tienes la calculadora de indemnización por despido; el disciplinario procedente no la tiene) y da situación legal de desempleo para pedir el paro (art. 267.1.a de la Ley General de la Seguridad Social). En la baja voluntaria no hay indemnización y, en general, tampoco paro; la excepción son los supuestos de los arts. 40, 41.3, 49.1.m y 50 del Estatuto (traslado, modificación sustancial, víctimas de violencia de género o extinción pedida al juez por incumplimientos graves, como el impago continuado del salario), que dan paro y, en 40, 41.3 y 50, indemnización."
+  "faqs": [
+    [
+      "¿Cómo se calcula el finiquito si me voy de la empresa por baja voluntaria?",
+      "Se suma el salario de los días trabajados del mes, la parte proporcional de las pagas extra (si no están prorrateadas) y las vacaciones devengadas y no disfrutadas (arts. 29, 31 y 38 del Estatuto de los Trabajadores), y se restan la cotización a la Seguridad Social y la retención de IRPF. Con 24.000 € brutos en 14 pagas, salida el 15 de octubre y 18 de 30 días de vacaciones disfrutados, el finiquito bruto es de 2.199 € (829 € de salario, 997 € de pagas y 373 € de vacaciones) y quedan unos 1.782 € netos con un IRPF del 15 %."
+    ],
+    [
+      "¿Me pagan las vacaciones que no he disfrutado cuando dejo la empresa?",
+      "Sí, las devengadas y no disfrutadas se compensan en dinero al extinguirse el contrato: el art. 38.1 del Estatuto prohíbe sustituir las vacaciones por dinero durante la relación, pero al terminar no se pueden disfrutar y se pagan (lo establece el art. 11 del Convenio 132 de la OIT, ratificado por España, lo aplica el Tribunal Supremo y lo presupone el art. 147.1 de la Ley General de la Seguridad Social). Se calculan por días trabajados del año: con 30 días al año y salida el 15 de octubre se han devengado 23,7 días; si has disfrutado 18, te pagan 5,7 días, unos 373 € brutos con 24.000 € de sueldo. El convenio puede dar más días o fijar cómo se valora cada día."
+    ],
+    [
+      "¿Qué pasa si no cumplo el preaviso al dejar el trabajo?",
+      "El Estatuto exige el preaviso que señalen los convenios colectivos o la costumbre del lugar (art. 49.1.d), y la consecuencia de no darlo la fija el convenio o el contrato; si la prevén, la empresa puede descontar del finiquito el salario de los días incumplidos. Con 24.000 € brutos, cada día son unos 66 € brutos: 15 días incumplidos suponen 986 € menos y el neto del ejemplo baja de 1.782 € a 796 €. Si ni el convenio ni el contrato prevén ese descuento, pregunta en qué se basa antes de firmar."
+    ],
+    [
+      "¿Cuánto IRPF y Seguridad Social se descuentan del finiquito?",
+      "La empresa retiene IRPF aplicando un tipo único a todo lo que te paga (art. 80.1 del Reglamento del IRPF); al extinguirse el contrato suele regularizarlo con las retribuciones reales del año (arts. 86.1 y 87.2.3.º), así que puede diferir del de tu nómina, y descuenta la cotización del trabajador: 6,5 % con contrato indefinido (4,70 % contingencias comunes, 1,55 % desempleo, 0,10 % formación y 0,15 % MEI). En el ejemplo son 330 € de IRPF al 15 % y 87 € de cotización: la parte pendiente de las pagas extra ya cotizó mes a mes por prorrata (art. 23.1.A del Reglamento General de Cotización), así que solo cotizan el salario del mes, la prorrata de ese mes y las vacaciones. La retención es un anticipo: se regulariza en la declaración de la Renta, y el tipo de la calculadora es una aproximación que escribes tú."
+    ],
+    [
+      "¿En qué se diferencia el finiquito de una baja voluntaria del de un despido?",
+      "El finiquito (salario, pagas y vacaciones pendientes) se calcula igual, pero el despido objetivo (20 días por año) o improcedente (33) añade la indemnización (tienes la calculadora de indemnización por despido; el disciplinario procedente no la tiene) y da situación legal de desempleo para pedir el paro (art. 267.1.a de la Ley General de la Seguridad Social). En la baja voluntaria no hay indemnización y, en general, tampoco paro; la excepción son los supuestos de los arts. 40, 41.3, 49.1.m y 50 del Estatuto (traslado, modificación sustancial, víctimas de violencia de género o extinción pedida al juez por incumplimientos graves, como el impago continuado del salario), que dan paro y, en 40, 41.3 y 50, indemnización."
+    ]
   ]
- ]
 }

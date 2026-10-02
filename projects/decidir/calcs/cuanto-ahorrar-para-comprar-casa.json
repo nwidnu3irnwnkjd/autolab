@@ -1,163 +1,163 @@
 {
- "slug": "cuanto-ahorrar-para-comprar-casa",
- "title": "Cuánto dinero necesito para comprar casa",
- "description": "Calcula cuánto ahorro necesitas para comprar casa: entrada, ITP o IVA y AJD por comunidad, gastos, ahorro mensual y la hipoteca y su cuota estimada.",
- "h1": "¿Cuánto dinero necesito para comprar una casa?",
- "lead": "Además de la entrada, necesitas reunir entre un 7 % (Madrid) y un 11 % (Cataluña) del precio en impuestos y gastos si compras una vivienda usada de 250.000 € con 2.500 € de gastos, y entre un 11,75 % y un 12,5 % si es nueva. Con una entrada del 20 % son 67.500 € en una usada de Madrid con el tipo general; calcula la cifra de tu vivienda y tu comunidad, cuánto ahorrar al mes y qué hipoteca te quedaría.",
- "veredicto": "Para comprar una vivienda necesitas ahorrar la entrada más los impuestos (ITP en usada; IVA del 10 % y AJD en nueva) y los gastos de notaría, registro, gestoría y tasación: con un precio de 250.000 €, una entrada del 20 % y 2.500 € de gastos son 67.500 € en una usada de Madrid con el tipo general y 79.375 € en una nueva, y entre el 7 % y el 12,5 % del precio solo en impuestos y gastos según la comunidad; la calculadora da tu cifra, el ahorro mensual y la hipoteca implícita.",
- "tema": "hipoteca",
- "inputs": [
-  {
-   "id": "precio",
-   "label": "Precio de la vivienda (€; si es nueva, sin IVA)",
-   "default": 250000,
-   "min": 1,
-   "step": 5000,
-   "default_from": "params.vivienda_2026.supuestos.precio"
-  },
-  {
-   "id": "ccaa",
-   "label": "Comunidad autónoma de la vivienda (régimen común, sin Canarias)",
-   "type": "select",
-   "options": [
+  "slug": "cuanto-ahorrar-para-comprar-casa",
+  "title": "¿Cuánto dinero necesito para comprar casa? Calculadora",
+  "description": "Calcula el ahorro que necesitas para comprar casa: entrada, impuestos y gastos de compra. Mete el precio de la vivienda y tu situación y sal de dudas.",
+  "h1": "¿Cuánto dinero necesito para comprar una casa?",
+  "lead": "Además de la entrada, necesitas reunir entre un 7 % (Madrid) y un 11 % (Cataluña) del precio en impuestos y gastos si compras una vivienda usada de 250.000 € con 2.500 € de gastos, y entre un 11,75 % y un 12,5 % si es nueva. Con una entrada del 20 % son 67.500 € en una usada de Madrid con el tipo general; calcula la cifra de tu vivienda y tu comunidad, cuánto ahorrar al mes y qué hipoteca te quedaría.",
+  "veredicto": "Para comprar una vivienda necesitas ahorrar la entrada más los impuestos (ITP en usada; IVA del 10 % y AJD en nueva) y los gastos de notaría, registro, gestoría y tasación: con un precio de 250.000 €, una entrada del 20 % y 2.500 € de gastos son 67.500 € en una usada de Madrid con el tipo general y 79.375 € en una nueva, y entre el 7 % y el 12,5 % del precio solo en impuestos y gastos según la comunidad; la calculadora da tu cifra, el ahorro mensual y la hipoteca implícita.",
+  "tema": "hipoteca",
+  "inputs": [
     {
-     "v": "madrid",
-     "t": "Comunidad de Madrid"
+      "id": "precio",
+      "label": "Precio de la vivienda (€; si es nueva, sin IVA)",
+      "default": 250000,
+      "min": 1,
+      "step": 5000,
+      "default_from": "params.vivienda_2026.supuestos.precio"
     },
     {
-     "v": "andalucia",
-     "t": "Andalucía"
+      "id": "ccaa",
+      "label": "Comunidad autónoma de la vivienda (régimen común, sin Canarias)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
     },
     {
-     "v": "aragon",
-     "t": "Aragón"
+      "id": "tipo",
+      "label": "¿Vivienda nueva o usada?",
+      "type": "select",
+      "options": [
+        {
+          "v": "usada",
+          "t": "Usada (paga ITP)"
+        },
+        {
+          "v": "nueva",
+          "t": "Nueva (paga IVA y AJD)"
+        }
+      ]
     },
     {
-     "v": "asturias",
-     "t": "Asturias"
+      "id": "entrada",
+      "label": "Entrada que aportas (% del precio)",
+      "default": 20,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.vivienda_2026.supuestos.entrada_pct"
     },
     {
-     "v": "baleares",
-     "t": "Illes Balears"
+      "id": "gastos",
+      "label": "Notaría, registro, gestoría y tasación (€; estimación tuya, no es una cifra oficial: pide presupuestos)",
+      "default": 2500,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.vivienda_2026.supuestos.gastos_eur"
     },
     {
-     "v": "cantabria",
-     "t": "Cantabria"
+      "id": "anos",
+      "label": "Años que tienes para ahorrar (1 a 40)",
+      "default": 5,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.vivienda_2026.supuestos.anos"
     },
     {
-     "v": "clm",
-     "t": "Castilla-La Mancha"
+      "id": "rentab",
+      "label": "Rentabilidad anual de tu ahorro (%; 0 si lo dejas en cuenta; hipótesis, no previsión)",
+      "default": 0,
+      "min": -10,
+      "step": 0.5,
+      "default_from": "params.vivienda_2026.supuestos.rentabilidad_pct"
     },
     {
-     "v": "cyl",
-     "t": "Castilla y León"
-    },
-    {
-     "v": "cataluna",
-     "t": "Cataluña"
-    },
-    {
-     "v": "extremadura",
-     "t": "Extremadura"
-    },
-    {
-     "v": "galicia",
-     "t": "Galicia"
-    },
-    {
-     "v": "murcia",
-     "t": "Región de Murcia"
-    },
-    {
-     "v": "rioja",
-     "t": "La Rioja"
-    },
-    {
-     "v": "valencia",
-     "t": "Comunitat Valenciana"
+      "id": "interes",
+      "label": "Tipo de interés de la hipoteca (%; por defecto Euríbor a 12 meses más 1 punto, plazo 25 años)",
+      "default": 4.247,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "live.euribor12m",
+      "default_add": 1,
+      "default_round": 3,
+      "default_fallback": "params.euribor_12m"
     }
-   ]
-  },
-  {
-   "id": "tipo",
-   "label": "¿Vivienda nueva o usada?",
-   "type": "select",
-   "options": [
-    {
-     "v": "usada",
-     "t": "Usada (paga ITP)"
-    },
-    {
-     "v": "nueva",
-     "t": "Nueva (paga IVA y AJD)"
-    }
-   ]
-  },
-  {
-   "id": "entrada",
-   "label": "Entrada que aportas (% del precio)",
-   "default": 20,
-   "min": 0,
-   "step": 1,
-   "default_from": "params.vivienda_2026.supuestos.entrada_pct"
-  },
-  {
-   "id": "gastos",
-   "label": "Notaría, registro, gestoría y tasación (€; estimación tuya, no es una cifra oficial: pide presupuestos)",
-   "default": 2500,
-   "min": 0,
-   "step": 100,
-   "default_from": "params.vivienda_2026.supuestos.gastos_eur"
-  },
-  {
-   "id": "anos",
-   "label": "Años que tienes para ahorrar (1 a 40)",
-   "default": 5,
-   "min": 1,
-   "step": 1,
-   "default_from": "params.vivienda_2026.supuestos.anos"
-  },
-  {
-   "id": "rentab",
-   "label": "Rentabilidad anual de tu ahorro (%; 0 si lo dejas en cuenta; hipótesis, no previsión)",
-   "default": 0,
-   "min": -10,
-   "step": 0.5,
-   "default_from": "params.vivienda_2026.supuestos.rentabilidad_pct"
-  },
-  {
-   "id": "interes",
-   "label": "Tipo de interés de la hipoteca (%; por defecto Euríbor a 12 meses más 1 punto, plazo 25 años)",
-   "default": 4.247,
-   "min": 0,
-   "step": 0.01,
-   "default_from": "live.euribor12m",
-   "default_add": 1,
-   "default_round": 3,
-   "default_fallback": "params.euribor_12m"
-  }
- ],
- "faqs": [
-  [
-   "¿Cuánto dinero necesito para comprar una casa?",
-   "La entrada (la parte del precio que no te financia el banco), los impuestos de la compra y los gastos de notaría, registro, gestoría y tasación. Con un precio de 250.000 €, una entrada del 20 % y 2.500 € de gastos, en una vivienda usada de Madrid, con el tipo general, son 67.500 € (50.000 € de entrada, 15.000 € de ITP y 2.500 € de gastos) y en una nueva 79.375 €. El 20 % de entrada es un supuesto editable: los bancos suelen financiar hasta el 80 % del valor, pero no es una norma legal."
   ],
-  [
-   "¿Qué impuestos se pagan al comprar una vivienda usada y una nueva?",
-   "En una usada, el Impuesto de Transmisiones Patrimoniales (ITP), que fija cada comunidad: el tipo general va del 6 % de Madrid al 10 % de Cataluña en un precio de 250.000 €, y varias comunidades usan tarifas por tramos. En una nueva, IVA del 10 % (art. 91 de la Ley del IVA) más el Impuesto de Actos Jurídicos Documentados (AJD), del 0,75 % (Madrid) al 1,5 % para 250.000 € (0,4 % en Madrid hasta 120.000 € y 2 % en Baleares desde 1.000.000 €). Esta calculadora aplica el tipo general; el AJD de la hipoteca lo paga el banco (art. 29 del texto refundido del ITP y AJD, RDL 17/2018)."
+  "faqs": [
+    [
+      "¿Cuánto dinero necesito para comprar una casa?",
+      "La entrada (la parte del precio que no te financia el banco), los impuestos de la compra y los gastos de notaría, registro, gestoría y tasación. Con un precio de 250.000 €, una entrada del 20 % y 2.500 € de gastos, en una vivienda usada de Madrid, con el tipo general, son 67.500 € (50.000 € de entrada, 15.000 € de ITP y 2.500 € de gastos) y en una nueva 79.375 €. El 20 % de entrada es un supuesto editable: los bancos suelen financiar hasta el 80 % del valor, pero no es una norma legal."
+    ],
+    [
+      "¿Qué impuestos se pagan al comprar una vivienda usada y una nueva?",
+      "En una usada, el Impuesto de Transmisiones Patrimoniales (ITP), que fija cada comunidad: el tipo general va del 6 % de Madrid al 10 % de Cataluña en un precio de 250.000 €, y varias comunidades usan tarifas por tramos. En una nueva, IVA del 10 % (art. 91 de la Ley del IVA) más el Impuesto de Actos Jurídicos Documentados (AJD), del 0,75 % (Madrid) al 1,5 % para 250.000 € (0,4 % en Madrid hasta 120.000 € y 2 % en Baleares desde 1.000.000 €). Esta calculadora aplica el tipo general; el AJD de la hipoteca lo paga el banco (art. 29 del texto refundido del ITP y AJD, RDL 17/2018)."
+    ],
+    [
+      "¿Cuánto cuestan la notaría, el registro, la gestoría y la tasación?",
+      "No hay una cifra única: dependen del precio, de la escritura y de cada profesional. La calculadora usa por defecto 2.500 €, que es una estimación orientativa del proyecto y no una cifra oficial; sustitúyela por los presupuestos que te den. Si financias, el banco además exige una tasación de la vivienda."
+    ],
+    [
+      "¿Cuánto tengo que ahorrar al mes para comprar casa?",
+      "El ahorro total necesario dividido entre los meses que tienes, ajustado por la rentabilidad si lo inviertes. Con 67.500 € y 5 años sin rentabilidad son 1.125 € al mes. Con 75.000 € (vivienda usada de 250.000 € en la Comunitat Valenciana) y 10 años, ahorrar 538 € al mes con una rentabilidad del 3 % anual equivale a 625 € al mes sin rentabilidad. La rentabilidad es una hipótesis, no una previsión, y puede ser negativa."
+    ],
+    [
+      "¿Hay tipos reducidos para jóvenes u otros colectivos?",
+      "Sí, muchas comunidades tienen tipos reducidos de ITP y AJD para vivienda habitual, jóvenes, familias numerosas, personas con discapacidad o viviendas protegidas, con requisitos de edad, renta o precio máximo. Esta calculadora no los aplica: usa el tipo general de cada comunidad, así que tu cifra real puede ser menor. Consulta la normativa de tu comunidad antes de decidir."
+    ]
   ],
-  [
-   "¿Cuánto cuestan la notaría, el registro, la gestoría y la tasación?",
-   "No hay una cifra única: dependen del precio, de la escritura y de cada profesional. La calculadora usa por defecto 2.500 €, que es una estimación orientativa del proyecto y no una cifra oficial; sustitúyela por los presupuestos que te den. Si financias, el banco además exige una tasación de la vivienda."
-  ],
-  [
-   "¿Cuánto tengo que ahorrar al mes para comprar casa?",
-   "El ahorro total necesario dividido entre los meses que tienes, ajustado por la rentabilidad si lo inviertes. Con 67.500 € y 5 años sin rentabilidad son 1.125 € al mes. Con 75.000 € (vivienda usada de 250.000 € en la Comunitat Valenciana) y 10 años, ahorrar 538 € al mes con una rentabilidad del 3 % anual equivale a 625 € al mes sin rentabilidad. La rentabilidad es una hipótesis, no una previsión, y puede ser negativa."
-  ],
-  [
-   "¿Hay tipos reducidos para jóvenes u otros colectivos?",
-   "Sí, muchas comunidades tienen tipos reducidos de ITP y AJD para vivienda habitual, jóvenes, familias numerosas, personas con discapacidad o viviendas protegidas, con requisitos de edad, renta o precio máximo. Esta calculadora no los aplica: usa el tipo general de cada comunidad, así que tu cifra real puede ser menor. Consulta la normativa de tu comunidad antes de decidir."
-  ]
- ],
- "sources": "Modelo propio: vivienda usada = ITP con el tipo general de la comunidad sobre el precio (tarifa progresiva por tramos en Aragón, Baleares, Castilla y León, Cataluña y Extremadura; tipo por tramo aplicado a todo el valor en Asturias y la Comunitat Valenciana); vivienda nueva = IVA del 10 % (Ley 37/1992, art. 91.Uno.1.7.º, https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740) más AJD con el tipo general de documentos notariales de la comunidad, calculado sobre el precio sin IVA (en Madrid, según el valor de la vivienda: 0,4 %, 0,5 % o 0,75 %); no se aplican tipos reducidos (solo un aviso cuantificado del posible ahorro por vivienda habitual en la Comunitat Valenciana, Cantabria, Madrid hasta 250.000 €, Andalucía hasta 150.000 € y Baleares hasta 270.151,20 €). La base imponible es la mayor entre el precio y el valor de referencia del Catastro (art. 10.2 del texto refundido del ITP y AJD), que aquí no se calcula. El AJD de la hipoteca lo paga el banco (art. 29 del texto refundido, RDL 17/2018). Entrada = % del precio; hipoteca = precio menos entrada, a 25 años, cuota por sistema francés; ahorro mensual con aportaciones al final de cada mes y capitalización mensual equivalente a la rentabilidad anual. Normas leídas en el BOE consolidado: Comunidad de Madrid: DLeg 1/2010, arts. 28 y 32 (https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068); Andalucía: Ley 5/2021, arts. 41 y 49 (https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915); Aragón: DLeg 1/2005, arts. 121-1 y 122-1 (https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006); Asturias: DLeg 2/2014, arts. 26 y 34 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-945); Illes Balears: DLeg 1/2014, arts. 10, 15 y 17 bis (redacción de junio de 2026; AJD del 2 % desde 1.000.000 €) (https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925); Cantabria: DLeg 62/2008, arts. 9 y 13 (https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028); Castilla-La Mancha: Ley 8/2013, arts. 19 y 21 (consolidado de 2023) y Ley 1/2026 (DOCM-q-2026-90065) (https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368); Castilla y León: DLeg 1/2013, arts. 24 y 25 (https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254); Cataluña: DLeg 1/2024, arts. 641-1 y 642-1 (https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951); Extremadura: DLeg 1/2018, arts. 36 y 46 (https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159); Galicia: DLeg 1/2011, arts. 14 y 15 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161); Región de Murcia: DLeg 1/2010, arts. 6 y 7 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542); La Rioja: Ley 10/2017, arts. 44 y 48 (https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750); Comunitat Valenciana: Ley 13/1997, arts. 13 y 14 (https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202). Texto refundido del ITP y AJD: https://www.boe.es/buscar/act.php?id=BOE-A-1993-25359. Euríbor a 12 meses del Banco Central Europeo (dato vivo del sitio). Hipótesis editables, no oficiales: gastos de 2.500 €, entrada del 20 %, 5 años, rentabilidad del 0 % y diferencial de 1 punto (Euríbor + 1 punto). No cubre País Vasco, Navarra, Canarias (IGIC), Ceuta ni Melilla. Castilla y León con texto consolidado antiguo: cifra orientativa. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni financiero."
+  "sources": "Modelo propio: vivienda usada = ITP con el tipo general de la comunidad sobre el precio (tarifa progresiva por tramos en Aragón, Baleares, Castilla y León, Cataluña y Extremadura; tipo por tramo aplicado a todo el valor en Asturias y la Comunitat Valenciana); vivienda nueva = IVA del 10 % (Ley 37/1992, art. 91.Uno.1.7.º, https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740) más AJD con el tipo general de documentos notariales de la comunidad, calculado sobre el precio sin IVA (en Madrid, según el valor de la vivienda: 0,4 %, 0,5 % o 0,75 %); no se aplican tipos reducidos (solo un aviso cuantificado del posible ahorro por vivienda habitual en la Comunitat Valenciana, Cantabria, Madrid hasta 250.000 €, Andalucía hasta 150.000 € y Baleares hasta 270.151,20 €). La base imponible es la mayor entre el precio y el valor de referencia del Catastro (art. 10.2 del texto refundido del ITP y AJD), que aquí no se calcula. El AJD de la hipoteca lo paga el banco (art. 29 del texto refundido, RDL 17/2018). Entrada = % del precio; hipoteca = precio menos entrada, a 25 años, cuota por sistema francés; ahorro mensual con aportaciones al final de cada mes y capitalización mensual equivalente a la rentabilidad anual. Normas leídas en el BOE consolidado: Comunidad de Madrid: DLeg 1/2010, arts. 28 y 32 (https://www.boe.es/buscar/act.php?id=BOCM-m-2010-90068); Andalucía: Ley 5/2021, arts. 41 y 49 (https://www.boe.es/buscar/act.php?id=BOE-A-2021-17915); Aragón: DLeg 1/2005, arts. 121-1 y 122-1 (https://www.boe.es/buscar/act.php?id=BOA-d-2005-90006); Asturias: DLeg 2/2014, arts. 26 y 34 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-945); Illes Balears: DLeg 1/2014, arts. 10, 15 y 17 bis (redacción de junio de 2026; AJD del 2 % desde 1.000.000 €) (https://www.boe.es/buscar/act.php?id=BOE-A-2014-6925); Cantabria: DLeg 62/2008, arts. 9 y 13 (https://www.boe.es/buscar/act.php?id=BOCT-c-2008-90028); Castilla-La Mancha: Ley 8/2013, arts. 19 y 21 (consolidado de 2023) y Ley 1/2026 (DOCM-q-2026-90065) (https://www.boe.es/buscar/act.php?id=BOE-A-2014-1368); Castilla y León: DLeg 1/2013, arts. 24 y 25 (https://www.boe.es/buscar/act.php?id=BOCL-h-2013-90254); Cataluña: DLeg 1/2024, arts. 641-1 y 642-1 (https://www.boe.es/buscar/act.php?id=BOE-A-2024-6951); Extremadura: DLeg 1/2018, arts. 36 y 46 (https://www.boe.es/buscar/act.php?id=BOE-A-2018-8159); Galicia: DLeg 1/2011, arts. 14 y 15 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-18161); Región de Murcia: DLeg 1/2010, arts. 6 y 7 (https://www.boe.es/buscar/act.php?id=BOE-A-2011-10542); La Rioja: Ley 10/2017, arts. 44 y 48 (https://www.boe.es/buscar/act.php?id=BOE-A-2017-13750); Comunitat Valenciana: Ley 13/1997, arts. 13 y 14 (https://www.boe.es/buscar/act.php?id=BOE-A-1998-8202). Texto refundido del ITP y AJD: https://www.boe.es/buscar/act.php?id=BOE-A-1993-25359. Euríbor a 12 meses del Banco Central Europeo (dato vivo del sitio). Hipótesis editables, no oficiales: gastos de 2.500 €, entrada del 20 %, 5 años, rentabilidad del 0 % y diferencial de 1 punto (Euríbor + 1 punto). No cubre País Vasco, Navarra, Canarias (IGIC), Ceuta ni Melilla. Castilla y León con texto consolidado antiguo: cifra orientativa. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni financiero."
 }

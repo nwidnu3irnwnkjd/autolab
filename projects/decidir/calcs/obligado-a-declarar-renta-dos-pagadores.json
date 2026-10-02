@@ -1,151 +1,151 @@
 {
- "slug": "obligado-a-declarar-renta-dos-pagadores",
- "title": "¿Obligado a declarar la Renta? Límites 22.000 y 15.876 €",
- "description": "Comprueba si tienes que declarar la Renta: límites de 22.000 y 15.876 € con dos pagadores, capital, alquileres imputados y otros casos que obligan.",
- "h1": "¿Estoy obligado a declarar la Renta? Límites de 22.000 y 15.876 € con dos pagadores",
- "lead": "En territorio común (País Vasco y Navarra tienen sus propias normas), estás obligado a declarar la Renta si cobras más de 22.000 € brutos de un solo pagador, y el límite baja a 15.876 € si tienes más de un pagador y el segundo y siguientes suman más de 1.500 € al año (o cobras pensión compensatoria, o un pagador no está obligado a retener). La calculadora aplica uno a uno los supuestos del art. 96 de la Ley del IRPF y te dice cuál te obliga y por cuánto.",
- "veredicto": "En territorio común (País Vasco y Navarra tienen sus propias normas), con un solo pagador estás obligado a declarar si superas 22.000 € de rendimientos del trabajo; con dos pagadores el límite baja a 15.876 € cuando el segundo y siguientes suman más de 1.500 €: con 18.000 € y 2.000 € (20.000 € en total) estás obligado, con 18.500 € y 1.500 € (también 20.000 €) no. Otros supuestos obligan sea cual sea el importe (alta en autónomos, ingreso mínimo vital, y planes de pensiones si quieres aplicar la reducción).",
- "tema": "impuestos",
- "inputs": [
-  {
-   "id": "t1",
-   "label": "Rendimientos íntegros del trabajo del pagador 1 (€ al año, antes de retenciones y cotizaciones)",
-   "default": 18000,
-   "min": 0,
-   "step": 500,
-   "default_from": "params.obligado_declarar_2026.supuestos.t1"
-  },
-  {
-   "id": "t2",
-   "label": "Pagador 2 (€ al año; 0 si no tienes). Si cobras pensión compensatoria o alimentos no exentos, inclúyelos aquí o en el pagador 3 como un pagador más (son rendimientos del trabajo, art. 17.2.f de la Ley del IRPF); si te los paga un particular, marca también «pagador no obligado a retener»",
-   "default": 2000,
-   "min": 0,
-   "step": 100,
-   "default_from": "params.obligado_declarar_2026.supuestos.t2"
-  },
-  {
-   "id": "t3",
-   "label": "Pagador 3 (€ al año; 0 si no tienes)",
-   "default": 0,
-   "min": 0,
-   "step": 100
-  },
-  {
-   "id": "noRet",
-   "label": "¿Algún pagador no está obligado a retener (por ejemplo, un particular que no ejerce actividad económica)?",
-   "type": "select",
-   "options": [
+  "slug": "obligado-a-declarar-renta-dos-pagadores",
+  "title": "¿Estoy obligado a declarar la Renta? Calculadora 2026",
+  "description": "Comprueba si debes presentar la declaración de la Renta según tus ingresos y si tuviste uno o varios pagadores. Con los límites vigentes de 2026.",
+  "h1": "¿Estoy obligado a declarar la Renta? Límites de 22.000 y 15.876 € con dos pagadores",
+  "lead": "En territorio común (País Vasco y Navarra tienen sus propias normas), estás obligado a declarar la Renta si cobras más de 22.000 € brutos de un solo pagador, y el límite baja a 15.876 € si tienes más de un pagador y el segundo y siguientes suman más de 1.500 € al año (o cobras pensión compensatoria, o un pagador no está obligado a retener). La calculadora aplica uno a uno los supuestos del art. 96 de la Ley del IRPF y te dice cuál te obliga y por cuánto.",
+  "veredicto": "En territorio común (País Vasco y Navarra tienen sus propias normas), con un solo pagador estás obligado a declarar si superas 22.000 € de rendimientos del trabajo; con dos pagadores el límite baja a 15.876 € cuando el segundo y siguientes suman más de 1.500 €: con 18.000 € y 2.000 € (20.000 € en total) estás obligado, con 18.500 € y 1.500 € (también 20.000 €) no. Otros supuestos obligan sea cual sea el importe (alta en autónomos, ingreso mínimo vital, y planes de pensiones si quieres aplicar la reducción).",
+  "tema": "impuestos",
+  "inputs": [
     {
-     "v": "0",
-     "t": "No, todos retienen o están obligados a retener"
+      "id": "t1",
+      "label": "Rendimientos íntegros del trabajo del pagador 1 (€ al año, antes de retenciones y cotizaciones)",
+      "default": 18000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.obligado_declarar_2026.supuestos.t1"
     },
     {
-     "v": "1",
-     "t": "Sí, alguno no está obligado a retener"
+      "id": "t2",
+      "label": "Pagador 2 (€ al año; 0 si no tienes). Si cobras pensión compensatoria o alimentos no exentos, inclúyelos aquí o en el pagador 3 como un pagador más (son rendimientos del trabajo, art. 17.2.f de la Ley del IRPF); si te los paga un particular, marca también «pagador no obligado a retener»",
+      "default": 2000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.obligado_declarar_2026.supuestos.t2"
+    },
+    {
+      "id": "t3",
+      "label": "Pagador 3 (€ al año; 0 si no tienes)",
+      "default": 0,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "noRet",
+      "label": "¿Algún pagador no está obligado a retener (por ejemplo, un particular que no ejerce actividad económica)?",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "No, todos retienen o están obligados a retener"
+        },
+        {
+          "v": "1",
+          "t": "Sí, alguno no está obligado a retener"
+        }
+      ]
+    },
+    {
+      "id": "capRet",
+      "label": "Intereses, dividendos y ganancias de fondos con retención (€ al año)",
+      "default": 0,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "inmo",
+      "label": "Renta imputada de inmuebles no alquilados, Letras del Tesoro y ayudas a vivienda protegida u otras ayudas públicas (€ al año)",
+      "default": 0,
+      "min": 0,
+      "step": 100
+    },
+    {
+      "id": "esp",
+      "label": "¿Te aplica alguna de estas situaciones?",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Ninguna"
+        },
+        {
+          "v": "1",
+          "t": "Cobro pensión compensatoria del cónyuge o alimentos no exentos (inclúyelos además como un pagador más)"
+        },
+        {
+          "v": "2",
+          "t": "Mis rendimientos del trabajo van a tipo fijo (administrador, cursos, conferencias, obras)"
+        },
+        {
+          "v": "7",
+          "t": "Solo cobro pensiones de varios pagadores con procedimiento especial de retención"
+        },
+        {
+          "v": "5",
+          "t": "Tengo otras rentas (alquileres reales, actividad económica, capital o ganancias sin retención)"
+        }
+      ]
+    },
+    {
+      "id": "obl",
+      "label": "¿Alguna de estas situaciones que obligan a declarar sea cual sea el importe? (si te aplica más de una, elige cualquiera: el resultado es el mismo)",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Ninguna"
+        },
+        {
+          "v": "3",
+          "t": "Estuve de alta en autónomos (RETA) o en el Régimen del Mar en algún momento del año"
+        },
+        {
+          "v": "6",
+          "t": "Percibo el ingreso mínimo vital (yo o alguien de mi unidad de convivencia)"
+        },
+        {
+          "v": "4",
+          "t": "Reduzco la base con plan de pensiones o similar, o tengo deducción por doble imposición internacional (cuando ejerciten tal derecho: si quieres aplicar la reducción o la deducción)"
+        }
+      ]
+    },
+    {
+      "id": "reg",
+      "label": "Dónde resides",
+      "type": "select",
+      "options": [
+        {
+          "v": "comun",
+          "t": "Régimen común (todas las comunidades salvo País Vasco y Navarra)"
+        },
+        {
+          "v": "foral",
+          "t": "País Vasco o Navarra (régimen foral)"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "capRet",
-   "label": "Intereses, dividendos y ganancias de fondos con retención (€ al año)",
-   "default": 0,
-   "min": 0,
-   "step": 100
-  },
-  {
-   "id": "inmo",
-   "label": "Renta imputada de inmuebles no alquilados, Letras del Tesoro y ayudas a vivienda protegida u otras ayudas públicas (€ al año)",
-   "default": 0,
-   "min": 0,
-   "step": 100
-  },
-  {
-   "id": "esp",
-   "label": "¿Te aplica alguna de estas situaciones?",
-   "type": "select",
-   "options": [
-    {
-     "v": "0",
-     "t": "Ninguna"
-    },
-    {
-     "v": "1",
-     "t": "Cobro pensión compensatoria del cónyuge o alimentos no exentos (inclúyelos además como un pagador más)"
-    },
-    {
-     "v": "2",
-     "t": "Mis rendimientos del trabajo van a tipo fijo (administrador, cursos, conferencias, obras)"
-    },
-    {
-     "v": "7",
-     "t": "Solo cobro pensiones de varios pagadores con procedimiento especial de retención"
-    },
-    {
-     "v": "5",
-     "t": "Tengo otras rentas (alquileres reales, actividad económica, capital o ganancias sin retención)"
-    }
-   ]
-  },
-  {
-   "id": "obl",
-   "label": "¿Alguna de estas situaciones que obligan a declarar sea cual sea el importe? (si te aplica más de una, elige cualquiera: el resultado es el mismo)",
-   "type": "select",
-   "options": [
-    {
-     "v": "0",
-     "t": "Ninguna"
-    },
-    {
-     "v": "3",
-     "t": "Estuve de alta en autónomos (RETA) o en el Régimen del Mar en algún momento del año"
-    },
-    {
-     "v": "6",
-     "t": "Percibo el ingreso mínimo vital (yo o alguien de mi unidad de convivencia)"
-    },
-    {
-     "v": "4",
-     "t": "Reduzco la base con plan de pensiones o similar, o tengo deducción por doble imposición internacional (cuando ejerciten tal derecho: si quieres aplicar la reducción o la deducción)"
-    }
-   ]
-  },
-  {
-   "id": "reg",
-   "label": "Dónde resides",
-   "type": "select",
-   "options": [
-    {
-     "v": "comun",
-     "t": "Régimen común (todas las comunidades salvo País Vasco y Navarra)"
-    },
-    {
-     "v": "foral",
-     "t": "País Vasco o Navarra (régimen foral)"
-    }
-   ]
-  }
- ],
- "faqs": [
-  [
-   "¿Qué cuenta como segundo pagador y qué es el límite de 1.500 €?",
-   "Los pagadores se ordenan por importe: el primero es el que más te paga y los demás son el segundo y siguientes. Si estos suman 1.500 € al año o menos, el límite se queda en 22.000 €; si suman más (1.501 € ya cuenta), baja a 15.876 € (art. 96.3.a de la Ley del IRPF). Con 18.500 € y 1.500 € no estás obligado aunque sumes 20.000 €; con 18.500 € y 1.501 € sí."
   ],
-  [
-   "Si cobro justo 22.000 € o 15.876 €, ¿estoy obligado?",
-   "No por ese concepto: la ley dice que no tienen que declarar quienes obtengan rendimientos del trabajo «con el límite de» esa cifra, así que se está obligado al superarla (22.001 € o 15.877 €). La calculadora lo trata así: con 22.000 € o 15.876 € exactos no aparece obligación por el trabajo."
+  "faqs": [
+    [
+      "¿Qué cuenta como segundo pagador y qué es el límite de 1.500 €?",
+      "Los pagadores se ordenan por importe: el primero es el que más te paga y los demás son el segundo y siguientes. Si estos suman 1.500 € al año o menos, el límite se queda en 22.000 €; si suman más (1.501 € ya cuenta), baja a 15.876 € (art. 96.3.a de la Ley del IRPF). Con 18.500 € y 1.500 € no estás obligado aunque sumes 20.000 €; con 18.500 € y 1.501 € sí."
+    ],
+    [
+      "Si cobro justo 22.000 € o 15.876 €, ¿estoy obligado?",
+      "No por ese concepto: la ley dice que no tienen que declarar quienes obtengan rendimientos del trabajo «con el límite de» esa cifra, así que se está obligado al superarla (22.001 € o 15.877 €). La calculadora lo trata así: con 22.000 € o 15.876 € exactos no aparece obligación por el trabajo."
+    ],
+    [
+      "Si no estoy obligado, ¿me conviene declarar igualmente?",
+      "Puede convenirte: si te han retenido más IRPF del que te corresponde o tienes derecho a deducciones, solo recuperas el dinero presentando la declaración (art. 103.1 de la Ley del IRPF: la devolución se calcula sobre la autoliquidación). Esta calculadora solo dice si la ley te obliga, no cuánto saldría. Si estás casado, compara además la conjunta o la individual en la calculadora enlazada más abajo."
+    ],
+    [
+      "¿Qué otras situaciones obligan a declarar?",
+      "Entre las que modela la calculadora: haber estado de alta en el RETA o en el Régimen del Mar en algún momento del año (art. 96.2), reducir la base con aportaciones a planes de pensiones o aplicar la deducción por doble imposición internacional, cuando se ejerce ese derecho (art. 96.4 de la Ley y art. 61.1 del Reglamento), percibir el ingreso mínimo vital (art. 36.1.f y 36.2.c de la Ley 19/2021), superar 1.600 € de capital mobiliario y ganancias con retención o 1.000 € de rentas inmobiliarias imputadas, Letras del Tesoro y ayudas a vivienda protegida y demás ayudas públicas. Otras, como pérdidas patrimoniales de 500 € o más, no están modeladas."
+    ],
+    [
+      "¿Por qué el Reglamento dice 15.000 € y la calculadora 15.876 €?",
+      "Porque el art. 61.3.A.2.º del Reglamento del IRPF conserva la cifra de 15.000 €, mientras que la Ley del IRPF (art. 96.3) pone 15.876 € desde 2024 (Real Decreto-ley 4/2024). La subida posterior del Real Decreto-ley 9/2024 quedó sin efecto al derogarse. La calculadora aplica la cifra de la ley, la que cita también el Manual de la Agencia Tributaria."
+    ]
   ],
-  [
-   "Si no estoy obligado, ¿me conviene declarar igualmente?",
-   "Puede convenirte: si te han retenido más IRPF del que te corresponde o tienes derecho a deducciones, solo recuperas el dinero presentando la declaración (art. 103.1 de la Ley del IRPF: la devolución se calcula sobre la autoliquidación). Esta calculadora solo dice si la ley te obliga, no cuánto saldría. Si estás casado, compara además la conjunta o la individual en la calculadora enlazada más abajo."
-  ],
-  [
-   "¿Qué otras situaciones obligan a declarar?",
-   "Entre las que modela la calculadora: haber estado de alta en el RETA o en el Régimen del Mar en algún momento del año (art. 96.2), reducir la base con aportaciones a planes de pensiones o aplicar la deducción por doble imposición internacional, cuando se ejerce ese derecho (art. 96.4 de la Ley y art. 61.1 del Reglamento), percibir el ingreso mínimo vital (art. 36.1.f y 36.2.c de la Ley 19/2021), superar 1.600 € de capital mobiliario y ganancias con retención o 1.000 € de rentas inmobiliarias imputadas, Letras del Tesoro y ayudas a vivienda protegida y demás ayudas públicas. Otras, como pérdidas patrimoniales de 500 € o más, no están modeladas."
-  ],
-  [
-   "¿Por qué el Reglamento dice 15.000 € y la calculadora 15.876 €?",
-   "Porque el art. 61.3.A.2.º del Reglamento del IRPF conserva la cifra de 15.000 €, mientras que la Ley del IRPF (art. 96.3) pone 15.876 € desde 2024 (Real Decreto-ley 4/2024). La subida posterior del Real Decreto-ley 9/2024 quedó sin efecto al derogarse. La calculadora aplica la cifra de la ley, la que cita también el Manual de la Agencia Tributaria."
-  ]
- ],
- "sources": "Ley 35/2006 del IRPF, texto consolidado (última modificación del art. 96 relevante: 15.876 € desde el 1/1/2024, Real Decreto-ley 4/2024; la subida del RDL 9/2024 quedó sin efecto, BOE-A-2025-1136), consultada el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 96.2 (22.000 € del trabajo; 1.600 € de capital mobiliario y ganancias con retención; 1.000 € de rentas inmobiliarias imputadas, Letras del Tesoro y ayudas a vivienda protegida y demás ayudas públicas; 1.000 € conjunto; alta en RETA), art. 96.3 (15.876 €: más de un pagador con el segundo y siguientes por encima de 1.500 €, pensión compensatoria, pagador no obligado a retener, tipo fijo) y art. 96.4 (planes de pensiones, doble imposición internacional). Reglamento del IRPF, consolidado, consultado el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 61 (aún cita 15.000 €; prevalece la ley), arts. 80.1.3.º y 4.º (tipos fijos), 89.A (procedimiento especial de pensiones) y 76 (obligados a retener). AEAT, Manual práctico de Renta 2025, delimitación de la obligación de declarar (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c01-campana-declaracion-renta/quienes-estan-obligados-presentar-declaracion-irpf/delimitacion-obligacion-declarar-irpf.html): mismos límites y obligación de los perceptores del ingreso mínimo vital. Ley 19/2021 del ingreso mínimo vital, art. 36.1.f y 36.2.c (https://www.boe.es/buscar/act.php?id=BOE-A-2021-9176). Ley del IRPF art. 103.1 (devolución sobre la cuota resultante de la autoliquidación) y art. 17.2.f (pensión compensatoria como rendimiento del trabajo). Modelo propio: se evalúan uno a uno los supuestos del art. 96 y se informa del primero que obliga y de los demás que también se cumplen; con la cifra justo en el límite no se está obligado. No incluye el mínimo por descendientes ni rentas exentas (no cambian el límite), no residentes, pérdidas patrimoniales de 500 € o más, ganancias de fondos sin retención sobre la ganancia, tributación conjunta, retenciones con tipos distintos de los habituales, cambios de situación familiar ni años distintos de 2026; no cubre País Vasco ni Navarra. Se da por supuesto que los rendimientos son íntegros (antes de retenciones y cotizaciones). Información orientativa, no asesoramiento fiscal. Consultado el 2/10/2026."
+  "sources": "Ley 35/2006 del IRPF, texto consolidado (última modificación del art. 96 relevante: 15.876 € desde el 1/1/2024, Real Decreto-ley 4/2024; la subida del RDL 9/2024 quedó sin efecto, BOE-A-2025-1136), consultada el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 96.2 (22.000 € del trabajo; 1.600 € de capital mobiliario y ganancias con retención; 1.000 € de rentas inmobiliarias imputadas, Letras del Tesoro y ayudas a vivienda protegida y demás ayudas públicas; 1.000 € conjunto; alta en RETA), art. 96.3 (15.876 €: más de un pagador con el segundo y siguientes por encima de 1.500 €, pensión compensatoria, pagador no obligado a retener, tipo fijo) y art. 96.4 (planes de pensiones, doble imposición internacional). Reglamento del IRPF, consolidado, consultado el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 61 (aún cita 15.000 €; prevalece la ley), arts. 80.1.3.º y 4.º (tipos fijos), 89.A (procedimiento especial de pensiones) y 76 (obligados a retener). AEAT, Manual práctico de Renta 2025, delimitación de la obligación de declarar (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c01-campana-declaracion-renta/quienes-estan-obligados-presentar-declaracion-irpf/delimitacion-obligacion-declarar-irpf.html): mismos límites y obligación de los perceptores del ingreso mínimo vital. Ley 19/2021 del ingreso mínimo vital, art. 36.1.f y 36.2.c (https://www.boe.es/buscar/act.php?id=BOE-A-2021-9176). Ley del IRPF art. 103.1 (devolución sobre la cuota resultante de la autoliquidación) y art. 17.2.f (pensión compensatoria como rendimiento del trabajo). Modelo propio: se evalúan uno a uno los supuestos del art. 96 y se informa del primero que obliga y de los demás que también se cumplen; con la cifra justo en el límite no se está obligado. No incluye el mínimo por descendientes ni rentas exentas (no cambian el límite), no residentes, pérdidas patrimoniales de 500 € o más, ganancias de fondos sin retención sobre la ganancia, tributación conjunta, retenciones con tipos distintos de los habituales, cambios de situación familiar ni años distintos de 2026; no cubre País Vasco ni Navarra. Se da por supuesto que los rendimientos son íntegros (antes de retenciones y cotizaciones). Información orientativa, no asesoramiento fiscal. Consultado el 2/10/2026."
 }

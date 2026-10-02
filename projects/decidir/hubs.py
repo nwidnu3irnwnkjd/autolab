@@ -651,6 +651,7 @@ def page(key, spec, calcs, guides, params, live, card, base, baro_texts=(), tabl
 <ul class="guides">{gl}{bl}</ul>
 <h2>{spec["all_title"]}</h2>
 <ul class="cards">{"".join(card(c) for c in themes_calcs(spec, calcs))}</ul>
+<p class="note hub-link">¿Buscas otra cosa? <a href="/todas/">Lista completa de calculadoras y guías</a>.</p>
 <p class="disclaimer">{spec["disclaimer"]} Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 </article>"""
     url = base + spec["path"]

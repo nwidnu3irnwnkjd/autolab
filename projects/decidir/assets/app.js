@@ -45,6 +45,28 @@
       });
     });
   }
+  /* /calendario/: «Añadir al calendario» (.ics generado en el navegador) en los plazos con fecha concreta */
+  function initIcs() {
+    if (location.pathname.indexOf("/calendario") !== 0) return;
+    Array.prototype.forEach.call(document.querySelectorAll("main article.box"), function (a) {
+      var t = a.querySelector("p.note time"), h = a.querySelector("h2"), p = t && t.parentNode;
+      if (!t || !h || /\bal\b|por confirmar/.test(p.textContent)) return;
+      var d = t.getAttribute("datetime").replace(/-/g, ""), b = document.createElement("button");
+      b.type = "button"; b.className = "btn2"; b.textContent = "Añadir al calendario";
+      b.onclick = function () {
+        var x = new Date(t.getAttribute("datetime") + "T12:00:00Z"); x.setUTCDate(x.getUTCDate() + 1);
+        var q = function (s) { return s.replace(/[\\;,]/g, "\\$&").replace(/\n/g, "\\n"); }, c = a.querySelector("a[href^='/decidir/']"),
+          u = location.origin + (c ? c.getAttribute("href") : "/calendario/"),
+          s = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Entre Muchos//ES", "BEGIN:VEVENT", "UID:" + d + "-" + h.textContent.length + "@entremuchos.com", "DTSTAMP:" + new Date().toISOString().replace(/[-:]|\.\d+/g, ""),
+            "DTSTART;VALUE=DATE:" + d, "DTEND;VALUE=DATE:" + x.toISOString().slice(0, 10).replace(/-/g, ""), "SUMMARY:" + q(h.textContent), "DESCRIPTION:" + q(u), "URL:" + u, "END:VEVENT", "END:VCALENDAR"].join("\r\n"),
+          l = document.createElement("a");
+        l.href = URL.createObjectURL(new Blob([s], { type: "text/calendar" })); l.download = "entre-muchos-" + d + ".ics"; document.body.appendChild(l); l.click(); document.body.removeChild(l);
+        try { if (window.gtag) gtag("event", "calendar_add", { date: d }); } catch (e) {}
+      };
+      var w = document.createElement("p"); w.appendChild(b); a.insertBefore(w, a.querySelector("p.note:last-child"));
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initIcs); else initIcs();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initTables); else initTables();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initMotion); else initMotion();
 })();

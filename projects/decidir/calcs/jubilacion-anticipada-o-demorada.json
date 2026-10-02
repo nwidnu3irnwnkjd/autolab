@@ -1,151 +1,151 @@
 {
- "slug": "jubilacion-anticipada-o-demorada",
- "title": "Jubilación anticipada o demorada: pensión y equilibrio",
- "description": "Compara tu pensión de jubilación anticipada o demorada con la de la edad ordinaria: reducción, incentivo, pensión acumulada y edad de equilibrio en 2026.",
- "h1": "Jubilación anticipada o demorada: ¿cuánto cobras y cuándo compensa?",
- "lead": "Con estos supuestos, y comparando solo pensiones, anticipar la jubilación acumula más si dejas de cobrar antes de la edad de equilibrio y retrasarla, si cobras más allá de ella: con 60 años, 30 cotizados y 2.500 € de base reguladora, jubilarte a los 65 en vez de a los 67 baja la pensión de 3.013 € a 2.157 € al mes y, a partir de los 72 años y 7 meses, la pensión a la edad ordinaria acumula más; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses sube la pensión de 3.081 € a 3.881 € al mes, y la acumulada supera a la de los 65 a partir de los 88 años y 8 meses. Si tu pensión teórica supera la máxima, el coeficiente de anticipación es menor y gradual hasta 2033 (disposición transitoria 34.ª). Solo compara pensiones, sin sueldo ni descuento financiero, y no es un cálculo oficial: usa el simulador de la Seguridad Social.",
- "veredicto": "La edad de equilibrio depende de cuánto cobres: con 60 años, 30 cotizados, 2.500 € de base y un 2,7 % de revalorización, anticipar 24 meses baja la pensión de 3.013 € a 2.157 € al mes y la ordinaria (67 años) acumula más a partir de los 72 años y 7 meses; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses exige llegar a los 88 años y 8 meses para acumular más. Solo compara pensiones, para el Régimen General con cotización continuada y una edad ordinaria que aún no has alcanzado; no es esperanza de vida ni un cálculo oficial.",
- "tema": "ahorro",
- "inputs": [
-  {
-   "id": "edad",
-   "label": "Tu edad actual (años cumplidos; se toma como si hoy fuera octubre de 2026)",
-   "default": 60,
-   "min": 40,
-   "step": 1,
-   "max": 74,
-   "default_from": "params.jubilacion_2026.supuestos.edad"
-  },
-  {
-   "id": "cot",
-   "label": "Años cotizados hasta hoy (con decimales: 30,5 = 30 años y 6 meses; se supone que sigues cotizando hasta jubilarte)",
-   "default": 30,
-   "min": 0,
-   "step": 0.5,
-   "max": 50,
-   "default_from": "params.jubilacion_2026.supuestos.cot"
-  },
-  {
-   "id": "br",
-   "label": "Base reguladora mensual estimada (€ de hoy; te la da el simulador de la Seguridad Social)",
-   "default": 2500,
-   "min": 1,
-   "step": 50,
-   "default_from": "params.jubilacion_2026.supuestos.br"
-  },
-  {
-   "id": "eleg_a",
-   "label": "Edad a la que te jubilarías: años",
-   "default": 65,
-   "min": 60,
-   "step": 1,
-   "max": 75,
-   "default_from": "params.jubilacion_2026.supuestos.eleg_a"
-  },
-  {
-   "id": "eleg_m",
-   "label": "…y meses",
-   "type": "select",
-   "options": [
+  "slug": "jubilacion-anticipada-o-demorada",
+  "title": "¿Jubilación anticipada o demorada? Calculadora de pensión",
+  "description": "Compara tu pensión jubilándote antes o más tarde de la edad ordinaria y calcula el punto de equilibrio. Con tu base y tus años cotizados.",
+  "h1": "Jubilación anticipada o demorada: ¿cuánto cobras y cuándo compensa?",
+  "lead": "Con estos supuestos, y comparando solo pensiones, anticipar la jubilación acumula más si dejas de cobrar antes de la edad de equilibrio y retrasarla, si cobras más allá de ella: con 60 años, 30 cotizados y 2.500 € de base reguladora, jubilarte a los 65 en vez de a los 67 baja la pensión de 3.013 € a 2.157 € al mes y, a partir de los 72 años y 7 meses, la pensión a la edad ordinaria acumula más; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses sube la pensión de 3.081 € a 3.881 € al mes, y la acumulada supera a la de los 65 a partir de los 88 años y 8 meses. Si tu pensión teórica supera la máxima, el coeficiente de anticipación es menor y gradual hasta 2033 (disposición transitoria 34.ª). Solo compara pensiones, sin sueldo ni descuento financiero, y no es un cálculo oficial: usa el simulador de la Seguridad Social.",
+  "veredicto": "La edad de equilibrio depende de cuánto cobres: con 60 años, 30 cotizados, 2.500 € de base y un 2,7 % de revalorización, anticipar 24 meses baja la pensión de 3.013 € a 2.157 € al mes y la ordinaria (67 años) acumula más a partir de los 72 años y 7 meses; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses exige llegar a los 88 años y 8 meses para acumular más. Solo compara pensiones, para el Régimen General con cotización continuada y una edad ordinaria que aún no has alcanzado; no es esperanza de vida ni un cálculo oficial.",
+  "tema": "ahorro",
+  "inputs": [
     {
-     "v": "0",
-     "t": "0 meses"
+      "id": "edad",
+      "label": "Tu edad actual (años cumplidos; se toma como si hoy fuera octubre de 2026)",
+      "default": 60,
+      "min": 40,
+      "step": 1,
+      "max": 74,
+      "default_from": "params.jubilacion_2026.supuestos.edad"
     },
     {
-     "v": "1",
-     "t": "1 mes"
+      "id": "cot",
+      "label": "Años cotizados hasta hoy (con decimales: 30,5 = 30 años y 6 meses; se supone que sigues cotizando hasta jubilarte)",
+      "default": 30,
+      "min": 0,
+      "step": 0.5,
+      "max": 50,
+      "default_from": "params.jubilacion_2026.supuestos.cot"
     },
     {
-     "v": "2",
-     "t": "2 meses"
+      "id": "br",
+      "label": "Base reguladora mensual estimada (€ de hoy; te la da el simulador de la Seguridad Social)",
+      "default": 2500,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.jubilacion_2026.supuestos.br"
     },
     {
-     "v": "3",
-     "t": "3 meses"
+      "id": "eleg_a",
+      "label": "Edad a la que te jubilarías: años",
+      "default": 65,
+      "min": 60,
+      "step": 1,
+      "max": 75,
+      "default_from": "params.jubilacion_2026.supuestos.eleg_a"
     },
     {
-     "v": "4",
-     "t": "4 meses"
+      "id": "eleg_m",
+      "label": "…y meses",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "0 meses"
+        },
+        {
+          "v": "1",
+          "t": "1 mes"
+        },
+        {
+          "v": "2",
+          "t": "2 meses"
+        },
+        {
+          "v": "3",
+          "t": "3 meses"
+        },
+        {
+          "v": "4",
+          "t": "4 meses"
+        },
+        {
+          "v": "5",
+          "t": "5 meses"
+        },
+        {
+          "v": "6",
+          "t": "6 meses"
+        },
+        {
+          "v": "7",
+          "t": "7 meses"
+        },
+        {
+          "v": "8",
+          "t": "8 meses"
+        },
+        {
+          "v": "9",
+          "t": "9 meses"
+        },
+        {
+          "v": "10",
+          "t": "10 meses"
+        },
+        {
+          "v": "11",
+          "t": "11 meses"
+        }
+      ]
     },
     {
-     "v": "5",
-     "t": "5 meses"
+      "id": "fin",
+      "label": "Hasta qué edad cobrarías la pensión (hipótesis tuya, no esperanza de vida)",
+      "default": 85,
+      "min": 61,
+      "step": 1,
+      "max": 100,
+      "default_from": "params.jubilacion_2026.supuestos.fin"
     },
     {
-     "v": "6",
-     "t": "6 meses"
+      "id": "irpf",
+      "label": "Tipo medio de IRPF sobre la pensión (%; 0 = importes brutos)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "max": 45,
+      "default_from": "params.jubilacion_2026.supuestos.irpf"
     },
     {
-     "v": "7",
-     "t": "7 meses"
-    },
-    {
-     "v": "8",
-     "t": "8 meses"
-    },
-    {
-     "v": "9",
-     "t": "9 meses"
-    },
-    {
-     "v": "10",
-     "t": "10 meses"
-    },
-    {
-     "v": "11",
-     "t": "11 meses"
+      "id": "ipc",
+      "label": "Revalorización anual de la pensión (% al año, hipótesis; en 2026 fue del 2,7 %)",
+      "default": 2.7,
+      "min": 0,
+      "step": 0.1,
+      "max": 10,
+      "default_from": "params.jubilacion_2026.supuestos.ipc"
     }
-   ]
-  },
-  {
-   "id": "fin",
-   "label": "Hasta qué edad cobrarías la pensión (hipótesis tuya, no esperanza de vida)",
-   "default": 85,
-   "min": 61,
-   "step": 1,
-   "max": 100,
-   "default_from": "params.jubilacion_2026.supuestos.fin"
-  },
-  {
-   "id": "irpf",
-   "label": "Tipo medio de IRPF sobre la pensión (%; 0 = importes brutos)",
-   "default": 0,
-   "min": 0,
-   "step": 1,
-   "max": 45,
-   "default_from": "params.jubilacion_2026.supuestos.irpf"
-  },
-  {
-   "id": "ipc",
-   "label": "Revalorización anual de la pensión (% al año, hipótesis; en 2026 fue del 2,7 %)",
-   "default": 2.7,
-   "min": 0,
-   "step": 0.1,
-   "max": 10,
-   "default_from": "params.jubilacion_2026.supuestos.ipc"
-  }
- ],
- "faqs": [
-  [
-   "¿Compensa jubilarse antes o después de la edad ordinaria?",
-   "Depende de cuántos años cobres la pensión. La edad de equilibrio es la edad a partir de la cual la opción que empieza más tarde acumula más pensión. Con 60 años, 30 cotizados y 2.500 € de base reguladora, anticipar 24 meses baja la pensión de 3.013 € a 2.157 € al mes y la pensión a la edad ordinaria acumula más a partir de los 72 años y 7 meses; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses sube la pensión de 3.081 € a 3.881 € al mes y la acumulada supera a la de los 65 a partir de los 88 años y 8 meses. No incluye el sueldo ni el valor del dinero en el tiempo. Si tu edad ordinaria ya ha pasado, la herramienta no compara: la opción ordinaria sumaría meses que ya no puedes cobrar."
   ],
-  [
-   "¿Cuánto se reduce la pensión si me jubilo antes?",
-   "La jubilación anticipada voluntaria permite adelantarse hasta 24 meses respecto a la edad ordinaria, exige 35 años de cotización efectiva y que la pensión resultante supere la mínima que te corresponde (art. 208 de la Ley General de la Seguridad Social). La reducción depende de los meses de anticipo y de los años cotizados: va del 2,81 % al 3,26 % por un mes de anticipo, y del 13 % al 21 % por 24 meses (21 % con menos de 38 años y 6 meses cotizados; 13 % con 44 años y 6 meses o más). Si tu pensión teórica (base reguladora por el porcentaje) supera la pensión máxima, la disposición transitoria 34.ª.1 garantiza una pensión no inferior a la que resultaría con las normas de 2021; esa garantía no se calcula aquí y la pensión anticipada mostrada puede quedarse corta. El coeficiente se aplica sobre la máxima y de forma gradual entre 2024 y 2033 (disposición transitoria 34.ª): en 2026, por 24 meses de anticipo con menos de 38 años y 6 meses cotizados, un 9,10 % y no un 21 %; en 2027, un 10,80 %, hasta llegar al cuadro completo en 2033. Además, al jubilarte antes tienes menos meses cotizados, lo que reduce el porcentaje de la base reguladora cuando todavía no llegas al 100 %. Para el acceso (art. 208.1.a) puede contar la cotización que tengas realmente al jubilarte, mientras que el art. 208.2 usa la cotización hipotética hasta la edad ordinaria solo para los coeficientes; la calculadora te avisa si ambas edades difieren. Esta calculadora no cubre la anticipación por causa no imputable, por actividad penosa o por discapacidad."
+  "faqs": [
+    [
+      "¿Compensa jubilarse antes o después de la edad ordinaria?",
+      "Depende de cuántos años cobres la pensión. La edad de equilibrio es la edad a partir de la cual la opción que empieza más tarde acumula más pensión. Con 60 años, 30 cotizados y 2.500 € de base reguladora, anticipar 24 meses baja la pensión de 3.013 € a 2.157 € al mes y la pensión a la edad ordinaria acumula más a partir de los 72 años y 7 meses; con 64 años, 42 cotizados y 3.000 € de base, retrasar de los 65 a los 68 años y 8 meses sube la pensión de 3.081 € a 3.881 € al mes y la acumulada supera a la de los 65 a partir de los 88 años y 8 meses. No incluye el sueldo ni el valor del dinero en el tiempo. Si tu edad ordinaria ya ha pasado, la herramienta no compara: la opción ordinaria sumaría meses que ya no puedes cobrar."
+    ],
+    [
+      "¿Cuánto se reduce la pensión si me jubilo antes?",
+      "La jubilación anticipada voluntaria permite adelantarse hasta 24 meses respecto a la edad ordinaria, exige 35 años de cotización efectiva y que la pensión resultante supere la mínima que te corresponde (art. 208 de la Ley General de la Seguridad Social). La reducción depende de los meses de anticipo y de los años cotizados: va del 2,81 % al 3,26 % por un mes de anticipo, y del 13 % al 21 % por 24 meses (21 % con menos de 38 años y 6 meses cotizados; 13 % con 44 años y 6 meses o más). Si tu pensión teórica (base reguladora por el porcentaje) supera la pensión máxima, la disposición transitoria 34.ª.1 garantiza una pensión no inferior a la que resultaría con las normas de 2021; esa garantía no se calcula aquí y la pensión anticipada mostrada puede quedarse corta. El coeficiente se aplica sobre la máxima y de forma gradual entre 2024 y 2033 (disposición transitoria 34.ª): en 2026, por 24 meses de anticipo con menos de 38 años y 6 meses cotizados, un 9,10 % y no un 21 %; en 2027, un 10,80 %, hasta llegar al cuadro completo en 2033. Además, al jubilarte antes tienes menos meses cotizados, lo que reduce el porcentaje de la base reguladora cuando todavía no llegas al 100 %. Para el acceso (art. 208.1.a) puede contar la cotización que tengas realmente al jubilarte, mientras que el art. 208.2 usa la cotización hipotética hasta la edad ordinaria solo para los coeficientes; la calculadora te avisa si ambas edades difieren. Esta calculadora no cubre la anticipación por causa no imputable, por actividad penosa o por discapacidad."
+    ],
+    [
+      "¿Cuánto sube la pensión si retraso la jubilación?",
+      "Por cada año completo cotizado después de la edad ordinaria se suman 4 puntos al porcentaje de la base reguladora, si has cumplido 15 años de cotización a esa edad (art. 210.2.a). A partir del segundo año completo, un tramo de más de 6 meses y menos de un año suma un 2 % más; la calculadora lo aplica solo cuando ya hay dos años completos de demora, una lectura prudente: con la otra lectura posible («a partir del segundo año») el incentivo sería 2 puntos mayor en esos tramos. Si la pensión llega al límite de la pensión máxima (3.359,60 € al mes en 2026), el porcentaje que sobra se cobra como una cantidad anual aparte, con un tope. Las opciones de cantidad a tanto alzado y de combinación que prevé la ley no se calculan aquí. El incentivo exige seguir cotizando mientras retrasas la jubilación."
+    ],
+    [
+      "¿Cuál es mi edad ordinaria de jubilación en 2026 y 2027?",
+      "Según la disposición transitoria 7.ª de la Ley General de la Seguridad Social, en 2026 la edad ordinaria es 65 años si acreditas 38 años y 3 meses cotizados, y 66 años y 10 meses si no; desde 2027 es 65 años si acreditas 38 años y 6 meses cotizados, y 67 años en caso contrario. Depende de los años cotizados acreditados hasta la jubilación, así que puede ser una edad intermedia (art. 205.1.a): si completas esos años después de los 65, es la edad en que los completas, por ejemplo 65 años y 6 meses (con 61 años, 34 cotizados y 6.000 € de base, anticipar 6 meses da 3.255,45 € con la disposición transitoria 34.ª en 2030 y un 3,10 %). La calculadora la deduce de tu edad y tus años cotizados suponiendo que sigues cotizando sin interrupción hasta jubilarte; si dejas de cotizar o hay lagunas, tu edad ordinaria puede ser otra. Si con tus datos tu edad ordinaria ya ha pasado, la herramienta no hace la comparación."
+    ],
+    [
+      "¿La edad de equilibrio es mi esperanza de vida?",
+      "No. La edad de equilibrio solo dice a partir de qué edad acumula más una opción que otra con los supuestos que introduces: nadie sabe cuántos años cobrará. Es orientativa, sin descuento financiero ni sueldo, y no incluye otras vías de jubilación, complementos, regímenes especiales ni tu base reguladora real. Para tu caso, usa el simulador de la Seguridad Social."
+    ]
   ],
-  [
-   "¿Cuánto sube la pensión si retraso la jubilación?",
-   "Por cada año completo cotizado después de la edad ordinaria se suman 4 puntos al porcentaje de la base reguladora, si has cumplido 15 años de cotización a esa edad (art. 210.2.a). A partir del segundo año completo, un tramo de más de 6 meses y menos de un año suma un 2 % más; la calculadora lo aplica solo cuando ya hay dos años completos de demora, una lectura prudente: con la otra lectura posible («a partir del segundo año») el incentivo sería 2 puntos mayor en esos tramos. Si la pensión llega al límite de la pensión máxima (3.359,60 € al mes en 2026), el porcentaje que sobra se cobra como una cantidad anual aparte, con un tope. Las opciones de cantidad a tanto alzado y de combinación que prevé la ley no se calculan aquí. El incentivo exige seguir cotizando mientras retrasas la jubilación."
-  ],
-  [
-   "¿Cuál es mi edad ordinaria de jubilación en 2026 y 2027?",
-   "Según la disposición transitoria 7.ª de la Ley General de la Seguridad Social, en 2026 la edad ordinaria es 65 años si acreditas 38 años y 3 meses cotizados, y 66 años y 10 meses si no; desde 2027 es 65 años si acreditas 38 años y 6 meses cotizados, y 67 años en caso contrario. Depende de los años cotizados acreditados hasta la jubilación, así que puede ser una edad intermedia (art. 205.1.a): si completas esos años después de los 65, es la edad en que los completas, por ejemplo 65 años y 6 meses (con 61 años, 34 cotizados y 6.000 € de base, anticipar 6 meses da 3.255,45 € con la disposición transitoria 34.ª en 2030 y un 3,10 %). La calculadora la deduce de tu edad y tus años cotizados suponiendo que sigues cotizando sin interrupción hasta jubilarte; si dejas de cotizar o hay lagunas, tu edad ordinaria puede ser otra. Si con tus datos tu edad ordinaria ya ha pasado, la herramienta no hace la comparación."
-  ],
-  [
-   "¿La edad de equilibrio es mi esperanza de vida?",
-   "No. La edad de equilibrio solo dice a partir de qué edad acumula más una opción que otra con los supuestos que introduces: nadie sabe cuántos años cobrará. Es orientativa, sin descuento financiero ni sueldo, y no incluye otras vías de jubilación, complementos, regímenes especiales ni tu base reguladora real. Para tu caso, usa el simulador de la Seguridad Social."
-  ]
- ],
- "sources": "Ley General de la Seguridad Social, texto refundido aprobado por el [Real Decreto Legislativo 8/2015](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), texto consolidado con última actualización publicada el 31/07/2026: art. 205.1 (edad ordinaria y 15 años de carencia), art. 208 (jubilación anticipada por voluntad del interesado: hasta 24 meses, 35 años de cotización efectiva, pensión superior a la mínima y coeficientes por meses de anticipo y período cotizado), art. 210 (porcentaje por meses cotizados, incentivo de demora y coeficientes aplicados sobre el límite de la pensión), arts. 57 y 58.2 (límite de la pensión inicial y revalorización), disposición transitoria 7.ª (calendario de edades: 2026 y desde 2027), disposición transitoria 9.ª (porcentaje por mes cotizado) y disposición transitoria 34.ª (aplicación gradual 2024-2033 de los coeficientes sobre el límite de la pensión); reforma de la [Ley 21/2021](https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652) y [Real Decreto-ley 11/2024](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26917). Límite de la cuantía inicial (3.359,60 € al mes), pensiones mínimas de jubilación y revalorización del 2,7 % de 2026: [Real Decreto 241/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977). Tope de la base de cotización de 2026 (5.101,20 € al mes): [Orden PJC/297/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Para calcular tu pensión oficial, usa los simuladores de la [Seguridad Social](https://www.seg-social.es/). Modelo propio: base reguladora introducida por ti, cotización continuada, año de jubilación contado desde octubre de 2026, 14 pagas repartidas en 12 meses y revalorizadas cada enero, IRPF a tipo medio constante y sin descuento financiero. Hipótesis no oficiales y editables: 60 años, 30 años cotizados, 2.500 € de base reguladora, jubilación a los 65, cobro hasta los 85 y revalorización del 2,7 % (la de 2026, no una previsión). Consultado el 2/10/2026. Información orientativa, no asesoramiento ni cálculo oficial."
+  "sources": "Ley General de la Seguridad Social, texto refundido aprobado por el [Real Decreto Legislativo 8/2015](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), texto consolidado con última actualización publicada el 31/07/2026: art. 205.1 (edad ordinaria y 15 años de carencia), art. 208 (jubilación anticipada por voluntad del interesado: hasta 24 meses, 35 años de cotización efectiva, pensión superior a la mínima y coeficientes por meses de anticipo y período cotizado), art. 210 (porcentaje por meses cotizados, incentivo de demora y coeficientes aplicados sobre el límite de la pensión), arts. 57 y 58.2 (límite de la pensión inicial y revalorización), disposición transitoria 7.ª (calendario de edades: 2026 y desde 2027), disposición transitoria 9.ª (porcentaje por mes cotizado) y disposición transitoria 34.ª (aplicación gradual 2024-2033 de los coeficientes sobre el límite de la pensión); reforma de la [Ley 21/2021](https://www.boe.es/buscar/act.php?id=BOE-A-2021-21652) y [Real Decreto-ley 11/2024](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26917). Límite de la cuantía inicial (3.359,60 € al mes), pensiones mínimas de jubilación y revalorización del 2,7 % de 2026: [Real Decreto 241/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977). Tope de la base de cotización de 2026 (5.101,20 € al mes): [Orden PJC/297/2026](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Para calcular tu pensión oficial, usa los simuladores de la [Seguridad Social](https://www.seg-social.es/). Modelo propio: base reguladora introducida por ti, cotización continuada, año de jubilación contado desde octubre de 2026, 14 pagas repartidas en 12 meses y revalorizadas cada enero, IRPF a tipo medio constante y sin descuento financiero. Hipótesis no oficiales y editables: 60 años, 30 años cotizados, 2.500 € de base reguladora, jubilación a los 65, cobro hasta los 85 y revalorización del 2,7 % (la de 2026, no una previsión). Consultado el 2/10/2026. Información orientativa, no asesoramiento ni cálculo oficial."
 }

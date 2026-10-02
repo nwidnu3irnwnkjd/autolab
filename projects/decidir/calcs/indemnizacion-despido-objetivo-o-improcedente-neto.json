@@ -1,114 +1,114 @@
 {
- "slug": "indemnizacion-despido-objetivo-o-improcedente-neto",
- "title": "Indemnización por despido: 20 o 33 días y cuánto queda neto",
- "description": "Calcula la indemnización por despido objetivo (20 días) o improcedente (33 o 45 días), la parte exenta de IRPF y lo que te queda neto frente a la oferta.",
- "h1": "¿Cuánto me corresponde de indemnización por despido y cuánto me queda neto?",
- "lead": "Un despido objetivo da 20 días de salario por año (máximo 12 mensualidades) y uno improcedente 33 días por año (máximo 24; 45 días por el tiempo anterior al 12-2-2012), y la indemnización legal está exenta de IRPF hasta 180.000 € (en el improcedente, si se reconoce en conciliación o sentencia; en el objetivo por causas económicas, técnicas, organizativas o de producción, hasta la cifra del improcedente): con 30.000 € brutos y 8 años de antigüedad son 13.151 € si es objetivo y 21.699 € si es improcedente, 8.548 € más. Una oferta que coincide con la legal de tu caso cumple lo mínimo; si queda por debajo, la diferencia se puede reclamar en 20 días hábiles, y el exceso sobre lo exento tributa (en el objetivo por causas económicas, técnicas, organizativas o de producción, está exento hasta la cifra del improcedente). No incluye despidos colectivos, nulos ni disciplinarios, ni indemnizaciones mayores por convenio.",
- "veredicto": "Con tus datos (30.000 € brutos, 8 años de antigüedad, despido objetivo), la indemnización legal es de 13.151 € brutos, exentos de IRPF, y una oferta de 13.150 € la iguala; si un juez declarase improcedente el despido serían 21.699 € (8.548 € más), sin garantía de que lo haga. Si la oferta queda por debajo de la legal (por ejemplo, 10.000 € frente a 13.151 €) conviene reclamar la diferencia en 20 días hábiles; si la supera, el exceso sobre lo exento tributa (en un improcedente de 8 años, 30.000 € de oferta con un tipo marginal del 37 % dejan unos 27.850 € netos, 6.151 € más que la legal de 21.699 €); y sin oferta, la legal de un improcedente son 21.699 € netos.",
- "tema": "impuestos",
- "sources": "Modelo propio simplificado, consultado el 2/10/2026. Estatuto de los Trabajadores (RDL 2/2015, texto consolidado a 30/9/2026, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430): art. 53.1.b (20 días por año, prorrateo por meses, máximo 12 mensualidades), art. 56.1 (33 días por año, máximo 24 mensualidades), disposición transitoria 11.ª, apartado 2 (contratos anteriores al 12-2-2012: 45 días hasta esa fecha y 33 después; máximo 720 días, salvo que el tramo anterior dé más, sin pasar en ningún caso de 42 mensualidades) y art. 59.3 (20 días hábiles para demandar). Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 7.e (exención de la indemnización obligatoria con el límite de 180.000 €; la acordada en conciliación del art. 63 de la Ley 36/2011 no es pacto) y art. 18.2 (reducción del 30 % si el periodo de generación, que en la extinción laboral son los años de servicio, supera 2 años; base máxima 300.000 € y fase de salida entre 700.000 y 1.000.000 €). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 1 (desvinculación real; se presume que no la hay si vuelves a la empresa en tres años). Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): arts. 267, 268 y 275.5.b. Supuestos que no son literales de la ley: una mensualidad son 30 días de salario (supuesto propio: con el salario mensual, bruto entre 12, los topes serían un 1,4 % mayores), el salario diario es el bruto anual entre 365, los meses sueltos se introducen completos y el IRPF se estima con el tipo marginal que escribes. Art. 7.e, párrafo 2: en el despido objetivo del art. 52.c (causas económicas, técnicas, organizativas o de producción) queda exenta la parte que no supere los límites obligatorios del improcedente. El Real Decreto-ley 26/2026 no toca estos artículos. No hay Presupuestos de 2026.",
- "inputs": [
-  {
-   "id": "bruto",
-   "label": "Salario bruto anual (€, con las pagas extra prorrateadas)",
-   "default": 30000,
-   "min": 1,
-   "step": 500,
-   "default_from": "params.indemnizacion_despido_2026.supuestos.bruto"
-  },
-  {
-   "id": "anios",
-   "label": "Antigüedad: años completos",
-   "default": 8,
-   "min": 0,
-   "max": 50,
-   "step": 1,
-   "default_from": "params.indemnizacion_despido_2026.supuestos.anios"
-  },
-  {
-   "id": "meses",
-   "label": "Antigüedad: meses sueltos (0-11; una fracción de mes cuéntala como mes)",
-   "default": 0,
-   "min": 0,
-   "max": 11,
-   "step": 1,
-   "default_from": "params.indemnizacion_despido_2026.supuestos.meses"
-  },
-  {
-   "id": "antes",
-   "label": "Meses trabajados hasta el 11-2-2012 (0 si empezaste el 12-2-2012 o después)",
-   "default": 0,
-   "min": 0,
-   "step": 1
-  },
-  {
-   "id": "tipo",
-   "label": "Tipo de despido",
-   "type": "select",
-   "options": [
+  "slug": "indemnizacion-despido-objetivo-o-improcedente-neto",
+  "title": "Indemnización por despido: 20 o 33 días. Calculadora neta",
+  "description": "Calcula tu indemnización por despido objetivo (20 días) o improcedente (33 días) y cuánto te queda neto. Con tu salario, antigüedad y fecha de contrato.",
+  "h1": "¿Cuánto me corresponde de indemnización por despido y cuánto me queda neto?",
+  "lead": "Un despido objetivo da 20 días de salario por año (máximo 12 mensualidades) y uno improcedente 33 días por año (máximo 24; 45 días por el tiempo anterior al 12-2-2012), y la indemnización legal está exenta de IRPF hasta 180.000 € (en el improcedente, si se reconoce en conciliación o sentencia; en el objetivo por causas económicas, técnicas, organizativas o de producción, hasta la cifra del improcedente): con 30.000 € brutos y 8 años de antigüedad son 13.151 € si es objetivo y 21.699 € si es improcedente, 8.548 € más. Una oferta que coincide con la legal de tu caso cumple lo mínimo; si queda por debajo, la diferencia se puede reclamar en 20 días hábiles, y el exceso sobre lo exento tributa (en el objetivo por causas económicas, técnicas, organizativas o de producción, está exento hasta la cifra del improcedente). No incluye despidos colectivos, nulos ni disciplinarios, ni indemnizaciones mayores por convenio.",
+  "veredicto": "Con tus datos (30.000 € brutos, 8 años de antigüedad, despido objetivo), la indemnización legal es de 13.151 € brutos, exentos de IRPF, y una oferta de 13.150 € la iguala; si un juez declarase improcedente el despido serían 21.699 € (8.548 € más), sin garantía de que lo haga. Si la oferta queda por debajo de la legal (por ejemplo, 10.000 € frente a 13.151 €) conviene reclamar la diferencia en 20 días hábiles; si la supera, el exceso sobre lo exento tributa (en un improcedente de 8 años, 30.000 € de oferta con un tipo marginal del 37 % dejan unos 27.850 € netos, 6.151 € más que la legal de 21.699 €); y sin oferta, la legal de un improcedente son 21.699 € netos.",
+  "tema": "impuestos",
+  "sources": "Modelo propio simplificado, consultado el 2/10/2026. Estatuto de los Trabajadores (RDL 2/2015, texto consolidado a 30/9/2026, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430): art. 53.1.b (20 días por año, prorrateo por meses, máximo 12 mensualidades), art. 56.1 (33 días por año, máximo 24 mensualidades), disposición transitoria 11.ª, apartado 2 (contratos anteriores al 12-2-2012: 45 días hasta esa fecha y 33 después; máximo 720 días, salvo que el tramo anterior dé más, sin pasar en ningún caso de 42 mensualidades) y art. 59.3 (20 días hábiles para demandar). Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): art. 7.e (exención de la indemnización obligatoria con el límite de 180.000 €; la acordada en conciliación del art. 63 de la Ley 36/2011 no es pacto) y art. 18.2 (reducción del 30 % si el periodo de generación, que en la extinción laboral son los años de servicio, supera 2 años; base máxima 300.000 € y fase de salida entre 700.000 y 1.000.000 €). Reglamento del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820): art. 1 (desvinculación real; se presume que no la hay si vuelves a la empresa en tres años). Ley General de la Seguridad Social (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): arts. 267, 268 y 275.5.b. Supuestos que no son literales de la ley: una mensualidad son 30 días de salario (supuesto propio: con el salario mensual, bruto entre 12, los topes serían un 1,4 % mayores), el salario diario es el bruto anual entre 365, los meses sueltos se introducen completos y el IRPF se estima con el tipo marginal que escribes. Art. 7.e, párrafo 2: en el despido objetivo del art. 52.c (causas económicas, técnicas, organizativas o de producción) queda exenta la parte que no supere los límites obligatorios del improcedente. El Real Decreto-ley 26/2026 no toca estos artículos. No hay Presupuestos de 2026.",
+  "inputs": [
     {
-     "v": "objetivo",
-     "t": "Objetivo (20 días por año)"
+      "id": "bruto",
+      "label": "Salario bruto anual (€, con las pagas extra prorrateadas)",
+      "default": 30000,
+      "min": 1,
+      "step": 500,
+      "default_from": "params.indemnizacion_despido_2026.supuestos.bruto"
     },
     {
-     "v": "improcedente",
-     "t": "Improcedente (33 días por año; 45 antes del 12-2-2012)"
-    }
-   ]
-  },
-  {
-   "id": "causa",
-   "label": "Si es objetivo: causa alegada",
-   "type": "select",
-   "options": [
-    {
-     "v": "eco",
-     "t": "Económicas, técnicas, organizativas o de producción (art. 52.c)"
+      "id": "anios",
+      "label": "Antigüedad: años completos",
+      "default": 8,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default_from": "params.indemnizacion_despido_2026.supuestos.anios"
     },
     {
-     "v": "otra",
-     "t": "Otra causa (ineptitud, falta de adaptación; art. 52.a, b, e)"
+      "id": "meses",
+      "label": "Antigüedad: meses sueltos (0-11; una fracción de mes cuéntala como mes)",
+      "default": 0,
+      "min": 0,
+      "max": 11,
+      "step": 1,
+      "default_from": "params.indemnizacion_despido_2026.supuestos.meses"
+    },
+    {
+      "id": "antes",
+      "label": "Meses trabajados hasta el 11-2-2012 (0 si empezaste el 12-2-2012 o después)",
+      "default": 0,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo de despido",
+      "type": "select",
+      "options": [
+        {
+          "v": "objetivo",
+          "t": "Objetivo (20 días por año)"
+        },
+        {
+          "v": "improcedente",
+          "t": "Improcedente (33 días por año; 45 antes del 12-2-2012)"
+        }
+      ]
+    },
+    {
+      "id": "causa",
+      "label": "Si es objetivo: causa alegada",
+      "type": "select",
+      "options": [
+        {
+          "v": "eco",
+          "t": "Económicas, técnicas, organizativas o de producción (art. 52.c)"
+        },
+        {
+          "v": "otra",
+          "t": "Otra causa (ineptitud, falta de adaptación; art. 52.a, b, e)"
+        }
+      ]
+    },
+    {
+      "id": "oferta",
+      "label": "Oferta de la empresa (€ brutos; 0 si aún no hay oferta)",
+      "default": 13150,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.indemnizacion_despido_2026.supuestos.oferta"
+    },
+    {
+      "id": "marginal",
+      "label": "Tipo marginal de IRPF aproximado (%; solo afecta a lo que supere la indemnización legal)",
+      "default": 30,
+      "min": 0,
+      "max": 55,
+      "step": 0.5,
+      "default_from": "params.indemnizacion_despido_2026.supuestos.marginal"
     }
-   ]
-  },
-  {
-   "id": "oferta",
-   "label": "Oferta de la empresa (€ brutos; 0 si aún no hay oferta)",
-   "default": 13150,
-   "min": 0,
-   "step": 100,
-   "default_from": "params.indemnizacion_despido_2026.supuestos.oferta"
-  },
-  {
-   "id": "marginal",
-   "label": "Tipo marginal de IRPF aproximado (%; solo afecta a lo que supere la indemnización legal)",
-   "default": 30,
-   "min": 0,
-   "max": 55,
-   "step": 0.5,
-   "default_from": "params.indemnizacion_despido_2026.supuestos.marginal"
-  }
- ],
- "faqs": [
-  [
-   "¿Cuántos días de indemnización me corresponden por despido objetivo o improcedente?",
-   "En un despido objetivo, 20 días de salario por año de servicio con un máximo de 12 mensualidades (art. 53.1.b del Estatuto de los Trabajadores); en uno improcedente, 33 días por año con un máximo de 24 mensualidades (art. 56.1). Los periodos inferiores a un año se prorratean por meses. Con 30.000 € brutos y 8 años de antigüedad son 13.151 € en el objetivo y 21.699 € en el improcedente, 8.548 € más."
   ],
-  [
-   "¿Qué cambia si empecé a trabajar antes del 12 de febrero de 2012?",
-   "En un despido improcedente, el tiempo trabajado hasta el 11-2-2012 se paga a 45 días por año y el posterior a 33, con un máximo de 720 días, salvo que el tramo anterior ya supere esa cifra: entonces ese es el máximo, sin pasar de 42 mensualidades (disposición transitoria 11.ª del Estatuto). En el despido objetivo no hay tramo de 45 días. Un solo mes más trabajado antes de esa fecha añade un día de salario: con 36.000 € brutos y 14 años y 7 meses de antigüedad, empezar el 12-2-2012 da 47.466 € y empezar un mes antes da 47.564 €."
-  ],
-  [
-   "¿Paga IRPF la indemnización por despido?",
-   "La indemnización legal está exenta hasta 180.000 € (art. 7.e de la Ley del IRPF); lo que la empresa ofrezca por encima de lo exento tributa como rendimiento del trabajo (en el objetivo por causas económicas, técnicas, organizativas o de producción, queda exento hasta la cifra del improcedente), con una reducción del 30 % si tienes más de 2 años de servicio (art. 18.2). Si en un improcedente de 8 años con 30.000 € brutos te ofrecen 30.000 € (8.301 € por encima de los 21.699 € legales) y tu tipo marginal es del 37 %, el IRPF estimado es de 2.150 € y te quedan 27.850 € netos. Ojo: en el improcedente la exención exige que la improcedencia se reconozca en conciliación (art. 63 de la Ley reguladora de la jurisdicción social) o en sentencia."
-  ],
-  [
-   "¿Cobrar la indemnización me quita el paro?",
-   "No: el despido, incluido el objetivo, es situación legal de desempleo y puedes pedir la prestación en los 15 días siguientes (arts. 267 y 268 de la Ley General de la Seguridad Social). La prestación depende de tus cotizaciones, no de la indemnización. Para el subsidio sí importa: la indemnización legal no se computa como renta, pero el exceso pactado sí (art. 275.5.b). Calcula tu prestación en la calculadora de cuánto cobrarías de paro."
-  ],
-  [
-   "¿Qué plazo tengo para reclamar un despido?",
-   "20 días hábiles desde el despido, un plazo de caducidad (art. 59.3 del Estatuto de los Trabajadores); la solicitud de conciliación ante el órgano administrativo de mediación lo suspende. Si la oferta de la empresa es inferior a la indemnización legal, la diferencia se reclama dentro de ese plazo; si la oferta coincide con la legal, reclamar solo cambia el resultado si un juez declara improcedente un despido objetivo."
+  "faqs": [
+    [
+      "¿Cuántos días de indemnización me corresponden por despido objetivo o improcedente?",
+      "En un despido objetivo, 20 días de salario por año de servicio con un máximo de 12 mensualidades (art. 53.1.b del Estatuto de los Trabajadores); en uno improcedente, 33 días por año con un máximo de 24 mensualidades (art. 56.1). Los periodos inferiores a un año se prorratean por meses. Con 30.000 € brutos y 8 años de antigüedad son 13.151 € en el objetivo y 21.699 € en el improcedente, 8.548 € más."
+    ],
+    [
+      "¿Qué cambia si empecé a trabajar antes del 12 de febrero de 2012?",
+      "En un despido improcedente, el tiempo trabajado hasta el 11-2-2012 se paga a 45 días por año y el posterior a 33, con un máximo de 720 días, salvo que el tramo anterior ya supere esa cifra: entonces ese es el máximo, sin pasar de 42 mensualidades (disposición transitoria 11.ª del Estatuto). En el despido objetivo no hay tramo de 45 días. Un solo mes más trabajado antes de esa fecha añade un día de salario: con 36.000 € brutos y 14 años y 7 meses de antigüedad, empezar el 12-2-2012 da 47.466 € y empezar un mes antes da 47.564 €."
+    ],
+    [
+      "¿Paga IRPF la indemnización por despido?",
+      "La indemnización legal está exenta hasta 180.000 € (art. 7.e de la Ley del IRPF); lo que la empresa ofrezca por encima de lo exento tributa como rendimiento del trabajo (en el objetivo por causas económicas, técnicas, organizativas o de producción, queda exento hasta la cifra del improcedente), con una reducción del 30 % si tienes más de 2 años de servicio (art. 18.2). Si en un improcedente de 8 años con 30.000 € brutos te ofrecen 30.000 € (8.301 € por encima de los 21.699 € legales) y tu tipo marginal es del 37 %, el IRPF estimado es de 2.150 € y te quedan 27.850 € netos. Ojo: en el improcedente la exención exige que la improcedencia se reconozca en conciliación (art. 63 de la Ley reguladora de la jurisdicción social) o en sentencia."
+    ],
+    [
+      "¿Cobrar la indemnización me quita el paro?",
+      "No: el despido, incluido el objetivo, es situación legal de desempleo y puedes pedir la prestación en los 15 días siguientes (arts. 267 y 268 de la Ley General de la Seguridad Social). La prestación depende de tus cotizaciones, no de la indemnización. Para el subsidio sí importa: la indemnización legal no se computa como renta, pero el exceso pactado sí (art. 275.5.b). Calcula tu prestación en la calculadora de cuánto cobrarías de paro."
+    ],
+    [
+      "¿Qué plazo tengo para reclamar un despido?",
+      "20 días hábiles desde el despido, un plazo de caducidad (art. 59.3 del Estatuto de los Trabajadores); la solicitud de conciliación ante el órgano administrativo de mediación lo suspende. Si la oferta de la empresa es inferior a la indemnización legal, la diferencia se reclama dentro de ese plazo; si la oferta coincide con la legal, reclamar solo cambia el resultado si un juez declara improcedente un despido objetivo."
+    ]
   ]
- ]
 }

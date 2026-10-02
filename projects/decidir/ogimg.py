@@ -268,6 +268,48 @@ def build_all(assets_dir, cache_dir):
     return out
 
 
+# ---------------------------------------------------------------- SVG por página (1200x630, con título)
+# No hay renderizador SVG->PNG en el repo (sin cairosvg/rsvg/inkscape) y Facebook/X/LinkedIn no admiten SVG en og:image:
+# og:image sigue siendo el PNG del tema; estas SVG (una por página) quedan en og-svg/ para que el Diseñador las rasterice.
+from xml.sax.saxutils import escape as _esc
+_SYM = {  # símbolo del tema en caja 100x100
+    "hipoteca": '<path d="M10 48 50 14l40 34" fill="none" stroke="#1b2340" stroke-width="6" stroke-linejoin="round"/><rect x="20" y="48" width="60" height="40" rx="4" fill="#fff" stroke="#1b2340" stroke-width="6"/><rect x="42" y="62" width="16" height="26" rx="3" fill="#f08a4b"/>',
+    "coche": '<path d="M8 66l8-20 14-10h38l16 14 10 4v12H8z" fill="{a}" stroke="#1b2340" stroke-width="6" stroke-linejoin="round"/><circle cx="30" cy="70" r="10" fill="#fff" stroke="#1b2340" stroke-width="6"/><circle cx="72" cy="70" r="10" fill="#fff" stroke="#1b2340" stroke-width="6"/>',
+    "impuestos": '<rect x="22" y="8" width="56" height="84" rx="6" fill="#fff" stroke="#1b2340" stroke-width="6"/><path d="M34 32h32M34 46h32M34 60h20" stroke="#c8cee0" stroke-width="6" stroke-linecap="round"/><circle cx="66" cy="76" r="9" fill="{a}"/>',
+    "energia": '<path d="M58 6 24 56h22l-6 38 38-52H56z" fill="{a}" stroke="#1b2340" stroke-width="6" stroke-linejoin="round"/>',
+    "ahorro": '<ellipse cx="42" cy="68" rx="30" ry="12" fill="{a}" stroke="#1b2340" stroke-width="6"/><ellipse cx="42" cy="46" rx="30" ry="12" fill="{a}" stroke="#1b2340" stroke-width="6"/><path d="M76 86V62M90 86V40" stroke="#14a394" stroke-width="10" stroke-linecap="round"/>',
+}
+
+def _wrap(t, n=24, maxl=4):
+    out, cur = [], ""
+    for w in t.split():
+        if cur and len(cur) + 1 + len(w) > n: out.append(cur); cur = w
+        else: cur = (cur + " " + w).strip()
+    if cur: out.append(cur)
+    if len(out) > maxl: out = out[:maxl]; out[-1] = out[-1][:n - 1].rstrip() + "…"
+    return out
+
+def page_svg(title, tema, kicker="Entre Muchos"):
+    bg, disc, acc, _ = THEMES.get(tema, THEMES["ahorro"])
+    MAXW = 700  # texto en x 70..770: no pisa el símbolo (x>=850) y deja >=80 px de margen; ancho estimado = 0,6*fs*nº caracteres
+    for fs, maxl in ((64, 3), (58, 3), (54, 4), (50, 4), (46, 4), (42, 5), (38, 5)):
+        lines = _wrap(title, int(MAXW / (0.6 * fs)), 99)
+        if len(lines) <= maxl and max(len(l) for l in lines) * 0.6 * fs <= MAXW: break
+    y0 = 315 - (len(lines) - 1) * fs * .6
+    tx = "".join(f'<tspan x="70" y="{y0 + i * fs * 1.2:.0f}">{_esc(l)}</tspan>' for i, l in enumerate(lines))
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="{_esc(title, {chr(34): "&quot;"})}">'
+            f'<rect width="1200" height="630" fill="{bg}"/><circle cx="1000" cy="330" r="230" fill="{disc}"/><circle cx="1000" cy="330" r="258" fill="none" stroke="{acc}" stroke-opacity=".22" stroke-width="3"/>'
+            f'<g transform="translate(850 180) scale(3)">{_SYM.get(tema, _SYM["ahorro"]).replace("{a}", acc)}</g>'
+            f'<rect x="70" y="60" width="64" height="64" rx="18" fill="#2548f0"/><rect x="83" y="92" width="10" height="20" rx="5" fill="#fff" fill-opacity=".55"/><rect x="97" y="82" width="10" height="30" rx="5" fill="#fff" fill-opacity=".8"/><rect x="111" y="72" width="10" height="40" rx="5" fill="#fff"/>'
+            f'<text x="150" y="105" font-family="Inter,Helvetica,Arial,sans-serif" font-size="34" fill="#1b2340">{_esc(kicker.lower().replace("entre muchos", "entre "))}<tspan font-weight="800">{"muchos" if "Entre" in kicker else ""}</tspan></text>'
+            f'<text font-family="Inter,Helvetica,Arial,sans-serif" font-size="{fs}" font-weight="800" fill="#1b2340">{tx}</text>'
+            f'<rect x="70" y="560" width="120" height="8" rx="4" fill="{acc}"/></svg>')
+
+def write_svg(out_dir, name, title, tema):
+    os.makedirs(out_dir, exist_ok=True)
+    open(os.path.join(out_dir, name + ".svg"), "w", encoding="utf-8").write(page_svg(title, tema))
+
+
 if __name__ == "__main__":
     import sys
     a = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
