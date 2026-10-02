@@ -24,6 +24,11 @@
   "coche-propio-o-carsharing-o-vtc",
   "teletrabajo-o-oficina-coste-real"
  ],
+ "caldera-reparar-o-cambiar": [
+  "calefaccion-gas-aerotermia-electrica",
+  "reparar-o-comprar-electrodomestico",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
+ ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
   "placas-solares-merece-la-pena",
@@ -38,6 +43,11 @@
   "calefaccion-gas-aerotermia-electrica",
   "luz-fija-o-indexada",
   "cambiar-electrodomestico-antiguo-merece-la-pena"
+ ],
+ "capitalizar-paro-o-cobrarlo": [
+  "comprar-o-alquilar-herramienta",
+  "contado-o-financiar",
+  "deposito-letras-o-fondo-monetario"
  ],
  "coche-nuevo-o-seminuevo": [
   "comprar-coche-o-renting",
@@ -55,9 +65,9 @@
   "coche-nuevo-o-seminuevo"
  ],
  "comprar-o-alquilar-herramienta": [
-  "portatil-o-movil-comprar-renting-o-financiar",
   "reparar-o-comprar-electrodomestico",
-  "contado-o-financiar"
+  "contado-o-financiar",
+  "portatil-o-movil-comprar-renting-o-financiar"
  ],
  "contado-o-financiar": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -90,8 +100,8 @@
   "rescate-plan-pensiones-capital-o-renta"
  ],
  "excedencia-o-reduccion-jornada": [
-  "teletrabajo-o-oficina-coste-real",
   "guarderia-cuidadora-o-reducir-jornada",
+  "teletrabajo-o-oficina-coste-real",
   "jubilacion-anticipada-o-demorada"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
@@ -110,9 +120,9 @@
   "alquilar-o-comprar"
  ],
  "jubilacion-anticipada-o-demorada": [
-  "excedencia-o-reduccion-jornada",
-  "teletrabajo-o-oficina-coste-real",
-  "universidad-publica-o-privada-o-master"
+  "plan-pensiones-o-fondo-indexado",
+  "rescate-plan-pensiones-capital-o-renta",
+  "autonomo-o-asalariado"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
@@ -122,7 +132,7 @@
  "placas-solares-merece-la-pena": [
   "luz-fija-o-indexada",
   "calefaccion-gas-aerotermia-electrica",
-  "contado-o-financiar"
+  "punto-de-carga-casa-con-o-sin-placas"
  ],
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
@@ -133,6 +143,11 @@
   "contado-o-financiar",
   "fibra-y-movil-juntos-o-por-separado",
   "reparar-o-comprar-electrodomestico"
+ ],
+ "punto-de-carga-casa-con-o-sin-placas": [
+  "placas-solares-merece-la-pena",
+  "diesel-gasolina-hibrido-electrico",
+  "luz-fija-o-indexada"
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",

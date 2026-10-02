@@ -1,0 +1,257 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "km": 15000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 2550.0,
+    "kwhCasa": 2040.0,
+    "costePublica": 1147.5,
+    "costeSin": 599.15,
+    "costeCon": 523.93,
+    "costeGasolina": 1786.49,
+    "ahorroSin": 548.35,
+    "ahorroCon": 623.57,
+    "paybackSin": 2.19,
+    "paybackCon": 1.92,
+    "kmMin": 2886.62,
+    "ahorroVsGasolina": 1262.56,
+    "instalar": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 15000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 0,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 2550.0,
+    "kwhCasa": 2040.0,
+    "costePublica": 1147.5,
+    "costeSin": 599.15,
+    "costeCon": 599.15,
+    "costeGasolina": 1786.49,
+    "ahorroSin": 548.35,
+    "ahorroCon": 548.35,
+    "paybackSin": 2.19,
+    "paybackCon": 2.19,
+    "kmMin": 3282.56,
+    "ahorroVsGasolina": 1187.34,
+    "instalar": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 0,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 0.0,
+    "kwhCasa": 0.0,
+    "costePublica": 0.0,
+    "costeSin": 0.0,
+    "costeCon": 0.0,
+    "costeGasolina": 0.0,
+    "ahorroSin": 0.0,
+    "ahorroCon": 0.0,
+    "paybackSin": -1.0,
+    "paybackCon": -1.0,
+    "kmMin": 2886.62,
+    "ahorroVsGasolina": 0.0,
+    "instalar": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 15000,
+    "cons": 17,
+    "pctCasa": 100,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 2550.0,
+    "kwhCasa": 2550.0,
+    "costePublica": 1147.5,
+    "costeSin": 462.06,
+    "costeCon": 368.04,
+    "costeGasolina": 1786.49,
+    "ahorroSin": 685.44,
+    "ahorroCon": 779.46,
+    "paybackSin": 1.75,
+    "paybackCon": 1.54,
+    "kmMin": 2309.3,
+    "ahorroVsGasolina": 1418.45,
+    "instalar": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 15000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 0,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 2550.0,
+    "kwhCasa": 2040.0,
+    "costePublica": 1147.5,
+    "costeSin": 599.15,
+    "costeCon": 523.93,
+    "costeGasolina": 1786.49,
+    "ahorroSin": 548.35,
+    "ahorroCon": 623.57,
+    "paybackSin": 0.0,
+    "paybackCon": 0.0,
+    "kmMin": 0.0,
+    "ahorroVsGasolina": 1262.56,
+    "instalar": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 6000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.15,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 1020.0,
+    "kwhCasa": 816.0,
+    "costePublica": 153.0,
+    "costeSin": 178.46,
+    "costeCon": 148.37,
+    "costeGasolina": 714.6,
+    "ahorroSin": -25.46,
+    "ahorroCon": 4.63,
+    "paybackSin": -1.0,
+    "paybackCon": 259.38,
+    "kmMin": 155628.78,
+    "ahorroVsGasolina": 566.22,
+    "instalar": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 3000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 510.0,
+    "kwhCasa": 408.0,
+    "costePublica": 229.5,
+    "costeSin": 119.83,
+    "costeCon": 104.79,
+    "costeGasolina": 357.3,
+    "ahorroSin": 109.67,
+    "ahorroCon": 124.71,
+    "paybackSin": 10.94,
+    "paybackCon": 9.62,
+    "kmMin": 2886.62,
+    "ahorroVsGasolina": 252.51,
+    "instalar": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 15000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 1200,
+    "pelec": 0.1812,
+    "ppub": 0.2,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 2550.0,
+    "kwhCasa": 2040.0,
+    "costePublica": 510.0,
+    "costeSin": 471.65,
+    "costeCon": 396.43,
+    "costeGasolina": 1786.49,
+    "ahorroSin": 38.35,
+    "ahorroCon": 113.57,
+    "paybackSin": 31.29,
+    "paybackCon": 10.57,
+    "kmMin": 15849.82,
+    "ahorroVsGasolina": 1390.06,
+    "instalar": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "km": 6000,
+    "cons": 17,
+    "pctCasa": 80,
+    "coste": 2500,
+    "pelec": 0.1812,
+    "ppub": 0.45,
+    "pctPlacas": 40,
+    "pgas": 1.8323
+   },
+   "expect": {
+    "kwhAnual": 1020.0,
+    "kwhCasa": 816.0,
+    "costePublica": 459.0,
+    "costeSin": 239.66,
+    "costeCon": 209.57,
+    "costeGasolina": 714.6,
+    "ahorroSin": 219.34,
+    "ahorroCon": 249.43,
+    "paybackSin": 11.4,
+    "paybackCon": 10.02,
+    "kmMin": 6013.8,
+    "ahorroVsGasolina": 505.02,
+    "instalar": 0
+   },
+   "tol": 1
+  }
+ ]
+}

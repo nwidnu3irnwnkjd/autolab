@@ -1,0 +1,239 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "repar": 450,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 647.0,
+    "anualCambiar": 617.45,
+    "gasActual": 512.0,
+    "gasNuevo": 450.78,
+    "ahorroGas": 61.22,
+    "neta": 2500,
+    "amortVsRep": 19.3,
+    "amortGas": 40.84,
+    "equilibrio": 351.5,
+    "diferencia": 29.55,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 900,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 15000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 1230.0,
+    "anualCambiar": 1011.88,
+    "gasActual": 960.0,
+    "gasNuevo": 845.22,
+    "ahorroGas": 114.78,
+    "neta": 2500,
+    "amortVsRep": 7.81,
+    "amortGas": 21.78,
+    "equilibrio": 172.95,
+    "diferencia": 218.12,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 80,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 8
+   },
+   "expect": {
+    "anualReparar": 530.0,
+    "anualCambiar": 617.45,
+    "gasActual": 512.0,
+    "gasNuevo": 450.78,
+    "ahorroGas": 61.22,
+    "neta": 2500,
+    "amortVsRep": 34.96,
+    "amortGas": 40.84,
+    "equilibrio": 468.66,
+    "diferencia": -87.45,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 450,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 0,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 135.0,
+    "anualCambiar": 166.67,
+    "gasActual": 0.0,
+    "gasNuevo": 0.0,
+    "ahorroGas": 0.0,
+    "neta": 2500,
+    "amortVsRep": 45.56,
+    "amortGas": -1.0,
+    "equilibrio": 555.56,
+    "diferencia": -31.67,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 0,
+    "nueva": 2500,
+    "ayuda": 2500,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 512.0,
+    "anualCambiar": 450.78,
+    "gasActual": 512.0,
+    "gasNuevo": 450.78,
+    "ahorroGas": 61.22,
+    "neta": 0,
+    "amortVsRep": 0.0,
+    "amortGas": 0.0,
+    "equilibrio": -204.06,
+    "diferencia": 61.22,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 450,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.81,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 647.0,
+    "anualCambiar": 678.67,
+    "gasActual": 512.0,
+    "gasNuevo": 512.0,
+    "ahorroGas": 0.0,
+    "neta": 2500,
+    "amortVsRep": 45.56,
+    "amortGas": 4.398046511104e+16,
+    "equilibrio": 555.56,
+    "diferencia": -31.67,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 250,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 587.0,
+    "anualCambiar": 617.45,
+    "gasActual": 512.0,
+    "gasNuevo": 450.78,
+    "ahorroGas": 61.22,
+    "neta": 2500,
+    "amortVsRep": 26.1,
+    "amortGas": 40.84,
+    "equilibrio": 351.5,
+    "diferencia": -30.45,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 351.5,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 8000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 617.45,
+    "anualCambiar": 617.45,
+    "gasActual": 512.0,
+    "gasNuevo": 450.78,
+    "ahorroGas": 61.22,
+    "neta": 2500,
+    "amortVsRep": 22.29,
+    "amortGas": 40.84,
+    "equilibrio": 351.5,
+    "diferencia": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "repar": 450,
+    "nueva": 2500,
+    "ayuda": 0,
+    "consumo": 15000,
+    "rendAct": 0.81,
+    "rendNueva": 0.92,
+    "pgas": 0.064,
+    "vida": 5
+   },
+   "expect": {
+    "anualReparar": 1095.0,
+    "anualCambiar": 1011.88,
+    "gasActual": 960.0,
+    "gasNuevo": 845.22,
+    "ahorroGas": 114.78,
+    "neta": 2500,
+    "amortVsRep": 12.83,
+    "amortGas": 21.78,
+    "equilibrio": 172.95,
+    "diferencia": 83.12,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

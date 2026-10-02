@@ -1,0 +1,106 @@
+{
+  "slug": "punto-de-carga-casa-con-o-sin-placas",
+  "title": "Coche eléctrico: punto de carga en casa, con o sin placas",
+  "description": "Calcula cuánto ahorras cargando el coche eléctrico en casa, con o sin placas solares, y en cuántos años se amortiza el punto de carga frente a la pública.",
+  "h1": "Coche eléctrico: punto de carga en casa, con o sin placas",
+  "lead": "Conviene instalar un punto de carga en casa si haces más km al año de los que lo amortizan en 10 años (con los ejemplos de la calculadora: 17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 € y carga pública a 0,45 €/kWh, a partir de unos 3.300 km al año, o unos 2.900 con placas), y que la electricidad de casa sea más barata que la pública. La calculadora te da el ahorro anual con y sin placas, los años de amortización y el coste frente a la gasolina.",
+  "veredicto": "El punto de carga en casa compensa si haces más km al año de los que lo amortizan en 10 años y el kWh de casa sale más barato que el de la pública; con los ejemplos, unos 3.300 km al año sin placas y unos 2.900 con ellas. Con tus datos la calculadora da el ahorro, los años de amortización y la comparación con la gasolina.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "km",
+      "label": "Kilómetros al año (15.000 es un ejemplo)",
+      "default": 15000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.punto_carga_2026.supuestos.km_ano"
+    },
+    {
+      "id": "cons",
+      "label": "Consumo del coche eléctrico (kWh/100 km; 17 es un ejemplo)",
+      "default": 17,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.punto_carga_2026.supuestos.consumo_kwh_100km"
+    },
+    {
+      "id": "pctCasa",
+      "label": "Parte de la carga que haces en casa (%; 80 es un ejemplo)",
+      "default": 80,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.punto_carga_2026.supuestos.pct_casa"
+    },
+    {
+      "id": "coste",
+      "label": "Coste del punto de carga instalado, restadas tus ayudas (€; 1.200 es un ejemplo, rango habitual 800-1.600 € en vivienda)",
+      "default": 1200,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.punto_carga_2026.supuestos.coste_neto_eur"
+    },
+    {
+      "id": "pelec",
+      "label": "Precio de la electricidad en casa con impuestos (€/kWh; por defecto, PVPC medio del mes en curso por 1,2718; si aún no hay datos del mes, la media de los últimos 12 meses)",
+      "default": 0.1812,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_factor": 1.2718,
+      "default_round": 3,
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.placas_2026.precio_evitado_ref_eur_kwh.valor"
+    },
+    {
+      "id": "ppub",
+      "label": "Precio de la carga pública (€/kWh; 0,45 es un ejemplo, mira la tarifa de tu red)",
+      "default": 0.45,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "params.kwh_publico_eur"
+    },
+    {
+      "id": "pctPlacas",
+      "label": "Parte de la carga en casa que cubren tus placas (%; 0 si no tienes; 40 es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.punto_carga_2026.supuestos.pct_placas"
+    },
+    {
+      "id": "pgas",
+      "label": "Precio de la gasolina del coche equivalente (€/l; por defecto, gasolina 95 de hoy)",
+      "default": 1.833,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "live.gasolina95",
+      "default_round": 3,
+      "default_fallback": "params.gasolina_eur_l"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Compensa instalar un punto de carga en casa?",
+      "Compensa si el kWh de casa sale más barato que el de la carga pública y haces los km suficientes para amortizarlo. Con los ejemplos de esta página (17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 €, electricidad a 0,18 €/kWh y pública a 0,45 €/kWh) se amortiza en unos 2,2 años sin placas y 1,9 con ellas con 15.000 km al año, y a partir de unos 3.300 km al año en 10 años."
+    ],
+    [
+      "¿Cuánto cuesta cargar un coche eléctrico en casa?",
+      "Los kWh que consume el coche por el precio de tu electricidad. Con 17 kWh/100 km y 0,18 €/kWh son unos 3 € cada 100 km, frente a unos 7,65 € en pública a 0,45 €/kWh. Con tus datos, la calculadora da el coste anual de cada forma de recargar y el de un coche de gasolina equivalente."
+    ],
+    [
+      "¿Cómo cambian las placas el coste de cargar?",
+      "La parte de la carga que cubren tus placas se valora a lo que dejas de ingresar por esos kWh como excedentes (0,07 €/kWh sin impuestos, ejemplo de la calculadora de placas, por 1,2718), en lugar de a lo que pagarías a la red. Con 40 % de placas y los ejemplos, el ahorro anual frente a la pública pasa de unos 550 € a unos 625 €. Las placas no están incluidas en el coste del punto."
+    ],
+    [
+      "¿Y si cargo de noche con tarifa con discriminación horaria?",
+      "Puede bajar el precio del kWh en casa, pero esta calculadora no lo modela: escribe tu precio medio de la electricidad con impuestos si ya sabes que cargas en valle. Las bonificaciones fiscales de puntos de recarga autonómicas o municipales tampoco se incluyen: consulta tu ayuntamiento y tu comunidad."
+    ],
+    [
+      "¿Qué pasa si la carga pública es barata?",
+      "Si el kWh de la pública no es mucho más caro que el de casa, el ahorro se reduce y el punto puede no amortizarse. Con los ejemplos y la pública a 0,20 €/kWh, el punto tarda unos 31 años sin placas y unos 10,6 con el 40 % de placas, más de los 10 años del modelo. Sigue saliendo más barato que la gasolina, pero ya no por el punto de carga."
+    ]
+  ],
+  "sources": "Modelo propio simplificado: kWh al año = km x consumo / 100; coste en casa = kWh de casa x precio de la electricidad (y la parte de placas a 0,07 x 1,2718 €/kWh, la compensación de excedentes que dejas de ingresar, igual que en la calculadora de placas); coste de la pública = kWh x precio; gasolina = km x 6,5 l/100 km x precio (consumo de ejemplo, data/params.json viaje_coche). Amortización = coste del punto / (coste de cargarlo todo en pública - coste con punto). Horizonte de 10 años y euros constantes, sin descuento (hipótesis del modelo, data/params.json punto_carga_2026). Electricidad: por defecto, PVPC medio del mes en curso (Red Eléctrica, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) con impuesto eléctrico e IVA (x 1,2718) cuando ya hay 7 días del mes; si no, 0,1812 €/kWh, PVPC medio de los últimos 12 meses con impuestos (consultado el 2/10/2026). Gasolina 95: media simple de gasolineras de la Península y Baleares (MITECO, Geoportal de gasolineras, https://geoportalgasolineras.es/). Carga pública 0,45 €/kWh y punto de carga de 1.200 € (rango habitual de presupuestos de vivienda 800-1.600 €, Autosolar, consultado el 2/10/2026): ejemplos editables, no datos oficiales ni tarifas de empresas. Consumo del coche, km y % de carga en casa: ejemplos editables. Información orientativa, no un presupuesto ni asesoramiento."
+}

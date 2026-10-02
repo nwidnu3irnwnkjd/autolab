@@ -1,0 +1,107 @@
+{
+  "slug": "capitalizar-paro-o-cobrarlo",
+  "title": "Capitalizar el paro o cobrarlo cada mes: ¿qué te conviene?",
+  "description": "Calcula cuánto recibes capitalizando el paro para ser autónomo frente a cobrarlo mes a mes (270 días de compatibilidad) y el dinero propio que necesitas.",
+  "h1": "Capitalizar el paro o cobrarlo mensualmente: ¿qué te conviene?",
+  "lead": "Si te haces autónomo y te quedan más de 9 meses de paro, capitalizarlo te deja más dinero en total que cobrarlo mes a mes si sigues de alta como autónomo hasta agotar la subvención de cuota (unos 27 meses en el ejemplo; casi 5 años sin inversión), que te llega repartida en ese tiempo: la prestación solo es compatible con tu alta 270 días (9 meses), mientras que la parte que no capitalizas se sigue cobrando como subvención de tu cuota hasta agotarla, y solo pierdes el interés legal descontado. En el ejemplo por defecto (12 meses pendientes, base reguladora de 1.500 € e inversión de 6.000 €), capitalizar da 11.596 € en total (6.000 € de golpe y 5.596 € de subvención durante unos 27 meses) frente a 9.000 € cobrando los 9 meses compatibles, y solo 104 € menos que cobrar los 12 meses enteros sin darte de alta. Con 9 meses o menos pendientes, cobrar mes a mes te deja algo más (el interés legal) si capitalizas algo; sin pago único, recibes lo mismo. La herramienta calcula cuánto recibes de cada forma, durante cuántos meses cobras la subvención y el dinero propio que necesitas al empezar. Solo se puede capitalizar para iniciar una actividad nueva, y no incluye el riesgo del negocio.",
+  "veredicto": "El resultado depende de cuántos meses te quedan y de tu inversión justificada. Si te haces autónomo, cobrar la prestación mes a mes solo es posible durante 270 días, es decir 9 meses (art. 33 de la Ley 20/2007). Capitalizar paga en pago único hasta el importe de la inversión (más tributos de inicio y hasta un 15 % en asesoramiento y formación) y el resto de la prestación se cobra como subvención de tu cuota de autónomo mientras sigas de alta, hasta agotarla (art. 34 de la Ley 20/2007): con más de 9 meses pendientes capitalizar te deja más en total; con 9 o menos, cobrar mes a mes te deja algo más solo si capitalizas con pago único (el interés legal que se descuenta); sin pago único es empate. Si cesas antes de agotar la subvención pierdes lo que quede, y capitalizar compensa sobre todo si necesitas el dinero ya para la inversión.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "meses",
+      "label": "Meses de prestación que te quedan por cobrar (3 a 24)",
+      "default": 12,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.capitalizar_paro_2026.supuestos.meses_pendientes"
+    },
+    {
+      "id": "br",
+      "label": "Base reguladora mensual de tu prestación (€; promedio de las bases de cotización por desempleo de los últimos 180 días)",
+      "default": 1500,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.capitalizar_paro_2026.supuestos.base_reguladora",
+      "ayuda": "Es la base sobre la que se calcula la prestación (70 % los primeros 180 días y 60 % después, con un máximo y un mínimo según tus hijos). La encuentras en la resolución de tu prestación."
+    },
+    {
+      "id": "hijos",
+      "label": "Hijos a tu cargo (0, 1 o 2 o más)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.capitalizar_paro_2026.supuestos.hijos"
+    },
+    {
+      "id": "cobrados",
+      "label": "Meses de prestación que ya has cobrado (para saber si cobras el 70 % o el 60 %)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.capitalizar_paro_2026.supuestos.meses_cobrados"
+    },
+    {
+      "id": "actividad",
+      "label": "¿Vas a iniciar una actividad nueva como autónomo?",
+      "type": "select",
+      "options": [
+        {
+          "v": "si",
+          "t": "Sí, como autónomo"
+        },
+        {
+          "v": "no",
+          "t": "No"
+        }
+      ]
+    },
+    {
+      "id": "inversion",
+      "label": "Inversión inicial prevista (€; incluye tributos de inicio y hasta un 15 % de asesoramiento y formación)",
+      "default": 6000,
+      "min": 0,
+      "step": 500,
+      "default_from": "params.capitalizar_paro_2026.supuestos.inversion"
+    },
+    {
+      "id": "cuota",
+      "label": "Cuota mensual de autónomo estimada (€; sin tarifa plana)",
+      "default": 205.88,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.capitalizar_paro_2026.supuestos.cuota_mensual",
+      "ayuda": "Por defecto, la base mínima del tramo 1 de 2026 (653,59 €) por el 31,5 % de tipo."
+    },
+    {
+      "id": "arranque",
+      "label": "Meses hasta tener ingresos regulares",
+      "default": 6,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.capitalizar_paro_2026.supuestos.meses_hasta_ingresos"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Se puede capitalizar el paro sin ser autónomo?",
+      "Solo si vas a iniciar una actividad nueva por cuenta propia, o a aportar capital a una sociedad mercantil de nueva constitución que vayas a controlar, o a hacerte socio de una cooperativa de trabajo asociado o sociedad laboral. No sirve para cobrar el paro de golpe sin un proyecto: el dinero se concede para ese fin y hay que acreditarlo. Además hay que tener al menos 3 mensualidades pendientes, no haber hecho uso del pago único en los cuatro años anteriores (Real Decreto 1044/1985, art. 2), no haber compatibilizado la prestación con un trabajo por cuenta propia en los 24 meses anteriores y pedirlo antes de darte de alta como autónomo (Ley 20/2007, art. 34). La calculadora solo modela el caso del autónomo y bloquea las demás combinaciones."
+    ],
+    [
+      "¿Cuánto dinero me dan al capitalizar el paro?",
+      "Hasta el 100 % del valor actual de la prestación pendiente, que es lo que te queda por cobrar menos el interés legal del dinero, pero para ser autónomo solo por el importe de la inversión necesaria, incluidos los tributos de inicio y hasta un 15 % en asesoramiento, formación e información. La parte que no capitalizas no se pierde: se abona mes a mes como subvención de tu cuota de autónomo, por un importe fijo, mientras sigas de alta y hasta agotarla (art. 34.1.2.ª de la Ley 20/2007; el SEPE lo confirma en sus preguntas frecuentes), de modo que puede tardar varios años en cobrarse y, si cesas antes, pierdes lo que quede. En el ejemplo por defecto (12 meses pendientes, base reguladora de 1.500 €, inversión de 6.000 €), capitalizar da 6.000 € de golpe y 5.596 € de subvención durante unos 27 meses, 11.596 € en total, frente a 9.000 € cobrando los 9 meses que permite la compatibilidad (11.700 € si cobraras los 12 sin darte de alta); con una inversión de 12.000 € capitalizas 11.501 €, el valor actual completo, y la diferencia con los 11.700 € es de 199 €. El SEPE calcula el importe exacto y puede aplicar el interés legal también a la parte subvencionada."
+    ],
+    [
+      "¿Tributa en el IRPF el pago único del paro?",
+      "El pago único está exento del IRPF si lo destinas a la finalidad para la que se concede y mantienes la actividad (o la participación en la sociedad) durante cinco años (art. 7.n de la Ley 35/2006); el texto vigente no fija un importe máximo. La prestación por desempleo cobrada mes a mes sí tributa como rendimiento del trabajo (art. 17.1.b) y suele llevar retención. La calculadora no incluye el IRPF: si tuvieras otras rentas ese año, cobrar mes a mes pagaría más impuestos y eso favorecería a capitalizar. No hemos verificado cómo tributa la subvención mensual de la cuota."
+    ],
+    [
+      "¿Qué pasa si no destino el dinero a la actividad o el negocio no sale adelante?",
+      "Si no destinas el pago único a la actividad para la que se concedió, se considera pago indebido y hay que devolverlo (Real Decreto 1044/1985, art. 7); se presume que no lo has destinado si en el plazo máximo de un mes desde que lo cobras no has iniciado la actividad y te has dado de alta (art. 4.1). La exención del IRPF depende de mantener la actividad cinco años. Si tras empezar el negocio no funciona, la norma que hemos leído solo prevé devolver el dinero cuando no se destina a la actividad; en cambio, la prestación queda extinguida y no puedes reconocer otra hasta que pase el tiempo que habría durado (art. 5 del Real Decreto 1044/1985), y cerrar antes de cinco años afecta a la exención del IRPF: consúltalo con el SEPE antes de decidir."
+    ],
+    [
+      "¿Puedo compatibilizar el paro con mi actividad en lugar de capitalizarlo?",
+      "Sí, si cesaste en un empleo por cuenta ajena y te das de alta como autónomo: puedes cobrar la prestación mientras trabajas por cuenta propia hasta 270 días, o el tiempo inferior que te quede, si lo pides en los 15 días siguientes al inicio de la actividad (Ley 20/2007, art. 33). Pasados esos 270 días, las mensualidades que queden solo se cobrarían si dejas la actividad y reanudas la prestación, y según los casos el alta puede suspenderla o extinguirla: consúltalo con el SEPE. Quien compatibiliza no puede capitalizar después: la regla 4.ª del art. 34 lo excluye si en los 24 meses anteriores hubo compatibilidad. La calculadora compara capitalizar con cobrar mes a mes durante esos 9 meses como máximo, sin modelar la reanudación ni la tarifa plana, cuya cuantía de 2026 no hemos verificado."
+    ]
+  ],
+  "sources": "Modelo propio. Cuantía de la prestación: base reguladora mensual x 70 % durante los 180 primeros días y x 60 % desde el día 181, con máximo de 1.225, 1.400 o 1.575 € al mes (sin hijos, 1 hijo, 2 o más) y mínimo de 560 o 749 € (con hijos), que son el 175, 200 y 225 % y el 80 y 107 % del IPREM mensual de 600 € más una sexta parte (LGSS, art. 270.2 y 270.3); duración máxima de 24 meses (art. 269.1). Capitalización: valor actual de la prestación pendiente, deduciendo el interés legal del dinero (3,25 %, que modelamos por interés simple desde el mes en que se cobraría cada mensualidad: el SEPE fija el método exacto), abonado de una sola vez solo por el importe de la inversión (art. 34.1.1.ª de la Ley 20/2007, introducido por la Ley 31/2015, que mantiene el Real Decreto 1044/1985); el resto de la prestación, como subvención mensual de la cuota por un importe fijo igual a la aportación íntegra del trabajador, no menor que la de la base mínima (205,88 €/mes: base de 653,59 € por el 31,5 %), calculada en días completos de prestación y abonada mientras se sigue de alta hasta agotar el importe no capitalizado (regla 2.ª y preguntas frecuentes del SEPE). Se supone que la parte capitalizada de la prestación es proporcional al importe capitalizado sobre el valor actual total (X/V) y que el interés legal se descuenta solo del pago único, no de la parte subvencionada (la norma no lo fija con claridad: el total capitalizando queda entre el valor actual y ese importe). Cobrar mes a mes siendo autónomo se limita a 270 días, 9 mensualidades (art. 33 de la Ley 20/2007); las demás solo se cobrarían sin darse de alta o reanudando la prestación. Bloqueos: sin actividad nueva no hay pago único; menos de 3 mensualidades pendientes (Real Decreto 1044/1985, art. 2); más de 24 meses entre cobrados y pendientes. Exención del pago único en el IRPF: art. 7.n de la Ley 35/2006 (destino a la finalidad y mantenimiento de la actividad cinco años; sin límite de importe en el texto vigente); la prestación mensual tributa como rendimiento del trabajo (art. 17.1.b). Excluido: el riesgo y la rentabilidad real del negocio, la protección por cese de actividad, trabajar por cuenta ajena, la reanudación de la prestación, los subsidios, el País Vasco y Navarra, el trabajo a tiempo parcial, la discapacidad igual o superior al 33 %, las bonificaciones por edad o sexo, la capitalización para sociedades o cooperativas, la tarifa plana (Ley 20/2007, art. 38 ter, cuya cuantía de 2026 se fija en la Ley de Presupuestos y no hemos verificado), la tributación de la subvención de la cuota, el IRPF de la prestación mensual, la reanudación de la prestación tras cesar la actividad, la cotización por desempleo que el SEPE descuenta de la prestación mensual (no verificado si se aplica al pago único) y que el SEPE aplique criterios distintos a estas simplificaciones. Fuentes: Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social, texto consolidado a 31/07/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724); Real Decreto 1044/1985 (https://www.boe.es/buscar/act.php?id=BOE-A-1985-12676); Ley 35/2006 del IRPF, texto consolidado a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Cuantías anuales del SEPE 2026 (https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html); Ley 20/2007, Estatuto del trabajo autónomo, arts. 33 y 34 (añadidos por la Ley 31/2015) y 38 ter (https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409); SEPE (sepe.es), hoja informativa y preguntas frecuentes del pago único de la prestación. Hipótesis no oficiales y editables: 12 meses pendientes, base reguladora de 1.500 €, 6.000 € de inversión, cuota de 205,88 €, 6 meses hasta ingresos regulares. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

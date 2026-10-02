@@ -11,7 +11,8 @@
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
   "deposito-letras-o-fondo-monetario",
-  "declaracion-conjunta-o-individual"
+  "declaracion-conjunta-o-individual",
+  "jubilacion-anticipada-o-demorada"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
@@ -21,7 +22,8 @@
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
   "placas-solares-merece-la-pena",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "cambiar-ventanas-aislamiento-merece-la-pena",
+  "caldera-reparar-o-cambiar"
  ],
  "cambiar-ventanas-aislamiento-merece-la-pena": [
   "calefaccion-gas-aerotermia-electrica",
@@ -36,7 +38,8 @@
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
   "portatil-o-movil-comprar-renting-o-financiar",
-  "contado-o-financiar"
+  "contado-o-financiar",
+  "comprar-o-alquilar-herramienta"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
@@ -47,7 +50,8 @@
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
   "coche-nuevo-o-seminuevo",
-  "seguro-todo-riesgo-o-terceros"
+  "seguro-todo-riesgo-o-terceros",
+  "punto-de-carga-casa-con-o-sin-placas"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
@@ -78,7 +82,8 @@
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
   "universidad-publica-o-privada-o-master",
-  "plan-pensiones-o-fondo-indexado"
+  "plan-pensiones-o-fondo-indexado",
+  "excedencia-o-reduccion-jornada"
  ],
  "universidad-publica-o-privada-o-master": [
   "guarderia-cuidadora-o-reducir-jornada",
@@ -88,6 +93,7 @@
  "placas-solares-merece-la-pena": [
   "luz-fija-o-indexada",
   "calefaccion-gas-aerotermia-electrica",
+  "punto-de-carga-casa-con-o-sin-placas",
   "contado-o-financiar"
  ],
  "subrogar-hipoteca-merece-la-pena": [
@@ -149,7 +155,8 @@
  "rescate-plan-pensiones-capital-o-renta": [
   "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual",
-  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "jubilacion-anticipada-o-demorada"
  ],
  "declaracion-conjunta-o-individual": [
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
@@ -165,5 +172,30 @@
   "amortizar-plazo-o-cuota",
   "deposito-letras-o-fondo-monetario",
   "hipoteca-fija-o-variable"
+ ],
+ "jubilacion-anticipada-o-demorada": [
+  "plan-pensiones-o-fondo-indexado",
+  "rescate-plan-pensiones-capital-o-renta",
+  "autonomo-o-asalariado"
+ ],
+ "comprar-o-alquilar-herramienta": [
+  "reparar-o-comprar-electrodomestico",
+  "contado-o-financiar",
+  "portatil-o-movil-comprar-renting-o-financiar"
+ ],
+ "excedencia-o-reduccion-jornada": [
+  "guarderia-cuidadora-o-reducir-jornada",
+  "teletrabajo-o-oficina-coste-real",
+  "jubilacion-anticipada-o-demorada"
+ ],
+ "caldera-reparar-o-cambiar": [
+  "calefaccion-gas-aerotermia-electrica",
+  "reparar-o-comprar-electrodomestico",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
+ ],
+ "punto-de-carga-casa-con-o-sin-placas": [
+  "placas-solares-merece-la-pena",
+  "diesel-gasolina-hibrido-electrico",
+  "luz-fija-o-indexada"
  ]
 }
