@@ -1,8 +1,8 @@
 {
  "academia-idiomas-presencial-online-o-intensivo": [
   "comprar-o-alquilar-trastero",
-  "hotel-o-apartamento-viaje-en-grupo",
-  "movil-reacondicionado-o-nuevo"
+  "gimnasio-o-entrenar-en-casa",
+  "hotel-o-apartamento-viaje-en-grupo"
  ],
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -69,6 +69,11 @@
   "tren-avion-o-coche",
   "teletrabajo-o-oficina-coste-real"
  ],
+ "cocinar-en-casa-o-comer-fuera": [
+  "suscripciones-cuanto-gasto-al-ano",
+  "excedencia-o-reduccion-jornada",
+  "gimnasio-o-entrenar-en-casa"
+ ],
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
   "autonomo-o-sociedad-limitada",
@@ -128,6 +133,11 @@
   "portatil-o-movil-comprar-renting-o-financiar",
   "teletrabajo-o-oficina-coste-real",
   "contado-o-financiar"
+ ],
+ "gimnasio-o-entrenar-en-casa": [
+  "hotel-o-apartamento-viaje-en-grupo",
+  "reformar-o-mudarse",
+  "teletrabajo-o-oficina-coste-real"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",

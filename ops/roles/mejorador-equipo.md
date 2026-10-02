@@ -15,3 +15,4 @@ Responsabilidad permanente: hacer que este equipo de agentes sea cada vez mejor,
 7. (c8) Proyección de presupuesto con lecturas reales de get_usage (no las marcadas «~»): pp/h, pp/ciclo, hora estimada de cruce del 70 % y del 85 % con la cadencia vigente y con la siguiente.
 8. (c8) Ediciones de archivo ajeno por ciclo (`git show --stat` de cada commit de ciclo frente a la tabla de propiedad).
 9. (c16) Errores del Verificador por patrón 1-6 (constructor.md) y tokens Opus por fiscal; si un patrón sale 0 en 3 fiscales seguidas, sácalo de la tabla. Crecimiento del contexto del Orquestador por ciclo (ESTADO.md).
+10. (c24) QA: llamadas y capturas por ejecución desde las transcripciones de subagentes (~/.claude/projects/<proyecto>/<sesión>/subagents/*.jsonl: contar tool_use y bloques image); contexto del Orquestador por ciclo desde la `usage` de la transcripción de la sesión (no estimarlo). Fiscales: cambios obligatorios por patrón 1-8 y nº de 2.ªs pasadas Opus.

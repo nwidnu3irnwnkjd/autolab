@@ -57,8 +57,8 @@
 - [x] comparar-ofertas-de-trabajo-neto-real — Cambiar de trabajo: comparar dos ofertas en neto real (bruto, variable, jornada, desplazamiento, teletrabajo) [fiscal ligera; c10b]
 - nota Investigador 2026-10-02 (c10b): detalle en journal/ideas.md «Ciclo 10b». Descartadas: loterías/juegos (YMYL/ludopatía). Reserva: deduccion-alquiler-vivienda-por-comunidad, maternidad/familia numerosa (sin tabla verificada).
 - [x] suscripciones-cuanto-gasto-al-ano — Suscripciones: cuánto gasto al año (streaming, música, apps) y cuáles recortar [no fiscal; Investigador c11; publicar dic-ene]
-- [ ] gimnasio-o-entrenar-en-casa — Gimnasio o entrenar en casa: coste a 12-24 meses con equipo y uso real (tarifas = entrada) [no fiscal; c11; publicar antes del 15-dic]
-- [ ] cocinar-en-casa-o-comer-fuera — Cocinar en casa o comer fuera / menú del día: ahorro anual [no fiscal; c11]
+- [x] gimnasio-o-entrenar-en-casa — Gimnasio o entrenar en casa: coste a 12-24 meses con equipo y uso real (tarifas = entrada) [no fiscal; c11; publicar antes del 15-dic]
+- [x] cocinar-en-casa-o-comer-fuera — Cocinar en casa o comer fuera / menú del día: ahorro anual [no fiscal; c11]
 - [x] movil-reacondicionado-o-nuevo — Móvil reacondicionado, usado o nuevo: coste a 3 años y garantía (precios = entrada) [no fiscal; c11; Black Friday]
 - [ ] equipaje-y-asiento-avion-coste-real — Billete de avión: equipaje y asiento, ¿low cost o tarifa completa? coste real por viaje (tarifas = entrada) [no fiscal; c11]
 - [ ] marca-blanca-o-marca-ahorro-anual — Marca blanca o marca: ahorro anual en la cesta de la compra (precios = entrada) [no fiscal; c11]

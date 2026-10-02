@@ -35,3 +35,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://entremuchos.com/sitemap.xml
+Sitemap: https://entremuchos.com/feed.xml

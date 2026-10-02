@@ -83,7 +83,7 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 ### [>] T8 · estado c16
 - Abaratamiento hecho (Opus 484k → 150k por fiscal). Pipeline no bloqueante: NO hecho; las fiscales siguen alargando el ciclo (24-29 min frente a ~13). Tras el sprint, con ciclos espaciados por presupuesto, el pipeline pierde valor: **se aparca** salvo que vuelva una cadencia alta.
 
-### [ ] T14 · `ops/qa_static.py --fiscal`: chequeos deterministas de los patrones 1, 3 y 4 (dueño: Orquestador; Sonnet ~50k una vez)
+### [>] T14 · (c24: NO HECHA en 8 ciclos → PRIORIDAD 1 del Orquestador, próximo ciclo sin fiscal o el primer ligero) `ops/qa_static.py --fiscal`: chequeos deterministas de los patrones 1, 3 y 4 (dueño: Orquestador; Sonnet ~50k una vez)
 - (a) Absolutos sin condición: frases de content/<slug>.html y de lead/veredicto/faq de calcs/<slug>.json con `siempre|nunca|garantiza|solo tiene sentido|en todos los casos` y sin `si |salvo|con la|sin |cuando|excepto` en la misma frase → AVISO. Habría marcado donativos, rescate y autónomo (3 de 8).
 - (b) Cifras legales: cada número con `€|%` en una frase con `art\.|Ley|RDL|RD |DA ` debe estar en params.json bajo una clave con `_fuente` (y fecha de consolidación) → AVISO si no. Sustituye al YMYL actual «sin enlace en la sección», que da 64 AVISO de ruido.
 - (c) Ámbito: toda calc con `"fiscal": true` debe mencionar País Vasco/Navarra y Canarias (y Ceuta/Melilla si hay IVA/IGIC/IPSI) en página o sources → AVISO.
@@ -102,8 +102,37 @@ Ya cambiado por el Mejorador (parámetros de cadencia): Investigador cada 6 cicl
 ### [ ] T10 · «Analista de datos» (actualizado c16): sigue sin activar
 - GA4 y GSC existen pero 0 indexadas / 0 impresiones; metrics.py cada 6 ciclos basta. Disparador sin cambios: ≥ 100 impresiones/semana o ≥ 5 páginas con impresiones → Sonnet ~40k cada 6 ciclos (o 1 vez/día tras el sprint), salida 3 páginas a mejorar al Estratega.
 
-### [ ] T17 · Pestañas del navegador (anotado c15): medir antes de hacer más
+### [x] T17 · (CERRADA c24: 1 FP en c16-c23, ninguno de consola) Pestañas del navegador (anotado c15): medir antes de hacer más
 - Regla de c15 en qa.md (1 pestaña por agente, tabs_close, el Orquestador limpia al empezar). Si en c17-c20 vuelve un falso positivo de consola, el QA usa `read_console_messages` con `pattern` del archivo de la página y el Orquestador ejecuta los builds en serie (nadie hace build mientras el QA mide). Coste 0.
 
 ### [ ] T18 · Contexto del Orquestador (70 % de 1M a c15)
 - Aplicado c16.5 (informes ≤ 5 líneas). Además, fuera de mi permiso (Orquestador): no releer requests.md/SEO-GEO.md/EQUIPO.md enteros cada ciclo (`grep '^- \[ \]'`, `tail`), leer de los verificadores solo la línea VEREDICTO, y antes de la autocompactación dejar ESTADO.md al día (ya es la memoria). Métrica: % de contexto por ciclo anotado en ESTADO.md; ≤ 25k/ciclo.
+
+## Pasada 4 · 2026-10-02T05:20Z (ciclo 24, datos de c16-c23)
+
+### [>] T14 · añadido c24 (además de a-c)
+- (d) Citas sin artículo: «según el Manual», «según la AEAT», «la ley establece» sin `art.` ni enlace en la misma frase → AVISO (c23 IMV). (e) Toda calc fiscal debe tener journal/preverif-<slug>.md con 8 líneas (patrones 1-8) → AVISO si falta. Coste total T14 ~50-60k Sonnet una vez; criterio de hecho igual que antes (marca «nunca paga más» en el estado de c14) + marca la cita «según el Manual» del estado de c23 previo a las correcciones.
+
+### [ ] T19 · Experimento «lector de norma» Sonnet en las 2 próximas fiscales (dueño: Orquestador; ~50k Sonnet por fiscal)
+- Problema: en paro (c19) y jubilación (c18) el oráculo del Constructor reprodujo su propia lectura (0 discrepancias en 600 casos) y el error salió con el Opus, que necesitó 2.ª pasada (+112k, +154k). En SL (c21) el 15 % de nueva creación se vendía sin la exclusión del art. 29.1.b. Patrón común: interpretación, no aritmética.
+- Prueba: en paralelo al Constructor fiscal (no después), un Sonnet con rol constructor.md que recibe SOLO el slug, la pregunta y las leyes a leer (sin calcs/ ni oráculo) y entrega ≤ 10 líneas: para cada opción, qué cobra/paga, cuánto tiempo, artículos y DT, y qué la hace imposible (patrones 7 y 8). El Orquestador compara con el bloque `INTERPRETACION` del oráculo: si difieren, la discrepancia va al Verificador como entrada.
+- Coste/beneficio: +~0,05 pp por fiscal. Beneficio esperado: evitar la 2.ª pasada Opus en 1 de cada 3 fiscales (~130k Opus ≈ 0,14 pp → ~0,05 pp por fiscal) y cazar antes un error que invierte el veredicto. Neutral en tokens, positivo en riesgo. **Decisión tras 2 fiscales**: se queda si caza ≥ 1 diferencia real que el Opus confirme; si 0 de 2, se descarta (el paso 0 del Verificador, gratis dentro de su presupuesto, cubre lo mismo). Por qué no un Opus o un rol fijo: el paso 0 + patrones 7-8 ya cuestan ~0; un rol fijo sin evidencia sería +0,05 pp × 5 fiscales pendientes.
+
+### [ ] T20 · HANDOFF del Orquestador: lo que falta para reanudar sin pérdida (dueño: Orquestador; AHORA, antes del 97 %)
+Revisado ESTADO.md a c23: el HANDOFF dice quién es, preferencias, el ciclo y credenciales, pero faltan los datos que se pierden en la compactación. Añadir (≤ 10 líneas; bloque listo para pegar):
+```
+- Estado en vuelo: ciclo N en curso/cerrado; agentes lanzados y sin recoger (descripción, archivos que tocan); fiscal en qué paso (construida / verificador / fixes / re-verificación / publicada) y su journal/preverif-<slug>.md y verificacion-<slug>.md.
+- Calendario de roles: Estratega Opus c28 (Sonnet en pares), Investigador c28 (o backlog < 6 no fiscales), Mejorador c32, metrics.py c30; Diseñador 1 de cada 3 (último c21 → c24/25).
+- Presupuesto: reset semanal 2026-10-06T15:00Z; sprint a 120 s hasta 2026-10-02T21:00Z salvo semanal ≥ 55 % (→ 600 s); después loop-prompt §3.4 (ligero por defecto, 1 de 4 completo); fiscales antes de que el semanal pase del 70 % (~4-oct 16:00Z).
+- Cómo recuperar el estado en 4 comandos: `git log --oneline -3`; `tail -2 journal/costes.md`; `grep -n '^- \[ \]' ops/requests.md`; `ls -t journal/verificacion-*.md journal/preverif-*.md | head -3`.
+- No releer: SEO-GEO.md, requests.md, ideas.md, verificacion-pendiente.md, EQUIPO.md enteros (usar grep/tail).
+- Encargo del QA: solo URL + input a cambiar + texto de aviso a buscar (qa.md v4 hace el resto); ruido conocido en qa.md.
+- Siguiente tarea de equipo: T14 (qa_static --fiscal), T15 (1 commit), T19 en las 2 próximas fiscales.
+```
+- Además, corregir en ESTADO.md la línea «Fiscal: 5 calculadoras verificadas… Pendientes: placas, rescate» (desfasada desde c14; contradice «14 verificadas» de la línea de gasto) y la de calidad («5 falsos positivos en 7 ciclos»: ahora 1 en 8). Un HANDOFF con datos viejos es peor que ninguno.
+- Métrica: tras la compactación, el primer ciclo se cierra sin releer archivos largos y sin repetir trabajo (comparar `git log` del ciclo siguiente con el anterior).
+
+### [ ] T15 · estado c24: sin hacer (2 commits por ciclo; la parte de peticiones sí: 3 abiertas, 2 hechas sin marcar). Sin cambios en la propuesta.
+### [ ] T16 · estado c24: sin hacer; 76 páginas (> 50 calculadoras): toca tras el sprint, en el primer ciclo ligero con margen.
+### [ ] T10 · estado c24: sigue sin activar (0 impresiones).
+

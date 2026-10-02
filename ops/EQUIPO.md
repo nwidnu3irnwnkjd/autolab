@@ -1,4 +1,4 @@
-# Equipo de agentes (mantiene el Mejorador del equipo) · v3.1 2026-10-02T02:30Z (ciclo 16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
+# Equipo de agentes (mantiene el Mejorador del equipo) · v3.2 2026-10-02T05:20Z (ciclo 24; v3.1 2026-10-02T02:30Z c16; v3 2026-10-01T23:03Z c8; v2 2026-10-01 c4)
 
 | Rol | Modelo | Frecuencia | Propiedad |
 |---|---|---|---|
@@ -8,7 +8,7 @@
 | Estratega SEO/GEO | Opus cada 4 ciclos; Sonnet en los demás pares | ciclos pares | seo.py, content/guias, static/, data/clusters.json, ops/SEO-GEO.md |
 | Investigador | Opus + web (Sonnet si es competencia de 1 calculadora) | backlog < 6 o cada 6 ciclos | journal/ideas.md, competencia.md, líneas nuevas del backlog |
 | Verificador fiscal/legal (nuevo c8) | Opus para la revisión legal; Sonnet para re-verificar | cada calculadora fiscal/legal | journal/verificacion-<slug>.md, ops/verif/<slug>.py (ops/roles/verificador-fiscal.md) |
-| QA | Haiku | cada ciclo (máx. 4 páginas, 1 captura por página nueva) | solo lectura; métodos fijos en qa.md |
+| QA | Haiku | cada ciclo (máx. 4 páginas, **≤ 4 capturas, 0 scroll, ≤ 30 llamadas**, script JS fijo de qa.md v4) | solo lectura; métodos fijos en qa.md |
 | Mejorador del equipo | Opus (Sonnet para medición rutinaria) | cada 8 ciclos o tras 2 ciclos con fallos de QA | ops/roles/*, EQUIPO.md, journal/ideas-equipo.md |
 
 Rúbrica común de calculadoras: ops/roles/rubrica-calculadora.md **v2** (10 puntos, ≥ 16/20; nuevo punto \*10 «texto ≤ cálculo» y dato de mercado de live.json en el punto 2). Constructor se autoevalúa, QA verifica.
@@ -95,6 +95,36 @@ Fuentes: `git log` (commit «ciclo N», UTC: c8 23:23:33, c9 00:14:03, c10 00:27
 - R12.2 barometro_historico.json y R13.3 IndexNow de /hipoteca/ y /feed.xml [-> Orquestador]: close_cycle ya hace commit -A e IndexNow → marcar [x] si están en git y en el último IndexNow.
 - donativos → Estratega (sin nº) y R15.1: Estratega Opus de c16 (ya planificado en ESTADO.md); la línea sin nº se marca [x] junto con R15.1.
 
+## Rendimiento medido (pasada 4, ciclos 16-23; medido 2026-10-02T05:17Z al inicio de c24)
+Fuentes: `git log` (commit «ciclo N», UTC: c15 02:15, c16 02:29, c17 02:47, c18 03:14, c19 03:39, c20 03:59, c21 04:32, c22 04:48, c23 05:11), costes.md, get_usage (05:14Z: 5 h 17 %, semanal 32 %, reset semanal **2026-10-06T15:00Z**, no el 7-oct supuesto), transcripciones de los subagentes QA (llamadas y capturas) y de la sesión del Orquestador (contexto).
+| Métrica | Pasada 3 (c9-15) | c16-c23 | Objetivo c16 | Estado |
+|---|---|---|---|---|
+| Intervalo entre ciclos (min) | 24,5 | **22** (fiscal 18-33, media 24; no fiscal 14-16) | — | ciclos/h 2,45 → **2,73** (c1-c23: 2,69) |
+| Tokens subagentes/ciclo (k) | 726 | **714** (con fiscal 783; sin fiscal 509) | — | = |
+| Semanal | 0,75 pp/ciclo; 1,86 pp/h | **0,75 pp/ciclo; 2,05 pp/h** (26 % 02:15Z → 32 % 05:11Z); ~1,05 pp por millón | — | pp_por_ciclo 0,75 confirmado |
+| Opus por fiscal, 1 pasada (k) | 150 | **105** (depósito 97, ofertas 109, SL 115, obligado 97) | ≤ 110 (c16.1-2) | **CUMPLIDO** |
+| Opus por fiscal con 2.ª pasada (k) | 295 (rescate) | jubilación 272, paro 206 → media global **149** | — | 2 de 6 fiscales: interpretación compartida por oráculo y JS |
+| Cambios obligatorios del Verificador por fiscal | ~5 | **~4** (5, 4, 3+1, 3, 3, 5) | ≤ 2 (c16.1) | NO cumplido; patrón 4 (citas) sube a 6 |
+| Coste total por fiscal (k, Sonnet+Opus) | 431-692 | **~460** (346-648) | — | = |
+| Re-verificación / textos Sonnet (k) | 86 | **60-61** (c18, c19; en el resto «fixes» 76-130k) | ≤ 40 (c16.2) | parcial (−30 %) |
+| QA Haiku (k) | 102 | **110** (62, 108, 114, 96, 139, 69, 144, 144) | ≤ 50 (c16.3) | **NO cumplido**: ver causa abajo |
+| Falsos positivos QA | 5 en 7 ciclos | **1 en 8** (c23 coma decimal) | 0 (regla c15) | casi: regla de pestañas consolidada |
+| Peticiones `[ ]` abiertas > 1 ciclo | 6 | **3**: R6.2 (c6) y R12.2 (c12) YA HECHAS sin marcar (bici usa `EM.num`), R16.4 propuesta en espera | 0 | fallo de anotación, no de trabajo |
+| Contexto del Orquestador por ciclo | ~45k (estimado) | **~30k** (726k a c16 → 943k a c23; medido en la transcripción). Pero c8-c15 real también fue ~27k: el 45k era una media desde c1 | ≤ 25k (c16.5) | NO se redujo; informes de subagentes ya cortos (40 informes, ~24k en total, ~600 tokens cada uno) |
+| Commits por ciclo | 2 | **2** | 1 (T15) | T15 sin hacer |
+- **QA: qué explica los ~140k.** Suelo fijo 38,5k (sistema + esquemas de herramientas, medido en el 1.er turno). Con 1-4 capturas: 62k (c16, 37 llamadas) y 69k (c21, 24 llamadas); con 28-41 capturas y 20-37 `scroll`: 108-144k (≈ 96-114 llamadas). Las pestañas suman ~8 llamadas: no son la causa. La causa son los encargos del Orquestador («gráfico de barras», «tabla legible», «aviso visible»), que Haiku comprueba mirando y desplazándose, pese a la regla «1 captura». Arreglo c24.1: topes duros de capturas/llamadas y un script JS fijo en qa.md que devuelve todo eso en 1 llamada. Objetivo realista ≤ 65k (≤ 50k exigiría ≤ 10 llamadas).
+- **Contexto del Orquestador**: de lo que entra desde c16 (~210k), lo controlable son los prompts que el Orquestador escribe a los agentes (~36k: ~800 tokens × 44 agentes), las notificaciones de los agentes (~24k), get_usage (~6k) y su propio razonamiento. Ya no hay volcados grandes (qa_static y relecturas de archivos son < 4k). Tras la compactación el contexto vuelve a ~100-150k; lo importante ahora es el HANDOFF (T20).
+- **Proyección (reset real 6-oct 15:00Z)**: a 2,05 pp/h el semanal llega al 55 % hacia las **16:30Z** (salvaguarda → 600 s: ~1,9 ciclos/h, ~1,4 pp/h) y cierra el sprint a las 21:00Z en **~61 %** (rango 58-64). Después, fórmula del loop-prompt §3.4: permitido = (80 − 61) ÷ 90 h = **0,21 pp/h** → ciclo ligero (0,35) cada ~1,7 h o completo (0,75) cada ~3,6 h; con 3 ligeros : 1 completo, ~0,45 pp de media → ~11 ciclos/día; llega al reset en ~80 % sin pausa. Cruzará el 70 % (modo ahorro, sin Opus ni fiscales) hacia el 4-oct ~16:00Z: las fiscales que queden (5 en backlog) deben ir antes. **La fórmula es correcta con los datos; no cambio parámetros**: 0,75 completo medido de nuevo (ciclo con fiscal ≈ 0,82, completo sin fiscal ≈ 0,53); 0,35 ligero sin medir aún (estimado 0,25-0,30 con QA ≤ 65k): se mantiene por prudencia y se mide en los 3 primeros ligeros.
+### Evaluación de c16.1-5 (revisión programada c24)
+- c16.1 pre-verificación por patrones: **PARCIAL** — los 6 patrones siguen saliendo (~4 cambios por fiscal, no ≤ 2), pero ningún error de fórmula y 1 solo NO PUBLICAR (paro). Se amplía con los patrones 7 (DT y convenciones) y 8 (opción inexistente) y la regla de citas (c24.2). No se saca ningún patrón (todos > 0 en 3 fiscales seguidas).
+- c16.2 Verificador con presupuesto: **CUMPLIDO** en 1 pasada (105k); la 2.ª pasada (2 de 6) es el coste que queda → paso 0 de lectura propia (c24.3). Re-verificación 86k → ~60k, objetivo 40k no cumplido: se mantiene.
+- c16.3 QA ≤ 50k: **NO CUMPLIDO** (110k) → c24.1; objetivo corregido a ≤ 65k.
+- c16.4 cadencia: **CORRECTA** con datos reales (0,75 pp/ciclo de nuevo); solo cambia el reset (6-oct 15:00Z) en la proyección.
+- c16.5 informes cortos: **CUMPLIDO en los informes** (~600 tokens), **NO en la métrica** (contexto ~30k/ciclo): el resto es estructural (prompts a agentes, razonamiento). No se revierte.
+- T17 pestañas: **CONSOLIDADO** (1 FP en 8 ciclos, y no de consola) → cerrada. T14 (`qa_static --fiscal`): **NO HECHA** → prioridad 1 del Orquestador en el próximo ciclo sin fiscal. T15: no hecha.
+### Peticiones abiertas > 1 ciclo (c24) y dueño
+- R6.2 y R12.2: hechas → el Orquestador las marca [x] al empezar c24 (regla T15: ≤ 2 min, dueño ausente). R16.4: propuesta sin programar → `[~] en espera de tráfico` hasta que haya impresiones en /hipoteca/.
+
 ## Registro de cambios
 - 2026-10-01: equipo v1 creado (6 roles + Estratega SEO/GEO + Mejorador del equipo). Cadencia 20 min, tope 400 EUR extra y 100 EUR/día.
 - 2026-10-01 (v2, Mejorador pasada 1). Cada cambio, con la métrica que debe moverse:
@@ -138,3 +168,9 @@ Fuentes: `git log` (commit «ciclo N», UTC: c8 23:23:33, c9 00:14:03, c10 00:27
   - c16.4 loop-prompt, solo cadencia: pp_por_ciclo 0,57 → 0,75 (completo) / 0,35 (ligero); tras el sprint ciclo ligero por defecto y 1 de cada 4 completo; modo ahorro también por presupuesto (1200 s fijos acababan en pausa total en ~17 h); esperas > 3600 s en tramos con despertar mínimo. Métrica: semanal ≤ 80 % en el reset, 0 horas en pausa total.
   - c16.5 Informe final ≤ 5 líneas en constructor, diseñador, estratega, investigador (≤ 3 el verificador); detalle a archivos. Métrica: crecimiento del contexto del Orquestador ~45k → ≤ 25k por ciclo (medir el % de contexto en ESTADO.md cada ciclo).
   - No se revierte nada: T7 se mantiene (ver evaluación); lo que falla de T7 va a T15 (Orquestador).
+- 2026-10-02T05:20Z (v3.2, Mejorador pasada 4, ciclo 24). Cambios aplicados, cada uno con su métrica (revisión: ciclo 32 o tras los 3 primeros ciclos ligeros del post-sprint):
+  - c24.1 qa.md v4: máx. 4 capturas, 0 `scroll`, máx. 30 llamadas, una pestaña para todo el QA, script JS fijo (desborde, resultado, gráficos, PDF, miles sin punto, NaN, aviso buscado) y regla del falso positivo «coma decimal». El Orquestador encarga al QA solo URL + input a cambiar + texto de aviso a buscar (sin «mira que se vea…»). Métrica: QA 110k → ≤ 65k/ciclo; capturas por QA 28-41 → ≤ 4.
+  - c24.2 constructor.md: patrones 7 (DT/DF y convenciones de cómputo) y 8 (¿la opción existe para este usuario?), regla de citas en el 4 (pegar 1 línea del artículo), pre-verificación en journal/preverif-<slug>.md (no en verificacion-pendiente.md, 50 KB), bloque `INTERPRETACION` en la cabecera del oráculo. Métrica: cambios obligatorios por fiscal ~4 → ≤ 2; citas erróneas por fiscal ~1 → 0.
+  - c24.3 verificador-fiscal.md: paso 0 «lectura propia antes del oráculo», muestreo de 3 citas, 2.ª pasada Opus ≤ 60k y solo de lo cambiado. Métrica: fiscales con 2.ª pasada Opus 2/6 → 0; Opus por fiscal (media global) 149k → ≤ 110k.
+  - c24.4 Decisión sobre un «segundo constructor» Sonnet que reescriba el oráculo desde la norma sin ver el JS: **no como rol fijo**; experimento T19 en las 2 próximas fiscales (≤ 50k Sonnet, solo la lectura de la norma, sin código). Coste/beneficio: +~0,05 pp por fiscal frente a un ahorro esperado de ~0,05 pp (1/3 de las fiscales evitaría ~130k Opus) más el riesgo de publicar con una lectura errónea; solo compensa si caza ≥ 1 de 2. Analista de datos: no (0 impresiones). Editor de calidad: sigue como pasada única T16 (no hecha; tras el sprint, en un ciclo ligero).
+  - No se cambia ningún parámetro del loop-prompt (pp_por_ciclo 0,75/0,35 confirmados; ver proyección). No se revierte nada.

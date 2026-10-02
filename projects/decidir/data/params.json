@@ -1862,5 +1862,7 @@
    "t1": 18000,
    "t2": 2000
   }
- }
+ },
+ "gimnasio_o_casa": {"nota": "Sin cifras externas: cuota, matrícula, desplazamiento, sesiones, equipo, reventa y horizonte son EJEMPLOS del modelo, editables, no tarifas de ninguna cadena ni precios de fabricantes.", "supuestos": {"cuota": 30, "matricula": 20, "desp": 1, "sg": 3, "sc": 3, "equipo": 800, "reventa": 200, "meses": 24}, "consulta": "2026-10-02"},
+ "cocinar_o_comer_fuera": {"nota": "Sin cifras externas: precio del menú, coste por ración, minutos, valor de la hora, comidas y días laborables son EJEMPLOS del modelo, editables, no precios de mercado.", "supuestos": {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 0, "sust": 3, "dias": 220}, "consulta": "2026-10-02"}
 }

@@ -122,7 +122,8 @@
  "teletrabajo-o-oficina-coste-real": [
   "excedencia-o-reduccion-jornada",
   "fibra-y-movil-juntos-o-por-separado",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "guarderia-cuidadora-o-reducir-jornada",
+  "cocinar-en-casa-o-comer-fuera"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -239,7 +240,8 @@
  "suscripciones-cuanto-gasto-al-ano": [
   "teletrabajo-o-oficina-coste-real",
   "fibra-y-movil-juntos-o-por-separado",
-  "navidad-cuanto-gastar-sin-endeudarte"
+  "navidad-cuanto-gastar-sin-endeudarte",
+  "gimnasio-o-entrenar-en-casa"
  ],
  "movil-reacondicionado-o-nuevo": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -250,5 +252,15 @@
   "declaracion-conjunta-o-individual",
   "comparar-ofertas-de-trabajo-neto-real",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+ ],
+ "gimnasio-o-entrenar-en-casa": [
+  "suscripciones-cuanto-gasto-al-ano",
+  "comprar-o-alquilar-herramienta",
+  "teletrabajo-o-oficina-coste-real"
+ ],
+ "cocinar-en-casa-o-comer-fuera": [
+  "suscripciones-cuanto-gasto-al-ano",
+  "teletrabajo-o-oficina-coste-real",
+  "navidad-cuanto-gastar-sin-endeudarte"
  ]
 }

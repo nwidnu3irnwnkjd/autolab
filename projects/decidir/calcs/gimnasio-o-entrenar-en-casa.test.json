@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "cuota": 30,
+    "matricula": 20,
+    "desp": 1,
+    "sg": 3,
+    "sc": 3,
+    "equipo": 800,
+    "reventa": 200,
+    "meses": 24
+   },
+   "expect": {
+    "costeGim": 1052.0,
+    "costeCasa": 600,
+    "sesGim": 312.0,
+    "sesCasa": 312.0,
+    "cpsGim": 3.37,
+    "cpsCasa": 1.92,
+    "eqGim": 7.71,
+    "eqCasa": 1.71,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "cuota": 30,
+    "matricula": 20,
+    "desp": 1,
+    "sg": 3,
+    "sc": 1,
+    "equipo": 3000,
+    "reventa": 500,
+    "meses": 24
+   },
+   "expect": {
+    "costeGim": 1052.0,
+    "costeCasa": 2500,
+    "sesGim": 312.0,
+    "sesCasa": 104.0,
+    "cpsGim": 3.37,
+    "cpsCasa": 24.04,
+    "eqGim": 0.31,
+    "eqCasa": 7.13,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "cuota": 30,
+    "matricula": 20,
+    "desp": 1,
+    "sg": 0,
+    "sc": 3,
+    "equipo": 800,
+    "reventa": 200,
+    "meses": 24
+   },
+   "expect": {
+    "costeGim": 740.0,
+    "costeCasa": 600,
+    "sesGim": 0.0,
+    "sesCasa": 312.0,
+    "cpsGim": -1,
+    "cpsCasa": 1.92,
+    "eqGim": 7.71,
+    "eqCasa": -1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "cuota": 0,
+    "matricula": 0,
+    "desp": 0,
+    "sg": 3,
+    "sc": 3,
+    "equipo": 0,
+    "reventa": 0,
+    "meses": 24
+   },
+   "expect": {
+    "costeGim": 0.0,
+    "costeCasa": 0,
+    "sesGim": 312.0,
+    "sesCasa": 312.0,
+    "cpsGim": 0.0,
+    "cpsCasa": 0.0,
+    "eqGim": -1,
+    "eqCasa": -1,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "cuota": 30,
+    "matricula": 20,
+    "desp": 1,
+    "sg": 1,
+    "sc": 1,
+    "equipo": 800,
+    "reventa": 200,
+    "meses": 1
+   },
+   "expect": {
+    "costeGim": 54.33,
+    "costeCasa": 600,
+    "sesGim": 4.33,
+    "sesCasa": 4.33,
+    "cpsGim": 12.54,
+    "cpsCasa": 138.46,
+    "eqGim": 0.08,
+    "eqCasa": 11.04,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "cuota": 30,
+    "matricula": 20,
+    "desp": 1,
+    "sg": 0,
+    "sc": 0,
+    "equipo": 800,
+    "reventa": 200,
+    "meses": 24
+   },
+   "expect": {
+    "costeGim": 740.0,
+    "costeCasa": 600,
+    "sesGim": 0.0,
+    "sesCasa": 0.0,
+    "cpsGim": -1,
+    "cpsCasa": -1,
+    "eqGim": -1,
+    "eqCasa": -1,
+    "ganador": 3
+   },
+   "tol": 1
+  }
+ ]
+}

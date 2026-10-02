@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "fuera": 3,
+    "precio": 13,
+    "racion": 4,
+    "minCook": 30,
+    "minDesp": 15,
+    "vh": 0,
+    "sust": 3,
+    "dias": 220
+   },
+   "expect": {
+    "comidasAnio": 132.0,
+    "gastoFuera": 1716.0,
+    "gastoCasaMismas": 528.0,
+    "costeFueraT": 1716.0,
+    "costeCasaT": 528.0,
+    "ahorroDinero": 1188.0,
+    "ahorroTiempo": 1188.0,
+    "horasExtra": 33.0,
+    "vhEq": 36.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "fuera": 3,
+    "precio": 13,
+    "racion": 4,
+    "minCook": 30,
+    "minDesp": 15,
+    "vh": 40,
+    "sust": 3,
+    "dias": 220
+   },
+   "expect": {
+    "comidasAnio": 132.0,
+    "gastoFuera": 1716.0,
+    "gastoCasaMismas": 528.0,
+    "costeFueraT": 3036.0,
+    "costeCasaT": 3168.0,
+    "ahorroDinero": 1188.0,
+    "ahorroTiempo": -132.0,
+    "horasExtra": 33.0,
+    "vhEq": 36.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "fuera": 3,
+    "precio": 13,
+    "racion": 4,
+    "minCook": 30,
+    "minDesp": 15,
+    "vh": 10,
+    "sust": 3,
+    "dias": 220
+   },
+   "expect": {
+    "comidasAnio": 132.0,
+    "gastoFuera": 1716.0,
+    "gastoCasaMismas": 528.0,
+    "costeFueraT": 2046.0,
+    "costeCasaT": 1188.0,
+    "ahorroDinero": 1188.0,
+    "ahorroTiempo": 858.0,
+    "horasExtra": 33.0,
+    "vhEq": 36.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "fuera": 3,
+    "precio": 0,
+    "racion": 0,
+    "minCook": 30,
+    "minDesp": 15,
+    "vh": 0,
+    "sust": 3,
+    "dias": 220
+   },
+   "expect": {
+    "comidasAnio": 132.0,
+    "gastoFuera": 0.0,
+    "gastoCasaMismas": 0.0,
+    "costeFueraT": 0.0,
+    "costeCasaT": 0.0,
+    "ahorroDinero": 0.0,
+    "ahorroTiempo": 0.0,
+    "horasExtra": 33.0,
+    "vhEq": -1,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "fuera": 3,
+    "precio": 13,
+    "racion": 4,
+    "minCook": 30,
+    "minDesp": 15,
+    "vh": 0,
+    "sust": 0,
+    "dias": 220
+   },
+   "expect": {
+    "comidasAnio": 132.0,
+    "gastoFuera": 1716.0,
+    "gastoCasaMismas": 528.0,
+    "costeFueraT": 1716.0,
+    "costeCasaT": 528.0,
+    "ahorroDinero": 0.0,
+    "ahorroTiempo": 0.0,
+    "horasExtra": 0.0,
+    "vhEq": 36.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "fuera": 1,
+    "precio": 13,
+    "racion": 4,
+    "minCook": 10,
+    "minDesp": 20,
+    "vh": 30,
+    "sust": 1,
+    "dias": 1
+   },
+   "expect": {
+    "comidasAnio": 0.2,
+    "gastoFuera": 2.6,
+    "gastoCasaMismas": 0.8,
+    "costeFueraT": 4.6,
+    "costeCasaT": 1.8,
+    "ahorroDinero": 1.8,
+    "ahorroTiempo": 2.8,
+    "horasExtra": -0.03,
+    "vhEq": -1,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

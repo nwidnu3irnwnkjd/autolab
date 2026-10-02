@@ -239,6 +239,109 @@ HUBS = {
             },
         },
     },
+    "ahorro": {
+        "path": "/ahorro/",
+        "tema": "ahorro",
+        "title": "Calculadoras para ahorrar: suscripciones, seguros y compras",
+        "h1": "Ahorro y gastos del día a día: decide con tus números",
+        "description": "Suscripciones, telefonía, seguros, compras, cuidados y estudios: las decisiones de gasto de casa en orden, con la regla de cada una y tu calculadora.",
+        "kicker": "Tema · Ahorro y consumo",
+        "nav": "Ahorro",
+        "all_title": "Todas las calculadoras de ahorro e inversión",
+        "baro": None,
+        "fechas": [],
+        "disclaimer": "Información orientativa, no constituye asesoramiento financiero ni de seguros. Cada regla de esta página es la que aplica su calculadora con los datos que tú introduces; ninguna cifra es un resultado para tu caso ni una recomendación de contratar o cancelar un producto concreto.",
+        "lead": ("<strong>Respuesta corta:</strong> para gastar menos sin dejar de hacer lo que haces, el orden que más rinde es este: "
+                 "primero los gastos que se repiten cada mes (suscripciones, fibra y móvil, seguros), porque se revisan una vez y ahorran todo el año; "
+                 "después cada compra o gasto grande antes de hacerlo (cuánto puedes gastar, contado o financiar, nuevo o reacondicionado, reparar o cambiar, comprar o alquilar); "
+                 "luego dónde guardar lo que ahorras y, por último, las decisiones de familia, trabajo y estudios que mueven más dinero al año. "
+                 "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
+        "groups": [
+            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
+            ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "comprar-o-alquilar-trastero", "hotel-o-apartamento-viaje-en-grupo"]),
+            ("Dónde guardar lo que ahorras", ["deposito-letras-o-fondo-monetario"]),
+            ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
+        ],
+        "steps": {
+            "suscripciones-cuanto-gasto-al-ano": {
+                "name": "Suscripciones",
+                "text": "Las candidatas a rotar o cancelar son las que te cuestan más por hora de uso que la media de las tuyas; el plan anual solo compensa con descuento y si la usas todo el año. La calculadora suma tu gasto anual y lo que ahorras rotando.",
+            },
+            "fibra-y-movil-juntos-o-por-separado": {
+                "name": "Fibra y móvil: pack o por separado",
+                "text": "El pack sale más barato mientras dura la promoción y su precio posterior no supere lo que pagarías por separado. La calculadora te da el mes en que se agota la ventaja y el riesgo de la permanencia.",
+            },
+            "seguro-hogar-con-o-sin-franquicia": {
+                "name": "Seguro de hogar con o sin franquicia",
+                "text": "La franquicia compensa si la prima que ahorras al año supera lo que esperas pagar en siniestros pequeños; si tu colchón no cubre la franquicia, pesa más el riesgo que la media. La calculadora da la frecuencia de equilibrio.",
+            },
+            "seguro-salud-privado-merece-la-pena": {
+                "name": "Seguro de salud privado",
+                "text": "En coste compensa solo si esperas más consultas y pruebas al año que el equilibrio que sale de tu prima y tu copago; por debajo, pagar aparte cuesta menos, y la decisión también es de cobertura y acceso.",
+            },
+            "seguro-mascota-merece-la-pena": {
+                "name": "Seguro de mascota",
+                "text": "Compensa en valor esperado solo si la probabilidad de un gasto veterinario grave supera la prima dividida entre lo que cubre el seguro. La calculadora te da ese umbral y el peor escenario con carencia.",
+            },
+            "navidad-cuanto-gastar-sin-endeudarte": {
+                "name": "Cuánto puedes gastar en Navidad y Black Friday",
+                "text": "Lo que puedes gastar sin crédito es tu margen mensual libre por los meses que faltan, sin tocar el fondo de emergencia. La calculadora te da esa cifra y lo que cuesta financiar el exceso.",
+                "guia": "black-friday-y-navidad-sin-deudas",
+            },
+            "contado-o-financiar": {
+                "name": "Pagar al contado o financiar",
+                "text": "Financiar solo compensa si tu dinero rinde, tras impuestos, más que la TAE real del préstamo con comisiones y seguros, y no pierdes un descuento por pagar al contado.",
+            },
+            "portatil-o-movil-comprar-renting-o-financiar": {
+                "name": "Portátil o móvil: comprar, financiar o renting",
+                "text": "Al contado cuesta menos salvo financiación sin intereses ni comisión; el renting compensa solo si su cuota es menor que el coste neto de comprar repartido entre los meses de uso. La calculadora da esa cuota de equilibrio.",
+            },
+            "movil-reacondicionado-o-nuevo": {
+                "name": "Móvil reacondicionado o nuevo",
+                "text": "El reacondicionado compensa mientras su precio quede por debajo del precio de equilibrio que sale de los años que lo usarás, la garantía y la reventa.",
+            },
+            "reparar-o-comprar-electrodomestico": {
+                "name": "Reparar o cambiar un electrodoméstico",
+                "text": "Reparar compensa mientras el presupuesto quede por debajo del importe de equilibrio que sale del precio del nuevo, la vida que le queda, el riesgo de otra avería y el consumo del viejo.",
+            },
+            "comprar-o-alquilar-herramienta": {
+                "name": "Comprar o alquilar una herramienta",
+                "text": "Comprar compensa cuando la usas más veces al año que el punto de equilibrio entre su coste total (con reventa y mantenimiento) y lo que cuesta cada alquiler.",
+            },
+            "comprar-o-alquilar-trastero": {
+                "name": "Comprar o alquilar un trastero",
+                "text": "Comprar compensa cuando el alquiler de uno equivalente supera el alquiler de equilibrio que sale del precio, los gastos anuales y el valor que tendrá al venderlo.",
+            },
+            "hotel-o-apartamento-viaje-en-grupo": {
+                "name": "Hotel o apartamento para un viaje en grupo",
+                "text": "El apartamento gana cuando su noche más la comida cocinada cuesta menos que las habitaciones más comer fuera; con pocas personas o pocas noches puede ganar el hotel. La calculadora da el coste por persona y noche.",
+            },
+            "deposito-letras-o-fondo-monetario": {
+                "name": "Depósito, Letras del Tesoro o fondo monetario",
+                "text": "Las tres tributan igual en la base del ahorro, así que deja más neto la de mayor rendimiento a tu plazo; el fondo tiene que rendir más para compensar que no garantiza el capital. La calculadora da el neto de cada una.",
+            },
+            "guarderia-cuidadora-o-reducir-jornada": {
+                "name": "Guardería, cuidadora o reducir jornada",
+                "text": "Reducir jornada solo compensa si el sueldo neto que pierdes es menor que lo que costaría la guardería o la cuidadora. La calculadora da el salario y el precio de equilibrio.",
+            },
+            "excedencia-o-reduccion-jornada": {
+                "name": "Excedencia o reducción de jornada",
+                "text": "Cada opción cuesta lo que dejas de cobrar menos las ayudas y los cuidados que evitas. La calculadora da el coste neto por mes y en total con tus datos.",
+            },
+            "teletrabajo-o-oficina-coste-real": {
+                "name": "Teletrabajo u oficina",
+                "text": "Teletrabajar ahorra si lo que evitas cada día en desplazamiento y comida supera el gasto extra en casa. La calculadora da el ahorro anual y la compensación mínima de la empresa.",
+            },
+            "universidad-publica-o-privada-o-master": {
+                "name": "Universidad pública o privada",
+                "text": "La privada compensa en dinero solo si la mejora de sueldo que esperas supera su sobrecoste repartido entre tus años de trabajo; es una hipótesis, no una promesa.",
+            },
+            "academia-idiomas-presencial-online-o-intensivo": {
+                "name": "Idiomas: academia, online o inmersión",
+                "text": "Lo más barato para llegar a tu nivel depende del precio por hora y de cuánto rinde cada formato. La calculadora da el coste total y la eficacia mínima con la que compensa el online.",
+            },
+        },
+    },
 }
 
 

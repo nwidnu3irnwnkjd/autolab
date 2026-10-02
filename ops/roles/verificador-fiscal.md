@@ -30,3 +30,10 @@ Medido en 8 fiscales (c7-c15): Opus 103-169k por fiscal (media 150k con el resca
 - Presupuesto: ≤ 110k tokens y ≤ 10 min. Métrica: Opus por fiscal 150k → ≤ 110k sin perder hallazgos de las clases 2 y 3.
 - Informe al Orquestador: 3 líneas (VEREDICTO · nº de cambios obligatorios por patrón 1-6 · ruta del journal). La tabla completa, solo en journal/verificacion-<slug>.md.
 - Re-verificación (Sonnet): sin navegar ni releer la norma; solo ejecutar ops/verif/<slug>.py + el oráculo y releer las frases marcadas. Objetivo ≤ 40k (c8-c15: 82-93k).
+
+## Pasada 4 del Mejorador (2026-10-02T05:20Z, c24): lectura propia antes del oráculo
+Medido c17-c23 (6 fiscales): Opus de 1 pasada 97-115k (media 105k: **objetivo ≤ 110k cumplido**); con 2.ª pasada, jubilación 272k y paro 206k (media global 149k). Cambios obligatorios ~4 por fiscal (objetivo ≤ 2 no cumplido). Por patrón: 1 absolutos ~4 · 2 artículos que mueven la base ~4 · 3 ámbito 3 · **4 citas/redacción 6 (sube)** · 5 bordes 2 · 6 omitidos/defaults 6 · nuevos: DT y convenciones (jubilación DT 34.ª, Letras días reales) y «la opción comparada no existe» (paro 270 días, edad ordinaria ya pasada).
+- **Paso 0 (≤ 5 min, antes de abrir el oráculo o el JS)**: lee el bloque `INTERPRETACION` del oráculo (constructor.md) y, con la norma, escribe TU interpretación de cada opción en ≤ 6 líneas; si difiere, ese es el hallazgo prioritario y lo dices en la 1.ª línea del informe. Motivo: en paro y jubilación el oráculo del Constructor repetía la misma lectura que el JS (0 discrepancias en 600 casos) y el error salió tarde, con una 2.ª pasada Opus.
+- Revisa las citas por muestreo: 3 «art. N» de la página contra el texto del artículo (patrón 4, el que más sube).
+- Lee solo journal/preverif-<slug>.md (no verificacion-pendiente.md, 50 KB).
+- 2.ª pasada Opus solo si cambia la interpretación; en ese caso ≤ 60k (solo las piezas cambiadas), no una revisión completa.
