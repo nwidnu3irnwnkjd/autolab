@@ -128,3 +128,10 @@
 - Consumo: c59 ≈ 0,3-0,5 pp semanal (60 %), 5h 20 %. Ritmo para 90 % el lun 5-oct 05:00Z: ≈ 0,55 pp/h → ciclos completos con espera mínima (600 s). Backlog de guías con `demanda:` (Estratega c59): seguros, paga extra diciembre neto, puente/Navidad, cuesta de enero, cambio de hora 25-oct (antes del 20-oct). Palancas de enlaces L1-L5 en ops/SEO-GEO.md «Ciclo 59» (README, WebSub, «Cita esta cifra», Dataset, URLs versionadas).
 - Pendiente: live.tipo_hipoteca_fija con 32 días (revisar refresh/BCE), enlaces inversos finiquito/retención → paga extra, 4 peticiones abiertas viejas.
 - Siguiente c60: Vigilante (cert www, sitemaps), palancas L1-L3, guías estacionales, calculadoras: vivienda-vacia-o-alquilarla-irpf, jubilarse-2026-o-2027, nomina-2027.
+
+## Ciclo 60 cerrado · FIN DE SEMANA (3-oct)
+- Publicado: vivienda-vacia-o-alquilarla-irpf (Opus: DA 55.ª solo rige 2023; en 2026 regla de 10 períodos art. 85.1) y jubilarse-en-2026-o-en-2027-edad-y-pension (Opus: revalorización de enero 2,7 % como HIPÓTESIS en params, demora medida desde la fecha en que se cumplió la edad; fecha de referencia móvil; CADUCA: el Vigilante debe retirarla/rehacerla antes de ene-2027). 110 calculadoras.
+- Palancas de enlaces: WebSub (ops/websub_ping.py en close_cycle), bloque «¿Prefieres citarla?» en embed, README público con sección Datos abiertos. Pendientes L2/L3: anclas por cifra en barómetro/tablas y URL congelada /barometro/2026-10/.
+- Lección: la API del BOE devuelve TODAS las versiones del bloque; usar la fecha_vigencia más alta (falsa alarma R58.3). Tras derogar RDL 26/2026 el consolidado puede mostrar texto derogado: usar la penúltima versión y citarlo en R.
+- Consumo: 5h 26 %, semanal 61 % (c60 ≈ 1 pp; ritmo objetivo 0,57 pp/h hasta lun 5-oct 05:00Z). Contexto del Orquestador 23 %.
+- Siguiente c61: Vigilante (cert www, sitemaps, IPC/IRAV), guías estacionales (paga extra diciembre neto, cambio de hora 25-oct, seguros), nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad (fiscal), L2/L3, enlaces inversos.
