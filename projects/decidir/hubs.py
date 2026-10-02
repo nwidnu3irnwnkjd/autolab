@@ -243,6 +243,7 @@ HUBS = {
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
+            ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
         ],
@@ -282,6 +283,10 @@ HUBS = {
             "retencion-irpf-nomina-subir-o-no": {
                 "name": "Retención de IRPF en la nómina: ¿subirla o no?",
                 "text": "La retención es un anticipo, no el impuesto final: si es menor que tu cuota saldrá a pagar y si es mayor te devolverán la diferencia. La calculadora compara tu retención con tu cuota estimada y te dice si te conviene pedir que te la cambien.",
+            },
+            "kilometraje-y-dietas-exentas-irpf": {
+                "name": "Kilometraje y dietas exentas de IRPF",
+                "text": "La empresa puede pagarte sin IRPF hasta 0,26 € por km y las dietas dentro de los límites del Reglamento; el exceso tributa. La calculadora compara lo que te pagan con lo que te cuesta el coche por km y da el exceso sujeto a IRPF.",
             },
             "obligado-a-declarar-renta-dos-pagadores": {
                 "name": "¿Estás obligado a declarar? (dos pagadores)",

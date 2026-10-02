@@ -3,7 +3,7 @@
   "title": "Cambiar ventanas o aislar: ¿en cuántos años se amortiza?",
   "description": "Calcula en cuántos años se amortiza cambiar ventanas o aislar tu vivienda con tu gasto en calefacción, tu % de ahorro, el coste y la subida de la energía.",
   "h1": "¿Cambiar las ventanas o aislar merece la pena?",
-  "lead": "Cambiar ventanas o aislar compensa si el ahorro acumulado en tu horizonte supera el coste neto, es decir, si ahorras al menos el porcentaje mínimo que calcula esta página con tu gasto y tu presupuesto; el porcentaje de ahorro es un supuesto tuyo, no una promesa. Con los datos de ejemplo (800 € al año, 20 % de ahorro y 6.000 € de coste) te dice en cuántos años se amortiza. Cámbialos por los tuyos.",
+  "lead": "Cambiar ventanas o aislar compensa si el ahorro acumulado en tu horizonte supera el coste neto, es decir, si ahorras al menos el porcentaje mínimo que calcula esta página con tu gasto y tu presupuesto; el porcentaje de ahorro es un supuesto tuyo, no una promesa. Con los datos de ejemplo (800 € al año, 20 % de ahorro y 6.000 € de coste) te dice en cuántos años se amortiza. Cámbialos por los tuyos para ver tu plazo.",
   "veredicto": "Aislar o cambiar ventanas compensa si el ahorro acumulado en tu horizonte supera el coste neto; la página calcula el porcentaje mínimo de ahorro que necesitas con tu gasto y tu presupuesto, porque el ahorro real depende de la vivienda y los hábitos y no se puede prometer.",
   "tema": "energia",
   "inputs": [
@@ -83,7 +83,7 @@
   "faqs": [
     [
       "¿En cuántos años se amortiza cambiar las ventanas?",
-      "Depende de tu gasto, de cuánto ahorres y de lo que cueste: la amortización simple es el coste neto entre el ahorro del primer año. La calculadora la da también con subida de la energía y descontando el dinero a tu tasa, y calcula el porcentaje mínimo de ahorro para amortizar en tu horizonte."
+      "Depende de tu gasto, de cuánto ahorres y de lo que cueste: la amortización simple es el coste neto entre el ahorro del primer año. La calculadora la da también con subida de la energía y descontando el dinero a tu tasa. Además calcula el porcentaje mínimo de ahorro para amortizar en tu horizonte."
     ],
     [
       "¿Cuánto se ahorra de calefacción con ventanas nuevas o aislamiento?",
@@ -91,10 +91,10 @@
     ],
     [
       "¿Hay ayudas o deducciones por mejorar la eficiencia energética?",
-      "Sí: en el IRPF existen deducciones del 20 %, 40 % o 60 % según la mejora conseguida y con límites, para obras con pagos hasta el 31 de diciembre de 2026 (la del 60 %, para comunidades, hasta 2027) y con certificado de eficiencia energética. Tienen requisitos, así que consulta requisitos antes de contar con ellas, y escribe en la calculadora solo el importe que tengas confirmado; además pueden existir ayudas autonómicas."
+      "Sí: en el IRPF existen deducciones del 20 %, 40 % o 60 % según la mejora conseguida y con límites, para obras con pagos hasta el 31 de diciembre de 2026 (la del 60 %, para comunidades, hasta 2027) y con certificado de eficiencia energética. Tienen requisitos, así que confirma los requisitos antes de contar con ellas y escribe en la calculadora solo el importe que tengas confirmado; además pueden existir ayudas autonómicas."
     ],
     [
-      "¿Qué es el VAN y por qué sale distinto de la amortización?",
+      "¿Qué es el VAN (valor actual neto) y por qué sale distinto de la amortización?",
       "El VAN suma los ahorros de cada año, valorados a la tasa que elijas, y resta el coste. Una amortización en 9 años puede tener VAN negativo con una tasa alta, porque un euro ahorrado dentro de 9 años vale menos que hoy. Si el VAN es positivo en tu horizonte, la actuación compensa incluso valorando el dinero."
     ],
     [

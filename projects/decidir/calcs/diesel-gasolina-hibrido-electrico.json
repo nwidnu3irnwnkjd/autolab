@@ -3,7 +3,7 @@
   "title": "Diésel, gasolina, híbrido o eléctrico: cuál sale más barato",
   "description": "Compara el coste total a varios años de un diésel, gasolina, híbrido y eléctrico según tus km al año, y descubre desde qué kilometraje cambia el orden.",
   "h1": "Diésel, gasolina, híbrido o eléctrico: ¿cuál me sale más barato?",
-  "lead": "Compara el coste total de tener un coche diésel, gasolina, híbrido o eléctrico durante los años que lo vayas a usar, con tus kilómetros y tus precios, para particulares en España.",
+  "lead": "Con pocos kilómetros al año suele salir más barato el coche de menor precio de compra; con muchos, el de menor coste por kilómetro. Esta calculadora compara el coste total de un diésel, gasolina, híbrido o eléctrico durante los años que lo uses, con tus kilómetros y tus precios, para particulares en España.",
   "veredicto": "El coche más barato depende de los kilómetros al año: cuanto más recorres, más pesa el coste por kilómetro frente al precio de compra.",
   "inputs": [
     {
@@ -245,7 +245,7 @@
     ],
     [
       "¿Cómo estimo el valor residual?",
-      "Mira anuncios de segunda mano de modelos parecidos con los años y kilómetros que tendrá el tuyo al venderlo. Los porcentajes por defecto son orientativos, no datos: la depreciación varía mucho entre modelos y tecnologías, así que ajústalos."
+      "Mira anuncios de segunda mano de modelos parecidos, con los años y kilómetros que tendrá el tuyo al venderlo. Los porcentajes por defecto son orientativos, no datos: la depreciación varía mucho entre modelos y tecnologías, así que ajústalos."
     ],
     [
       "¿Incluye ayudas, etiqueta ambiental o restricciones de acceso a ciudades?",

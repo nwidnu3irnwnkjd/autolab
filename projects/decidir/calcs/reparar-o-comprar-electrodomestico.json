@@ -3,7 +3,7 @@
   "title": "Reparar o comprar nuevo: lavadora, nevera, lavavajillas",
   "description": "¿Reparar o comprar nuevo? Calcula el coste por año de uso, el riesgo de otra avería, el consumo y el presupuesto máximo de reparación que compensa.",
   "h1": "¿Reparar o comprar un electrodoméstico nuevo?",
-  "lead": "Conviene reparar si el presupuesto de la reparación no supera el máximo que sale de tu edad, tu riesgo de otra avería y tu consumo extra; con los datos de ejemplo (lavadora de 8 años, reparación de 150 € frente a 430 € de uno nuevo) la calculadora te da ese máximo y compara el coste por año de uso con la regla del 50 %, que es solo una referencia. Cámbialos por los tuyos para ver tu veredicto.",
+  "lead": "Conviene reparar si el presupuesto de la reparación no supera el máximo que sale de la edad del aparato, tu riesgo de otra avería y tu consumo extra. Con los datos de ejemplo (lavadora de 8 años, reparación de 150 € frente a 430 € de uno nuevo) la calculadora te da ese máximo y compara el coste por año de uso con la regla del 50 %, que es solo una referencia. Cámbialos por los tuyos para ver tu veredicto.",
   "veredicto": "Reparar compensa mientras el presupuesto quede por debajo del importe de equilibrio que sale del precio del aparato nuevo, los años de vida útil que le quedan, el riesgo de otra avería y el consumo extra del viejo; la regla del 50 % del precio nuevo es solo una referencia orientativa, no un veredicto.",
   "tema": "ahorro",
   "inputs": [
@@ -74,7 +74,7 @@
   "faqs": [
     [
       "¿Cuándo compensa reparar un electrodoméstico?",
-      "Cuando el presupuesto queda por debajo del importe de equilibrio que calcula esta página: el coste anual de reparar (reparación más el coste esperado de otra avería, repartido entre los años que le quedan) tiene que ser menor que el coste anual de uno nuevo (su precio entre su vida útil), más el consumo extra del viejo. Cuanto más joven es el aparato y más caro el nuevo, mayor es el presupuesto que compensa."
+      "Cuando el presupuesto queda por debajo del importe de equilibrio que calcula esta página. Para ello, el coste anual de reparar (reparación más el coste esperado de otra avería, repartido entre los años que le quedan) tiene que ser menor que el coste anual de uno nuevo (su precio entre su vida útil), más el consumo extra del viejo. Cuanto más joven es el aparato y más caro el nuevo, mayor es el presupuesto de reparación que compensa."
     ],
     [
       "¿Qué es la regla del 50 % para reparar o comprar?",

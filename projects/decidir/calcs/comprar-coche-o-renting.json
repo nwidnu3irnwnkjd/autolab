@@ -3,7 +3,7 @@
   "title": "Comprar coche o renting: calculadora de coste total",
   "description": "Compara el coste real de comprar un coche (préstamo, seguro, mantenimiento y reventa) con un renting y descubre la cuota de equilibrio.",
   "h1": "Comprar coche o renting: ¿qué me sale más barato?",
-  "lead": "Compara el coste total de comprar el coche y venderlo al final con el de un renting a los mismos años, con tus propios números y para particulares.",
+  "lead": "Comprar suele salir más barato si conservas el coche muchos años, y el renting compensa si cambias a menudo y la cuota incluye lo que tú pagarías aparte. Esta calculadora compara el coste total de comprar y vender al final con el de un renting a los mismos años, con tus números y para particulares.",
   "veredicto": "Comprar suele salir más barato si conservas el coche muchos años; el renting compensa si cambias a menudo y valoras la cuota cerrada.",
   "inputs": [
     {
@@ -85,7 +85,7 @@
   "faqs": [
     [
       "¿Qué sale más barato, comprar un coche o hacer renting?",
-      "Depende de tus números: del precio, de cuánto valga el coche al venderlo, de lo que pagues de seguro y mantenimiento y de la cuota del renting. Esta calculadora suma todos los costes de cada opción durante los años que elijas y te dice cuál gana y por cuánto."
+      "Depende de tus números: del precio de compra, de cuánto valga el coche al venderlo, de lo que pagues de seguro y mantenimiento y de la cuota del renting. Esta calculadora suma todos los costes de cada opción durante los años que elijas y te dice cuál gana y por cuánto."
     ],
     [
       "¿Qué incluye normalmente la cuota de renting?",
@@ -93,7 +93,7 @@
     ],
     [
       "¿Qué es la cuota de renting de equilibrio?",
-      "Es la cuota mensual a la que el renting y la compra te cuestan exactamente lo mismo en el periodo elegido, teniendo en cuenta la entrada. Si te ofrecen una cuota inferior, el renting te sale más barato; si es superior, compensa comprar."
+      "Es la cuota mensual a la que el renting y la compra te cuestan lo mismo en el periodo elegido, teniendo en cuenta la entrada. Si te ofrecen una cuota inferior, el renting te sale más barato; si es superior, compensa comprar."
     ],
     [
       "¿Cómo estimo el valor de reventa?",

@@ -3,7 +3,7 @@
   "title": "Guardería, cuidadora o reducir jornada: qué sale mejor",
   "description": "Compara el coste de guardería, cuidadora o reducir jornada con tus datos y mira en qué salario o precio cambia la decisión. Solo dinero.",
   "h1": "Guardería, cuidadora o reducir jornada: ¿qué sale más barato?",
-  "lead": "Reducir jornada sale más barato que guardería o cuidadora solo si el sueldo neto que dejas de cobrar es menor que su coste mensual; si no, conviene pagar. Calcula el umbral con tus cifras.",
+  "lead": "Reducir jornada sale más barato que guardería o cuidadora si el sueldo neto que dejas de cobrar es menor que su coste mensual; si es mayor, suele convenir pagar. Calcula el umbral con tus cifras.",
   "veredicto": "Reducir jornada solo compensa si el ingreso neto que pierdes (más el coste de oportunidad que quieras sumar) es menor que lo que costaría la guardería o la cuidadora; la calculadora da el salario y el precio de equilibrio con tus datos.",
   "tema": "ahorro",
   "inputs": [
@@ -75,7 +75,7 @@
     ],
     [
       "¿Qué es el coste de oportunidad de reducir jornada?",
-      "Es lo que pierdes más allá del sueldo de esos meses: menos aportaciones a la jubilación, menos opciones de ascenso o de aumento. No hay una cifra única: es un porcentaje opcional que tú eliges sumar al ingreso perdido."
+      "Es lo que puedes perder más allá del sueldo de esos meses: menos aportaciones a la jubilación, menos opciones de ascenso o de aumento. No hay una cifra única: es un porcentaje opcional que tú eliges sumar al ingreso perdido."
     ],
     [
       "¿Cómo cuento la cotización de la cuidadora?",

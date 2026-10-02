@@ -3,7 +3,7 @@
   "title": "Cambiar electrodoméstico antiguo por clase A: ¿compensa?",
   "description": "¿Merece la pena cambiar tu nevera, lavadora o secadora por una clase A? Calcula años de amortización, ahorro en luz y kWh evitados con tus datos.",
   "h1": "¿Compensa cambiar un electrodoméstico antiguo por uno clase A?",
-  "lead": "Cambiar un electrodoméstico que aún funciona por uno de clase A solo compensa por la luz si el ahorro anual en kWh por tu precio de la luz supera el precio neto del nuevo repartido en los años que lo vas a usar; con los ejemplos declarados (nevera de 300 kWh al año frente a 170 kWh, y 650 € de precio) no se cumple, y la calculadora te da los kWh mínimos que tendrías que ahorrar. Cambia los consumos por los de tu etiqueta y tu aparato.",
+  "lead": "Cambiar un electrodoméstico que aún funciona por uno de clase A solo compensa por la luz si el ahorro anual en kWh, por tu precio de la luz, supera el precio neto del nuevo repartido en los años que lo vas a usar. Con los ejemplos de la página (nevera de 300 kWh al año frente a 170 kWh, y 650 € de precio) no se cumple, y la calculadora te da los kWh mínimos que tendrías que ahorrar. Cambia los consumos por los de tu etiqueta y tu aparato.",
   "veredicto": "Cambiar un electrodoméstico que funciona por uno de clase A compensa solo si el ahorro anual de luz, por tu precio del kWh, cubre el precio neto del nuevo en los años que cuentas; la calculadora te da los kWh al año mínimos que tendrías que ahorrar, y el ahorro real depende de tu uso.",
   "tema": "energia",
   "inputs": [
@@ -94,7 +94,7 @@
   "faqs": [
     [
       "¿Compensa cambiar un electrodoméstico antiguo por uno clase A?",
-      "Por la luz sola, solo si el ahorro anual en kWh por el precio del kWh supera el precio neto del aparato nuevo repartido en los años que lo vas a usar. La calculadora te dice los kWh al año mínimos para que ocurra y los compara con los tuyos. Si el aparato actual ya no funciona, la decisión es otra: elegir el nuevo más eficiente por precio y consumo."
+      "Por la luz sola, solo si el ahorro anual en kWh, multiplicado por el precio del kWh, supera el precio neto del aparato nuevo repartido en los años que lo vas a usar. La calculadora te dice los kWh al año mínimos y los compara con los tuyos. Si el aparato actual ya no funciona, la decisión es otra: elegir el nuevo más eficiente por precio y consumo."
     ],
     [
       "¿Cómo sé cuánto consume mi electrodoméstico viejo?",

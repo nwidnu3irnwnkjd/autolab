@@ -6,6 +6,8 @@ Uso:
   python3 ops/qa_static.py --changed            # YMYL/cifras solo de lo cambiado + lista de rutas dist para el QA con navegador
   python3 ops/qa_static.py --dist DIR           # apunta a otra carpeta dist (pruebas)
   python3 ops/qa_static.py --project decidir
+  python3 ops/qa_static.py --fiscal             # T14 v3: control de «solo cifras verificadas» en calculadoras fiscales (sin dist)
+  python3 ops/qa_static.py --fiscal --changed   # idem, solo calculadoras cambiadas (git)
 
 Salida: `BLOQUEANTE|AVISO|OK · archivo:línea · mensaje`. Exit 1 solo si hay BLOQUEANTE.
 Parseadores: xml.etree (sitemap), html.parser (title, description, canonical, h1, JSON-LD, enlaces), json.loads. Sin regex para estructuras.
@@ -29,6 +31,7 @@ PROJ = arg("--project", "decidir")
 PDIR = os.path.join(ROOT, "projects", PROJ)
 DIST = os.path.abspath(arg("--dist", os.path.join(PDIR, "dist")))
 CHANGED = "--changed" in sys.argv
+FISCAL = "--fiscal" in sys.argv
 
 out = []  # (nivel, ubicación, mensaje)
 def add(level, where, msg): out.append((level, where, msg))
@@ -373,8 +376,202 @@ def check_ymyl(slugs):
         ymyl_html(h, rel(h)); n += 1
     return n
 
+
+# ---------- T14 v3: --fiscal ----------
+# Reglas por calculadora fiscal (R1..R7). BLOQUEANTE solo donde no hay falsos positivos (fiscal sin ninguna clave en params).
+NO_FISCAL_BLOQUES = ("luz_", "placas_", "caldera_", "punto_carga_")
+ABS_RE = re.compile(r"\b(siempre|nunca|garantiza\w*|no existe|no se puede|en todos los casos|cualquier)\b", re.I)
+ABS_OK = re.compile(r"\b(siempre (que|y cuando)|si|salvo|cuando|excepto|según|depende|mientras|a menos que|en caso|aunque|hasta)\b", re.I)
+LEGAL_T = re.compile(r"\b(art\.|arts\.|artículo|Ley|exent[oa]|tributa|cotiza|IRPF|deduc\w+|retenci\w+)", re.I)
+CITA_RE = re.compile(r"(según (el Manual|la AEAT|Hacienda|la Agencia Tributaria|la ley)|la ley (establece|dice|obliga)|Hacienda (exige|obliga|establece))", re.I)
+UMBRAL = re.compile(r"\d[\d.,]*\s*(€|%|euros)")
+COND_LEAD = re.compile(r"\b(si|cuando|depende|según|salvo|a partir de|hasta|desde|con)\b", re.I)
+FECHA_TXT = re.compile(r"(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4}|\d{1,2} de [a-záéíóú]+ de \d{4}|\b20\d\d\b|ejercicio)", re.I)
+MESES = {m: i + 1 for i, m in enumerate("enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split())}
+
+def parse_fecha(t):
+    m = re.search(r"(\d{4})-(\d{2})-(\d{2})", t)
+    try:
+        if m: return datetime.date(int(m[1]), int(m[2]), int(m[3]))
+        m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})", t)
+        if m: return datetime.date(int(m[3]), int(m[2]), int(m[1]))
+        m = re.search(r"(\d{1,2}) de ([a-záéíóú]+) de (\d{4})", t, re.I)
+        if m and m[2].lower() in MESES: return datetime.date(int(m[3]), MESES[m[2].lower()], int(m[1]))
+    except ValueError: pass
+    return None
+
+def strip_js(src):
+    """Quita comentarios, cadenas y regex simples de un .js (para contar literales numéricos)."""
+    src = re.sub(r"/\*.*?\*/", " ", src, flags=re.S)
+    src = re.sub(r"//[^\n]*", " ", src)
+    return re.sub(r"'(?:\\.|[^'\\\n])*'|\"(?:\\.|[^\"\\\n])*\"|`(?:\\.|[^`\\])*`", '""', src)
+
+def walk_leaves(o, acc, path=""):
+    """Hojas numéricas escalares (no elementos de lista) con su ruta: respaldo estricto para escalares de var P."""
+    if isinstance(o, bool): return
+    if isinstance(o, (int, float)): acc.append((path, round(float(o), 6)))
+    elif isinstance(o, dict):
+        for k, v in o.items(): walk_leaves(v, acc, path + "." + str(k))
+
+def walk_nums(o, acc):
+    if isinstance(o, bool): return
+    if isinstance(o, (int, float)): acc.add(round(float(o), 6))
+    elif isinstance(o, str): acc.update(num_vals(o))
+    elif isinstance(o, dict):
+        for v in o.values(): walk_nums(v, acc)
+    elif isinstance(o, list):
+        for v in o: walk_nums(v, acc)
+
+def check_fiscal(only_slugs=None):
+    try: params = json.load(open(os.path.join(PDIR, "data/params.json"), encoding="utf-8"))
+    except Exception as e:
+        add("BLOQUEANTE", "data/params.json", f"no se puede leer: {e}"); return 0
+    keys = [k for k, v in params.items() if isinstance(v, dict)]
+    hoy = datetime.date.today(); n = 0
+    for jsf in sorted(glob.glob(os.path.join(PDIR, "calcs/*.js"))):
+        slug = os.path.basename(jsf)[:-3]
+        if only_slugs is not None and slug not in only_slugs: continue
+        src = open(jsf, encoding="utf-8").read()
+        head = "\n".join(src.split("\n")[:3])
+        blocks = [k for k in keys if re.search(r"(?<![A-Za-z0-9_])" + re.escape(k) + r"(?![A-Za-z0-9_])", head)] if "params.json" in head else []
+        pv = os.path.join(ROOT, "journal", f"preverif-{slug}.md")
+        has_pv = os.path.isfile(pv)
+        cj = os.path.join(PDIR, f"calcs/{slug}.json")
+        try: c = json.load(open(cj, encoding="utf-8"))
+        except Exception: c = {}
+        pl = [l for l in src.split("\n") if l.startswith("var P")]
+        legal_blocks = [b for b in blocks if b.endswith("_2026") and not b.startswith(NO_FISCAL_BLOQUES)]
+        fiscal = has_pv or bool(legal_blocks) or (bool(pl) and bool(re.search(r"\b(Ley 35/2006|LIRPF|LGSS)\b", c.get("sources", ""))))
+        if not fiscal: continue
+        n += 1; w = f"calcs/{slug}"
+        # sin ninguna clave en params
+        if not blocks:
+            if pl or has_pv:
+                add("BLOQUEANTE", w + ".js", "R2 calculadora fiscal con cifras (var P / preverif) y sin ninguna clave de data/params.json en la cabecera")
+            else:
+                add("AVISO", w + ".js", "R2 calculadora fiscal sin referencia a data/params.json en la cabecera")
+        # R1 bloques con fuente, url y consulta ISO
+        for b in blocks:
+            v = params[b]; f = v.get("fuente") or v.get("base_legal")
+            u = any(k.startswith("url") and v[k] for k in v) or bool(re.search(r"https?://", json.dumps(v.get("fuente", ""))))
+            cons = v.get("consulta") or v.get("consultado") or v.get("consulta_fecha") or v.get("fecha")
+            falta = [x for x, ok in (("fuente", bool(f)), ("url", u), ("consulta", bool(cons))) if not ok]
+            if falta: add("AVISO", w, f"R1 params.{b}: falta {', '.join(falta)}")
+            elif isinstance(cons, str):
+                if not FECHA_TXT.search(cons): add("AVISO", w, f"R1 params.{b}.consulta sin fecha ni ejercicio: «{cons[:40]}»")
+                else:
+                    d = parse_fecha(cons)
+                    if d and (hoy - d).days > 120: add("AVISO", w, f"R1 params.{b}.consulta de hace {(hoy-d).days} días: revisar vigencia")
+        # R2 cada número de var P existe en los bloques
+        corp = set()
+        for b in blocks: walk_nums(params[b], corp)
+        sueltos = []
+        for l in pl:
+            try: obj, _ = json.JSONDecoder().raw_decode(l[l.index("=") + 1:].lstrip())
+            except Exception: obj = None
+            nums = set()
+            if obj is not None: walk_nums(obj, nums)
+            else: nums = {float(x) for x in re.findall(r"-?\d+(?:\.\d+)?", l)}
+            for v in sorted(nums):
+                if v in (0, 1, 12, 100, 365): continue
+                if blocks and not covered(v, corp): sueltos.append(v)
+        # escalares de primer nivel de var P: deben ser hoja escalar de params (%, x100 si < 1), no coincidir con un elemento de lista
+        if blocks and pl:
+            hojas = []
+            for b in blocks: walk_leaves(params[b], hojas, b)
+            vals = {v for _, v in hojas}
+            for l in pl:
+                try: obj, _ = json.JSONDecoder().raw_decode(l[l.index("=") + 1:].lstrip())
+                except Exception: continue
+                for k, v in (obj.items() if isinstance(obj, dict) else []):
+                    if isinstance(v, bool) or not isinstance(v, (int, float)) or v in (0, 1, 12, 100, 365): continue
+                    cand = {round(float(v), 6)} | ({round(v * 100, 6)} if 0 < abs(v) < 1 else set())
+                    if not (cand & vals) and float(v) not in sueltos: sueltos.append(float(v))
+                    elif not (cand & vals): pass
+                    else:
+                        if re.search(r"^(?:ss|obl)", k) and not any(re.search(k[:3], pth, re.I) for pth, val in hojas if val in cand):
+                            sueltos.append(float(v))   # coincide por valor con una hoja de nombre sin relación (p. ej. ss/oblMulti/oblResto frente a lim81)
+        if sueltos:
+            add("AVISO", w + ".js", f"R2 {len(sueltos)} cifra(s) de var P sin respaldo en params ({', '.join(f'{x:g}' for x in sueltos[:6])}{' …' if len(sueltos) > 6 else ''})")
+        # R3 literales fuera de var P
+        body = strip_js("\n".join(l for l in src.split("\n") if not l.startswith("var P")))
+        lits = []
+        for m in re.finditer(r"(?<![\w.$])(\d+(?:\.\d+)?)(?![\w.])", body):
+            v = float(m[1])
+            if v in (100, 365, 360, 1000) or (v == int(v) and v <= 12) or v <= 1: continue
+            lits.append(m[1])
+        if lits:
+            uniq = list(dict.fromkeys(lits))
+            add("AVISO", w + ".js", f"R3 {len(uniq)} literal(es) numérico(s) fuera de var P ({', '.join(uniq[:6])}{' …' if len(uniq) > 6 else ''}): cifra legal fuera de params")
+        # textos: lead/veredicto/faqs + content html
+        texts = [("lead", c.get("lead", "")), ("veredicto", c.get("veredicto", ""))] + [(f"faq{i+1}", q[1] if len(q) > 1 else "") for i, q in enumerate(c.get("faqs", []))]
+        hp = os.path.join(PDIR, "content", slug + ".html"); raw = ""
+        if os.path.isfile(hp):
+            raw = open(hp, encoding="utf-8").read()
+            texts.append(("html", re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", raw, flags=re.S)))
+        # R4 absolutos; R7b citas sin artículo ni enlace
+        abs_hits = []; citas = []
+        for lab, t in texts:
+            for sn in sentences(strip_tags(t)):
+                if ABS_RE.search(sn) and LEGAL_T.search(sn) and not ABS_OK.search(sn): abs_hits.append((lab, sn))
+                if CITA_RE.search(sn) and not re.search(r"\b[Aa]rt|https?://", sn): citas.append((lab, sn))
+        if abs_hits:
+            ej = abs_hits[0][1][:70]
+            add("AVISO", w, f"R4 {len(abs_hits)} absoluto(s) sin condición con término legal (p. ej. {abs_hits[0][0]}: «{ej}…»)")
+        if citas:
+            add("AVISO", w, f"R4b {len(citas)} cita(s) de autoridad sin art. ni enlace (p. ej. «{citas[0][1][:70]}…»)")
+        # R5 fechas de vigencia del html en params/preverif
+        if raw:
+            ref = " ".join(json.dumps(params[b], ensure_ascii=False) for b in blocks)
+            if has_pv: ref += " " + open(pv, encoding="utf-8").read()
+            ref_l = ref.lower(); faltan = []
+            plain = strip_tags(raw)
+            for m in re.finditer(r"desde el (\d{1,2}) de ([a-záéíóú]+) de (\d{4})", plain, re.I):
+                mes = MESES.get(m[2].lower())
+                forms = [m[0][6:].lower(), f"{int(m[1])}/{mes}/{m[3]}", f"{int(m[1])}.{mes}.{m[3]}", f"{m[3]}-{(mes or 0):02d}-{int(m[1]):02d}"]
+                if not any(f_ in ref_l for f_ in forms): faltan.append(m[0])
+            for m in re.finditer(r"a partir de (?:el )?(\d{4})\b", plain, re.I):
+                if m[1] not in ref: faltan.append(m[0])
+            if faltan: add("AVISO", w, f"R5 fecha(s) de vigencia del texto sin rastro en params/preverif: {'; '.join(dict.fromkeys(faltan))[:110]}")
+        # R6 preverif con T, 8, N, R y S con URL y fecha
+        if not has_pv:
+            add("AVISO", w, "R6 calculadora fiscal sin journal/preverif-<slug>.md")
+        else:
+            pt = open(pv, encoding="utf-8").read()
+            falta = [x for x in ("T", "8", "N", "R") if not re.search(r"^" + x + r"\s*[·.:]", pt, re.M)]
+            s_ok = any(re.search(r"https?://", l) and FECHA_TXT.search(l) for l in pt.split("\n") if re.match(r"S\s*\d*\s*[·.:]", l))
+            if falta or not s_ok:
+                add("AVISO", w, "R6 preverif: " + (f"faltan líneas {','.join(falta)}" if falta else "") + ("; " if falta and not s_ok else "") + ("ninguna línea «S ·» con URL y fecha" if not s_ok else ""))
+        # R7 ámbito forales
+        alltxt = strip_tags(raw) + " " + c.get("sources", "") + " " + " ".join(t for _, t in texts[:-1] if isinstance(t, str))
+        if not re.search(r"Pa[ií]s Vasco|Navarra|forales?|Euskadi", alltxt, re.I):
+            add("AVISO", w, "R7 no menciona el ámbito foral (País Vasco/Navarra)")
+        # R8 lead sin condición donde hay umbral
+        lead = strip_tags(c.get("lead", ""))
+        if UMBRAL.search(lead) and not COND_LEAD.search(lead):
+            add("AVISO", w, "R8 lead con cifra/umbral y sin condición (si/cuando/depende)")
+    return n
+
 # ---------- main ----------
+def main_fiscal():
+    slugs = None
+    if CHANGED: slugs = changed_pages(git_changed())[0]
+    n = check_fiscal(slugs)
+    order = {"BLOQUEANTE": 0, "AVISO": 1}
+    por_regla = {}
+    for lvl, where, msg in out:
+        r = msg.split(" ", 1)[0] if re.match(r"R\d", msg) else "otras"
+        por_regla[(lvl, r)] = por_regla.get((lvl, r), 0) + 1
+    nb = sum(1 for o in out if o[0] == "BLOQUEANTE")
+    full = "--full" in sys.argv
+    for lvl, where, msg in sorted(out, key=lambda x: order[x[0]])[: (None if full else max(nb, 0) + 5)]:
+        print(f"{lvl} · {where} · {msg}")
+    if not full and len(out) > nb + 5: print(f"… {len(out) - nb - 5} más (usa --fiscal --full)")
+    print("FISCAL: " + str(n) + " calculadoras; " + (", ".join(f"{r}={c}" for (l, r), c in sorted(por_regla.items())) or "sin avisos") + f"; {nb} BLOQUEANTE, {len(out) - nb} AVISO")
+    sys.exit(1 if nb else 0)
+
 def main():
+    if FISCAL: return main_fiscal()
     if not os.path.isdir(DIST):
         print(f"BLOQUEANTE · {DIST} · no existe el directorio dist (ejecuta build.py)"); sys.exit(1)
     slugs = None; glob_change = False; paths = []

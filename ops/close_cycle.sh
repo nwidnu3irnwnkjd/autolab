@@ -30,6 +30,7 @@ red() { echo; echo "ROJO en '$1': cierre abortado SIN commit ni push." >&2; exit
 step "build"; (cd projects/decidir && python3 build.py) || red build
 step "check"; python3 ops/check.py || red check
 step "qa_static"; python3 ops/qa_static.py --changed | tee "$TMP/qa.txt" || red qa_static
+step "qa_static --fiscal (T14 v3, informativo, no bloqueante)"; python3 ops/qa_static.py --fiscal --changed | tail -8 || true
 NAVEG="$(grep '^PÁGINAS PARA EL QA' "$TMP/qa.txt" | sed 's/^[^:]*: //' || true)"
 NAVISO="$(grep -c '^AVISO' "$TMP/qa.txt" || true)"
 NPAG="$(find projects/decidir/dist -name index.html | wc -l | tr -d ' ')"

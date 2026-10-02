@@ -3,8 +3,8 @@
   "title": "Pagar al contado o financiar: calculadora",
   "description": "Compara el coste de financiar una compra con lo que rinde tu dinero si no lo gastas: TAE real, rentabilidad de equilibrio y qué opción sale mejor.",
   "h1": "Pagar al contado o financiar: ¿qué te sale mejor?",
-  "lead": "Financiar compensa solo si tu dinero rinde, después de impuestos, más que la TAE real del préstamo; si no, pagar al contado sale mejor. Calcula el punto exacto con tus números.",
-  "veredicto": "Financiar solo compensa si tu dinero rinde, tras impuestos, más que la TAE real del préstamo (comisión y seguros incluidos) y no hay descuento por pagar al contado; con ofertas a interés bajo o cero es más probable.",
+  "lead": "Financiar compensa si tu dinero rinde, después de impuestos, más que la TAE real del préstamo (el coste anual efectivo, con comisión y seguro) y no hay descuento por pagar al contado; si no, pagar al contado sale mejor. Calcula el punto exacto con tus números.",
+  "veredicto": "Financiar compensa si tu dinero rinde, tras impuestos, más que la TAE real del préstamo (comisión y seguros incluidos) y no hay descuento por pagar al contado; con ofertas a interés bajo o cero es más probable.",
   "tema": "ahorro",
   "inputs": [
     {
@@ -78,7 +78,7 @@
     ],
     [
       "¿Qué es la TAE real del préstamo?",
-      "Es el coste anual efectivo de lo que pagas por el préstamo, incluyendo la comisión de apertura y, aquí, el seguro opcional. Suele ser mayor que el TIN porque la comisión y los seguros encarecen lo que recibes. Se calcula buscando el tipo que iguala las cuotas con el dinero neto que recibes."
+      "Es el coste anual efectivo de lo que pagas por el préstamo, incluyendo la comisión de apertura y, aquí, el seguro opcional. Suele ser mayor que el TIN (el tipo de interés nominal) porque la comisión y los seguros encarecen lo que recibes. Se calcula buscando el tipo que iguala las cuotas con el dinero neto que recibes."
     ],
     [
       "¿Qué rentabilidad debo poner?",

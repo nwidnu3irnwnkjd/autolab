@@ -3,7 +3,7 @@
   "title": "Coche nuevo o seminuevo: coste total a N años",
   "description": "Compara coche nuevo y seminuevo con tus datos: pérdida de valor, garantía, averías, financiación, año en que se igualan y precio máximo del seminuevo.",
   "h1": "Coche nuevo o seminuevo: ¿cuál sale más barato a N años?",
-  "lead": "El seminuevo sale más barato que el nuevo cuando lo que ahorras en pérdida de valor de los primeros años supera su mayor gasto en mantenimiento y averías, y el nuevo solo lo alcanza si el seminuevo es más viejo y lo conservas muchos años. Con los datos de ejemplo (nuevo de 25.000 €, seminuevo de 17.500 € y 3 años, 5 años de tenencia) el seminuevo sale unos 2.200 € más barato; con tus precios, la calculadora te da el año en que se cruzan las curvas y el precio del seminuevo a partir del cual deja de compensar.",
+  "lead": "El seminuevo sale más barato que el nuevo cuando lo que ahorras en pérdida de valor de los primeros años supera su mayor gasto en mantenimiento y averías. El nuevo solo lo alcanza si el seminuevo es más viejo y lo conservas muchos años. Con los datos de ejemplo (nuevo de 25.000 €, seminuevo de 17.500 € y 3 años, 5 años de tenencia) el seminuevo sale unos 2.200 € más barato. Con tus precios, la calculadora te da el año en que se cruzan los costes y el precio del seminuevo a partir del cual deja de compensar.",
   "veredicto": "El seminuevo sale más barato cuando el ahorro en pérdida de valor de los primeros años supera su mayor mantenimiento y sus averías esperadas, y el nuevo lo alcanza si el seminuevo es más viejo y lo conservas muchos años; la diferencia la marcan la depreciación de los primeros años y tu horizonte, y la calculadora te da el año de cruce y el precio máximo del seminuevo que compensa.",
   "tema": "coche",
   "inputs": [
@@ -71,11 +71,11 @@
     ],
     [
       "¿Qué pesa más, la depreciación o el mantenimiento?",
-      "Con los datos de ejemplo pesa más la pérdida de valor: el nuevo pierde 11.550 € en 5 años y el seminuevo 7.166 €, mientras que mantenimiento extra y averías suman bastante menos. Pero con un seminuevo más viejo y un horizonte largo la ventaja del seminuevo se reduce y puede invertirse. Por eso conviene probar tu horizonte."
+      "Con los datos de ejemplo pesa más la pérdida de valor: el nuevo pierde 11.550 € en 5 años y el seminuevo 7.166 €, mientras que mantenimiento extra y averías suman bastante menos. Pero con un seminuevo más viejo y un horizonte largo la ventaja del seminuevo se reduce y puede invertirse. Prueba con tu horizonte real."
     ],
     [
       "¿Cómo se calcula la pérdida de valor?",
-      "Es una estimación del modelo, no una cifra oficial ni una estadística: el nuevo pierde el porcentaje que tú pongas el primer año y un 10 % anual después; el seminuevo, un 10 % anual desde el primer año. Contrasta el valor de reventa con anuncios de tu modelo y edad, y edita el porcentaje del primer año."
+      "Es una estimación del modelo, no una cifra oficial: el nuevo pierde el porcentaje que tú pongas el primer año y un 10 % anual después; el seminuevo, un 10 % anual desde el primer año. Contrasta el valor de reventa con anuncios de tu modelo y edad, y edita el porcentaje del primer año."
     ],
     [
       "¿Cómo entran la garantía y las averías?",

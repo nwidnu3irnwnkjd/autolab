@@ -1,59 +1,78 @@
 {
+  "adoptar-o-comprar-perro-coste-anual": [
+    "seguro-mascota-merece-la-pena",
+    "seguro-hogar-con-o-sin-franquicia",
+    "suscripciones-cuanto-gasto-al-ano"
+  ],
+  "aire-acondicionado-inverter-o-ventilador-coste-verano": [
+    "luz-fija-o-indexada",
+    "cambiar-electrodomestico-antiguo-merece-la-pena",
+    "placas-solares-merece-la-pena"
+  ],
+  "alquilar-o-comprar": [
+    "cuanto-ahorrar-para-comprar-casa",
+    "reformar-o-mudarse",
+    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
+  ],
+  "amortizar-o-invertir": [
+    "amortizar-plazo-o-cuota",
+    "deposito-letras-o-fondo-monetario",
+    "hipoteca-mas-entrada-o-conservar-ahorros"
+  ],
+  "amortizar-plazo-o-cuota": [
+    "amortizar-o-invertir",
+    "hipoteca-fija-o-variable",
+    "subrogar-hipoteca-merece-la-pena"
+  ],
+  "autonomo-estimacion-directa-o-modulos": [
+    "autonomo-o-sociedad-limitada",
+    "autonomo-o-asalariado",
+    "cuota-autonomos-ingresos-reales-regularizacion"
+  ],
   "autonomo-o-asalariado": [
     "autonomo-o-sociedad-limitada",
     "cuota-autonomos-ingresos-reales-regularizacion",
     "autonomo-estimacion-directa-o-modulos"
   ],
-  "cuanto-ahorrar-para-comprar-casa": [
-    "alquilar-o-comprar",
-    "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
-    "hipoteca-fija-o-variable"
+  "autonomo-o-sociedad-limitada": [
+    "autonomo-o-asalariado",
+    "cuota-autonomos-ingresos-reales-regularizacion",
+    "autonomo-estimacion-directa-o-modulos"
   ],
-  "plan-pensiones-o-fondo-indexado": [
-    "jubilacion-activa-o-dejar-de-trabajar",
-    "traspasar-fondo-o-reembolsar-irpf",
-    "jubilacion-anticipada-o-demorada"
+  "bici-electrica-o-transporte-publico": [
+    "vivir-cerca-del-trabajo-o-mas-barato-lejos",
+    "coche-propio-o-carsharing-o-vtc",
+    "teletrabajo-o-oficina-coste-real"
   ],
-  "luz-fija-o-indexada": [
+  "caldera-reparar-o-cambiar": [
     "calefaccion-gas-aerotermia-electrica",
-    "placas-solares-merece-la-pena",
-    "potencia-contratada-luz-bajar-compensa"
+    "cambiar-ventanas-aislamiento-merece-la-pena",
+    "termo-electrico-o-calentador-gas-o-aerotermia-agua"
   ],
   "calefaccion-gas-aerotermia-electrica": [
     "caldera-reparar-o-cambiar",
     "luz-fija-o-indexada",
     "termo-electrico-o-calentador-gas-o-aerotermia-agua"
   ],
-  "cambiar-ventanas-aislamiento-merece-la-pena": [
-    "calefaccion-gas-aerotermia-electrica",
-    "caldera-reparar-o-cambiar",
-    "luz-fija-o-indexada"
+  "cambiar-de-operadora-compensa-permanencia": [
+    "fibra-y-movil-juntos-o-por-separado",
+    "suscripciones-cuanto-gasto-al-ano",
+    "movil-reacondicionado-o-nuevo"
   ],
   "cambiar-electrodomestico-antiguo-merece-la-pena": [
     "reparar-o-comprar-electrodomestico",
     "horas-valle-luz-lavadora-termo-cuanto-ahorro",
     "aire-acondicionado-inverter-o-ventilador-coste-verano"
   ],
-  "reparar-o-comprar-electrodomestico": [
-    "cambiar-electrodomestico-antiguo-merece-la-pena",
-    "impresora-tinta-o-laser-coste-por-pagina",
-    "contado-o-financiar"
+  "cambiar-ventanas-aislamiento-merece-la-pena": [
+    "calefaccion-gas-aerotermia-electrica",
+    "caldera-reparar-o-cambiar",
+    "luz-fija-o-indexada"
   ],
-  "comprar-coche-o-renting": [
-    "coche-nuevo-o-seminuevo",
-    "coche-segunda-mano-particular-o-concesionario",
-    "seguro-todo-riesgo-o-terceros"
-  ],
-  "diesel-gasolina-hibrido-electrico": [
-    "bici-electrica-o-transporte-publico",
-    "gasolinera-low-cost-compensa-desviarse",
-    "punto-de-carga-casa-con-o-sin-placas"
-  ],
-  "seguro-todo-riesgo-o-terceros": [
-    "comprar-coche-o-renting",
-    "coche-nuevo-o-seminuevo",
-    "seguro-mascota-merece-la-pena",
-    "diesel-gasolina-hibrido-electrico"
+  "capitalizar-paro-o-cobrarlo": [
+    "indemnizacion-despido-objetivo-o-improcedente-neto",
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "excedencia-o-reduccion-jornada"
   ],
   "coche-nuevo-o-seminuevo": [
     "coche-segunda-mano-particular-o-concesionario",
@@ -63,47 +82,92 @@
   "coche-propio-o-carsharing-o-vtc": [
     "bici-electrica-o-transporte-publico",
     "tren-avion-o-coche",
-    "gasolinera-low-cost-compensa-desviarse"
+    "kilometraje-y-dietas-exentas-irpf"
   ],
-  "bici-electrica-o-transporte-publico": [
-    "vivir-cerca-del-trabajo-o-mas-barato-lejos",
-    "coche-propio-o-carsharing-o-vtc",
+  "coche-segunda-mano-particular-o-concesionario": [
+    "coche-nuevo-o-seminuevo",
+    "comprar-coche-o-renting",
+    "seguro-todo-riesgo-o-terceros"
+  ],
+  "cocinar-en-casa-o-comer-fuera": [
+    "marca-blanca-o-marca-ahorro-anual",
+    "comedor-escolar-o-tupper",
     "teletrabajo-o-oficina-coste-real"
+  ],
+  "comedor-escolar-o-tupper": [
+    "cocinar-en-casa-o-comer-fuera",
+    "marca-blanca-o-marca-ahorro-anual",
+    "guarderia-cuidadora-o-reducir-jornada"
+  ],
+  "comparar-ofertas-de-trabajo-neto-real": [
+    "autonomo-o-asalariado",
+    "retencion-irpf-nomina-subir-o-no",
+    "kilometraje-y-dietas-exentas-irpf"
+  ],
+  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
+    "plan-pensiones-o-fondo-indexado",
+    "deposito-letras-o-fondo-monetario",
+    "traspasar-fondo-o-reembolsar-irpf"
+  ],
+  "comprar-coche-o-renting": [
+    "coche-nuevo-o-seminuevo",
+    "coche-segunda-mano-particular-o-concesionario",
+    "seguro-todo-riesgo-o-terceros"
+  ],
+  "comprar-o-alquilar-herramienta": [
+    "reparar-o-comprar-electrodomestico",
+    "contado-o-financiar",
+    "comprar-o-alquilar-trastero"
+  ],
+  "comprar-o-alquilar-trastero": [
+    "comprar-o-alquilar-herramienta",
+    "alquilar-o-comprar",
+    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
   ],
   "contado-o-financiar": [
     "portatil-o-movil-comprar-renting-o-financiar",
     "navidad-cuanto-gastar-sin-endeudarte",
     "universidad-publica-o-privada-o-master"
   ],
-  "guarderia-cuidadora-o-reducir-jornada": [
-    "excedencia-o-reduccion-jornada",
+  "cuanto-ahorrar-para-comprar-casa": [
+    "alquilar-o-comprar",
+    "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+    "hipoteca-fija-o-variable"
+  ],
+  "cuanto-cobro-de-paro-prestacion-desempleo": [
+    "capitalizar-paro-o-cobrarlo",
+    "finiquito-baja-voluntaria-vacaciones-preaviso",
+    "indemnizacion-despido-objetivo-o-improcedente-neto"
+  ],
+  "cuota-autonomos-ingresos-reales-regularizacion": [
+    "autonomo-o-asalariado",
+    "autonomo-estimacion-directa-o-modulos",
+    "autonomo-o-sociedad-limitada"
+  ],
+  "curso-online-bootcamp-o-fp-coste-y-retorno": [
+    "academia-idiomas-presencial-online-o-intensivo",
+    "comparar-ofertas-de-trabajo-neto-real",
+    "excedencia-o-reduccion-jornada"
+  ],
+  "declaracion-conjunta-o-individual": [
     "deduccion-maternidad-familia-numerosa",
+    "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+    "obligado-a-declarar-renta-dos-pagadores"
+  ],
+  "deduccion-maternidad-familia-numerosa": [
+    "declaracion-conjunta-o-individual",
+    "guarderia-cuidadora-o-reducir-jornada",
     "retribucion-flexible-me-conviene"
   ],
-  "universidad-publica-o-privada-o-master": [
-    "academia-idiomas-presencial-online-o-intensivo",
-    "guarderia-cuidadora-o-reducir-jornada",
-    "cuanto-ahorrar-para-comprar-casa"
+  "deposito-letras-o-fondo-monetario": [
+    "fondo-de-emergencia-cuantos-meses-necesito",
+    "plan-pensiones-o-fondo-indexado",
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
   ],
-  "placas-solares-merece-la-pena": [
-    "aire-acondicionado-inverter-o-ventilador-coste-verano",
-    "punto-de-carga-casa-con-o-sin-placas",
-    "cambiar-ventanas-aislamiento-merece-la-pena"
-  ],
-  "subrogar-hipoteca-merece-la-pena": [
-    "hipoteca-fija-o-variable",
-    "amortizar-plazo-o-cuota",
-    "amortizar-o-invertir"
-  ],
-  "hipoteca-fija-o-variable": [
-    "hipoteca-bonificada-o-sin-vinculaciones",
-    "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
-    "subrogar-hipoteca-merece-la-pena"
-  ],
-  "tren-avion-o-coche": [
-    "coche-propio-o-carsharing-o-vtc",
-    "hotel-o-apartamento-viaje-en-grupo",
-    "equipaje-y-asiento-avion-coste-real"
+  "diesel-gasolina-hibrido-electrico": [
+    "bici-electrica-o-transporte-publico",
+    "gasolinera-low-cost-compensa-desviarse",
+    "punto-de-carga-casa-con-o-sin-placas"
   ],
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
     "declaracion-conjunta-o-individual",
@@ -111,339 +175,280 @@
     "rescate-plan-pensiones-capital-o-renta",
     "obligado-a-declarar-renta-dos-pagadores"
   ],
-  "portatil-o-movil-comprar-renting-o-financiar": [
-    "contado-o-financiar",
-    "movil-reacondicionado-o-nuevo",
-    "pc-sobremesa-o-portatil-coste-a-5-anos"
-  ],
-  "teletrabajo-o-oficina-coste-real": [
-    "pc-sobremesa-o-portatil-coste-a-5-anos",
-    "impresora-tinta-o-laser-coste-por-pagina",
-    "cocinar-en-casa-o-comer-fuera"
-  ],
-  "fibra-y-movil-juntos-o-por-separado": [
-    "cambiar-de-operadora-compensa-permanencia",
-    "movil-reacondicionado-o-nuevo",
-    "suscripciones-cuanto-gasto-al-ano"
-  ],
-  "seguro-mascota-merece-la-pena": [
-    "seguro-hogar-con-o-sin-franquicia",
-    "seguro-salud-privado-merece-la-pena",
-    "adoptar-o-comprar-perro-coste-anual"
-  ],
-  "deposito-letras-o-fondo-monetario": [
-    "fondo-de-emergencia-cuantos-meses-necesito",
-    "plan-pensiones-o-fondo-indexado",
-    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
-  ],
-  "seguro-vida-hipoteca-banco-o-externo": [
-    "hipoteca-fija-o-variable",
-    "hipoteca-bonificada-o-sin-vinculaciones",
-    "subrogar-hipoteca-merece-la-pena"
-  ],
-  "seguro-salud-privado-merece-la-pena": [
-    "seguro-mascota-merece-la-pena",
-    "residencia-o-cuidador-a-domicilio",
-    "seguro-vida-hipoteca-banco-o-externo"
-  ],
-  "rescate-plan-pensiones-capital-o-renta": [
-    "plan-pensiones-o-fondo-indexado",
-    "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
-  ],
-  "declaracion-conjunta-o-individual": [
-    "deduccion-maternidad-familia-numerosa",
-    "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-    "obligado-a-declarar-renta-dos-pagadores"
-  ],
-  "amortizar-plazo-o-cuota": [
-    "amortizar-o-invertir",
-    "hipoteca-fija-o-variable",
-    "subrogar-hipoteca-merece-la-pena"
-  ],
-  "amortizar-o-invertir": [
-    "amortizar-plazo-o-cuota",
-    "deposito-letras-o-fondo-monetario",
-    "hipoteca-mas-entrada-o-conservar-ahorros"
-  ],
-  "jubilacion-anticipada-o-demorada": [
-    "plan-pensiones-o-fondo-indexado",
-    "rescate-plan-pensiones-capital-o-renta",
-    "jubilacion-activa-o-dejar-de-trabajar"
-  ],
-  "comprar-o-alquilar-herramienta": [
-    "reparar-o-comprar-electrodomestico",
-    "contado-o-financiar",
-    "comprar-o-alquilar-trastero"
+  "equipaje-y-asiento-avion-coste-real": [
+    "tren-avion-o-coche",
+    "hotel-o-apartamento-viaje-en-grupo",
+    "contado-o-financiar"
   ],
   "excedencia-o-reduccion-jornada": [
     "guarderia-cuidadora-o-reducir-jornada",
     "permiso-nacimiento-cuanto-cobro-y-como-repartir",
     "cuanto-cobro-de-paro-prestacion-desempleo"
   ],
-  "caldera-reparar-o-cambiar": [
-    "calefaccion-gas-aerotermia-electrica",
-    "cambiar-ventanas-aislamiento-merece-la-pena",
-    "termo-electrico-o-calentador-gas-o-aerotermia-agua"
-  ],
-  "punto-de-carga-casa-con-o-sin-placas": [
-    "placas-solares-merece-la-pena",
-    "diesel-gasolina-hibrido-electrico",
-    "luz-fija-o-indexada"
-  ],
-  "navidad-cuanto-gastar-sin-endeudarte": [
-    "fondo-de-emergencia-cuantos-meses-necesito",
-    "contado-o-financiar",
-    "hotel-o-apartamento-viaje-en-grupo"
-  ],
-  "comprar-o-alquilar-trastero": [
-    "comprar-o-alquilar-herramienta",
-    "alquilar-o-comprar",
-    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
-  ],
-  "comparar-ofertas-de-trabajo-neto-real": [
-    "autonomo-o-asalariado",
-    "retencion-irpf-nomina-subir-o-no",
-    "retribucion-flexible-me-conviene"
-  ],
-  "reformar-o-mudarse": [
-    "alquilar-o-comprar",
-    "venta-vivienda-plusvalia-irpf-exencion",
-    "mudanza-empresa-o-furgoneta"
-  ],
-  "hotel-o-apartamento-viaje-en-grupo": [
-    "tren-avion-o-coche",
-    "contado-o-financiar",
-    "equipaje-y-asiento-avion-coste-real"
-  ],
-  "autonomo-o-sociedad-limitada": [
-    "autonomo-o-asalariado",
-    "cuota-autonomos-ingresos-reales-regularizacion",
-    "autonomo-estimacion-directa-o-modulos"
-  ],
-  "alquilar-o-comprar": [
-    "cuanto-ahorrar-para-comprar-casa",
-    "reformar-o-mudarse",
-    "garaje-comprar-alquilar-o-aparcar-en-la-calle"
-  ],
-  "capitalizar-paro-o-cobrarlo": [
-    "indemnizacion-despido-objetivo-o-improcedente-neto",
-    "cuanto-cobro-de-paro-prestacion-desempleo",
-    "excedencia-o-reduccion-jornada"
-  ],
-  "suscripciones-cuanto-gasto-al-ano": [
-    "marca-blanca-o-marca-ahorro-anual",
-    "gimnasio-o-entrenar-en-casa",
-    "cambiar-de-operadora-compensa-permanencia"
-  ],
-  "movil-reacondicionado-o-nuevo": [
-    "portatil-o-movil-comprar-renting-o-financiar",
-    "fibra-y-movil-juntos-o-por-separado",
-    "reparar-o-comprar-electrodomestico"
-  ],
-  "obligado-a-declarar-renta-dos-pagadores": [
-    "declaracion-conjunta-o-individual",
-    "retencion-irpf-nomina-subir-o-no",
-    "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
-  ],
-  "gimnasio-o-entrenar-en-casa": [
-    "suscripciones-cuanto-gasto-al-ano",
-    "comprar-o-alquilar-herramienta",
-    "teletrabajo-o-oficina-coste-real"
-  ],
-  "cocinar-en-casa-o-comer-fuera": [
-    "marca-blanca-o-marca-ahorro-anual",
-    "comedor-escolar-o-tupper",
-    "teletrabajo-o-oficina-coste-real"
-  ],
-  "irpf-alquilar-vivienda-rendimiento-neto": [
-    "declaracion-conjunta-o-individual",
-    "venta-vivienda-plusvalia-irpf-exencion",
-    "obligado-a-declarar-renta-dos-pagadores"
-  ],
-  "mudanza-empresa-o-furgoneta": [
-    "reformar-o-mudarse",
-    "alquilar-o-comprar",
-    "comprar-o-alquilar-trastero"
-  ],
-  "equipaje-y-asiento-avion-coste-real": [
-    "tren-avion-o-coche",
-    "hotel-o-apartamento-viaje-en-grupo",
-    "contado-o-financiar"
-  ],
-  "marca-blanca-o-marca-ahorro-anual": [
-    "cocinar-en-casa-o-comer-fuera",
-    "comedor-escolar-o-tupper",
-    "fondo-de-emergencia-cuantos-meses-necesito"
-  ],
-  "residencia-o-cuidador-a-domicilio": [
-    "excedencia-o-reduccion-jornada",
-    "jubilacion-anticipada-o-demorada",
-    "pension-viudedad-cuanto-cobro"
-  ],
-  "aire-acondicionado-inverter-o-ventilador-coste-verano": [
-    "luz-fija-o-indexada",
-    "cambiar-electrodomestico-antiguo-merece-la-pena",
-    "placas-solares-merece-la-pena"
-  ],
-  "fondo-de-emergencia-cuantos-meses-necesito": [
-    "deposito-letras-o-fondo-monetario",
-    "seguro-hogar-con-o-sin-franquicia",
-    "autonomo-estimacion-directa-o-modulos"
-  ],
-  "venta-vivienda-plusvalia-irpf-exencion": [
-    "reformar-o-mudarse",
-    "irpf-alquilar-vivienda-rendimiento-neto",
-    "alquilar-o-comprar"
-  ],
-  "deduccion-maternidad-familia-numerosa": [
-    "declaracion-conjunta-o-individual",
-    "guarderia-cuidadora-o-reducir-jornada",
-    "retribucion-flexible-me-conviene"
-  ],
-  "seguro-hogar-con-o-sin-franquicia": [
-    "fondo-de-emergencia-cuantos-meses-necesito",
-    "seguro-mascota-merece-la-pena",
-    "adoptar-o-comprar-perro-coste-anual"
-  ],
-  "gasolinera-low-cost-compensa-desviarse": [
-    "diesel-gasolina-hibrido-electrico",
-    "coche-propio-o-carsharing-o-vtc",
-    "tren-avion-o-coche"
-  ],
-  "coche-segunda-mano-particular-o-concesionario": [
-    "coche-nuevo-o-seminuevo",
-    "comprar-coche-o-renting",
-    "seguro-todo-riesgo-o-terceros"
-  ],
-  "autonomo-estimacion-directa-o-modulos": [
-    "autonomo-o-sociedad-limitada",
-    "autonomo-o-asalariado",
-    "cuota-autonomos-ingresos-reales-regularizacion"
-  ],
-  "cambiar-de-operadora-compensa-permanencia": [
-    "fibra-y-movil-juntos-o-por-separado",
-    "suscripciones-cuanto-gasto-al-ano",
-    "movil-reacondicionado-o-nuevo"
-  ],
-  "impresora-tinta-o-laser-coste-por-pagina": [
-    "teletrabajo-o-oficina-coste-real",
-    "pc-sobremesa-o-portatil-coste-a-5-anos",
-    "reparar-o-comprar-electrodomestico"
-  ],
-  "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
-    "calefaccion-gas-aerotermia-electrica",
-    "caldera-reparar-o-cambiar",
-    "horas-valle-luz-lavadora-termo-cuanto-ahorro"
-  ],
-  "adoptar-o-comprar-perro-coste-anual": [
-    "seguro-mascota-merece-la-pena",
-    "seguro-hogar-con-o-sin-franquicia",
+  "fibra-y-movil-juntos-o-por-separado": [
+    "cambiar-de-operadora-compensa-permanencia",
+    "movil-reacondicionado-o-nuevo",
     "suscripciones-cuanto-gasto-al-ano"
-  ],
-  "potencia-contratada-luz-bajar-compensa": [
-    "luz-fija-o-indexada",
-    "horas-valle-luz-lavadora-termo-cuanto-ahorro",
-    "placas-solares-merece-la-pena"
-  ],
-  "horas-valle-luz-lavadora-termo-cuanto-ahorro": [
-    "luz-fija-o-indexada",
-    "termo-electrico-o-calentador-gas-o-aerotermia-agua",
-    "potencia-contratada-luz-bajar-compensa"
-  ],
-  "hipoteca-bonificada-o-sin-vinculaciones": [
-    "seguro-vida-hipoteca-banco-o-externo",
-    "hipoteca-fija-o-variable",
-    "subrogar-hipoteca-merece-la-pena"
-  ],
-  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
-    "cuanto-ahorrar-para-comprar-casa",
-    "amortizar-plazo-o-cuota",
-    "hipoteca-mas-entrada-o-conservar-ahorros"
-  ],
-  "cuanto-cobro-de-paro-prestacion-desempleo": [
-    "capitalizar-paro-o-cobrarlo",
-    "finiquito-baja-voluntaria-vacaciones-preaviso",
-    "indemnizacion-despido-objetivo-o-improcedente-neto"
-  ],
-  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
-    "plan-pensiones-o-fondo-indexado",
-    "deposito-letras-o-fondo-monetario",
-    "traspasar-fondo-o-reembolsar-irpf"
-  ],
-  "pension-viudedad-cuanto-cobro": [
-    "jubilacion-anticipada-o-demorada",
-    "rescate-plan-pensiones-capital-o-renta",
-    "jubilacion-activa-o-dejar-de-trabajar"
-  ],
-  "traspasar-fondo-o-reembolsar-irpf": [
-    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
-    "plan-pensiones-o-fondo-indexado",
-    "amortizar-o-invertir"
-  ],
-  "vivir-cerca-del-trabajo-o-mas-barato-lejos": [
-    "bici-electrica-o-transporte-publico",
-    "alquilar-o-comprar",
-    "teletrabajo-o-oficina-coste-real"
-  ],
-  "hipoteca-mas-entrada-o-conservar-ahorros": [
-    "amortizar-o-invertir",
-    "amortizar-plazo-o-cuota",
-    "hipoteca-20-25-o-30-anos-cuota-vs-intereses"
-  ],
-  "retencion-irpf-nomina-subir-o-no": [
-    "retribucion-flexible-me-conviene",
-    "declaracion-conjunta-o-individual",
-    "comparar-ofertas-de-trabajo-neto-real"
-  ],
-  "cuota-autonomos-ingresos-reales-regularizacion": [
-    "autonomo-o-asalariado",
-    "autonomo-estimacion-directa-o-modulos",
-    "autonomo-o-sociedad-limitada"
-  ],
-  "jubilacion-activa-o-dejar-de-trabajar": [
-    "jubilacion-anticipada-o-demorada",
-    "plan-pensiones-o-fondo-indexado",
-    "pension-viudedad-cuanto-cobro"
-  ],
-  "pc-sobremesa-o-portatil-coste-a-5-anos": [
-    "teletrabajo-o-oficina-coste-real",
-    "reparar-o-comprar-electrodomestico",
-    "impresora-tinta-o-laser-coste-por-pagina"
-  ],
-  "comedor-escolar-o-tupper": [
-    "cocinar-en-casa-o-comer-fuera",
-    "marca-blanca-o-marca-ahorro-anual",
-    "guarderia-cuidadora-o-reducir-jornada"
-  ],
-  "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
-    "comprar-o-alquilar-trastero",
-    "alquilar-o-comprar",
-    "coche-segunda-mano-particular-o-concesionario"
-  ],
-  "curso-online-bootcamp-o-fp-coste-y-retorno": [
-    "academia-idiomas-presencial-online-o-intensivo",
-    "comparar-ofertas-de-trabajo-neto-real",
-    "excedencia-o-reduccion-jornada"
-  ],
-  "indemnizacion-despido-objetivo-o-improcedente-neto": [
-    "cuanto-cobro-de-paro-prestacion-desempleo",
-    "capitalizar-paro-o-cobrarlo",
-    "finiquito-baja-voluntaria-vacaciones-preaviso"
-  ],
-  "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
-    "deduccion-maternidad-familia-numerosa",
-    "guarderia-cuidadora-o-reducir-jornada",
-    "excedencia-o-reduccion-jornada"
   ],
   "finiquito-baja-voluntaria-vacaciones-preaviso": [
     "indemnizacion-despido-objetivo-o-improcedente-neto",
     "cuanto-cobro-de-paro-prestacion-desempleo",
     "comparar-ofertas-de-trabajo-neto-real"
   ],
+  "fondo-de-emergencia-cuantos-meses-necesito": [
+    "deposito-letras-o-fondo-monetario",
+    "seguro-hogar-con-o-sin-franquicia",
+    "autonomo-estimacion-directa-o-modulos"
+  ],
+  "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
+    "comprar-o-alquilar-trastero",
+    "alquilar-o-comprar",
+    "coche-segunda-mano-particular-o-concesionario"
+  ],
+  "gasolinera-low-cost-compensa-desviarse": [
+    "diesel-gasolina-hibrido-electrico",
+    "coche-propio-o-carsharing-o-vtc",
+    "tren-avion-o-coche"
+  ],
+  "gimnasio-o-entrenar-en-casa": [
+    "suscripciones-cuanto-gasto-al-ano",
+    "comprar-o-alquilar-herramienta",
+    "teletrabajo-o-oficina-coste-real"
+  ],
+  "guarderia-cuidadora-o-reducir-jornada": [
+    "excedencia-o-reduccion-jornada",
+    "deduccion-maternidad-familia-numerosa",
+    "retribucion-flexible-me-conviene"
+  ],
+  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": [
+    "cuanto-ahorrar-para-comprar-casa",
+    "amortizar-plazo-o-cuota",
+    "hipoteca-mas-entrada-o-conservar-ahorros"
+  ],
+  "hipoteca-bonificada-o-sin-vinculaciones": [
+    "seguro-vida-hipoteca-banco-o-externo",
+    "hipoteca-fija-o-variable",
+    "subrogar-hipoteca-merece-la-pena"
+  ],
+  "hipoteca-fija-o-variable": [
+    "hipoteca-bonificada-o-sin-vinculaciones",
+    "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+    "subrogar-hipoteca-merece-la-pena"
+  ],
+  "hipoteca-mas-entrada-o-conservar-ahorros": [
+    "amortizar-o-invertir",
+    "amortizar-plazo-o-cuota",
+    "hipoteca-20-25-o-30-anos-cuota-vs-intereses"
+  ],
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro": [
+    "luz-fija-o-indexada",
+    "termo-electrico-o-calentador-gas-o-aerotermia-agua",
+    "potencia-contratada-luz-bajar-compensa"
+  ],
+  "hotel-o-apartamento-viaje-en-grupo": [
+    "tren-avion-o-coche",
+    "contado-o-financiar",
+    "equipaje-y-asiento-avion-coste-real"
+  ],
+  "impresora-tinta-o-laser-coste-por-pagina": [
+    "teletrabajo-o-oficina-coste-real",
+    "pc-sobremesa-o-portatil-coste-a-5-anos",
+    "reparar-o-comprar-electrodomestico"
+  ],
+  "indemnizacion-despido-objetivo-o-improcedente-neto": [
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "capitalizar-paro-o-cobrarlo",
+    "finiquito-baja-voluntaria-vacaciones-preaviso"
+  ],
+  "irpf-alquilar-vivienda-rendimiento-neto": [
+    "declaracion-conjunta-o-individual",
+    "venta-vivienda-plusvalia-irpf-exencion",
+    "obligado-a-declarar-renta-dos-pagadores"
+  ],
+  "jubilacion-activa-o-dejar-de-trabajar": [
+    "jubilacion-anticipada-o-demorada",
+    "plan-pensiones-o-fondo-indexado",
+    "pension-viudedad-cuanto-cobro"
+  ],
+  "jubilacion-anticipada-o-demorada": [
+    "plan-pensiones-o-fondo-indexado",
+    "rescate-plan-pensiones-capital-o-renta",
+    "jubilacion-activa-o-dejar-de-trabajar"
+  ],
+  "kilometraje-y-dietas-exentas-irpf": [
+    "coche-propio-o-carsharing-o-vtc",
+    "retencion-irpf-nomina-subir-o-no",
+    "comparar-ofertas-de-trabajo-neto-real"
+  ],
+  "luz-fija-o-indexada": [
+    "calefaccion-gas-aerotermia-electrica",
+    "placas-solares-merece-la-pena",
+    "potencia-contratada-luz-bajar-compensa"
+  ],
+  "marca-blanca-o-marca-ahorro-anual": [
+    "cocinar-en-casa-o-comer-fuera",
+    "comedor-escolar-o-tupper",
+    "fondo-de-emergencia-cuantos-meses-necesito"
+  ],
+  "movil-reacondicionado-o-nuevo": [
+    "portatil-o-movil-comprar-renting-o-financiar",
+    "fibra-y-movil-juntos-o-por-separado",
+    "reparar-o-comprar-electrodomestico"
+  ],
+  "mudanza-empresa-o-furgoneta": [
+    "reformar-o-mudarse",
+    "alquilar-o-comprar",
+    "comprar-o-alquilar-trastero"
+  ],
+  "navidad-cuanto-gastar-sin-endeudarte": [
+    "fondo-de-emergencia-cuantos-meses-necesito",
+    "contado-o-financiar",
+    "hotel-o-apartamento-viaje-en-grupo"
+  ],
+  "obligado-a-declarar-renta-dos-pagadores": [
+    "declaracion-conjunta-o-individual",
+    "retencion-irpf-nomina-subir-o-no",
+    "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+  ],
+  "pc-sobremesa-o-portatil-coste-a-5-anos": [
+    "teletrabajo-o-oficina-coste-real",
+    "reparar-o-comprar-electrodomestico",
+    "impresora-tinta-o-laser-coste-por-pagina"
+  ],
+  "pension-viudedad-cuanto-cobro": [
+    "jubilacion-anticipada-o-demorada",
+    "rescate-plan-pensiones-capital-o-renta",
+    "jubilacion-activa-o-dejar-de-trabajar"
+  ],
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
+    "deduccion-maternidad-familia-numerosa",
+    "guarderia-cuidadora-o-reducir-jornada",
+    "excedencia-o-reduccion-jornada"
+  ],
+  "placas-solares-merece-la-pena": [
+    "aire-acondicionado-inverter-o-ventilador-coste-verano",
+    "punto-de-carga-casa-con-o-sin-placas",
+    "cambiar-ventanas-aislamiento-merece-la-pena"
+  ],
+  "plan-pensiones-o-fondo-indexado": [
+    "jubilacion-activa-o-dejar-de-trabajar",
+    "traspasar-fondo-o-reembolsar-irpf",
+    "jubilacion-anticipada-o-demorada"
+  ],
+  "portatil-o-movil-comprar-renting-o-financiar": [
+    "contado-o-financiar",
+    "movil-reacondicionado-o-nuevo",
+    "pc-sobremesa-o-portatil-coste-a-5-anos"
+  ],
+  "potencia-contratada-luz-bajar-compensa": [
+    "luz-fija-o-indexada",
+    "horas-valle-luz-lavadora-termo-cuanto-ahorro",
+    "placas-solares-merece-la-pena"
+  ],
+  "punto-de-carga-casa-con-o-sin-placas": [
+    "placas-solares-merece-la-pena",
+    "diesel-gasolina-hibrido-electrico",
+    "luz-fija-o-indexada"
+  ],
+  "reformar-o-mudarse": [
+    "alquilar-o-comprar",
+    "venta-vivienda-plusvalia-irpf-exencion",
+    "mudanza-empresa-o-furgoneta"
+  ],
+  "reparar-o-comprar-electrodomestico": [
+    "cambiar-electrodomestico-antiguo-merece-la-pena",
+    "impresora-tinta-o-laser-coste-por-pagina",
+    "contado-o-financiar"
+  ],
+  "rescate-plan-pensiones-capital-o-renta": [
+    "plan-pensiones-o-fondo-indexado",
+    "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
+  ],
+  "residencia-o-cuidador-a-domicilio": [
+    "excedencia-o-reduccion-jornada",
+    "jubilacion-anticipada-o-demorada",
+    "pension-viudedad-cuanto-cobro"
+  ],
+  "retencion-irpf-nomina-subir-o-no": [
+    "retribucion-flexible-me-conviene",
+    "declaracion-conjunta-o-individual",
+    "comparar-ofertas-de-trabajo-neto-real"
+  ],
   "retribucion-flexible-me-conviene": [
     "retencion-irpf-nomina-subir-o-no",
     "comparar-ofertas-de-trabajo-neto-real",
     "deduccion-maternidad-familia-numerosa"
+  ],
+  "seguro-hogar-con-o-sin-franquicia": [
+    "fondo-de-emergencia-cuantos-meses-necesito",
+    "seguro-mascota-merece-la-pena",
+    "adoptar-o-comprar-perro-coste-anual"
+  ],
+  "seguro-mascota-merece-la-pena": [
+    "seguro-hogar-con-o-sin-franquicia",
+    "seguro-salud-privado-merece-la-pena",
+    "adoptar-o-comprar-perro-coste-anual"
+  ],
+  "seguro-salud-privado-merece-la-pena": [
+    "seguro-mascota-merece-la-pena",
+    "residencia-o-cuidador-a-domicilio",
+    "seguro-vida-hipoteca-banco-o-externo"
+  ],
+  "seguro-todo-riesgo-o-terceros": [
+    "comprar-coche-o-renting",
+    "coche-nuevo-o-seminuevo",
+    "seguro-mascota-merece-la-pena",
+    "diesel-gasolina-hibrido-electrico"
+  ],
+  "seguro-vida-hipoteca-banco-o-externo": [
+    "hipoteca-fija-o-variable",
+    "hipoteca-bonificada-o-sin-vinculaciones",
+    "subrogar-hipoteca-merece-la-pena"
+  ],
+  "subrogar-hipoteca-merece-la-pena": [
+    "hipoteca-fija-o-variable",
+    "amortizar-plazo-o-cuota",
+    "amortizar-o-invertir"
+  ],
+  "suscripciones-cuanto-gasto-al-ano": [
+    "marca-blanca-o-marca-ahorro-anual",
+    "gimnasio-o-entrenar-en-casa",
+    "cambiar-de-operadora-compensa-permanencia"
+  ],
+  "teletrabajo-o-oficina-coste-real": [
+    "pc-sobremesa-o-portatil-coste-a-5-anos",
+    "impresora-tinta-o-laser-coste-por-pagina",
+    "cocinar-en-casa-o-comer-fuera"
+  ],
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
+    "calefaccion-gas-aerotermia-electrica",
+    "caldera-reparar-o-cambiar",
+    "horas-valle-luz-lavadora-termo-cuanto-ahorro"
+  ],
+  "traspasar-fondo-o-reembolsar-irpf": [
+    "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+    "plan-pensiones-o-fondo-indexado",
+    "amortizar-o-invertir"
+  ],
+  "tren-avion-o-coche": [
+    "coche-propio-o-carsharing-o-vtc",
+    "hotel-o-apartamento-viaje-en-grupo",
+    "equipaje-y-asiento-avion-coste-real"
+  ],
+  "universidad-publica-o-privada-o-master": [
+    "academia-idiomas-presencial-online-o-intensivo",
+    "guarderia-cuidadora-o-reducir-jornada",
+    "cuanto-ahorrar-para-comprar-casa"
+  ],
+  "venta-vivienda-plusvalia-irpf-exencion": [
+    "reformar-o-mudarse",
+    "irpf-alquilar-vivienda-rendimiento-neto",
+    "alquilar-o-comprar"
+  ],
+  "vivir-cerca-del-trabajo-o-mas-barato-lejos": [
+    "bici-electrica-o-transporte-publico",
+    "alquilar-o-comprar",
+    "teletrabajo-o-oficina-coste-real"
   ]
 }

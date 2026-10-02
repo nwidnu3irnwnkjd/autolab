@@ -87,7 +87,7 @@
  "coche-propio-o-carsharing-o-vtc": [
   "bici-electrica-o-transporte-publico",
   "tren-avion-o-coche",
-  "gasolinera-low-cost-compensa-desviarse"
+  "kilometraje-y-dietas-exentas-irpf"
  ],
  "coche-segunda-mano-particular-o-concesionario": [
   "coche-nuevo-o-seminuevo",
@@ -107,7 +107,7 @@
  "comparar-ofertas-de-trabajo-neto-real": [
   "autonomo-o-asalariado",
   "retencion-irpf-nomina-subir-o-no",
-  "retribucion-flexible-me-conviene"
+  "kilometraje-y-dietas-exentas-irpf"
  ],
  "compensar-perdidas-ganancias-irpf-antes-fin-de-ano": [
   "plan-pensiones-o-fondo-indexado",
@@ -278,6 +278,11 @@
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta",
   "jubilacion-activa-o-dejar-de-trabajar"
+ ],
+ "kilometraje-y-dietas-exentas-irpf": [
+  "coche-propio-o-carsharing-o-vtc",
+  "retencion-irpf-nomina-subir-o-no",
+  "comparar-ofertas-de-trabajo-neto-real"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",

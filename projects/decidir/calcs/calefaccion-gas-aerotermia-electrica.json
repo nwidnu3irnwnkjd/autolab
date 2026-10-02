@@ -3,7 +3,7 @@
   "title": "Calefacción: gas, aerotermia o eléctrica, cuál es más barata",
   "description": "Compara el coste total en varios años de calefacción de gas, aerotermia o eléctrica según tu zona, aislamiento y tarifas, y cuándo amortizas la aerotermia.",
   "h1": "Calefacción de gas, aerotermia o eléctrica: ¿cuál sale más barata?",
-  "lead": "Compara el coste total de calentar tu vivienda en España con caldera de gas, aerotermia o emisores eléctricos durante los años que vayas a usarla, con tu zona climática, aislamiento y tarifas.",
+  "lead": "La aerotermia suele ser la calefacción más barata de usar, pero su mayor instalación solo se compensa si gastas bastante calefacción y la usas varios años. Esta calculadora compara el coste total de caldera de gas, aerotermia o emisores eléctricos durante esos años, con tu zona climática, aislamiento y tarifas.",
   "veredicto": "La aerotermia suele ser la más barata de usar, pero solo compensa su mayor instalación si la vivienda gasta bastante calefacción y la usas varios años; la eléctrica directa es barata de instalar y cara de mantener.",
   "tema": "energia",
   "inputs": [
@@ -190,11 +190,11 @@
   "faqs": [
     [
       "¿Qué calefacción sale más barata: gas, aerotermia o eléctrica?",
-      "Depende de la inversión inicial, de los años que vayas a usarla y de los precios del gas y la electricidad. La aerotermia suele gastar mucha menos energía por su alto rendimiento, pero cuesta más de instalar; los emisores eléctricos son baratos de instalar y caros de usar. Esta calculadora lo compara con tus datos."
+      "Depende de la inversión inicial, de los años que vayas a usarla y de los precios del gas y la electricidad en tu factura. La aerotermia suele gastar mucha menos energía por su alto rendimiento, pero cuesta más de instalar; los emisores eléctricos son baratos de instalar y caros de usar. Esta calculadora lo compara con tus datos."
     ],
     [
       "¿En cuántos años se amortiza la aerotermia frente al gas?",
-      "Se divide el sobrecoste de instalación (después de ayudas) entre el ahorro anual en energía, mantenimiento y términos fijos. Si no ahorra cada año, no se amortiza. El resultado cambia mucho con el precio de la electricidad y con el SCOP real de tu equipo."
+      "Se calcula dividiendo el sobrecoste de instalación (después de ayudas) entre el ahorro anual en energía, mantenimiento y términos fijos. Si no ahorra cada año, no se amortiza. El resultado cambia mucho con el precio de la electricidad y con el SCOP real de tu equipo."
     ],
     [
       "¿Qué es el SCOP de una aerotermia?",

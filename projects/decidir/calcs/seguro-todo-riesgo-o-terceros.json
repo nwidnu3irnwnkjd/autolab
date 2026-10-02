@@ -3,7 +3,7 @@
   "title": "Seguro de coche: todo riesgo o terceros",
   "description": "Calcula si te compensa el todo riesgo o los terceros según el valor de tu coche, la diferencia de prima y la franquicia, y desde qué año deja de compensar.",
   "h1": "Seguro de coche: ¿todo riesgo o terceros según lo que vale tu coche?",
-  "lead": "El todo riesgo compensa mientras la pérdida que te cubre supere la sobreprima que pagas; a medida que el coche se deprecia, deja de compensar. Calcula en qué año te pasa con tus números.",
+  "lead": "El todo riesgo compensa mientras la pérdida media que te cubre cada año supere la sobreprima que pagas por él; a medida que el coche se deprecia, deja de compensar. Calcula en qué año ocurre con tus números.",
   "veredicto": "El todo riesgo compensa mientras el valor del coche sea varias veces la diferencia de prima con terceros; al depreciarse el coche, cuesta más de lo que recupera. Depende de tu perfil de conducción y de tu capacidad para asumir una reparación.",
   "tema": "coche",
   "inputs": [
@@ -71,7 +71,7 @@
     ],
     [
       "¿Qué es el valor venal?",
-      "Es el valor de mercado de tu coche en este momento, el que suele usar la aseguradora para indemnizar si hay pérdida total. Puedes consultarlo en guías de precios de segunda mano y debes ponerlo tú: esta página no inventa cifras."
+      "Es el valor de mercado de tu coche en este momento, el que suele usar la aseguradora para indemnizar si hay pérdida total. Consúltalo en guías de precios de segunda mano y escríbelo tú: esta página no inventa cifras."
     ],
     [
       "¿Qué probabilidad de siniestro debo poner?",

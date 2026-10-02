@@ -3,7 +3,7 @@
   "title": "Luz: tarifa fija o PVPC, ¿cuál te sale más barata?",
   "description": "Compara tu tarifa fija con el PVPC (Península y Baleares, hasta 10 kW) con el precio de Red Eléctrica: coste anual con impuestos y precio de equilibrio.",
   "h1": "Tarifa de luz: precio fijo o indexada (PVPC)",
-  "lead": "Una tarifa fija compensa si el precio de su energía queda por debajo del punto de equilibrio con el PVPC, que depende de tu consumo y de a qué horas lo haces; el PVPC compensa si consumes sobre todo en horas valle y llano (la ventaja del valle viene sobre todo de peajes y cargos) o si el mercado se abarata. Con el precio de septiembre, el mes más caro del año, suele ganar la fija; con la media de 12 meses el resultado queda casi empatado. Compara tu oferta con el PVPC con tus datos.",
+  "lead": "Una tarifa fija compensa si el precio de su energía queda por debajo del punto de equilibrio con el PVPC, que depende de tu consumo y de a qué horas lo haces. El PVPC compensa si consumes sobre todo en horas valle y llano (la ventaja del valle viene sobre todo de peajes y cargos) o si el mercado se abarata. Con el precio de septiembre, el mes más caro del año, suele ganar la fija; con la media de 12 meses el resultado queda casi empatado. Compara tu oferta con el PVPC usando tus datos.",
   "veredicto": "La tarifa fija compensa si el precio de su energía queda por debajo del punto de equilibrio con el PVPC, que depende de tu perfil de consumo por horas y del precio medio del mercado; como el PVPC varía cada hora y no se puede fijar, el resultado es una estimación con un perfil de consumo, no una previsión.",
   "tema": "energia",
   "inputs": [
@@ -94,7 +94,7 @@
     ],
     [
       "¿Qué es el PVPC y cómo se calcula?",
-      "Es el precio voluntario para el pequeño consumidor, la tarifa regulada de las comercializadoras de referencia. Su energía se fija hora a hora: parte del precio del mercado diario e intradiario (peso del 0,45) y de una cesta de futuros (peso del 0,55), según el Real Decreto 216/2014, más peajes y cargos. Red Eléctrica publica los precios de cada día antes de las 20:15; por eso no se puede fijar de antemano."
+      "Es el precio voluntario para el pequeño consumidor, la tarifa regulada de las comercializadoras de referencia. Su energía se fija hora a hora. Parte del precio del mercado diario e intradiario (peso del 0,45) y de una cesta de futuros (peso del 0,55), según el Real Decreto 216/2014, más peajes y cargos. Red Eléctrica publica los precios de cada día antes de las 20:15; por eso no se puede fijar de antemano."
     ],
     [
       "¿Qué impuestos lleva la factura de la luz?",

@@ -1,0 +1,305 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: 8.000 km a 0,26 con coche de 0,17 €/km, 40 días sin pernocta y 10 con, dieta de 40 € (todo el km exento, la dieta sin pernocta pasa de 26,67)",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 40,
+    "diasCon": 10,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 1,
+    "cobradoKm": 2080.0,
+    "exentoKm": 2080.0,
+    "tribKm": 0.0,
+    "exentoTotal": 3846.8,
+    "tribTotal": 533.2,
+    "ssExtra": 34.658,
+    "irpfExtra": 149.5626,
+    "cargaExtra": 184.2206,
+    "costeCoche": 1360.0,
+    "netoCoche": 720.0,
+    "netoDietas": 1815.7794,
+    "pagoEq": 0.17,
+    "ahorroIRPF": 1079.0274,
+    "ahorroSS": 250.042,
+    "ganNum": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde km: cobras justo 0,26 €/km y el coche te cuesta 0,26: empate, sin nada tributable",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.26,
+    "costekm": 0.26,
+    "peajes": 300,
+    "diasSin": 0,
+    "diasCon": 0,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 3,
+    "cobradoKm": 2080.0,
+    "exentoKm": 2080.0,
+    "tribKm": 0.0,
+    "exentoTotal": 2380.0,
+    "tribTotal": 0.0,
+    "ssExtra": 0.0,
+    "irpfExtra": 0.0,
+    "cargaExtra": 0.0,
+    "costeCoche": 2080.0,
+    "netoCoche": 0.0,
+    "netoDietas": 0.0,
+    "pagoEq": 0.26,
+    "ahorroIRPF": 667.59,
+    "ahorroSS": 154.7,
+    "ganNum": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "pagas 0,40 €/km: lo que pasa de 0,26 tributa (30 %) y aun así compensa",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.4,
+    "costekm": 0.3,
+    "peajes": 0,
+    "diasSin": 0,
+    "diasCon": 0,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 2,
+    "cobradoKm": 3200.0,
+    "exentoKm": 2080.0,
+    "tribKm": 1120.0,
+    "exentoTotal": 2080.0,
+    "tribTotal": 1120.0,
+    "ssExtra": 72.8,
+    "irpfExtra": 314.16,
+    "cargaExtra": 386.96,
+    "costeCoche": 2400.0,
+    "netoCoche": 413.04,
+    "netoDietas": 0.0,
+    "pagoEq": 0.3211,
+    "ahorroIRPF": 583.44,
+    "ahorroSS": 135.2,
+    "ganNum": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "no compensa: te pagan 0,10 €/km y el coche cuesta 0,17",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.1,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 0,
+    "diasCon": 0,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 4,
+    "cobradoKm": 800.0,
+    "exentoKm": 800.0,
+    "tribKm": 0.0,
+    "exentoTotal": 1100.0,
+    "tribTotal": 0.0,
+    "ssExtra": 0.0,
+    "irpfExtra": 0.0,
+    "cargaExtra": 0.0,
+    "costeCoche": 1360.0,
+    "netoCoche": -560.0,
+    "netoDietas": 0.0,
+    "pagoEq": 0.17,
+    "ahorroIRPF": 308.55,
+    "ahorroSS": 71.5,
+    "ganNum": 2
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde dieta sin pernocta: 26,67 € exactos todo exento",
+   "in": {
+    "km": 0,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 100,
+    "diasCon": 0,
+    "dieta": 26.67,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 5,
+    "cobradoKm": 0.0,
+    "exentoKm": 0.0,
+    "tribKm": 0.0,
+    "exentoTotal": 2967.0,
+    "tribTotal": 0.0,
+    "ssExtra": 0.0,
+    "irpfExtra": 0.0,
+    "cargaExtra": 0.0,
+    "costeCoche": 0.0,
+    "netoCoche": 0.0,
+    "netoDietas": 2667.0,
+    "pagoEq": 0.17,
+    "ahorroIRPF": 832.2435,
+    "ahorroSS": 192.855,
+    "ganNum": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde dieta sin pernocta: 26,68 €, el céntimo de más tributa",
+   "in": {
+    "km": 0,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 100,
+    "diasCon": 0,
+    "dieta": 26.68,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 5,
+    "cobradoKm": 0.0,
+    "exentoKm": 0.0,
+    "tribKm": 0.0,
+    "exentoTotal": 2967.0,
+    "tribTotal": 1.0,
+    "ssExtra": 0.065,
+    "irpfExtra": 0.2805,
+    "cargaExtra": 0.3455,
+    "costeCoche": 0.0,
+    "netoCoche": 0.0,
+    "netoDietas": 2667.6545,
+    "pagoEq": 0.17,
+    "ahorroIRPF": 832.2435,
+    "ahorroSS": 192.855,
+    "ganNum": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde dieta con pernocta: 53,35 € tributa 0,01 por día; 120 días",
+   "in": {
+    "km": 0,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 0,
+    "diasCon": 120,
+    "dieta": 53.35,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 5,
+    "cobradoKm": 0.0,
+    "exentoKm": 0.0,
+    "tribKm": 0.0,
+    "exentoTotal": 6700.8,
+    "tribTotal": 1.2,
+    "ssExtra": 0.078,
+    "irpfExtra": 0.3366,
+    "cargaExtra": 0.4146,
+    "costeCoche": 0.0,
+    "netoCoche": 0.0,
+    "netoDietas": 6401.5854,
+    "pagoEq": 0.17,
+    "ahorroIRPF": 1879.5744,
+    "ahorroSS": 435.552,
+    "ganNum": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "tipo marginal 47 % y 0,45 €/km: el tributable se grava al máximo",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.45,
+    "costekm": 0.2,
+    "peajes": 300,
+    "diasSin": 0,
+    "diasCon": 0,
+    "dieta": 40,
+    "tipo": 47
+   },
+   "expect": {
+    "bloqueado": 0.0,
+    "escenario": 2,
+    "cobradoKm": 3600.0,
+    "exentoKm": 2080.0,
+    "tribKm": 1520.0,
+    "exentoTotal": 2380.0,
+    "tribTotal": 1520.0,
+    "ssExtra": 98.8,
+    "irpfExtra": 667.964,
+    "cargaExtra": 766.764,
+    "costeCoche": 1600.0,
+    "netoCoche": 1233.236,
+    "netoDietas": 0.0,
+    "pagoEq": 0.2,
+    "ahorroIRPF": 1045.891,
+    "ahorroSS": 154.7,
+    "ganNum": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "bloqueo: más de 365 días de dieta",
+   "in": {
+    "km": 8000,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 300,
+    "diasCon": 100,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 2,
+    "escenario": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "bloqueo: sin km ni días",
+   "in": {
+    "km": 0,
+    "pagokm": 0.26,
+    "costekm": 0.17,
+    "peajes": 300,
+    "diasSin": 0,
+    "diasCon": 0,
+    "dieta": 40,
+    "tipo": 30
+   },
+   "expect": {
+    "bloqueado": 1,
+    "escenario": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}
