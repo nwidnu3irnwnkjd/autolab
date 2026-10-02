@@ -33,3 +33,10 @@
 - Fiscales pendientes: paro-autonomos (en curso c48), ayuda-alquiler-joven, jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad; tarifa plana APARCADA (sin norma 2026).
 - Deuda: R48.1-R48.4 en ops/requests.md (fuentes coche-nuevo/renting, R1/R2 fiscal, peso gzip, ESTADO corto).
 - Recuperación: `git log --oneline -3`; `tail -2 journal/costes.md`; `grep -n '^- \[ \]' ops/requests.md`; `ls -t journal/verificacion-*.md | head -3`.
+
+## Ciclo 48 cerrado
+- Publicadas: paro-autonomos-cese-actividad-cuanto-cobro (Opus: 5 cambios de texto, ninguno en cifras; 101 calculadoras) y guía «Subir tu sueldo neto…» (12 guías). 5 `demanda:` nuevas no fiscales en backlog: manta eléctrica, lavavajillas, neumáticos de invierno, forfait de esquí, residencia canina.
+- Equipo v3.5: cadencia 600 s desde c48 (pp real 0,85/ciclo con fiscal), fiscal doble suspendida, ciclos alternan fiscal y mantenimiento (Vigilante de normas + Editor + QA).
+- RDL 26/2026: consulta 3: según Público el Congreso lo rechazó el 2-oct; sin Resolución en BOE. Vigilante lo revisa en c49.
+- 5h 2 % (reset 18:40Z), semanal 49 %, extra 0,55 €.
+- Siguiente (c49): ciclo de MANTENIMIENTO: Vigilante de normas (BOE RDL + inventario) + R48.1/R48.2 + Editor + QA; ScheduleWakeup 600 s.
