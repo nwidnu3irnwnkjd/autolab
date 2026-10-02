@@ -60,3 +60,9 @@
 - Al añadir páginas: ejecutar `python3 ops/og_raster.py` y commitear projects/decidir/og/.
 - 5h 10 %, semanal 50 %, extra 0,55 €.
 - Siguiente (c52): semana 1 resto: estacionales (calefacción de invierno, rebajas, Black Friday check), buscador por situación mejorado, «Plan completo» (R16.4), cuadro de mando de KPIs (metrics.py), borradores de prensa (kit) para semana 2.
+
+## Ciclo 52 cerrado · FASE TRÁFICO
+- Hecho: asistente «¿Cuál es tu situación?» (home y /todas/; data/asistente.json, el build falla si un slug no existe; eventos GA4 asistente_paso/resultado), 2 guías (Lotería y Hacienda; Cuánto gasta cada aparato en invierno), kit de prensa en ops/prensa/ (SOLO borradores; Andoni decide si envía), ops/kpis.py → journal/kpis.md (en close_cycle). Home: HOME_N 12→6 por peso (≤60 KB).
+- KPIs hoy: 140 URLs en sitemap; 0/12 conocidas por Google; 0 clics/impresiones; GA4 18 sesiones (propias).
+- 5h 13 %, semanal 51 %, extra 0,55 €.
+- Siguiente (c53): «Plan completo» (R16.4 piloto hipoteca), widget embebible + página «Inserta», vigilar BOE 3-5 oct (RDL 26/2026), revisar KPIs; después fiscal con fecha (retención/Renta no; ver ayuda alquiler joven RD 326/2026).
