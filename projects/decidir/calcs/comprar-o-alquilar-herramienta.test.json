@@ -1,0 +1,143 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "precio": 400,
+    "alq": 45,
+    "usos": 3,
+    "anios": 8,
+    "reventa": 25,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": 500.0,
+    "pvAlquiler": 1080.0,
+    "diferencia": 580.0,
+    "costeUsoCompra": 20.83,
+    "usosEqAnio": 1.39,
+    "usosEqTotal": 11.11,
+    "payback": 2.73,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 400,
+    "alq": 45,
+    "usos": 1,
+    "anios": 8,
+    "reventa": 25,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": 500.0,
+    "pvAlquiler": 360.0,
+    "diferencia": -140.0,
+    "costeUsoCompra": 62.5,
+    "usosEqAnio": 1.39,
+    "usosEqTotal": 11.11,
+    "payback": 15.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 400,
+    "alq": 0,
+    "usos": 3,
+    "anios": 8,
+    "reventa": 25,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": 500.0,
+    "pvAlquiler": 0.0,
+    "diferencia": -500.0,
+    "costeUsoCompra": 20.83,
+    "usosEqAnio": -1.0,
+    "usosEqTotal": -1.0,
+    "payback": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 400,
+    "alq": 45,
+    "usos": 1,
+    "anios": 1,
+    "reventa": 25,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": 325.0,
+    "pvAlquiler": 45.0,
+    "diferencia": -280.0,
+    "costeUsoCompra": 325.0,
+    "usosEqAnio": 7.22,
+    "usosEqTotal": 7.22,
+    "payback": 15.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 400,
+    "alq": 45,
+    "usos": 3,
+    "anios": 8,
+    "reventa": 0,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 5
+   },
+   "expect": {
+    "pvCompra": 561.58,
+    "pvAlquiler": 872.53,
+    "diferencia": 310.95,
+    "costeUsoCompra": 28.96,
+    "usosEqAnio": 1.93,
+    "usosEqTotal": 15.45,
+    "payback": 4.11,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 400,
+    "alq": 45,
+    "usos": 0,
+    "anios": 8,
+    "reventa": 25,
+    "mant": 10,
+    "alm": 15,
+    "tasa": 0
+   },
+   "expect": {
+    "pvCompra": 500.0,
+    "pvAlquiler": 0.0,
+    "diferencia": -500.0,
+    "costeUsoCompra": 0.0,
+    "usosEqAnio": 1.39,
+    "usosEqTotal": 11.11,
+    "payback": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

@@ -6,13 +6,13 @@
  ],
  "amortizar-o-invertir": [
   "amortizar-plazo-o-cuota",
-  "hipoteca-fija-o-variable",
-  "seguro-vida-hipoteca-banco-o-externo"
+  "deposito-letras-o-fondo-monetario",
+  "hipoteca-fija-o-variable"
  ],
  "amortizar-plazo-o-cuota": [
   "amortizar-o-invertir",
   "hipoteca-fija-o-variable",
-  "seguro-vida-hipoteca-banco-o-externo"
+  "subrogar-hipoteca-merece-la-pena"
  ],
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
@@ -54,6 +54,11 @@
   "diesel-gasolina-hibrido-electrico",
   "coche-nuevo-o-seminuevo"
  ],
+ "comprar-o-alquilar-herramienta": [
+  "portatil-o-movil-comprar-renting-o-financiar",
+  "reparar-o-comprar-electrodomestico",
+  "contado-o-financiar"
+ ],
  "contado-o-financiar": [
   "portatil-o-movil-comprar-renting-o-financiar",
   "comprar-coche-o-renting",
@@ -65,24 +70,29 @@
   "amortizar-o-invertir"
  ],
  "declaracion-conjunta-o-individual": [
-  "rescate-plan-pensiones-capital-o-renta",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
   "autonomo-o-asalariado",
-  "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
+  "rescate-plan-pensiones-capital-o-renta"
  ],
  "deposito-letras-o-fondo-monetario": [
   "plan-pensiones-o-fondo-indexado",
   "contado-o-financiar",
-  "fibra-y-movil-juntos-o-por-separado"
+  "amortizar-o-invertir"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
-  "seguro-todo-riesgo-o-terceros",
-  "luz-fija-o-indexada"
+  "coche-nuevo-o-seminuevo",
+  "seguro-todo-riesgo-o-terceros"
  ],
  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": [
   "declaracion-conjunta-o-individual",
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta"
+ ],
+ "excedencia-o-reduccion-jornada": [
+  "teletrabajo-o-oficina-coste-real",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "jubilacion-anticipada-o-demorada"
  ],
  "fibra-y-movil-juntos-o-por-separado": [
   "portatil-o-movil-comprar-renting-o-financiar",
@@ -99,6 +109,11 @@
   "amortizar-plazo-o-cuota",
   "alquilar-o-comprar"
  ],
+ "jubilacion-anticipada-o-demorada": [
+  "excedencia-o-reduccion-jornada",
+  "teletrabajo-o-oficina-coste-real",
+  "universidad-publica-o-privada-o-master"
+ ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
   "placas-solares-merece-la-pena",
@@ -111,7 +126,7 @@
  ],
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
-  "amortizar-o-invertir",
+  "deposito-letras-o-fondo-monetario",
   "declaracion-conjunta-o-individual"
  ],
  "portatil-o-movil-comprar-renting-o-financiar": [
@@ -122,22 +137,22 @@
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
   "portatil-o-movil-comprar-renting-o-financiar",
-  "seguro-mascota-merece-la-pena"
+  "contado-o-financiar"
  ],
  "rescate-plan-pensiones-capital-o-renta": [
+  "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual",
-  "autonomo-o-asalariado",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar"
  ],
  "seguro-mascota-merece-la-pena": [
   "seguro-todo-riesgo-o-terceros",
-  "reparar-o-comprar-electrodomestico",
-  "contado-o-financiar"
+  "seguro-salud-privado-merece-la-pena",
+  "seguro-vida-hipoteca-banco-o-externo"
  ],
  "seguro-salud-privado-merece-la-pena": [
   "seguro-mascota-merece-la-pena",
-  "universidad-publica-o-privada-o-master",
-  "contado-o-financiar"
+  "seguro-vida-hipoteca-banco-o-externo",
+  "seguro-todo-riesgo-o-terceros"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
@@ -145,9 +160,9 @@
   "seguro-mascota-merece-la-pena"
  ],
  "seguro-vida-hipoteca-banco-o-externo": [
+  "hipoteca-fija-o-variable",
   "subrogar-hipoteca-merece-la-pena",
-  "amortizar-o-invertir",
-  "amortizar-plazo-o-cuota"
+  "seguro-salud-privado-merece-la-pena"
  ],
  "subrogar-hipoteca-merece-la-pena": [
   "hipoteca-fija-o-variable",
@@ -165,8 +180,8 @@
   "diesel-gasolina-hibrido-electrico"
  ],
  "universidad-publica-o-privada-o-master": [
+  "guarderia-cuidadora-o-reducir-jornada",
   "contado-o-financiar",
-  "cuanto-ahorrar-para-comprar-casa",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "cuanto-ahorrar-para-comprar-casa"
  ]
 }

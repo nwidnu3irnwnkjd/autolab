@@ -1,0 +1,90 @@
+{
+  "slug": "comprar-o-alquilar-herramienta",
+  "title": "Comprar o alquilar herramienta: ¿cuántos usos hacen falta?",
+  "description": "Calcula cuántos usos al año hacen falta para que compense comprar una herramienta en vez de alquilarla: coste por uso, reventa y años de amortización.",
+  "h1": "Comprar o alquilar una herramienta: ¿cuántos usos hacen falta?",
+  "lead": "Conviene comprar una herramienta si la vas a usar más veces al año que el punto de equilibrio, que sale del precio menos la reventa, más los costes anuales, repartido entre lo que cuesta cada alquiler; con los ejemplos de la página (400 € de compra, 45 € por alquiler, reventa del 25 %, 10 € al año de mantenimiento y 15 € de almacenamiento durante 8 años) el equilibrio está en 1,4 usos al año, así que con 3 usos compensa comprar y con 1 uso compensa alquilar. Pon tus precios y tus usos para ver tu punto de equilibrio.",
+  "veredicto": "Comprar una herramienta compensa cuando los usos al año superan el punto de equilibrio, que es el coste total de comprar (precio menos reventa más mantenimiento y almacenamiento) dividido entre lo que cuesta cada alquiler por los años de uso; por debajo de ese umbral compensa alquilar.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "precio",
+      "label": "Precio de compra (€; 400 € es un ejemplo, no el precio de ninguna tienda)",
+      "default": 400,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "alq",
+      "label": "Coste de alquiler por uso (€ por día o fin de semana; incluye recogida y fianza no recuperable; 45 € es un ejemplo)",
+      "default": 45,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "usos",
+      "label": "Usos esperados al año (nº de veces que alquilarías; 3 es un ejemplo)",
+      "default": 3,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "anios",
+      "label": "Años de vida útil o de uso previsto (años; 8 es un ejemplo)",
+      "default": 8,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "reventa",
+      "label": "Valor de reventa al final (% del precio de compra; 25 % es un ejemplo editable, 0 si no la venderías)",
+      "default": 25,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "mant",
+      "label": "Mantenimiento y consumibles (€ al año: discos, brocas, aceite, afilado; 10 € es un ejemplo)",
+      "default": 10,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "alm",
+      "label": "Almacenamiento y transporte propios (€ al año: espacio, estantería, trastero, furgoneta; 15 € es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "tasa",
+      "label": "Coste de oportunidad del dinero (% al año: lo que ganarías con ese dinero si no lo gastas; 0 = no contarlo)",
+      "default": 0,
+      "min": 0,
+      "step": 0.5
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuántas veces hay que usar una herramienta para que compense comprarla?",
+      "Las que resulten de dividir el coste total de comprar (precio menos reventa, más mantenimiento y almacenamiento de todos los años) entre lo que cuesta cada alquiler por los años de uso. Con los ejemplos de la página son 1,4 usos al año, unos 11 en 8 años; con tus precios saldrá otra cifra. Por encima compensa comprar y por debajo, alquilar."
+    ],
+    [
+      "¿Cómo se calcula el coste por uso de una herramienta comprada?",
+      "Se suma el precio, el mantenimiento y el almacenamiento de todos los años, se resta lo que esperas recuperar al revenderla y se divide entre el número total de usos. Con los ejemplos y 3 usos al año sale a 20,83 € por uso frente a 45 € de alquiler; con 1 uso al año sale a 62,50 €, y entonces alquilar es más barato."
+    ],
+    [
+      "¿Cuenta el valor de reventa y el coste de oportunidad?",
+      "Sí, ambos son editables. La reventa reduce el coste de comprar: es un porcentaje del precio al final de la vida útil, y 0 % si no piensas vender. El coste de oportunidad pone precio al dinero que dejas de tener: con un valor mayor que 0, la calculadora descuenta los costes de cada año y los expresa en euros de hoy. Con 0 es la suma simple."
+    ],
+    [
+      "¿Cuándo compensa alquilar aunque use la herramienta bastante?",
+      "Cuando el alquiler por uso te sale bajo frente al precio de compra, la herramienta es voluminosa o cara de guardar, o necesitas modelos distintos cada vez. En la calculadora se ve subiendo el almacenamiento o el precio de compra y bajando el alquiler: el equilibrio sube y cada vez hacen falta más usos. Si además puedes prestarla o compartirla, el coste de comprar baja."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye precios de tiendas ni de empresas de alquiler concretas, el seguro o la fianza no recuperable del alquiler (suma lo que no recuperes al coste por uso), el tiempo de ir a recoger y devolver la herramienta, la calidad distinta entre modelos ni el valor de tenerla a mano. Supone un uso parecido cada año y que la herramienta dura todos los años indicados."
+    ]
+  ],
+  "sources": "Modelo propio, sin datos externos: coste de comprar = precio + (mantenimiento + almacenamiento) x años - reventa al final; coste de alquilar = usos al año x coste por uso x años. Con coste de oportunidad mayor que 0, los importes de cada año se descuentan a euros de hoy con ese porcentaje anual. Usos de equilibrio al año = coste de comprar / (coste por uso del alquiler x años). Años para amortizar: años de uso en los que lo que te ahorras de alquiler (usos x coste por uso - mantenimiento - almacenamiento) cubre el precio menos la reventa, que se supone constante. Supuestos de ejemplo, no oficiales ni precios de comercios, y editables: compra de 400 €, alquiler de 45 € por uso, 3 usos al año, 8 años, reventa del 25 %, mantenimiento de 10 € al año, almacenamiento de 15 € al año y coste de oportunidad de 0 %. Información orientativa, no asesoramiento."
+}

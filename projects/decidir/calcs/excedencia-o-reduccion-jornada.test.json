@@ -1,0 +1,155 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "neto": 1800,
+    "red": 30,
+    "perdida": 0,
+    "dur": 12,
+    "ayudas": 0,
+    "cuidados": 400,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 540.0,
+    "costeMesRed": 420.0,
+    "costeMesExc": 1400,
+    "costeTotalRed": 5040.0,
+    "costeTotalExc": 16800,
+    "equilibrioCuidadosRed": 1800.0,
+    "equilibrioCuidadosExc": 1800,
+    "mesesCotRed": 3.6,
+    "mesesCotExc": 12.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "neto": 1800,
+    "red": 30,
+    "perdida": 24,
+    "dur": 12,
+    "ayudas": 0,
+    "cuidados": 400,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 432.0,
+    "costeMesRed": 312.0,
+    "costeMesExc": 1400,
+    "costeTotalRed": 3744.0,
+    "costeTotalExc": 16800,
+    "equilibrioCuidadosRed": 1440.0,
+    "equilibrioCuidadosExc": 1800,
+    "mesesCotRed": 3.6,
+    "mesesCotExc": 12.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "neto": 1800,
+    "red": 0,
+    "perdida": 0,
+    "dur": 12,
+    "ayudas": 0,
+    "cuidados": 400,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 0.0,
+    "costeMesRed": 0.0,
+    "costeMesExc": 1400,
+    "costeTotalRed": 0.0,
+    "costeTotalExc": 16800,
+    "equilibrioCuidadosRed": -1.0,
+    "equilibrioCuidadosExc": 1800,
+    "mesesCotRed": 0.0,
+    "mesesCotExc": 12.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "neto": 1800,
+    "red": 30,
+    "perdida": 0,
+    "dur": 1,
+    "ayudas": 0,
+    "cuidados": 400,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 540.0,
+    "costeMesRed": 420.0,
+    "costeMesExc": 1400,
+    "costeTotalRed": 420.0,
+    "costeTotalExc": 1400,
+    "equilibrioCuidadosRed": 1800.0,
+    "equilibrioCuidadosExc": 1800,
+    "mesesCotRed": 0.3,
+    "mesesCotExc": 1.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "neto": 1800,
+    "red": 30,
+    "perdida": 0,
+    "dur": 12,
+    "ayudas": 0,
+    "cuidados": 0,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 540.0,
+    "costeMesRed": 540.0,
+    "costeMesExc": 1800,
+    "costeTotalRed": 6480.0,
+    "costeTotalExc": 21600,
+    "equilibrioCuidadosRed": 1800.0,
+    "equilibrioCuidadosExc": 1800,
+    "mesesCotRed": 3.6,
+    "mesesCotExc": 12.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "neto": 1800,
+    "red": 30,
+    "perdida": 0,
+    "dur": 12,
+    "ayudas": 900,
+    "cuidados": 700,
+    "cotRed": 0,
+    "cotExc": 100
+   },
+   "expect": {
+    "perdidaMesRed": 540.0,
+    "costeMesRed": -570.0,
+    "costeMesExc": 200,
+    "costeTotalRed": -6840.0,
+    "costeTotalExc": 2400,
+    "equilibrioCuidadosRed": -1200.0,
+    "equilibrioCuidadosExc": 900,
+    "mesesCotRed": 3.6,
+    "mesesCotExc": 12.0,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

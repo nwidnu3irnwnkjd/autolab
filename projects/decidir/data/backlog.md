@@ -33,7 +33,7 @@
 - [x] universidad-publica-o-privada-o-master — Universidad pública o privada (grado o máster): coste total, beca y retorno (precio/crédito = entrada del usuario) [no fiscal; c9]
 - nota Investigador 2026-10-02 (c9): detalle de keywords, evidencia y datos de las 8 anteriores en journal/ideas.md sección «Ciclo 9».
 - [x] donativos-irpf-cuanto-desgrava-y-cuanto-donar — Donaciones y IRPF: cuánto desgravan y cuánto cuesta realmente donar [fiscal; Investigador c10; publicar antes del 15-nov]
-- [ ] jubilacion-anticipada-o-demorada — Jubilación anticipada o demorada: pensión acumulada y edad de equilibrio [fiscal/regulada, YMYL alto; c10]
+- [x] jubilacion-anticipada-o-demorada — Jubilación anticipada o demorada: pensión acumulada y edad de equilibrio [fiscal/regulada, YMYL alto; c10]
 - [x] deposito-letras-o-fondo-monetario — Depósito, Letras del Tesoro o fondo monetario: rentabilidad neta tras impuestos [fiscal; c10]
 - [x] portatil-o-movil-comprar-renting-o-financiar — Portátil o móvil: comprar, renting o financiar (coste total a N años) [no fiscal; c10; Black Friday]
 - [x] fibra-y-movil-juntos-o-por-separado — Fibra y móvil: pack convergente o por separado (coste a 24 meses, precios del usuario) [no fiscal; c10]
@@ -41,5 +41,18 @@
 - [x] teletrabajo-o-oficina-coste-real — Teletrabajo u oficina: cuánto ahorras de verdad al año [no fiscal; c10]
 - [x] seguro-salud-privado-merece-la-pena — Seguro de salud privado: ¿merece la pena? prima acumulada vs pago por uso [no fiscal, YMYL medio; c10]
 - [x] seguro-mascota-merece-la-pena — Seguro de mascota: coste anual del perro/gato y si compensa asegurarlo [no fiscal; c10]
-- [ ] comprar-o-alquilar-herramienta — Comprar o alquilar herramienta o maquinaria: nº de usos de equilibrio [no fiscal; evidencia débil, validar; c10]
+- [x] comprar-o-alquilar-herramienta — Comprar o alquilar herramienta o maquinaria: nº de usos de equilibrio [no fiscal; evidencia débil, validar; c10]
 - nota Investigador 2026-10-02 (c10): detalle de evidencia en journal/ideas.md «Ciclo 10». Reserva fiscal: deduccion-alquiler-vivienda-por-comunidad (solo con tabla BOE verificada).
+- [ ] caldera-reparar-o-cambiar — Reparar o cambiar la caldera de gas: años de amortización de una de condensación [no fiscal; Investigador c10b; publicar oct]
+- [ ] punto-de-carga-casa-con-o-sin-placas — Coche eléctrico: punto de carga en casa, con o sin placas (coste/km y años de amortización) [no fiscal; c10b; enlaza placas + diesel-gasolina]
+- [ ] navidad-cuanto-gastar-sin-endeudarte — Navidad y Black Friday: cuánto puedo gastar sin endeudarme (regalos, viajes, financiar o no) [no fiscal; c10b; publicar antes del 15-nov]
+- [ ] hotel-o-apartamento-viaje-en-grupo — Hotel o apartamento turístico para familia/grupo: coste real por persona (Navidad, puentes, verano) [no fiscal; c10b]
+- [ ] comprar-o-alquilar-trastero — Comprar o alquilar un trastero (o guardamuebles): coste a N años y cuándo compensa [no fiscal; evidencia débil, validar; c10b]
+- [ ] reformar-o-mudarse — Reformar la casa (baño/cocina) o mudarse: coste total y años de equilibrio [no fiscal; c10b; ITP/gastos = entrada]
+- [ ] academia-idiomas-presencial-online-o-intensivo — Idiomas: academia, online o inmersión: coste por nivel y horas [no fiscal; c10b; pico sep y ene]
+- [ ] seguro-hogar-con-o-sin-franquicia — Seguro de hogar con o sin franquicia: prima ahorrada vs coste esperado de siniestros (primas = entrada del usuario) [no fiscal; viable solo como calculadora de franquicia; c10b]
+- [ ] capitalizar-paro-o-cobrarlo — Capitalizar el paro o cobrarlo mensualmente: neto, cuota de autónomo y meses de colchón [fiscal/regulada, YMYL medio; c10b]
+- [ ] autonomo-o-sociedad-limitada — Autónomo o SL: a partir de qué beneficio compensa (IRPF + IS + cuotas) [fiscal, esfuerzo alto; c10b]
+- [x] excedencia-o-reduccion-jornada — Excedencia o reducción de jornada: cuánto pierdes neto y qué cotiza [fiscal/regulada ligera; c10b]
+- [ ] comparar-ofertas-de-trabajo-neto-real — Cambiar de trabajo: comparar dos ofertas en neto real (bruto, variable, jornada, desplazamiento, teletrabajo) [fiscal ligera; c10b]
+- nota Investigador 2026-10-02 (c10b): detalle en journal/ideas.md «Ciclo 10b». Descartadas: loterías/juegos (YMYL/ludopatía). Reserva: deduccion-alquiler-vivienda-por-comunidad, maternidad/familia numerosa (sin tabla verificada).

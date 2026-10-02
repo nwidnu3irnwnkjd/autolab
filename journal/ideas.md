@@ -117,16 +117,43 @@ Hubs: `/carnes/`, `/lacteos/` (y un índice general con buscador).
 2. **«Black Friday y rebajas sin arrepentirte» (publicar antes del 15-nov; BF 27-nov-2026; rebajas enero):** checklist de decisión comprar/reparar/financiar. Enlaza reparar-o-comprar-electrodomestico, cambiar-electrodomestico-antiguo, contado-o-financiar, portatil-o-movil-comprar-renting-o-financiar, fibra-y-movil-juntos-o-por-separado, coche-nuevo-o-seminuevo.
 3. **«Campaña de la Renta 2027: qué decidir antes de abril» (indexar en enero; la campaña es abr-jun):** calendario de decisiones (conjunta o individual, aportar o rescatar, donar antes del 31-dic, autónomo, alquiler). Enlaza declaracion-conjunta-o-individual, donativos-irpf-cuanto-desgrava-y-cuanto-donar, plan-pensiones-o-fondo-indexado, rescate-plan-pensiones-capital-o-renta, deposito-letras-o-fondo-monetario, autonomo-o-asalariado, jubilacion-anticipada-o-demorada. Cada cifra con año fiscal y fuente (YMYL).
 
+# Ciclo 10b · 2026-10-02 — 12 calculadoras nuevas (Investigador, Sonnet con web)
+**Honestidad:** WebSearch desde EE. UU.; sin Keyword Planner. Evidencia = SERP de hoy en 5 consultas (capitalizar paro, caldera, punto de carga, franquicia hogar, autónomo vs SL); las demás por señal estacional y revisión previa: validar con Search Console a 28 días. Vol. A/M/B. F = fiscal/regulada (cadena Constructor + Verificador Opus). Todas en `backlog.md`.
+
+| # | Slug | Keyword | Vol. | Evidencia / competencia | Por qué ganaríamos | Datos (origen) | YMYL | Publicar |
+|---|---|---|---|---|---|---|---|---|
+| 1 | caldera-reparar-o-cambiar | reparar o cambiar caldera | A (oct-feb) | Ecoinventos, Manairsat, Huelvaya, JAG Alcaide, Selectra: «regla 40-50 %», condensación 20-30 % menos consumo; ninguna calculadora | Años de amortización con tu factura de gas, edad y presupuesto de reparación; enlaza calefaccion-gas-aerotermia | Inputs; precio gas fechado de params | Bajo | Ya (oct) |
+| 2 | punto-de-carga-casa-con-o-sin-placas | punto de carga en casa coste placas | M-A | Autosolar (800-1.600 € vivienda, 1.600-2.200 € garaje comunitario), Toyota, cargaencasa, ritest (calculadora EV vs gasolina); nadie combina carga + placas con luz fechada | €/100 km cargando en valle, con placas o en pública; años de amortizar el cargador | luz_pvpc live.json; precios = input | Bajo | Nov |
+| 3 | navidad-cuanto-gastar-sin-endeudarte | cuánto gastar en Navidad presupuesto | A (nov-dic) | No buscado hoy; señal estacional (revisión ciclo 9: Black Friday) | Presupuesto con tus ingresos, regalos, cenas y viaje; coste de financiar a plazos | Inputs | Medio (deuda) | Antes 15-nov |
+| 4 | hotel-o-apartamento-viaje-en-grupo | hotel o apartamento turístico cuál sale más barato | M-A | No buscado hoy: validar | Coste por persona con desayuno, limpieza, comisiones y cocina | Inputs | Bajo | Nov y feb |
+| 5 | comprar-o-alquilar-trastero | alquilar trastero cuánto cuesta | B-M | Evidencia débil, no buscado | Punto de corte meses/m² frente a comprar | Inputs | Bajo | Feb; sustituible |
+| 6 | reformar-o-mudarse | reformar o mudarse | M-A | No buscado hoy | Coste total (obra, ITP, agencia, mudanza, hipoteca nueva) vs reforma; enlaza clúster hipoteca | Inputs; ITP de cuanto-ahorrar-para-comprar-casa | Bajo-medio | Ene |
+| 7 | academia-idiomas-presencial-online-o-intensivo | cuánto cuesta aprender inglés | A (sep, ene) | No buscado hoy | Coste por hora y por nivel, no por mes | Inputs | Bajo | Dic |
+| 8 | seguro-hogar-con-o-sin-franquicia | seguro de hogar con franquicia merece la pena | M | Pelayo, Santalucía, turboseguros, seguros.insure: «15-40 % menos de prima»; ninguna calculadora. **Viable** solo con primas del usuario (descartamos cotizador) | Prima ahorrada acumulada vs siniestros pequeños esperados a N años (frecuencia editable) | Inputs | Medio | Dic |
+| 9 | capitalizar-paro-o-cobrarlo | capitalizar el paro | A | 9 resultados (taxfix, holded, declarando, calculadoralaboral, palenciaasesores, gestoria247): calculan importe (descuento interés legal 3,25 % en 2026); ninguna decide | Capitalizar vs cobrar: neto, cuota, colchón en meses, tarifa plana | Normativa SEPE/LGSS; interés legal: verificar | Medio | Ene |
+| 10 | autonomo-o-sociedad-limitada | autónomo o SL a partir de cuánto | M-A | Billeo, Fube, calculaespana, Anfico, Holded (umbral 40-50 k€): 5 calculadoras ya | Umbral con retribución del administrador, cuota 2026 y reparto de dividendos; neutral | IS, IRPF, cuotas (BOE) | Medio | Dic-ene |
+| 11 | excedencia-o-reduccion-jornada | excedencia o reducción de jornada | M | Mucho texto legal (revisión previa) | Neto perdido y cotización protegida; pareja de guarderia-cuidadora | ET, LGSS, IRPF | Medio | Ene |
+| 12 | comparar-ofertas-de-trabajo-neto-real | comparar ofertas de trabajo bruto neto | A | Netos: saturado en bruto→neto; falta comparar dos ofertas | Dos ofertas en neto + variable + trayecto + teletrabajo | IRPF/SS 2026 (BOE) | Medio | Ene |
+
+**Descartadas:** loterías/juegos (YMYL/ludopatía); seguro de hogar como cotizador; deducción alquiler (reserva, tabla CCAA sin verificar); maternidad/familia numerosa (reserva).
+
+## Revisión de competencia (2026-10-02)
+Sin cambios nuevos fuera de lo registrado en competencia.md (Calcuribor/Bankinter en fija-variable). IRPF: autónomo vs SL ya tiene 5 calculadoras; capitalizar paro 6 calculadoras de importe sin decisión. Coche: ritest y ahorrove, todos EV vs gasolina. No verificadas hoy hipotecas y IRPF conjunta.
+
+## Tres guías de apoyo
+1. **Navidad y Black Friday sin deudas** (publicar antes del 15-nov): presupuesto, contado o financiar, reparar o comprar, portátil/móvil, navidad-cuanto-gastar.
+2. **Declaración de la renta 2027 paso a paso con enlaces** (indexar en enero; campaña abr-jun): enlaces a AEAT/Renta WEB, conjunta o individual, donativos, planes, depósito/Letras, alquiler; cada cifra con año fiscal y fuente.
+3. **Cuánto cuesta realmente tener hijos, mascota o coche** (hub citable con cifra fechada): guardería, universidad, seguro mascota, coche; enlaza 8-10 calculadoras.
+
 ## Priorización de los siguientes 8 ciclos (11-18; 2 calculadoras por ciclo)
-Supuesto: rescate-plan-pensiones-capital-o-renta se cierra en el ciclo 10. F = fiscal/regulada con cadena Constructor + Verificador Opus (Constructor deja parámetros y 3 casos; Opus verifica norma y casos antes de publicar; si no cierra, se sustituye por la siguiente no fiscal y no se detiene el ciclo). NF = no fiscal.
-| Ciclo | Construir | Motivo / fecha límite |
+Estado: ya publicadas (marcadas [x]) donativos, portátil/móvil, fibra+móvil, seguro vida hipoteca, teletrabajo, depósito/Letras, seguro salud y mascota. Pendientes: jubilacion (en construcción), herramienta y las 12 de c10b. F = fiscal/regulada: Constructor deja parámetros y 3 casos; Verificador Opus verifica norma y casos antes de publicar; si no cierra, se sustituye por una NF y el ciclo sigue.
+| Ciclo | Construir | Motivo |
 |---|---|---|
-| 11 | donativos-irpf-cuanto-desgrava-y-cuanto-donar (F) + portatil-o-movil-comprar-renting-o-financiar (NF) | Donaciones se hacen antes del 31-dic; Black Friday 27-nov. Guía 2 |
-| 12 | fibra-y-movil-juntos-o-por-separado (NF) + seguro-vida-hipoteca-banco-o-externo (NF; buscar competencia antes) | Ofertas de otoño y clúster hipoteca; guía 1 ya publicada |
-| 13 | jubilacion-anticipada-o-demorada (F, YMYL alto: 2 verificadores o revisión doble de coeficientes) + teletrabajo-o-oficina-coste-real (NF) | Búsqueda de pensión sube en dic-ene; vuelta a oficina |
-| 14 | deposito-letras-o-fondo-monetario (F) + seguro-salud-privado-merece-la-pena (NF) | «Dónde meter ahorros 2027» y altas de seguros en enero; actualizar tipos |
-| 15 | seguro-mascota-merece-la-pena (NF) + capitalizar-paro-o-cobrarlo (F; si el verificador no cierra, comprar-o-alquilar-herramienta) | Enero; roza trámite: solo decisión económica |
-| 16 | excedencia-o-reduccion-jornada (F-ligera) + revisión de datos: params/live, IRPF, cuotas autónomos, peajes | Antes de enero actualizar parámetros 2027 |
-| 17 | deduccion-alquiler-vivienda-por-comunidad (F; solo con tabla BOE verificada de las CCAA incluidas, el resto «consulta tu comunidad») + guía 3 (Renta 2027) y mínimos autonómicos pendientes | Pico abril-junio; indexar en enero-febrero |
-| 18 | autonomo-o-sociedad-limitada (F) + llamada al Investigador (cada 6 ciclos) con datos de Search Console | Trimestre fiscal y Renta; reponer con impresiones reales |
-Regla: con ≥ 30 calculadoras y datos de SC, un ciclo de refuerzo (veredicto, escenarios, FAQ en las 3 con más impresiones) puede sustituir a uno de nuevas. Backlog tras c18: 0 pendientes; llamar al Investigador en c16.
+| 11 | caldera-reparar-o-cambiar (NF) + navidad-cuanto-gastar-sin-endeudarte (NF) | Estacional ya; publicar antes del 15-nov; guía 1 |
+| 12 | punto-de-carga-casa-con-o-sin-placas (NF) + hotel-o-apartamento-viaje-en-grupo (NF) | Energía; viajes de Navidad |
+| 13 | jubilacion-anticipada-o-demorada (F, YMYL alto: doble verificación) + seguro-hogar-con-o-sin-franquicia (NF) | Pensiones dic-ene |
+| 14 | capitalizar-paro-o-cobrarlo (F) + academia-idiomas-presencial-online-o-intensivo (NF) | Enero |
+| 15 | excedencia-o-reduccion-jornada (F) + reformar-o-mudarse (NF) | Enero; clúster familia/hipoteca |
+| 16 | comparar-ofertas-de-trabajo-neto-real (F) + actualización params 2027; llamar al Investigador | Parámetros 2027 |
+| 17 | autonomo-o-sociedad-limitada (F) + deduccion-alquiler-vivienda-por-comunidad (F; solo con tabla BOE verificada, si no comprar-o-alquilar-trastero); guía 2 Renta | Pico abr-jun |
+| 18 | comprar-o-alquilar-trastero o herramienta (NF, validar con Search Console) + ciclo de refuerzo con datos reales | Reponer con impresiones |

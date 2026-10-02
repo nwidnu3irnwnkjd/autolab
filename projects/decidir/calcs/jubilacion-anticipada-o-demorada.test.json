@@ -1,0 +1,274 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "edad": 60,
+    "cot": 30,
+    "br": 2500,
+    "eleg_a": 65,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 2157.13,
+    "pensionOrdinaria": 3012.54,
+    "acumElegida": 803107.65,
+    "acumOrdinaria": 980685.46,
+    "equilibrioEdad": 72.58,
+    "ordM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 60,
+    "cot": 30,
+    "br": 2500,
+    "eleg_a": 65,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 15,
+    "ipc": 0
+   },
+   "expect": {
+    "pensionElegida": 1888.1,
+    "pensionOrdinaria": 2500.0,
+    "acumElegida": 449367.8,
+    "acumOrdinaria": 535500.0,
+    "equilibrioEdad": 73.25,
+    "ordM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 55,
+    "cot": 3,
+    "br": 2000,
+    "eleg_a": 67,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 1376.72,
+    "pensionOrdinaria": 1376.72,
+    "acumElegida": 448169.13,
+    "acumOrdinaria": 448169.13,
+    "ordM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 64,
+    "cot": 44,
+    "br": 4500,
+    "eleg_a": 65,
+    "eleg_m": 0,
+    "fin": 90,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 3450.31,
+    "pensionOrdinaria": 3450.31,
+    "acumElegida": 1727679.78,
+    "acumOrdinaria": 1727679.78,
+    "ordM": 780
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 65,
+    "cot": 45,
+    "br": 6000,
+    "eleg_a": 72,
+    "eleg_m": 5,
+    "fin": 95,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 5239.76,
+    "pensionOrdinaria": 3359.6,
+    "acumElegida": 2252040.34,
+    "acumOrdinaria": 2175208.26,
+    "equilibrioEdad": 92.17,
+    "ordM": 780
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 63,
+    "cot": 42,
+    "br": 6000,
+    "eleg_a": 64,
+    "eleg_m": 0,
+    "fin": 90,
+    "irpf": 0,
+    "ipc": 2
+   },
+   "expect": {
+    "pensionElegida": 3317.13,
+    "pensionOrdinaria": 3495.33,
+    "acumElegida": 1587128.09,
+    "acumOrdinaria": 1590900.42,
+    "equilibrioEdad": 88.58,
+    "ordM": 780
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 61,
+    "cot": 36,
+    "br": 2200,
+    "eleg_a": 63,
+    "eleg_m": 2,
+    "fin": 82,
+    "irpf": 10,
+    "ipc": 1
+   },
+   "expect": {
+    "pensionElegida": 1918.17,
+    "pensionOrdinaria": 2289.33,
+    "acumElegida": 502721.85,
+    "acumOrdinaria": 535623.41,
+    "equilibrioEdad": 75.17,
+    "ordM": 780,
+    "ordRealM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 62,
+    "cot": 40,
+    "br": 2800,
+    "eleg_a": 63,
+    "eleg_m": 0,
+    "fin": 90,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 2329.24,
+    "pensionOrdinaria": 3032.98,
+    "acumElegida": 1297591.94,
+    "acumOrdinaria": 1518709.11,
+    "equilibrioEdad": 72.58,
+    "ordM": 780
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 64,
+    "cot": 42,
+    "br": 3000,
+    "eleg_a": 68,
+    "eleg_m": 8,
+    "fin": 88,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "pensionElegida": 3880.97,
+    "pensionOrdinaria": 3081.0,
+    "acumElegida": 1371043.81,
+    "acumOrdinaria": 1378128.19,
+    "equilibrioEdad": 88.67,
+    "ordM": 780
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 63,
+    "cot": 37,
+    "br": 5000,
+    "eleg_a": 64,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 0,
+    "ipc": 0
+   },
+   "expect": {
+    "pensionElegida": 3245.37,
+    "pensionOrdinaria": 3359.6,
+    "acumElegida": 954139.84,
+    "acumOrdinaria": 940688.0,
+    "equilibrioEdad": 93.42,
+    "ordM": 780,
+    "ordRealM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 63,
+    "cot": 34,
+    "br": 6000,
+    "eleg_a": 65,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 0,
+    "ipc": 0
+   },
+   "expect": {
+    "pensionElegida": 2939.65,
+    "pensionOrdinaria": 3359.6,
+    "acumElegida": 823102.0,
+    "acumOrdinaria": 846619.2,
+    "equilibrioEdad": 81.08,
+    "ordM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 61,
+    "cot": 36,
+    "br": 2500,
+    "eleg_a": 63,
+    "eleg_m": 0,
+    "fin": 85,
+    "irpf": 0,
+    "ipc": 0
+   },
+   "expect": {
+    "pensionElegida": 1975.0,
+    "pensionOrdinaria": 2500.0,
+    "acumElegida": 608300.0,
+    "acumOrdinaria": 700000.0,
+    "equilibrioEdad": 72.58,
+    "ordM": 780,
+    "ordRealM": 804
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "edad": 66,
+    "cot": 40,
+    "br": 3000,
+    "eleg_a": 68,
+    "eleg_m": 8,
+    "fin": 88,
+    "irpf": 0,
+    "ipc": 2.7
+   },
+   "expect": {
+    "ordM": 780
+   },
+   "tol": 1
+  }
+ ]
+}
