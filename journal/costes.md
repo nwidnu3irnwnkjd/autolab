@@ -35,3 +35,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T05:28Z | 20 | 33 | 0.55 | ciclo 24 cierre: Mejorador opus 161k; Estratega opus 140k; Constructor no fiscal sonnet 124k; Diseñador sonnet 55k; QA haiku 51k; peticiones abiertas: 3; páginas: 79
 2026-10-02T05:46Z | 22 | 34 | 0.6 | ciclo 25 cierre: Constructor fiscal+Opus+reverif, Constructor no fiscal, QA; peticiones abiertas: 3; páginas: 82
 2026-10-02T06:03Z | 26 | 34 | 0.55 | ciclo 26 cierre: Constructor fiscal+Opus+reverif, Constructor no fiscal, Estratega Sonnet, QA; peticiones abiertas: 3; páginas: 85
+2026-10-02T06:19Z | 28 | 34 | 0.55 | ciclo 27 cierre: Investigador, Constructor fiscal+Opus+reverif, Constructor no fiscal, QA; peticiones abiertas: 3; páginas: 88

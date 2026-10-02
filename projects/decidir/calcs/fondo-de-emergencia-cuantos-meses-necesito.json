@@ -1,0 +1,116 @@
+{
+  "slug": "fondo-de-emergencia-cuantos-meses-necesito",
+  "title": "Fondo de emergencia: cuántos meses de gastos necesitas",
+  "description": "Calcula cuántos meses de gastos guardar según tu empleo, tus ingresos y quién depende de ti, el importe objetivo y cuánto tardarías en reunirlo.",
+  "h1": "Fondo de emergencia: cuántos meses de gastos necesitas y cuánto tardarás",
+  "lead": "Con un criterio orientativo (una hipótesis, no una ley), un asalariado indefinido con una persona a cargo puede plantearse 3,5 meses de gastos y un autónomo con ingresos variables y dos personas a cargo, 8: con 1.500 € de gastos al mes son 5.250 € y 12.000 €. Con 3.000 € ahorrados y 200 € al mes, el primero lo reúne en 12 meses y el segundo en 45. Pon tus gastos, tu situación y tu aportación para ver tu objetivo.",
+  "veredicto": "El número de meses de gastos recomendado sube con la inestabilidad del empleo, los ingresos variables y las personas a cargo, y baja si otra persona del hogar tiene ingresos estables; es una hipótesis de trabajo, no una ley, y el tiempo para reunirlo sale de lo que te falta dividido entre tu aportación mensual.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "gastos",
+      "label": "Gastos mensuales imprescindibles (€/mes: vivienda, comida, suministros, seguros y cuotas; 1.500 es un ejemplo)",
+      "default": 1500,
+      "min": 1,
+      "step": 50,
+      "default_from": "params.fondo_emergencia.supuestos.gastos"
+    },
+    {
+      "id": "empleo",
+      "label": "Tipo de empleo",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Asalariado indefinido o funcionario"
+        },
+        {
+          "v": "1",
+          "t": "Temporal, por obra o fijo discontinuo"
+        },
+        {
+          "v": "2",
+          "t": "Autónomo"
+        }
+      ]
+    },
+    {
+      "id": "ingresos",
+      "label": "Tus ingresos mensuales son",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Estables (casi lo mismo cada mes)"
+        },
+        {
+          "v": "1",
+          "t": "Variables (comisiones, temporadas, meses sin cobrar)"
+        }
+      ]
+    },
+    {
+      "id": "dep",
+      "label": "Personas a tu cargo (número entero, de 0 a 10; 1 es un ejemplo)",
+      "default": 1,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default_from": "params.fondo_emergencia.supuestos.dep"
+    },
+    {
+      "id": "otro",
+      "label": "¿Otra persona del hogar con ingresos estables?",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "No"
+        },
+        {
+          "v": "1",
+          "t": "Sí"
+        }
+      ]
+    },
+    {
+      "id": "ahorro",
+      "label": "Ahorro que ya tienes para emergencias (€; 3.000 es un ejemplo)",
+      "default": 3000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.fondo_emergencia.supuestos.ahorro"
+    },
+    {
+      "id": "aport",
+      "label": "Cuánto puedes aportar al mes (€/mes; 200 es un ejemplo)",
+      "default": 200,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.fondo_emergencia.supuestos.aport"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuántos meses de gastos conviene tener en un fondo de emergencia?",
+      "No hay una cifra oficial: es una guía habitual que depende de lo estable que sea tu ingreso y de a quién mantienes. Esta calculadora usa una hipótesis propia: 3 meses para un asalariado indefinido o funcionario, 6 si el empleo es temporal o autónomo, +1 si los ingresos son variables, +0,5 por persona a cargo (hasta +2), -1 si otra persona del hogar tiene ingresos estables, con un mínimo de 3 y un máximo de 12. Con los ejemplos de la página (indefinido, 1 persona a cargo) salen 3,5 meses; un autónomo con ingresos variables y 2 personas a cargo, 8 meses."
+    ],
+    [
+      "¿Cuánto dinero es eso en euros?",
+      "Es el número de meses por tus gastos mensuales imprescindibles. Con 1.500 € al mes y 3,5 meses, el objetivo es 5.250 €; con 8 meses, 12.000 €. Cuenta solo lo que pagarías aunque te quedaras sin ingresos (vivienda, comida, suministros, seguros y cuotas), no tu nivel de vida actual."
+    ],
+    [
+      "¿Cuánto tardaría en reunirlo?",
+      "El tiempo es lo que te falta dividido entre tu aportación mensual, redondeado hacia arriba. Con 3.000 € ahorrados y 200 € al mes, los 2.250 € que faltan para 5.250 € se juntan en 12 meses; para 12.000 € (9.000 € por reunir) serían 45 meses, unos 3 años y 9 meses. Si tardas mucho, un primer hito de 1 mes de gastos ya te da margen."
+    ],
+    [
+      "¿Dónde conviene guardar el fondo de emergencia?",
+      "Donde puedas disponer del dinero cuando lo necesites sin perder capital: una cuenta de acceso inmediato o un producto líquido y sin riesgo de pérdida. Inmovilizarlo o invertirlo en algo cuyo valor puede bajar justo cuando lo necesitas va contra el propósito del fondo. Comprueba si tu entidad está cubierta por el Fondo de Garantía de Depósitos. No es asesoramiento financiero ni recomienda ningún producto concreto."
+    ],
+    [
+      "¿Qué no incluye esta calculadora?",
+      "No incluye el paro que podrías cobrar, los seguros que cubren parte del riesgo, deudas con cuotas altas, gastos extraordinarios previsibles (coche, salud, reformas), la inflación ni los intereses que genere el ahorro. Es una orientación para fijar un objetivo, no un plan financiero personalizado ni asesoramiento financiero: para una decisión importante consulta a un profesional."
+    ]
+  ],
+  "sources": "Modelo propio, sin norma ni cifra oficial: meses recomendados = base según empleo (indefinido o funcionario 3, temporal 6, autónomo 6) + 1 si ingresos variables + 0,5 por persona a cargo (máximo +2) - 1 si otra persona del hogar tiene ingresos estables, con un mínimo de 3 y un máximo de 12; es una hipótesis de trabajo editable en la lógica, no una ley ni una recomendación oficial. Objetivo = meses × gastos mensuales imprescindibles; tiempo = lo que falta ÷ aportación mensual, redondeado hacia arriba, sin intereses ni inflación. Consulta general de educación financiera: Finanzas para Todos, Banco de España y CNMV (https://www.finanzasparatodos.es). Garantía de depósitos: Fondo de Garantía de Depósitos de Entidades de Crédito (https://www.fgd.es). Supuestos no oficiales y editables: gastos de 1.500 €/mes, 1 persona a cargo, 3.000 € ahorrados y 200 € de aportación mensual. Consultado el 2/10/2026. Información orientativa, no asesoramiento financiero."
+}

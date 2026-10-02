@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 1,
+    "otro": 0,
+    "ahorro": 3000,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 3.5,
+    "objetivo": 5250.0,
+    "falta": 2250.0,
+    "cobertura": 2.0,
+    "mesesAlcanzar": 12,
+    "mesesHito1": 0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 2,
+    "ingresos": 1,
+    "dep": 2,
+    "otro": 0,
+    "ahorro": 3000,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 8.0,
+    "objetivo": 12000.0,
+    "falta": 9000.0,
+    "cobertura": 2.0,
+    "mesesAlcanzar": 45,
+    "mesesHito1": 0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 1,
+    "otro": 0,
+    "ahorro": 6000,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 3.5,
+    "objetivo": 5250.0,
+    "falta": 0,
+    "cobertura": 4.0,
+    "mesesAlcanzar": 0,
+    "mesesHito1": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 1,
+    "otro": 0,
+    "ahorro": 3000,
+    "aport": 0
+   },
+   "expect": {
+    "meses": 3.5,
+    "objetivo": 5250.0,
+    "falta": 2250.0,
+    "cobertura": 2.0,
+    "mesesAlcanzar": -1,
+    "mesesHito1": 0,
+    "ganador": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 1,
+    "ingresos": 1,
+    "dep": 10,
+    "otro": 0,
+    "ahorro": 3000,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 9,
+    "objetivo": 13500,
+    "falta": 10500,
+    "cobertura": 2.0,
+    "mesesAlcanzar": 53,
+    "mesesHito1": 0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 0,
+    "otro": 1,
+    "ahorro": 3000,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 3,
+    "objetivo": 4500,
+    "falta": 1500,
+    "cobertura": 2.0,
+    "mesesAlcanzar": 8,
+    "mesesHito1": 0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 1,
+    "otro": 0,
+    "ahorro": 5250,
+    "aport": 200
+   },
+   "expect": {
+    "meses": 3.5,
+    "objetivo": 5250.0,
+    "falta": 0.0,
+    "cobertura": 3.5,
+    "mesesAlcanzar": 0,
+    "mesesHito1": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gastos": 1500,
+    "empleo": 0,
+    "ingresos": 0,
+    "dep": 1,
+    "otro": 0,
+    "ahorro": 0,
+    "aport": 50
+   },
+   "expect": {
+    "meses": 3.5,
+    "objetivo": 5250.0,
+    "falta": 5250.0,
+    "cobertura": 0.0,
+    "mesesAlcanzar": 105,
+    "mesesHito1": 30,
+    "ganador": 2
+   },
+   "tol": 1
+  }
+ ]
+}

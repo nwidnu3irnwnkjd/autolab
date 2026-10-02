@@ -1,0 +1,341 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "defecto: vivienda habitual, reinversión parcial de 150.000",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 150000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 68725.1,
+    "base": 46274.9,
+    "cuota": 9657.73,
+    "neto": 241342.27,
+    "necesaria": 251000,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: pérdida patrimonial",
+   "in": {
+    "venta": 150000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 150000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": -55000,
+    "exenta": 0.0,
+    "base": 0.0,
+    "cuota": 0.0,
+    "neto": 81000.0,
+    "necesaria": 0.0,
+    "cuotaSin": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: ganancia 0",
+   "in": {
+    "venta": 205000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 150000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 0,
+    "exenta": 0.0,
+    "base": 0.0,
+    "cuota": 0.0,
+    "neto": 136000.0,
+    "necesaria": 0.0,
+    "cuotaSin": 0.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "reinversión total (igual a lo obtenido)",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 251000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 115000.0,
+    "base": 0.0,
+    "cuota": 0.0,
+    "neto": 251000.0,
+    "necesaria": 251000,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "mayor de 65: exenta sin reinvertir",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab65",
+    "reinv": 0,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 115000,
+    "base": 0,
+    "cuota": 0.0,
+    "neto": 251000.0,
+    "necesaria": 0.0,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "vivienda no habitual: tributa todo",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 0.0,
+    "base": 115000.0,
+    "cuota": 25450.0,
+    "neto": 225550.0,
+    "necesaria": 0.0,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "habitual sin reinvertir",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 0,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 0.0,
+    "base": 115000.0,
+    "cuota": 25450.0,
+    "neto": 225550.0,
+    "necesaria": 251000,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "reinversión mayor que lo obtenido (tope al 100 %)",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 900000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 115000.0,
+    "base": 0.0,
+    "cuota": 0.0,
+    "neto": 251000.0,
+    "necesaria": 251000,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "no habitual, cruza los tramos de 50.000 y 200.000",
+   "in": {
+    "venta": 900000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 20000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 695000,
+    "exenta": 0.0,
+    "base": 695000.0,
+    "cuota": 192300.0,
+    "neto": 638700.0,
+    "necesaria": 0.0,
+    "cuotaSin": 192300.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: hipoteca mayor que la transmisión (no válido)",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 400000,
+    "sit": "hab",
+    "reinv": 150000,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 1,
+    "ganancia": 0,
+    "exenta": 0,
+    "base": 0,
+    "cuota": 0,
+    "neto": 0,
+    "necesaria": 0,
+    "cuotaSin": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "no habitual, ganancia por encima de 300.000",
+   "in": {
+    "venta": 1500000,
+    "adq": 300000,
+    "gcomp": 0,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 50000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 1191000,
+    "exenta": 0.0,
+    "base": 1191000.0,
+    "cuota": 343800.0,
+    "neto": 1087200.0,
+    "necesaria": 0.0,
+    "cuotaSin": 343800.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "amortización resta del coste (gastos de compra negativos)",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": -20000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 151000,
+    "exenta": 0.0,
+    "base": 151000.0,
+    "cuota": 33610.0,
+    "neto": 217390.0,
+    "necesaria": 0.0,
+    "cuotaSin": 33610.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: reinversión 1 € por debajo de lo obtenido",
+   "in": {
+    "venta": 320000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "hab",
+    "reinv": 250999,
+    "otras": 3000
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 115000,
+    "exenta": 114999.54,
+    "base": 0.46,
+    "cuota": 0.09,
+    "neto": 250999.91,
+    "necesaria": 251000,
+    "cuotaSin": 25450.0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "borde: ganancia de 6.000 sin otras rentas",
+   "in": {
+    "venta": 211000,
+    "adq": 180000,
+    "gcomp": 16000,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 6000,
+    "exenta": 0.0,
+    "base": 6000.0,
+    "cuota": 1140.0,
+    "neto": 140860.0,
+    "necesaria": 0.0,
+    "cuotaSin": 1140.0
+   },
+   "tol": 1
+  }
+ ]
+}

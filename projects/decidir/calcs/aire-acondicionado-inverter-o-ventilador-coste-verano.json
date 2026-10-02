@@ -1,0 +1,105 @@
+{
+  "slug": "aire-acondicionado-inverter-o-ventilador-coste-verano",
+  "title": "Aire inverter o ventilador: coste de verano y equilibrio",
+  "description": "Coste de energía de un aire inverter frente a un ventilador o un aire no inverter con tu uso y el precio de la luz, y las horas al día de equilibrio.",
+  "h1": "Aire inverter o ventilador: coste de energía en verano y cuándo compensa",
+  "lead": "El aire inverter compensa frente a un aire no inverter si lo usas más horas al día que el punto de equilibrio (3,3 con los ejemplos de la página: 0,6 kW frente a 1 kW, 800 € frente a 500 €, 90 días, 10 años y 0,20 €/kWh sin impuestos), y frente a un ventilador no es una cuestión de coste: el ventilador gasta mucho menos (27 kWh frente a 324 kWh en la temporada), pero no enfría el aire. Pon tu potencia, tus horas y el precio de la luz para ver el total de energía y compra en la vida útil.",
+  "veredicto": "El aire inverter compensa frente a un aire no inverter cuando el ahorro de energía durante la vida útil supera la diferencia de compra, algo que depende de las horas de uso; frente a un ventilador la comparación es de coste y no de confort, porque el ventilador no enfría.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "kwInv",
+      "label": "Potencia eléctrica media del aire inverter en marcha (kW; 0,6 es un ejemplo, no la de la placa)",
+      "default": 0.6,
+      "min": 0.05,
+      "step": 0.05,
+      "default_from": "params.aire_inverter_ventilador.supuestos.kw_inv"
+    },
+    {
+      "id": "kwAlt",
+      "label": "Potencia eléctrica media de la alternativa (kW; 0,05 es un ejemplo de ventilador; para un aire no inverter pon su consumo medio, p. ej. 1)",
+      "default": 0.05,
+      "min": 0,
+      "step": 0.01,
+      "default_from": "params.aire_inverter_ventilador.supuestos.kw_alt"
+    },
+    {
+      "id": "horas",
+      "label": "Horas de uso al día en los días de calor (h; 6 es un ejemplo)",
+      "default": 6,
+      "min": 0,
+      "max": 24,
+      "step": 0.5,
+      "default_from": "params.aire_inverter_ventilador.supuestos.horas"
+    },
+    {
+      "id": "dias",
+      "label": "Días de uso en la temporada (días; 90 es un ejemplo)",
+      "default": 90,
+      "min": 0,
+      "max": 366,
+      "step": 5,
+      "default_from": "params.aire_inverter_ventilador.supuestos.dias"
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la energía (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+      "default": 0.184,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+    },
+    {
+      "id": "compraInv",
+      "label": "Compra e instalación del aire inverter (€; 800 es un ejemplo)",
+      "default": 800,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.aire_inverter_ventilador.supuestos.compra_inv"
+    },
+    {
+      "id": "compraAlt",
+      "label": "Compra de la alternativa (€; 40 es un ejemplo de ventilador)",
+      "default": 40,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.aire_inverter_ventilador.supuestos.compra_alt"
+    },
+    {
+      "id": "vida",
+      "label": "Vida útil en la que repartes la compra (años, de 1 a 30; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.aire_inverter_ventilador.supuestos.vida"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Gasta menos un aire inverter que uno no inverter?",
+      "Con el mismo trabajo de enfriar, el inverter modula la potencia del compresor en lugar de arrancar y parar, y por eso suele gastar menos energía; cuánto menos lo pones tú como potencia media de cada equipo, porque la placa no es el consumo real. Con los ejemplos de la página (0,6 kW frente a 1 kW, 6 horas al día durante 90 días y 0,20 €/kWh sin impuestos) la energía de la temporada cuesta 82 € con el inverter y 137 € con el no inverter."
+    ],
+    [
+      "¿Puede un ventilador sustituir al aire acondicionado?",
+      "No son equivalentes: un ventilador mueve el aire y alivia la sensación de calor, pero no baja la temperatura de la habitación ni quita humedad. Si el objetivo es enfriar, la comparación de coste con un ventilador no vale; si basta con refrescar, el ventilador gasta mucho menos. Con los ejemplos de la página (0,05 kW) consume 27 kWh en la temporada frente a 324 kWh del inverter. Esto no es un consejo médico: con olas de calor o personas vulnerables, consulta a un profesional sanitario."
+    ],
+    [
+      "¿Cuántas horas al día hay que usar el aire inverter para que compense?",
+      "Frente a un aire no inverter, compensa a partir de las horas al día en que el ahorro de energía durante la vida útil iguala la diferencia de compra. Con los ejemplos (1 kW y 500 € el no inverter, 0,6 kW y 800 € el inverter, 90 días, 10 años y 0,20 €/kWh sin impuestos) el equilibrio está en 3,3 horas al día; con 1 hora al día sale 208 € más barato el no inverter en 10 años. La calculadora te da el equilibrio con tus datos."
+    ],
+    [
+      "¿Qué precio de la luz usa la calculadora?",
+      "Por defecto, el precio medio del PVPC del mes en curso que publica Red Eléctrica (REData), o la media de septiembre de 2026 si el mes tiene menos de 7 días de datos; es editable. Le añade el Impuesto Especial sobre la Electricidad (5,11269632 %, con mínimo de 1 €/MWh) y el IVA general del 21 %. Si tienes una tarifa fija, pon su precio de energía. El PVPC medio de las 24 horas es más bajo que el de la tarde-noche, que es cuando más se usa el aire, así que puedes subirlo."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el término de potencia, el alquiler del contador, un posible aumento de potencia contratada, el mantenimiento, la inflación del precio de la luz ni descuentos financieros; el total es compra más vida útil por el coste anual de energía. Tampoco la diferencia de confort, ruido o calefacción en invierno: un aire con bomba de calor puede dar calor, y un ventilador no. Y la potencia es una media en funcionamiento que eliges tú, no un dato de ficha."
+    ]
+  ],
+  "sources": "Modelo propio: energía de la temporada = potencia media (kW) × horas al día × días; coste = energía × precio con impuestos; total = compra + vida útil × coste anual de energía, sin descontar. Precio por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: potencias medias de 0,6 kW (inverter) y 0,05 kW (ventilador), 6 horas al día durante 90 días, compra de 800 € y 40 €, vida útil de 10 años; no son datos de ningún fabricante. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

@@ -1,0 +1,221 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 0.05,
+    "horas": 6,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 40,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 82.42,
+    "costeAlt": 6.87,
+    "kwhInv": 324.0,
+    "kwhAlt": 27.0,
+    "ahorroAnual": -75.55,
+    "totalInv": 1624.17,
+    "totalAlt": 108.68,
+    "diferencia": -1515.49,
+    "aniosAmort": -1.0,
+    "horasEq": -1.0,
+    "esVentilador": 1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 1.0,
+    "horas": 6,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 500,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 82.42,
+    "costeAlt": 137.36,
+    "kwhInv": 324.0,
+    "kwhAlt": 540.0,
+    "ahorroAnual": 54.94,
+    "totalInv": 1624.17,
+    "totalAlt": 1873.61,
+    "diferencia": 249.45,
+    "aniosAmort": 5.46,
+    "horasEq": 3.28,
+    "esVentilador": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 1.0,
+    "horas": 1,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 500,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 13.74,
+    "costeAlt": 22.89,
+    "kwhInv": 54.0,
+    "kwhAlt": 90.0,
+    "ahorroAnual": 9.16,
+    "totalInv": 937.36,
+    "totalAlt": 728.94,
+    "diferencia": -208.43,
+    "aniosAmort": 32.76,
+    "horasEq": 3.28,
+    "esVentilador": 0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 0.05,
+    "horas": 0,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 40,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 0.0,
+    "costeAlt": 0.0,
+    "kwhInv": 0.0,
+    "kwhAlt": 0.0,
+    "ahorroAnual": 0.0,
+    "totalInv": 800.0,
+    "totalAlt": 40.0,
+    "diferencia": -760.0,
+    "aniosAmort": -1.0,
+    "horasEq": -1.0,
+    "esVentilador": 1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 1.0,
+    "horas": 6,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 800,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 82.42,
+    "costeAlt": 137.36,
+    "kwhInv": 324.0,
+    "kwhAlt": 540.0,
+    "ahorroAnual": 54.94,
+    "totalInv": 1624.17,
+    "totalAlt": 2173.61,
+    "diferencia": 549.45,
+    "aniosAmort": 0.0,
+    "horasEq": -1.0,
+    "esVentilador": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 1.0,
+    "horas": 6,
+    "dias": 90,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 900,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 82.42,
+    "costeAlt": 137.36,
+    "kwhInv": 324.0,
+    "kwhAlt": 540.0,
+    "ahorroAnual": 54.94,
+    "totalInv": 1624.17,
+    "totalAlt": 2273.61,
+    "diferencia": 649.45,
+    "aniosAmort": 0.0,
+    "horasEq": -1.0,
+    "esVentilador": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 0.05,
+    "horas": 6,
+    "dias": 90,
+    "precio": 0,
+    "compraInv": 800,
+    "compraAlt": 40,
+    "vida": 10
+   },
+   "expect": {
+    "costeInv": 0.39,
+    "costeAlt": 0.03,
+    "kwhInv": 324.0,
+    "kwhAlt": 27.0,
+    "ahorroAnual": -0.36,
+    "totalInv": 803.92,
+    "totalAlt": 40.33,
+    "diferencia": -763.59,
+    "aniosAmort": -1.0,
+    "horasEq": -1.0,
+    "esVentilador": 1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwInv": 0.6,
+    "kwAlt": 1.0,
+    "horas": 24,
+    "dias": 366,
+    "precio": 0.2,
+    "compraInv": 800,
+    "compraAlt": 500,
+    "vida": 30
+   },
+   "expect": {
+    "costeInv": 1340.65,
+    "costeAlt": 2234.41,
+    "kwhInv": 5270.4,
+    "kwhAlt": 8784.0,
+    "ahorroAnual": 893.76,
+    "totalInv": 41019.38,
+    "totalAlt": 67532.3,
+    "diferencia": 26512.92,
+    "aniosAmort": 0.34,
+    "horasEq": 0.27,
+    "esVentilador": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

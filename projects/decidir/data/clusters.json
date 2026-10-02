@@ -4,6 +4,11 @@
   "gimnasio-o-entrenar-en-casa",
   "hotel-o-apartamento-viaje-en-grupo"
  ],
+ "aire-acondicionado-inverter-o-ventilador-coste-verano": [
+  "cambiar-electrodomestico-antiguo-merece-la-pena",
+  "caldera-reparar-o-cambiar",
+  "calefaccion-gas-aerotermia-electrica"
+ ],
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
   "reformar-o-mudarse",
@@ -112,7 +117,7 @@
  "deduccion-maternidad-familia-numerosa": [
   "autonomo-o-asalariado",
   "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
-  "autonomo-o-sociedad-limitada"
+  "venta-vivienda-plusvalia-irpf-exencion"
  ],
  "deposito-letras-o-fondo-monetario": [
   "plan-pensiones-o-fondo-indexado",
@@ -143,6 +148,11 @@
   "portatil-o-movil-comprar-renting-o-financiar",
   "teletrabajo-o-oficina-coste-real",
   "contado-o-financiar"
+ ],
+ "fondo-de-emergencia-cuantos-meses-necesito": [
+  "cocinar-en-casa-o-comer-fuera",
+  "comprar-o-alquilar-herramienta",
+  "deposito-letras-o-fondo-monetario"
  ],
  "gimnasio-o-entrenar-en-casa": [
   "suscripciones-cuanto-gasto-al-ano",
@@ -293,5 +303,10 @@
   "guarderia-cuidadora-o-reducir-jornada",
   "contado-o-financiar",
   "cuanto-ahorrar-para-comprar-casa"
+ ],
+ "venta-vivienda-plusvalia-irpf-exencion": [
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "irpf-alquilar-vivienda-rendimiento-neto",
+  "autonomo-o-asalariado"
  ]
 }

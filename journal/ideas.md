@@ -203,3 +203,6 @@ Sin Keyword Planner y con una sola ronda de búsqueda hoy, no se re-consultaron 
 | 16 | equipaje-y-asiento-avion-coste-real (NF) + autonomo-estimacion-directa-o-modulos (F) + params 2027; llamar al Investigador | Parámetros 2027 |
 | 17 | residencia-o-cuidador-a-domicilio (NF) + deduccion-alquiler-vivienda-habitual-comunidad (F; si no hay tabla, versión genérica) | Pico abr-jun |
 | 18 | marca-blanca-o-marca-ahorro-anual (NF) + mudanza-empresa-o-furgoneta (NF) + refuerzo con datos de Search Console | Reponer con impresiones |
+
+## Ciclo 17 (Investigador, 2026-10-02)
+12 propuestas no fiscales añadidas al final de backlog.md (sin búsqueda web; criterio: demanda evergreen en ES y ausencia en las 59 calcs). Prioridad SEO/GEO: aire acondicionado, fondo de emergencia, coche segunda mano, gasolinera low cost, impresora, cambio de operadora. Reparto hubs: energía 2, coche 3, ahorro 7, hipoteca 1 (garaje). Ventaja común: cálculo con los números del usuario (competidores solo dan medias).
