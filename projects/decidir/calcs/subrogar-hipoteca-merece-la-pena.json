@@ -30,11 +30,12 @@
     },
     {
       "id": "tipoNuevo",
-      "label": "Tipo de interés de la oferta nueva (%)",
+      "label": "Tipo de interés de la oferta nueva (%; precargado con la media de mercado del BCE, pon el de tu FEIN)",
       "default": null,
       "min": 0,
       "step": 0.01,
-      "default_from": "params.tipo_hipoteca_fija_medio"
+      "default_from": "live.tipo_hipoteca_fija",
+      "default_fallback": "params.tipo_hipoteca_fija_medio"
     },
     {
       "id": "comision",
@@ -87,5 +88,5 @@
       "Solo si de verdad mantienes los productos vinculados (seguros, nómina, tarjetas) y te compensan por sí mismos. La calculadora resta su coste anual del ahorro de cuota; si ya ibas a contratarlos de todos modos, pon 0."
     ]
   ],
-  "sources": "Modelo propio: cuotas constantes (sistema francés) con el mismo plazo restante en ambas hipotecas; el coste del cambio (comisión sobre el capital y gastos) se paga al inicio; el ahorro neto suma las cuotas que dejas de pagar, menos las vinculaciones, más la menor deuda pendiente. No incluye cambios fiscales ni de tipo variable posteriores. Normativa verificada en el BOE: Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario (https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814), artículo 23 y disposición transitoria primera, consultada el 2/10/2026. La Ley 41/2007 no se ha verificado aquí: consulta tu escritura. Información orientativa, no asesoramiento financiero."
+  "sources": "Modelo propio: cuotas constantes (sistema francés) con el mismo plazo restante en ambas hipotecas; el coste del cambio (comisión sobre el capital y gastos) se paga al inicio; el ahorro neto suma las cuotas que dejas de pagar, menos las vinculaciones, más la menor deuda pendiente. No incluye cambios fiscales ni de tipo variable posteriores. Normativa verificada en el BOE: Ley 5/2019, de 15 de marzo, reguladora de los contratos de crédito inmobiliario (https://www.boe.es/buscar/act.php?id=BOE-A-2019-3814), artículo 23 y disposición transitoria primera, consultada el 2/10/2026. La Ley 41/2007 no se ha verificado aquí: consulta tu escritura. Tipo de la oferta nueva: se precarga con el tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas de vivienda en España con más de 10 años de fijación inicial, serie MIR del Banco Central Europeo (https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N), último mes publicado; es una media de mercado, no una oferta: sustitúyelo por el de tu FEIN. Información orientativa, no asesoramiento financiero."
 }

@@ -25,9 +25,9 @@
 - nota Investigador 2026-10-02: AVISO calefaccion-gas-aerotermia-electrica: el IVA del gas en nov-dic 2026 y el Impuesto sobre Hidrocarburos de oct-dic 2026 (RDL 25/2026) pueden cambiar; revisar params.json.
 - [x] reparar-o-comprar-electrodomestico — Reparar o comprar nuevo (lavadora, nevera, lavavajillas): regla del 50 %, edad y consumo [no fiscal; Investigador c9]
 - [x] cambiar-electrodomestico-antiguo-merece-la-pena — Cambiar nevera/lavadora vieja por clase A: ¿en cuántos años se amortiza? (kWh de etiqueta × luz_pvpc) [no fiscal; c9]
-- [ ] coche-nuevo-o-seminuevo — Coche nuevo o seminuevo: depreciación, garantía y coste total a N años [no fiscal; c9]
+- [x] coche-nuevo-o-seminuevo — Coche nuevo o seminuevo: depreciación, garantía y coste total a N años [no fiscal; c9]
 - [x] tren-avion-o-coche — Viajar en tren, avión o coche: coste real y tiempo puerta a puerta (gasolina95 de live.json) [no fiscal; c9]
-- [ ] bici-electrica-o-transporte-publico — Bici eléctrica o transporte público (o coche): ahorro anual y años para amortizarla [no fiscal; c9]
+- [x] bici-electrica-o-transporte-publico — Bici eléctrica o transporte público (o coche): ahorro anual y años para amortizarla [no fiscal; c9]
 - [ ] coche-propio-o-carsharing-o-vtc — Coche propio, carsharing o taxi/VTC según tus km: ¿cuándo deja de compensar tener coche? [no fiscal; c9]
 - [x] cambiar-ventanas-aislamiento-merece-la-pena — Cambiar ventanas o aislar: ahorro en calefacción y años de amortización (ayudas = entrada del usuario) [no fiscal; c9]
 - [ ] universidad-publica-o-privada-o-master — Universidad pública o privada (grado o máster): coste total, beca y retorno (precio/crédito = entrada del usuario) [no fiscal; c9]

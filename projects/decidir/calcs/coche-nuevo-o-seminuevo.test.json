@@ -1,0 +1,179 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 17500,
+    "edad": 3,
+    "anos": 5,
+    "dep1": 18,
+    "gastos": 1000,
+    "extra": 300,
+    "tin": 0
+   },
+   "expect": {
+    "tcoNuevo": 16839.95,
+    "tcoSemi": 14616.42,
+    "perdidaNuevo": 11549.95,
+    "perdidaSemi": 7166.42,
+    "interesesNuevo": 0.0,
+    "interesesSemi": 0.0,
+    "averiasNuevo": 290.0,
+    "averiasSemi": 950.0,
+    "residualNuevo": 13450.05,
+    "residualSemi": 10333.58,
+    "diferencia": 2223.52,
+    "ganador": 0,
+    "cruce": 0,
+    "precioEquilibrio": 22929.72
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 17500,
+    "edad": 3,
+    "anos": 5,
+    "dep1": 18,
+    "gastos": 1000,
+    "extra": 300,
+    "tin": 6.5
+   },
+   "expect": {
+    "tcoNuevo": 20319.33,
+    "tcoSemi": 17051.99,
+    "perdidaNuevo": 11549.95,
+    "perdidaSemi": 7166.42,
+    "interesesNuevo": 3479.38,
+    "interesesSemi": 2435.56,
+    "averiasNuevo": 290.0,
+    "averiasSemi": 950.0,
+    "residualNuevo": 13450.05,
+    "residualSemi": 10333.58,
+    "diferencia": 3267.34,
+    "ganador": 0,
+    "cruce": 0,
+    "precioEquilibrio": 23454.85
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 17500,
+    "edad": 3,
+    "anos": 1,
+    "dep1": 18,
+    "gastos": 1000,
+    "extra": 300,
+    "tin": 0
+   },
+   "expect": {
+    "tcoNuevo": 5500.0,
+    "tcoSemi": 3180.0,
+    "perdidaNuevo": 4500.0,
+    "perdidaSemi": 1750.0,
+    "interesesNuevo": 0.0,
+    "interesesSemi": 0.0,
+    "averiasNuevo": 0.0,
+    "averiasSemi": 130.0,
+    "residualNuevo": 20500.0,
+    "residualSemi": 15750.0,
+    "diferencia": 2320.0,
+    "ganador": 0,
+    "cruce": 0,
+    "precioEquilibrio": 40700.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 17500,
+    "edad": 6,
+    "anos": 10,
+    "dep1": 18,
+    "gastos": 1000,
+    "extra": 600,
+    "tin": 0
+   },
+   "expect": {
+    "tcoNuevo": 28597.88,
+    "tcoSemi": 30948.13,
+    "perdidaNuevo": 17057.88,
+    "perdidaSemi": 11398.13,
+    "interesesNuevo": 0.0,
+    "interesesSemi": 0.0,
+    "averiasNuevo": 1540.0,
+    "averiasSemi": 3550.0,
+    "residualNuevo": 7942.12,
+    "residualSemi": 6101.87,
+    "diferencia": -2350.25,
+    "ganador": 1,
+    "cruce": 6,
+    "precioEquilibrio": 13891.57
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 17500,
+    "edad": 3,
+    "anos": 5,
+    "dep1": 18,
+    "gastos": 0,
+    "extra": 0,
+    "tin": 0
+   },
+   "expect": {
+    "tcoNuevo": 11839.95,
+    "tcoSemi": 8116.42,
+    "perdidaNuevo": 11549.95,
+    "perdidaSemi": 7166.42,
+    "interesesNuevo": 0.0,
+    "interesesSemi": 0.0,
+    "averiasNuevo": 290.0,
+    "averiasSemi": 950.0,
+    "residualNuevo": 13450.05,
+    "residualSemi": 10333.58,
+    "diferencia": 3723.52,
+    "ganador": 0,
+    "cruce": 0,
+    "precioEquilibrio": 26592.64
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pnuevo": 25000,
+    "psemi": 24000,
+    "edad": 0,
+    "anos": 3,
+    "dep1": 18,
+    "gastos": 1000,
+    "extra": 300,
+    "tin": 0
+   },
+   "expect": {
+    "tcoNuevo": 11395.0,
+    "tcoSemi": 10404.0,
+    "perdidaNuevo": 8395.0,
+    "perdidaSemi": 6504.0,
+    "interesesNuevo": 0.0,
+    "interesesSemi": 0.0,
+    "averiasNuevo": 0.0,
+    "averiasSemi": 0.0,
+    "residualNuevo": 16605.0,
+    "residualSemi": 17496.0,
+    "diferencia": 991.0,
+    "ganador": 0,
+    "cruce": 0,
+    "precioEquilibrio": 27656.83
+   },
+   "tol": 1
+  }
+ ]
+}

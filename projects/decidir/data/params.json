@@ -2,7 +2,9 @@
  "fecha": "2026-10-02",
  "euribor_12m": 3.247,
  "euribor_fuente": "Banco Central Europeo, media mensual de septiembre de 2026 (respaldo; el dato vivo está en data/live.json)",
- "tipo_hipoteca_fija_medio": 2.6,
+ "tipo_hipoteca_fija_medio": 2.76,
+ "tipo_hipoteca_fija_periodo": "2026-08",
+ "tipo_hipoteca_fija_fuente": "Banco Central Europeo, Data Portal, MIR: tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas de vivienda en España con más de 10 años de fijación inicial, agosto de 2026 (respaldo; el dato vivo está en data/live.json). Consultado el 2/10/2026: https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N",
  "deduccion_vivienda_pre2013": {
   "porcentaje": 15,
   "base_maxima_anual": 9040
@@ -1551,6 +1553,25 @@
   "desgaste_eur_km": 0.08,
   "velocidad_media_kmh": 85,
   "nota": "Supuestos de ejemplo, no oficiales y editables. viaje_combustible_eur_km = gasolina_eur_l (1,833) x 6,5 / 100, respaldo si no hay dato vivo de gasolina95. El desgaste (neumáticos, mantenimiento) y la velocidad media (con paradas) son orientativos.",
+  "consulta": "2026-10-02"
+ },
+ "coche_nuevo_seminuevo": {
+  "nota": "Supuestos del modelo, ESTIMACIONES PROPIAS (no cifras oficiales ni estadísticas de mercado); se declaran en la página y se editan aquí. Los precios, la edad y la depreciación del primer año los pone el usuario.",
+  "entrada_pct": 20,
+  "deprec_anual_pct": 10,
+  "garantia_nuevo_anos": 3,
+  "averia_prob_base": 0.04,
+  "averia_prob_por_ano_de_edad": 0.03,
+  "averia_prob_tope": 0.6,
+  "averia_coste_eur": 1000,
+  "consulta": "2026-10-02"
+ },
+ "bici_carga_eur_km": 0.0026,
+ "bici_electrica": {
+  "carga_kwh_km": 0.012,
+  "mantenimiento_eur_km": 0.02,
+  "reventa_eur": 0,
+  "nota": "Supuestos de ejemplo, no oficiales y editables. bici_carga_eur_km = 0,012 kWh/km x 0,22 €/kWh (respaldo si no hay dato vivo de luz_pvpc). Mantenimiento (cadena, neumáticos, frenos) 0,02 €/km. Reventa 0 € por prudencia. Abonos de transporte y ayudas dependen de la ciudad: los pone el usuario.",
   "consulta": "2026-10-02"
  }
 }

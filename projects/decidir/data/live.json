@@ -26,7 +26,105 @@
    "extra": {
     "detalle": "Euríbor a 12 meses, media mensual",
     "periodo": "2026-09",
-    "periodo_anterior": "2026-08"
+    "periodo_anterior": "2026-08",
+    "serie_mensual": [
+     [
+      "2024-10",
+      2.691
+     ],
+     [
+      "2024-11",
+      2.506
+     ],
+     [
+      "2024-12",
+      2.436
+     ],
+     [
+      "2025-01",
+      2.525
+     ],
+     [
+      "2025-02",
+      2.407
+     ],
+     [
+      "2025-03",
+      2.398
+     ],
+     [
+      "2025-04",
+      2.143
+     ],
+     [
+      "2025-05",
+      2.081
+     ],
+     [
+      "2025-06",
+      2.081
+     ],
+     [
+      "2025-07",
+      2.079
+     ],
+     [
+      "2025-08",
+      2.114
+     ],
+     [
+      "2025-09",
+      2.171
+     ],
+     [
+      "2025-10",
+      2.187
+     ],
+     [
+      "2025-11",
+      2.217
+     ],
+     [
+      "2025-12",
+      2.267
+     ],
+     [
+      "2026-01",
+      2.245
+     ],
+     [
+      "2026-02",
+      2.221
+     ],
+     [
+      "2026-03",
+      2.565
+     ],
+     [
+      "2026-04",
+      2.747
+     ],
+     [
+      "2026-05",
+      2.804
+     ],
+     [
+      "2026-06",
+      2.798
+     ],
+     [
+      "2026-07",
+      2.855
+     ],
+     [
+      "2026-08",
+      2.954
+     ],
+     [
+      "2026-09",
+      3.247
+     ]
+    ]
    },
    "fecha_consulta": "2026-10-02",
    "fecha_dato": "2026-09-30",
@@ -103,9 +201,9 @@
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 23.3,
-    "max_semana": 23.3,
-    "min_hoy": 16.2,
+    "max_hoy": 23.6,
+    "max_semana": 23.6,
+    "min_hoy": 16.1,
     "min_semana": 13.7
    },
    "fecha_consulta": "2026-10-02",
@@ -117,12 +215,137 @@
    "historial": [
     [
      "2026-10-02",
-     18.4
+     16.5
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 18.4
+   "valor": 16.5
+  },
+  "tipo_hipoteca_fija": {
+   "anterior": 2.66,
+   "anterior_fecha": "2026-07",
+   "extra": {
+    "detalle": "Tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas para comprar vivienda en España con más de 10 años de fijación inicial; media mensual de las entidades",
+    "periodo": "2026-08",
+    "periodo_anterior": "2026-07",
+    "serie_mensual": [
+     [
+      "2024-09",
+      2.87
+     ],
+     [
+      "2024-10",
+      2.83
+     ],
+     [
+      "2024-11",
+      2.74
+     ],
+     [
+      "2024-12",
+      2.69
+     ],
+     [
+      "2025-01",
+      2.66
+     ],
+     [
+      "2025-02",
+      2.62
+     ],
+     [
+      "2025-03",
+      2.57
+     ],
+     [
+      "2025-04",
+      2.54
+     ],
+     [
+      "2025-05",
+      2.51
+     ],
+     [
+      "2025-06",
+      2.52
+     ],
+     [
+      "2025-07",
+      2.47
+     ],
+     [
+      "2025-08",
+      2.5
+     ],
+     [
+      "2025-09",
+      2.49
+     ],
+     [
+      "2025-10",
+      2.48
+     ],
+     [
+      "2025-11",
+      2.43
+     ],
+     [
+      "2025-12",
+      2.46
+     ],
+     [
+      "2026-01",
+      2.49
+     ],
+     [
+      "2026-02",
+      2.56
+     ],
+     [
+      "2026-03",
+      2.58
+     ],
+     [
+      "2026-04",
+      2.62
+     ],
+     [
+      "2026-05",
+      2.62
+     ],
+     [
+      "2026-06",
+      2.67
+     ],
+     [
+      "2026-07",
+      2.66
+     ],
+     [
+      "2026-08",
+      2.76
+     ]
+    ]
+   },
+   "fecha_consulta": "2026-10-02",
+   "fecha_dato": "2026-08-31",
+   "fuente": {
+    "nombre": "Banco Central Europeo (Data Portal, MIR: tipos de interés de nuevas operaciones, vivienda, España, fijación inicial superior a 10 años)",
+    "url": "https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N"
+   },
+   "historial": [
+    [
+     "2026-08-31",
+     2.76
+    ]
+   ],
+   "max_edad_dias": 60,
+   "ok": true,
+   "unidad": "%",
+   "valor": 2.76,
+   "variacion_abs": 0.1,
+   "variacion_pct": 3.76
   }
  },
  "esquema": 1,

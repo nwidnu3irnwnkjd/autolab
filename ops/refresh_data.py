@@ -5,6 +5,7 @@ Fuentes públicas SIN clave (probadas 2026-10-02):
   luz_pvpc    REE apidatos (PVPC por hora, EUR/MWh -> EUR/kWh)
   diesel / gasolina95   Geoportal MITECO (media simple de estaciones, Península y Baleares)
   euribor12m  BCE Data Portal (Euríbor 12 m, media mensual)
+  tipo_hipoteca_fija  BCE Data Portal, dataset MIR (nuevas hipotecas de vivienda en España, tipo acordado, fijación inicial > 10 años), mensual
   madrid_tiempo  Open-Meteo (CC BY 4.0)
 Tolerante a fallos: si una fuente falla se conserva el dato anterior con ok:false y motivo.
 Uso: python3 ops/refresh_data.py [--out ruta] [--dry]
@@ -107,7 +108,7 @@ def fetch_carb(clave):
 
 
 def fetch_euribor(today):
-    url = "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?lastNObservations=3&format=csvdata"
+    url = "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?lastNObservations=25&format=csvdata"  # 25 meses: serie mensual del Barómetro v2
     lines = http_text(url).strip().splitlines()
     head = lines[0].split(","); it, iv = head.index("TIME_PERIOD"), head.index("OBS_VALUE")
     obs = sorted((r.split(",")[it], float(r.split(",")[iv])) for r in lines[1:] if r.strip())
@@ -118,8 +119,28 @@ def fetch_euribor(today):
     if not (-1 < v < 10): raise RuntimeError(f"valor implausible {v}")
     return {"valor": round(v, 3), "unidad": "%", "fecha_dato": fin, "max_edad_dias": 45,
             "anterior": round(pv, 3), "anterior_fecha": pm,
-            "extra": {"periodo": m, "periodo_anterior": pm, "detalle": "Euríbor a 12 meses, media mensual"},
+            "extra": {"periodo": m, "periodo_anterior": pm, "detalle": "Euríbor a 12 meses, media mensual",
+                      "serie_mensual": [[p, round(x, 3)] for p, x in obs[-24:]]},  # serie oficial BCE (Barómetro v2: tabla y CSV)
             "fuente": {"nombre": "Banco Central Europeo (Data Portal, serie Euribor 1 año, vía Refinitiv)", "url": "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"}}
+
+
+def fetch_hipoteca_fija(today):
+    """Tipo de interés medio de las nuevas hipotecas de vivienda en España con fijación inicial > 10 años (BCE, MIR, tipo anual acordado TIN, no TAE)."""
+    url = "https://data-api.ecb.europa.eu/service/data/MIR/M.ES.B.A2C.P.R.A.2250.EUR.N?lastNObservations=25&format=csvdata"
+    lines = http_text(url).strip().splitlines()
+    head = lines[0].split(","); it, iv = head.index("TIME_PERIOD"), head.index("OBS_VALUE")
+    obs = sorted((r.split(",")[it], float(r.split(",")[iv])) for r in lines[1:] if r.strip() and r.split(",")[iv].strip())
+    if len(obs) < 2: raise RuntimeError("menos de 2 observaciones")
+    (pm, pv), (m, v) = obs[-2], obs[-1]
+    y, mo = map(int, m.split("-"))
+    fin = datetime.date(y, mo, calendar.monthrange(y, mo)[1]).isoformat()
+    if not (0 < v < 15): raise RuntimeError(f"valor implausible {v}")
+    return {"valor": round(v, 2), "unidad": "%", "fecha_dato": fin, "max_edad_dias": 60,
+            "anterior": round(pv, 2), "anterior_fecha": pm,
+            "extra": {"periodo": m, "periodo_anterior": pm,
+                      "detalle": "Tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas para comprar vivienda en España con más de 10 años de fijación inicial; media mensual de las entidades",
+                      "serie_mensual": [[p, round(x, 2)] for p, x in obs[-24:]]},
+            "fuente": {"nombre": "Banco Central Europeo (Data Portal, MIR: tipos de interés de nuevas operaciones, vivienda, España, fijación inicial superior a 10 años)", "url": "https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N"}}
 
 
 def fetch_tiempo():
@@ -143,6 +164,7 @@ def build_fetchers(today):
         "diesel": lambda: fetch_carb("diesel"),
         "gasolina95": lambda: fetch_carb("gasolina95"),
         "euribor12m": lambda: fetch_euribor(today),
+        "tipo_hipoteca_fija": lambda: fetch_hipoteca_fija(today),
         "madrid_tiempo": fetch_tiempo,
     }
 

@@ -72,6 +72,30 @@
     "ahorroNetoHorizonte": -1060.0
    },
    "tol": 1
+  },
+  {
+   "in": {
+    "capital": 150000,
+    "tipoActual": 3.5,
+    "anos": 20,
+    "tipoNuevo": 2.76,
+    "comision": 0.05,
+    "gastos": 1500,
+    "vinculacion": 300,
+    "horizonte": 10
+   },
+   "expect": {
+    "cuotaActual": 869.94,
+    "cuotaNueva": 813.99,
+    "ahorroCuota": 30.95,
+    "ahorroIntereses": 13427.78,
+    "costeCambio": 1575.0,
+    "mesesEquilibrio": 25,
+    "ahorroNeto5": 2108.25,
+    "ahorroNetoPlazo": 5852.78,
+    "ahorroNetoHorizonte": 4839.86
+   },
+   "tol": 1
   }
  ]
 }

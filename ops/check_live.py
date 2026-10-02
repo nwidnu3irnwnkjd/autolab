@@ -29,6 +29,7 @@ SAMPLE = {"esquema": 1, "datos": {
     "luz_pvpc": mk(0.2, "2026-10-02", "€/kWh", variacion_pct=-5.0, extra=dict(hora_barata=14, hora_cara=20, precio_hora_barata=0.1, precio_hora_cara=0.3)),
     "diesel": mk(1.9, "2026-10-02", "€/l"), "gasolina95": mk(1.8, "2026-10-02", "€/l"),
     "euribor12m": mk(3.2, "2026-09-30", "%", max_edad_dias=45, variacion_abs=-0.1, anterior_fecha="2026-08", extra=dict(periodo="2026-09")),
+    "tipo_hipoteca_fija": mk(2.76, "2026-08-31", "%", max_edad_dias=60, variacion_abs=0.1, anterior=2.66, anterior_fecha="2026-07", extra=dict(periodo="2026-08")),
     "madrid_tiempo": mk(15.0, "2026-10-02", "°C", extra=dict(min_semana=8.0, dias_prevision=7))}}
 schema(SAMPLE, "muestra")
 
@@ -107,5 +108,30 @@ ok(not seo.ahora_html("alquilar-o-comprar", D(2026, 10, 2)), "banner solo en cal
 ok(seo.ahora_html(None, D(2026, 10, 2)).count("<p ") == 1 and "Ahora:" in seo.ahora_html(None, D(2026, 10, 2)), "home: 1 banner Ahora")
 evs = json.load(open(os.path.join(ROOT, "projects/decidir/data/events.json")))["eventos"]
 ok(0 < len(evs) <= 10 and all(e.get("fuente", {}).get("url", "").startswith("https://") and e.get("aviso") for e in evs), "events.json: <= 10, todos con fuente y aviso")
+
+# ---- Tipo medio de hipoteca fija (BCE, MIR): ventana de 60 días, respaldo a params, Barómetro y subrogar coherentes ----
+import calcs_loader, barometro
+_tf = lambda hoy: calcs_loader.live_value(SAMPLE, "live.tipo_hipoteca_fija", today=hoy)
+ok(_tf(datetime.date(2026, 10, 2)) and _tf(datetime.date(2026, 10, 2))[0] == 2.76, "tipo fija: fresco a 32 días")
+ok(_tf(datetime.date(2026, 10, 30)) is not None and _tf(datetime.date(2026, 11, 1)) is None, "tipo fija: caduca a los 60 días del fin de mes")
+_sub = json.load(open(os.path.join(ROOT, "projects/decidir/calcs/subrogar-hipoteca-merece-la-pena.json")))
+_inp = next(i for i in _sub["inputs"] if i["id"] == "tipoNuevo")
+ok(_inp.get("default_from") == "live.tipo_hipoteca_fija" and _inp.get("default_fallback") == "params.tipo_hipoteca_fija_medio", "subrogar: default_from live + fallback params")
+ok(calcs_loader.resolve_default(_inp, PARAMS, SAMPLE, TODAY) == 2.76, "subrogar: usa el dato vivo")
+_old = json.loads(json.dumps(SAMPLE)); _old["datos"]["tipo_hipoteca_fija"]["fecha_dato"] = "2026-05-31"
+ok(calcs_loader.resolve_default(_inp, PARAMS, _old, TODAY) == PARAMS["tipo_hipoteca_fija_medio"], "subrogar: dato viejo -> respaldo oficial de params")
+_bad = json.loads(json.dumps(SAMPLE)); _bad["datos"]["tipo_hipoteca_fija"].update(ok=False, motivo="caída")
+ok(calcs_loader.resolve_default(_inp, PARAMS, _bad, TODAY) == PARAMS["tipo_hipoteca_fija_medio"], "subrogar: dato con fallo -> respaldo")
+ok(PARAMS.get("tipo_hipoteca_fija_periodo") and "Banco Central Europeo" in PARAMS.get("tipo_hipoteca_fija_fuente", "") and PARAMS["tipo_hipoteca_fija_medio"] != 2.6, "params: tipo fija con fuente y periodo")
+_Dv = barometro.compute(PARAMS, "https://x.test", live=SAMPLE)["hipoteca_fija_o_variable"]["supuestos"]
+ok(_Dv["tipo_fijo_referencia"] == 2.76 and _Dv["tipo_fijo_dato_vivo"] and _Dv["tipo_fijo_periodo"] == "2026-08", "barómetro: usa el dato vivo con su mes")
+_Db = barometro.compute(PARAMS, "https://x.test", live=_old)["hipoteca_fija_o_variable"]["supuestos"]
+ok(_Db["tipo_fijo_referencia"] == PARAMS["tipo_hipoteca_fija_medio"] and not _Db["tipo_fijo_dato_vivo"] and _Db["tipo_fijo_periodo"] == PARAMS["tipo_hipoteca_fija_periodo"], "barómetro: respaldo de params con su mes")
+# fallo del fetcher: conserva el previo con ok:false
+with tempfile.TemporaryDirectory() as t:
+    p = os.path.join(t, "live.json"); json.dump(SAMPLE, open(p, "w"))
+    def boom2(): raise RuntimeError("BCE caído")
+    res, fallos = refresh_data.run(p, {"tipo_hipoteca_fija": boom2}, today=datetime.date(2026, 10, 3))
+    d = res["datos"]["tipo_hipoteca_fija"]; ok(fallos == ["tipo_hipoteca_fija"] and d["ok"] is False and d["valor"] == 2.76 and "BCE" in d["motivo"], "tipo fija: fallo conserva valor")
 print("FALLOS:\n- " + "\n- ".join(fails) if fails else "OK check_live: Pulso + live.json")
 sys.exit(1 if fails else 0)

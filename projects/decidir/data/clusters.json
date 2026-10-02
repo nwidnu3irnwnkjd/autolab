@@ -18,6 +18,11 @@
   "plan-pensiones-o-fondo-indexado",
   "declaracion-conjunta-o-individual"
  ],
+ "bici-electrica-o-transporte-publico": [
+  "diesel-gasolina-hibrido-electrico",
+  "luz-fija-o-indexada",
+  "coche-nuevo-o-seminuevo"
+ ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
   "cambiar-ventanas-aislamiento-merece-la-pena",
@@ -33,10 +38,15 @@
   "luz-fija-o-indexada",
   "cambiar-electrodomestico-antiguo-merece-la-pena"
  ],
+ "coche-nuevo-o-seminuevo": [
+  "comprar-coche-o-renting",
+  "seguro-todo-riesgo-o-terceros",
+  "contado-o-financiar"
+ ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
   "diesel-gasolina-hibrido-electrico",
-  "contado-o-financiar"
+  "coche-nuevo-o-seminuevo"
  ],
  "contado-o-financiar": [
   "comprar-coche-o-renting",
@@ -84,8 +94,8 @@
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
-  "diesel-gasolina-hibrido-electrico",
-  "tren-avion-o-coche"
+  "coche-nuevo-o-seminuevo",
+  "diesel-gasolina-hibrido-electrico"
  ],
  "subrogar-hipoteca-merece-la-pena": [
   "amortizar-o-invertir",
@@ -93,8 +103,8 @@
   "hipoteca-fija-o-variable"
  ],
  "tren-avion-o-coche": [
-  "comprar-coche-o-renting",
-  "seguro-todo-riesgo-o-terceros",
-  "diesel-gasolina-hibrido-electrico"
+  "bici-electrica-o-transporte-publico",
+  "coche-nuevo-o-seminuevo",
+  "comprar-coche-o-renting"
  ]
 }

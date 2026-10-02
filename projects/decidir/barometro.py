@@ -104,6 +104,7 @@ def mes_es(iso):
     y, m, _ = iso.split("-"); return f"{MESES[int(m) - 1]} de {y}"
 def fecha_es(iso):
     y, m, d = iso.split("-"); return f"{int(d)} de {MESES[int(m) - 1]} de {y}"
+def fuente_corta(n): return n.split(" (")[0].split(",")[0]
 def el(motor): return "el de gasolina" if motor == "Gasolina" else "el " + motor.lower()
 def r(x, d=4): return None if x is None else round(x, d)
 
@@ -119,11 +120,17 @@ def compute(params, base, live=None):
     live = calcs_loader.load_live() if live is None else live
     params = calcs_loader.merge_market(params, live)
     fecha_datos = max([params["fecha"]] + [params[k] for k in ("fecha_euribor", "fecha_combustibles") if params.get("mercado_vivo") and k in params])
-    eurib, fija_ref = params["euribor_12m"], params["tipo_hipoteca_fija_medio"]
+    eurib = params["euribor_12m"]
+    # tipo fijo de referencia: dato vivo del BCE (MIR, España, fijación inicial > 10 años) si está fresco; si no, el último oficial verificado de params
+    rv = calcs_loader.live_value(live, "live.tipo_hipoteca_fija")
+    if rv:
+        fija_ref, fija_per, fija_fuente, fija_vivo = round(rv[0], 2), live["datos"]["tipo_hipoteca_fija"]["extra"]["periodo"], rv[2].get("nombre", ""), True
+    else:
+        fija_ref, fija_per, fija_fuente, fija_vivo = params["tipo_hipoteca_fija_medio"], params["tipo_hipoteca_fija_periodo"], params["tipo_hipoteca_fija_fuente"], False
     checks = []  # (calc, func, args, salida) -> ops/check_barometro.py
     # 1) Hipoteca fija o variable
     hb = dict(defaults("hipoteca-fija-o-variable", params, live), capital=150000, anos=25, euribor=eurib, escenario=0, dif=0.8)
-    fijos, difs = [2.2, 2.4, 2.6, 2.8, 3.0], [0.6, 0.8, 1.0]
+    fijos, difs = [2.5, 3.0, 3.5, 4.0], [0.6, 0.8, 1.0]
     if fija_ref not in fijos: fijos = sorted(fijos + [fija_ref])
     tabla_h = []
     for f in fijos:
@@ -141,7 +148,8 @@ def compute(params, base, live=None):
     checks.append({"calc": "hipoteca-fija-o-variable", "func": "calcular", "args": [hd], "salida": {k: r(ho[k], 3) for k in ("cuotaFija", "cuotaVar1", "intFija", "intVar", "euriborEquilibrio")}})
     hip = {"pregunta": "¿A partir de qué Euríbor medio futuro compensa una hipoteca fija frente a una variable?",
            "supuestos": {"capital_eur": 150000, "plazo_anos": 25, "euribor_12m_actual": eurib, "euribor_fecha_dato": params.get("fecha_euribor"), "euribor_periodo": params.get("periodo_euribor", ""), "diferencial_variable_referencia": 0.8,
-                         "tipo_fijo_referencia": fija_ref, "nota": "La variable aplica el Euríbor actual el primer año y el Euríbor medio indicado del año 2 en adelante. Sistema francés, sin comisiones ni bonificaciones."},
+                         "tipo_fijo_referencia": fija_ref, "tipo_fijo_periodo": fija_per, "tipo_fijo_fuente": fija_fuente, "tipo_fijo_dato_vivo": fija_vivo,
+                         "tipo_fijo_definicion": "Tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas de vivienda en España con más de 10 años de fijación inicial; es una media de mercado, no una oferta.", "nota": "La variable aplica el Euríbor actual el primer año y el Euríbor medio indicado del año 2 en adelante. Sistema francés, sin comisiones ni bonificaciones."},
            "referencia": {"cuota_fija": r(ho["cuotaFija"], 2), "cuota_variable_ano1": r(ho["cuotaVar1"], 2), "intereses_fija": r(ho["intFija"], 2),
                           "intereses_variable_si_euribor_se_mantiene": r(ho["intVar"], 2), "euribor_equilibrio": r(ho["euriborEquilibrio"], 3),
                           "diferencia_intereses_variable_menos_fija_por_escenario": esc},
@@ -196,12 +204,112 @@ def compute(params, base, live=None):
            "supuestos": {"capital_pendiente_eur": 150000, "anos_restantes": 20, "importe_disponible_eur": 30000, "tributacion_ganancias_pct": 19,
                          "comision_amortizacion_pct": 0, "nota": "Rentabilidad anual neta de comisiones, antes de impuestos; el 19 % se aplica a la ganancia al final. Al amortizar, el ahorro mensual de cuota (o el dinero liberado al acabar antes) se invierte a la misma rentabilidad."},
            "tabla": tabla_a, "calculadora": base + "/decidir/amortizar-o-invertir/"}
-    return {"nombre": "Barómetro Entre Muchos", "version": 1, "fecha_datos": fecha_datos, "url": base + PATH,
+    D = {"nombre": "Barómetro Entre Muchos", "version": 2, "fecha_datos": fecha_datos, "url": base + PATH,
             "url_datos": base + PATH + "datos.json", "editor": "Entre Muchos (entremuchos.com)",
             "metodo": "Cálculo propio con las calculadoras de entremuchos.com (código abierto en la propia página) y los parámetros de mercado de la fecha. Cada cifra es reproducible introduciendo los supuestos en la calculadora enlazada.",
-            "fuentes": {"euribor": params.get("euribor_fuente", ""), "combustibles": params.get("combustibles_fuente", "")},
+            "fuentes": {"euribor": params.get("euribor_fuente", ""), "tipo_fijo": fija_fuente, "combustibles": params.get("combustibles_fuente", "")},
             "datos_vivos": params.get("mercado_vivo", []),
             "hipoteca_fija_o_variable": hip, "coche_coste_por_motor": car, "amortizar_o_invertir": amo, "comprobaciones": checks}
+    D["licencia"] = LICENCIA
+    D["series_oficiales"] = series_oficiales(live)
+    D["historico"] = historico(D)
+    D["url_csv"] = base + PATH + "datos.csv"
+    return D
+
+
+# ---------- v2: licencia, histórico mensual y series oficiales (CSV/JSON) ----------
+HIST_PATH = os.path.join(ROOT, "data/barometro_historico.json")
+LICENCIA = {"cifras_propias": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/deed.es",
+            "atribucion": "Barómetro Entre Muchos (entremuchos.com/barometro/), fecha de los datos",
+            "datos_de_terceros": "Las series oficiales incluidas (BCE, MITECO, REE) se reutilizan con su atribución y conservan sus propias condiciones; cita también la fuente original."}
+
+def resumen(D):
+    """Cifras de cabecera de un mes (lo que se guarda en el histórico)."""
+    h, c, a = D["hipoteca_fija_o_variable"], D["coche_coste_por_motor"], D["amortizar_o_invertir"]
+    c15 = c["a_15000_km"]; g = next(m for m in c15["por_motor"] if m["motor"] == c15["ganador"])
+    a3 = next((f for f in a["tabla"] if f["tipo_hipoteca"] == 3.0), None)
+    return {"mes": D["fecha_datos"][:7], "fecha_datos": D["fecha_datos"],
+            "euribor_12m": h["supuestos"]["euribor_12m_actual"], "tipo_fijo_referencia": h["supuestos"]["tipo_fijo_referencia"],
+            "euribor_equilibrio": h["referencia"]["euribor_equilibrio"],
+            "coche_ganador_15000km": c15["ganador"], "coche_eur_km_ganador": g["eur_km_total"],
+            "diesel_eur_l": c["supuestos"]["precio_diesel_eur_l"], "gasolina_eur_l": c["supuestos"]["precio_gasolina_eur_l"],
+            "rentabilidad_equilibrio_hipoteca_3pct_plazo": a3["reduciendo_plazo"] if a3 else None}
+
+def load_hist(path=HIST_PATH):
+    try: return json.load(open(path)).get("meses", [])
+    except (OSError, ValueError): return []
+
+def historico(D, path=HIST_PATH):
+    """Meses cerrados del archivo + el mes en curso (provisional, recalculado en cada build)."""
+    cur = resumen(D); meses = [m for m in load_hist(path) if m["mes"] < cur["mes"]]
+    return [dict(m, estado="cerrado") for m in meses] + [dict(cur, estado="provisional")]
+
+def snapshot(params, base, path=HIST_PATH):
+    """Guarda/actualiza el mes en curso en data/barometro_historico.json; los meses anteriores no se tocan (congelados).
+    Lo ejecuta refresh.yml a diario: el último valor del mes queda como cierre."""
+    cur = resumen(compute(params, base)); meses = [m for m in load_hist(path) if m["mes"] != cur["mes"]]
+    meses = sorted(meses + [cur], key=lambda m: m["mes"])
+    with open(path, "w") as f:
+        json.dump({"nota": "Cifras de cabecera del Barómetro por mes (último cálculo del mes). Generado por barometro.py --snapshot", "meses": meses}, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    return cur
+
+SERIES = [("euribor12m", "Euríbor 12 meses, media mensual"), ("tipo_hipoteca_fija", "Tipo medio de nuevas hipotecas de vivienda con fijación inicial > 10 años (España), media mensual"), ("diesel", "Gasóleo A, media simple Península y Baleares"),
+          ("gasolina95", "Gasolina 95 E5, media simple Península y Baleares"), ("luz_pvpc", "PVPC, media diaria")]
+
+def series_oficiales(live):
+    """Series oficiales de data/live.json: Euríbor mensual (BCE, 24 meses) e historial diario de carburantes y PVPC."""
+    out = {}
+    for k, nombre in SERIES:
+        d = (live.get("datos") or {}).get(k) or {}
+        pts = (d.get("extra") or {}).get("serie_mensual") if k in ("euribor12m", "tipo_hipoteca_fija") else d.get("historial")
+        if not pts: continue
+        out[k] = {"nombre": nombre, "unidad": d.get("unidad"), "frecuencia": "mensual" if k in ("euribor12m", "tipo_hipoteca_fija") else "diaria",
+                  "fuente": d.get("fuente"), "puntos": [[p, v] for p, v in pts]}
+    return out
+
+def csv_text(D):
+    """CSV largo: serie,periodo,valor,unidad,fuente (cifras propias del histórico + series oficiales)."""
+    import csv, io
+    b = io.StringIO(); w = csv.writer(b, lineterminator="\n")
+    w.writerow(["serie", "periodo", "valor", "unidad", "estado", "fuente"])
+    own = [("euribor_equilibrio", "%"), ("tipo_fijo_referencia", "%"), ("coche_eur_km_ganador", "EUR/km"), ("coche_ganador_15000km", ""),
+           ("rentabilidad_equilibrio_hipoteca_3pct_plazo", "%")]
+    for m in D["historico"]:
+        for k, u in own:
+            if m.get(k) is not None: w.writerow([k, m["mes"], m[k], u, m["estado"], "Barómetro Entre Muchos (CC BY 4.0)"])
+    for k, sr in D["series_oficiales"].items():
+        for p, v in sr["puntos"]: w.writerow([k, p, v, sr["unidad"], "oficial", (sr["fuente"] or {}).get("nombre", "")])
+    return b.getvalue()
+
+def _historico_html(D):
+    lic = D["licencia"]; eu = D["series_oficiales"].get("euribor12m")
+    rows_m = "".join(f'<tr><th scope="row">{mes_es(m["fecha_datos"])}{" (provisional)" if m["estado"] == "provisional" else ""}</th><td>{pct(m["euribor_12m"], 3)}</td><td>{pct(m["euribor_equilibrio"])}</td><td>{m["coche_ganador_15000km"]} ({num(m["coche_eur_km_ganador"], 2)} €/km)</td><td>{pct(m["rentabilidad_equilibrio_hipoteca_3pct_plazo"]) if m["rentabilidad_equilibrio_hipoteca_3pct_plazo"] is not None else "—"}</td></tr>' for m in reversed(D["historico"]))
+    out = f"""
+<h2 id="historico">Serie histórica del Barómetro</h2>
+<p>Una fila por mes con las cifras de cabecera. El mes en curso es provisional (se recalcula con cada dato nuevo); al acabar el mes queda congelado con su último cálculo.</p>
+<div class="em-tw"><table>
+<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m</th><th scope="col">Euríbor de equilibrio (fija de referencia)</th><th scope="col">Coche más barato a 15.000 km</th><th scope="col">Rentabilidad que bate a amortizar al 3 %</th></tr></thead>
+<tbody>{rows_m}</tbody>
+</table></div>"""
+    if eu and len(eu["puntos"]) >= 2:
+        pts = eu["puntos"][-12:]
+        rows_e = "".join(f'<tr><th scope="row">{mes_es(p + "-01")}</th><td>{pct(v, 3)}</td></tr>' for p, v in reversed(pts))
+        out += f"""
+<h3 id="euribor-mensual">Euríbor a 12 meses: media mensual de los últimos {len(pts)} meses</h3>
+<div class="em-tw"><table>
+<thead><tr><th scope="col">Mes</th><th scope="col">Euríbor 12 m (media mensual)</th></tr></thead>
+<tbody>{rows_e}</tbody>
+</table></div>
+<p class="note">Fuente: <a href="{html.escape((eu["fuente"] or {}).get("url", ""))}" rel="noopener">{html.escape((eu["fuente"] or {}).get("nombre", ""))}</a>. Los {len(eu["puntos"])} meses disponibles están en el CSV.</p>"""
+    out += f"""
+<h2 id="descargas">Descarga los datos y licencia</h2>
+<ul>
+<li><a href="{PATH}datos.csv">{PATH}datos.csv</a>: formato largo (serie, periodo, valor, unidad, estado, fuente) con el histórico propio y las series oficiales (Euríbor mensual del BCE, carburantes de MITECO y PVPC de REE por día).</li>
+<li><a href="{PATH}datos.json">{PATH}datos.json</a>: todo lo anterior más los supuestos, las tablas completas y las comprobaciones contra las calculadoras.</li>
+</ul>
+<p><strong>Licencia:</strong> las cifras propias del Barómetro se publican con licencia <a href="{lic["url"]}" rel="license noopener">Creative Commons Atribución 4.0 (CC BY 4.0)</a>: puedes copiarlas, adaptarlas y usarlas, también con fines comerciales, citando «{html.escape(lic["atribucion"])}». {html.escape(lic["datos_de_terceros"])}</p>"""
+    return out
 
 
 # ---------- página ----------
@@ -211,7 +319,7 @@ def _answers(D):
     a3 = next(f for f in a["tabla"] if f["tipo_hipoteca"] == 3.0)
     ganador = next(m for m in c15["por_motor"] if m["motor"] == c15["ganador"])
     return [
-        f"Con el Euríbor a {pct(s['euribor_12m_actual'], 3)} y una hipoteca fija al {pct(s['tipo_fijo_referencia'])}, la fija de 150.000 € a 25 años sale más barata que una variable con diferencial del {pct(s['diferencial_variable_referencia'], 1)} si el Euríbor medio a partir del segundo año supera el <strong>{pct(ref['euribor_equilibrio'])}</strong>.",
+        f"Con el Euríbor a {pct(s['euribor_12m_actual'], 3)} y una hipoteca fija al {pct(s['tipo_fijo_referencia'])} (tipo medio de las nuevas hipotecas a más de 10 años de fijación, dato de {mes_es(s['tipo_fijo_periodo'] + '-01')} según {fuente_corta(s['tipo_fijo_fuente'])}), la fija de 150.000 € a 25 años sale más barata que una variable con diferencial del {pct(s['diferencial_variable_referencia'], 1)} si el Euríbor medio a partir del segundo año supera el <strong>{pct(ref['euribor_equilibrio'])}</strong>.",
         f"Recorriendo 15.000 km al año durante 5 años, el coche más barato en coste total es <strong>{el(c15['ganador'])}</strong>: {num(ganador['eur_km_total'], 2)} € por km ({eur(ganador['coste_mes'])} al mes), {eur(c15['diferencia_5_anos'])} menos que {el(c15['segundo'])} en 5 años.",
         f"Amortizar una hipoteca al 3 % reduciendo plazo equivale a una inversión que rinda un <strong>{pct(a3['reduciendo_plazo'])}</strong> anual antes de impuestos (con un 19 % de tributación sobre la ganancia): por debajo de eso, amortizar gana.",
     ]
@@ -239,7 +347,7 @@ def page(D, modified):
     return f"""<article class="guide barometro">
 <p class="kicker">Datos propios · {mes}</p>
 <h1>Barómetro Entre Muchos: hipoteca, coche y ahorro ({mes})</h1>
-<p class="byline note">Por Equipo de Entre Muchos · Datos del <time datetime="{fd}">{fecha_es(fd)}</time> · Página actualizada el <time datetime="{modified}">{fecha_es(modified)}</time> · <a href="{PATH}datos.json">Descargar datos (JSON)</a></p>
+<p class="byline note">Por Equipo de Entre Muchos · Datos del <time datetime="{fd}">{fecha_es(fd)}</time> · Página actualizada el <time datetime="{modified}">{fecha_es(modified)}</time> · <a href="#descargas">Descargar datos (CSV, JSON) · CC BY 4.0</a></p>
 <div class="box"><p><strong>Respuesta corta ({mes}):</strong></p><ul>{ans}</ul></div>
 <p>Cada mes calculamos estas cifras con nuestras propias calculadoras y los parámetros de mercado de la fecha. No son opiniones: puedes reproducir cualquier número poniendo los mismos supuestos en la calculadora enlazada.</p>
 
@@ -249,7 +357,7 @@ def page(D, modified):
 <thead><tr><th scope="col">Tipo fijo</th>{th}</tr></thead>
 <tbody>{rows_h}</tbody>
 </table></div>
-<p>Con la fija de referencia al {pct(hs["tipo_fijo_referencia"])} pagarías {eur(ref["cuota_fija"], 2)} al mes; la variable con diferencial {pct(hs["diferencial_variable_referencia"], 1)} empieza en {eur(ref["cuota_variable_ano1"], 2)}. Si el Euríbor se mantiene, {esc_txt("0")}; si sube 1 punto, {esc_txt("1")}; si baja 1 punto, {esc_txt("-1")}.</p>
+<p>La fila «(ref.)» es el tipo medio oficial de las nuevas hipotecas de vivienda a más de 10 años de fijación inicial ({pct(hs["tipo_fijo_referencia"])}, dato de {mes_es(hs["tipo_fijo_periodo"] + "-01")} según {html.escape(fuente_corta(hs["tipo_fijo_fuente"]))}); las demás filas son ejemplos de ofertas: busca la fila más cercana a la tuya. Con la fija de referencia al {pct(hs["tipo_fijo_referencia"])} pagarías {eur(ref["cuota_fija"], 2)} al mes; la variable con diferencial {pct(hs["diferencial_variable_referencia"], 1)} empieza en {eur(ref["cuota_variable_ano1"], 2)}. Si el Euríbor se mantiene, {esc_txt("0")}; si sube 1 punto, {esc_txt("1")}; si baja 1 punto, {esc_txt("-1")}.</p>
 <p><a class="btn2" href="/decidir/hipoteca-fija-o-variable/">Calcúlalo con tu oferta</a></p>
 
 <h2 id="coche">Diésel, gasolina, híbrido o eléctrico: coste de 15.000 km al año</h2>
@@ -274,10 +382,13 @@ def page(D, modified):
 </table></div>
 <p><a class="btn2" href="/decidir/amortizar-o-invertir/">Calcúlalo con tu hipoteca</a></p>
 
+{_historico_html(D)}
+
 <h2>Metodología y fuentes</h2>
 <ul>
 <li><strong>Cálculo propio</strong> con las mismas fórmulas que nuestras calculadoras (sistema francés de amortización; coste total de propiedad del coche; simulación mensual de amortizar frente a invertir). Una comprobación automática verifica en cada actualización que cada cifra de esta página coincide con la calculadora.</li>
 <li><strong>Euríbor a 12 meses:</strong> {pct(hs["euribor_12m_actual"], 3)}{euro_per} ({html.escape(D["fuentes"]["euribor"])}). Consulta el dato oficial en el <a href="https://www.bde.es/wbe/es/estadisticas/temas/tipos-interes.html" rel="noopener">Banco de España</a>.</li>
+<li><strong>Tipo fijo de referencia:</strong> {pct(hs["tipo_fijo_referencia"])}, {html.escape(D["fuentes"]["tipo_fijo"])}; dato de {mes_es(hs["tipo_fijo_periodo"] + "-01")}. Es el tipo anual acordado medio de las operaciones nuevas, no una oferta ni la TAE: el que te ofrezca tu banco depende de tu perfil, la vinculación y el plazo. Consulta la serie en el <a href="https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N" rel="noopener">Data Portal del BCE</a>.</li>
 <li><strong>Combustibles y electricidad:</strong> diésel y gasolina, media del {fecha_es(cs["fecha_precios"])} ({html.escape(D["fuentes"]["combustibles"])}); electricidad, precio orientativo de la calculadora; consulta el precio en tu zona en el <a href="https://geoportalgasolineras.es/" rel="noopener">Geoportal de gasolineras del Ministerio</a>.</li>
 <li><strong>Datos en formato máquina:</strong> <a href="{PATH}datos.json">{PATH}datos.json</a> (supuestos, tablas y fecha). Si citas estas cifras, enlaza a esta página e indica la fecha de los datos ({fecha_es(fd)}).</li>
 <li>Más contexto: <a href="/guias/euribor-hipoteca/">qué es el Euríbor y cómo afecta a tu hipoteca</a> y <a href="/guias/amortizacion-anticipada-comisiones/">comisiones por amortizar</a>.</li>
@@ -290,10 +401,12 @@ def jsonld(D, base, modified, published, desc, org, article, breadcrumbs):
     ds = {"@context": "https://schema.org", "@type": "Dataset", "name": f"Barómetro Entre Muchos ({mes_es(D['fecha_datos'])})",
           "description": "Cifras propias calculadas cada mes: Euríbor de equilibrio entre hipoteca fija y variable, coste por kilómetro de coches diésel, gasolina, híbrido y eléctrico, y rentabilidad necesaria para que invertir compense frente a amortizar la hipoteca. Supuestos y metodología en la página.",
           "url": url, "inLanguage": "es-ES", "isAccessibleForFree": True, "creator": org, "publisher": {"@id": base + "/#org"},
-          "dateModified": modified, "datePublished": published, "temporalCoverage": D["fecha_datos"], "spatialCoverage": {"@type": "Place", "name": "España"},
+          "dateModified": modified, "datePublished": published, "temporalCoverage": f'{D["historico"][0]["mes"]}/{D["fecha_datos"][:7]}' if len(D["historico"]) > 1 else D["fecha_datos"], "spatialCoverage": {"@type": "Place", "name": "España"},
           "keywords": ["Euríbor", "hipoteca fija o variable", "coste por kilómetro", "coche eléctrico", "amortizar hipoteca", "invertir"],
           "variableMeasured": ["Euríbor de equilibrio fija/variable (%)", "Coste total por km por tipo de motor (€/km)", "Rentabilidad de equilibrio amortizar/invertir (%)"],
-          "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": url + "datos.json"}]}
+          "license": D["licencia"]["url"],
+          "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": url + "datos.json"},
+                           {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": url + "datos.csv"}]}
     return [ds, article(f"Barómetro Entre Muchos: hipoteca, coche y ahorro ({mes_es(D['fecha_datos'])})", desc, url, published, modified, base),
             breadcrumbs(base, [("Inicio", "/"), ("Barómetro", None)])]
 
@@ -317,4 +430,11 @@ def build(dist, params, base):
     D = compute(params, base)
     d = os.path.join(dist, PATH.strip("/")); os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, "datos.json"), "w") as f: json.dump(D, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(d, "datos.csv"), "w") as f: f.write(csv_text(D))
     return D
+
+if __name__ == "__main__":  # python3 projects/decidir/barometro.py --snapshot (refresh.yml, a diario)
+    import sys
+    if "--snapshot" in sys.argv:
+        _site = json.load(open(os.path.join(ROOT, "data/site.json")))
+        print(snapshot(json.load(open(os.path.join(ROOT, "data/params.json"))), _site["base_url"].rstrip("/")))

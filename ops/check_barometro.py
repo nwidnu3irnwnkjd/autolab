@@ -17,6 +17,7 @@ fails = total = 0
 # los defaults de mercado de las calculadoras (live con respaldo a params) deben ser los que usa el barómetro
 _live = calcs_loader.load_live(); _pm = calcs_loader.merge_market(params, _live)
 _sup = {"hipoteca-fija-o-variable": ("euribor", D["hipoteca_fija_o_variable"]["supuestos"]["euribor_12m_actual"]),
+        "subrogar-hipoteca-merece-la-pena": ("tipoNuevo", D["hipoteca_fija_o_variable"]["supuestos"]["tipo_fijo_referencia"]),
         "diesel-gasolina-hibrido-electrico": [("precioDiesel", D["coche_coste_por_motor"]["supuestos"]["precio_diesel_eur_l"]), ("precioGasolina", D["coche_coste_por_motor"]["supuestos"]["precio_gasolina_eur_l"])]}
 for _slug, _v in _sup.items():
     _c = json.load(open(os.path.join(P, "calcs", _slug + ".json")))

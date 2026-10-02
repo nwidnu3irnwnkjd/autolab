@@ -1,0 +1,90 @@
+{
+  "slug": "coche-nuevo-o-seminuevo",
+  "title": "Coche nuevo o seminuevo: coste total a N años",
+  "description": "Compara coche nuevo y seminuevo con tus datos: pérdida de valor, garantía, averías, financiación, año en que se igualan y precio máximo del seminuevo.",
+  "h1": "Coche nuevo o seminuevo: ¿cuál sale más barato a N años?",
+  "lead": "El seminuevo sale más barato que el nuevo cuando lo que ahorras en pérdida de valor de los primeros años supera su mayor gasto en mantenimiento y averías, y el nuevo solo lo alcanza si el seminuevo es más viejo y lo conservas muchos años. Con los datos de ejemplo (nuevo de 25.000 €, seminuevo de 17.500 € y 3 años, 5 años de tenencia) el seminuevo sale unos 2.200 € más barato; con tus precios, la calculadora te da el año en que se cruzan las curvas y el precio del seminuevo a partir del cual deja de compensar.",
+  "veredicto": "El seminuevo sale más barato cuando el ahorro en pérdida de valor de los primeros años supera su mayor mantenimiento y sus averías esperadas, y el nuevo lo alcanza si el seminuevo es más viejo y lo conservas muchos años; la diferencia la marcan la depreciación de los primeros años y tu horizonte, y la calculadora te da el año de cruce y el precio máximo del seminuevo que compensa.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "pnuevo",
+      "label": "Precio del coche nuevo (€; 25.000 € es un ejemplo)",
+      "default": 25000,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "psemi",
+      "label": "Precio del seminuevo equivalente (€; menor que el nuevo; 17.500 € es un ejemplo)",
+      "default": 17500,
+      "min": 1,
+      "step": 500
+    },
+    {
+      "id": "edad",
+      "label": "Edad del seminuevo (años, 0 a 10; con ella se calcula la garantía que le queda y el riesgo de avería)",
+      "default": 3,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "anos",
+      "label": "Años que lo tendrás (entero de 1 a 10)",
+      "default": 5,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "dep1",
+      "label": "Pérdida de valor del nuevo el primer año (%; estimación editable, no una cifra oficial; desde el 2.º año, 10 % anual para ambos)",
+      "default": 18,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "gastos",
+      "label": "Seguro y mantenimiento anual del nuevo (€; 1.000 € es un ejemplo)",
+      "default": 1000,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "extra",
+      "label": "Mantenimiento extra anual del seminuevo respecto al nuevo (€; 300 € es un ejemplo editable)",
+      "default": 300,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "tin",
+      "label": "TIN de la financiación (% anual; 0 = al contado; si financias, entrada del 20 % y préstamo a los años de tenencia)",
+      "default": 0,
+      "min": 0,
+      "step": 0.1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Sale más barato un coche nuevo o uno seminuevo?",
+      "Depende de tus precios y de cuántos años lo conserves. El seminuevo se salta la mayor pérdida de valor, la de los primeros años, pero puede tener más mantenimiento y más riesgo de avería sin garantía. La calculadora suma todo por año y te dice cuál gana, por cuánto y desde qué año cambia la ventaja."
+    ],
+    [
+      "¿Qué pesa más, la depreciación o el mantenimiento?",
+      "Con los datos de ejemplo pesa más la pérdida de valor: el nuevo pierde 11.550 € en 5 años y el seminuevo 7.166 €, mientras que mantenimiento extra y averías suman bastante menos. Pero con un seminuevo más viejo y un horizonte largo la ventaja del seminuevo se reduce y puede invertirse. Por eso conviene probar tu horizonte."
+    ],
+    [
+      "¿Cómo se calcula la pérdida de valor?",
+      "Es una estimación del modelo, no una cifra oficial ni una estadística: el nuevo pierde el porcentaje que tú pongas el primer año y un 10 % anual después; el seminuevo, un 10 % anual desde el primer año. Contrasta el valor de reventa con anuncios de tu modelo y edad, y edita el porcentaje del primer año."
+    ],
+    [
+      "¿Cómo entran la garantía y las averías?",
+      "El modelo supone 3 años de garantía para el nuevo, y al seminuevo le quedan 3 menos su edad. Fuera de garantía, cada año tiene una probabilidad de avería que crece con la edad del coche, multiplicada por 1.000 €. Es un coste esperado y orientativo, no una predicción: tu coche puede no averiarse o hacerlo mucho más. Revisa la garantía real que ofrece el vendedor."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye impuesto de matriculación ni de circulación, combustible, diferencias de consumo o equipamiento, ni el interés que ganaría el dinero que no inviertes. La financiación se modela como un préstamo con entrada del 20 % a tantos años como los de tenencia. Es información orientativa, no asesoramiento."
+    ]
+  ],
+  "sources": "Modelo propio y estimaciones editables, no cifras oficiales ni estadísticas de mercado. Coste total a N años = pérdida de valor (precio menos valor residual) + intereses de la financiación + seguro y mantenimiento + averías esperadas. Pérdida de valor: el nuevo pierde el porcentaje indicado el primer año y un 10 % anual después; el seminuevo, un 10 % anual desde el primer año. Financiación: préstamo con sistema francés (cuota constante) del 80 % del precio a los años de tenencia, con el TIN que indiques. Garantía: 3 años para el nuevo; al seminuevo le quedan 3 menos su edad. Averías fuera de garantía: probabilidad anual = 0,04 + 0,03 x edad del coche ese año (tope 0,6), por 1.000 € de coste. Año de cruce: primer año en que cambia cuál de las dos opciones lleva el menor coste acumulado. Precio máximo del seminuevo: precio al que su coste total iguala al del nuevo con tus demás datos. Estas hipótesis se documentan en data/params.json (consulta 2/10/2026). Los precios, la edad, el seguro, el mantenimiento y el TIN los pones tú. Información orientativa, no asesoramiento."
+}

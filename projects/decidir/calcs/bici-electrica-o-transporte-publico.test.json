@@ -1,0 +1,161 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "kmdia": 10,
+    "dias": 220,
+    "abono": 40,
+    "kmcoche": 0.199,
+    "bici": 1800,
+    "vida": 6,
+    "mant": 0.023,
+    "seguro": 60
+   },
+   "expect": {
+    "km": 2200,
+    "cocheAnual": 437.8,
+    "abonoAnual": 480.0,
+    "biciAnual": 410.6,
+    "ahorroVsCoche": 27.2,
+    "ahorroVsAbono": 69.4,
+    "paybackCoche": 5.5,
+    "paybackAbono": 4.87,
+    "kmMinCoche": 2045.45,
+    "abonoMinMes": 34.22,
+    "barato": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kmdia": 25,
+    "dias": 230,
+    "abono": 40,
+    "kmcoche": 0.199,
+    "bici": 1800,
+    "vida": 6,
+    "mant": 0.023,
+    "seguro": 60
+   },
+   "expect": {
+    "km": 5750,
+    "cocheAnual": 1144.25,
+    "abonoAnual": 480.0,
+    "biciAnual": 492.25,
+    "ahorroVsCoche": 652.0,
+    "ahorroVsAbono": -12.25,
+    "paybackCoche": 1.89,
+    "paybackAbono": 6.26,
+    "kmMinCoche": 2045.45,
+    "abonoMinMes": 41.02,
+    "barato": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kmdia": 0,
+    "dias": 220,
+    "abono": 40,
+    "kmcoche": 0.199,
+    "bici": 1800,
+    "vida": 6,
+    "mant": 0.023,
+    "seguro": 60
+   },
+   "expect": {
+    "km": 0,
+    "cocheAnual": 0.0,
+    "abonoAnual": 480.0,
+    "biciAnual": 360.0,
+    "ahorroVsCoche": -360.0,
+    "ahorroVsAbono": 120.0,
+    "paybackCoche": -1,
+    "paybackAbono": 4.29,
+    "kmMinCoche": 2045.45,
+    "abonoMinMes": 30.0,
+    "barato": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kmdia": 10,
+    "dias": 220,
+    "abono": 0,
+    "kmcoche": 0.199,
+    "bici": 1800,
+    "vida": 6,
+    "mant": 0.023,
+    "seguro": 60
+   },
+   "expect": {
+    "km": 2200,
+    "cocheAnual": 437.8,
+    "abonoAnual": 0.0,
+    "biciAnual": 410.6,
+    "ahorroVsCoche": 27.2,
+    "ahorroVsAbono": 0,
+    "paybackCoche": 5.5,
+    "paybackAbono": -1,
+    "kmMinCoche": 2045.45,
+    "abonoMinMes": 34.22,
+    "barato": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kmdia": 10,
+    "dias": 220,
+    "abono": 40,
+    "kmcoche": 0.199,
+    "bici": 0,
+    "vida": 6,
+    "mant": 0.023,
+    "seguro": 0
+   },
+   "expect": {
+    "km": 2200,
+    "cocheAnual": 437.8,
+    "abonoAnual": 480.0,
+    "biciAnual": 50.6,
+    "ahorroVsCoche": 387.2,
+    "ahorroVsAbono": 429.4,
+    "paybackCoche": 0.0,
+    "paybackAbono": 0.0,
+    "kmMinCoche": 0.0,
+    "abonoMinMes": 4.22,
+    "barato": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kmdia": 10,
+    "dias": 220,
+    "abono": 40,
+    "kmcoche": 0.02,
+    "bici": 1800,
+    "vida": 1,
+    "mant": 0.023,
+    "seguro": 60
+   },
+   "expect": {
+    "km": 2200,
+    "cocheAnual": 44.0,
+    "abonoAnual": 480.0,
+    "biciAnual": 1910.6,
+    "ahorroVsCoche": -1866.6,
+    "ahorroVsAbono": -1430.6,
+    "paybackCoche": -1,
+    "paybackAbono": 4.87,
+    "kmMinCoche": -1,
+    "abonoMinMes": 159.22,
+    "barato": 0
+   },
+   "tol": 1
+  }
+ ]
+}

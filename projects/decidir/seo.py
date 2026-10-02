@@ -226,9 +226,10 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
         lines += [f"- [{n['h1']}]({base}/actualidad/{n['slug']}/): {n['description']}" for n in notes[:10]]
     if extra:  # Barómetro: datos propios fechados
         lines.append("\n## Datos propios\n")
-        lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json")
+        lines.append(f"- [Barómetro Entre Muchos]({base}/barometro/): Euríbor de equilibrio fija/variable, coste por km según motor y rentabilidad para que invertir compense frente a amortizar, actualizado cada mes. Datos en JSON: {base}/barometro/datos.json · CSV: {base}/barometro/datos.csv · Licencia de las cifras propias: CC BY 4.0 (cita «Barómetro Entre Muchos» y la fecha de los datos).")
     lines.append(f"\n## Optional\n\n- [Texto completo para LLMs]({base}/llms-full.txt): preguntas, criterios de decisión, parámetros y fuentes de cada calculadora.\n"
-                 f"- [Catálogo]({base}/decidir/): todas las calculadoras por tema.\n")
+                 f"- [Catálogo]({base}/decidir/): todas las calculadoras por tema.\n"
+                 f"- [Feed Atom]({base}{FEED_PATH}): notas de actualidad, guías y Barómetro mensual con su fecha.\n")
     open(os.path.join(dist, "llms.txt"), "w").write("\n".join(lines))
 
     full = [head]
@@ -246,6 +247,50 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
         full.append(f"\n---\n\n## {g['h1']}\n\nURL: {base}/guias/{g['slug']}/\nActualizado: {g['modified']}\n\n{html_to_md(g['body'], base)}\n")
     open(os.path.join(dist, "llms-full.txt"), "w").write("\n".join(full))
 
+
+# ---------- Feed Atom (/feed.xml): solo contenido real y fechado (actualidad, guías, Barómetro) ----------
+FEED_PATH = "/feed.xml"
+FEED_TITLE = "Entre Muchos: actualidad, guías y Barómetro"
+
+def feed_link():
+    """<link rel=alternate> para el <head> de todas las páginas (lo añade build.write)."""
+    return f'<link rel="alternate" type="application/atom+xml" title="{FEED_TITLE}" href="{FEED_PATH}">'
+
+def _atom_dt(iso):
+    return iso if "T" in iso else iso + "T00:00:00Z"
+
+def feed_entries(base, guides, notes, baro=None, baro_mod=None):
+    E = []
+    for n in notes:
+        E.append(dict(id=f"tag:entremuchos.com,2026:actualidad/{n['slug']}", title=n["h1"], url=f"{base}/actualidad/{n['slug']}/",
+                      published=n["published"], updated=n["modified"], summary=n["description"], cat="Actualidad"))
+    for g in guides:
+        E.append(dict(id=f"tag:entremuchos.com,2026:guias/{g['slug']}", title=g["h1"], url=f"{base}/guias/{g['slug']}/",
+                      published=g["published"], updated=g["modified"], summary=g["description"], cat="Guías"))
+    if baro:  # una entrada por mes del histórico (el mes en curso se actualiza; los cerrados quedan fijos)
+        import barometro
+        for m in baro.get("historico", []):
+            prov = m.get("estado") == "provisional"
+            E.append(dict(id=f"tag:entremuchos.com,2026:barometro/{m['mes']}", title=f"Barómetro de {barometro.mes_es(m['fecha_datos'])}" + (" (en curso)" if prov else ""),
+                          url=f"{base}/barometro/", published=m["mes"] + "-01", updated=max(m["fecha_datos"], baro_mod or "") if prov else m["fecha_datos"],
+                          summary=" ".join(barometro.answers_text(baro)) if prov else f"Euríbor de equilibrio {m['euribor_equilibrio']} % con fija al {m['tipo_fijo_referencia']} %; coche más barato a 15.000 km: {m['coche_ganador_15000km']}.",
+                          cat="Barómetro"))
+    return sorted(E, key=lambda e: (e["updated"], e["published"]), reverse=True)[:30]
+
+def write_feed(dist, site, guides, notes, baro=None, baro_mod=None):
+    base = site["base_url"].rstrip("/"); x = lambda t: html.escape(str(t), quote=True)
+    E = feed_entries(base, guides, notes, baro, baro_mod)
+    if not E: return None
+    ent = "".join(f"""<entry><id>{x(e["id"])}</id><title>{x(e["title"])}</title><link rel="alternate" type="text/html" href="{x(e["url"])}"/>"""
+                  f"""<published>{_atom_dt(e["published"])}</published><updated>{_atom_dt(e["updated"])}</updated><category term="{x(e["cat"])}"/>"""
+                  f"""<summary type="text">{x(e["summary"])}</summary></entry>\n""" for e in E)
+    xml = (f'<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es-ES">\n'
+           f'<id>{base}/</id><title>{x(FEED_TITLE)}</title><subtitle>Notas con datos oficiales, guías y el Barómetro mensual de {x(site["name"])}. Cada entrada lleva su fecha real.</subtitle>\n'
+           f'<link rel="self" type="application/atom+xml" href="{base}{FEED_PATH}"/><link rel="alternate" type="text/html" href="{base}/"/>\n'
+           f'<updated>{_atom_dt(max(e["updated"] for e in E))}</updated><author><name>{AUTHOR}</name><uri>{base}/como-funciona/</uri></author>\n'
+           f'<rights>Textos © {x(site["name"])}; cifras del Barómetro CC BY 4.0</rights>\n{ent}</feed>\n')
+    open(os.path.join(dist, FEED_PATH.strip("/")), "w").write(xml)
+    return len(E)
 
 def insert_before(page, marker, block):
     """Inserta block antes de la primera aparición de marker (o al final si no está). Evita tocar plantillas ajenas."""

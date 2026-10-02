@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Métricas de Search Console y GA4 para un proyecto. Uso: python3 ops/metrics.py decidir [dias=28]
+Con --inspect añade la URL Inspection API para las URLs clave de data/site.json["inspect"] (o una lista por defecto).
 Escribe un resumen en journal/metrics/<proyecto>-<fecha>.md y lo imprime."""
 import sys, os, json, datetime, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import gauth
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INSPECT = "--inspect" in sys.argv; sys.argv = [a for a in sys.argv if a != "--inspect"]
 proj = sys.argv[1] if len(sys.argv) > 1 else "decidir"; days = int(sys.argv[2]) if len(sys.argv) > 2 else 28
 site = json.load(open(os.path.join(ROOT, "projects", proj, "data/site.json")))
 host = site["base_url"].split("//")[1].split("/")[0]
@@ -22,6 +24,17 @@ try:
     qq = gauth.post(sc + "/searchAnalytics/query", t, {"startDate": str(start), "endDate": str(today), "dimensions": ["query"], "rowLimit": 25}).get("rows", [])
     if qq: out.append("\n**Consultas:** " + "; ".join(f"{r['keys'][0]} ({r['impressions']} impr., pos. {r['position']:.0f})" for r in qq))
 except urllib.error.HTTPError as e: out.append(f"Search Console: error HTTP {e.code}: {e.read().decode()[:200]}")
+# URL Inspection API (cuota: 2.000/día por propiedad; solo con --inspect)
+if INSPECT:
+    urls = site.get("inspect") or ["/", "/decidir/hipoteca-fija-o-variable/", "/guias/euribor-hipoteca/", "/barometro/", "/calendario/", "/actualidad/"]
+    out.append("\n## Inspección de URLs (URL Inspection API)\n| URL | Veredicto | Cobertura | Rastreo | robots | Fetch | Referentes |\n|---|---|---|---|---|---|---|")
+    for u in urls:
+        try:
+            r = gauth.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", t,
+                {"inspectionUrl": site["base_url"].rstrip("/") + u, "siteUrl": f"sc-domain:{host}", "languageCode": "es-ES"})
+            x = r.get("inspectionResult", {}).get("indexStatusResult", {})
+            out.append(f"| {u} | {x.get('verdict')} | {x.get('coverageState')} | {x.get('lastCrawlTime', '—')} | {x.get('robotsTxtState','').replace('ROBOTS_TXT_STATE_','')} | {x.get('pageFetchState','').replace('PAGE_FETCH_STATE_','')} | {len(x.get('referringUrls', []))} |")
+        except urllib.error.HTTPError as e: out.append(f"| {u} | error HTTP {e.code} | {e.read().decode()[:120]} | | | | |")
 # GA4
 pid = site.get("ga4_property_id")
 if pid:

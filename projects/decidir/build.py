@@ -26,7 +26,7 @@ BARO = None  # datos del Barómetro (main)
 def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None):
     """path: '/' o '/decidir/slug/'. Genera index.html en esa carpeta."""
     canonical = site["base_url"].rstrip("/") + path
-    extra = head_extra()
+    extra = head_extra() + "\n" + seo.feed_link()  # Atom /feed.xml (Estratega)
     if jsonld:
         extra += "\n" + "\n".join(f'<script type="application/ld+json">{json.dumps(j, ensure_ascii=False, separators=(",", ":"))}</script>' for j in jsonld)
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical,
@@ -120,6 +120,7 @@ def main():
     bundle.run(ROOT, DIST)  # minifica y recorta CSS/JS por tipo de página (Diseñador)
     seo.copy_static(DIST)  # static/ -> raíz: robots.txt (bots de IA permitidos), clave IndexNow
     seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES)  # llms.txt + llms-full.txt
+    seo.write_feed(DIST, site, GUIDES, NOTES, BARO, bmod)  # /feed.xml (Atom): actualidad, guías y Barómetro con su fecha real
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"<url><loc>{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in pages) + "</urlset>\n"
     open(os.path.join(DIST, "sitemap.xml"), "w").write(sm)
