@@ -124,6 +124,11 @@
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta"
  ],
+ "equipaje-y-asiento-avion-coste-real": [
+  "tren-avion-o-coche",
+  "bici-electrica-o-transporte-publico",
+  "coche-nuevo-o-seminuevo"
+ ],
  "excedencia-o-reduccion-jornada": [
   "guarderia-cuidadora-o-reducir-jornada",
   "teletrabajo-o-oficina-coste-real",
@@ -154,6 +159,11 @@
   "contado-o-financiar",
   "navidad-cuanto-gastar-sin-endeudarte"
  ],
+ "irpf-alquilar-vivienda-rendimiento-neto": [
+  "comparar-ofertas-de-trabajo-neto-real",
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+  "autonomo-o-asalariado"
+ ],
  "jubilacion-anticipada-o-demorada": [
   "plan-pensiones-o-fondo-indexado",
   "rescate-plan-pensiones-capital-o-renta",
@@ -168,6 +178,11 @@
   "portatil-o-movil-comprar-renting-o-financiar",
   "fibra-y-movil-juntos-o-por-separado",
   "reparar-o-comprar-electrodomestico"
+ ],
+ "mudanza-empresa-o-furgoneta": [
+  "academia-idiomas-presencial-online-o-intensivo",
+  "capitalizar-paro-o-cobrarlo",
+  "cocinar-en-casa-o-comer-fuera"
  ],
  "navidad-cuanto-gastar-sin-endeudarte": [
   "contado-o-financiar",

@@ -1,0 +1,161 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "vol": 20,
+    "dist": 50,
+    "empresa": 900,
+    "alqdia": 90,
+    "kmfurgo": 0.231,
+    "extras": 60,
+    "nayud": 2,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 269.1,
+    "costeFurgoConReserva": 369.1,
+    "costeEmpresa": 900,
+    "m3Furgo": 13.46,
+    "m3Empresa": 45.0,
+    "viajes": 1,
+    "dias": 1,
+    "horasTuyas": 5.25,
+    "tipo": 3,
+    "horaEq": 101.12,
+    "kmEq": 900
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vol": 20,
+    "dist": 50,
+    "empresa": 250,
+    "alqdia": 90,
+    "kmfurgo": 0.231,
+    "extras": 60,
+    "nayud": 2,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 269.1,
+    "costeFurgoConReserva": 369.1,
+    "costeEmpresa": 250,
+    "m3Furgo": 13.46,
+    "m3Empresa": 12.5,
+    "viajes": 1,
+    "dias": 1,
+    "horasTuyas": 5.25,
+    "tipo": 1,
+    "horaEq": 0.0,
+    "kmEq": 8
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vol": 20,
+    "dist": 50,
+    "empresa": 300,
+    "alqdia": 90,
+    "kmfurgo": 0.231,
+    "extras": 0,
+    "nayud": 2,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 209.1,
+    "costeFurgoConReserva": 309.1,
+    "costeEmpresa": 300,
+    "m3Furgo": 10.46,
+    "m3Empresa": 15.0,
+    "viajes": 1,
+    "dias": 1,
+    "horasTuyas": 5.25,
+    "tipo": 2,
+    "horaEq": 0.0,
+    "kmEq": 246
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vol": 45,
+    "dist": 400,
+    "empresa": 900,
+    "alqdia": 90,
+    "kmfurgo": 0.231,
+    "extras": 60,
+    "nayud": 2,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 1190.4,
+    "costeFurgoConReserva": 1415.4,
+    "costeEmpresa": 900,
+    "m3Furgo": 26.45,
+    "m3Empresa": 20.0,
+    "viajes": 3,
+    "dias": 4,
+    "horasTuyas": 39.0,
+    "tipo": 1,
+    "horaEq": 0.0,
+    "kmEq": 255
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vol": 20,
+    "dist": 0,
+    "empresa": 900,
+    "alqdia": 90,
+    "kmfurgo": 0.231,
+    "extras": 60,
+    "nayud": 2,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 246.0,
+    "costeFurgoConReserva": 346.0,
+    "costeEmpresa": 900,
+    "m3Furgo": 12.3,
+    "m3Empresa": 45.0,
+    "viajes": 1,
+    "dias": 1,
+    "horasTuyas": 4.0,
+    "tipo": 3,
+    "horaEq": 138.5,
+    "kmEq": 900
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vol": 20,
+    "dist": 50,
+    "empresa": 0,
+    "alqdia": 0,
+    "kmfurgo": 0,
+    "extras": 0,
+    "nayud": 0,
+    "eurayud": 12
+   },
+   "expect": {
+    "costeFurgo": 0.0,
+    "costeFurgoConReserva": 100.0,
+    "costeEmpresa": 0,
+    "m3Furgo": 0.0,
+    "m3Empresa": 0.0,
+    "viajes": 1,
+    "dias": 1,
+    "horasTuyas": 13.25,
+    "tipo": 1,
+    "horaEq": 0.0,
+    "kmEq": -1
+   },
+   "tol": 1
+  }
+ ]
+}

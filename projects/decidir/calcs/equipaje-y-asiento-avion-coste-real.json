@@ -1,0 +1,90 @@
+{
+  "slug": "equipaje-y-asiento-avion-coste-real",
+  "title": "Billete de avión: equipaje y asiento, ¿low cost o normal?",
+  "description": "Compara el coste real de un billete low cost con maletas, asiento y embarque frente a la tarifa normal: total, por pasajero y maletas de equilibrio.",
+  "h1": "Billete de avión: equipaje y asiento, ¿low cost o tarifa normal?",
+  "lead": "La tarifa low cost compensa frente a la normal mientras su precio base más tus maletas y extras (asiento, embarque prioritario, comida) quede por debajo del precio de la normal, y la normal compensa a partir del número de maletas por pasajero y trayecto que calcula la página; con los ejemplos declarados (40 € de base, 80 € de normal con 1 maleta incluida, 30 € por maleta y 15 € de extras, 2 pasajeros y 2 trayectos), la low cost cuesta 340 € con 1 maleta y la normal 320 €, mientras con 0 maletas la low cost sale a 220 €. Pon los precios de tu reserva.",
+  "veredicto": "La low cost compensa cuando su precio base más las maletas y los extras que pagues queda por debajo de la tarifa normal; a partir del número de maletas de equilibrio (y del importe de extras) que calcula la página, compensa la normal. Las políticas cambian por aerolínea y tarifa: usa lo que incluye tu billete. No incluye cambios, cancelaciones ni seguros.",
+  "tema": "coche",
+  "inputs": [
+    {
+      "id": "lc",
+      "label": "Precio base de la low cost (€ por pasajero y trayecto, con tasas; 40 € es un ejemplo, no una tarifa)",
+      "default": 40,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "normal",
+      "label": "Precio de la tarifa normal (€ por pasajero y trayecto, con tasas y con las maletas incluidas que indiques; 80 € es un ejemplo)",
+      "default": 80,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "maleta",
+      "label": "Precio de una maleta facturada (€ por maleta y trayecto; 30 € es un ejemplo, cambia por tramo y fecha)",
+      "default": 30,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "nmal",
+      "label": "Maletas facturadas por pasajero y trayecto (número entero de 0 a 5; 1 es un ejemplo)",
+      "default": 1,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "nincl",
+      "label": "Maletas incluidas en la tarifa normal (número entero de 0 a 5; 1 es un ejemplo, mira lo que incluye tu billete)",
+      "default": 1,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "extras",
+      "label": "Extras de la low cost: equipaje de mano grande, asiento, embarque prioritario y comida (€ por pasajero y trayecto; 15 € es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "pax",
+      "label": "Número de pasajeros (de 1 a 9)",
+      "default": 2,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "tray",
+      "label": "Número de trayectos (2 = ida y vuelta; de 1 a 10)",
+      "default": 2,
+      "min": 1,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Sale más barato un billete low cost o una tarifa normal?",
+      "Depende de lo que añadas. La low cost parte de un precio base menor y suma maletas, asiento, embarque prioritario y comida; la tarifa normal suele incluir parte de eso. Con los ejemplos de la página, con 1 maleta por pasajero y trayecto la normal sale a 320 € para 2 pasajeros y 2 trayectos frente a 340 € de la low cost, pero con 0 maletas la low cost sale a 220 €."
+    ],
+    [
+      "¿A partir de cuántas maletas compensa la tarifa normal?",
+      "A partir del menor número de maletas por pasajero y trayecto con el que la normal queda por debajo de la low cost. Con los ejemplos declarados es 1 maleta. La calculadora lo calcula con tus precios y avisa si con tus precios la normal no llega a compensar nunca."
+    ],
+    [
+      "¿Qué extras de la low cost cuento?",
+      "Los que vayas a pagar de verdad: equipaje de mano grande si no cabe bajo el asiento, selección de asiento, embarque prioritario y comida o bebida a bordo, sumados por pasajero y trayecto. La calculadora te dice a partir de qué importe de extras compensa la normal con tus maletas."
+    ],
+    [
+      "¿Los precios de equipaje y asiento son los mismos en todas las aerolíneas?",
+      "No. Las políticas de equipaje, asiento y embarque cambian por aerolínea, por tarifa, por ruta y por fecha. Por eso la página no cita aerolíneas ni precios de mercado: los precios de 40 €, 80 €, 30 € y 15 € son ejemplos declarados y los pones tú con lo que ves en tu reserva."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye cambios o cancelaciones, seguros, traslados al aeropuerto, ni el equipaje de mano si no lo sumas en los extras. Supone que los precios ya llevan tasas y que cada maleta adicional de la tarifa normal cuesta lo mismo que en la low cost. Comprueba las condiciones de tu billete antes de pagar."
+    ]
+  ],
+  "sources": "Modelo propio. Coste por pasajero y trayecto: low cost = precio base + maletas facturadas x precio por maleta + extras; tarifa normal = precio de la normal + máx(0, maletas facturadas - maletas incluidas) x precio por maleta. Coste total = coste por pasajero y trayecto x pasajeros x trayectos; por pasajero = coste por pasajero y trayecto x trayectos. Maletas de equilibrio = menor número de maletas (de 0 a 20) con el que la low cost cuesta más que la normal por más de 0,005 €; extras de equilibrio = precio de la normal con tus maletas - precio base de la low cost - maletas x precio por maleta. Empate si la diferencia por pasajero y trayecto es de menos de 0,005 €. Todos los precios (40 €, 80 €, 30 €, 15 €), las maletas incluidas y el número de pasajeros y trayectos son ejemplos declarados del modelo, no tarifas ni precios de mercado de ninguna aerolínea: los pones tú. Las políticas de equipaje, asiento y embarque cambian por aerolínea y tarifa. Para consultar derechos y normas del transporte aéreo en España, acude a la Agencia Estatal de Seguridad Aérea (AESA, https://www.seguridadaerea.gob.es/); la página no cita normas concretas. Información orientativa, no asesoramiento."
+}

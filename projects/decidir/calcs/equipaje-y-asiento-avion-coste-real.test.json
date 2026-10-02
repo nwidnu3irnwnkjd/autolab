@@ -1,0 +1,143 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "lc": 40,
+    "normal": 80,
+    "maleta": 30,
+    "nmal": 1,
+    "nincl": 1,
+    "extras": 15,
+    "pax": 2,
+    "tray": 2
+   },
+   "expect": {
+    "totalLC": 340,
+    "totalNormal": 320,
+    "porPasajeroLC": 170,
+    "porPasajeroNormal": 160,
+    "diferencia": 20,
+    "ganador": 1,
+    "nEq": 1,
+    "extraEq": 10
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "lc": 40,
+    "normal": 80,
+    "maleta": 30,
+    "nmal": 0,
+    "nincl": 1,
+    "extras": 15,
+    "pax": 2,
+    "tray": 2
+   },
+   "expect": {
+    "totalLC": 220,
+    "totalNormal": 320,
+    "porPasajeroLC": 110,
+    "porPasajeroNormal": 160,
+    "diferencia": -100,
+    "ganador": 0,
+    "nEq": 1,
+    "extraEq": 40
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "lc": 40,
+    "normal": 80,
+    "maleta": 30,
+    "nmal": 2,
+    "nincl": 1,
+    "extras": 15,
+    "pax": 1,
+    "tray": 1
+   },
+   "expect": {
+    "totalLC": 115,
+    "totalNormal": 110,
+    "porPasajeroLC": 115,
+    "porPasajeroNormal": 110,
+    "diferencia": 5,
+    "ganador": 1,
+    "nEq": 1,
+    "extraEq": 10
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "lc": 40,
+    "normal": 85,
+    "maleta": 30,
+    "nmal": 1,
+    "nincl": 1,
+    "extras": 15,
+    "pax": 2,
+    "tray": 2
+   },
+   "expect": {
+    "totalLC": 340,
+    "totalNormal": 340,
+    "porPasajeroLC": 170,
+    "porPasajeroNormal": 170,
+    "diferencia": 0,
+    "ganador": 2,
+    "nEq": -1,
+    "extraEq": 15
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "lc": 0,
+    "normal": 0,
+    "maleta": 0,
+    "nmal": 1,
+    "nincl": 1,
+    "extras": 0,
+    "pax": 2,
+    "tray": 2
+   },
+   "expect": {
+    "totalLC": 0,
+    "totalNormal": 0,
+    "porPasajeroLC": 0,
+    "porPasajeroNormal": 0,
+    "diferencia": 0,
+    "ganador": 2,
+    "nEq": -1,
+    "extraEq": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "lc": 40,
+    "normal": 200,
+    "maleta": 30,
+    "nmal": 3,
+    "nincl": 1,
+    "extras": 15,
+    "pax": 4,
+    "tray": 2
+   },
+   "expect": {
+    "totalLC": 1160,
+    "totalNormal": 2080,
+    "porPasajeroLC": 290,
+    "porPasajeroNormal": 520,
+    "diferencia": -920,
+    "ganador": 0,
+    "nEq": -1,
+    "extraEq": 130
+   },
+   "tol": 1
+  }
+ ]
+}

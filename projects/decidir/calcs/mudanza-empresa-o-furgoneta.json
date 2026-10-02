@@ -1,0 +1,94 @@
+{
+  "slug": "mudanza-empresa-o-furgoneta",
+  "title": "Mudanza: empresa o furgoneta de alquiler, coste real",
+  "description": "Compara empresa de mudanzas y furgoneta de alquiler con tus datos: gasto directo, coste por m³, valor de tu hora de equilibrio y riesgo de daños.",
+  "h1": "Mudanza: ¿empresa o furgoneta de alquiler?",
+  "lead": "La furgoneta de alquiler compensa frente a la empresa de mudanzas si su gasto directo (alquiler por días, combustible, extras y ayudantes) queda por debajo del presupuesto de la empresa y tu hora vale menos que el valor de equilibrio; con los ejemplos declarados de la página (20 m³, 50 km, 900 € de presupuesto) la furgoneta cuesta 269,1 € de gasto directo y la empresa compensa solo si tu hora vale más de unos 101,12 €, contando la reserva de daños de la hipótesis y tus 5,25 horas de trabajo. Pon tu presupuesto y tus tarifas.",
+  "veredicto": "La furgoneta compensa cuando su gasto directo (alquiler por días, combustible, peajes, cajas y ayudantes) más una reserva de daños queda por debajo del presupuesto de la empresa y tu hora vale menos que el valor de equilibrio que calcula la página; si el presupuesto de la empresa ya es menor que ese gasto, compensa la empresa. No incluye aparcamiento, permisos, ascensor, seguros específicos ni impuestos: consúltalos.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "vol",
+      "label": "Volumen a mover (m³; un piso de 2 habitaciones suele andar en torno a 20 m³, 20 es un ejemplo)",
+      "default": 20,
+      "min": 1,
+      "step": 1
+    },
+    {
+      "id": "dist",
+      "label": "Distancia de la mudanza (km, en un sentido; 50 km es un ejemplo, 0 si es en el mismo barrio)",
+      "default": 50,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "empresa",
+      "label": "Presupuesto de la empresa de mudanzas (€, el que te hayan dado; 900 € es un ejemplo, no una cotización)",
+      "default": 900,
+      "min": 0,
+      "step": 50
+    },
+    {
+      "id": "alqdia",
+      "label": "Alquiler de la furgoneta (€ por día, con el seguro que contrates; 90 € es un ejemplo, no una tarifa)",
+      "default": 90,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "kmfurgo",
+      "label": "Combustible de la furgoneta (€/km; por defecto, diésel de hoy x 12 l/100 km)",
+      "default": 0.231,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.diesel",
+      "default_factor": 0.12,
+      "default_round": 3,
+      "default_fallback": "params.mudanza_furgoneta_combustible_eur_km"
+    },
+    {
+      "id": "extras",
+      "label": "Peajes, cajas, embalaje y seguro extra (€, todo junto; 60 € es un ejemplo)",
+      "default": 60,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "nayud",
+      "label": "Ayudantes contratados, sin contarte a ti (número entero de 0 a 8; 2 es un ejemplo)",
+      "default": 2,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "eurayud",
+      "label": "Coste por ayudante (€ por hora; 12 € es un ejemplo)",
+      "default": 12,
+      "min": 0,
+      "step": 1
+    }
+  ],
+  "faqs": [
+    [
+      "¿Sale más barato mudarse con furgoneta de alquiler o con empresa?",
+      "Depende de tu presupuesto de empresa y de cuánto trabajo pongas tú. La furgoneta suma alquiler por días, combustible, extras y ayudantes; la empresa es un presupuesto cerrado. Con los ejemplos de la página, la furgoneta cuesta 269,1 € frente a 900 € de la empresa, pero eso no cuenta tu tiempo ni los daños: la calculadora te da el valor de tu hora a partir del cual la empresa compensa."
+    ],
+    [
+      "¿Cuánto cuesta una mudanza por metro cúbico?",
+      "Divide el coste total entre los metros cúbicos que mueves. Con los ejemplos declarados (20 m³), la furgoneta sale a 13,46 € por m³ de gasto directo y la empresa a 45 € por m³. Son ejemplos del modelo, no precios de mercado: pon tu presupuesto real y tus tarifas."
+    ],
+    [
+      "¿Cuántos kilómetros puedo recorrer antes de que la furgoneta deje de compensar?",
+      "Hasta el kilómetro en que su gasto directo iguala el presupuesto de la empresa. Con los ejemplos de la página, la furgoneta se mantiene por debajo de 900 € hasta unos 900 km; la calculadora calcula ese límite con tu presupuesto y tus tarifas, y avisa si no hay límite en 3.000 km."
+    ],
+    [
+      "¿Cómo se valora el riesgo de daños?",
+      "Con una hipótesis simple y editable en el modelo: una reserva de 5 € por m³ que se suma al coste de la furgoneta, para recordar que si algo se rompe lo asumes tú. No es una estadística de siniestralidad. Revisa qué cubre el seguro de la furgoneta y qué cubre la empresa, porque suelen ser distintos."
+    ],
+    [
+      "¿Qué no incluye esta comparación?",
+      "No incluye aparcamiento ni permisos municipales de reserva de espacio, ascensor o montacargas, seguros específicos de mudanza, impuestos ni fianzas. Consulta esos puntos con tu ayuntamiento, tu aseguradora y la empresa. El modelo supone una furgoneta de 20 m³ por viaje, 600 km por día de alquiler y que se devuelve en origen."
+    ]
+  ],
+  "sources": "Modelo propio. Gasto directo de la furgoneta = días de alquiler x alquiler por día + km totales x combustible por km + peajes, cajas y extras + ayudantes x coste por hora x horas de carga y descarga; km totales = viajes x 2 x distancia (ida y vuelta, se devuelve en origen); viajes = volumen / 20 m³ por viaje redondeado hacia arriba; días = km totales / 600 km por día redondeado hacia arriba, mínimo 1; horas de carga y descarga por persona = volumen x 0,6 horas-persona por m³ / (1 + ayudantes); tus horas = horas de carga y descarga + km totales / 80 km/h. Reserva de daños (hipótesis) = 5 € x volumen en m³. Valor de la hora de equilibrio = (presupuesto de la empresa - gasto directo - reserva) / tus horas; empresa gana por coste directo si su presupuesto es menor o igual que el gasto directo de la furgoneta. Combustible por defecto: precio medio del diésel (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 12 l/100 km; si no hay dato vivo, 1,927 €/l de diésel (consulta 2/10/2026). La capacidad de 20 m³, los 600 km por día, los 80 km/h, las 0,6 horas por m³, los 12 l/100 km y la reserva de 5 € por m³ son supuestos de ejemplo, estimaciones propias, no oficiales. Presupuesto de la empresa, alquiler, extras, ayudantes y volumen son ejemplos declarados, no cotizaciones ni precios de ninguna empresa. Información orientativa, no asesoramiento."
+}

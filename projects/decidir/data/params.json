@@ -1616,6 +1616,21 @@
   }
  },
  "viaje_combustible_eur_km": 0.119,
+ "mudanza_furgoneta_combustible_eur_km": 0.231,
+ "mudanza_empresa_o_furgoneta": {
+  "consumo_l_100km": 12,
+  "capacidad_m3": 20,
+  "km_por_dia": 600,
+  "velocidad_media_kmh": 80,
+  "horas_persona_por_m3": 0.6,
+  "reserva_danos_eur_m3": 5,
+  "nota": "Supuestos de ejemplo del modelo, ESTIMACIONES PROPIAS (no oficiales ni tarifas de empresas) y declarados en la página. mudanza_furgoneta_combustible_eur_km = diesel_eur_l (1,927, respaldo) x 12 / 100, usado solo si no hay dato vivo de diesel en live.json. Presupuesto de la empresa, alquiler por día, peajes, cajas, seguro y coste de ayudantes los pone el usuario. La reserva de daños es una hipótesis, no una estadística.",
+  "consulta": "2026-10-02"
+ },
+ "avion_equipaje_asiento": {
+  "nota": "Sin cifras externas: precios de billete, maleta, asiento, embarque prioritario y comida son EJEMPLOS del modelo, editables, no tarifas de ninguna aerolínea. Las políticas de equipaje cambian por aerolínea y por tarifa: el usuario pone lo que incluye su billete.",
+  "consulta": "2026-10-02"
+ },
  "viaje_coche": {
   "consumo_l_100km": 6.5,
   "desgaste_eur_km": 0.08,
@@ -1864,5 +1879,6 @@
   }
  },
  "gimnasio_o_casa": {"nota": "Sin cifras externas: cuota, matrícula, desplazamiento, sesiones, equipo, reventa y horizonte son EJEMPLOS del modelo, editables, no tarifas de ninguna cadena ni precios de fabricantes.", "supuestos": {"cuota": 30, "matricula": 20, "desp": 1, "sg": 3, "sc": 3, "equipo": 800, "reventa": 200, "meses": 24}, "consulta": "2026-10-02"},
- "cocinar_o_comer_fuera": {"nota": "Sin cifras externas: precio del menú, coste por ración, minutos, valor de la hora, comidas y días laborables son EJEMPLOS del modelo, editables, no precios de mercado.", "supuestos": {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 0, "sust": 3, "dias": 220}, "consulta": "2026-10-02"}
+ "cocinar_o_comer_fuera": {"nota": "Sin cifras externas: precio del menú, coste por ración, minutos, valor de la hora, comidas y días laborables son EJEMPLOS del modelo, editables, no precios de mercado.", "supuestos": {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 0, "sust": 3, "dias": 220}, "consulta": "2026-10-02"} ,
+ "alquiler_irpf_2026": {"fuente": "Ley 35/2006 del IRPF, arts. 22, 23.1, 23.2 y disposición transitoria 38.ª (consolidado a 2/10/2026, que aún muestra el art. 23 y la DT 38.ª en la versión de 1/1/2024 por la Ley 12/2023) y Real Decreto-ley 26/2026 art. 6.Segundo.Dos (art. 23.2) y .Catorce (DT 38.ª), BOE-A-2026-20266, en vigor 1/10/2026, pendiente de convalidación; si no se convalida, las ramas modeladas no cambian; Reglamento del IRPF arts. 13 y 14 (versión 1/4/2007); Ley 12/2023 (en vigor 26/5/2023); Ley 29/1994 art. 17.6", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764", "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820", "url_rdl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266", "url_lau": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003", "consulta": "consultado el 2/10/2026", "confianza": "B", "amortizacion_pct": 3, "reduccion_anterior_mayo_2023": 60, "reduccion_general": 50, "reduccion_rehabilitacion": 60, "reduccion_joven_o_social": 70, "reduccion_zona_tensionada_rebaja": 90, "rebaja_minima_pct": 5, "fecha_ley_12_2023": "2023-05-26", "fecha_corte_texto_nuevo": "2026-12-01", "nota": "Contratos posteriores al 1/12/2026: texto nuevo del art. 23.2 (RDL 26/2026, pendiente de convalidación): no modelado. Los importes de renta, gastos, valores y tipo son EJEMPLOS editables, no datos oficiales.", "supuestos": {"contrato": "b50", "renta": 800, "meses": 12, "otros": 900, "interep": 2500, "adq": 120000, "cat": 60000, "tipo": 30}}
 }
