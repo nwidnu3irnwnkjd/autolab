@@ -96,3 +96,9 @@
 - Bing: entremuchos.com ya estaba en Webmaster Tools; enviado sitemap.xml (Processing, hasta 48 h).
 - Pendiente humano: ya ninguno de «LO PRIMERO» (solo opcionales: www en GoDaddy; README del repo con su sí). Sin redes sociales (decisión suya). Titular legal «Editor independiente».
 - Seguimiento: kpis.py cada ciclo (URLs conocidas de la muestra de 12); revisar el estado de sitemaps por API (`gauth.get(.../sitemaps)`); si el 6-oct siguen sin descargarse, plan B de journal/ideas-equipo.md.
+
+## 2-oct tarde · GoDaddy y GitHub hechos (sesión de Claude en el navegador de Andoni)
+- GitHub: descripción, sitio web y 10 topics del repo público guardados (verificado por API); README público con enlace subido (ac6d96c).
+- GoDaddy: SOLO el CNAME www cambiado a nwidnu3irnwnkjd.github.io (19 registros antes y después; A, MX, TXT, SPF, DKIM, DMARC intactos). dig confirma el CNAME en 8.8.8.8; https://www.entremuchos.com aún sin certificado (esperado hasta ~1 h).
+- Pendiente de seguimiento: comprobar `curl -sI https://www.entremuchos.com/` (debe dar 200/301 a la versión sin www); si en 2 h sigue sin certificado: en el repo → Settings → Pages, quitar y volver a poner el dominio personalizado (pedir a Andoni que su sesión de navegador lo haga, con su confirmación).
+- Ya no queda ningún pendiente humano.
