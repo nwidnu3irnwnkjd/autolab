@@ -168,3 +168,10 @@
 - 5h 51 % (reset 13:40Z), semanal 46 %, extra 0,55 €.
 - Fiscales pendientes: incapacidad-permanente, paro-autonomos-cese, ayuda-alquiler-joven (RD 326/2026), empleada-hogar, jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad. No fiscales con demanda: freidora de aire u horno, cuánto cuesta un bebé.
 - Siguiente (c46): reconsultar RDL 26/2026 + 1-2 fiscales (incapacidad-permanente, empleada-hogar) + 1 no fiscal con demanda; metrics.
+
+## Ciclo 46 cerrado
+- Publicadas: empleada-hogar-cuanto-cuesta-contratar-cotizacion (Opus: 3 cambios menores; tramos/tipos/SMI 9,55 €/h confirmados; el 45 % solo cuidadora exclusiva, DA 3.ª bis RDL 1/2023) y freidora-de-aire-u-horno-cuanto-gasta (demanda #3, 19/20). 98 calculadoras.
+- RDL 26/2026: consulta 2 sin resultado confirmado de la votación del 2-oct; BOE consolidado sin derogación; reconsultar en 1-3 días (journal/rdl-26-2026-estado.md).
+- 5h 55 % (reset 13:40Z), semanal 47 %, extra 0,55 €.
+- Fiscales pendientes: incapacidad-permanente, paro-autonomos-cese, ayuda-alquiler-joven, jubilacion-parcial, brecha-genero, orfandad, Ley Beckham, deduccion-alquiler-comunidad. No fiscal con demanda restante: cuánto cuesta un bebé el primer año.
+- Siguiente (c47): Mejorador Opus (c48?) / Estratega Opus c48; c47: 1 fiscal + cuánto-cuesta-un-bebé + reconsulta RDL.
