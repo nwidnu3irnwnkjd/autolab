@@ -17,7 +17,7 @@
  "aire-acondicionado-inverter-o-ventilador-coste-verano": [
   "luz-fija-o-indexada",
   "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "placas-solares-merece-la-pena"
+  "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta"
  ],
  "alquilar-o-comprar": [
   "cuanto-ahorrar-para-comprar-casa",
@@ -49,6 +49,11 @@
   "cuota-autonomos-ingresos-reales-regularizacion",
   "autonomo-estimacion-directa-o-modulos"
  ],
+ "baja-medica-cuanto-cobro-incapacidad-temporal": [
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir",
+  "cuanto-cobro-de-paro-prestacion-desempleo",
+  "fondo-de-emergencia-cuantos-meses-necesito"
+ ],
  "bici-electrica-o-transporte-publico": [
   "vivir-cerca-del-trabajo-o-mas-barato-lejos",
   "coche-propio-o-carsharing-o-vtc",
@@ -62,7 +67,7 @@
  "calefaccion-gas-aerotermia-electrica": [
   "caldera-reparar-o-cambiar",
   "luz-fija-o-indexada",
-  "termo-electrico-o-calentador-gas-o-aerotermia-agua"
+  "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta"
  ],
  "cambiar-de-operadora-compensa-permanencia": [
   "fibra-y-movil-juntos-o-por-separado",
@@ -72,7 +77,7 @@
  "cambiar-electrodomestico-antiguo-merece-la-pena": [
   "reparar-o-comprar-electrodomestico",
   "horas-valle-luz-lavadora-termo-cuanto-ahorro",
-  "aire-acondicionado-inverter-o-ventilador-coste-verano"
+  "secadora-o-tendedero-coste-por-lavado"
  ],
  "cambiar-ventanas-aislamiento-merece-la-pena": [
   "calefaccion-gas-aerotermia-electrica",
@@ -147,7 +152,7 @@
  "cuanto-cobro-de-paro-prestacion-desempleo": [
   "capitalizar-paro-o-cobrarlo",
   "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
-  "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad"
+  "baja-medica-cuanto-cobro-incapacidad-temporal"
  ],
  "cuota-autonomos-ingresos-reales-regularizacion": [
   "autonomo-o-asalariado",
@@ -202,12 +207,12 @@
  "finiquito-baja-voluntaria-vacaciones-preaviso": [
   "indemnizacion-despido-objetivo-o-improcedente-neto",
   "cuanto-cobro-de-paro-prestacion-desempleo",
-  "comparar-ofertas-de-trabajo-neto-real"
+  "baja-medica-cuanto-cobro-incapacidad-temporal"
  ],
  "fondo-de-emergencia-cuantos-meses-necesito": [
   "deposito-letras-o-fondo-monetario",
   "seguro-hogar-con-o-sin-franquicia",
-  "autonomo-estimacion-directa-o-modulos"
+  "baja-medica-cuanto-cobro-incapacidad-temporal"
  ],
  "garaje-comprar-alquilar-o-aparcar-en-la-calle": [
   "comprar-o-alquilar-trastero",
@@ -252,7 +257,7 @@
  "horas-valle-luz-lavadora-termo-cuanto-ahorro": [
   "luz-fija-o-indexada",
   "termo-electrico-o-calentador-gas-o-aerotermia-agua",
-  "potencia-contratada-luz-bajar-compensa"
+  "secadora-o-tendedero-coste-por-lavado"
  ],
  "hotel-o-apartamento-viaje-en-grupo": [
   "tren-avion-o-coche",
@@ -291,7 +296,7 @@
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
-  "placas-solares-merece-la-pena",
+  "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta",
   "potencia-contratada-luz-bajar-compensa"
  ],
  "marca-blanca-o-marca-ahorro-anual": [
@@ -359,6 +364,11 @@
   "diesel-gasolina-hibrido-electrico",
   "luz-fija-o-indexada"
  ],
+ "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": [
+  "calefaccion-gas-aerotermia-electrica",
+  "aire-acondicionado-inverter-o-ventilador-coste-verano",
+  "luz-fija-o-indexada"
+ ],
  "reformar-o-mudarse": [
   "alquilar-o-comprar",
   "venta-vivienda-plusvalia-irpf-exencion",
@@ -367,7 +377,7 @@
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",
   "impresora-tinta-o-laser-coste-por-pagina",
-  "contado-o-financiar"
+  "secadora-o-tendedero-coste-por-lavado"
  ],
  "rescate-plan-pensiones-capital-o-renta": [
   "plan-pensiones-o-fondo-indexado",
@@ -388,6 +398,11 @@
   "retencion-irpf-nomina-subir-o-no",
   "comparar-ofertas-de-trabajo-neto-real",
   "deduccion-maternidad-familia-numerosa"
+ ],
+ "secadora-o-tendedero-coste-por-lavado": [
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro",
+  "luz-fija-o-indexada",
+  "reparar-o-comprar-electrodomestico"
  ],
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",

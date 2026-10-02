@@ -1,0 +1,248 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 0,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 81.4,
+    "horasAno": 40.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 1263.99,
+    "totalTendedero": 0.0,
+    "diferencia": -1263.99,
+    "valorEq": 3.16,
+    "coladasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 15,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 81.4,
+    "horasAno": 40.0,
+    "tiempoAno": 600.0,
+    "totalSecadora": 1263.99,
+    "totalTendedero": 6000.0,
+    "diferencia": 4736.01,
+    "valorEq": 3.16,
+    "coladasEq": 0.35,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 8,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 81.4,
+    "horasAno": 40.0,
+    "tiempoAno": 320.0,
+    "totalSecadora": 1263.99,
+    "totalTendedero": 3200.0,
+    "diferencia": 1936.01,
+    "valorEq": 3.16,
+    "coladasEq": 0.75,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 0,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 0,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 0,
+    "kwhAno": 0.0,
+    "energiaAno": 0.0,
+    "horasAno": 0.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 450.0,
+    "totalTendedero": 0.0,
+    "diferencia": -450.0,
+    "valorEq": -1.0,
+    "coladasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 0,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 0,
+    "compra": 0,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 0,
+    "kwhAno": 0.0,
+    "energiaAno": 0.0,
+    "horasAno": 0.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 0.0,
+    "totalTendedero": 0.0,
+    "diferencia": 0.0,
+    "valorEq": -1.0,
+    "coladasEq": -1.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 0,
+    "compra": 0,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 81.4,
+    "horasAno": 40.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 813.99,
+    "totalTendedero": 0.0,
+    "diferencia": -813.99,
+    "valorEq": 2.03,
+    "coladasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 0,
+    "valorHora": 15,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 81.4,
+    "horasAno": 0.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 1263.99,
+    "totalTendedero": 0.0,
+    "diferencia": -1263.99,
+    "valorEq": -1.0,
+    "coladasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 4,
+    "semanas": 40,
+    "kwh": 2.0,
+    "precio": 0,
+    "minutos": 15,
+    "valorHora": 0,
+    "compra": 450,
+    "vida": 10
+   },
+   "expect": {
+    "ciclo": 0.0,
+    "coladasAno": 160,
+    "kwhAno": 320.0,
+    "energiaAno": 0.39,
+    "horasAno": 40.0,
+    "tiempoAno": 0.0,
+    "totalSecadora": 453.87,
+    "totalTendedero": 0.0,
+    "diferencia": -453.87,
+    "valorEq": 1.13,
+    "coladasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "coladas": 10,
+    "semanas": 52,
+    "kwh": 2.0,
+    "precio": 0.2,
+    "minutos": 15,
+    "valorHora": 40,
+    "compra": 450,
+    "vida": 30
+   },
+   "expect": {
+    "ciclo": 0.51,
+    "coladasAno": 520,
+    "kwhAno": 1040.0,
+    "energiaAno": 264.55,
+    "horasAno": 130.0,
+    "tiempoAno": 5200.0,
+    "totalSecadora": 8386.43,
+    "totalTendedero": 156000.0,
+    "diferencia": 147613.57,
+    "valorEq": 2.15,
+    "coladasEq": 0.03,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

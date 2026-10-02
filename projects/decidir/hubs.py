@@ -162,7 +162,7 @@ HUBS = {
                  "las placas solares y, al final, los electrodomésticos. Hoy la energía del PVPC cuesta {{pvpc_hoy}} €/kWh de media ({{fecha_pvpc_es}}, sin peajes ni impuestos; fuente: Red Eléctrica) "
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
-            ("Sin obra: lo primero", ["luz-fija-o-indexada", "potencia-contratada-luz-bajar-compensa", "horas-valle-luz-lavadora-termo-cuanto-ahorro", "calefaccion-gas-aerotermia-electrica"]),
+            ("Sin obra: lo primero", ["luz-fija-o-indexada", "potencia-contratada-luz-bajar-compensa", "horas-valle-luz-lavadora-termo-cuanto-ahorro", "calefaccion-gas-aerotermia-electrica", "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta", "secadora-o-tendedero-coste-por-lavado"]),
             ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "termo-electrico-o-calentador-gas-o-aerotermia-agua", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
         ],
         "steps": {
@@ -212,6 +212,14 @@ HUBS = {
             "cambiar-electrodomestico-antiguo-merece-la-pena": {
                 "name": "Cambiar un electrodoméstico que funciona",
                 "text": "Cambiar uno que funciona por uno de clase A compensa solo si el ahorro de luz cubre su precio en los años que cuentas: la calculadora te da los kWh al año que tendrías que ahorrar.",
+            },
+            "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": {
+                "name": "Radiador, calefactor o bomba de calor",
+                "text": "Para calentar una estancia, el radiador de aceite y el calefactor gastan lo mismo por kWh de calor; la bomba de calor (split) da varios kWh de calor por cada kWh eléctrico. La calculadora da el coste por temporada con tus horas y tu precio de la luz.",
+            },
+            "secadora-o-tendedero-coste-por-lavado": {
+                "name": "Secadora o tendedero",
+                "text": "El tendedero no gasta luz; la secadora cuesta unos céntimos por colada que dependen de su consumo y de tu tarifa. La calculadora da el coste por lavado y al año con tus coladas, y lo que ahorrarías usándola en horas valle.",
             },
             "aire-acondicionado-inverter-o-ventilador-coste-verano": {
                 "name": "Aire inverter, no inverter o ventilador",
@@ -378,7 +386,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
+            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -489,6 +497,10 @@ HUBS = {
             "permiso-nacimiento-cuanto-cobro-y-como-repartir": {
                 "name": "Permiso por nacimiento",
                 "text": "Las 19 semanas se cobran al 100 % de tu base reguladora y la prestación está exenta de IRPF. La calculadora reparte las semanas entre los dos progenitores y da lo que cobras con tus bases.",
+            },
+            "baja-medica-cuanto-cobro-incapacidad-temporal": {
+                "name": "Baja médica: cuánto cobras",
+                "text": "En una baja por enfermedad o accidente cobras un porcentaje de tu base reguladora que cambia según los días de baja y, a menudo, tu convenio la mejora. La calculadora da lo que cobras al mes y cuánto pierdes frente a tu sueldo.",
             },
             "guarderia-cuidadora-o-reducir-jornada": {
                 "name": "Guardería, cuidadora o reducir jornada",

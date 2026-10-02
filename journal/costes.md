@@ -53,3 +53,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-02T11:24Z | 37 | 44 | 0.55 | ciclo 42 cierre: Constructor fiscal+Opus+reverif, Estratega Sonnet (tablas), Editor, Estratega ligero, QA; peticiones abiertas: 0; páginas: 126
 2026-10-02T11:53Z | 44 | 45 | 0.55 | ciclo 43 cierre: Constructor fiscal+Opus+reverif, Editor, Estratega ligero, QA; peticiones abiertas: 0; páginas: 127
 2026-10-02T12:09Z | 47 | 46 | 0.55 | ciclo 44 cierre: Estratega Opus, Investigador Opus, QA; peticiones abiertas: 0; páginas: 128
+2026-10-02T12:29Z | 51 | 46 | 0.55 | ciclo 45 cierre: Constructor fiscal+Opus+reverif, Constructor no fiscal, comprobador BOE, Estratega ligero, QA; peticiones abiertas: 0; páginas: 131

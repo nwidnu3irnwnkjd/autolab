@@ -1,0 +1,117 @@
+{
+  "slug": "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta",
+  "title": "Radiador de aceite o bomba de calor: cuánto gasta",
+  "description": "Cuánto cuesta por hora, día y mes calentar con un radiador de aceite, calefactor o estufa frente a una bomba de calor, con el precio de la luz de hoy.",
+  "h1": "Radiador de aceite, calefactor o bomba de calor: cuánto gasta cada uno por hora, día y mes",
+  "lead": "La bomba de calor compensa frente a un radiador de aceite, un calefactor, un convector o una estufa eléctrica si la usas más de 59 días al año (con 1 kW de media, 6 horas al día, COP 3, 600 € de compra extra, 10 años y 0,20 €/kWh sin impuestos): con esos datos la resistencia cuesta 0,25 € por hora, 1,53 € por día y 46 € por mes de 30 días de uso, y la bomba, un tercio. El confort no es equivalente: pon tu potencia, tus horas y tu COP.",
+  "veredicto": "La bomba de calor compensa frente a una resistencia eléctrica (radiador de aceite, calefactor, convector o estufa) cuando el ahorro de energía durante la vida útil supera su compra extra, algo que depende de los días de uso y del COP que pongas; el confort que dan no es equivalente.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "potencia",
+      "label": "Potencia eléctrica media del radiador o calefactor en marcha (kW; 1 es un ejemplo, no la de la placa: con termostato la media es menor)",
+      "default": 1,
+      "min": 0.1,
+      "step": 0.1,
+      "default_from": "params.radiador_bomba_calor.supuestos.potencia"
+    },
+    {
+      "id": "aisl",
+      "label": "Aislamiento de la estancia (aproximado; es una hipótesis que multiplica la potencia)",
+      "type": "select",
+      "options": [
+        {
+          "v": "1",
+          "t": "Medio (×1: usa la potencia que has puesto)"
+        },
+        {
+          "v": "0.7",
+          "t": "Bueno (×0,7: necesita menos calor)"
+        },
+        {
+          "v": "1.3",
+          "t": "Malo (×1,3: necesita más calor)"
+        }
+      ]
+    },
+    {
+      "id": "horas",
+      "label": "Horas de uso al día en los días de frío (h; 6 es un ejemplo)",
+      "default": 6,
+      "min": 0,
+      "max": 24,
+      "step": 0.5,
+      "default_from": "params.radiador_bomba_calor.supuestos.horas"
+    },
+    {
+      "id": "dias",
+      "label": "Días de uso al año (días; 120 es un ejemplo)",
+      "default": 120,
+      "min": 0,
+      "max": 366,
+      "step": 5,
+      "default_from": "params.radiador_bomba_calor.supuestos.dias"
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la energía (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+      "default": 0.184,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+    },
+    {
+      "id": "cop",
+      "label": "COP de la bomba de calor (kWh de calor por cada kWh de luz; 3 es una hipótesis, mira la ficha de tu equipo)",
+      "default": 3,
+      "min": 1,
+      "max": 8,
+      "step": 0.1,
+      "default_from": "params.radiador_bomba_calor.supuestos.cop"
+    },
+    {
+      "id": "compraExtra",
+      "label": "Cuánto cuesta de más comprar e instalar la bomba de calor que el radiador (€; 600 es un ejemplo, no un presupuesto)",
+      "default": 600,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.radiador_bomba_calor.supuestos.compra_extra"
+    },
+    {
+      "id": "vida",
+      "label": "Vida útil en la que repartes la compra extra (años, de 1 a 30; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.radiador_bomba_calor.supuestos.vida"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto gasta un radiador de aceite por hora?",
+      "Depende de su potencia media y del precio de la luz. Con 1 kW de media y 0,20 €/kWh sin impuestos son 0,25 € por hora, 1,53 € por día de 6 horas y 46 € por mes de 30 días de uso. La de la placa es mayor."
+    ],
+    [
+      "¿Gasta menos un calefactor o una estufa que un radiador de aceite?",
+      "Con electricidad, cada kWh se convierte en un kWh de calor en todos, así que con la misma potencia media cuestan lo mismo. Cambia cómo reparten el calor y cuánto tardan en notarse, no el coste de energía; el modelo los trata igual."
+    ],
+    [
+      "¿Cuánto ahorra una bomba de calor frente a un radiador?",
+      "Con COP 3 (hipótesis, mira la ficha) gasta un tercio de la energía: con los ejemplos, 61 € al año frente a 183 €. Los 600 € de compra extra se recuperan en 4,9 años; con COP 1 no ahorra nada."
+    ],
+    [
+      "¿Cuántos días hay que usar la bomba de calor para que compense?",
+      "Hasta que el ahorro de energía iguala la compra extra. Con los ejemplos (600 € de más, 6 horas al día, 10 años, COP 3) son 59 días al año; con 20 días de uso y 1.000 € de compra extra, la resistencia sale más barata."
+    ],
+    [
+      "¿Qué precio de la luz usa la calculadora?",
+      "Por defecto, el PVPC medio del mes que publica Red Eléctrica (REData), o la media de septiembre de 2026 si hay menos de 7 días de datos; es editable. Se suman el Impuesto Especial sobre la Electricidad y el IVA del 21 %. Con tarifa fija, pon su precio."
+    ]
+  ],
+  "sources": "Modelo propio: kW de la resistencia = potencia media × factor de aislamiento; la bomba de calor da el mismo calor con kW ÷ COP; coste = kWh × precio con impuestos; total = compra extra + vida útil × coste anual de energía, sin descontar. Precio por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: potencia media de 1 kW, factores de aislamiento ×0,7, ×1 y ×1,3, 6 horas al día durante 120 días, COP 3, compra extra de 600 € y vida útil de 10 años; no son datos de ningún fabricante ni medidas de tu vivienda. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

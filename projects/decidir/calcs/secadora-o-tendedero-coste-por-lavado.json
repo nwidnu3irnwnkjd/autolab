@@ -1,0 +1,105 @@
+{
+  "slug": "secadora-o-tendedero-coste-por-lavado",
+  "title": "Secadora o tendedero: coste por colada y por año",
+  "description": "Cuánto cuesta cada colada en la secadora con el precio de la luz de hoy frente al tendedero, y cuándo compensa la compra contando tu tiempo.",
+  "h1": "Secadora o tendedero: cuánto cuesta cada colada y cuándo compensa",
+  "lead": "El tendedero sale más barato que la secadora salvo que valores tu hora por encima de 3,16 € (con 4 coladas a la semana durante 40 semanas, 2 kWh por ciclo, 0,20 €/kWh sin impuestos, 15 minutos de tender por colada, 450 € de compra y 10 años): con esos datos cada colada cuesta 0,51 € de energía en la secadora y 0 € en el tendedero, que a cambio lleva 40 horas al año. Pon tus kWh por ciclo, tus coladas y el valor de tu hora.",
+  "veredicto": "El tendedero cuesta menos que la secadora cuando no valoras el tiempo de tender y recoger; la secadora compensa si valoras tu hora por encima del umbral que sale de su compra, su energía y el tiempo que te ahorra, y no sustituye al tendedero cuando hace falta secar con humedad o sin espacio.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "coladas",
+      "label": "Coladas que secarías en la secadora a la semana (de 0 a 30; 4 es un ejemplo)",
+      "default": 4,
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.secadora_tendedero.supuestos.coladas"
+    },
+    {
+      "id": "semanas",
+      "label": "Semanas al año en que la usarías (de 0 a 52; 40 es un ejemplo)",
+      "default": 40,
+      "min": 0,
+      "max": 52,
+      "step": 1,
+      "default_from": "params.secadora_tendedero.supuestos.semanas"
+    },
+    {
+      "id": "kwh",
+      "label": "Energía de la secadora por ciclo (kWh; 2 es una hipótesis, no un dato de fabricante: mira la ficha de tu equipo)",
+      "default": 2,
+      "min": 0.1,
+      "step": 0.1,
+      "default_from": "params.secadora_tendedero.supuestos.kwh"
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la energía (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+      "default": 0.184,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+    },
+    {
+      "id": "minutos",
+      "label": "Minutos extra que te lleva tender y recoger una colada (min; 15 es un ejemplo)",
+      "default": 15,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.secadora_tendedero.supuestos.minutos"
+    },
+    {
+      "id": "valorHora",
+      "label": "Valor de tu hora (€/h; opcional, 0 si no quieres valorar el tiempo)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.secadora_tendedero.supuestos.valor_hora"
+    },
+    {
+      "id": "compra",
+      "label": "Compra e instalación de la secadora (€; 450 es un ejemplo, no un presupuesto; pon 0 si ya la tienes)",
+      "default": 450,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.secadora_tendedero.supuestos.compra"
+    },
+    {
+      "id": "vida",
+      "label": "Vida útil en la que repartes la compra (años, de 1 a 30; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.secadora_tendedero.supuestos.vida"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto gasta una secadora por ciclo?",
+      "Depende de los kWh de tu equipo, que pones tú, y del precio de la luz. Con 2 kWh por ciclo (un ejemplo, no un dato de fabricante) y 0,20 €/kWh sin impuestos son 0,51 € por colada y 81 € al año con 160 coladas."
+    ],
+    [
+      "¿Compensa una secadora de bomba de calor frente a una de condensación?",
+      "Depende de cuánta energía ahorre por ciclo y de lo que cueste de más. Ejecuta la calculadora con los kWh y la compra de cada una: gana la que tenga menor total de compra más energía en tu vida útil."
+    ],
+    [
+      "¿Cuánto vale mi tiempo para que compense la secadora?",
+      "Con los ejemplos, a partir de 3,16 € la hora, porque tender y recoger lleva 15 minutos por colada. Con tu hora a 8 €, la secadora sale 1.936 € más barata en 10 años; con 0 €, el tendedero gana."
+    ],
+    [
+      "¿Qué precio de la luz usa la calculadora?",
+      "Por defecto, el PVPC medio del mes que publica Red Eléctrica (REData), o la media de septiembre de 2026 si hay menos de 7 días de datos; es editable. Se suman el Impuesto Especial sobre la Electricidad y el IVA del 21 %. Con tarifa fija, pon su precio."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el mantenimiento, el desgaste de la ropa, el término de potencia, un aumento de potencia contratada, un deshumidificador ni la inflación. Tampoco la humedad de secar dentro de casa ni el clima: el tendedero puede no ser una opción."
+    ]
+  ],
+  "sources": "Modelo propio: coste por colada = kWh por ciclo × precio con impuestos; energía anual = coladas × semanas × coste por colada; tiempo del tendedero = minutos × coladas ÷ 60, valorado con tu hora; total de la secadora = compra + vida útil × energía anual, sin descontar. Precio por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: 4 coladas a la semana durante 40 semanas, 2 kWh por ciclo, 15 minutos de tender y recoger, valor de la hora de 0 €, compra de 450 € y vida útil de 10 años; no son datos de ningún fabricante ni de ninguna etiqueta energética. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

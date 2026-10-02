@@ -1,0 +1,105 @@
+{
+  "slug": "baja-medica-cuanto-cobro-incapacidad-temporal",
+  "title": "Baja médica: cuánto cobro cada día y cuánto pierdo",
+  "description": "Cuánto cobras de baja: 0 % los 3 primeros días, 60 % del 4 al 20 y 75 % desde el 21. Quién paga, accidente de trabajo y lo que pierdes.",
+  "h1": "Baja médica: cuánto cobro cada día y cuánto pierdo frente a mi sueldo",
+  "lead": "Con 2.200 € brutos al mes y 30 días de baja por enfermedad común, cobras 1.298,00 € de los 2.200,00 € de tu sueldo y pierdes 902,00 €, salvo que tu convenio mejore la prestación: nada los 3 primeros días, el 60 % de la base reguladora del día 4 al 20 (44,00 € al día) y el 75 % desde el día 21 (55,00 € al día). Del día 4 al 15 está a cargo de la empresa y desde el 16 de la Seguridad Social o la mutua. En enfermedad común necesitas 180 días cotizados en los 5 años anteriores. En accidente de trabajo o enfermedad profesional cobras el salario íntegro el día de la baja y el 75 % desde el día siguiente: con 10 días y el mismo sueldo, pierdes 165,00 €. Los 3 primeros días de una baja común cuestan 220,00 € si no hay mejora, y con un convenio que complete hasta el 100 % la pérdida es cero. La herramienta calcula la prestación por tramos, quién la paga, la pérdida frente a tu sueldo y el coste de los 3 primeros días; no incluye autónomos, desempleados, tiempo parcial, funcionarios con MUFACE, cotización ni IRPF, ni los regímenes forales.",
+  "veredicto": "La prestación por incapacidad temporal es un porcentaje de la base reguladora, que es tu base de cotización del mes anterior dividida entre 30 días y limitada a la base máxima de 5.101,20 € al mes en 2026. En enfermedad común o accidente no laboral no se cobra nada los 3 primeros días, se cobra el 60 % del día 4 al 20 (Real Decreto 53/1980) y el 75 % desde el día 21 (Decreto 3158/1966); del día 4 al 15 lo paga la empresa (art. 173.1 de la LGSS) y desde el 16 está a cargo de la Seguridad Social o la mutua (con pago delegado te lo sigue abonando la empresa). En enfermedad común hace falta haber cotizado 180 días en los 5 años anteriores (art. 172.a); sin ellos no hay subsidio. En accidente de trabajo o enfermedad profesional la empresa paga el salario íntegro del día de la baja y el subsidio del 75 % corre desde el día siguiente. El derecho dura como máximo 365 días prorrogables 180 más, y se extingue a los 545 días naturales, aunque sigues cobrando la misma prestación hasta que se resuelva la incapacidad permanente (arts. 169, 174.1 y 174.5 de la LGSS; la herramienta no calcula más allá del día 545). Si tu sueldo no supera la base máxima y tu convenio no mejora la prestación, pierdes el sueldo de los 3 primeros días en una baja común y un 40 % del sueldo diario del día 4 al 20 y un 25 % desde el día 21; si tu convenio completa hasta el 100 % de tu sueldo, no pierdes dinero bruto, y si tu sueldo supera la base máxima pierdes además el exceso. Con una baja común de 3 días o menos no hay subsidio de la Seguridad Social. La herramienta no incluye autónomos, tiempo parcial ni situaciones especiales de la Ley 6/2024, y la prestación tributa en el IRPF.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "sueldo",
+      "label": "Sueldo bruto mensual (€; tu base de cotización del mes anterior a la baja)",
+      "default": 2200,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.baja_medica_2026.supuestos.sueldo",
+      "ayuda": "Es el bruto mensual con las pagas extra prorrateadas, o la base de cotización por contingencias comunes de tu nómina. La prestación se calcula sobre él, con el tope de la base máxima."
+    },
+    {
+      "id": "pagas",
+      "label": "Pagas extra de tu sueldo",
+      "type": "select",
+      "options": [
+        {
+          "v": "prorr",
+          "t": "Prorrateadas en el sueldo mensual (12 pagas)"
+        },
+        {
+          "v": "14",
+          "t": "14 pagas (el sueldo mensual no incluye las extras)"
+        }
+      ],
+      "ayuda": "Con 14 pagas, la herramienta calcula tu base de cotización como el sueldo mensual por 14 entre 12."
+    },
+    {
+      "id": "cont",
+      "label": "Causa de la baja",
+      "type": "select",
+      "options": [
+        {
+          "v": "comun",
+          "t": "Enfermedad común o accidente no laboral"
+        },
+        {
+          "v": "prof",
+          "t": "Accidente de trabajo o enfermedad profesional"
+        }
+      ],
+      "ayuda": "Cambia los porcentajes, desde qué día se cobra y quién paga."
+    },
+    {
+      "id": "dias",
+      "label": "Días de baja (naturales; de 1 a 545)",
+      "default": 30,
+      "min": 1,
+      "max": 545,
+      "step": 1,
+      "default_from": "params.baja_medica_2026.supuestos.dias",
+      "ayuda": "El día de la baja cuenta como el día 1. A los 545 días se extingue la incapacidad temporal, pero sigues cobrando la misma prestación hasta que se resuelva la incapacidad permanente (art. 174.5); la herramienta no calcula más allá del día 545."
+    },
+    {
+      "id": "mejora",
+      "label": "Mejora del convenio (% de tu sueldo hasta el que completa la empresa; 0 si no hay)",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default_from": "params.baja_medica_2026.supuestos.mejora",
+      "ayuda": "No es de ley: depende del convenio o de la empresa. Se aplica a todos los días de baja, incluidos los 3 primeros de enfermedad común. Mira en tu convenio desde qué día y hasta cuándo."
+    },
+    {
+      "id": "tipo",
+      "label": "Tipo marginal del IRPF (%; opcional, para una pérdida aproximada tras impuestos)",
+      "default": 0,
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default_from": "params.baja_medica_2026.supuestos.tipo",
+      "ayuda": "Déjalo en 0 si no lo sabes. La prestación tributa como el sueldo; la herramienta solo reduce la pérdida bruta con este tipo, sin cotizaciones."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cobro de baja por enfermedad común?",
+      "Cobras un porcentaje de tu base reguladora, que es tu base de cotización del mes anterior dividida entre 30: nada los 3 primeros días, el 60 % del día 4 al 20 y el 75 % desde el día 21. Con 2.200 € brutos al mes la base reguladora es de 73,33 € al día, así que cobras 44,00 € al día del día 4 al 20 y 55,00 € al día desde el 21: en 30 días son 1.298,00 € de los 2.200,00 € de tu sueldo. Si tu convenio mejora la prestación, cobras más."
+    ],
+    [
+      "¿Quién paga la baja, la empresa o la Seguridad Social?",
+      "En enfermedad común o accidente no laboral, la empresa paga el subsidio del día 4 al 15 (art. 173.1 de la LGSS) y desde el día 16 está a cargo de la Seguridad Social (INSS) o de tu mutua, según quién gestione la prestación; con pago delegado, normalmente te lo sigue abonando la empresa en la nómina. En accidente de trabajo o enfermedad profesional, la empresa paga el salario íntegro del día de la baja y la Seguridad Social o la mutua tiene a su cargo el 75 % desde el día siguiente. La mejora del convenio, si existe, la paga la empresa."
+    ],
+    [
+      "¿Se cobran los 3 primeros días de baja?",
+      "En enfermedad común o accidente no laboral, el subsidio empieza el cuarto día (art. 173.1 de la LGSS), así que los 3 primeros días no se cobra prestación y, con 2.200 € brutos al mes, esos días cuestan 220,00 € si tu convenio no los mejora. Muchos convenios pagan una parte o la totalidad de esos días: es un dato que no está en la ley y que debes mirar en el tuyo. En accidente de trabajo o enfermedad profesional sí cobras desde el primer día: salario íntegro el día de la baja y el 75 % desde el siguiente."
+    ],
+    [
+      "¿Cuánto cobro si la baja es por accidente de trabajo?",
+      "Cobras el salario íntegro el día de la baja y el 75 % de la base reguladora desde el día siguiente, sin días de espera ni carencia (arts. 172.b y 173.1 de la LGSS). Con 2.200 € brutos al mes y 10 días de baja, son 568,33 € (73,33 € el primer día y 55,00 € los 9 siguientes) y pierdes 165,00 € frente a tu sueldo. La base reguladora real puede ser algo mayor porque incluye la media de las horas extraordinarias del año anterior, que la herramienta no calcula."
+    ],
+    [
+      "¿Cuánto puede durar una baja médica y qué pasa cuando se agota?",
+      "La baja dura como máximo 365 días, prorrogables otros 180 si se presume que puedes recibir el alta por curación (art. 169.1.a de la LGSS), y la incapacidad temporal se extingue a los 545 días naturales (art. 174.1). Entonces se examina, en un plazo máximo de 90 días naturales, si te corresponde una incapacidad permanente (art. 174.2), y sigues cobrando la misma prestación hasta la resolución (prolongación de efectos económicos, art. 174.5; hasta 730 días en total si se demora la calificación). La herramienta no calcula más allá del día 545. Con 2.200 € brutos al mes, una baja de 545 días supone 29.623,00 € de prestación y 10.343,67 € menos que tu sueldo si no hay mejora."
+    ]
+  ],
+  "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), art. 169 (duración, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a169), art. 172 (carencia, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a172), art. 173 (nacimiento del derecho y pago de los días 4 al 15, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a173) y art. 174 (extinción, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a174). Decreto 1646/1972, art. 13.1 y 13.2 (base reguladora: base de cotización del mes anterior entre los días a que se refiere, https://www.boe.es/buscar/act.php?id=BOE-A-1972-944). Real Decreto 53/1980 (60 % del día 4 al 20, https://www.boe.es/buscar/doc.php?id=BOE-A-1980-1003). Decreto 3158/1966, art. 2 (75 %, https://www.boe.es/buscar/act.php?id=BOE-A-1966-21116). Orden PJC/297/2026, art. 2.1: base máxima de cotización de 5.101,20 € al mes en 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Seguridad Social: cuantía de la prestación por incapacidad temporal y pago desde el día 16 (https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/PrestacionesPensionesTrabajadores/10952/28362/28365/cuantia). Hipótesis no oficiales y editables: sueldo de 2.200 € al mes con pagas prorrateadas, 30 días de baja, sin mejora de convenio. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

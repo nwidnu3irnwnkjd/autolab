@@ -1,0 +1,325 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 600,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.08,
+    "diaR": 1.53,
+    "diaB": 0.51,
+    "mesR": 45.79,
+    "mesB": 15.26,
+    "anoR": 183.15,
+    "anoB": 61.05,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 240.0,
+    "ahorroAnual": 122.1,
+    "totalR": 1831.48,
+    "totalB": 1210.49,
+    "diferencia": 620.99,
+    "aniosAmort": 4.91,
+    "diasEq": 58.97,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 3000,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.08,
+    "diaR": 1.53,
+    "diaB": 0.51,
+    "mesR": 45.79,
+    "mesB": 15.26,
+    "anoR": 183.15,
+    "anoB": 61.05,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 240.0,
+    "ahorroAnual": 122.1,
+    "totalR": 1831.48,
+    "totalB": 3610.49,
+    "diferencia": -1779.01,
+    "aniosAmort": 24.57,
+    "diasEq": 294.84,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 1.0,
+    "compraExtra": 600,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.25,
+    "diaR": 1.53,
+    "diaB": 1.53,
+    "mesR": 45.79,
+    "mesB": 45.79,
+    "anoR": 183.15,
+    "anoB": 183.15,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 720.0,
+    "ahorroAnual": 0.0,
+    "totalR": 1831.48,
+    "totalB": 2431.48,
+    "diferencia": -600.0,
+    "aniosAmort": -1.0,
+    "diasEq": -1.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 0,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.08,
+    "diaR": 1.53,
+    "diaB": 0.51,
+    "mesR": 45.79,
+    "mesB": 15.26,
+    "anoR": 183.15,
+    "anoB": 61.05,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 240.0,
+    "ahorroAnual": 122.1,
+    "totalR": 1831.48,
+    "totalB": 610.49,
+    "diferencia": 1220.99,
+    "aniosAmort": 0.0,
+    "diasEq": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 0,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 600,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.08,
+    "diaR": 0.0,
+    "diaB": 0.0,
+    "mesR": 0.0,
+    "mesB": 0.0,
+    "anoR": 0.0,
+    "anoB": 0.0,
+    "kwhAnoR": 0.0,
+    "kwhAnoB": 0.0,
+    "ahorroAnual": 0.0,
+    "totalR": 0.0,
+    "totalB": 600.0,
+    "diferencia": -600.0,
+    "aniosAmort": -1.0,
+    "diasEq": -1.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.5,
+    "aisl": 1.3,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 600,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.5,
+    "horaB": 0.17,
+    "diaR": 2.98,
+    "diaB": 0.99,
+    "mesR": 89.28,
+    "mesB": 29.76,
+    "anoR": 357.14,
+    "anoB": 119.05,
+    "kwhAnoR": 1404.0,
+    "kwhAnoB": 468.0,
+    "ahorroAnual": 238.09,
+    "totalR": 3571.39,
+    "totalB": 1790.46,
+    "diferencia": 1780.93,
+    "aniosAmort": 2.52,
+    "diasEq": 30.24,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 20,
+    "precio": 0.2,
+    "cop": 3.0,
+    "compraExtra": 1000,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.08,
+    "diaR": 1.53,
+    "diaB": 0.51,
+    "mesR": 45.79,
+    "mesB": 15.26,
+    "anoR": 30.52,
+    "anoB": 10.17,
+    "kwhAnoR": 120.0,
+    "kwhAnoB": 40.0,
+    "ahorroAnual": 20.35,
+    "totalR": 305.25,
+    "totalB": 1101.75,
+    "diferencia": -796.5,
+    "aniosAmort": 49.14,
+    "diasEq": 98.28,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0.2,
+    "cop": 1.0,
+    "compraExtra": 0,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.25,
+    "diaR": 1.53,
+    "diaB": 1.53,
+    "mesR": 45.79,
+    "mesB": 45.79,
+    "anoR": 183.15,
+    "anoB": 183.15,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 720.0,
+    "ahorroAnual": 0.0,
+    "totalR": 1831.48,
+    "totalB": 1831.48,
+    "diferencia": 0.0,
+    "aniosAmort": 0.0,
+    "diasEq": -1.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 6,
+    "dias": 120,
+    "precio": 0,
+    "cop": 3.0,
+    "compraExtra": 200,
+    "vida": 10
+   },
+   "expect": {
+    "horaR": 0.0,
+    "horaB": 0.0,
+    "diaR": 0.01,
+    "diaB": 0.0,
+    "mesR": 0.22,
+    "mesB": 0.07,
+    "anoR": 0.87,
+    "anoB": 0.29,
+    "kwhAnoR": 720.0,
+    "kwhAnoB": 240.0,
+    "ahorroAnual": 0.58,
+    "totalR": 8.71,
+    "totalB": 202.9,
+    "diferencia": -194.19,
+    "aniosAmort": 344.35,
+    "diasEq": 4132.23,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "potencia": 1.0,
+    "aisl": 1.0,
+    "horas": 24,
+    "dias": 366,
+    "precio": 0.2,
+    "cop": 4.5,
+    "compraExtra": 600,
+    "vida": 30
+   },
+   "expect": {
+    "horaR": 0.25,
+    "horaB": 0.06,
+    "diaR": 6.1,
+    "diaB": 1.36,
+    "mesR": 183.15,
+    "mesB": 40.7,
+    "anoR": 2234.41,
+    "anoB": 496.54,
+    "kwhAnoR": 8784.0,
+    "kwhAnoB": 1952.0,
+    "ahorroAnual": 1737.87,
+    "totalR": 67032.3,
+    "totalB": 15496.07,
+    "diferencia": 51536.23,
+    "aniosAmort": 0.35,
+    "diasEq": 4.21,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}
