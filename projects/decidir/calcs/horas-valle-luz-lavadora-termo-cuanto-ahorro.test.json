@@ -1,0 +1,197 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 70,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 0
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 584.0,
+    "ahorroAnual": 10.18,
+    "ahorroMes": 0.85,
+    "ahorroMax": 14.54,
+    "costeHoy": 98.86,
+    "costeValle": 88.69,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 70,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 1
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 584.0,
+    "ahorroAnual": 63.43,
+    "ahorroMes": 5.29,
+    "ahorroMax": 90.62,
+    "costeHoy": 152.12,
+    "costeValle": 88.69,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 70,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 2
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 584.0,
+    "ahorroAnual": 36.8,
+    "ahorroMes": 3.07,
+    "ahorroMax": 52.58,
+    "costeHoy": 125.49,
+    "costeValle": 88.69,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 70,
+    "precioPunta": 0.15,
+    "precioLlano": 0.15,
+    "precioValle": 0.15,
+    "franja": 1
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 584.0,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "ahorroMax": 0.0,
+    "costeHoy": 111.42,
+    "costeValle": 111.42,
+    "estado": 1,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 70,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.2,
+    "franja": 0
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 584.0,
+    "ahorroAnual": -49.69,
+    "ahorroMes": -4.14,
+    "ahorroMax": -70.99,
+    "costeHoy": 98.86,
+    "costeValle": 148.55,
+    "estado": 2,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 1.0,
+    "usosSem": 6,
+    "kwhTermo": 10,
+    "pctDesp": 0,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 0
+   },
+   "expect": {
+    "kwhAnio": 834.29,
+    "kwhDesp": 0.0,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "ahorroMax": 14.54,
+    "costeHoy": 0.0,
+    "costeValle": 0.0,
+    "estado": 3,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 0,
+    "usosSem": 6,
+    "kwhTermo": 0,
+    "pctDesp": 100,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 1
+   },
+   "expect": {
+    "kwhAnio": 0.0,
+    "kwhDesp": 0.0,
+    "ahorroAnual": 0.0,
+    "ahorroMes": 0.0,
+    "ahorroMax": 0.0,
+    "costeHoy": 0.0,
+    "costeValle": 0.0,
+    "estado": 3,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwhUso": 2.5,
+    "usosSem": 70,
+    "kwhTermo": 60,
+    "pctDesp": 100,
+    "precioPunta": 0.2048,
+    "precioLlano": 0.1331,
+    "precioValle": 0.1194,
+    "franja": 1
+   },
+   "expect": {
+    "kwhAnio": 12253.57,
+    "kwhDesp": 12253.57,
+    "ahorroAnual": 1330.95,
+    "ahorroMes": 110.91,
+    "ahorroMax": 1330.95,
+    "costeHoy": 3191.78,
+    "costeValle": 1860.83,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

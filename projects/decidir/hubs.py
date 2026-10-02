@@ -150,7 +150,7 @@ HUBS = {
                  "las placas solares y, al final, los electrodomésticos. Hoy la energía del PVPC cuesta {{pvpc_hoy}} €/kWh de media ({{fecha_pvpc_es}}, sin peajes ni impuestos; fuente: Red Eléctrica) "
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
-            ("Sin obra: lo primero", ["luz-fija-o-indexada", "calefaccion-gas-aerotermia-electrica"]),
+            ("Sin obra: lo primero", ["luz-fija-o-indexada", "potencia-contratada-luz-bajar-compensa", "horas-valle-luz-lavadora-termo-cuanto-ahorro", "calefaccion-gas-aerotermia-electrica"]),
             ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "termo-electrico-o-calentador-gas-o-aerotermia-agua", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
         ],
         "steps": {
@@ -160,6 +160,14 @@ HUBS = {
                 "datos": "Precio medio de la energía del PVPC: {{pvpc_hoy}} €/kWh (media de las 24 horas, sin peajes, cargos ni impuestos; Red Eléctrica).",
                 "fecha": ("fecha_pvpc", "PVPC"),
                 "guia": "checklist-casa-antes-del-invierno",
+            },
+            "potencia-contratada-luz-bajar-compensa": {
+                "name": "Potencia contratada: bajarla o no",
+                "text": "Bajar los kW contratados reduce el término fijo de la factura sin obra. La calculadora estima el ahorro anual y los años que tarda en recuperarse el coste del cambio; el límite lo marca tu pico real de uso.",
+            },
+            "horas-valle-luz-lavadora-termo-cuanto-ahorro": {
+                "name": "Horas valle: lavadora, lavavajillas y termo",
+                "text": "Mover consumos a la franja valle solo ahorra si tu tarifa tiene discriminación horaria. La calculadora da el ahorro anual con tus kWh y tus precios por periodo.",
             },
             "calefaccion-gas-aerotermia-electrica": {
                 "name": "Calefacción: gas, aerotermia o eléctrica",

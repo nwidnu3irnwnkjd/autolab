@@ -1,0 +1,111 @@
+{
+  "slug": "horas-valle-luz-lavadora-termo-cuanto-ahorro",
+  "title": "Horas valle de la luz: cuánto ahorras con lavadora y termo",
+  "description": "Calcula cuánto ahorras al año moviendo lavadora, lavavajillas y termo a las horas valle de la 2.0TD frente a llano o punta, con tus precios por periodo.",
+  "h1": "Horas valle de la luz: cuánto ahorras moviendo lavadora, lavavajillas y termo",
+  "lead": "Mover lavadora, lavavajillas y termo a las horas valle compensa si tu tarifa cobra el valle más barato que la franja en la que los usas hoy, y el ahorro depende sobre todo de si los sacas de la punta: con los precios medios del PVPC de los últimos 12 meses y los ejemplos de la página (70 % movible) ahorras unos 10 € al año si vienes del llano y unos 63 € si vienes de la punta. Con una tarifa de precio único no hay ahorro por horas. Pon tus aparatos, tus usos y los precios de tu contrato.",
+  "veredicto": "Mover consumos a las horas valle compensa cuando el precio del valle es menor que el de la franja en que los usas hoy; el ahorro es la diferencia de precio por los kWh que muevas, mayor si vienes de la punta que del llano, y es cero con una tarifa de precio único.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "kwhUso",
+      "label": "Consumo medio por uso de lavadora o lavavajillas (kWh; 1 es un ejemplo, mira la etiqueta o tu medidor)",
+      "default": 1.0,
+      "min": 0,
+      "step": 0.1,
+      "default_from": "params.horas_valle_luz.supuestos.kwh_uso"
+    },
+    {
+      "id": "usosSem",
+      "label": "Usos por semana de lavadora y lavavajillas juntos (usos; 6 es un ejemplo)",
+      "default": 6,
+      "min": 0,
+      "max": 70,
+      "step": 1,
+      "default_from": "params.horas_valle_luz.supuestos.usos_semana"
+    },
+    {
+      "id": "kwhTermo",
+      "label": "Consumo del termo eléctrico (kWh por semana; 10 es un ejemplo, 0 si no tienes)",
+      "default": 10,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.horas_valle_luz.supuestos.kwh_termo_semana"
+    },
+    {
+      "id": "pctDesp",
+      "label": "% de ese consumo que puedes pasar a horas valle (%, de 0 a 100; 70 es un ejemplo)",
+      "default": 70,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default_from": "params.horas_valle_luz.supuestos.pct_desplazable"
+    },
+    {
+      "id": "precioPunta",
+      "label": "Precio de la energía en punta (€/kWh, sin impuestos; por defecto, media de 12 meses del PVPC)",
+      "default": 0.2048,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.luz_periodos_pvpc_12m.punta"
+    },
+    {
+      "id": "precioLlano",
+      "label": "Precio de la energía en llano (€/kWh, sin impuestos; por defecto, media de 12 meses del PVPC)",
+      "default": 0.1331,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.luz_periodos_pvpc_12m.llano"
+    },
+    {
+      "id": "precioValle",
+      "label": "Precio de la energía en valle (€/kWh, sin impuestos; por defecto, media de 12 meses del PVPC)",
+      "default": 0.1194,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.luz_periodos_pvpc_12m.valle"
+    },
+    {
+      "id": "franja",
+      "label": "Franja en la que lo usas hoy",
+      "type": "select",
+      "options": [
+        {
+          "v": "0",
+          "t": "Llano (8-10, 14-18 y 22-24 h entre semana)"
+        },
+        {
+          "v": "1",
+          "t": "Punta (10-14 y 18-22 h entre semana)"
+        },
+        {
+          "v": "2",
+          "t": "Mitad punta, mitad llano"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuáles son las horas valle de la luz?",
+      "En la tarifa 2.0TD el valle va de 0 a 8 h todos los días y todo el día en sábados, domingos y festivos nacionales; la punta es de lunes a viernes de 10 a 14 y de 18 a 22 h, y el resto es llano (Circular 3/2020 de la CNMC). Si ya pones los aparatos de noche o en fin de semana, ya estás en valle y no hay ahorro que sacar: baja el porcentaje desplazable."
+    ],
+    [
+      "¿Cuánto se ahorra poniendo la lavadora en horas valle?",
+      "Depende de la diferencia de precio entre la franja de hoy y el valle. Con los precios medios del PVPC de los últimos 12 meses (valle 0,1194, llano 0,1331 y punta 0,2048 €/kWh sin impuestos) cada kWh que pasas del llano al valle ahorra unos 0,017 € con impuestos, y de la punta al valle unos 0,11 €. Con los ejemplos de la página (70 % movible) son unos 10 € al año desde el llano y unos 63 € desde la punta."
+    ],
+    [
+      "¿Compensa mover el termo a la noche?",
+      "Compensa si la diferencia de precio por los kWh que muevas supera tus molestias, y el termo es el aparato que más suele pesar porque calienta agua durante todo el día. Con los ejemplos (10 kWh por semana de termo) pesa más de la mitad de los kWh movidos. Un termo con programador puede calentar solo en el valle; ten en cuenta que el agua pierde algo de calor hasta que la usas."
+    ],
+    [
+      "¿Qué precios usa la calculadora para el valle, el llano y la punta?",
+      "Por defecto, la media de los últimos 12 meses (octubre de 2025 a septiembre de 2026) del precio de la energía del PVPC de Red Eléctrica en cada periodo, sin impuestos, a los que añade el Impuesto Especial sobre la Electricidad (5,11269632 %, con mínimo de 1 €/MWh) y el IVA del 21 %. Son editables: si tienes una tarifa libre con precios por periodo, pon los de tu contrato; si tu tarifa tiene un precio único, el ahorro sale cero."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el término de potencia (no cambia por mover consumos), el ruido o la comodidad de poner aparatos de noche, el consumo de espera ni el posible coste de un programador. El PVPC varía cada hora, así que el ahorro de un año concreto puede salir distinto de la media de 12 meses. Es información orientativa para Península y Baleares."
+    ]
+  ],
+  "sources": "Modelo propio: kWh al año = (kWh por uso × usos por semana + kWh de termo por semana) × 365 / 7; kWh movidos = kWh al año × % desplazable; ahorro = kWh movidos × (precio con impuestos de la franja de hoy − precio con impuestos del valle); precio con impuestos = (energía + Impuesto Especial sobre la Electricidad, con su mínimo por kWh) × (1 + IVA). Precios por defecto: media de 12 meses (octubre de 2025 a septiembre de 2026) del precio horario del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real), solo energía y sin impuestos: punta 0,2048, llano 0,1331 y valle 0,1194 €/kWh, calculados con las horas de cada periodo de la Circular 3/2020 de la CNMC (https://www.boe.es/buscar/act.php?id=BOE-A-2020-1066), consultado el 2/10/2026. Impuesto Especial sobre la Electricidad de 5,11269632 %: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: 1 kWh por uso, 6 usos por semana, 10 kWh de termo por semana y 70 % desplazable. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

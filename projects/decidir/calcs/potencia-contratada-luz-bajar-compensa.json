@@ -1,0 +1,83 @@
+{
+  "slug": "potencia-contratada-luz-bajar-compensa",
+  "title": "¿Bajar la potencia contratada de la luz? Ahorro y riesgo",
+  "description": "Calcula cuánto ahorras al año bajando la potencia contratada de la luz, el riesgo de que salte el ICP con tu pico de uso y si compensa el coste del cambio.",
+  "h1": "Bajar la potencia contratada de la luz: ¿compensa el ahorro frente al riesgo?",
+  "lead": "Bajar la potencia contratada compensa si tu pico real de uso simultáneo queda por debajo de la potencia nueva y el ahorro recupera el coste del cambio: con los ejemplos de la página (de 4,6 a 3,45 kW, pico de 3 kW y 28,43 €/kW·año de peajes y cargos) ahorras 42 € al año con impuestos, unos 36 € por cada kW que bajas; si tu pico supera la potencia nueva, ese ahorro no compensa el riesgo de que salte el ICP. Pon tus kW, tu pico y lo que te cobre la distribuidora por el cambio.",
+  "veredicto": "Bajar la potencia contratada compensa cuando el pico real de uso simultáneo queda por debajo de la potencia nueva y el ahorro del término de potencia, por los años que lo mantengas, supera el coste del cambio; si el pico supera la potencia nueva, el ahorro no compensa que salte el ICP.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "kwActual",
+      "label": "Potencia contratada ahora (kW; figura en tu factura)",
+      "default": 4.6,
+      "min": 0.1,
+      "step": 0.05,
+      "default_from": "params.luz_2026.supuestos.potencia_kw"
+    },
+    {
+      "id": "kwNuevo",
+      "label": "Potencia que quieres contratar (kW; 3,45 es un ejemplo)",
+      "default": 3.45,
+      "min": 0.1,
+      "step": 0.05,
+      "default_from": "params.potencia_contratada_luz.supuestos.kw_nuevo"
+    },
+    {
+      "id": "pico",
+      "label": "Tu pico: la mayor potencia que usas a la vez (kW; 3 es un ejemplo, mira el maxímetro de tu distribuidora)",
+      "default": 3,
+      "min": 0,
+      "step": 0.05,
+      "default_from": "params.potencia_contratada_luz.supuestos.pico_kw"
+    },
+    {
+      "id": "eurKw",
+      "label": "Precio del término de potencia (€/kW y año, sin impuestos; por defecto solo peajes y cargos regulados: suma el margen de tu factura)",
+      "default": 28.429836,
+      "min": 0,
+      "step": 0.5,
+      "default_from": "params.luz_2026.potencia_regulada_eur_kw_ano.valor"
+    },
+    {
+      "id": "costeCambio",
+      "label": "Coste del cambio de potencia (€; consulta tu distribuidora, 0 es solo un punto de partida)",
+      "default": 0,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.potencia_contratada_luz.supuestos.coste_cambio"
+    },
+    {
+      "id": "anos",
+      "label": "Años que mantendrás la potencia nueva (años, de 1 a 30; 3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.potencia_contratada_luz.supuestos.anos"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto se ahorra bajando la potencia contratada?",
+      "El ahorro es lo que bajas en kW por el precio del término de potencia, más impuestos. Con los ejemplos de la página (28,43 €/kW·año de peajes y cargos de la 2.0TD, Impuesto Especial sobre la Electricidad del 5,11269632 % e IVA del 21 %) cada kW que bajas ahorra unos 36 € al año, y bajar de 4,6 a 3,45 kW ahorra 42 €. Tu comercializadora puede cobrar además un margen por kW: mira tu factura y pon el precio total."
+    ],
+    [
+      "¿Qué pasa si contrato menos potencia de la que uso?",
+      "Si la suma de lo que tienes encendido a la vez supera la potencia contratada, el interruptor de control de potencia (ICP) puede saltar y te quedas sin luz hasta rearmarlo. Con el ejemplo, un pico de 3,6 kW no cabe en 3,45 kW: bajar solo hasta ese pico ahorraría 36 € al año en lugar de 42 €. La calculadora lo marca cuando tu pico es mayor que la potencia nueva."
+    ],
+    [
+      "¿Cómo sé cuánta potencia uso como máximo?",
+      "Tu distribuidora puede darte la curva de carga o el maxímetro de tu contador digital, es decir, la mayor potencia que has usado a la vez. Si no lo tienes, suma la potencia de lo que encenderías a la vez en tu peor momento (horno, placa, calefacción, lavadora) con la que figura en cada etiqueta. El 3 kW por defecto es un ejemplo, no un dato tuyo."
+    ],
+    [
+      "¿Cuánto cuesta cambiar la potencia contratada?",
+      "Depende de tu distribuidora y de si subes o bajas la potencia, y esta página no da una cifra por defecto: pon el importe que te indique la distribuidora en «coste del cambio». Con ese coste, la calculadora te dice en cuántos años se recupera con el ahorro y si compensa en los años que mantendrás la potencia nueva. Con los ejemplos y 200 € de coste, tardas 4,8 años en recuperarlo, más que los 3 del horizonte."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el margen de potencia de tu comercializadora salvo que lo sumes al precio, los derechos de tramitación de la distribuidora, las potencias normalizadas disponibles ni el coste de volver a subir la potencia más adelante. Supone la misma potencia en los dos periodos de potencia de la tarifa 2.0TD y no aplica el mínimo por kWh del impuesto eléctrico. Es información orientativa para Península y Baleares."
+    ]
+  ],
+  "sources": "Modelo propio: ahorro anual = (kW actuales − kW nuevos) × precio del término de potencia por kW y año × (1 + Impuesto Especial sobre la Electricidad) × (1 + IVA); ahorro neto = ahorro anual × años − coste del cambio; el riesgo de salto del ICP se marca cuando tu pico simultáneo es mayor que la potencia nueva. Precio por defecto: peajes y cargos de potencia 2.0TD de 28,429836 €/kW·año (peajes de transporte y distribución 23,324952 y 0,443770, Resolución de la CNMC de 18/12/2025, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26348; cargos 4,379461 y 0,281653, Orden TED/1524/2025, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26705; consultado el 2/10/2026); sin el margen de comercialización de tu contrato. Impuesto Especial sobre la Electricidad de 5,11269632 %: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); ambos vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC de la electricidad, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Supuestos no oficiales y editables: potencia nueva de 3,45 kW, pico de 3 kW, coste del cambio de 0 € (consulta tu distribuidora) y horizonte de 3 años. Consultado el 2/10/2026. Información orientativa, no asesoramiento."
+}

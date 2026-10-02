@@ -66,7 +66,7 @@
  ],
  "cambiar-electrodomestico-antiguo-merece-la-pena": [
   "reparar-o-comprar-electrodomestico",
-  "aire-acondicionado-inverter-o-ventilador-coste-verano",
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro",
   "luz-fija-o-indexada"
  ],
  "cambiar-ventanas-aislamiento-merece-la-pena": [
@@ -194,6 +194,11 @@
   "seguro-vida-hipoteca-banco-o-externo",
   "amortizar-plazo-o-cuota"
  ],
+ "horas-valle-luz-lavadora-termo-cuanto-ahorro": [
+  "luz-fija-o-indexada",
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua",
+  "potencia-contratada-luz-bajar-compensa"
+ ],
  "hotel-o-apartamento-viaje-en-grupo": [
   "tren-avion-o-coche",
   "contado-o-financiar",
@@ -217,7 +222,7 @@
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
   "placas-solares-merece-la-pena",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "potencia-contratada-luz-bajar-compensa"
  ],
  "marca-blanca-o-marca-ahorro-anual": [
   "cocinar-en-casa-o-comer-fuera",
@@ -247,7 +252,7 @@
  "placas-solares-merece-la-pena": [
   "luz-fija-o-indexada",
   "punto-de-carga-casa-con-o-sin-placas",
-  "aire-acondicionado-inverter-o-ventilador-coste-verano"
+  "potencia-contratada-luz-bajar-compensa"
  ],
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
@@ -258,6 +263,11 @@
   "contado-o-financiar",
   "movil-reacondicionado-o-nuevo",
   "fibra-y-movil-juntos-o-por-separado"
+ ],
+ "potencia-contratada-luz-bajar-compensa": [
+  "luz-fija-o-indexada",
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro",
+  "placas-solares-merece-la-pena"
  ],
  "punto-de-carga-casa-con-o-sin-placas": [
   "placas-solares-merece-la-pena",
@@ -327,7 +337,7 @@
  "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
   "calefaccion-gas-aerotermia-electrica",
   "caldera-reparar-o-cambiar",
-  "placas-solares-merece-la-pena"
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro"
  ],
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",

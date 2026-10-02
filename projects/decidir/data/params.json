@@ -1958,5 +1958,34 @@
  "aire_inverter_ventilador": {"nota": "Sin cifras externas: potencias medias, horas, d\u00edas, compra y vida \u00fatil son EJEMPLOS del modelo, editables, no datos de ning\u00fan fabricante. El precio de la energ\u00eda sale de live.luz_pvpc (fallback params.luz_2026.pvpc_media_ref).", "supuestos": {"kw_inv": 0.6, "kw_alt": 0.05, "horas": 6, "dias": 90, "compra_inv": 800, "compra_alt": 40, "vida": 10}, "consulta": "2026-10-02"},
  "fondo_emergencia": {"nota": "Sin cifras externas: el criterio de meses (3/6, +1 ingresos variables, +0,5 por persona a cargo hasta +2, -1 otro ingreso estable, entre 3 y 12) es una hip\u00f3tesis propia, no una ley. Gastos, dependientes, ahorro y aportaci\u00f3n son EJEMPLOS editables.", "supuestos": {"gastos": 1500, "dep": 1, "ahorro": 3000, "aport": 200}, "consulta": "2026-10-02"},
  "agua_caliente": {"nota": "Sin cifras externas: personas, compra de cada equipo y vida son EJEMPLOS editables, no presupuestos. Constantes del modelo (hipotesis propias, editables solo en el codigo): 40 l de agua caliente por persona y dia, salto de 45 K, rendimiento 0,9 (termo electrico), 0,8 (calentador de gas) y COP 2,8 (aerotermia de agua caliente). Precio de la luz de live.luz_pvpc (fallback params.luz_2026.pvpc_media_ref); precio del gas de params.gas_eur_kwh (TUR.2 con impuestos, BOE-A-2026-20389, consultado el 2/10/2026) y editable.", "supuestos": {"personas": 3, "compra_termo": 300, "compra_gas": 500, "compra_aero": 2000, "vida": 10}, "consulta": "2026-10-02"},
- "perro": {"nota": "Sin cifras externas: pienso, veterinario, seguro, gastos iniciales, cuota de adopcion y precio de compra son EJEMPLOS editables por tamano, no precios de mercado ni datos de ninguna clinica o protectora. La pagina no da consejo veterinario.", "supuestos": {"pienso": 40, "vet": 250, "seguro": 0, "iniciales": 250, "adopcion": 200, "compra": 800, "anos": 12}, "consulta": "2026-10-02"}
+ "perro": {"nota": "Sin cifras externas: pienso, veterinario, seguro, gastos iniciales, cuota de adopcion y precio de compra son EJEMPLOS editables por tamano, no precios de mercado ni datos de ninguna clinica o protectora. La pagina no da consejo veterinario.", "supuestos": {"pienso": 40, "vet": 250, "seguro": 0, "iniciales": 250, "adopcion": 200, "compra": 800, "anos": 12}, "consulta": "2026-10-02"},
+ "luz_periodos_pvpc_12m": {
+  "punta": 0.2048,
+  "llano": 0.1331,
+  "valle": 0.1194,
+  "unidad": "€/kWh, solo energía, sin impuestos",
+  "fuente": "Red Eléctrica de España, REData (precio medio del PVPC por hora de cada periodo 2.0TD, oct 2025-sep 2026; mismas cifras que la nota de luz_2026.pvpc_perfil_12m); horas de cada periodo: Circular 3/2020 de la CNMC (BOE-A-2020-1066): valle de 0 a 8 h todos los días y todo el día en sábados, domingos y festivos nacionales",
+  "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real",
+  "url2": "https://www.boe.es/buscar/act.php?id=BOE-A-2020-1066",
+  "consulta": "consultado el 2/10/2026",
+  "confianza": "A-"
+ },
+ "potencia_contratada_luz": {
+  "nota": "Hipótesis de ejemplo editables, no datos oficiales",
+  "supuestos": {
+   "kw_nuevo": 3.45,
+   "pico_kw": 3.0,
+   "coste_cambio": 0,
+   "anos": 3
+  }
+ },
+ "horas_valle_luz": {
+  "nota": "Hipótesis de ejemplo editables, no datos oficiales",
+  "supuestos": {
+   "kwh_uso": 1.0,
+   "usos_semana": 6,
+   "kwh_termo_semana": 10,
+   "pct_desplazable": 70
+  }
+ }
 }

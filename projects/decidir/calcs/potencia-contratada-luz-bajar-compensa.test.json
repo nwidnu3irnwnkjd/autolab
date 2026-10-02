@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.0,
+    "eurKw": 28.429836,
+    "costeCambio": 0,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 124.75,
+    "ahorroAnual": 41.58,
+    "ahorroNeto": 124.75,
+    "aniosAmort": 0.0,
+    "ahorroMinimo": 57.85,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.0,
+    "eurKw": 28.429836,
+    "costeCambio": 30,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 124.75,
+    "ahorroAnual": 41.58,
+    "ahorroNeto": 94.75,
+    "aniosAmort": 0.72,
+    "ahorroMinimo": 57.85,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.6,
+    "eurKw": 28.429836,
+    "costeCambio": 0,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 124.75,
+    "ahorroAnual": 41.58,
+    "ahorroNeto": 124.75,
+    "aniosAmort": 0.0,
+    "ahorroMinimo": 36.16,
+    "estado": 1,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.0,
+    "eurKw": 28.429836,
+    "costeCambio": 200,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 124.75,
+    "ahorroAnual": 41.58,
+    "ahorroNeto": -75.25,
+    "aniosAmort": 4.81,
+    "ahorroMinimo": 57.85,
+    "estado": 2,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 4.6,
+    "pico": 3.0,
+    "eurKw": 28.429836,
+    "costeCambio": 0,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 166.33,
+    "ahorroAnual": 0.0,
+    "ahorroNeto": 0.0,
+    "aniosAmort": -1.0,
+    "ahorroMinimo": 57.85,
+    "estado": 3,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.45,
+    "eurKw": 28.429836,
+    "costeCambio": 0,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 166.33,
+    "costeNuevo": 124.75,
+    "ahorroAnual": 41.58,
+    "ahorroNeto": 124.75,
+    "aniosAmort": 0.0,
+    "ahorroMinimo": 41.58,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 4.6,
+    "kwNuevo": 3.45,
+    "pico": 3.0,
+    "eurKw": 0,
+    "costeCambio": 0,
+    "anos": 3
+   },
+   "expect": {
+    "costeActual": 0.0,
+    "costeNuevo": 0.0,
+    "ahorroAnual": 0.0,
+    "ahorroNeto": 0.0,
+    "aniosAmort": -1.0,
+    "ahorroMinimo": 0.0,
+    "estado": 3,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "kwActual": 10,
+    "kwNuevo": 1,
+    "pico": 0.5,
+    "eurKw": 28.429836,
+    "costeCambio": 100,
+    "anos": 30
+   },
+   "expect": {
+    "costeActual": 361.59,
+    "costeNuevo": 36.16,
+    "ahorroAnual": 325.43,
+    "ahorroNeto": 9662.9,
+    "aniosAmort": 0.31,
+    "ahorroMinimo": 343.51,
+    "estado": 0,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}
