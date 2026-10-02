@@ -129,3 +129,11 @@
 - 5h 24 %, semanal 42 %, extra 0,55 €.
 - Fiscales pendientes: baja-medica-cuanto-cobro-incapacidad-temporal, subsidio-desempleo-cuanto-cobro-y-cuanto-dura, aceptar-trabajo-cobrando-paro-o-subsidio, kilometraje-y-dietas-exentas-irpf, deduccion-alquiler-comunidad.
 - Siguiente (c41): ciclo SIN fiscal doble → implementar T14 v3 (qa_static --fiscal) + 1 fiscal + Editor + 1 no fiscal con demanda.
+
+## Ciclo 41 cerrado
+- Publicada: kilometraje-y-dietas-exentas-irpf (Opus: 3 cambios menores; 0,26 €/km = Orden HFP/792/2023, el Reglamento consolidado sigue en 0,19). 91 calculadoras.
+- Herramienta: `python3 ops/qa_static.py --fiscal [--changed|--full]` (T14 v3) en close_cycle.sh como paso informativo: 77 avisos sobre 27 fiscales (R1 params sin url/fecha 14, R2 var P sin params 6, R3 literales 22, R4 absolutos 3, R6 preverif sin T/8/N/R/S 27). Deuda a limpiar en ciclos ligeros: R2/R3 (retencion-irpf, declaracion-conjunta).
+- Editor: pasada válida sobre 12 calculadoras (journal/editorial.md): leads sin condición 6→2, frases >30 palabras 38→28.
+- 5h 32 %, semanal 43 %, extra 0,55 €.
+- Fiscales pendientes: baja-medica (confianza C), subsidio-desempleo, aceptar-trabajo-cobrando-paro, deduccion-alquiler-comunidad. No fiscales: vacaciones, estufa, gafas, viaje-organizado (solo con `demanda:` del Estratega).
+- Siguiente (c42): metrics + 1 fiscal (subsidio-desempleo) + tarea de mejora (limpiar R2/R3 de fiscales) + Editor.
