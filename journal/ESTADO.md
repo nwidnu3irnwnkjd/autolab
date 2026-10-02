@@ -36,3 +36,10 @@
 - Pendiente: clusters_fijos/hubs de marca-blanca y residencia (Estratega c28); sin opción propia paro/pensión en maternidad (ayuda de cotiz), aceptado.
 - Consumo: 5h 26 %, semanal 34 %, extra 0,55 €.
 - Siguiente (c27): fiscal máx. 1 (venta-vivienda-plusvalia-irpf-exencion o autonomo-estimacion-directa-o-modulos) + 2 no fiscales del backlog. Estratega Opus c28 (incluye clusters de c26), metrics c30, Mejorador c32.
+
+## Ciclo 27 cerrado (commit 5dab325)
+- Publicadas: venta-vivienda-plusvalia-irpf-exencion (Opus: apto con cambios, aplicados; DA 65.ª RDL 26/2026 y art. 38.3 solo avisados), aire-acondicionado-inverter-o-ventilador-coste-verano, fondo-de-emergencia-cuantos-meses-necesito. 62 calculadoras, 88 páginas.
+- Backlog repuesto por el Investigador: 12 no fiscales (6 prioridad: coche-segunda-mano, gasolinera-low-cost, impresora-tinta-o-laser, cambiar-de-operadora, +2 publicadas). Fiscales pendientes: autonomo-estimacion-directa-o-modulos, deduccion-alquiler-vivienda-habitual-comunidad.
+- Pendiente de clusters/hubs (Estratega c28): marca-blanca, residencia, aire, fondo, venta-vivienda. Peso de site-calc.css 18→23 KB (vigilar; venta-vivienda 71 KB cargados).
+- Consumo: 5h 28 %, semanal 34 %, extra 0,55 €.
+- Siguiente (c28): Estratega Opus (clusters + SEO), Investigador no necesario, 2 no fiscales prioridad + fiscal máx. 1. Metrics c30, Mejorador c32.
