@@ -63,11 +63,15 @@ NEAR = {"energia": {"coche": 5, "hipoteca": 5}, "coche": {"energia": 5}, "hipote
 
 def build_clusters(calcs, tema, path=os.path.join(ROOT, "data/clusters.json"), k=3):
     """Afinidad = 10 si comparten tema + cercanía de temas (NEAR) + nº de palabras clave compartidas. Top k (mín. 2)."""
-    out = {}
+    out = {}; slugs = {x["slug"] for x in calcs}
+    try: FIJOS = json.load(open(os.path.join(os.path.dirname(path), "clusters_fijos.json")))
+    except Exception: FIJOS = {}
     for c in calcs:
         scored = sorted(((10 * (tema(x) == tema(c)) + NEAR.get(tema(c), {}).get(tema(x), 0) + len(_tokens(x) & _tokens(c)), x["slug"])
                          for x in calcs if x["slug"] != c["slug"]), key=lambda t: (-t[0], t[1]))
         top = [s for sc, s in scored if sc >= 10][:k]
+        pin = [x for x in FIJOS.get(c["slug"], []) if x in slugs and x != c["slug"]]  # afinidades editoriales (data/clusters_fijos.json): mandan sobre el cálculo
+        if pin: top = (pin + [x for x in top if x not in pin])[:k]
         for sc, s in scored:  # completa hasta 2 con los más cercanos de otros temas
             if len(top) >= min(2, len(scored)): break
             if s not in top: top.append(s)
@@ -86,6 +90,19 @@ def load_guides(params):
     import calcs_loader
     pm = calcs_loader.merge_market(params)
     if pm.get("periodo_euribor"): pm["periodo_euribor_es"] = _mes(pm["periodo_euribor"])
+    live = load_live()
+    def _lv(i):
+        d = (live.get("datos") or {}).get(i) or {}
+        return d if d.get("ok") and isinstance(d.get("valor"), (int, float)) else None
+    def _n(v, nd=3): return f"{v:.{nd}f}".replace(".", ",")
+    ex = {}  # marcadores de datos vivos propios de las guías (luz y carburantes con su fecha)
+    if _lv("luz_pvpc"):
+        d = _lv("luz_pvpc"); ex["pvpc_hoy"] = _n(d["valor"]); ex["fecha_pvpc_es"] = fecha_es(d["fecha_dato"])
+        if (d.get("extra") or {}).get("media_mes"): ex["pvpc_media_mes"] = _n(d["extra"]["media_mes"]); ex["mes_pvpc_es"] = _mes(d["extra"]["mes"])
+    if _lv("gasolina95"): ex["fecha_gasolina_es"] = fecha_es(_lv("gasolina95")["fecha_dato"])
+    ex["fecha_datos_es"] = fecha_es(params.get("fecha") or TODAY)
+    pm.update(ex)
+    gdates = [d["fecha_dato"] for d in (_lv("luz_pvpc"), _lv("gasolina95")) if d]
     gdir = os.path.join(ROOT, "content/guias"); out = []
     if not os.path.isdir(gdir): return out
     for f in sorted(os.listdir(gdir)):
@@ -95,12 +112,14 @@ def load_guides(params):
         if not m: continue
         g = json.loads(m.group(1)); g["slug"] = f[:-5]
         body = raw[m.end():]
+        # bloques condicionales por calculadora: <!--si:slug-->A[<!--sino-->B]<!--/si--> solo si existe calcs/<slug>.json (sin enlaces rotos)
+        body = re.sub(r"<!--si:([a-z0-9-]+)-->(.*?)<!--/si-->", lambda mm: mm.group(2).split("<!--sino-->")[0 if os.path.exists(os.path.join(ROOT, "calcs", mm.group(1) + ".json")) else -1] if (os.path.exists(os.path.join(ROOT, "calcs", mm.group(1) + ".json")) or "<!--sino-->" in mm.group(2)) else "", body, flags=re.S)
         for k, v in pm.items():  # {{clave}} -> valor de data/params.json con el mercado de data/live.json (cifras = datos)
             if isinstance(v, (int, float)): v = (f"{v:.3f}".rstrip("0") + "0" * max(0, 2 - len(f"{v:.3f}".rstrip("0").split(".")[1]))).replace(".", ",") if isinstance(v, float) else str(v)
             if isinstance(v, str): body = body.replace("{{" + k + "}}", v)
         g["body"] = body
         rel = f"content/guias/{f}"
-        g["modified"] = lastmod(rel, extra=[params.get("fecha", "")] if "{{" in raw else [])
+        g["modified"] = lastmod(rel, extra=[params.get("fecha", "")] + gdates if "{{" in raw else [])
         g["published"] = g.get("published") or published(rel)
         out.append(g)
     return out
@@ -242,9 +261,9 @@ LIVE_PATH = os.path.join(ROOT, "data/live.json")
 MAX_EDAD = 7  # días; por encima, el dato no se muestra (nunca datos viejos como si fueran de hoy)
 # id del bloque -> calculadoras afines (la primera es el enlace principal)
 PULSO_CALCS = {
-    "luz": ["calefaccion-gas-aerotermia-electrica"],  # TODO: luz-fija-o-indexada cuando exista
+    "luz": ["luz-fija-o-indexada", "calefaccion-gas-aerotermia-electrica", "reparar-o-comprar-electrodomestico", "cambiar-electrodomestico-antiguo-merece-la-pena"],  # las que usan live.luz_pvpc como defecto
     "carburantes": ["diesel-gasolina-hibrido-electrico"],
-    "euribor": ["hipoteca-fija-o-variable", "amortizar-plazo-o-cuota"],
+    "euribor": ["hipoteca-fija-o-variable", "amortizar-plazo-o-cuota", "cuanto-ahorrar-para-comprar-casa"],
     "tiempo": ["calefaccion-gas-aerotermia-electrica"],
 }
 PULSO_LABEL = {"amortizar-plazo-o-cuota": "¿Amortizar plazo o cuota?"}

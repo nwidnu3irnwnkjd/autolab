@@ -1,0 +1,97 @@
+{
+  "slug": "reparar-o-comprar-electrodomestico",
+  "title": "Reparar o comprar nuevo: lavadora, nevera, lavavajillas",
+  "description": "¿Reparar o comprar nuevo? Calcula el coste por año de uso, el riesgo de otra avería, el consumo y el presupuesto máximo de reparación que compensa.",
+  "h1": "¿Reparar o comprar un electrodoméstico nuevo?",
+  "lead": "Conviene reparar si el presupuesto de la reparación no supera el máximo que sale de tu edad, tu riesgo de otra avería y tu consumo extra; con los datos de ejemplo (lavadora de 8 años, reparación de 150 € frente a 430 € de uno nuevo) la calculadora te da ese máximo y compara el coste por año de uso con la regla del 50 %, que es solo una referencia. Cámbialos por los tuyos para ver tu veredicto.",
+  "veredicto": "Reparar compensa mientras el presupuesto quede por debajo del importe de equilibrio que sale del precio del aparato nuevo, los años de vida útil que le quedan, el riesgo de otra avería y el consumo extra del viejo; la regla del 50 % del precio nuevo es solo una referencia orientativa, no un veredicto.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "vida",
+      "label": "Vida útil media del aparato (años; estimación editable: OCU da 11,5 para una lavadora, ajústala para nevera o lavavajillas)",
+      "default": 11.5,
+      "min": 1,
+      "step": 0.5
+    },
+    {
+      "id": "edad",
+      "label": "Edad actual del aparato (años)",
+      "default": 8,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "reparacion",
+      "label": "Presupuesto de la reparación (€, con IVA y desplazamiento)",
+      "default": 150,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "nuevo",
+      "label": "Precio de uno nuevo equivalente (€; ejemplo: 430 € es la media de una lavadora según OCU)",
+      "default": 430,
+      "min": 1,
+      "step": 10
+    },
+    {
+      "id": "garantia",
+      "label": "Garantía de la reparación (meses; mira tu presupuesto o factura)",
+      "default": 6,
+      "min": 0,
+      "step": 1
+    },
+    {
+      "id": "prob",
+      "label": "Probabilidad de otra avería en 2 años (%; orientativo: 10 baja, 25 media, 40 alta)",
+      "default": 25,
+      "min": 0,
+      "step": 5
+    },
+    {
+      "id": "dkwh",
+      "label": "Consumo extra del aparato viejo frente al nuevo (kWh/año; 0 si no lo sabes: compara las etiquetas)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "precio",
+      "label": "Precio de la electricidad (€/kWh, con impuestos; por defecto, PVPC del mes en curso de Red Eléctrica)",
+      "default": 0.23,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_factor": 1.2718,
+      "default_round": 3,
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.electricidad_eur_kwh"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuándo compensa reparar un electrodoméstico?",
+      "Cuando el presupuesto queda por debajo del importe de equilibrio que calcula esta página: el coste anual de reparar (reparación más el coste esperado de otra avería, repartido entre los años que le quedan) tiene que ser menor que el coste anual de uno nuevo (su precio entre su vida útil), más el consumo extra del viejo. Cuanto más joven es el aparato y más caro el nuevo, mayor es el presupuesto que compensa."
+    ],
+    [
+      "¿Qué es la regla del 50 % para reparar o comprar?",
+      "Es una pauta habitual: si la reparación cuesta más de la mitad de un aparato nuevo, es mejor comprar. Es una referencia rápida, no un veredicto: no mira la edad, el riesgo de otra avería ni el consumo. La calculadora te muestra qué diría la regla y si tu cálculo coincide o no."
+    ],
+    [
+      "¿Cuántos años dura un electrodoméstico?",
+      "Depende del modelo y del uso. OCU cifra en 11,5 años la vida media de una lavadora, con casos que fallan antes de los 8 y otros que superan los 15. Para nevera o lavavajillas, la vida útil de la calculadora es una estimación que puedes editar; si no tienes otro dato, usa el mismo valor y pruébalo con un par de cifras distintas."
+    ],
+    [
+      "¿Cuánto influye el consumo de energía?",
+      "Solo si el aparato nuevo gasta bastante menos: la calculadora multiplica los kWh de diferencia al año por el precio de la luz. Si dejas 0 kWh, el resultado depende solo del precio, la edad y el riesgo de avería. Para estimarlo, compara las etiquetas energéticas o mide el consumo del viejo con un medidor enchufable."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el valor de reventa, el transporte e instalación del nuevo, el reciclado del viejo, ni el coste de estar sin aparato. Supone que una nueva avería costaría lo mismo que la actual y que el nuevo dura toda su vida útil sin averías. Si el aparato aún tiene garantía legal, la reparación debería ser gratuita: comprueba primero la factura."
+    ]
+  ],
+  "sources": "Modelo propio: coste anual de reparar = (presupuesto + coste esperado de otra avería) / años de vida útil restante (mínimo 1) + consumo extra x precio de la luz; coste anual de comprar = precio nuevo / vida útil. Coste esperado de otra avería = probabilidad x presupuesto x (1 - cobertura de la garantía de la reparación sobre 24 meses). Importe de equilibrio: el presupuesto que iguala ambos costes. Vida útil de 11,5 años y precio medio de 430 € de una lavadora: OCU, «¿Arreglo la lavadora o compro otra?» (https://www.ocu.org/electrodomesticos/lavadora/consejos/lavadora-arreglarla-sustituirla, consultado el 2/10/2026), que también cita la regla de reparar solo si cuesta menos de la mitad de uno nuevo. Precio de la luz por defecto: PVPC medio del mes en curso (Red Eléctrica, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) con impuesto eléctrico e IVA vigentes en octubre de 2026 (x 1,2718); si aún no hay 7 días del mes, 0,23 €/kWh (PVPC medio de septiembre de 2026 con impuestos). Supuestos de ejemplo, no oficiales y editables: edad de 8 años, reparación de 150 €, garantía de 6 meses, probabilidad de otra avería del 25 % y consumo extra de 0 kWh. Información orientativa, no asesoramiento."
+}

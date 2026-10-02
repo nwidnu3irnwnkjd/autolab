@@ -15,25 +15,31 @@
   "subrogar-hipoteca-merece-la-pena"
  ],
  "autonomo-o-asalariado": [
-  "declaracion-conjunta-o-individual",
-  "contado-o-financiar"
+  "plan-pensiones-o-fondo-indexado",
+  "declaracion-conjunta-o-individual"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
-  "diesel-gasolina-hibrido-electrico"
+  "cambiar-ventanas-aislamiento-merece-la-pena"
+ ],
+ "cambiar-ventanas-aislamiento-merece-la-pena": [
+  "calefaccion-gas-aerotermia-electrica",
+  "luz-fija-o-indexada"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
-  "diesel-gasolina-hibrido-electrico"
+  "diesel-gasolina-hibrido-electrico",
+  "contado-o-financiar"
  ],
  "contado-o-financiar": [
-  "guarderia-cuidadora-o-reducir-jornada",
-  "plan-pensiones-o-fondo-indexado"
+  "comprar-coche-o-renting",
+  "amortizar-o-invertir",
+  "guarderia-cuidadora-o-reducir-jornada"
  ],
  "cuanto-ahorrar-para-comprar-casa": [
   "alquilar-o-comprar",
-  "amortizar-o-invertir",
-  "amortizar-plazo-o-cuota"
+  "hipoteca-fija-o-variable",
+  "amortizar-o-invertir"
  ],
  "declaracion-conjunta-o-individual": [
   "autonomo-o-asalariado",
@@ -41,11 +47,13 @@
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
-  "seguro-todo-riesgo-o-terceros"
+  "seguro-todo-riesgo-o-terceros",
+  "luz-fija-o-indexada"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
-  "plan-pensiones-o-fondo-indexado"
+  "plan-pensiones-o-fondo-indexado",
+  "autonomo-o-asalariado"
  ],
  "hipoteca-fija-o-variable": [
   "amortizar-o-invertir",
@@ -54,11 +62,18 @@
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
-  "hipoteca-fija-o-variable"
+  "cambiar-ventanas-aislamiento-merece-la-pena",
+  "diesel-gasolina-hibrido-electrico"
  ],
  "plan-pensiones-o-fondo-indexado": [
+  "autonomo-o-asalariado",
+  "amortizar-o-invertir",
+  "declaracion-conjunta-o-individual"
+ ],
+ "reparar-o-comprar-electrodomestico": [
+  "luz-fija-o-indexada",
   "contado-o-financiar",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "calefaccion-gas-aerotermia-electrica"
  ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",

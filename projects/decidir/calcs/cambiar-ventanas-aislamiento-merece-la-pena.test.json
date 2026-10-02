@@ -1,0 +1,137 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "gasto": 800,
+    "ahorro": 20,
+    "coste": 6000,
+    "ayuda": 0,
+    "anos": 15,
+    "subida": 2,
+    "tasa": 3
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorroAnual1": 160.0,
+    "anosAmort": 28.26,
+    "ahorroAcum": 2766.95,
+    "van": -3821.79,
+    "minPct": 43.37,
+    "compensa": 0,
+    "compensaVan": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 800,
+    "ahorro": 20,
+    "coste": 0,
+    "ayuda": 0,
+    "anos": 15,
+    "subida": 2,
+    "tasa": 3
+   },
+   "expect": {
+    "neto": 0,
+    "ahorroAnual1": 160.0,
+    "anosAmort": 0.0,
+    "ahorroAcum": 2766.95,
+    "van": 2178.21,
+    "minPct": 0.0,
+    "compensa": 1,
+    "compensaVan": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 800,
+    "ahorro": 0,
+    "coste": 6000,
+    "ayuda": 0,
+    "anos": 15,
+    "subida": 2,
+    "tasa": 3
+   },
+   "expect": {
+    "neto": 6000,
+    "ahorroAnual1": 0.0,
+    "anosAmort": -1.0,
+    "ahorroAcum": 0.0,
+    "van": -6000.0,
+    "minPct": 43.37,
+    "compensa": 0,
+    "compensaVan": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 1500,
+    "ahorro": 30,
+    "coste": 300,
+    "ayuda": 0,
+    "anos": 1,
+    "subida": 2,
+    "tasa": 3
+   },
+   "expect": {
+    "neto": 300,
+    "ahorroAnual1": 450.0,
+    "anosAmort": 0.67,
+    "ahorroAcum": 450.0,
+    "van": 136.89,
+    "minPct": 20.0,
+    "compensa": 1,
+    "compensaVan": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 2000,
+    "ahorro": 30,
+    "coste": 12000,
+    "ayuda": 3000,
+    "anos": 20,
+    "subida": 3,
+    "tasa": 6
+   },
+   "expect": {
+    "neto": 9000,
+    "ahorroAnual1": 600.0,
+    "anosAmort": 12.57,
+    "ahorroAcum": 16122.22,
+    "van": -263.08,
+    "minPct": 16.75,
+    "compensa": 1,
+    "compensaVan": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "gasto": 1000,
+    "ahorro": 18,
+    "coste": 5500,
+    "ayuda": 0,
+    "anos": 9,
+    "subida": 0,
+    "tasa": 8
+   },
+   "expect": {
+    "neto": 5500,
+    "ahorroAnual1": 180.0,
+    "anosAmort": 30.56,
+    "ahorroAcum": 1620.0,
+    "van": -4375.56,
+    "minPct": 61.11,
+    "compensa": 0,
+    "compensaVan": 0
+   },
+   "tol": 1
+  }
+ ]
+}

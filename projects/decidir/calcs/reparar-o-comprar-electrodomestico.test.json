@@ -1,0 +1,125 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "vida": 11.5,
+    "edad": 8,
+    "reparacion": 150,
+    "nuevo": 430,
+    "garantia": 6,
+    "prob": 25,
+    "dkwh": 0,
+    "precio": 0.23
+   },
+   "expect": {
+    "anualReparar": 50.89,
+    "anualNuevo": 37.39,
+    "diferenciaAnual": 13.5,
+    "equilibrioReparacion": 110.21,
+    "regla50": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vida": 12,
+    "edad": 2,
+    "reparacion": 250,
+    "nuevo": 600,
+    "garantia": 12,
+    "prob": 10,
+    "dkwh": 0,
+    "precio": 0.23
+   },
+   "expect": {
+    "anualReparar": 26.25,
+    "anualNuevo": 50.0,
+    "diferenciaAnual": -23.75,
+    "equilibrioReparacion": 476.19,
+    "regla50": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vida": 11.5,
+    "edad": 8,
+    "reparacion": 0,
+    "nuevo": 430,
+    "garantia": 6,
+    "prob": 25,
+    "dkwh": 0,
+    "precio": 0.23
+   },
+   "expect": {
+    "anualReparar": 0.0,
+    "anualNuevo": 37.39,
+    "diferenciaAnual": -37.39,
+    "equilibrioReparacion": 110.21,
+    "regla50": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vida": 11.5,
+    "edad": 8,
+    "reparacion": 500,
+    "nuevo": 430,
+    "garantia": 6,
+    "prob": 25,
+    "dkwh": 150,
+    "precio": 0.23
+   },
+   "expect": {
+    "anualReparar": 204.14,
+    "anualNuevo": 37.39,
+    "diferenciaAnual": 166.75,
+    "equilibrioReparacion": 8.52,
+    "regla50": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vida": 11.5,
+    "edad": 14,
+    "reparacion": 150,
+    "nuevo": 430,
+    "garantia": 0,
+    "prob": 40,
+    "dkwh": 0,
+    "precio": 0.23
+   },
+   "expect": {
+    "anualReparar": 210.0,
+    "anualNuevo": 37.39,
+    "diferenciaAnual": 172.61,
+    "equilibrioReparacion": 26.71,
+    "regla50": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "vida": 11.5,
+    "edad": 10,
+    "reparacion": 60,
+    "nuevo": 430,
+    "garantia": 6,
+    "prob": 25,
+    "dkwh": 400,
+    "precio": 0.25
+   },
+   "expect": {
+    "anualReparar": 147.5,
+    "anualNuevo": 37.39,
+    "diferenciaAnual": 110.11,
+    "equilibrioReparacion": 0.0,
+    "regla50": 1
+   },
+   "tol": 1
+  }
+ ]
+}

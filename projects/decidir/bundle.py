@@ -3,7 +3,15 @@ y carga solo el JS necesario (core / em / chart / home). Se llama al final de bu
 import hashlib, os, re
 import minify
 
-JS_SRC = ["app.js", "em.js", "chart.js", "home.js"]
+JS_SRC = ["app.js", "em.js", "em-x.js", "chart.js", "home.js"]
+
+
+_SEL = re.compile(r"\b(?:querySelector(?:All)?|closest|matches)\((\"[^\"]*\"|'[^']*')")
+
+
+def _nosel(t):
+    """Quita los selectores CSS que el JS busca (p. ej. ".chip" en app.js): buscar una clase no es usarla en esta página."""
+    return _SEL.sub("(0", t)
 
 
 def _h(s): return hashlib.sha1(s.encode()).hexdigest()[:10]
@@ -31,12 +39,14 @@ def run(root, dist):
                 elif "data-filter" in h: kind = "cat"
                 else: kind = "page"
                 chart = kind == "calc" and bool(re.search(r"lineChart|\bline\s*:", h))
-                use = ["app.js"] + (["em.js"] if kind == "calc" else []) + (["chart.js"] if chart else []) + (["home.js"] if kind in ("home", "cat") else [])
+                use = ["app.js"] + (["em.js", "em-x.js"] if kind == "calc" else []) + (["chart.js"] if chart else []) + (["home.js"] if kind in ("home", "cat") else [])
                 pages[p] = (h, kind + ("-chart" if chart else ""), use)
     pools = {}
     for p, (h, key, use) in pages.items():
         pool, pre = pools.setdefault(key, (set(), set()))
-        txt = h + "".join(js[u] for u in use)
+        # solo marcado (etiquetas) y scripts propios: el texto corrido y el JSON-LD no declaran clases (evita falsos «usos» como "steps" o "chip")
+        body = re.sub(r"<script type=\"application/ld\+json\">.*?</script>", "", h, flags=re.S)
+        txt = " ".join(re.findall(r"<[^>]+>|(?<=>)[^<]*(?=</script>)", body)) + "".join(_nosel(js[u]) for u in use + [x for x in ("em-x.js",) if "em.js" in use])
         pool.update(re.findall(r"[\w-]+", txt)); pre.update(re.findall(r"[\"']([\w]+-[\w-]*-)[\"']", txt))
     cssf = {}
     for key, (pool, pre) in pools.items():
@@ -46,7 +56,9 @@ def run(root, dist):
         name, v = cssf[key]
         tag = f'<link rel="stylesheet" href="/assets/{name}?v={v}">' + (f'<link rel="stylesheet" href="/assets/print.css?v={pv}" media="print">' if key.startswith("calc") else "")
         h = re.sub(r'<link rel="stylesheet" href="/assets/app\.css[^"]*">', tag, h)
-        tags = "".join(f'<script src="/assets/{u}?v={jsv[u]}"></script>' for u in use)
+        # em-x.js (compartir/PDF) y chart.js (gráfico) se cargan bajo demanda desde em.js: van como data-* en su etiqueta
+        lazy = {"em-x.js": "x", "chart.js": "chart"}
+        tags = "".join(f'<script src="/assets/{u}?v={jsv[u]}"' + ("".join(f' data-{k}="/assets/{l}?v={jsv[l]}"' for l, k in lazy.items() if l in use) if u == "em.js" else "") + "></script>" for u in use if u not in lazy)
         h = re.sub(r'<script src="/assets/app\.js[^"]*"></script>', tags, h)
         open(p, "w").write(h)
     return {k: v[0] for k, v in cssf.items()}

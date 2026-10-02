@@ -52,7 +52,7 @@
    "calc": "calefaccion-gas-aerotermia-electrica",
    "texto_antes": "El {fecha} cambia la hora (a las 3:00 vuelven a ser las 2:00): revisa la programación de tu calefacción.",
    "texto_despues": "El {fecha} cambió la hora al horario de invierno: revisa la programación de tu calefacción.",
-   "fuente": {"nombre": "Directiva 2000/84/CE sobre las disposiciones relativas a la hora de verano (EUR-Lex)", "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32001L0084"},
+   "fuente": {"nombre": "Directiva 2000/84/CE sobre las disposiciones relativas a la hora de verano (EUR-Lex)", "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32000L0084"},
    "aviso": "La directiva fija el cambio en el último domingo de octubre y de marzo. El de marzo de 2027 será el domingo 28."
   },
   {

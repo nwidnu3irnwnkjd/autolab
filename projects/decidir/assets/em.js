@@ -1,4 +1,4 @@
-/* Entre Muchos — componente de resultado (EM.renderResult, EM.live, informe imprimible). Solo en calculadoras. */
+/* Entre Muchos — núcleo del componente de resultado (EM.renderResult, EM.live). Solo en calculadoras. Compartir/PDF en em-x.js y gráfico en chart.js, bajo demanda. */
 (function () {
   "use strict";
   var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -22,6 +22,25 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function reduced() { return !!(RM && RM.matches); }
   var state = new WeakMap();
+  /* Carga diferida: gráfico de línea (al entrar en pantalla) y módulo de compartir/PDF (al pulsar o en reposo). */
+  var SC = document.currentScript, LD = {}, idleX = 0;
+  function load(key, cb) {
+    var u = SC && SC.getAttribute("data-" + key), L = LD[key] || (LD[key] = { q: [], s: 0 });
+    if (L.s === 2 || !u) return cb && cb();
+    if (cb) L.q.push(cb);
+    if (L.s) return; L.s = 1;
+    var s = document.createElement("script"); s.src = u;
+    s.onload = function () { L.s = 2; L.q.splice(0).forEach(function (f) { f(); }); };
+    document.head.appendChild(s);
+  }
+  function loadX(cb) { load("x", function () { cb(window.EM._x); }); }
+  function lazyChart(slot, cfg) {
+    if (!slot) return;
+    var go = function () { load("chart", function () { if (slot.isConnected && !slot.firstChild && window.EM.lineChart) slot.appendChild(window.EM.lineChart(cfg)); }); };
+    if (window.EM && window.EM.lineChart) return go();
+    if ("IntersectionObserver" in window) { var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); go(); } }, { rootMargin: "300px" }); io.observe(slot); }
+    else go();
+  }
 
   function countTo(el, from, to, fmt) {
     if (reduced() || !isFinite(from) || from === to) { el.textContent = fmt(to); return; }
@@ -94,7 +113,7 @@
     if (!animateIn) { var res = el.firstChild; res.style.animation = "none"; }
     if (prev.key !== undefined && prev.key !== key && !reduced()) el.querySelector(".em-verdict").classList.add("em-win");
     el.style.display = "block";
-    if (o.line && window.EM.lineChart) { var slot = el.querySelector(".em-line-slot"); if (slot) slot.appendChild(window.EM.lineChart(o.line)); }
+    if (o.line) lazyChart(el.querySelector(".em-line-slot"), o.line);
     if (hasBig) countTo(el.querySelector(".em-big .num"), prev.big === undefined ? 0 : prev.big, o.bigNumber, fmt);
     var rects = el.querySelectorAll(".br"), pf = prev.f || [], nf = [];
     for (var i = 0; i < rects.length; i++) {
@@ -107,65 +126,13 @@
       el.getBoundingClientRect();
       requestAnimationFrame(function () { for (var j = 0; j < rects.length; j++) rects[j].style.transform = "scaleX(" + nf[j] + ")"; });
     }
-    var shareText = function () {
-      var tmp = document.createElement("div"); tmp.innerHTML = o.verdict;
-      var t = tmp.textContent.replace(/\s+/g, " ").trim();
-      if (hasBig && t.indexOf(fmt(o.bigNumber)) < 0 && t.replace(/\s/g, "").indexOf(fmt(o.bigNumber).replace(/\s/g, "")) < 0) { var l = document.createElement("div"); l.innerHTML = o.bigLabel || ""; t += " (" + fmt(o.bigNumber) + (l.textContent ? " " + l.textContent.trim() : "") + ")"; }
-      return t + "\n" + location.href.split("#")[0];
-    };
     var box = el.querySelector(".em-share");
-    if (box && !box._b) {
-      box._b = 1;
-      var toast = box.querySelector(".em-toast");
-      var say = function (m) { toast.textContent = m; clearTimeout(box._t); box._t = setTimeout(function () { toast.textContent = ""; }, 2500); };
-      var copy = function (txt, msg) {
-        var done = function () { say(msg); };
-        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { fb(); });
-        else fb();
-        function fb() { var ta = document.createElement("textarea"); ta.value = txt; ta.style.cssText = "position:fixed;opacity:0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { say("No se pudo copiar"); } document.body.removeChild(ta); }
-      };
-      box.addEventListener("click", function (e) {
-        var b = e.target.closest("button"); if (!b) return;
-        var txt = shareText();
-        if (b.getAttribute("data-act") === "print") { printReport(); return; }
-        if (b.getAttribute("data-act") === "share") {
-          navigator.share({ title: document.title, text: txt.split("\n")[0], url: location.href.split("#")[0] }).catch(function (err) { if (err && err.name !== "AbortError") copy(location.href.split("#")[0], "Enlace copiado"); });
-        } else copy(txt, "Resultado copiado");
-      });
-    }
+    if (box) box.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (b) loadX(function (X) { X.act(b, box, o, hasBig, fmt); });
+    });
+    if (!idleX) { idleX = 1; setTimeout(function () { loadX(function () {}); }, 2500); }
     state.set(el, { big: hasBig ? o.bigNumber : undefined, f: nf, key: key });
   }
-
-  /* Informe imprimible (PDF): cabecera + datos introducidos + resultado + supuestos/disclaimer/URL. El CSS @media print oculta el resto. */
-  function mk(id, cls) { var d = document.getElementById(id); if (!d) { d = document.createElement("div"); d.id = id; d.className = cls || ""; } return d; }
-  function prepPrint() {
-    var main = document.querySelector("main"), calc = main && main.querySelector(".calc"), res = calc && calc.querySelector(".em-res");
-    if (!res) return false;
-    var h1 = main.querySelector("h1"), form = document.getElementById("f"), now = new Date(), rows = "";
-    if (form) Array.prototype.forEach.call(form.querySelectorAll(".grid > div"), function (w) {
-      var l = w.querySelector("label"), c = w.querySelector("input,select"); if (!l || !c) return;
-      var v = c.tagName === "SELECT" ? c.options[c.selectedIndex].text : (isFinite(+c.value) && c.value !== "" ? num(+c.value, +c.value % 1 ? 2 : 0).replace(/(,\d*?)0+$/, "$1").replace(/,$/, "") : c.value);
-      rows += "<li><span>" + l.innerHTML + "</span><b>" + esc(v) + "</b></li>";
-    });
-    var head = mk("em-pr-head");
-    head.innerHTML = '<div class="pr-top"><span class="pr-brand">entre <b>muchos</b></span><span>' + now.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" }) + '</span></div>' +
-      '<p class="pr-kicker">Informe de decisión</p><h1>' + (h1 ? esc(h1.textContent) : esc(document.title)) + '</h1>' +
-      (rows ? '<h2>Datos introducidos</h2><ul class="pr-in">' + rows + '</ul>' : '') + '<h2>Resultado</h2>';
-    var foot = mk("em-pr-foot"), h = "";
-    Array.prototype.forEach.call(main.querySelectorAll("h2"), function (x) {
-      if (/^Supuestos/i.test(x.textContent)) {
-        h += "<h2>Supuestos y fuentes</h2>";
-        for (var n = x.nextElementSibling; n && n.tagName !== "H2"; n = n.nextElementSibling) if (/(^|\s)(note|disclaimer)(\s|$)/.test(n.className)) h += n.outerHTML;
-      }
-    });
-    foot.innerHTML = h + '<p class="pr-url">' + esc(location.href.split("#")[0]) + '<br>Informe generado en tu navegador; tus datos no se envían a ningún servidor.</p>';
-    main.insertBefore(head, calc); main.insertBefore(foot, calc.nextSibling);
-    document.body.classList.add("em-pr");
-    return true;
-  }
-  function printReport() { if (prepPrint()) window.print(); }
-  window.addEventListener("beforeprint", prepPrint);
-  window.addEventListener("afterprint", function () { document.body.classList.remove("em-pr"); });
 
   /* EM.live(inputs, fn, wait): recalcula al cambiar cualquier input (debounce). inputs: selector, formulario, o lista. */
   function live(inputs, fn, wait) {

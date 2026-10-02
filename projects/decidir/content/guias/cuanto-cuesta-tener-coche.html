@@ -1,0 +1,61 @@
+<!--meta {"title": "Cuánto cuesta de verdad tener coche en España", "h1": "Cuánto cuesta de verdad tener coche en España", "description": "Coste total de tener coche: depreciación, seguro, impuestos, ITV, mantenimiento, combustible y financiación. Qué es fijo, qué varía y cómo calcularlo.", "published": "2026-10-02", "calcs": ["comprar-coche-o-renting", "diesel-gasolina-hibrido-electrico", "seguro-todo-riesgo-o-terceros", "contado-o-financiar", "coche-nuevo-o-seminuevo", "coche-propio-o-carsharing-o-vtc", "bici-electrica-o-transporte-publico"]} -->
+<p class="lead"><strong>Respuesta corta:</strong> tener coche cuesta bastante más que el combustible. El coste total se reparte en partidas fijas (las pagas aunque el coche esté parado: depreciación, seguro, impuesto de circulación, ITV, aparcamiento, intereses) y partidas variables (dependen de los kilómetros: combustible o electricidad, neumáticos, revisiones). No damos aquí un coste medio único porque depende de tu coche, tu ciudad y tus kilómetros: damos el método y las calculadoras para obtener el tuyo.</p>
+
+<h2>Las seis partidas del coste total</h2>
+<div class="em-tw"><table>
+<thead><tr><th scope="col">Partida</th><th scope="col">Tipo</th><th scope="col">De qué depende</th><th scope="col">Dónde sacar tu cifra</th></tr></thead>
+<tbody>
+<tr><td><strong>Depreciación</strong></td><td>Fija</td><td>Precio de compra menos lo que te darían al venderlo, repartido por años; cae más rápido los primeros años</td><td>Anuncios de coches iguales con la edad y los km que tendrá el tuyo cuando lo vendas</td></tr>
+<tr><td><strong>Seguro</strong></td><td>Fija</td><td>Tu perfil, el coche, la cobertura y la franquicia</td><td>Presupuestos por escrito de varias aseguradoras</td></tr>
+<tr><td><strong>Impuestos y tasas</strong></td><td>Fija</td><td>Impuesto de circulación (municipal), ITV, y una sola vez, el de matriculación</td><td>Tu ayuntamiento y tu estación de ITV</td></tr>
+<tr><td><strong>Combustible o energía</strong></td><td>Variable</td><td>Consumo real y kilómetros al año</td><td>Tu ordenador de a bordo y el precio del día (abajo)</td></tr>
+<tr><td><strong>Mantenimiento y neumáticos</strong></td><td>Variable (con parte fija)</td><td>Plan de revisiones del fabricante, edad y uso</td><td>Plan de mantenimiento de tu modelo y presupuesto del taller</td></tr>
+<tr><td><strong>Financiación</strong></td><td>Fija</td><td>Intereses y comisiones del préstamo o del renting</td><td>La oferta firmada: TAE e importe total a pagar</td></tr>
+</tbody>
+</table></div>
+
+<h2>Depreciación: la partida que más se olvida</h2>
+<p>No sale en ninguna factura, pero es dinero que dejas de tener: lo que pagaste menos lo que recuperas al vender. Se calcula con la diferencia entre el precio de compra y el valor de venta que esperas, dividida por los años que lo vas a tener. Para estimar el valor de venta, mira anuncios de modelos iguales con la edad y los kilómetros que tendrá el tuyo; no hay una tabla oficial de depreciación y cualquier porcentaje «medio» oculta mucha diferencia entre modelos. Por eso nuestras calculadoras te dejan editarlo en lugar de imponerlo.</p>
+<!--si:coche-nuevo-o-seminuevo--><p>Si dudas entre nuevo y seminuevo, la depreciación es justo lo que cambia: <a href="/decidir/coche-nuevo-o-seminuevo/">coche nuevo o seminuevo</a> compara el coste total a los años que lo vas a tener.</p><!--/si-->
+
+<h2>Seguro, impuestos y ITV</h2>
+<ul>
+<li><strong>Seguro:</strong> el seguro de responsabilidad civil es obligatorio para circular (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911" rel="noopener">Real Decreto Legislativo 8/2004</a>). Lo que eliges es la cobertura adicional: a medida que el coche pierde valor, el todo riesgo puede dejar de compensar. Lo calcula <a href="/decidir/seguro-todo-riesgo-o-terceros/">seguro todo riesgo o terceros</a>.</li>
+<li><strong>Impuesto de circulación (IVTM):</strong> es municipal y lo paga cada año el titular. La ley fija unas cuotas mínimas por potencia fiscal y cada ayuntamiento puede aplicar coeficientes y bonificaciones, por ejemplo según el tipo de motor (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214" rel="noopener">texto refundido de la Ley de Haciendas Locales</a>, arts. 92 a 99). Mira la ordenanza fiscal de tu ayuntamiento: es la única cifra válida.</li>
+<li><strong>Impuesto de matriculación:</strong> se paga una sola vez al matricular un coche nuevo y depende de sus emisiones de CO<sub>2</sub> (<a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741" rel="noopener">Ley 38/1992</a>, art. 70). Suele ir incluido en el precio final que te da el concesionario; confírmalo por escrito.</li>
+<li><strong>ITV:</strong> la frecuencia depende de la antigüedad del turismo; la regula el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2017-12841" rel="noopener">Real Decreto 920/2017</a>, que fija el calendario de inspecciones. La tarifa la fija cada comunidad autónoma.</li>
+</ul>
+
+<h2>Combustible o energía: el único dato que cambia cada día</h2>
+<p>El coste por kilómetro de repostar se calcula así: <strong>consumo (l/100 km) × precio (€/l) ÷ 100 = €/km</strong>; en un eléctrico, consumo (kWh/100 km) × precio del kWh ÷ 100. Los precios de hoy, con su fecha:</p>
+<ul>
+<li><strong>Gasolina 95:</strong> {{gasolina_eur_l}} €/l y <strong>diésel:</strong> {{diesel_eur_l}} €/l, media simple de las estaciones de la Península y Baleares a {{fecha_gasolina_es}} (<a href="https://geoportalgasolineras.es/" rel="noopener">Geoportal de gasolineras, Ministerio para la Transición Ecológica</a>). El precio de tu gasolinera habitual puede diferir.</li>
+<li><strong>Electricidad:</strong> el precio medio de la energía del PVPC fue de {{pvpc_hoy}} €/kWh el {{fecha_pvpc_es}} (media de las 24 horas, sin peajes, cargos ni impuestos; <a href="https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real" rel="noopener">Red Eléctrica</a>). Un cargador público cobra su propia tarifa: compárala con lo que te cuesta el kWh en casa.</li>
+</ul>
+<p>Con tu consumo real y tus kilómetros, <a href="/decidir/diesel-gasolina-hibrido-electrico/">diésel, gasolina, híbrido o eléctrico</a> te dice cuál sale más barato a los años que vas a quedarte con el coche.</p>
+
+<h2>Financiación: el coste que se ve en el contrato</h2>
+<p>Los intereses y comisiones son una partida más. Pide siempre la TAE y el importe total adeudado, que la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-10970" rel="noopener">Ley 16/2011 de contratos de crédito al consumo</a> obliga a informar antes de firmar. Compara pagar al contado con financiar en <a href="/decidir/contado-o-financiar/">contado o financiar</a>, y comprar con renting (que agrupa varias partidas en una cuota) en <a href="/decidir/comprar-coche-o-renting/">comprar coche o renting</a>.</p>
+
+<h2>Qué hacer primero</h2>
+<div class="em-tw"><table>
+<thead><tr><th scope="col">Si tu duda es…</th><th scope="col">Empieza por</th></tr></thead>
+<tbody>
+<tr><td>Voy a comprar y no sé cuánto me costará de verdad</td><td>Suma las seis partidas con presupuestos por escrito, y compara <a href="/decidir/comprar-coche-o-renting/">comprar o renting</a></td></tr>
+<tr><td>Ya tengo coche y quiero bajar gasto</td><td>Primero seguro (se renegocia cada año) y la cobertura: <a href="/decidir/seguro-todo-riesgo-o-terceros/">todo riesgo o terceros</a></td></tr>
+<tr><td>Hago pocos kilómetros</td><td>Pesa más lo fijo que lo variable<!--si:coche-propio-o-carsharing-o-vtc-->: mira <a href="/decidir/coche-propio-o-carsharing-o-vtc/">coche propio o carsharing</a><!--/si--><!--si:bici-electrica-o-transporte-publico-->, <a href="/decidir/bici-electrica-o-transporte-publico/">bici eléctrica o transporte público</a><!--/si--></td></tr>
+<tr><td>Hago muchos kilómetros</td><td>Pesa más el combustible: <a href="/decidir/diesel-gasolina-hibrido-electrico/">diésel, gasolina, híbrido o eléctrico</a></td></tr>
+</tbody>
+</table></div>
+<p class="note">Revisado el {{fecha_datos_es}}. Los precios de combustible y luz son datos del día indicado y se actualizan solos; el resto de la guía no contiene cifras de coste medio. Las cuotas de impuestos, ITV y seguro dependen de tu municipio, tu comunidad y tu perfil.</p>
+
+<h2>Fuentes</h2>
+<ul>
+<li><a href="https://geoportalgasolineras.es/" rel="noopener">Geoportal de gasolineras, Ministerio para la Transición Ecológica</a>: precios de carburantes.</li>
+<li><a href="https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real" rel="noopener">Red Eléctrica de España</a>: precios del mercado eléctrico (PVPC).</li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-18911" rel="noopener">Real Decreto Legislativo 8/2004</a>: responsabilidad civil y seguro en la circulación de vehículos a motor.</li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214" rel="noopener">Real Decreto Legislativo 2/2004</a>: Ley Reguladora de las Haciendas Locales (impuesto sobre vehículos de tracción mecánica).</li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741" rel="noopener">Ley 38/1992 de Impuestos Especiales</a>, art. 70 (matriculación).</li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2017-12841" rel="noopener">Real Decreto 920/2017</a>: inspección técnica de vehículos.</li>
+<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2011-10970" rel="noopener">Ley 16/2011</a>: contratos de crédito al consumo.</li>
+</ul>
