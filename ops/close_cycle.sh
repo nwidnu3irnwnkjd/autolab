@@ -116,6 +116,9 @@ step "push"
 git -c credential.helper="$CH" push origin main
 HASH="$(git rev-parse --short HEAD)"
 
+# KPIs de tráfico (informativo, ~80 s por la URL Inspection API; una fila por hora)
+step "KPIs (journal/kpis.md, informativo)"; python3 ops/kpis.py || true
+
 # 8. esperar al deploy y IndexNow
 (cd projects/decidir && python3 build.py >/dev/null)   # dist con el lastmod del commit empujado
 step "Esperando al deploy (hasta 180 s)"

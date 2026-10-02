@@ -567,7 +567,7 @@ def calendario_page(calcs, base, hoy=None, events=None):
         estado = ('<span class="pulso-meta">Activo ahora</span>' if r["activo"] else "") + (' <span class="pulso-meta">Fecha por confirmar</span>' if e.get("estado") == "por confirmar" else "")
         items.append(f'<article class="box"><h2>{html.escape(e["titulo"])}</h2><p class="note">{cuando} {estado}</p>'
                      f'<p><strong>Decisión que toca:</strong> {html.escape(e["decision"])}.</p><p><strong>Qué hacer:</strong> {html.escape(e["que_hacer"])}</p>'
-                     f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a></p>'
+                     f'<p><a href="/decidir/{e["calc"]}/">{html.escape(names[e["calc"]])}</a>' + (f' · <a href="/guias/{e["guia"]}/">Guía</a>' if e.get("guia") and os.path.exists(os.path.join(ROOT, "content/guias", e["guia"] + ".html")) else "") + '</p>'  # c52: guía opcional del evento
                      f'<p class="note">{html.escape(e["aviso"])} Fuente: <a href="{e["fuente"]["url"]}" rel="noopener">{html.escape(e["fuente"]["nombre"])}</a>.</p></article>')
     # «pendientes» de events.json: sin fecha verificable (pendiente de norma o de notificación); solo aquí, nunca en el banner
     pend = [e for e in load_pendientes() if e["calc"] in names] if events is None else []

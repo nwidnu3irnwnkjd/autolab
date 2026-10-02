@@ -37,6 +37,7 @@ def run(root, dist):
                 if 'class="calc"' in h: kind = "calc"
                 elif p == os.path.join(dist, "index.html"): kind = "home"
                 elif "data-filter" in h: kind = "cat"
+                elif "guide hub dir" in h: kind = "dir"  # /todas/: su propio recorte de CSS (la lista es pesada)
                 else: kind = "page"
                 chart = kind == "calc" and bool(re.search(r"lineChart|\bline\s*:", h))
                 use = ["app.js"] + (["em.js", "em-x.js"] if kind == "calc" else []) + (["chart.js"] if chart else []) + (["home.js"] if kind in ("home", "cat") else [])

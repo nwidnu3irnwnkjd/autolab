@@ -1,0 +1,534 @@
+{
+ "_ayuda": "Mapa situación -> recomendaciones del asistente. Slugs de calcs/, content/guias/ y tablas.py: el build falla si no existen. Sin cifras en 'porque'. 3-5 calcs por opción, ordenadas.",
+ "situaciones": [
+  {
+   "id": "autonomo",
+   "titulo": "Soy autónomo",
+   "desc": "Cuota, régimen fiscal y paro",
+   "pregunta": "¿En qué momento estás?",
+   "opciones": [
+    {
+     "id": "empiezo",
+     "titulo": "Empiezo ahora",
+     "calcs": [
+      "autonomo-o-asalariado",
+      "autonomo-estimacion-directa-o-modulos",
+      "cuota-autonomos-ingresos-reales-regularizacion",
+      "capitalizar-paro-o-cobrarlo",
+      "autonomo-o-sociedad-limitada"
+     ],
+     "guia": "autonomo-2026-cuota-regularizacion-modulos",
+     "tabla": "cuota-autonomos-tramos",
+     "porque": "Al empezar conviene saber cuánto necesitas facturar, qué régimen fiscal te encaja y cómo se calcula tu cuota según tus ingresos reales."
+    },
+    {
+     "id": "llevo",
+     "titulo": "Ya llevo tiempo",
+     "calcs": [
+      "cuota-autonomos-ingresos-reales-regularizacion",
+      "autonomo-o-sociedad-limitada",
+      "autonomo-estimacion-directa-o-modulos",
+      "kilometraje-y-dietas-exentas-irpf",
+      "plan-pensiones-o-fondo-indexado"
+     ],
+     "guia": "autonomo-2026-cuota-regularizacion-modulos",
+     "tabla": "cuota-autonomos-tramos",
+     "porque": "Con actividad en marcha, lo que más mueve tu bolsillo es ajustar la cuota a lo que ganas, elegir bien el régimen y aprovechar los gastos deducibles."
+    },
+    {
+     "id": "dejarlo",
+     "titulo": "Quiero dejarlo",
+     "calcs": [
+      "paro-autonomos-cese-actividad-cuanto-cobro",
+      "autonomo-o-asalariado",
+      "comparar-ofertas-de-trabajo-neto-real",
+      "cuanto-cobro-de-paro-prestacion-desempleo"
+     ],
+     "guia": "autonomo-2026-cuota-regularizacion-modulos",
+     "tabla": "cuota-autonomos-tramos",
+     "porque": "Antes de cerrar, mira si tienes derecho a la prestación por cese y cuánto tendría que pagarte un empleo para compensar."
+    }
+   ]
+  },
+  {
+   "id": "hijos",
+   "titulo": "Tengo hijos o espero uno",
+   "desc": "Coste, permisos y deducciones",
+   "pregunta": "¿Cómo está tu familia ahora?",
+   "opciones": [
+    {
+     "id": "espero",
+     "titulo": "Espero un bebé o acaba de nacer",
+     "calcs": [
+      "cuanto-cuesta-un-bebe-el-primer-ano",
+      "permiso-nacimiento-cuanto-cobro-y-como-repartir",
+      "deduccion-maternidad-familia-numerosa",
+      "excedencia-o-reduccion-jornada",
+      "fondo-de-emergencia-cuantos-meses-necesito"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Lo primero es cuánto cuesta el primer año, cómo repartir el permiso y qué deducciones puedes cobrar de Hacienda."
+    },
+    {
+     "id": "pequenos",
+     "titulo": "Tengo hijos pequeños",
+     "calcs": [
+      "guarderia-cuidadora-o-reducir-jornada",
+      "deduccion-maternidad-familia-numerosa",
+      "excedencia-o-reduccion-jornada",
+      "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+      "declaracion-conjunta-o-individual"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Con niños pequeños la decisión clave es cómo resolver el cuidado y cuánto compensa cada opción frente a trabajar menos."
+    },
+    {
+     "id": "cole",
+     "titulo": "Van al cole o a la universidad",
+     "calcs": [
+      "comedor-escolar-o-tupper",
+      "universidad-publica-o-privada-o-master",
+      "academia-idiomas-presencial-online-o-intensivo",
+      "declaracion-conjunta-o-individual",
+      "deduccion-maternidad-familia-numerosa"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "tramos-irpf-comunidades",
+     "porque": "En edad escolar pesan los gastos recurrentes (comedor, estudios, extraescolares) y la forma de declarar la renta en familia."
+    }
+   ]
+  },
+  {
+   "id": "paro",
+   "titulo": "Me han despedido o estoy en paro",
+   "desc": "Indemnización, paro y plazos",
+   "pregunta": "¿En qué punto estás?",
+   "opciones": [
+    {
+     "id": "despido",
+     "titulo": "Acaban de despedirme",
+     "calcs": [
+      "indemnizacion-despido-objetivo-o-improcedente-neto",
+      "finiquito-baja-voluntaria-vacaciones-preaviso",
+      "cuanto-cobro-de-paro-prestacion-desempleo",
+      "capitalizar-paro-o-cobrarlo",
+      "subsidio-desempleo-cuanto-cobro-y-cuanto-dura"
+     ],
+     "guia": "me-han-despedido-indemnizacion-paro-plazos",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Los primeros días cuentan: calcula la indemnización neta, el finiquito y la prestación, y respeta los plazos para reclamar."
+    },
+    {
+     "id": "cobro",
+     "titulo": "Estoy cobrando el paro",
+     "calcs": [
+      "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad",
+      "capitalizar-paro-o-cobrarlo",
+      "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
+      "comparar-ofertas-de-trabajo-neto-real",
+      "fondo-de-emergencia-cuantos-meses-necesito"
+     ],
+     "guia": "me-han-despedido-indemnizacion-paro-plazos",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Mientras cobras, conviene saber si compensa aceptar un trabajo, capitalizar la prestación o esperar al subsidio."
+    },
+    {
+     "id": "final",
+     "titulo": "Se me acaba el paro",
+     "calcs": [
+      "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
+      "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad",
+      "curso-online-bootcamp-o-fp-coste-y-retorno",
+      "comparar-ofertas-de-trabajo-neto-real",
+      "autonomo-o-asalariado"
+     ],
+     "guia": "me-han-despedido-indemnizacion-paro-plazos",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Al final de la prestación, ver el subsidio, el valor de reciclarte y qué oferta compensa te da margen para decidir."
+    }
+   ]
+  },
+  {
+   "id": "vivienda",
+   "titulo": "Compro o alquilo vivienda",
+   "desc": "Hipoteca, alquiler y venta",
+   "pregunta": "¿Qué estás haciendo con la vivienda?",
+   "opciones": [
+    {
+     "id": "comprar",
+     "titulo": "Quiero comprar",
+     "calcs": [
+      "alquilar-o-comprar",
+      "cuanto-ahorrar-para-comprar-casa",
+      "hipoteca-fija-o-variable",
+      "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+      "hipoteca-mas-entrada-o-conservar-ahorros"
+     ],
+     "guia": "euribor-hipoteca",
+     "tabla": "itp-ajd-comunidades",
+     "porque": "Antes de firmar, comprueba si te sale a cuenta frente al alquiler, cuánto ahorro necesitas y qué hipoteca te conviene."
+    },
+    {
+     "id": "hipoteca",
+     "titulo": "Ya tengo hipoteca",
+     "calcs": [
+      "amortizar-plazo-o-cuota",
+      "amortizar-o-invertir",
+      "subrogar-hipoteca-merece-la-pena",
+      "hipoteca-fija-o-variable",
+      "hipoteca-bonificada-o-sin-vinculaciones"
+     ],
+     "guia": "amortizacion-anticipada-comisiones",
+     "tabla": "itp-ajd-comunidades",
+     "porque": "Con hipoteca en marcha, lo que más ahorra es decidir si amortizar, cambiar de condiciones o dedicar el dinero a otra cosa."
+    },
+    {
+     "id": "alquilo",
+     "titulo": "Alquilo o pienso alquilar",
+     "calcs": [
+      "alquilar-o-comprar",
+      "vivir-cerca-del-trabajo-o-mas-barato-lejos",
+      "seguro-hogar-con-o-sin-franquicia",
+      "reformar-o-mudarse",
+      "cuanto-ahorrar-para-comprar-casa"
+     ],
+     "guia": "euribor-hipoteca",
+     "tabla": "itp-ajd-comunidades",
+     "porque": "Como inquilino, compara el coste real de seguir alquilando, de mudarte o de dar el salto a comprar."
+    },
+    {
+     "id": "vendo",
+     "titulo": "Vendo o reformo",
+     "calcs": [
+      "venta-vivienda-plusvalia-irpf-exencion",
+      "reformar-o-mudarse",
+      "irpf-alquilar-vivienda-rendimiento-neto",
+      "cambiar-ventanas-aislamiento-merece-la-pena",
+      "subrogar-hipoteca-merece-la-pena"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "itp-ajd-comunidades",
+     "porque": "Si vendes o reformas, los impuestos y el coste de quedarte frente a mudarte cambian mucho el resultado."
+    }
+   ]
+  },
+  {
+   "id": "casa",
+   "titulo": "Quiero gastar menos en casa y luz",
+   "desc": "Factura, calefacción y consumo",
+   "pregunta": "¿Dónde quieres ahorrar?",
+   "opciones": [
+    {
+     "id": "factura",
+     "titulo": "En la factura de la luz",
+     "calcs": [
+      "luz-fija-o-indexada",
+      "potencia-contratada-luz-bajar-compensa",
+      "horas-valle-luz-lavadora-termo-cuanto-ahorro",
+      "cambiar-de-operadora-compensa-permanencia",
+      "fibra-y-movil-juntos-o-por-separado"
+     ],
+     "guia": "ahorrar-factura-luz-potencia-horas-valle-tarifa",
+     "porque": "La factura baja más con tres ajustes: la tarifa, la potencia contratada y mover consumos a las horas baratas."
+    },
+    {
+     "id": "invierno",
+     "titulo": "En calefacción y agua caliente",
+     "calcs": [
+      "calefaccion-gas-aerotermia-electrica",
+      "caldera-reparar-o-cambiar",
+      "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta",
+      "termo-electrico-o-calentador-gas-o-aerotermia-agua",
+      "cambiar-ventanas-aislamiento-merece-la-pena"
+     ],
+     "guia": "tu-casa-en-invierno-que-mirar-primero",
+     "porque": "La calefacción y el agua caliente son el mayor gasto de energía; compara equipos y aislamiento antes de cambiar nada."
+    },
+    {
+     "id": "invertir",
+     "titulo": "Invirtiendo en la casa",
+     "calcs": [
+      "placas-solares-merece-la-pena",
+      "punto-de-carga-casa-con-o-sin-placas",
+      "cambiar-electrodomestico-antiguo-merece-la-pena",
+      "aire-acondicionado-inverter-o-ventilador-coste-verano",
+      "cambiar-ventanas-aislamiento-merece-la-pena"
+     ],
+     "guia": "checklist-casa-antes-del-invierno",
+     "porque": "Una inversión en casa solo compensa si se amortiza en años razonables; calcúlalo con tu consumo antes de comprar."
+    },
+    {
+     "id": "dia",
+     "titulo": "En el gasto del día a día",
+     "calcs": [
+      "suscripciones-cuanto-gasto-al-ano",
+      "marca-blanca-o-marca-ahorro-anual",
+      "cocinar-en-casa-o-comer-fuera",
+      "freidora-de-aire-u-horno-cuanto-gasta",
+      "secadora-o-tendedero-coste-por-lavado"
+     ],
+     "guia": "ahorrar-factura-luz-potencia-horas-valle-tarifa",
+     "porque": "Los pequeños gastos repetidos suman al año; estas cuentas te dicen cuáles merece la pena recortar."
+    }
+   ]
+  },
+  {
+   "id": "coche",
+   "titulo": "Tengo coche",
+   "desc": "Comprar, mantener o dejarlo",
+   "pregunta": "¿Qué necesitas con el coche?",
+   "opciones": [
+    {
+     "id": "comprar",
+     "titulo": "Voy a comprar o cambiar",
+     "calcs": [
+      "coche-nuevo-o-seminuevo",
+      "comprar-coche-o-renting",
+      "coche-segunda-mano-particular-o-concesionario",
+      "diesel-gasolina-hibrido-electrico",
+      "contado-o-financiar"
+     ],
+     "guia": "cuanto-cuesta-tener-coche",
+     "porque": "Antes de elegir coche, compara nuevo y seminuevo, compra y renting, y el coste por kilómetro según el motor."
+    },
+    {
+     "id": "tengo",
+     "titulo": "Ya tengo y quiero gastar menos",
+     "calcs": [
+      "seguro-todo-riesgo-o-terceros",
+      "gasolinera-low-cost-compensa-desviarse",
+      "garaje-comprar-alquilar-o-aparcar-en-la-calle",
+      "punto-de-carga-casa-con-o-sin-placas",
+      "coche-propio-o-carsharing-o-vtc"
+     ],
+     "guia": "cuanto-cuesta-tener-coche",
+     "porque": "El coste de tenerlo se reparte entre seguro, combustible y aparcamiento; ahí es donde se recorta."
+    },
+    {
+     "id": "poco",
+     "titulo": "Lo uso poco",
+     "calcs": [
+      "coche-propio-o-carsharing-o-vtc",
+      "bici-electrica-o-transporte-publico",
+      "tren-avion-o-coche",
+      "garaje-comprar-alquilar-o-aparcar-en-la-calle",
+      "seguro-todo-riesgo-o-terceros"
+     ],
+     "guia": "cuanto-cuesta-tener-coche",
+     "porque": "Si apenas lo usas, comprueba cuánto cuesta tenerlo parado frente a alternativas que pagas solo cuando las usas."
+    }
+   ]
+  },
+  {
+   "id": "jubilacion",
+   "titulo": "Me jubilo o cobro pensión",
+   "desc": "Edad, pensión y ahorro para el retiro",
+   "pregunta": "¿Cuál es tu caso?",
+   "opciones": [
+    {
+     "id": "cerca",
+     "titulo": "Me queda poco para jubilarme",
+     "calcs": [
+      "jubilacion-anticipada-o-demorada",
+      "jubilacion-activa-o-dejar-de-trabajar",
+      "plan-pensiones-o-fondo-indexado",
+      "rescate-plan-pensiones-capital-o-renta",
+      "obligado-a-declarar-renta-dos-pagadores"
+     ],
+     "guia": "base-liquidable-tramos-irpf-2026",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Cerca de la jubilación, decidir cuándo y cómo retirarte, y cómo rescatar tus ahorros, cambia mucho lo que cobrarás."
+    },
+    {
+     "id": "cobro",
+     "titulo": "Ya cobro una pensión",
+     "calcs": [
+      "obligado-a-declarar-renta-dos-pagadores",
+      "pension-viudedad-cuanto-cobro",
+      "rescate-plan-pensiones-capital-o-renta",
+      "seguro-salud-privado-merece-la-pena",
+      "jubilacion-activa-o-dejar-de-trabajar"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Como pensionista, importa saber si debes declarar, cómo tributa cada ingreso y si compensa trabajar algo."
+    },
+    {
+     "id": "cuidados",
+     "titulo": "Necesito cuidados o viudedad",
+     "calcs": [
+      "pension-viudedad-cuanto-cobro",
+      "residencia-o-cuidador-a-domicilio",
+      "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+      "seguro-salud-privado-merece-la-pena",
+      "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Para cuidados y viudedad, compara el coste de cada opción y qué prestación te corresponde."
+    }
+   ]
+  },
+  {
+   "id": "ahorro",
+   "titulo": "Quiero ahorrar o invertir",
+   "desc": "Colchón, depósitos, fondos e impuestos",
+   "pregunta": "¿Cuál es tu punto de partida?",
+   "opciones": [
+    {
+     "id": "empiezo",
+     "titulo": "Empiezo a ahorrar",
+     "calcs": [
+      "fondo-de-emergencia-cuantos-meses-necesito",
+      "deposito-letras-o-fondo-monetario",
+      "plan-pensiones-o-fondo-indexado",
+      "suscripciones-cuanto-gasto-al-ano",
+      "cuanto-ahorrar-para-comprar-casa"
+     ],
+     "guia": "amortizacion-anticipada-comisiones",
+     "tabla": "tramos-irpf-comunidades",
+     "porque": "Primero el colchón de emergencia; luego, dónde poner lo que sobra según cuándo vayas a necesitarlo."
+    },
+    {
+     "id": "ahorros",
+     "titulo": "Ya tengo ahorros",
+     "calcs": [
+      "deposito-letras-o-fondo-monetario",
+      "amortizar-o-invertir",
+      "plan-pensiones-o-fondo-indexado",
+      "traspasar-fondo-o-reembolsar-irpf",
+      "compensar-perdidas-ganancias-irpf-antes-fin-de-ano"
+     ],
+     "guia": "amortizacion-anticipada-comisiones",
+     "tabla": "tramos-irpf-comunidades",
+     "porque": "Con ahorros, lo que importa es comparar rentabilidad y fiscalidad: depósito, fondo, plan o amortizar deuda."
+    },
+    {
+     "id": "objetivo",
+     "titulo": "Ahorro para algo concreto",
+     "calcs": [
+      "cuanto-ahorrar-para-comprar-casa",
+      "hipoteca-mas-entrada-o-conservar-ahorros",
+      "contado-o-financiar",
+      "navidad-cuanto-gastar-sin-endeudarte",
+      "fondo-de-emergencia-cuantos-meses-necesito"
+     ],
+     "guia": "black-friday-y-navidad-sin-deudas",
+     "porque": "Para un objetivo con fecha, calcula cuánto ahorrar al mes y si conviene pagar al contado o financiar."
+    },
+    {
+     "id": "impuestos",
+     "titulo": "Quiero pagar menos impuestos",
+     "calcs": [
+      "compensar-perdidas-ganancias-irpf-antes-fin-de-ano",
+      "traspasar-fondo-o-reembolsar-irpf",
+      "plan-pensiones-o-fondo-indexado",
+      "donativos-irpf-cuanto-desgrava-y-cuanto-donar",
+      "declaracion-conjunta-o-individual"
+     ],
+     "guia": "base-liquidable-tramos-irpf-2026",
+     "tabla": "tramos-irpf-comunidades",
+     "porque": "La mayor parte del margen está en la base liquidable: planes, donativos y la forma de declarar."
+    }
+   ]
+  },
+  {
+   "id": "baja",
+   "titulo": "Estoy de baja o con incapacidad",
+   "desc": "Prestación, ahorro y protección",
+   "pregunta": "¿Qué tipo de situación es?",
+   "opciones": [
+    {
+     "id": "temporal",
+     "titulo": "Baja médica temporal",
+     "calcs": [
+      "baja-medica-cuanto-cobro-incapacidad-temporal",
+      "fondo-de-emergencia-cuantos-meses-necesito",
+      "seguro-salud-privado-merece-la-pena",
+      "seguro-vida-hipoteca-banco-o-externo"
+     ],
+     "guia": "me-han-despedido-indemnizacion-paro-plazos",
+     "tabla": "trabajo-prestaciones",
+     "porque": "En una baja temporal, calcula cuánto cobras frente a tu sueldo y cuánto colchón necesitas para cubrir la diferencia."
+    },
+    {
+     "id": "permanente",
+     "titulo": "Incapacidad permanente",
+     "calcs": [
+      "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar",
+      "baja-medica-cuanto-cobro-incapacidad-temporal",
+      "seguro-vida-hipoteca-banco-o-externo",
+      "fondo-de-emergencia-cuantos-meses-necesito"
+     ],
+     "guia": "me-han-despedido-indemnizacion-paro-plazos",
+     "tabla": "smi-iprem-paro-pensiones",
+     "porque": "Con incapacidad permanente, lo clave es cuánto cobrarás y si puedes compaginarlo con trabajar."
+    },
+    {
+     "id": "autonomo",
+     "titulo": "Soy autónomo y estoy de baja",
+     "calcs": [
+      "paro-autonomos-cese-actividad-cuanto-cobro",
+      "baja-medica-cuanto-cobro-incapacidad-temporal",
+      "cuota-autonomos-ingresos-reales-regularizacion",
+      "fondo-de-emergencia-cuantos-meses-necesito"
+     ],
+     "guia": "autonomo-2026-cuota-regularizacion-modulos",
+     "tabla": "cuota-autonomos-tramos",
+     "porque": "Siendo autónomo, la prestación y la cuota durante la baja se calculan distinto; revisa ambas."
+    }
+   ]
+  },
+  {
+   "id": "hogar",
+   "titulo": "Contrato a alguien en casa",
+   "desc": "Empleada del hogar y cuidadores",
+   "pregunta": "¿Para qué la necesitas?",
+   "opciones": [
+    {
+     "id": "ninos",
+     "titulo": "Para cuidar niños",
+     "calcs": [
+      "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+      "guarderia-cuidadora-o-reducir-jornada",
+      "deduccion-maternidad-familia-numerosa",
+      "excedencia-o-reduccion-jornada",
+      "declaracion-conjunta-o-individual"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Antes de contratar, mira el coste total con la cotización y compáralo con guardería o con reducir tu jornada."
+    },
+    {
+     "id": "mayores",
+     "titulo": "Para cuidar a un mayor",
+     "calcs": [
+      "residencia-o-cuidador-a-domicilio",
+      "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+      "seguro-salud-privado-merece-la-pena",
+      "pension-viudedad-cuanto-cobro"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Para cuidar a un mayor, compara residencia y cuidador a domicilio con su coste real mensual."
+    },
+    {
+     "id": "tareas",
+     "titulo": "Para las tareas de la casa",
+     "calcs": [
+      "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+      "cambiar-electrodomestico-antiguo-merece-la-pena",
+      "secadora-o-tendedero-coste-por-lavado",
+      "reparar-o-comprar-electrodomestico",
+      "cocinar-en-casa-o-comer-fuera"
+     ],
+     "guia": "renta-2027-ejercicio-2026-paso-a-paso",
+     "tabla": "trabajo-prestaciones",
+     "porque": "Contratar ayuda tiene un coste de cotización que conviene conocer, y compararlo con otros ahorros de tiempo."
+    }
+   ]
+  }
+ ]
+}

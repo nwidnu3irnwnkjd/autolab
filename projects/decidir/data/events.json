@@ -112,6 +112,7 @@
    "decision": "Premio de la Lotería de Navidad: cuánto te queda tras Hacienda",
    "que_hacer": "Si compartes décimos o te toca un premio, calcula cuánto retiene Hacienda (20% sobre lo que excede de 40.000 € por décimo) y cuánto te queda neto.",
    "calc": "loteria-navidad-premio-neto-hacienda",
+   "guia": "loteria-navidad-hacienda-decimos-compartidos-penas",
    "texto_antes": "El sorteo de Navidad se celebra habitualmente el 22 de diciembre (fecha de 2026 por confirmar): calcula cuánto te quedaría de un premio tras el gravamen de Hacienda.",
    "texto_despues": "Tras el sorteo de Navidad: calcula cuánto te queda neto de un premio una vez descontado el gravamen especial.",
    "fuente": {

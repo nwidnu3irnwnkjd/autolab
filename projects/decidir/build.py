@@ -6,7 +6,7 @@ import minify, ogimg, bundle  # minificador y og:image por tema (Diseñador)
 import seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, JSON-LD, llms.txt
 import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
-import directorio  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
+import directorio, asistente  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
@@ -91,12 +91,13 @@ def main():
     B = site["base_url"].rstrip("/")
     BARO = barometro.build(DIST, params, B)  # -> dist/barometro/datos.json (antes de render_calc: "Dato del mes")
     for c in calcs: render_calc(c, calcs)
+    ASIS = asistente.build(DIST, calcs, GUIDES, tablas.PAGES)  # asistente «¿Cuál es tu situación?» (Diseñador)
     cards = ui.home_cards(calcs)  # R18.1/peso: solo destacadas en la home (resto: lazy desde /decidir/)
     B = site["base_url"].rstrip("/")
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE) + barometro.home_teaser(BARO)),
+          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', ASIS + directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE) + barometro.home_teaser(BARO)),
           priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
@@ -128,7 +129,7 @@ def main():
     HUB_PAGES.append(dict(path=semana.PATH2027, h1=semana.H2027, description=semana.D2027, modified=s27mod, published=s27pub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
-          dbody, jsonld=dld, priority="0.8", lastmod=dmod)
+          seo.insert_before(dbody, '<div class="search" role="search">', ASIS), jsonld=dld, priority="0.8", lastmod=dmod)
     if GUIDES:
         write("/guias/", "Guías para decidir mejor — Entre Muchos", "Guías cortas con datos y fuentes oficiales para entender tu hipoteca, el Euríbor y la amortización anticipada.",
               seo.guides_index(GUIDES), priority="0.5", lastmod=max(g["modified"] for g in GUIDES))

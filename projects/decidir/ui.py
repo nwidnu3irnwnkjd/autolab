@@ -31,7 +31,7 @@ def card(c):
     k = c["slug"].replace("-", " ")  # el buscador usa textContent + data-k (antes data-q repetía título, descripción y tema: ~11 KB en la home)
     return f'<li data-k="{k}" data-t="{t}"><svg class="ill-s" viewBox="0 0 160 120" aria-hidden="true"><use href="/assets/illustrations.svg#{t}"/></svg><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
 
-HOME_N = 12
+HOME_N = 6
 def home_cards(calcs, n=HOME_N):
     """Home: n tarjetas destacadas (reparto por tema, orden estable) + enlace al catálogo; el resto se carga de /decidir/ al buscar o pulsar (home.js, data-more)."""
     by = {}

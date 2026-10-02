@@ -196,6 +196,7 @@ HUBS = {
             "termo-electrico-o-calentador-gas-o-aerotermia-agua": {
                 "name": "Agua caliente: termo, gas o aerotermia",
                 "text": "El agua caliente es una parte fija de la factura: la calculadora compara el coste total a varios años del termo eléctrico, el calentador de gas y la aerotermia con tu consumo, y da el punto en el que la opción más cara de instalar se amortiza.",
+                "guia": "cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora",  # c52
             },
             "cambiar-ventanas-aislamiento-merece-la-pena": {
                 "name": "Ventanas y aislamiento",
@@ -216,6 +217,7 @@ HUBS = {
             "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": {
                 "name": "Radiador, calefactor o bomba de calor",
                 "text": "Para calentar una estancia, el radiador de aceite y el calefactor gastan lo mismo por kWh de calor; la bomba de calor (split) da varios kWh de calor por cada kWh eléctrico. La calculadora da el coste por temporada con tus horas y tu precio de la luz.",
+                "guia": "cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora",  # c52
             },
             "freidora-de-aire-u-horno-cuanto-gasta": {
                 "name": "Freidora de aire u horno",
@@ -224,6 +226,7 @@ HUBS = {
             "secadora-o-tendedero-coste-por-lavado": {
                 "name": "Secadora o tendedero",
                 "text": "El tendedero no gasta luz; la secadora cuesta unos céntimos por colada que dependen de su consumo y de tu tarifa. La calculadora da el coste por lavado y al año con tus coladas, y lo que ahorrarías usándola en horas valle.",
+                "guia": "cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora",  # c52
             },
             "aire-acondicionado-inverter-o-ventilador-coste-verano": {
                 "name": "Aire inverter, no inverter o ventilador",
@@ -362,6 +365,7 @@ HUBS = {
             "loteria-navidad-premio-neto-hacienda": {
                 "name": "Premio de lotería",
                 "text": "Los premios de Loterías y Apuestas del Estado hasta 40.000 € por décimo están exentos y el exceso tributa al 20 %. La calculadora te dice cuánto te queda neto, también si compartes el décimo.",
+                "guia": "loteria-navidad-hacienda-decimos-compartidos-penas",  # c52
             },
             "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
                 "name": "Donativos",
