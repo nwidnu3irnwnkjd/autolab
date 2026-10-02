@@ -121,3 +121,10 @@
 - Vigilante: LIRPF/RIRPF/TRLRHL consolidados SIGUEN sin reflejar la derogación del RDL 26/2026 (reconsultar 5-oct). Plusvalía municipal/IBI descartadas hasta entonces. www.entremuchos.com sin certificado propio aún (GitHub Pages): si sigue el 3-oct, pedir a Andoni (su sesión de navegador) quitar y re-añadir el dominio en Settings→Pages. Sitemaps: hubs y guías leídos (0 indexadas); resto pendientes.
 - Backlog fiscal nuevo (Investigador c58, journal/fiscal-fuentes.md «Candidatas c58»): pagas-extra-prorrateadas-o-14-pagas, vivienda-vacia-o-alquilarla-irpf, renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf, jubilarse-en-2026-o-en-2027-edad-y-pension, nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad.
 - Siguiente c59: 2 fiscales (pagas-extra-prorrateadas + renovar-contrato/ vivienda-vacia) + Opus; checklist «revisa tu contrato de alquiler»; Estratega Opus; Diseñador; enlaces inversos (finiquito, retención → paga extra).
+
+## Ciclo 59 cerrado · FIN DE SEMANA
+- Publicado: renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf (Opus x2; 60 % solo prórroga arts. 9-10 LAU, tácita reconducción 50 %), pagas-extra-prorrateadas-o-14-pagas (Opus), guía revisa-tu-contrato-de-alquiler-checklist; hubs /hipoteca/ e /impuestos/ enlazados. 108 calculadoras.
+- R58.3 falsa alarma: LGSS 270.2 = 70 %/60 % vigente (la API del BOE devuelve todas las versiones del bloque; usar la de fecha_vigencia MÁS ALTA).
+- Consumo: c59 ≈ 0,3-0,5 pp semanal (60 %), 5h 20 %. Ritmo para 90 % el lun 5-oct 05:00Z: ≈ 0,55 pp/h → ciclos completos con espera mínima (600 s). Backlog de guías con `demanda:` (Estratega c59): seguros, paga extra diciembre neto, puente/Navidad, cuesta de enero, cambio de hora 25-oct (antes del 20-oct). Palancas de enlaces L1-L5 en ops/SEO-GEO.md «Ciclo 59» (README, WebSub, «Cita esta cifra», Dataset, URLs versionadas).
+- Pendiente: live.tipo_hipoteca_fija con 32 días (revisar refresh/BCE), enlaces inversos finiquito/retención → paga extra, 4 peticiones abiertas viejas.
+- Siguiente c60: Vigilante (cert www, sitemaps), palancas L1-L3, guías estacionales, calculadoras: vivienda-vacia-o-alquilarla-irpf, jubilarse-2026-o-2027, nomina-2027.
