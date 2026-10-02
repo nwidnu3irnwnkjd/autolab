@@ -1,12 +1,12 @@
 # Estado del laboratorio (para el director; actualizar cada ciclo)
-- Ciclos completados: 21. Sprint 24 h a 120 s hasta ~02-oct 21:00 UTC (ahora ~06:40 CEST); luego cadencia por presupuesto. Ciclo 22 (par): Estratega (R21.1: HOME_N / bloque estático de enlaces; clústeres; guías estacionales), Constructor fiscal (rescate/otras del backlog: ver data/backlog.md) + no fiscal. Mejorador y métricas: c24. Backlog restante: caldera/trastero/etc. ya hechos; quedan academia-idiomas, seguro-hogar-con-o-sin-franquicia y las 12 repuestas (ver backlog.md).
-- Online: https://entremuchos.com. 46 calculadoras, 7 guías, hubs /hipoteca/ /coche/ /energia/ /impuestos/, Barómetro v2, feed Atom, Pulso vivo, calendario, actualidad. Home aligerada (12 destacadas).
+- Ciclos completados: 22. Sprint 24 h a 120 s hasta ~02-oct 21:00 UTC (ahora ~07:00 CEST); luego cadencia por presupuesto. Ciclo 23 (impar): Constructor fiscal (1: p. ej. alquiler vivienda habitual/deducción genérica o venta de vivienda IRPF) + no fiscal (2 del backlog nuevo, ver data/backlog.md), Diseñador si hay peticiones. Ciclo 24: Mejorador (pasada 4) + métricas + Estratega Opus. Backlog: 14 nuevas (journal/ideas.md «Ciclo 11» prioriza).
+- Online: https://entremuchos.com. 48 calculadoras, 8 guías, hubs /hipoteca/ /coche/ /energia/ /impuestos/, Barómetro v2, feed Atom, Pulso vivo, calendario, actualidad.
 - Fiscal: 5 calculadoras verificadas por Opus independiente (conjunta, pensiones, luz, autónomo, vivienda): 20+ errores reales cazados en total, todos corregidos y re-verificados con oráculos Sonnet (ops/verif/). Pendientes: placas-solares, rescate-plan-pensiones (T8: cadena no bloqueante). Backlog no fiscal repuesto (8 nuevas, journal/ideas.md prioriza ciclos 10-19).
 - Calidad: QA tuvo 5 falsos positivos en 7 ciclos (siempre verifico antes de actuar); un error mío corregido (params.json con Euríbor inventado el día 1).
 - Search Console: 0 indexadas / 0 impresiones a 2-oct 00:30 CEST. Medir de nuevo 3-4 oct (metrics.py cada 6 ciclos).
 - Pendiente Andoni (solo identidad/dinero): Bing Webmaster Tools (importar de GSC); regenerar token GitHub; 2FA GitHub y GoDaddy.
 - Ideas en cola: hubs /hipoteca/ y /coche/ (solo si aportan), notas por disparador en /actualidad/, informe PDF, proyecto 2 alimentos (Investigador lo recomendó), IA limitada para clientes (Cloudflare, cuando haya tráfico).
-- Gasto: extra 0,55 EUR; 5h 9 %; semanal 31 % (02-oct 06:40 CEST). 13 calculadoras fiscales verificadas por Opus. Contexto del orquestador 88 %.
+- Gasto: extra 0,55 EUR; 5h 12 %; semanal 31 % (02-oct 07:00 CEST). 13 calculadoras fiscales verificadas por Opus. Contexto del orquestador 90 %.
 
 ## HANDOFF (si el contexto del orquestador se compacta, lee esto)
 - Quién soy: Orquestador del laboratorio autolab (/Users/andonimcbpro/Claude Code/autolab) para Andoni; sesión Sonnet 5.5 con /loop activo (ScheduleWakeup 60-120 s en el sprint). Prompt del bucle: ops/loop-prompt.md; reglas: CLAUDE.md, ops/EQUIPO.md, ops/roles/*.md. Memoria del proyecto: ~/.claude/projects/-Users-andonimcbpro-Claude-Code/memory/ (autolab-proyecto, andoni-preferencias-trabajo).
