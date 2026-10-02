@@ -1,0 +1,635 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "nombre": "ejemplo: contrato anterior a mayo 2023, misma renta (empate práctico)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2600.0,
+    "cuotaA": 312.0,
+    "cuotaB": 390.0,
+    "resA": 2288.0,
+    "resB": 2210.0,
+    "dif": -78.0,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: renta nueva que iguala (807,65)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 807.65,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2691.8,
+    "cuotaA": 312.0,
+    "cuotaB": 403.77,
+    "resA": 2288.0,
+    "resB": 2288.03,
+    "dif": 0.03,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "nuevo gana: renta nueva 900 € sin zona tensionada",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 900,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 3800.0,
+    "cuotaA": 312.0,
+    "cuotaB": 570.0,
+    "resA": 2288.0,
+    "resB": 3230.0,
+    "dif": 942.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "desde 26/5/2023 con 90 % actual: gana el nuevo con renta 900",
+   "in": {
+    "fecha": "desde",
+    "pctActual": "90",
+    "renta0": 800,
+    "renta1": 900,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 90.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 3800.0,
+    "cuotaA": 78.0,
+    "cuotaB": 570.0,
+    "resA": 2522.0,
+    "resB": 3230.0,
+    "dif": 708.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 830.59,
+    "rebajaMax90": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "desde 26/5/2023 con 70 %: gana prorrogar",
+   "in": {
+    "fecha": "desde",
+    "pctActual": "70",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 70.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2600.0,
+    "cuotaA": 234.0,
+    "cuotaB": 390.0,
+    "resA": 2366.0,
+    "resB": 2210.0,
+    "dif": -156.0,
+    "gana": 1.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 815.29,
+    "rebajaMax90": 1.68
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: zona tensionada, rebaja justo 5 % (no llega al 90 %)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 760,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2120.0,
+    "cuotaA": 312.0,
+    "cuotaB": 318.0,
+    "resA": 2288.0,
+    "resB": 1802.0,
+    "dif": -486.0,
+    "gana": 1.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: zona tensionada, rebaja 5,01 % (90 %)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 759.9,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 90.0,
+    "prevA": 2600.0,
+    "prevB": 2118.8,
+    "cuotaA": 312.0,
+    "cuotaB": 63.56,
+    "resA": 2288.0,
+    "resB": 2055.24,
+    "dif": -232.76,
+    "gana": 1.0,
+    "incumple": 0.0,
+    "rebajaOk": 1.0,
+    "rentaEq": 779.9,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "zona tensionada, renta nueva supera la anterior: incumple art. 17.6",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800.01,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 0.0,
+    "prevA": 2600.0,
+    "prevB": 2600.12,
+    "cuotaA": 312.0,
+    "cuotaB": 780.04,
+    "resA": 2288.0,
+    "resB": 1820.08,
+    "dif": -467.92,
+    "gana": 1.0,
+    "incumple": 1.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 855.71,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: zona tensionada con rehabilitación, +10 % justo (60 %)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 880,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "rehab"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 60.0,
+    "prevA": 2600.0,
+    "prevB": 3560.0,
+    "cuotaA": 312.0,
+    "cuotaB": 427.2,
+    "resA": 2288.0,
+    "resB": 3132.8,
+    "dif": 844.8,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "zona tensionada con rehabilitación, +10 % más 0,01 (incumple)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 880.01,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "rehab"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 0.0,
+    "prevA": 2600.0,
+    "prevB": 3560.12,
+    "cuotaA": 312.0,
+    "cuotaB": 1068.04,
+    "resA": 2288.0,
+    "resB": 2492.08,
+    "dif": 204.08,
+    "gana": 2.0,
+    "incumple": 1.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 855.71,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "sin zona tensionada, rehabilitación: nuevo al 60 %",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 900,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "rehab"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 60.0,
+    "prevA": 2600.0,
+    "prevB": 3800.0,
+    "cuotaA": 312.0,
+    "cuotaB": 456.0,
+    "resA": 2288.0,
+    "resB": 3344.0,
+    "dif": 1056.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: gastos mayores que ingresos (rendimiento negativo)",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 12000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": -2400.0,
+    "prevB": -2400.0,
+    "cuotaA": 0.0,
+    "cuotaB": 0.0,
+    "resA": -2400.0,
+    "resB": -2400.0,
+    "dif": 0.0,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: rendimiento neto 0",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 9600,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 0.0,
+    "prevB": 0.0,
+    "cuotaA": 0.0,
+    "cuotaB": 0.0,
+    "resA": 0.0,
+    "resB": 0.0,
+    "dif": 0.0,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: tipo 0 %",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 7000,
+    "tipo": 0,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2600.0,
+    "cuotaA": 0.0,
+    "cuotaB": 0.0,
+    "resA": 2600.0,
+    "resB": 2600.0,
+    "dif": 0.0,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: renta nueva 0",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 0,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": -7000.0,
+    "cuotaA": 312.0,
+    "cuotaB": 0.0,
+    "resA": 2288.0,
+    "resB": -7000.0,
+    "dif": -9288.0,
+    "gana": 1.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "borde: zona tensionada, excepción del art. 17.6 (10 años) y +10 % justo: 50 %",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 880,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "diez"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 3560.0,
+    "cuotaA": 312.0,
+    "cuotaB": 534.0,
+    "resA": 2288.0,
+    "resB": 3026.0,
+    "dif": 738.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "zona tensionada, excepción de eficiencia y +10 % más 0,01: incumple",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 880.01,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "energia"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 0.0,
+    "prevA": 2600.0,
+    "prevB": 3560.12,
+    "cuotaA": 312.0,
+    "cuotaB": 1068.04,
+    "resA": 2288.0,
+    "resB": 2492.08,
+    "dif": 204.08,
+    "gana": 2.0,
+    "incumple": 1.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 855.71,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "regresión: zona tensionada sin excepción y +10 %: incumple",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 880,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "si",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 0.0,
+    "prevA": 2600.0,
+    "prevB": 3560.0,
+    "cuotaA": 312.0,
+    "cuotaB": 1068.0,
+    "resA": 2288.0,
+    "resB": 2492.0,
+    "dif": 204.0,
+    "gana": 2.0,
+    "incumple": 1.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 855.71,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "tácita reconducción, misma renta: 50 % en ambos",
+   "in": {
+    "fecha": "reconduccion",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 800,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 50.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 2600.0,
+    "cuotaA": 390.0,
+    "cuotaB": 390.0,
+    "resA": 2210.0,
+    "resB": 2210.0,
+    "dif": 0.0,
+    "gana": 0.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 3.35
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "tácita reconducción, renta nueva 900: gana el nuevo",
+   "in": {
+    "fecha": "reconduccion",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 900,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "ninguna"
+   },
+   "expect": {
+    "pctA": 50.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 3800.0,
+    "cuotaA": 390.0,
+    "cuotaB": 570.0,
+    "resA": 2210.0,
+    "resB": 3230.0,
+    "dif": 1020.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 800.0,
+    "rebajaMax90": 3.35
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "accesibilidad sin rehabilitación: sube renta pero 50 %",
+   "in": {
+    "fecha": "antes",
+    "pctActual": "50",
+    "renta0": 800,
+    "renta1": 900,
+    "gastos": 7000,
+    "tipo": 30,
+    "tensionada": "no",
+    "excepcion176": "accesib"
+   },
+   "expect": {
+    "pctA": 60.0,
+    "pctB": 50.0,
+    "prevA": 2600.0,
+    "prevB": 3800.0,
+    "cuotaA": 312.0,
+    "cuotaB": 570.0,
+    "resA": 2288.0,
+    "resB": 3230.0,
+    "dif": 942.0,
+    "gana": 2.0,
+    "incumple": 0.0,
+    "rebajaOk": 0.0,
+    "rentaEq": 807.65,
+    "rebajaMax90": 2.51
+   },
+   "tol": 0.5
+  }
+ ]
+}

@@ -524,5 +524,15 @@
     "finiquito-baja-voluntaria-vacaciones-preaviso",
     "retencion-irpf-nomina-subir-o-no",
     "comparar-ofertas-de-trabajo-neto-real"
+  ],
+  "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf": [
+    "irpf-alquilar-vivienda-rendimiento-neto",
+    "actualizacion-renta-alquiler-irav-ipc",
+    "gastos-alquiler-quien-paga"
+  ],
+  "pagas-extra-prorrateadas-o-14-pagas": [
+    "paga-extra-navidad-cuanto-cobro-neto",
+    "finiquito-baja-voluntaria-vacaciones-preaviso",
+    "retencion-irpf-nomina-subir-o-no"
   ]
 }

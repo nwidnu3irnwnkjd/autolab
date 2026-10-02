@@ -369,6 +369,11 @@
   "retencion-irpf-nomina-subir-o-no",
   "comparar-ofertas-de-trabajo-neto-real"
  ],
+ "pagas-extra-prorrateadas-o-14-pagas": [
+  "paga-extra-navidad-cuanto-cobro-neto",
+  "finiquito-baja-voluntaria-vacaciones-preaviso",
+  "retencion-irpf-nomina-subir-o-no"
+ ],
  "paro-autonomos-cese-actividad-cuanto-cobro": [
   "cuota-autonomos-ingresos-reales-regularizacion",
   "cuanto-cobro-de-paro-prestacion-desempleo",
@@ -423,6 +428,11 @@
   "alquilar-o-comprar",
   "venta-vivienda-plusvalia-irpf-exencion",
   "mudanza-empresa-o-furgoneta"
+ ],
+ "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf": [
+  "irpf-alquilar-vivienda-rendimiento-neto",
+  "actualizacion-renta-alquiler-irav-ipc",
+  "gastos-alquiler-quien-paga"
  ],
  "reparar-o-comprar-electrodomestico": [
   "cambiar-electrodomestico-antiguo-merece-la-pena",

@@ -1,0 +1,157 @@
+{
+  "slug": "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf",
+  "title": "Prorrogar o firmar contrato nuevo: reducción IRPF casero",
+  "description": "Casero: calcula si te conviene prorrogar el alquiler (reducción del 60 % si es anterior a mayo de 2023) o firmar uno nuevo (50 a 90 %) en el IRPF.",
+  "h1": "Casero: ¿prorrogo el contrato de alquiler o firmo uno nuevo? Efecto en la reducción del IRPF",
+  "lead": "Si tu contrato de alquiler es anterior al 26 de mayo de 2023, prorrogarlo conserva la reducción del 60 % del rendimiento neto en el IRPF mientras sea la prórroga de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos (supuesto nuestro, sin consulta de Tributos que lo confirme; con tácita reconducción o documento nuevo puede aplicarse el 50 %) y firmar uno nuevo la baja al 50 %, salvo rehabilitación reciente (60 %) o, en zona tensionada, una rebaja de renta de más del 5 % (90 %) o 70 % si es alquiler social o vivienda con renta limitada por un programa público. En el ejemplo (800 € al mes, 7.000 € de gastos con amortización y un tipo marginal del 30 %), prorrogar te deja 2.288 € al año después de IRPF y firmar uno nuevo con la misma renta, 2.210 €: empate práctico, y el contrato nuevo solo compensa si pides 807,65 € al mes o más. En zona tensionada, bajar la renta a 759,90 € para llegar al 90 % deja 2.055 €: no compensa, porque solo compensaría una rebaja de hasta el 2,5 % y el 90 % exige más del 5 %. Con 900 € al mes en el contrato nuevo, sin zona tensionada, ganas 942 € al año firmándolo. Los vacíos, la actualización de la renta, el IVA y el gran tenedor no están incluidos.",
+  "veredicto": "Depende de la fecha de tu contrato y de la renta nueva. Con un contrato anterior al 26/5/2023, prorrogar conserva el 60 % (supuesto propio) y uno nuevo baja al 50 %, 60 % con rehabilitación reciente o 90 % en zona tensionada con rebaja de renta de más del 5 %, o 70 % si es alquiler social o vivienda con renta limitada por un programa público. Con tácita reconducción o documento nuevo, el contrato anterior puede quedar en el 50 %. En el ejemplo (800 € al mes, tipo 30 %) prorrogar deja 2.288 € al año y firmar nuevo con la misma renta 2.210 €: empate práctico; el nuevo solo compensa a partir de 807,65 € al mes.",
+  "tema": "hipoteca",
+  "inputs": [
+    {
+      "id": "fecha",
+      "label": "Fecha y situación de tu contrato actual",
+      "type": "select",
+      "options": [
+        {
+          "v": "antes",
+          "t": "Firmado antes del 26/5/2023, en prórroga de los arts. 9-10 de la LAU (60 %)"
+        },
+        {
+          "v": "reconduccion",
+          "t": "Firmado antes del 26/5/2023, ya en tácita reconducción (art. 1566 del Código Civil) o renovado con documento nuevo (50 %)"
+        },
+        {
+          "v": "desde",
+          "t": "Firmado desde el 26/5/2023 (reducción del 50, 60, 70 o 90 %)"
+        }
+      ],
+      "ayuda": "Los contratos anteriores al 26/5/2023 conservan el 60 % (disposición transitoria 38.ª) mientras sigan en la prórroga de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos, incluida la extraordinaria del art. 10.2. Con tácita reconducción o documento nuevo, el Supremo lo trata como contrato nuevo y puede aplicarse el 50 %."
+    },
+    {
+      "id": "pctActual",
+      "label": "Si es desde el 26/5/2023: reducción que aplicas hoy",
+      "type": "select",
+      "options": [
+        {
+          "v": "50",
+          "t": "50 % (caso general)"
+        },
+        {
+          "v": "60",
+          "t": "60 % (vivienda rehabilitada)"
+        },
+        {
+          "v": "70",
+          "t": "70 % (primera vez en zona tensionada con inquilino de 18 a 35 años, o alquiler social)"
+        },
+        {
+          "v": "90",
+          "t": "90 % (nuevo contrato en zona tensionada con renta rebajada más del 5 %)"
+        }
+      ],
+      "ayuda": "Solo cuenta si tu contrato es desde el 26/5/2023; si es anterior, se ignora. Prorrogar conserva la reducción del contrato actual mientras se sigan cumpliendo sus requisitos."
+    },
+    {
+      "id": "renta0",
+      "label": "Renta mensual actual, ya actualizada (€ al mes)",
+      "default": 800,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.alquiler_irpf_2026.supuestos_renovar.renta0",
+      "ayuda": "Es la renta con la que prorrogas y la última renta del contrato anterior a efectos del límite de zona tensionada y de la rebaja del 5 %."
+    },
+    {
+      "id": "renta1",
+      "label": "Renta mensual del contrato nuevo (€ al mes)",
+      "default": 800,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.alquiler_irpf_2026.supuestos_renovar.renta1"
+    },
+    {
+      "id": "tensionada",
+      "label": "¿La vivienda está en zona tensionada declarada?",
+      "type": "select",
+      "options": [
+        {
+          "v": "no",
+          "t": "No"
+        },
+        {
+          "v": "si",
+          "t": "Sí, declarada por el Ministerio de Vivienda"
+        }
+      ],
+      "ayuda": "Solo cuenta la que figura en la resolución del Ministerio de Vivienda. En ella la renta del contrato nuevo no puede superar la última renta (art. 17.6 de la Ley de Arrendamientos Urbanos)."
+    },
+    {
+      "id": "excepcion176",
+      "label": "Excepción del art. 17.6 de la LAU que permite subir la renta hasta un 10 % en zona tensionada",
+      "type": "select",
+      "options": [
+        {
+          "v": "ninguna",
+          "t": "Ninguna"
+        },
+        {
+          "v": "rehab",
+          "t": "Rehabilitación terminada en los 2 años previos (art. 41.1 del Reglamento del IRPF): además da el 60 %"
+        },
+        {
+          "v": "energia",
+          "t": "Mejora de eficiencia energética (ahorro del 30 %) en los 2 años previos"
+        },
+        {
+          "v": "accesib",
+          "t": "Mejora de accesibilidad en los 2 años previos"
+        },
+        {
+          "v": "diez",
+          "t": "Contrato de 10 años o más (o prórroga potestativa de 10)"
+        }
+      ],
+      "ayuda": "Letras a) a d) del art. 17.6: todas permiten subir la renta inicial hasta un 10 % sobre la última, pero solo la rehabilitación da el 60 % del art. 23.2 (también fuera de zona tensionada)."
+    },
+    {
+      "id": "gastos",
+      "label": "Gastos deducibles al año, con amortización (€)",
+      "default": 7000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.alquiler_irpf_2026.supuestos_renovar.gastos",
+      "ayuda": "IBI, comunidad, seguro, intereses, reparaciones y amortización del 3 %. Se suponen los mismos en los dos contratos. La amortización no sale de tu cuenta, pero baja el rendimiento sujeto a IRPF."
+    },
+    {
+      "id": "tipo",
+      "label": "Tu tipo marginal de IRPF (% sumando estatal y autonómico)",
+      "default": 30,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.alquiler_irpf_2026.supuestos_renovar.tipo",
+      "ayuda": "Es un ejemplo, no un dato oficial: el rendimiento del alquiler se suma a tu base general (máximo en 2026: unos 54 %)."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Prorrogar el contrato mantiene la reducción del 60 % del IRPF?",
+      "Es nuestra interpretación y solo para la prórroga de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos (incluida la extraordinaria): es el mismo contrato anterior al 26/5/2023. Con tácita reconducción (art. 1566 del Código Civil) o documento nuevo puede aplicarse el 50 %. Sin consulta de Tributos."
+    ],
+    [
+      "¿Qué reducción tiene un contrato nuevo?",
+      "El 50 % en general (70 % si es alquiler social o vivienda con renta limitada por un programa público, no modelado). Sube al 60 % con rehabilitación reciente y al 90 % en zona tensionada si la renta baja más de un 5 %."
+    ],
+    [
+      "¿Puedo subir la renta en un contrato nuevo en zona tensionada?",
+      "No: la renta inicial no puede superar la última renta. Solo puede subir hasta un 10 % con rehabilitación, mejora energética o de accesibilidad en los 2 años previos, o contrato de 10 años o más (art. 17.6). Si lo incumples, pierdes toda reducción del IRPF."
+    ],
+    [
+      "¿Qué pasó con el Real Decreto-ley 26/2026?",
+      "Estuvo en vigor del 1 al 2 de octubre de 2026 y el Congreso lo derogó (BOE-A-2026-20526). Esta calculadora aplica la Ley 12/2023 (50, 60, 70 y 90 %) a todo el ejercicio 2026, no las reducciones del 100 % o el 80 % en prórroga tácita."
+    ],
+    [
+      "¿Cambiar de inquilino o renovar con el mismo cambia algo?",
+      "Un contrato nuevo cuenta como nuevo aunque sea con el mismo inquilino, igual que la tácita reconducción o un documento nuevo; solo la prórroga de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos es el mismo contrato. Durante la prórroga obligatoria, firmar uno nuevo exige el acuerdo del inquilino."
+    ]
+  ],
+  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultado el 2/10/2026: art. 23.2 y disposición transitoria 38.ª en la redacción de la Ley 12/2023 (BOE-A-2023-12203, vigente desde 1/1/2024), leída en la penúltima versión del consolidado porque la última es la del Real Decreto-ley 26/2026, derogado por la Resolución del Congreso de 2/10/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Ley 29/1994 de Arrendamientos Urbanos, arts. 9, 10 y 17.6, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultado el 2/10/2026. Reglamento del IRPF, art. 41.1 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820). Ley 12/2023 por el derecho a la vivienda (https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Que la prórroga de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos conserva el 60 % es una interpretación nuestra (con tácita reconducción, art. 1566 del Código Civil, o documento nuevo puede aplicarse el 50 %) de la disposición transitoria 38.ª (confianza media, sin consulta vinculante de la Dirección General de Tributos). Los importes del ejemplo y el tipo marginal son supuestos editables, no datos oficiales."
+}

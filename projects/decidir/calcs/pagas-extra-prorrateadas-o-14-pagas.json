@@ -1,0 +1,119 @@
+{
+  "slug": "pagas-extra-prorrateadas-o-14-pagas",
+  "title": "Pagas extra prorrateadas o 14 pagas: qué cambia",
+  "description": "Compara cobrar el mismo bruto en 14 pagas o prorrateado en 12: neto mensual, retención, cotización, paro, baja médica y finiquito, con cifras de tu sueldo.",
+  "h1": "Pagas extra prorrateadas o en 14 pagas: qué cambia de verdad",
+  "lead": "Cobrar tus pagas extra prorrateadas en 12 meses o en 14 pagas te deja el mismo neto al año si trabajas todo el año: con 24.000 € brutos y 2 pagas extra son 18.840 € netos en las dos formas, con la misma retención (3.600 €) y la misma cotización (1.560 €); lo que cambia es el flujo de caja, 1.570 € netos al mes prorrateado frente a 1.327,14 € en los meses sin paga con 14 pagas (242,86 € menos al mes), y el finiquito si te vas a mitad de año: con 14 pagas te pagan al irte las pagas devengadas (1.145,96 € brutos si te vas el 31 de octubre) y con el prorrateo ya las cobraste. La ley prevé el prorrateo cuando lo acuerda el convenio colectivo (art. 31 del Estatuto): mira el tuyo antes de pedirlo. La base del paro es la misma en los dos casos (66,67 € al día en el ejemplo) y la de la baja médica también es igual en las dos formas.",
+  "veredicto": "Si trabajas todo el año, el neto anual es el mismo en 14 pagas y prorrateado (la cotización se calcula sobre el sueldo anual repartido en 12 meses, art. 147.1 de la Ley General de la Seguridad Social, y el tipo de retención sale de las retribuciones de todo el año, art. 83.2 del Reglamento del IRPF); cambia cuándo lo cobras y qué te deben al irte. Con 24.000 € brutos, 2 pagas extra y retención del 15 %: 18.840 € netos en ambas, 1.570 € al mes prorrateado frente a 1.327,14 € en los meses sin paga extra, y el 31 de octubre con 14 pagas te quedan 1.145,96 € brutos de pagas por cobrar en el finiquito frente a 0 € con prorrateo. La base del paro no cambia (66,67 € al día) y la de la baja médica tampoco: las pagas extra entran por su promedio de 12 meses (art. 13.4 del Decreto 1646/1972), estén o no prorrateadas. La ley prevé el prorrateo cuando lo acuerda el convenio colectivo (art. 31 del Estatuto de los Trabajadores).",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "bruto",
+      "label": "Salario bruto anual, pagas extra incluidas (€)",
+      "default": 24000,
+      "min": 1,
+      "step": 500,
+      "default_from": "params.pagas_extra_prorrateo_2026.supuestos.bruto"
+    },
+    {
+      "id": "extras",
+      "label": "Pagas extra al año",
+      "type": "select",
+      "options": [
+        {
+          "v": "2",
+          "t": "2 pagas extra (14 pagas)"
+        },
+        {
+          "v": "3",
+          "t": "3 pagas extra (15 pagas)"
+        },
+        {
+          "v": "4",
+          "t": "4 pagas extra (16 pagas)"
+        }
+      ]
+    },
+    {
+      "id": "contrato",
+      "label": "Tipo de contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "indef",
+          "t": "Indefinido"
+        },
+        {
+          "v": "temp",
+          "t": "Temporal (duración determinada)"
+        }
+      ]
+    },
+    {
+      "id": "ret",
+      "label": "Retención de IRPF de tu nómina (%)",
+      "default": 15,
+      "min": 0,
+      "max": 47,
+      "step": 0.01,
+      "default_from": "params.pagas_extra_prorrateo_2026.supuestos.ret",
+      "ayuda": "Es la misma en las dos formas: sale de lo que cobras en el año entero."
+    },
+    {
+      "id": "situacion",
+      "label": "Tu situación en 2026",
+      "type": "select",
+      "options": [
+        {
+          "v": "todo",
+          "t": "Trabajo todo el año"
+        },
+        {
+          "v": "baja",
+          "t": "Me voy de la empresa durante el año"
+        }
+      ]
+    },
+    {
+      "id": "mes",
+      "label": "Mes del último día trabajado (1 a 12)",
+      "default": 10,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.pagas_extra_prorrateo_2026.supuestos.mes",
+      "ayuda": "Se ignora si trabajas todo el año."
+    },
+    {
+      "id": "dia",
+      "label": "Día del último día trabajado (1 a 31)",
+      "default": 31,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.pagas_extra_prorrateo_2026.supuestos.dia",
+      "ayuda": "Ese día cuenta como trabajado."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Pagas prorrateadas o 14 pagas: cuál me deja más dinero?",
+      "Ninguna, si trabajas todo el año: con 24.000 € brutos son 18.840 € netos en las dos, con la misma cotización y la misma retención. Cambia el flujo: el prorrateo reparte más al mes (1.570 € frente a 1.327,14 € en meses sin paga extra)."
+    ],
+    [
+      "¿Puedo pedir que me prorrateen las pagas extra?",
+      "El Estatuto dice que puede acordarse en convenio colectivo que se prorrateen en las doce mensualidades (art. 31). Mira qué dice tu convenio o pregunta a tu empresa; esta calculadora no sabe si te lo permite."
+    ],
+    [
+      "¿Cotizo menos o más con las pagas prorrateadas?",
+      "No: las percepciones de vencimiento superior al mensual se prorratean en los doce meses de cotización (art. 147.1 LGSS), así que tu cotización mensual es la misma en las dos formas de cobrar."
+    ],
+    [
+      "¿Cambia la baja médica o el paro por prorratear las pagas?",
+      "No. La base del paro es la misma (66,67 € al día en el ejemplo, art. 270.1 LGSS) y la de la baja médica también, porque las pagas extra entran por su promedio de 12 meses (art. 13.4 del Decreto 1646/1972), estén o no prorrateadas. No se calcula la prestación."
+    ],
+    [
+      "¿Qué pasa con las pagas extra si me voy de la empresa?",
+      "Con 14 pagas te deben en el finiquito la parte devengada de las que no cobraste (1.145,96 € brutos si te vas el 31 de octubre, con 2 pagas). Con el prorrateo no queda ninguna pendiente: ya las cobraste mes a mes."
+    ]
+  ],
+  "sources": "Estatuto de los Trabajadores, RDL 2/2015, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a31), consultado el 2/10/2026: art. 31 (dos gratificaciones extraordinarias al año; cuantía fijada por convenio; el convenio puede acordar que se prorrateen en las doce mensualidades) y art. 49.2 (propuesta de documento de liquidación de las cantidades adeudadas). Ley General de la Seguridad Social, RDL 8/2015, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a147), consultado el 2/10/2026: art. 147.1 (las percepciones de vencimiento superior al mensual se prorratean a lo largo de los doce meses del año; redacción vigente desde el 1/1/2023) y art. 270.1 (base reguladora del paro: promedio de la base por la que se haya cotizado en los últimos ciento ochenta días). Decreto 1646/1972 (https://www.boe.es/buscar/act.php?id=BOE-A-1972-944), art. 13 (base reguladora de la incapacidad temporal: base de cotización del mes anterior entre treinta con retribución mensual; las pagas extraordinarias, por el promedio de su base de los doce meses anteriores). Reglamento del IRPF, RD 439/2007 (https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820#a83), consultado el 2/10/2026: art. 80.1 (tipo aplicado a la cuantía total abonada), art. 83.2 regla 1.ª (suma de las retribuciones que vaya a percibir en el año natural), art. 86.1 (tipo con dos decimales) y art. 87 (regularización). Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296): base máxima de 5.101,20 € al mes y cotización del trabajador del 6,5 % (indefinido) o 6,55 % (duración determinada). Los importes, el tipo de retención y la fecha de baja del ejemplo son supuestos editables, no datos oficiales; el calendario de cobro de las pagas y su devengo por días son supuestos del modelo, que fija tu convenio."
+}

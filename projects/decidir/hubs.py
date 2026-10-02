@@ -28,7 +28,7 @@ HUBS = {
         "groups": [
             ("Antes de firmar", ["cuanto-ahorrar-para-comprar-casa", "alquilar-o-comprar", "hipoteca-mas-entrada-o-conservar-ahorros", "hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-fija-o-variable", "hipoteca-bonificada-o-sin-vinculaciones", "seguro-vida-hipoteca-banco-o-externo"]),
             ("Con la hipoteca ya firmada", ["subrogar-hipoteca-merece-la-pena", "amortizar-plazo-o-cuota", "amortizar-o-invertir"]),
-            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc", "gastos-alquiler-quien-paga"]),
+            ("Si alquilas", ["fianza-y-garantias-adicionales-alquiler", "actualizacion-renta-alquiler-irav-ipc", "gastos-alquiler-quien-paga", "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf"]),
             ("Si ya vives en tu casa", ["reformar-o-mudarse"]),
         ],
         "steps": {
@@ -43,6 +43,10 @@ HUBS = {
             "gastos-alquiler-quien-paga": {
                 "name": "Gastos del alquiler: quién paga",
                 "text": "Comunidad, IBI o basuras solo son del inquilino si el pacto consta por escrito y con importe anual; los honorarios de agencia son del casero. La calculadora da lo que te toca pagar y lo que puedes rechazar.",
+            },
+            "renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf": {
+                "name": "Renovar o firmar contrato nuevo (IRPF del casero)",
+                "text": "Si eres casero, prorrogar un contrato anterior a mayo de 2023 puede mantener una reducción del IRPF mayor que la de un contrato nuevo. La calculadora compara las dos opciones con tu renta y tu tipo.",
             },
             "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
                 "name": "Plazo: 20, 25 o 30 años",
@@ -271,7 +275,7 @@ HUBS = {
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos", "paro-autonomos-cese-actividad-cuanto-cobro"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
-            ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda", "paga-extra-navidad-cuanto-cobro-neto"]),
+            ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda", "paga-extra-navidad-cuanto-cobro-neto", "pagas-extra-prorrateadas-o-14-pagas"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
@@ -375,6 +379,10 @@ HUBS = {
                 "name": "Vender con pérdidas antes de fin de año",
                 "text": "Las pérdidas de ventas de acciones o fondos compensan ganancias del mismo año en la base del ahorro, pero recomprar pronto puede bloquear la pérdida. La calculadora da cuánto IRPF ahorras en 2026 con tus datos.",
                 "guia": "antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos",  # c56
+            },
+            "pagas-extra-prorrateadas-o-14-pagas": {
+                "name": "Pagas prorrateadas o 14 pagas",
+                "text": "El neto anual y la retención salen iguales; cambia lo que cobras cada mes y lo pendiente si te vas. La calculadora compara las dos formas con tu bruto.",
             },
             "paga-extra-navidad-cuanto-cobro-neto": {
                 "name": "Paga extra de Navidad",
