@@ -151,7 +151,7 @@ HUBS = {
                  "y el gas con la tarifa regulada TUR.2 sale a {{gas_kwh}} €/kWh con impuestos ({{periodo_gas_es}}; fuente: BOE)."),
         "groups": [
             ("Sin obra: lo primero", ["luz-fija-o-indexada", "calefaccion-gas-aerotermia-electrica"]),
-            ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
+            ("Con inversión: cuándo se amortiza", ["caldera-reparar-o-cambiar", "termo-electrico-o-calentador-gas-o-aerotermia-agua", "cambiar-ventanas-aislamiento-merece-la-pena", "placas-solares-merece-la-pena", "punto-de-carga-casa-con-o-sin-placas", "cambiar-electrodomestico-antiguo-merece-la-pena", "reparar-o-comprar-electrodomestico", "aire-acondicionado-inverter-o-ventilador-coste-verano"]),
         ],
         "steps": {
             "luz-fija-o-indexada": {
@@ -170,6 +170,10 @@ HUBS = {
             "caldera-reparar-o-cambiar": {
                 "name": "Reparar o cambiar la caldera",
                 "text": "Cambiarla sale más barato que repararla cuando el presupuesto de la reparación supera el punto de equilibrio que sale de tu consumo de gas, tu rendimiento actual y el precio de la nueva. Es una estimación económica; el diagnóstico lo hace un técnico autorizado.",
+            },
+            "termo-electrico-o-calentador-gas-o-aerotermia-agua": {
+                "name": "Agua caliente: termo, gas o aerotermia",
+                "text": "El agua caliente es una parte fija de la factura: la calculadora compara el coste total a varios años del termo eléctrico, el calentador de gas y la aerotermia con tu consumo, y da el punto en el que la opción más cara de instalar se amortiza.",
             },
             "cambiar-ventanas-aislamiento-merece-la-pena": {
                 "name": "Ventanas y aislamiento",
@@ -294,7 +298,7 @@ HUBS = {
                  "luego dónde guardar lo que ahorras y, por último, las decisiones de familia, trabajo y estudios que mueven más dinero al año. "
                  "Cada paso lleva a una calculadora con tus datos y te da el punto en el que cambia la decisión."),
         "groups": [
-            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena"]),
+            ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "comprar-o-alquilar-trastero", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
             ("Familia, trabajo y estudios", ["guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "teletrabajo-o-oficina-coste-real", "residencia-o-cuidador-a-domicilio", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo"]),
@@ -343,6 +347,10 @@ HUBS = {
             "seguro-mascota-merece-la-pena": {
                 "name": "Seguro de mascota",
                 "text": "Compensa en valor esperado solo si la probabilidad de un gasto veterinario grave supera la prima dividida entre lo que cubre el seguro. La calculadora te da ese umbral y el peor escenario con carencia.",
+            },
+            "adoptar-o-comprar-perro-coste-anual": {
+                "name": "Adoptar o comprar un perro: coste anual",
+                "text": "Un perro es un gasto fijo durante años, más allá del precio de adquisición: la calculadora compara adoptar y comprar sumando lo que cuesta cada año (comida, veterinario, seguro) y te da el total a tu horizonte.",
             },
             "navidad-cuanto-gastar-sin-endeudarte": {
                 "name": "Cuánto puedes gastar en Navidad y Black Friday",

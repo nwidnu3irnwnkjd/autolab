@@ -1,0 +1,221 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "personas": 3,
+    "precioLuz": 0.2,
+    "precioGas": 0.064,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 500,
+    "compraAero": 2000,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 647.88,
+    "costeGas": 183.38,
+    "costeAero": 208.25,
+    "kwhUtil": 2292.27,
+    "totalTermo": 6778.8,
+    "totalGas": 2333.82,
+    "totalAero": 4082.47,
+    "aniosGas": 0.43,
+    "aniosAero": 3.87,
+    "personasGas": 0.13,
+    "personasAero": 1.16,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 3,
+    "precioLuz": 0.2,
+    "precioGas": 0.064,
+    "fijoGas": 300,
+    "compraTermo": 300,
+    "compraGas": 500,
+    "compraAero": 2000,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 647.88,
+    "costeGas": 483.38,
+    "costeAero": 208.25,
+    "kwhUtil": 2292.27,
+    "totalTermo": 6778.8,
+    "totalGas": 5333.82,
+    "totalAero": 4082.47,
+    "aniosGas": 1.22,
+    "aniosAero": 3.87,
+    "personasGas": 0.36,
+    "personasAero": 1.16,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 1,
+    "precioLuz": 0.2,
+    "precioGas": 0.3,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 500,
+    "compraAero": 3000,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 215.96,
+    "costeGas": 286.53,
+    "costeAero": 69.42,
+    "kwhUtil": 764.09,
+    "totalTermo": 2459.6,
+    "totalGas": 3365.34,
+    "totalAero": 3694.16,
+    "aniosGas": -1.0,
+    "aniosAero": 18.42,
+    "personasGas": -1.0,
+    "personasAero": 1.84,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 6,
+    "precioLuz": 0.2,
+    "precioGas": 0.12,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 500,
+    "compraAero": 2000,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 1295.76,
+    "costeGas": 687.68,
+    "costeAero": 416.49,
+    "kwhUtil": 4584.55,
+    "totalTermo": 13257.59,
+    "totalGas": 7376.82,
+    "totalAero": 6164.94,
+    "aniosGas": 0.33,
+    "aniosAero": 1.93,
+    "personasGas": 0.2,
+    "personasAero": 1.16,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 3,
+    "precioLuz": 0.2,
+    "precioGas": 0.064,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 300,
+    "compraAero": 300,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 647.88,
+    "costeGas": 183.38,
+    "costeAero": 208.25,
+    "kwhUtil": 2292.27,
+    "totalTermo": 6778.8,
+    "totalGas": 2133.82,
+    "totalAero": 2382.47,
+    "aniosGas": 0.0,
+    "aniosAero": 0.0,
+    "personasGas": -1.0,
+    "personasAero": -1.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 3,
+    "precioLuz": 0.2,
+    "precioGas": 0.5,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 100,
+    "compraAero": 100,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 647.88,
+    "costeGas": 1432.67,
+    "costeAero": 208.25,
+    "kwhUtil": 2292.27,
+    "totalTermo": 6778.8,
+    "totalGas": 14426.71,
+    "totalAero": 2182.47,
+    "aniosGas": -1.0,
+    "aniosAero": 0.0,
+    "personasGas": -1.0,
+    "personasAero": -1.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 3,
+    "precioLuz": 0,
+    "precioGas": 0,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 300,
+    "compraAero": 290.4,
+    "vida": 10
+   },
+   "expect": {
+    "costeTermo": 3.08,
+    "costeGas": 0.0,
+    "costeAero": 0.99,
+    "kwhUtil": 2292.27,
+    "totalTermo": 330.82,
+    "totalGas": 300.0,
+    "totalAero": 300.31,
+    "aniosGas": 0.0,
+    "aniosAero": 0.0,
+    "personasGas": -1.0,
+    "personasAero": -1.0,
+    "ganador": 3
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "personas": 12,
+    "precioLuz": 0.2,
+    "precioGas": 0.064,
+    "fijoGas": 0,
+    "compraTermo": 300,
+    "compraGas": 500,
+    "compraAero": 8000,
+    "vida": 30
+   },
+   "expect": {
+    "costeTermo": 2591.52,
+    "costeGas": 733.53,
+    "costeAero": 832.99,
+    "kwhUtil": 9169.09,
+    "totalTermo": 78045.56,
+    "totalGas": 22505.82,
+    "totalAero": 32989.65,
+    "aniosGas": 0.11,
+    "aniosAero": 4.38,
+    "personasGas": 0.04,
+    "personasAero": 1.75,
+    "ganador": 1
+   },
+   "tol": 1
+  }
+ ]
+}

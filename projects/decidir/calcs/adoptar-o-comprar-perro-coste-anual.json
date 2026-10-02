@@ -1,0 +1,114 @@
+{
+  "slug": "adoptar-o-comprar-perro-coste-anual",
+  "title": "Adoptar o comprar un perro: coste del primer año y anual",
+  "description": "Calcula cuánto cuesta tener un perro el primer año, cada año y en total, adoptando o comprando, con tu pienso, tu veterinario y tu seguro como datos.",
+  "h1": "Tener un perro: coste del primer año y anual, adoptando o comprando",
+  "lead": "Adoptar sale más barato que comprar si la cuota de adopción es menor que el precio de compra, y esa diferencia es solo el precio de entrada, que pesa poco frente al gasto corriente: con los ejemplos de la página (pienso de 40 € al mes, veterinario y otros de 250 € al año, 250 € de gastos iniciales, 200 € de adopción, 800 € de compra y 12 años) el primer año cuesta 1.180 € adoptando y 1.780 € comprando, y después 730 € al año. Pon tu tamaño, tus gastos y tus precios para ver el coste anual y el total.",
+  "veredicto": "Adoptar cuesta menos que comprar cuando la cuota de adopción es menor que el precio de compra, y la diferencia es solo el precio de entrada; el gasto corriente (pienso, veterinario, seguro) es el mismo y suele pesar más que la entrada en el total de varios años.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "tamano",
+      "label": "Tamaño del perro (rellena pienso y veterinario con hipótesis de ejemplo, no precios; puedes cambiarlos)",
+      "type": "select",
+      "options": [
+        {
+          "v": "40|250",
+          "t": "Mediano (hipótesis de ejemplo: 40 €/mes de pienso, 250 €/año de veterinario)"
+        },
+        {
+          "v": "25|200",
+          "t": "Pequeño (hipótesis de ejemplo: 25 €/mes de pienso, 200 €/año de veterinario)"
+        },
+        {
+          "v": "60|300",
+          "t": "Grande (hipótesis de ejemplo: 60 €/mes de pienso, 300 €/año de veterinario)"
+        },
+        {
+          "v": "",
+          "t": "Otro: escribo mis propios gastos"
+        }
+      ]
+    },
+    {
+      "id": "pienso",
+      "label": "Pienso y comida (€ al mes; 40 es un ejemplo, no un precio de tienda)",
+      "default": 40,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.perro.supuestos.pienso"
+    },
+    {
+      "id": "vet",
+      "label": "Veterinario y otros gastos del año (€ al año: vacunas, antiparasitarios, revisiones, higiene, accesorios; 250 es un ejemplo)",
+      "default": 250,
+      "min": 0,
+      "step": 25,
+      "default_from": "params.perro.supuestos.vet"
+    },
+    {
+      "id": "seguro",
+      "label": "Seguro del perro (€ al año; 0 si no lo contratas; es una entrada tuya, no una oferta)",
+      "default": 0,
+      "min": 0,
+      "step": 25,
+      "default_from": "params.perro.supuestos.seguro"
+    },
+    {
+      "id": "iniciales",
+      "label": "Gastos iniciales comunes (€ una vez: chip, primeras vacunas, cama, correa, transportín; 250 es un ejemplo)",
+      "default": 250,
+      "min": 0,
+      "step": 25,
+      "default_from": "params.perro.supuestos.iniciales"
+    },
+    {
+      "id": "adopcion",
+      "label": "Cuota de adopción (€; 200 es un ejemplo; 0 si no hay cuota)",
+      "default": 200,
+      "min": 0,
+      "step": 25,
+      "default_from": "params.perro.supuestos.adopcion"
+    },
+    {
+      "id": "compra",
+      "label": "Precio de compra (€; 800 es un ejemplo, no el de ningún criadero)",
+      "default": 800,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.perro.supuestos.compra"
+    },
+    {
+      "id": "anos",
+      "label": "Años que lo tendrás (de 1 a 25; 12 es un ejemplo, no una esperanza de vida)",
+      "default": 12,
+      "min": 1,
+      "max": 25,
+      "step": 1,
+      "default_from": "params.perro.supuestos.anos"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cuesta tener un perro al año?",
+      "Depende de su tamaño y de tus gastos: la calculadora suma el pienso por 12, el veterinario y otros gastos del año y el seguro si lo pones. Con los ejemplos de la página (40 € al mes de pienso y 250 € al año de veterinario, sin seguro) son 730 € al año, unos 61 € al mes; con un seguro de 300 € al año suben a 1.030 € y el seguro pesa un 29 % del gasto. Son importes de ejemplo editables, no precios de mercado."
+    ],
+    [
+      "¿Cuánto cuesta el primer año de un perro?",
+      "El primer año suma la entrada (cuota de adopción o precio de compra), los gastos iniciales y el gasto anual. Con los ejemplos, 1.180 € adoptando (200 € de cuota, 250 € de gastos iniciales y 730 € de gasto anual) y 1.780 € comprando (800 € de precio). A partir del segundo año, solo el gasto anual."
+    ],
+    [
+      "¿Es más barato adoptar o comprar un perro?",
+      "En esta calculadora, la diferencia entre adoptar y comprar es solo el precio de entrada: adoptar sale más barato si tu cuota de adopción es menor que el precio de compra. Con los ejemplos la diferencia es de 600 € en 12 años (9.210 € frente a 9.810 €), unos 9,9 meses de gasto corriente; con una cuota de 500 € y una compra de 300 €, comprar sale 200 € más barato. No valora salud, edad ni carácter del animal."
+    ],
+    [
+      "¿Qué pesa más, el precio de entrada o el gasto corriente?",
+      "Con los ejemplos y 12 años, la entrada pesa un 2,2 % del total si adoptas y un 8,2 % si compras; el resto es gasto corriente y gastos iniciales. Por eso el gasto anual (pienso, veterinario, seguro) decide más el coste total que la forma de conseguir al perro, aunque con pocos años la entrada pesa más."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye urgencias ni tratamientos imprevistos (el seguro entra solo como una prima fija), ni alimentación especial, paseador, guardería, viajes o adiestramiento, salvo que los sumes al veterinario y otros gastos; tampoco la inflación ni descuentos financieros. Los importes de los selectores son hipótesis de ejemplo y no sustituyen el consejo de tu veterinario ni valoran la salud del animal. Para ver el efecto del seguro, mira la calculadora del seguro de mascota."
+    ]
+  ],
+  "sources": "Modelo propio: gasto anual = 12 × pienso mensual + veterinario y otros gastos del año + seguro; primer año = entrada (cuota de adopción o precio de compra) + gastos iniciales + gasto anual; total = entrada + gastos iniciales + años × gasto anual, sin descontar ni aplicar inflación. Sin cifras legales ni precios de mercado: pienso, veterinario, seguro, gastos iniciales, cuota de adopción, precio de compra y años son ejemplos editables por tamaño, no datos de ninguna protectora, criadero, clínica ni aseguradora. No hay fuente externa porque todos los importes son entradas del usuario; para obligaciones de tenencia (registro, identificación, seguro de responsabilidad civil en algunas razas o comunidades), consulta la normativa de tu ayuntamiento o comunidad autónoma, que no se calcula aquí. Consultado el 2/10/2026. Información orientativa, no asesoramiento ni consejo veterinario."
+}

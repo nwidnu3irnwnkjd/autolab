@@ -1,0 +1,103 @@
+{
+  "slug": "termo-electrico-o-calentador-gas-o-aerotermia-agua",
+  "title": "Termo, gas o aerotermia: coste del agua caliente",
+  "description": "Compara el coste anual y total del agua caliente con termo eléctrico, calentador de gas o aerotermia según tus personas, tus precios y cada equipo.",
+  "h1": "Agua caliente: termo eléctrico, calentador de gas o aerotermia, ¿cuál sale más barato?",
+  "lead": "El calentador de gas o la aerotermia compensan frente al termo eléctrico si gastas bastante agua caliente y repartes la compra en varios años, y entre ellos decide el precio del gas frente al de la luz: con los ejemplos de la página (3 personas, 10 años, luz a 0,20 €/kWh sin impuestos, gas a 0,064 €/kWh y equipos de 300 €, 500 € y 2.000 €) el gas sale a 2.334 € en total, la aerotermia a 4.082 € y el termo a 6.779 €, pero esos ejemplos no incluyen el término fijo del gas (con 300 € al año de fijo, la aerotermia pasa a ganar). Pon tus personas, tus precios y el coste de cada equipo para ver el total y cuándo se amortiza.",
+  "veredicto": "Un calentador de gas o una aerotermia compensan frente a un termo eléctrico cuando el ahorro de energía durante la vida útil supera la diferencia de compra, algo que depende del número de personas y de los precios; entre gas y aerotermia decide el precio del gas, el término fijo y la compra, y el termo puede ganar si el uso es muy bajo o el gas es caro.",
+  "tema": "energia",
+  "inputs": [
+    {
+      "id": "personas",
+      "label": "Personas que usan el agua caliente (de 1 a 12; 3 es un ejemplo)",
+      "default": 3,
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default_from": "params.agua_caliente.supuestos.personas"
+    },
+    {
+      "id": "precioLuz",
+      "label": "Precio de la electricidad (€/kWh, sin impuestos; por defecto, el PVPC medio de Red Eléctrica)",
+      "default": 0.184,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "live.luz_pvpc.extra.media_mes",
+      "default_min_extra": {
+        "dias_mes": 7
+      },
+      "default_fallback": "params.luz_2026.pvpc_media_ref.valor"
+    },
+    {
+      "id": "precioGas",
+      "label": "Precio del gas natural (€/kWh, con impuestos; míralo en tu factura: el de partida es la TUR.2 de octubre de 2026 y puede cambiar)",
+      "default": 0.064,
+      "min": 0,
+      "step": 0.005,
+      "default_from": "params.gas_eur_kwh"
+    },
+    {
+      "id": "fijoGas",
+      "label": "Término fijo del gas (€ al año; pon 0 si ya tienes gas en casa por otros usos; si no, súmalo, p. ej. 119 con la TUR.2)",
+      "default": 0,
+      "min": 0,
+      "step": 10
+    },
+    {
+      "id": "compraTermo",
+      "label": "Compra e instalación del termo eléctrico (€; 300 es un ejemplo, no un presupuesto)",
+      "default": 300,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.agua_caliente.supuestos.compra_termo"
+    },
+    {
+      "id": "compraGas",
+      "label": "Compra e instalación del calentador de gas (€; 500 es un ejemplo; suma la instalación de gas si no la tienes)",
+      "default": 500,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.agua_caliente.supuestos.compra_gas"
+    },
+    {
+      "id": "compraAero",
+      "label": "Compra e instalación de la aerotermia para agua caliente (€; 2.000 es un ejemplo, no un presupuesto)",
+      "default": 2000,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.agua_caliente.supuestos.compra_aero"
+    },
+    {
+      "id": "vida",
+      "label": "Vida útil en la que repartes la compra (años, de 1 a 30; 10 es un ejemplo)",
+      "default": 10,
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default_from": "params.agua_caliente.supuestos.vida"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Qué es más barato, un termo eléctrico o un calentador de gas?",
+      "Depende de lo que pagues por la luz y por el gas y de si ya tienes gas. Con los ejemplos de la página (3 personas, luz a 0,20 €/kWh sin impuestos y gas a 0,064 €/kWh con impuestos) el termo gasta unos 648 € al año de energía y el calentador de gas unos 183 €, pero con 1 persona y el gas a 0,30 €/kWh el termo sale más barato en 10 años. Mira también el término fijo del gas, que se paga aunque casi no lo uses."
+    ],
+    [
+      "¿Cuándo compensa la aerotermia para el agua caliente?",
+      "Compensa frente al termo eléctrico cuando el ahorro anual de energía, repartido en la vida útil, supera la diferencia de compra. Con los ejemplos (2.000 € frente a 300 €, 3 personas y 10 años) se recupera en 3,9 años y el empate con el termo está en 1,2 personas; con 1 persona y un equipo de 3.000 € el termo sale más barato en 10 años. Frente al gas gana, por ejemplo, con 6 personas y el gas a 0,12 €/kWh (6.165 € frente a 7.377 €)."
+    ],
+    [
+      "¿Qué precios de energía usa la calculadora?",
+      "Para la luz, por defecto, el precio medio del PVPC del mes en curso que publica Red Eléctrica (REData), o la media de septiembre de 2026 si el mes tiene menos de 7 días de datos; se le añaden el Impuesto Especial sobre la Electricidad (5,11269632 %, con mínimo de 1 €/MWh) y el IVA del 21 %. Para el gas, 0,064 €/kWh con impuestos, la TUR.2 de octubre de 2026; en noviembre y diciembre puede cambiar, y si tienes mercado libre, pon el de tu factura. Todos son editables."
+    ],
+    [
+      "¿Por qué el gas puede perder si su energía es más barata?",
+      "Porque el término fijo del gas se paga cada año aunque gastes poco, y la calculadora parte con 0 € suponiendo que ya tienes gas. Con los ejemplos y 300 € al año de fijo, el gas pasa a costar 5.334 € en 10 años y la aerotermia (4.082 €) gana. Si además necesitas instalar gas, suma esa obra a la compra del calentador."
+    ],
+    [
+      "¿Qué no incluye esta estimación?",
+      "No incluye el mantenimiento y las revisiones, la potencia eléctrica contratada, obras como la chimenea o el depósito, la inflación de los precios ni descuentos financieros; el total es la compra más la vida útil por el coste anual de energía. Los rendimientos (0,9 el termo, 0,8 el calentador, COP 2,8 la aerotermia) y los 40 litros por persona y día son hipótesis del modelo, no datos de un fabricante: si conoces los de tu equipo, ajusta el resultado. Península y Baleares."
+    ]
+  ],
+  "sources": "Modelo propio: energía útil al año = personas × litros por persona y día × salto de temperatura × 0,001163 kWh por litro y kelvin × 365; energía final = útil / rendimiento (COP en la aerotermia); total = compra + vida útil × coste anual de energía, sin descontar. Precio de la luz por defecto: media del mes en curso del PVPC de Red Eléctrica (REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) cuando ya hay 7 días del mes; si no, 0,184 €/kWh (media de septiembre de 2026, consultado el 2/10/2026). Impuesto Especial sobre la Electricidad de 5,11269632 % con mínimo de 1 €/MWh: Ley 38/1992, art. 99 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28741); IVA general del 21 %: Ley 37/1992 (https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740); vigentes en octubre de 2026 (noviembre y diciembre dependen del IPC, RDL 25/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20265). Precio del gas natural por defecto: 0,064 €/kWh con impuestos, TUR.2 variable más Impuesto sobre Hidrocarburos e IVA (Resolución de 30/9/2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389, consultado el 2/10/2026); editable y con aviso. Supuestos no oficiales y editables: compras de 300 €, 500 € y 2.000 €, vida útil de 10 años, 40 litros por persona y día, salto de 45 K y rendimientos de 0,9, 0,8 y COP 2,8; no son datos de ningún fabricante ni presupuestos. Información orientativa, no asesoramiento."
+}

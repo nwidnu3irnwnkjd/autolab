@@ -1,0 +1,173 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "pienso": 40,
+    "vet": 250,
+    "seguro": 0,
+    "iniciales": 250,
+    "adopcion": 200,
+    "compra": 800,
+    "anos": 12
+   },
+   "expect": {
+    "anual": 730,
+    "ano1Adopcion": 1180,
+    "ano1Compra": 1780,
+    "totalAdopcion": 9210,
+    "totalCompra": 9810,
+    "diferencia": 600,
+    "mensualMedioAdopcion": 63.96,
+    "mesesDif": 9.86,
+    "pesoSeguro": 0.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 40,
+    "vet": 250,
+    "seguro": 300,
+    "iniciales": 250,
+    "adopcion": 200,
+    "compra": 800,
+    "anos": 12
+   },
+   "expect": {
+    "anual": 1030,
+    "ano1Adopcion": 1480,
+    "ano1Compra": 2080,
+    "totalAdopcion": 12810,
+    "totalCompra": 13410,
+    "diferencia": 600,
+    "mensualMedioAdopcion": 88.96,
+    "mesesDif": 6.99,
+    "pesoSeguro": 29.13,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 40,
+    "vet": 250,
+    "seguro": 0,
+    "iniciales": 250,
+    "adopcion": 500,
+    "compra": 300,
+    "anos": 12
+   },
+   "expect": {
+    "anual": 730,
+    "ano1Adopcion": 1480,
+    "ano1Compra": 1280,
+    "totalAdopcion": 9510,
+    "totalCompra": 9310,
+    "diferencia": -200,
+    "mensualMedioAdopcion": 66.04,
+    "mesesDif": 3.29,
+    "pesoSeguro": 0.0,
+    "ganador": 1
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 40,
+    "vet": 250,
+    "seguro": 0,
+    "iniciales": 250,
+    "adopcion": 500,
+    "compra": 500,
+    "anos": 12
+   },
+   "expect": {
+    "anual": 730,
+    "ano1Adopcion": 1480,
+    "ano1Compra": 1480,
+    "totalAdopcion": 9510,
+    "totalCompra": 9510,
+    "diferencia": 0,
+    "mensualMedioAdopcion": 66.04,
+    "mesesDif": 0.0,
+    "pesoSeguro": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 25,
+    "vet": 200,
+    "seguro": 0,
+    "iniciales": 250,
+    "adopcion": 200,
+    "compra": 800,
+    "anos": 1
+   },
+   "expect": {
+    "anual": 500,
+    "ano1Adopcion": 950,
+    "ano1Compra": 1550,
+    "totalAdopcion": 950,
+    "totalCompra": 1550,
+    "diferencia": 600,
+    "mensualMedioAdopcion": 79.17,
+    "mesesDif": 14.4,
+    "pesoSeguro": 0.0,
+    "ganador": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 0,
+    "vet": 0,
+    "seguro": 0,
+    "iniciales": 0,
+    "adopcion": 0,
+    "compra": 0,
+    "anos": 12
+   },
+   "expect": {
+    "anual": 0,
+    "ano1Adopcion": 0,
+    "ano1Compra": 0,
+    "totalAdopcion": 0,
+    "totalCompra": 0,
+    "diferencia": 0,
+    "mensualMedioAdopcion": 0.0,
+    "mesesDif": -1.0,
+    "pesoSeguro": 0.0,
+    "ganador": 2
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "pienso": 60,
+    "vet": 300,
+    "seguro": 400,
+    "iniciales": 250,
+    "adopcion": 200,
+    "compra": 3000,
+    "anos": 25
+   },
+   "expect": {
+    "anual": 1420,
+    "ano1Adopcion": 1870,
+    "ano1Compra": 4670,
+    "totalAdopcion": 35950,
+    "totalCompra": 38750,
+    "diferencia": 2800,
+    "mensualMedioAdopcion": 119.83,
+    "mesesDif": 23.66,
+    "pesoSeguro": 28.17,
+    "ganador": 0
+   },
+   "tol": 1
+  }
+ ]
+}

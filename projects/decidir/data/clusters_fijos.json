@@ -22,7 +22,7 @@
  "calefaccion-gas-aerotermia-electrica": [
   "caldera-reparar-o-cambiar",
   "luz-fija-o-indexada",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua"
  ],
  "cambiar-ventanas-aislamiento-merece-la-pena": [
   "calefaccion-gas-aerotermia-electrica",
@@ -129,7 +129,7 @@
  "seguro-mascota-merece-la-pena": [
   "seguro-hogar-con-o-sin-franquicia",
   "seguro-salud-privado-merece-la-pena",
-  "seguro-todo-riesgo-o-terceros"
+  "adoptar-o-comprar-perro-coste-anual"
  ],
  "deposito-letras-o-fondo-monetario": [
   "fondo-de-emergencia-cuantos-meses-necesito",
@@ -184,7 +184,7 @@
  "caldera-reparar-o-cambiar": [
   "calefaccion-gas-aerotermia-electrica",
   "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena"
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua"
  ],
  "punto-de-carga-casa-con-o-sin-placas": [
   "placas-solares-merece-la-pena",
@@ -304,7 +304,7 @@
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",
   "seguro-mascota-merece-la-pena",
-  "seguro-salud-privado-merece-la-pena"
+  "adoptar-o-comprar-perro-coste-anual"
  ],
  "gasolinera-low-cost-compensa-desviarse": [
   "diesel-gasolina-hibrido-electrico",
@@ -330,5 +330,15 @@
   "teletrabajo-o-oficina-coste-real",
   "suscripciones-cuanto-gasto-al-ano",
   "reparar-o-comprar-electrodomestico"
+ ],
+ "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
+  "calefaccion-gas-aerotermia-electrica",
+  "caldera-reparar-o-cambiar",
+  "placas-solares-merece-la-pena"
+ ],
+ "adoptar-o-comprar-perro-coste-anual": [
+  "seguro-mascota-merece-la-pena",
+  "seguro-hogar-con-o-sin-franquicia",
+  "suscripciones-cuanto-gasto-al-ano"
  ]
 }

@@ -1,8 +1,13 @@
 {
  "academia-idiomas-presencial-online-o-intensivo": [
+  "adoptar-o-comprar-perro-coste-anual",
   "comprar-o-alquilar-trastero",
-  "gimnasio-o-entrenar-en-casa",
-  "hotel-o-apartamento-viaje-en-grupo"
+  "gimnasio-o-entrenar-en-casa"
+ ],
+ "adoptar-o-comprar-perro-coste-anual": [
+  "seguro-mascota-merece-la-pena",
+  "seguro-hogar-con-o-sin-franquicia",
+  "suscripciones-cuanto-gasto-al-ano"
  ],
  "aire-acondicionado-inverter-o-ventilador-coste-verano": [
   "luz-fija-o-indexada",
@@ -47,12 +52,12 @@
  "caldera-reparar-o-cambiar": [
   "calefaccion-gas-aerotermia-electrica",
   "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena"
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "caldera-reparar-o-cambiar",
   "luz-fija-o-indexada",
-  "cambiar-ventanas-aislamiento-merece-la-pena"
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua"
  ],
  "cambiar-de-operadora-compensa-permanencia": [
   "fibra-y-movil-juntos-o-por-separado",
@@ -282,12 +287,12 @@
  "seguro-hogar-con-o-sin-franquicia": [
   "fondo-de-emergencia-cuantos-meses-necesito",
   "seguro-mascota-merece-la-pena",
-  "seguro-salud-privado-merece-la-pena"
+  "adoptar-o-comprar-perro-coste-anual"
  ],
  "seguro-mascota-merece-la-pena": [
   "seguro-hogar-con-o-sin-franquicia",
   "seguro-salud-privado-merece-la-pena",
-  "seguro-todo-riesgo-o-terceros"
+  "adoptar-o-comprar-perro-coste-anual"
  ],
  "seguro-salud-privado-merece-la-pena": [
   "seguro-mascota-merece-la-pena",
@@ -318,6 +323,11 @@
   "excedencia-o-reduccion-jornada",
   "impresora-tinta-o-laser-coste-por-pagina",
   "cocinar-en-casa-o-comer-fuera"
+ ],
+ "termo-electrico-o-calentador-gas-o-aerotermia-agua": [
+  "calefaccion-gas-aerotermia-electrica",
+  "caldera-reparar-o-cambiar",
+  "placas-solares-merece-la-pena"
  ],
  "tren-avion-o-coche": [
   "coche-propio-o-carsharing-o-vtc",

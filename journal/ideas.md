@@ -206,3 +206,6 @@ Sin Keyword Planner y con una sola ronda de búsqueda hoy, no se re-consultaron 
 
 ## Ciclo 17 (Investigador, 2026-10-02)
 12 propuestas no fiscales añadidas al final de backlog.md (sin búsqueda web; criterio: demanda evergreen en ES y ausencia en las 59 calcs). Prioridad SEO/GEO: aire acondicionado, fondo de emergencia, coche segunda mano, gasolinera low cost, impresora, cambio de operadora. Reparto hubs: energía 2, coche 3, ahorro 7, hipoteca 1 (garaje). Ventaja común: cálculo con los números del usuario (competidores solo dan medias).
+
+## Ciclo 30 (Investigador, 2026-10-02)
+10 propuestas no fiscales añadidas al final de backlog.md (sin búsqueda web; criterio: demanda evergreen en ES, sin cifras legales, no presentes en calcs ni backlog). Prioridad (5): potencia-contratada-luz-bajar-compensa, horas-valle-luz-lavadora-termo-cuanto-ahorro, hipoteca-bonificada-o-sin-vinculaciones, hipoteca-20-25-o-30-anos-cuota-vs-intereses, vivir-cerca-del-trabajo-o-mas-barato-lejos. Reparto hubs: energía 3 (+1 pendiente c17), hipoteca 3, ahorro 4. Ventaja común: cálculo con los números del usuario. Solapes parciales señalados en el backlog.
