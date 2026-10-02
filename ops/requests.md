@@ -127,3 +127,5 @@
 - [x] R-kilometraje.1 [Constructor -> Estratega] data/clusters.json: kilometraje-y-dietas-exentas-irpf con relacionadas coche-propio-o-carsharing-o-vtc, retencion-irpf-nomina-subir-o-no y comparar-ofertas-de-trabajo-neto-real (la página enlaza a la primera y a la tercera). · abierta c41
 
 - [x] R-aceptartrabajo.1 [Constructor -> Estratega] data/clusters.json: aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad con relacionadas cuanto-cobro-de-paro-prestacion-desempleo, subsidio-desempleo-cuanto-cobro-y-cuanto-dura y capitalizar-paro-o-cobrarlo (la página enlaza a las tres). · abierta c41
+
+- [x] R-incapacidad.1 [Constructor -> Estratega] data/clusters.json: incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar con relacionadas baja-medica-cuanto-cobro-incapacidad-temporal, jubilacion-activa-o-dejar-de-trabajar y pension-viudedad-cuanto-cobro (la página enlaza a las tres). · abierta c44

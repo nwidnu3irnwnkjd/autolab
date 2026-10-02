@@ -1,0 +1,133 @@
+{
+ "slug": "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar",
+ "title": "Incapacidad permanente: cuánto cobro y si puedo trabajar",
+ "description": "Calcula cuánto cobrarías de incapacidad permanente (total 55 %, absoluta 100 %, gran incapacidad), si puedes trabajar y si tributa en el IRPF.",
+ "h1": "Incapacidad permanente: cuánto cobro y si puedo seguir trabajando",
+ "lead": "Con una base media de 2.000 €, 52 años, 25 años cotizados y una enfermedad común, una incapacidad permanente total daría unos 942,86 € brutos al mes en 14 pagas (13.200 € al año), el 55 % de una base reguladora de 1.714,29 €, siempre que el INSS te la reconozca. La absoluta pagaría el 100 % (1.714,29 € al mes, exenta del IRPF), la gran incapacidad sumaría un complemento de 1.240,98 € y la parcial es un pago único de 48.000 €. Si trabajas, la total es compatible con un sueldo cuando tus funciones son distintas a las de tu profesión habitual, y la absoluta se suspende si el trabajo te da de alta en la Seguridad Social. La herramienta calcula la pensión por grado con las cifras de 2026, su comparación con el mínimo y el máximo, qué parte puedes cobrar si trabajas y si tributa; no calcula tu base reguladora con bases reales ni la retención del IRPF.",
+ "veredicto": "La incapacidad permanente total paga el 55 % de la base reguladora (75 % si tienes 55 años o más y el INSS reconoce que te será difícil encontrar otro empleo), la absoluta el 100 % y la gran incapacidad el 100 % más un complemento para pagar a quien te atiende; se cobra en 14 pagas y la pensión inicial tiene un tope de 3.359,60 € al mes. La parcial no es una pensión: son 24 mensualidades de la base en un pago único. La total es compatible con un sueldo si tus funciones son distintas a las de tu profesión habitual; con la absoluta o la gran incapacidad, un trabajo que te dé de alta en la Seguridad Social suspende la pensión, aunque el complemento de gran incapacidad se mantiene. La absoluta y la gran incapacidad están exentas del IRPF (art. 7.f de la Ley 35/2006); la total y la parcial tributan. Si ya tienes la edad ordinaria de jubilación y 15 años cotizados, por enfermedad común o accidente no laboral no hay incapacidad permanente, sino jubilación.",
+ "tema": "ahorro",
+ "inputs": [
+  {
+   "id": "grado",
+   "label": "Grado de incapacidad permanente que supones",
+   "type": "select",
+   "options": [
+    {
+     "v": "total",
+     "t": "Total (no puedes hacer tu profesión habitual)"
+    },
+    {
+     "v": "parcial",
+     "t": "Parcial (pierdes al menos un 33 % de rendimiento en tu profesión)"
+    },
+    {
+     "v": "absoluta",
+     "t": "Absoluta (no puedes hacer ningún trabajo)"
+    },
+    {
+     "v": "gran",
+     "t": "Gran incapacidad (absoluta y necesitas ayuda de otra persona)"
+    }
+   ],
+   "ayuda": "El grado lo decide el INSS (el Equipo de Valoración de Incapacidades). Aquí lo eliges tú para ver cuánto supondría cada uno."
+  },
+  {
+   "id": "origen",
+   "label": "Origen de la incapacidad",
+   "type": "select",
+   "options": [
+    {
+     "v": "comun",
+     "t": "Enfermedad común"
+    },
+    {
+     "v": "accidente",
+     "t": "Accidente no laboral"
+    },
+    {
+     "v": "profesional",
+     "t": "Accidente de trabajo o enfermedad profesional"
+    }
+   ],
+   "ayuda": "Cambia el cálculo de la base reguladora y la cotización previa que se exige."
+  },
+  {
+   "id": "base",
+   "label": "Base mensual (€): media de tus bases de cotización (ver ayuda)",
+   "default": 2000,
+   "min": 1,
+   "step": 50,
+   "default_from": "params.incapacidad_permanente_2026.supuestos.base",
+   "ayuda": "Enfermedad común: media de tus bases de los últimos 8 años (96 meses). Accidente no laboral: media de tus mejores 24 meses seguidos de los últimos 7 años. Accidente de trabajo o enfermedad profesional: la base reguladora de tu resolución o tu salario real mensual con las pagas prorrateadas. Si tienes lagunas de cotización, tu base real será menor."
+  },
+  {
+   "id": "edad",
+   "label": "Tu edad (años cumplidos)",
+   "default": 52,
+   "min": 18,
+   "step": 1,
+   "default_from": "params.incapacidad_permanente_2026.supuestos.edad"
+  },
+  {
+   "id": "anos",
+   "label": "Años cotizados en total (años; 0,5 = seis meses)",
+   "default": 25,
+   "min": 0,
+   "step": 0.5,
+   "default_from": "params.incapacidad_permanente_2026.supuestos.anos",
+   "ayuda": "Es la suma de tus años de cotización a la Seguridad Social; sirve para el período mínimo y para el porcentaje de la base reguladora."
+  },
+  {
+   "id": "trabajo",
+   "label": "¿Trabajas o piensas trabajar cobrando la pensión?",
+   "type": "select",
+   "options": [
+    {
+     "v": "no",
+     "t": "No trabajo"
+    },
+    {
+     "v": "distintas",
+     "t": "Sí, con funciones distintas a las de mi profesión habitual"
+    },
+    {
+     "v": "mismas",
+     "t": "Sí, con las mismas funciones de mi profesión habitual"
+    }
+   ],
+   "ayuda": "Se supone un trabajo que te da de alta en la Seguridad Social (nómina o autónomo)."
+  },
+  {
+   "id": "salario",
+   "label": "Sueldo bruto del trabajo (€ al mes; solo si trabajas)",
+   "default": 1200,
+   "min": 0,
+   "step": 50,
+   "default_from": "params.incapacidad_permanente_2026.supuestos.salario",
+   "ayuda": "Importe medio al mes. Si no trabajas, no se usa."
+  }
+ ],
+ "faqs": [
+  [
+   "¿Cuánto se cobra de incapacidad permanente total?",
+   "El 55 % de la base reguladora, en 14 pagas: con una base reguladora de 1.714,29 € son 942,86 € brutos al mes. Sube al 75 % desde los 55 años si el INSS reconoce dificultad para encontrar empleo. El máximo de la pensión inicial es 3.359,60 € al mes."
+  ],
+  [
+   "¿Puedo trabajar cobrando una incapacidad permanente?",
+   "Depende del grado. Con la total, sí, si las funciones del nuevo trabajo no coinciden con las de tu profesión (art. 198.1 de la LGSS). Con la absoluta o la gran incapacidad, un trabajo con alta en la Seguridad Social suspende la pensión (art. 198.2), no el complemento."
+  ],
+  [
+   "¿La incapacidad permanente tributa en el IRPF?",
+   "Depende del grado. La absoluta y la gran incapacidad están exentas del IRPF (art. 7.f de la Ley 35/2006). La total y la parcial tributan como rendimiento del trabajo (art. 17.2.a de la misma ley). Los importes de esta herramienta son brutos."
+  ],
+  [
+   "¿Cuánto cobro por una incapacidad permanente parcial?",
+   "Un pago único de 24 mensualidades de la base reguladora de la baja: con una base de 2.000 € son 48.000 € brutos (Decreto 1646/1972, art. 9). No es una pensión mensual y tributa en el IRPF."
+  ],
+  [
+   "¿Qué es el complemento de gran incapacidad y cuánto es?",
+   "Es un complemento para pagar a quien te atiende: el 45 % de la base mínima de cotización más el 30 % de tu última base, con un mínimo del 45 % de la pensión (art. 196.4 de la LGSS). Con una última base de 2.000 € son 1.240,98 €."
+  ]
+ ],
+ "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): arts. 193-198 (grados, beneficiarios, prestaciones, base reguladora y compatibilidades; DT 26.ª), 57 y 59 (límite y mínimos), DT 7.ª y 9.ª (edad ordinaria y porcentajes de 2026). Decreto 1646/1972, arts. 6, 7 y 9 (https://www.boe.es/buscar/act.php?id=BOE-A-1972-944) y Orden de 15 de abril de 1969, arts. 15 y 17 (https://www.boe.es/buscar/act.php?id=BOE-A-1969-575): porcentajes del 55 %, 75 % y 100 %. Real Decreto 241/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6977): mínimos de 2026 y límite de 3.359,60 € al mes. Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296): bases mínima y máxima. Ley 35/2006 del IRPF (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764): arts. 7.f y 17.2.a. Hipótesis no oficiales y editables: base de 2.000 €, 52 años, 25 años cotizados y enfermedad común. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}

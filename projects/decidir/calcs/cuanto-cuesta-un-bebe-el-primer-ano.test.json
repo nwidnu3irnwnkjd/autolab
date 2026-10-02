@@ -1,0 +1,149 @@
+{
+ "func": "calcular",
+ "cases": [
+  {
+   "in": {
+    "equip": 900,
+    "panalim": 130,
+    "ropa": 350,
+    "salud": 0,
+    "cuidado": 350,
+    "mesesC": 4,
+    "perdida": 2400,
+    "ayudas": 0
+   },
+   "expect": {
+    "bruto": 6610,
+    "total": 6610,
+    "mensualMedio": 550.83,
+    "ahorroPrevio": 1377.5,
+    "mayor": 5,
+    "pesoMayor": 36.31,
+    "flexibles": 1250,
+    "pesoFlex": 18.91,
+    "ahorro10": 125.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "equip": 900,
+    "panalim": 130,
+    "ropa": 350,
+    "salud": 0,
+    "cuidado": 0,
+    "mesesC": 0,
+    "perdida": 0,
+    "ayudas": 0
+   },
+   "expect": {
+    "bruto": 2810,
+    "total": 2810,
+    "mensualMedio": 234.17,
+    "ahorroPrevio": 1377.5,
+    "mayor": 1,
+    "pesoMayor": 55.52,
+    "flexibles": 1250,
+    "pesoFlex": 44.48,
+    "ahorro10": 125.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "equip": 900,
+    "panalim": 130,
+    "ropa": 350,
+    "salud": 0,
+    "cuidado": 350,
+    "mesesC": 4,
+    "perdida": 2400,
+    "ayudas": 1000
+   },
+   "expect": {
+    "bruto": 6610,
+    "total": 5610,
+    "mensualMedio": 467.5,
+    "ahorroPrevio": 1377.5,
+    "mayor": 5,
+    "pesoMayor": 36.31,
+    "flexibles": 1250,
+    "pesoFlex": 18.91,
+    "ahorro10": 125.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "equip": 900,
+    "panalim": 130,
+    "ropa": 350,
+    "salud": 0,
+    "cuidado": 350,
+    "mesesC": 4,
+    "perdida": 2400,
+    "ayudas": 99999
+   },
+   "expect": {
+    "bruto": 6610,
+    "total": 0,
+    "mensualMedio": 0.0,
+    "ahorroPrevio": 1377.5,
+    "mayor": 5,
+    "pesoMayor": 36.31,
+    "flexibles": 1250,
+    "pesoFlex": 18.91,
+    "ahorro10": 125.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "equip": 1500,
+    "panalim": 130,
+    "ropa": 350,
+    "salud": 45,
+    "cuidado": 420,
+    "mesesC": 9,
+    "perdida": 0,
+    "ayudas": 0
+   },
+   "expect": {
+    "bruto": 7730,
+    "total": 7730,
+    "mensualMedio": 644.17,
+    "ahorroPrevio": 2112.5,
+    "mayor": 4,
+    "pesoMayor": 48.9,
+    "flexibles": 2390,
+    "pesoFlex": 30.92,
+    "ahorro10": 239.0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "equip": 0,
+    "panalim": 0,
+    "ropa": 0,
+    "salud": 0,
+    "cuidado": 0,
+    "mesesC": 0,
+    "perdida": 0,
+    "ayudas": 0
+   },
+   "expect": {
+    "bruto": 0,
+    "total": 0,
+    "mensualMedio": 0.0,
+    "ahorroPrevio": 0.0,
+    "mayor": -1,
+    "pesoMayor": 0.0,
+    "flexibles": 0,
+    "pesoFlex": 0.0,
+    "ahorro10": 0.0
+   },
+   "tol": 1
+  }
+ ]
+}

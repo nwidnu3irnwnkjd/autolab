@@ -390,7 +390,7 @@ HUBS = {
             ("Gastos que se repiten cada mes (revísalos una vez al año)", ["suscripciones-cuanto-gasto-al-ano", "fibra-y-movil-juntos-o-por-separado", "cambiar-de-operadora-compensa-permanencia", "marca-blanca-o-marca-ahorro-anual", "cocinar-en-casa-o-comer-fuera", "comedor-escolar-o-tupper", "gimnasio-o-entrenar-en-casa", "seguro-hogar-con-o-sin-franquicia", "seguro-salud-privado-merece-la-pena", "seguro-mascota-merece-la-pena", "adoptar-o-comprar-perro-coste-anual"]),
             ("Antes de una compra o un gasto grande", ["navidad-cuanto-gastar-sin-endeudarte", "contado-o-financiar", "portatil-o-movil-comprar-renting-o-financiar", "movil-reacondicionado-o-nuevo", "reparar-o-comprar-electrodomestico", "comprar-o-alquilar-herramienta", "impresora-tinta-o-laser-coste-por-pagina", "pc-sobremesa-o-portatil-coste-a-5-anos", "comprar-o-alquilar-trastero", "garaje-comprar-alquilar-o-aparcar-en-la-calle", "mudanza-empresa-o-furgoneta", "hotel-o-apartamento-viaje-en-grupo"]),
             ("Tu colchón y dónde guardarlo", ["fondo-de-emergencia-cuantos-meses-necesito", "deposito-letras-o-fondo-monetario"]),
-            ("Familia, trabajo y estudios", ["permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "empleada-hogar-cuanto-cuesta-contratar-cotizacion", "pension-viudedad-cuanto-cobro", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
+            ("Familia, trabajo y estudios", ["cuanto-cuesta-un-bebe-el-primer-ano", "permiso-nacimiento-cuanto-cobro-y-como-repartir", "guarderia-cuidadora-o-reducir-jornada", "excedencia-o-reduccion-jornada", "baja-medica-cuanto-cobro-incapacidad-temporal", "teletrabajo-o-oficina-coste-real", "vivir-cerca-del-trabajo-o-mas-barato-lejos", "residencia-o-cuidador-a-domicilio", "empleada-hogar-cuanto-cuesta-contratar-cotizacion", "pension-viudedad-cuanto-cobro", "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar", "jubilacion-activa-o-dejar-de-trabajar", "universidad-publica-o-privada-o-master", "academia-idiomas-presencial-online-o-intensivo", "curso-online-bootcamp-o-fp-coste-y-retorno"]),
         ],
         "steps": {
             "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
@@ -501,6 +501,14 @@ HUBS = {
             "permiso-nacimiento-cuanto-cobro-y-como-repartir": {
                 "name": "Permiso por nacimiento",
                 "text": "Las 19 semanas se cobran al 100 % de tu base reguladora y la prestación está exenta de IRPF. La calculadora reparte las semanas entre los dos progenitores y da lo que cobras con tus bases.",
+            },
+            "cuanto-cuesta-un-bebe-el-primer-ano": {
+                "name": "Cuánto cuesta un bebé el primer año",
+                "text": "El gasto del primer año se reparte entre partidas únicas (cuna, carrito) y recurrentes (pañales, leche, guardería). La calculadora suma tu presupuesto con partidas editables y dice cuánto ahorrar antes y qué reducir.",
+            },
+            "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar": {
+                "name": "Incapacidad permanente: cuánto cobras",
+                "text": "La pensión es un porcentaje de la base reguladora según el grado (55, 75 o 100 %) y la compatibilidad con trabajar depende de ese grado. La calculadora da lo que cobrarías y si sigue saliendo a cuenta trabajar.",
             },
             "baja-medica-cuanto-cobro-incapacidad-temporal": {
                 "name": "Baja médica: cuánto cobras",

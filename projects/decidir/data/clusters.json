@@ -52,7 +52,7 @@
  "baja-medica-cuanto-cobro-incapacidad-temporal": [
   "permiso-nacimiento-cuanto-cobro-y-como-repartir",
   "cuanto-cobro-de-paro-prestacion-desempleo",
-  "fondo-de-emergencia-cuantos-meses-necesito"
+  "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar"
  ],
  "bici-electrica-o-transporte-publico": [
   "vivir-cerca-del-trabajo-o-mas-barato-lejos",
@@ -154,6 +154,11 @@
   "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
   "baja-medica-cuanto-cobro-incapacidad-temporal"
  ],
+ "cuanto-cuesta-un-bebe-el-primer-ano": [
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir",
+  "guarderia-cuidadora-o-reducir-jornada",
+  "deduccion-maternidad-familia-numerosa"
+ ],
  "cuota-autonomos-ingresos-reales-regularizacion": [
   "autonomo-o-asalariado",
   "autonomo-estimacion-directa-o-modulos",
@@ -172,7 +177,7 @@
  "deduccion-maternidad-familia-numerosa": [
   "declaracion-conjunta-o-individual",
   "guarderia-cuidadora-o-reducir-jornada",
-  "retribucion-flexible-me-conviene"
+  "cuanto-cuesta-un-bebe-el-primer-ano"
  ],
  "deposito-letras-o-fondo-monetario": [
   "fondo-de-emergencia-cuantos-meses-necesito",
@@ -240,7 +245,7 @@
   "teletrabajo-o-oficina-coste-real"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
-  "excedencia-o-reduccion-jornada",
+  "cuanto-cuesta-un-bebe-el-primer-ano",
   "deduccion-maternidad-familia-numerosa",
   "empleada-hogar-cuanto-cuesta-contratar-cotizacion"
  ],
@@ -278,6 +283,11 @@
   "teletrabajo-o-oficina-coste-real",
   "pc-sobremesa-o-portatil-coste-a-5-anos",
   "reparar-o-comprar-electrodomestico"
+ ],
+ "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar": [
+  "baja-medica-cuanto-cobro-incapacidad-temporal",
+  "pension-viudedad-cuanto-cobro",
+  "jubilacion-activa-o-dejar-de-trabajar"
  ],
  "indemnizacion-despido-objetivo-o-improcedente-neto": [
   "cuanto-cobro-de-paro-prestacion-desempleo",
@@ -341,11 +351,11 @@
  ],
  "pension-viudedad-cuanto-cobro": [
   "jubilacion-anticipada-o-demorada",
-  "rescate-plan-pensiones-capital-o-renta",
+  "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar",
   "jubilacion-activa-o-dejar-de-trabajar"
  ],
  "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
-  "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+  "cuanto-cuesta-un-bebe-el-primer-ano",
   "guarderia-cuidadora-o-reducir-jornada",
   "excedencia-o-reduccion-jornada"
  ],

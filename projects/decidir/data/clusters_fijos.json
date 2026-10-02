@@ -162,7 +162,7 @@
   "deduccion-maternidad-familia-numerosa": [
     "declaracion-conjunta-o-individual",
     "guarderia-cuidadora-o-reducir-jornada",
-    "retribucion-flexible-me-conviene"
+    "cuanto-cuesta-un-bebe-el-primer-ano"
   ],
   "deposito-letras-o-fondo-monetario": [
     "fondo-de-emergencia-cuantos-meses-necesito",
@@ -221,7 +221,7 @@
     "teletrabajo-o-oficina-coste-real"
   ],
   "guarderia-cuidadora-o-reducir-jornada": [
-    "excedencia-o-reduccion-jornada",
+    "cuanto-cuesta-un-bebe-el-primer-ano",
     "deduccion-maternidad-familia-numerosa",
     "empleada-hogar-cuanto-cuesta-contratar-cotizacion"
   ],
@@ -322,11 +322,11 @@
   ],
   "pension-viudedad-cuanto-cobro": [
     "jubilacion-anticipada-o-demorada",
-    "rescate-plan-pensiones-capital-o-renta",
+    "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar",
     "jubilacion-activa-o-dejar-de-trabajar"
   ],
   "permiso-nacimiento-cuanto-cobro-y-como-repartir": [
-    "empleada-hogar-cuanto-cuesta-contratar-cotizacion",
+    "cuanto-cuesta-un-bebe-el-primer-ano",
     "guarderia-cuidadora-o-reducir-jornada",
     "excedencia-o-reduccion-jornada"
   ],
@@ -474,7 +474,7 @@
   "baja-medica-cuanto-cobro-incapacidad-temporal": [
     "permiso-nacimiento-cuanto-cobro-y-como-repartir",
     "cuanto-cobro-de-paro-prestacion-desempleo",
-    "fondo-de-emergencia-cuantos-meses-necesito"
+    "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar"
   ],
   "freidora-de-aire-u-horno-cuanto-gasta": [
     "cocinar-en-casa-o-comer-fuera",
@@ -485,5 +485,15 @@
     "residencia-o-cuidador-a-domicilio",
     "guarderia-cuidadora-o-reducir-jornada",
     "permiso-nacimiento-cuanto-cobro-y-como-repartir"
+  ],
+  "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar": [
+    "baja-medica-cuanto-cobro-incapacidad-temporal",
+    "pension-viudedad-cuanto-cobro",
+    "jubilacion-activa-o-dejar-de-trabajar"
+  ],
+  "cuanto-cuesta-un-bebe-el-primer-ano": [
+    "permiso-nacimiento-cuanto-cobro-y-como-repartir",
+    "guarderia-cuidadora-o-reducir-jornada",
+    "deduccion-maternidad-familia-numerosa"
   ]
 }

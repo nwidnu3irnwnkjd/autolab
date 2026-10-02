@@ -1,0 +1,99 @@
+{
+  "slug": "cuanto-cuesta-un-bebe-el-primer-ano",
+  "title": "Cuánto cuesta un bebé el primer año: calcula tu presupuesto",
+  "description": "Calcula cuánto cuesta un bebé el primer año con tus partidas: equipamiento, pañales, guardería, ingreso perdido. Total, mensual y ahorro previo.",
+  "h1": "Cuánto cuesta un bebé el primer año: tu presupuesto, partida a partida",
+  "lead": "El primer año de un bebé cuesta lo que sumen tus partidas, y con los ejemplos de la página (equipamiento de 900 €, 130 € al mes de pañales y alimentación, 350 € de ropa, 4 meses de guardería a 350 € y 2.400 € de ingreso que dejas de cobrar) son 6.610 € en total, unos 550,83 € al mes, siempre que esos ejemplos se parezcan a tu caso. Cambia cada partida por la tuya para ver el total, el ahorro previo y qué puedes reducir.",
+  "veredicto": "El coste del primer año es la suma de tus partidas menos las ayudas que escribas; la partida mayor marca dónde está el peso y las partidas flexibles (equipamiento, ropa, salud privada) son donde puedes reducir, mientras que guardería, cuidadora o ingreso perdido dependen de tu decisión de cuidado.",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "equip",
+      "label": "Equipamiento inicial (€ una vez: cuna, carrito, silla de coche; 900 es un ejemplo, no un precio)",
+      "default": 900,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.bebe.supuestos.equip"
+    },
+    {
+      "id": "panalim",
+      "label": "Pañales y alimentación (€ al mes; fórmula o lactancia, tú lo pones; 130 es un ejemplo)",
+      "default": 130,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.bebe.supuestos.panalim"
+    },
+    {
+      "id": "ropa",
+      "label": "Ropa del primer año (€ en total; 350 es un ejemplo)",
+      "default": 350,
+      "min": 0,
+      "step": 25,
+      "default_from": "params.bebe.supuestos.ropa"
+    },
+    {
+      "id": "salud",
+      "label": "Salud privada opcional (€ al mes; 0 si no la contratas; es una entrada tuya)",
+      "default": 0,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.bebe.supuestos.salud"
+    },
+    {
+      "id": "cuidado",
+      "label": "Guardería o cuidadora (€ al mes mientras la uses; 350 es un ejemplo)",
+      "default": 350,
+      "min": 0,
+      "step": 10,
+      "default_from": "params.bebe.supuestos.cuidado"
+    },
+    {
+      "id": "mesesC",
+      "label": "Meses de guardería o cuidadora en el primer año (de 0 a 12; 4 es un ejemplo)",
+      "default": 4,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.bebe.supuestos.mesesC",
+      "max": 12
+    },
+    {
+      "id": "perdida",
+      "label": "Ingreso que dejas de cobrar por permiso o reducción (€ en total, tras la prestación; 2.400 es un ejemplo)",
+      "default": 2400,
+      "min": 0,
+      "step": 100,
+      "default_from": "params.bebe.supuestos.perdida"
+    },
+    {
+      "id": "ayudas",
+      "label": "Ayudas y deducciones que te correspondan (€ en total; consulta tu situación, 0 si no sabes)",
+      "default": 0,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.bebe.supuestos.ayudas"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto cuesta un bebé el primer año?",
+      "Depende de tus partidas: equipamiento, pañales y alimentación, ropa, cuidado e ingreso que dejas de cobrar. Con los ejemplos de la página son 6.610 € (550,83 € al mes), pero son hipótesis, no precios de mercado. Escribe tus importes para obtener tu cifra."
+    ],
+    [
+      "¿Qué partidas puedo reducir?",
+      "Las más flexibles son el equipamiento inicial, la ropa y la salud privada opcional: puedes comprar menos, de segunda mano o pedir prestado. La guardería, la cuidadora y el ingreso perdido dependen de cómo decidas organizar el cuidado."
+    ],
+    [
+      "¿Cuánto debo ahorrar antes del nacimiento?",
+      "La página suma el equipamiento y tres meses de pañales, alimentación, salud privada y ropa: 1.377,50 € con los ejemplos. Los tres meses son un supuesto de esta página, no una norma; sube o baja el colchón según tu margen."
+    ],
+    [
+      "¿Cómo meto el ingreso que dejo de cobrar?",
+      "Escribe en total el dinero que no ingresarás tras la prestación durante tu permiso o reducción. Para calcularlo usa la calculadora del permiso de nacimiento y copia aquí la diferencia entre tu sueldo y lo que cobras."
+    ],
+    [
+      "¿Incluye ayudas y deducciones?",
+      "Solo si las escribes tú en la última casilla. La página no trae cifras legales porque dependen de tu situación y comunidad; consulta las tuyas en la Agencia Tributaria y la Seguridad Social."
+    ]
+  ],
+  "sources": "Modelo propio sin cifras legales ni precios de mercado: todos los importes son entradas tuyas o ejemplos editables. Coste del primer año = equipamiento + 12 × (pañales y alimentación) + ropa + 12 × salud privada + guardería o cuidadora × meses + ingreso que dejas de cobrar − ayudas (que no superan el total). Ahorro previo = equipamiento + 3 meses de pañales, alimentación, salud privada y ropa (los 3 meses son un supuesto de la página). Para ayudas, deducciones y prestaciones consulta la Agencia Tributaria (https://sede.agenciatributaria.gob.es) y la Seguridad Social (https://www.seg-social.es). Consultado el 2/10/2026. Información orientativa, no asesoramiento ni consejo sanitario."
+}
