@@ -16,17 +16,18 @@
  ],
  "autonomo-o-asalariado": [
   "plan-pensiones-o-fondo-indexado",
-  "declaracion-conjunta-o-individual"
+  "declaracion-conjunta-o-individual",
+  "rescate-plan-pensiones-capital-o-renta"
  ],
  "bici-electrica-o-transporte-publico": [
+  "tren-avion-o-coche",
   "coche-propio-o-carsharing-o-vtc",
-  "diesel-gasolina-hibrido-electrico",
-  "luz-fija-o-indexada"
+  "diesel-gasolina-hibrido-electrico"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
-  "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena"
+  "placas-solares-merece-la-pena",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "cambiar-electrodomestico-antiguo-merece-la-pena": [
   "reparar-o-comprar-electrodomestico",
@@ -45,8 +46,8 @@
  ],
  "coche-propio-o-carsharing-o-vtc": [
   "comprar-coche-o-renting",
-  "diesel-gasolina-hibrido-electrico",
-  "bici-electrica-o-transporte-publico"
+  "bici-electrica-o-transporte-publico",
+  "tren-avion-o-coche"
  ],
  "comprar-coche-o-renting": [
   "seguro-todo-riesgo-o-terceros",
@@ -54,9 +55,9 @@
   "coche-nuevo-o-seminuevo"
  ],
  "contado-o-financiar": [
-  "comprar-coche-o-renting",
+  "universidad-publica-o-privada-o-master",
   "amortizar-o-invertir",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "comprar-coche-o-renting"
  ],
  "cuanto-ahorrar-para-comprar-casa": [
   "alquilar-o-comprar",
@@ -64,8 +65,8 @@
   "amortizar-o-invertir"
  ],
  "declaracion-conjunta-o-individual": [
-  "autonomo-o-asalariado",
-  "contado-o-financiar"
+  "rescate-plan-pensiones-capital-o-renta",
+  "autonomo-o-asalariado"
  ],
  "diesel-gasolina-hibrido-electrico": [
   "comprar-coche-o-renting",
@@ -74,23 +75,23 @@
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
-  "plan-pensiones-o-fondo-indexado",
-  "autonomo-o-asalariado"
+  "universidad-publica-o-privada-o-master",
+  "plan-pensiones-o-fondo-indexado"
  ],
  "hipoteca-fija-o-variable": [
-  "amortizar-o-invertir",
+  "subrogar-hipoteca-merece-la-pena",
   "amortizar-plazo-o-cuota",
-  "subrogar-hipoteca-merece-la-pena"
+  "alquilar-o-comprar"
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
-  "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena"
+  "placas-solares-merece-la-pena",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "placas-solares-merece-la-pena": [
-  "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "cambiar-ventanas-aislamiento-merece-la-pena",
-  "calefaccion-gas-aerotermia-electrica"
+  "luz-fija-o-indexada",
+  "calefaccion-gas-aerotermia-electrica",
+  "contado-o-financiar"
  ],
  "plan-pensiones-o-fondo-indexado": [
   "autonomo-o-asalariado",
@@ -102,24 +103,28 @@
   "luz-fija-o-indexada",
   "contado-o-financiar"
  ],
+ "rescate-plan-pensiones-capital-o-renta": [
+  "declaracion-conjunta-o-individual",
+  "autonomo-o-asalariado"
+ ],
  "seguro-todo-riesgo-o-terceros": [
   "comprar-coche-o-renting",
   "coche-nuevo-o-seminuevo",
   "diesel-gasolina-hibrido-electrico"
  ],
  "subrogar-hipoteca-merece-la-pena": [
-  "amortizar-o-invertir",
+  "hipoteca-fija-o-variable",
   "amortizar-plazo-o-cuota",
-  "hipoteca-fija-o-variable"
+  "amortizar-o-invertir"
  ],
  "tren-avion-o-coche": [
+  "coche-propio-o-carsharing-o-vtc",
   "bici-electrica-o-transporte-publico",
-  "coche-nuevo-o-seminuevo",
-  "coche-propio-o-carsharing-o-vtc"
+  "diesel-gasolina-hibrido-electrico"
  ],
  "universidad-publica-o-privada-o-master": [
   "contado-o-financiar",
-  "guarderia-cuidadora-o-reducir-jornada",
-  "plan-pensiones-o-fondo-indexado"
+  "cuanto-ahorrar-para-comprar-casa",
+  "guarderia-cuidadora-o-reducir-jornada"
  ]
 }

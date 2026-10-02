@@ -204,7 +204,7 @@ def html_to_md(h, base):
     h = re.sub(r"[ \t]+", " ", h); h = re.sub(r"\n\s*\n\s*\n+", "\n\n", h)
     return "\n".join(l.strip() for l in h.splitlines()).strip()
 
-def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=()):
+def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), hubs=()):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
             "con tus propios números (hipoteca, coche, impuestos, energía, ahorro) en España. Cada página da un veredicto, la cifra que lo justifica, "
@@ -217,6 +217,9 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
     for t, cs in by_t.items():
         lines.append(f"\n## Calculadoras: {icons[t][0]}\n")
         lines += [f"- [{c['h1']}]({base}/decidir/{c['slug']}/): {c['description']}" for c in cs]
+    if hubs:
+        lines.append("\n## Temas (mapas de decisión)\n")
+        lines += [f"- [{h['h1']}]({base}{h['path']}): {h['description']}" for h in hubs]
     if guides:
         lines.append("\n## Guías\n")
         lines += [f"- [{g['h1']}]({base}/guias/{g['slug']}/): {g['description']}" for g in guides]
@@ -259,8 +262,10 @@ def feed_link():
 def _atom_dt(iso):
     return iso if "T" in iso else iso + "T00:00:00Z"
 
-def feed_entries(base, guides, notes, baro=None, baro_mod=None):
+def feed_entries(base, guides, notes, baro=None, baro_mod=None, hubs=()):
     E = []
+    for h in hubs:
+        E.append(dict(id=f"tag:entremuchos.com,2026:temas{h['path'].rstrip('/')}", title=h["h1"], url=f"{base}{h['path']}", published=h["published"], updated=h["modified"], summary=h["description"], cat="Temas"))
     for n in notes:
         E.append(dict(id=f"tag:entremuchos.com,2026:actualidad/{n['slug']}", title=n["h1"], url=f"{base}/actualidad/{n['slug']}/",
                       published=n["published"], updated=n["modified"], summary=n["description"], cat="Actualidad"))
@@ -277,9 +282,9 @@ def feed_entries(base, guides, notes, baro=None, baro_mod=None):
                           cat="Barómetro"))
     return sorted(E, key=lambda e: (e["updated"], e["published"]), reverse=True)[:30]
 
-def write_feed(dist, site, guides, notes, baro=None, baro_mod=None):
+def write_feed(dist, site, guides, notes, baro=None, baro_mod=None, hubs=()):
     base = site["base_url"].rstrip("/"); x = lambda t: html.escape(str(t), quote=True)
-    E = feed_entries(base, guides, notes, baro, baro_mod)
+    E = feed_entries(base, guides, notes, baro, baro_mod, hubs)
     if not E: return None
     ent = "".join(f"""<entry><id>{x(e["id"])}</id><title>{x(e["title"])}</title><link rel="alternate" type="text/html" href="{x(e["url"])}"/>"""
                   f"""<published>{_atom_dt(e["published"])}</published><updated>{_atom_dt(e["updated"])}</updated><category term="{x(e["cat"])}"/>"""

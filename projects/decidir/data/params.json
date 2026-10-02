@@ -918,6 +918,24 @@
    "anos_antiguedad": 10
   },
   "rescate_en_renta_anos": 10,
+  "rescate": {
+   "fuente": "Ley 35/2006 del IRPF: art. 17.2.a.3.ª (prestación del plan = rendimiento del trabajo, capital o renta), art. 18.1 y 18.3 (sin reducción del 30 % en renta ni para planes de pensiones en capital), arts. 56, 57, 58 y 63.1 (mínimo personal y familiar; escala estatal; cuota = escala menos escala del mínimo), disposición transitoria 12.ª, apdos. 2 y 4 (régimen anterior a 2007 solo en el ejercicio de la contingencia y los dos siguientes); texto consolidado a 30/09/2026",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+   "consulta": "consultado el 2/10/2026",
+   "confianza": "A",
+   "reduccion_40_nota": "El 40 % de las aportaciones hasta 31/12/2006 cobradas en capital procede del régimen anterior al que remite la DT 12.ª (según el Manual de Renta 2025 de la AEAT, confianza C); NO se modela. Plazo de la DT 12.ª.4: ejercicio de la contingencia y los dos siguientes (A).",
+   "reduccion_40_url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-1-determinacion-rendimiento-integro-trabajo/reducciones-aplicables-sobre-determinados-rendimientos-integros/c-regimen-transitorio-reducciones-aplicable-prestaciones/prestaciones-percibidas-forma-capital-derivadas.html",
+   "anos_max_renta": 40,
+   "supuestos": {
+    "nota": "Hipótesis del modelo (no son datos oficiales ni previsiones): se editan en la calculadora",
+    "saldo": 60000,
+    "otras_rentas": 15000,
+    "hijos": 0,
+    "anos_renta": 10,
+    "rentabilidad_pct": 2,
+    "pct_capital": 50
+   }
+  },
   "supuestos": {
    "nota": "Hipótesis del modelo (no son datos oficiales ni previsiones): se editan en la calculadora",
    "aportacion": 1500,

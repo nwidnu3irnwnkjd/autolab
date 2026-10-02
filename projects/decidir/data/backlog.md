@@ -14,7 +14,7 @@
 - [x] cuanto-ahorrar-para-comprar-casa — Cuánto dinero necesito para comprar casa (entrada + impuestos por comunidad)
 - [x] guarderia-cuidadora-o-reducir-jornada — Guardería, cuidadora o reducir jornada: qué sale más barato
 - [x] seguro-todo-riesgo-o-terceros — Seguro de coche: todo riesgo o terceros según el valor del coche
-- [ ] rescate-plan-pensiones-capital-o-renta — Rescatar el plan de pensiones: capital, renta o mixto
+- [x] rescate-plan-pensiones-capital-o-renta — Rescatar el plan de pensiones: capital, renta o mixto
 - [x] autonomo-o-asalariado — Autónomo o asalariado: cuánto facturar para cobrar lo mismo
 - [x] placas-solares-merece-la-pena — Placas solares: ¿en cuántos años se amortizan?
 - nota Investigador 2026-10-02 (fuentes fiscales en journal/fiscal-fuentes.md): declaracion-conjunta-o-individual LISTA para construir con escalas estatal + 15 CCAA 2026 (BOE); falta verificar mínimos autonómicos de 7 CCAA y forales (excluir País Vasco/Navarra).
@@ -32,3 +32,14 @@
 - [x] cambiar-ventanas-aislamiento-merece-la-pena — Cambiar ventanas o aislar: ahorro en calefacción y años de amortización (ayudas = entrada del usuario) [no fiscal; c9]
 - [x] universidad-publica-o-privada-o-master — Universidad pública o privada (grado o máster): coste total, beca y retorno (precio/crédito = entrada del usuario) [no fiscal; c9]
 - nota Investigador 2026-10-02 (c9): detalle de keywords, evidencia y datos de las 8 anteriores en journal/ideas.md sección «Ciclo 9».
+- [ ] donativos-irpf-cuanto-desgrava-y-cuanto-donar — Donaciones y IRPF: cuánto desgravan y cuánto cuesta realmente donar [fiscal; Investigador c10; publicar antes del 15-nov]
+- [ ] jubilacion-anticipada-o-demorada — Jubilación anticipada o demorada: pensión acumulada y edad de equilibrio [fiscal/regulada, YMYL alto; c10]
+- [ ] deposito-letras-o-fondo-monetario — Depósito, Letras del Tesoro o fondo monetario: rentabilidad neta tras impuestos [fiscal; c10]
+- [ ] portatil-o-movil-comprar-renting-o-financiar — Portátil o móvil: comprar, renting o financiar (coste total a N años) [no fiscal; c10; Black Friday]
+- [ ] fibra-y-movil-juntos-o-por-separado — Fibra y móvil: pack convergente o por separado (coste a 24 meses, precios del usuario) [no fiscal; c10]
+- [ ] seguro-vida-hipoteca-banco-o-externo — Seguro de vida de la hipoteca: banco o póliza externa (ahorro a N años) [no fiscal; verificar competencia; c10]
+- [ ] teletrabajo-o-oficina-coste-real — Teletrabajo u oficina: cuánto ahorras de verdad al año [no fiscal; c10]
+- [ ] seguro-salud-privado-merece-la-pena — Seguro de salud privado: ¿merece la pena? prima acumulada vs pago por uso [no fiscal, YMYL medio; c10]
+- [ ] seguro-mascota-merece-la-pena — Seguro de mascota: coste anual del perro/gato y si compensa asegurarlo [no fiscal; c10]
+- [ ] comprar-o-alquilar-herramienta — Comprar o alquilar herramienta o maquinaria: nº de usos de equilibrio [no fiscal; evidencia débil, validar; c10]
+- nota Investigador 2026-10-02 (c10): detalle de evidencia en journal/ideas.md «Ciclo 10». Reserva fiscal: deduccion-alquiler-vivienda-por-comunidad (solo con tabla BOE verificada).

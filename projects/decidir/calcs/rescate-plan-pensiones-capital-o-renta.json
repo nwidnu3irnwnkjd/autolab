@@ -1,0 +1,150 @@
+{
+  "slug": "rescate-plan-pensiones-capital-o-renta",
+  "title": "Rescatar el plan de pensiones: ¿capital, renta o mixto?",
+  "description": "Calcula el IRPF de rescatar tu plan de pensiones de una vez, en renta o mixto, con tu comunidad y tus otras rentas, y qué plazo y mezcla salen más baratos.",
+  "h1": "Rescatar el plan de pensiones: ¿capital, renta o mixto?",
+  "lead": "Cobrar el plan de pensiones en renta suele pagar menos IRPF que rescatarlo de una vez cuando el saldo es grande frente a tus otras rentas, pero no siempre: cada año de renta vuelve a perder la reducción por rendimientos del trabajo (art. 20), que el capital pierde una sola vez, y cuando tus otras rentas más el pago anual quedan entre 14.852 y 19.747,50 €, banda donde se pierde la reducción, el capital puede salir más barato (por debajo de 14.852 € la renta gana más; en el ejemplo por defecto, 21.669 € de IRPF frente a 25.393 € en renta). Esta herramienta calcula el IRPF de capital, renta y mixto con tu comunidad, tus otras rentas del trabajo y tus hijos, el plazo de renta más barato y el mixto óptimo. No incluye la reducción del 40 % de las aportaciones hasta 2006, que puede inclinar la balanza hacia el capital o hacia un mixto.",
+  "veredicto": "El resultado depende de la cuantía de la prestación y de tus otras rentas: con saldos grandes frente a tus otras rentas, la renta suele pagar menos IRPF que el capital, pero si tus otras rentas más el pago anual quedan entre 14.852 y 19.747,50 € cada año de renta pierde la reducción del art. 20 y el capital puede salir más barato (por debajo de 14.852 € la renta gana más); el plazo de renta más barato puede no ser el más largo y el mixto puede ganar a la renta pura, por esa reducción o por el 40 % de las aportaciones hasta 2006 cobradas en capital; el 40 % no está incluido en este cálculo.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "saldo",
+      "label": "Saldo del plan que vas a cobrar (€)",
+      "default": 60000,
+      "min": 1,
+      "step": 1000,
+      "default_from": "params.pensiones_2026.rescate.supuestos.saldo"
+    },
+    {
+      "id": "ccaa",
+      "label": "Comunidad autónoma donde resides (régimen común)",
+      "type": "select",
+      "options": [
+        {
+          "v": "madrid",
+          "t": "Comunidad de Madrid"
+        },
+        {
+          "v": "andalucia",
+          "t": "Andalucía"
+        },
+        {
+          "v": "aragon",
+          "t": "Aragón"
+        },
+        {
+          "v": "asturias",
+          "t": "Asturias"
+        },
+        {
+          "v": "baleares",
+          "t": "Illes Balears"
+        },
+        {
+          "v": "canarias",
+          "t": "Canarias"
+        },
+        {
+          "v": "cantabria",
+          "t": "Cantabria"
+        },
+        {
+          "v": "clm",
+          "t": "Castilla-La Mancha"
+        },
+        {
+          "v": "cyl",
+          "t": "Castilla y León"
+        },
+        {
+          "v": "cataluna",
+          "t": "Cataluña"
+        },
+        {
+          "v": "extremadura",
+          "t": "Extremadura"
+        },
+        {
+          "v": "galicia",
+          "t": "Galicia"
+        },
+        {
+          "v": "murcia",
+          "t": "Región de Murcia"
+        },
+        {
+          "v": "rioja",
+          "t": "La Rioja"
+        },
+        {
+          "v": "valencia",
+          "t": "Comunitat Valenciana"
+        }
+      ]
+    },
+    {
+      "id": "otras",
+      "label": "Tu pensión o sueldo bruto anual, sin el plan (rendimiento íntegro del trabajo, menos cotizaciones; €)",
+      "default": 15000,
+      "min": 0,
+      "step": 1000,
+      "default_from": "params.pensiones_2026.rescate.supuestos.otras_rentas",
+      "ayuda": "Cuenta el importe íntegro, sin restar los 2.000 € de gastos: la calculadora los descuenta y aplica la reducción por rendimientos del trabajo (arts. 19 y 20) a cada año. No incluye rentas del ahorro ni del capital."
+    },
+    {
+      "id": "hijos",
+      "label": "Descendientes a tu cargo que cuentan para el mínimo familiar (0 a 6)",
+      "default": 0,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.pensiones_2026.rescate.supuestos.hijos"
+    },
+    {
+      "id": "anos",
+      "label": "Años en que cobrarías la renta (1 a 40)",
+      "default": 10,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.pensiones_2026.rescate.supuestos.anos_renta"
+    },
+    {
+      "id": "rentab",
+      "label": "Rentabilidad anual neta de comisiones del saldo mientras cobras (%; hipótesis, no previsión)",
+      "default": 2,
+      "min": -5,
+      "step": 0.5,
+      "default_from": "params.pensiones_2026.rescate.supuestos.rentabilidad_pct"
+    },
+    {
+      "id": "pctCapital",
+      "label": "En el mixto, parte cobrada de golpe como capital (0 a 100 %)",
+      "default": 50,
+      "min": 0,
+      "step": 5,
+      "default_from": "params.pensiones_2026.rescate.supuestos.pct_capital"
+    }
+  ],
+  "faqs": [
+    [
+      "¿Es mejor cobrar el plan de pensiones en capital o en renta?",
+      "Depende de la cuantía y de tus otras rentas. Con saldos grandes frente a tus otras rentas, repartir el cobro suele pagar menos IRPF, en valor de hoy, que rescatarlo de una vez, porque cada pago cae en tramos más bajos. Pero a cada año de renta se le aplican otra vez los gastos y la reducción por rendimientos del trabajo (art. 20), que se pierde del todo a partir de 19.747,50 € de rendimiento y que el capital pierde una sola vez: si tus otras rentas más el pago quedan entre 14.852 y 19.747,50 €, la renta puede pagar más que el capital (por debajo de 14.852 € la renta gana más). En el ejemplo por defecto (Madrid, saldo de 60.000 €, otras rentas de 15.000 €, 10 años) el capital paga 21.669 € y la renta 25.393 €; en una simulación con pensiones de 12.000 a 19.700 € y saldos de 15.000 a 120.000 €, la renta pierde frente al capital en el 32 % de los casos. No siempre se ahorra más con más años: el plazo de renta más barato puede ser corto o incluso el capital. El capital puede salir mejor además si tienes aportaciones hasta 2006 con derecho al 40 % dentro de plazo o si necesitas el dinero de golpe."
+    ],
+    [
+      "¿Cómo tributa el rescate de un plan de pensiones?",
+      "Como rendimiento del trabajo, en la base general y con la escala general del IRPF (estatal más autonómica), tanto si lo cobras en capital como en renta (art. 17.2.a.3.ª de la Ley del IRPF). Las reducciones del 30 % por rendimientos irregulares no se aplican a la renta ni a las prestaciones de planes de pensiones en capital (art. 18). Sí se aplican los gastos de 2.000 € (art. 19.2.f) y la reducción por rendimientos del trabajo (art. 20), año a año y sobre la suma de tus otras rentas del trabajo y la prestación. Por eso un capital grande se suma entero a tus otras rentas del año y sube tu tipo medio."
+    ],
+    [
+      "¿Qué es la reducción del 40 % y quién puede aplicarla?",
+      "Es un régimen transitorio para la parte del plan que corresponde a aportaciones hechas hasta el 31 de diciembre de 2006. Si cobras esa parte en forma de capital puedes aplicar la reducción del 40 % del régimen anterior, pero solo si la cobras en el ejercicio en que ocurre la contingencia (por ejemplo, la jubilación) o en los dos siguientes (disposición transitoria 12.ª de la Ley del IRPF; el porcentaje del 40 % lo recoge el Manual de la Renta de la AEAT). Esta calculadora no la modela: si estás en plazo, compara el resultado con tu situación concreta o consúltalo con la AEAT o un asesor fiscal."
+    ],
+    [
+      "¿Qué es el cobro mixto y cuándo tiene sentido?",
+      "Es cobrar una parte del plan de una vez como capital y el resto en renta. No hay una regla fija: el capital del primer año sube la base de ese año, pero con la reducción del art. 20 el mixto puede pagar menos que la renta pura (por ejemplo, en Andalucía con 60.000 €, otras rentas de 12.000 € y 10 años, el mixto con el 50 % en capital paga 12.210 € en valor de hoy, frente a 17.684 € en renta y 21.283 € en capital). También puede ganar si tienes aportaciones hasta 2006: la estrategia habitual es cobrar en capital esa parte, con la reducción del 40 %, y el resto en renta; según la AEAT, en la prestación mixta el beneficiario decide qué parte del capital corresponde a aportaciones anteriores a 2007. La herramienta calcula el porcentaje de capital que paga menos IRPF y lo compara con la renta y el capital; no modela el 40 %."
+    ],
+    [
+      "¿Puedo rescatar el plan antes de jubilarme?",
+      "Cuando llega una contingencia (jubilación, incapacidad, dependencia o fallecimiento) o en un supuesto de liquidez, que no es una contingencia: desempleo de larga duración, enfermedad grave o aportaciones con al menos diez años de antigüedad en planes individuales y asociados; en los planes de empleo, también si lo permiten el compromiso y las especificaciones del plan (art. 8.8 del texto refundido de la Ley de Regulación de los Planes y Fondos de Pensiones). Esos cobros tributan igual que las prestaciones (art. 17.2.a.3.ª de la Ley del IRPF); la calculadora no modela los supuestos de liquidez excepcionales."
+    ]
+  ],
+  "sources": "Modelo propio: el rescate es rendimiento del trabajo en la base general (art. 17.2.a.3.ª de la Ley 35/2006 del IRPF) y se suma a tus otras rentas anuales, que se suponen iguales cada año; cuota estatal y autonómica = escala menos la escala del mínimo personal y familiar (arts. 56, 57, 58 y 63.1), con las 15 escalas autonómicas de 2026 de régimen común y los mínimos propios de cada comunidad (data/params.json, irpf_2026); sin reducciones del 30 % (art. 18) y sin el 40 % de la disposición transitoria 12.ª; se supone que no tienes rentas distintas de las del trabajo de más de 6.500 € (si las tienes, no hay reducción del art. 20 y la renta sale mejor de lo que indica el cálculo); a la prestación y a tus otras rentas del trabajo (íntegras) se les aplican, cada año, los gastos de 2.000 € (art. 19.2.f) y la reducción por rendimientos del trabajo del art. 20 (redacción RDL 4/2024; parámetros de data/params.json, irpf_2026.trabajo), de modo que el impuesto no es convexo y el plazo y el mixto más baratos se buscan por barrido (plazo de 1 a 40 años; mixto de 0 a 100 % de capital en pasos de 1 punto). Renta: n pagos iguales al inicio de cada año (el art. 8.5 del texto refundido de la Ley de Planes y Fondos de Pensiones deja al beneficiario fijar fechas y modalidades con las limitaciones de las especificaciones del plan), con el saldo restante a la rentabilidad neta que indiques; el pago es el saldo dividido entre el factor de valor actual a esa rentabilidad. Valor de hoy: cada año se descuenta a esa misma rentabilidad, de modo que el valor de hoy de la renta antes de impuestos es el saldo y la diferencia entre modalidades es solo IRPF. Mixto: el capital se cobra el primer año, junto con el primer pago de la renta. Años óptimos: el menor número de años, hasta 40, cuyo IRPF en valor de hoy queda a menos de 1 € del mínimo. Excluido: la reducción del 40 % de las aportaciones hasta 2006 (disposición transitoria 12.ª; el plazo es el ejercicio de la contingencia y los dos siguientes; el 40 % según el Manual de Renta 2025 de la AEAT), los incrementos del mínimo por edad (más de 65 y de 75 años), la deducción por rendimientos del trabajo del RDL 5/2026 (que se pierde si lo que cobras del plan más tus otras rentas no laborales supera 6.500 € al año), los gastos adicionales del art. 19 (discapacidad, movilidad geográfica), deducciones estatales y autonómicas, otras rentas del ahorro o del capital, la rentabilidad obtenida fuera del plan tras cobrar el capital, retenciones y anticipos, Ceuta y Melilla, País Vasco y Navarra, los supuestos de liquidez excepcionales (enfermedad grave, desempleo de larga duración), que no son contingencias, comisiones del plan durante el cobro distintas de las incluidas en la rentabilidad y cambios futuros de la ley. Castilla y León, Región de Murcia y La Rioja con cifras autonómicas orientativas. Fuentes: Ley 35/2006 del IRPF, texto consolidado a 30/09/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764); Real Decreto Legislativo 1/2002, arts. 8.5 (modalidades de cobro) y 8.8 (liquidez) (https://www.boe.es/buscar/act.php?id=BOE-A-2002-24252); Manual de Renta 2025 de la AEAT, régimen transitorio (https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c03-rendimientos-trabajo/rendimiento-neto-trabajo-integrar-base-imponible/fase-1-determinacion-rendimiento-integro-trabajo/reducciones-aplicables-sobre-determinados-rendimientos-integros/c-regimen-transitorio-reducciones-aplicable-prestaciones/prestaciones-percibidas-forma-capital-derivadas.html). Hipótesis no oficiales y editables: saldo de 60.000 €, otras rentas de 15.000 €, 10 años, rentabilidad del 2 % y 50 % en capital en el mixto. Consultado el 2/10/2026. Información orientativa, no asesoramiento fiscal ni financiero."
+}

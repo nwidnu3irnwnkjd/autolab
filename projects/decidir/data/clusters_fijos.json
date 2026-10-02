@@ -15,14 +15,13 @@
  ],
  "luz-fija-o-indexada": [
   "calefaccion-gas-aerotermia-electrica",
-  "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "diesel-gasolina-hibrido-electrico"
+  "placas-solares-merece-la-pena",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "calefaccion-gas-aerotermia-electrica": [
   "luz-fija-o-indexada",
-  "cambiar-ventanas-aislamiento-merece-la-pena",
-  "cambiar-electrodomestico-antiguo-merece-la-pena"
+  "placas-solares-merece-la-pena",
+  "cambiar-ventanas-aislamiento-merece-la-pena"
  ],
  "cambiar-ventanas-aislamiento-merece-la-pena": [
   "calefaccion-gas-aerotermia-electrica",
@@ -63,22 +62,47 @@
  ],
  "coche-propio-o-carsharing-o-vtc": [
   "comprar-coche-o-renting",
-  "diesel-gasolina-hibrido-electrico",
-  "bici-electrica-o-transporte-publico"
+  "bici-electrica-o-transporte-publico",
+  "tren-avion-o-coche"
  ],
  "bici-electrica-o-transporte-publico": [
+  "tren-avion-o-coche",
   "coche-propio-o-carsharing-o-vtc",
-  "diesel-gasolina-hibrido-electrico",
-  "luz-fija-o-indexada"
+  "diesel-gasolina-hibrido-electrico"
  ],
  "contado-o-financiar": [
-  "comprar-coche-o-renting",
+  "universidad-publica-o-privada-o-master",
   "amortizar-o-invertir",
-  "guarderia-cuidadora-o-reducir-jornada"
+  "comprar-coche-o-renting"
  ],
  "guarderia-cuidadora-o-reducir-jornada": [
   "contado-o-financiar",
-  "plan-pensiones-o-fondo-indexado",
-  "autonomo-o-asalariado"
+  "universidad-publica-o-privada-o-master",
+  "plan-pensiones-o-fondo-indexado"
+ ],
+ "universidad-publica-o-privada-o-master": [
+  "contado-o-financiar",
+  "cuanto-ahorrar-para-comprar-casa",
+  "guarderia-cuidadora-o-reducir-jornada"
+ ],
+ "placas-solares-merece-la-pena": [
+  "luz-fija-o-indexada",
+  "calefaccion-gas-aerotermia-electrica",
+  "contado-o-financiar"
+ ],
+ "subrogar-hipoteca-merece-la-pena": [
+  "hipoteca-fija-o-variable",
+  "amortizar-plazo-o-cuota",
+  "amortizar-o-invertir"
+ ],
+ "hipoteca-fija-o-variable": [
+  "subrogar-hipoteca-merece-la-pena",
+  "amortizar-plazo-o-cuota",
+  "alquilar-o-comprar"
+ ],
+ "tren-avion-o-coche": [
+  "coche-propio-o-carsharing-o-vtc",
+  "bici-electrica-o-transporte-publico",
+  "diesel-gasolina-hibrido-electrico"
  ]
 }
