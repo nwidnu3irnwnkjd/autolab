@@ -83,7 +83,7 @@
   "faqs": [
     [
       "¿Merece la pena un seguro de mascota?",
-      "Depende de tu probabilidad y de si podrías asumir un gasto grande de golpe. En valor esperado compensa solo si la probabilidad anual de un evento grave supera la prima dividida por lo que el seguro paga en un evento; con los ejemplos de la página es el 21,4 % y la hipótesis de partida es del 10 %. Un seguro se paga por reducir la varianza, no por esperar ganar."
+      "Depende de tu probabilidad y de si podrías asumir un gasto grande. En valor esperado compensa solo si la probabilidad anual de un evento grave supera la prima dividida entre lo que paga el seguro: 21,4 % con los ejemplos de la página, frente a una hipótesis del 10 %."
     ],
     [
       "¿Qué probabilidad debo poner?",
@@ -91,15 +91,15 @@
     ],
     [
       "¿Qué diferencia hay entre el seguro y una hucha propia?",
-      "Con una hucha apartas cada mes lo que pagarías de prima y el gasto grande lo pagas de ahí. En valor esperado cuesta lo mismo que no tener seguro, pero te deja con el dinero ahorrado si no hay evento. Con los ejemplos de la página, apartar 25 € al mes reúne el coste de un evento de 1.500 € en 60 meses; hasta entonces, un evento temprano te deja un agujero que el seguro cubriría tras la carencia."
+      "Con una hucha apartas cada mes lo que pagarías de prima y el gasto grande sale de ahí; si no hay evento, te quedas el dinero. Con los ejemplos, apartar 25 € al mes reúne 1.500 € en 60 meses; hasta entonces, un evento temprano te deja un agujero."
     ],
     [
       "¿Qué es la carencia y cómo afecta al peor escenario?",
-      "Es el periodo tras contratar en el que la póliza no cubre. Si el evento grave llega dentro de la carencia, pagas todo tú. Con los ejemplos de la página (2 meses), un evento en el mes 1 te cuesta 1.500 € con o sin seguro; uno en el mes 3 te cuesta 175 € contando las primas pagadas, frente a 1.500 € sin seguro."
+      "Es el periodo tras contratar en el que la póliza no cubre: si el evento llega dentro, pagas todo tú. Con los ejemplos (2 meses), un evento en el mes 1 te cuesta 1.500 € con o sin seguro; en el mes 3, 175 € contando las primas."
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye las exclusiones concretas de ninguna póliza (enfermedades preexistentes, razas, edad máxima, revisiones), ni la responsabilidad civil, ni los gastos pequeños, ni más de un evento grave al año, ni la subida de la prima con la edad. Los importes y las probabilidades de la página son ejemplos, no datos de aseguradoras ni de clínicas. Es información orientativa, no asesoramiento."
+      "No incluye exclusiones concretas de ninguna póliza (preexistentes, razas, edad máxima), responsabilidad civil, gastos pequeños, más de un evento grave al año ni la subida de la prima con la edad. Importes y probabilidades son ejemplos, no datos de aseguradoras. Es información orientativa."
     ]
   ],
   "sources": "Modelo propio de valor esperado: se supone como mucho un evento grave al año, con la probabilidad anual que indiques. El seguro paga por evento el menor entre el coste menos la franquicia (nunca menos de 0) y el límite de cobertura por año; lo demás lo pagas tú. Coste esperado al año con seguro = prima + probabilidad x lo que pagas tú; sin seguro = probabilidad x coste del evento. Probabilidad de equilibrio = prima / lo que paga el seguro en un evento. Peor escenario del año 1: evento grave en el mes 1 (sin cobertura si hay carencia) y en el primer mes cubierto (carencia + 1), con las primas pagadas hasta ese mes. Hucha propia: apartar la prima cada mes sin rentabilidad (prudente) y tiempo que tarda en reunir el coste de un evento. Todas las primas, franquicias, límites, costes y probabilidades son ejemplos declarados y editables; las probabilidades del selector son hipótesis de ejemplo, no estadísticas epidemiológicas, y no se usan cifras externas. No incluye exclusiones de pólizas concretas. Información orientativa, no asesoramiento; para decisiones de salud animal, consulta a tu veterinario."

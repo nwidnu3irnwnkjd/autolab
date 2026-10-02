@@ -67,7 +67,7 @@
   "faqs": [
     [
       "¿Sale más barato un billete low cost o una tarifa normal?",
-      "Depende de lo que añadas. La low cost parte de un precio base menor y suma maletas, asiento, embarque prioritario y comida; la tarifa normal suele incluir parte de eso. Con los ejemplos de la página, con 1 maleta por pasajero y trayecto la normal sale a 320 € para 2 pasajeros y 2 trayectos frente a 340 € de la low cost, pero con 0 maletas la low cost sale a 220 €."
+      "Depende de lo que añadas: la normal suele incluir parte de las maletas. Con los ejemplos de la página, con 1 maleta la normal sale a 320 € frente a 340 € de la low cost, pero con 0 maletas la low cost sale a 220 €."
     ],
     [
       "¿A partir de cuántas maletas compensa la tarifa normal?",
@@ -79,11 +79,11 @@
     ],
     [
       "¿Los precios de equipaje y asiento son los mismos en todas las aerolíneas?",
-      "No. Las políticas de equipaje, asiento y embarque cambian por aerolínea, por tarifa, por ruta y por fecha. Por eso la página no cita aerolíneas ni precios de mercado: los precios de 40 €, 80 €, 30 € y 15 € son ejemplos declarados y los pones tú con lo que ves en tu reserva."
+      "No. Las políticas de equipaje, asiento y embarque cambian por aerolínea, tarifa, ruta y fecha. Por eso la página no cita aerolíneas ni precios de mercado: los 40 €, 80 €, 30 € y 15 € son ejemplos declarados y pones tú lo que ves en tu reserva."
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No incluye cambios o cancelaciones, seguros, traslados al aeropuerto, ni el equipaje de mano si no lo sumas en los extras. Supone que los precios ya llevan tasas y que cada maleta adicional de la tarifa normal cuesta lo mismo que en la low cost. Comprueba las condiciones de tu billete antes de pagar."
+      "No incluye cambios, cancelaciones, seguros ni traslados al aeropuerto, ni el equipaje de mano si no lo sumas en los extras. Supone que los precios ya llevan tasas y que cada maleta adicional cuesta lo mismo en ambas tarifas. Comprueba las condiciones de tu billete."
     ]
   ],
   "sources": "Modelo propio. Coste por pasajero y trayecto: low cost = precio base + maletas facturadas x precio por maleta + extras; tarifa normal = precio de la normal + máx(0, maletas facturadas - maletas incluidas) x precio por maleta. Coste total = coste por pasajero y trayecto x pasajeros x trayectos; por pasajero = coste por pasajero y trayecto x trayectos. Maletas de equilibrio = menor número de maletas (de 0 a 20) con el que la low cost cuesta más que la normal por más de 0,005 €; extras de equilibrio = precio de la normal con tus maletas - precio base de la low cost - maletas x precio por maleta. Empate si la diferencia por pasajero y trayecto es de menos de 0,005 €. Todos los precios (40 €, 80 €, 30 €, 15 €), las maletas incluidas y el número de pasajeros y trayectos son ejemplos declarados del modelo, no tarifas ni precios de mercado de ninguna aerolínea: los pones tú. Las políticas de equipaje, asiento y embarque cambian por aerolínea y tarifa. Para consultar derechos y normas del transporte aéreo en España, acude a la Agencia Estatal de Seguridad Aérea (AESA, https://www.seguridadaerea.gob.es/); la página no cita normas concretas. Información orientativa, no asesoramiento."

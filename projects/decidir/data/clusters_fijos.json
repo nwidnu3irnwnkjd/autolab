@@ -2,7 +2,7 @@
   "subsidio-desempleo-cuanto-cobro-y-cuanto-dura": [
     "cuanto-cobro-de-paro-prestacion-desempleo",
     "capitalizar-paro-o-cobrarlo",
-    "indemnizacion-despido-objetivo-o-improcedente-neto"
+    "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad"
   ],
   "adoptar-o-comprar-perro-coste-anual": [
     "seguro-mascota-merece-la-pena",
@@ -142,7 +142,7 @@
   "cuanto-cobro-de-paro-prestacion-desempleo": [
     "capitalizar-paro-o-cobrarlo",
     "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
-    "indemnizacion-despido-objetivo-o-improcedente-neto"
+    "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad"
   ],
   "cuota-autonomos-ingresos-reales-regularizacion": [
     "autonomo-o-asalariado",
@@ -455,5 +455,10 @@
     "bici-electrica-o-transporte-publico",
     "alquilar-o-comprar",
     "teletrabajo-o-oficina-coste-real"
+  ],
+  "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad": [
+    "cuanto-cobro-de-paro-prestacion-desempleo",
+    "subsidio-desempleo-cuanto-cobro-y-cuanto-dura",
+    "capitalizar-paro-o-cobrarlo"
   ]
 }

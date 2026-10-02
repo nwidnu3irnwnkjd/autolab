@@ -245,7 +245,7 @@ HUBS = {
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
             ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
-            ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
+            ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
         ],
         "steps": {
             "autonomo-o-asalariado": {
@@ -303,6 +303,10 @@ HUBS = {
             "subsidio-desempleo-cuanto-cobro-y-cuanto-dura": {
                 "name": "Subsidio por desempleo",
                 "text": "Cuando se agota el paro o no llegas a cotizar lo suficiente, el subsidio puede darte un importe fijo durante un tiempo que depende de tus cotizaciones y cargas familiares. La calculadora estima cuánto cobrarías y cuánto duraría con tus datos.",
+            },
+            "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad": {
+                "name": "Aceptar un trabajo cobrando paro o subsidio",
+                "text": "Si te ofrecen un empleo mientras cobras el paro o el subsidio, no siempre es compatible. La calculadora estima qué pasa con tu prestación y cuánto ganarías en neto con tus datos.",
             },
             "indemnizacion-despido-objetivo-o-improcedente-neto": {
                 "name": "Despido: indemnización neta",

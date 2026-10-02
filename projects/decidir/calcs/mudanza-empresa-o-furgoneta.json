@@ -71,7 +71,7 @@
   "faqs": [
     [
       "¿Sale más barato mudarse con furgoneta de alquiler o con empresa?",
-      "Depende de tu presupuesto de empresa y de cuánto trabajo pongas tú. La furgoneta suma alquiler por días, combustible, extras y ayudantes; la empresa es un presupuesto cerrado. Con los ejemplos de la página, la furgoneta cuesta 269,1 € frente a 900 € de la empresa, pero eso no cuenta tu tiempo ni los daños: la calculadora te da el valor de tu hora a partir del cual la empresa compensa."
+      "Depende del presupuesto de empresa y de tu trabajo. Con los ejemplos de la página, la furgoneta cuesta 269,1 € frente a 900 € de la empresa, sin contar tu tiempo ni los daños; la calculadora te da el valor de tu hora a partir del cual compensa la empresa."
     ],
     [
       "¿Cuánto cuesta una mudanza por metro cúbico?",
@@ -79,15 +79,15 @@
     ],
     [
       "¿Cuántos kilómetros puedo recorrer antes de que la furgoneta deje de compensar?",
-      "Hasta el kilómetro en que su gasto directo iguala el presupuesto de la empresa. Con los ejemplos de la página, la furgoneta se mantiene por debajo de 900 € hasta unos 900 km; la calculadora calcula ese límite con tu presupuesto y tus tarifas, y avisa si no hay límite en 3.000 km."
+      "Hasta el kilómetro en que su gasto directo iguala el presupuesto de la empresa. Con los ejemplos de la página, hasta unos 900 km; la calculadora calcula ese límite con tu presupuesto y tus tarifas y avisa si no hay límite en 3.000 km."
     ],
     [
       "¿Cómo se valora el riesgo de daños?",
-      "Con una hipótesis simple y editable en el modelo: una reserva de 5 € por m³ que se suma al coste de la furgoneta, para recordar que si algo se rompe lo asumes tú. No es una estadística de siniestralidad. Revisa qué cubre el seguro de la furgoneta y qué cubre la empresa, porque suelen ser distintos."
+      "Con una hipótesis editable: una reserva de 5 € por m³ que se suma al coste de la furgoneta, porque si algo se rompe lo asumes tú. No es una estadística de siniestralidad. Revisa qué cubre el seguro de la furgoneta y qué cubre la empresa, porque suelen diferir."
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No incluye aparcamiento ni permisos municipales de reserva de espacio, ascensor o montacargas, seguros específicos de mudanza, impuestos ni fianzas. Consulta esos puntos con tu ayuntamiento, tu aseguradora y la empresa. El modelo supone una furgoneta de 20 m³ por viaje, 600 km por día de alquiler y que se devuelve en origen."
+      "No incluye aparcamiento, permisos municipales, ascensor, seguros específicos de mudanza, impuestos ni fianzas: consúltalos con tu ayuntamiento, tu aseguradora y la empresa. Supone una furgoneta de 20 m³ por viaje, 600 km por día de alquiler y devolución en origen."
     ]
   ],
   "sources": "Modelo propio. Gasto directo de la furgoneta = días de alquiler x alquiler por día + km totales x combustible por km + peajes, cajas y extras + ayudantes x coste por hora x horas de carga y descarga; km totales = viajes x 2 x distancia (ida y vuelta, se devuelve en origen); viajes = volumen / 20 m³ por viaje redondeado hacia arriba; días = km totales / 600 km por día redondeado hacia arriba, mínimo 1; horas de carga y descarga por persona = volumen x 0,6 horas-persona por m³ / (1 + ayudantes); tus horas = horas de carga y descarga + km totales / 80 km/h. Reserva de daños (hipótesis) = 5 € x volumen en m³. Valor de la hora de equilibrio = (presupuesto de la empresa - gasto directo - reserva) / tus horas; empresa gana por coste directo si su presupuesto es menor o igual que el gasto directo de la furgoneta. Combustible por defecto: precio medio del diésel (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 12 l/100 km; si no hay dato vivo, 1,927 €/l de diésel (consulta 2/10/2026). La capacidad de 20 m³, los 600 km por día, los 80 km/h, las 0,6 horas por m³, los 12 l/100 km y la reserva de 5 € por m³ son supuestos de ejemplo, estimaciones propias, no oficiales. Presupuesto de la empresa, alquiler, extras, ayudantes y volumen son ejemplos declarados, no cotizaciones ni precios de ninguna empresa. Información orientativa, no asesoramiento."

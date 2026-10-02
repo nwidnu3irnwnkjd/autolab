@@ -55,3 +55,15 @@
 ## Resumen
 - FAQs >50 p: 38 → 0 en las 12. Avisos YMYL de comedor-escolar (frases con € sin enlace) siguen: no hay fuente oficial citada. Quedan sin cifra de ejemplo en el lead: alquilar-o-comprar, bici-electrica, coche-segunda-mano.
 - Verificado: build OK, check.py 8560/8560, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 3 · 2026-10-02 · 12 calculadoras no fiscales (distintas de pasadas 1-2)
+
+## Línea base (antes)
+- 12 calculadoras: title ≤ 60 y description ≤ 155 en las 12; leads con condición y cifra del ejemplo en las 12 (ya constaba en test.json/texto, no hizo falta añadir); FAQs > 50 palabras: 41 respuestas en 11 calculadoras (comprar-o-alquilar-trastero ya cumplía); title de trastero con «N años» sin sentido de búsqueda.
+
+## Después (solo calcs/*.json; sin cifras, lógica, .js ni test.json)
+- comprar-o-alquilar-trastero · title «¿qué sale más barato?» (56)
+- equipaje-y-asiento-avion-coste-real, fibra-y-movil, gimnasio-o-entrenar-en-casa, impresora-tinta-o-laser, marca-blanca, movil-reacondicionado, mudanza-empresa-o-furgoneta, pc-sobremesa-o-portatil, seguro-mascota, suscripciones, teletrabajo-o-oficina · 2-5 FAQs recortadas a ≤ 50 p, con cifras y condiciones intactas
+
+## Resumen
+- FAQs > 50 p: 41 → 0 en las 12. Leads sin condición: 0/12. Pendiente: YMYL sin enlace en teletrabajo (aviso, no hay fuente citada). Verificado: build OK, check.py 8768/8768, qa_static --changed 0 BLOQUEANTE.

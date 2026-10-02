@@ -70,11 +70,11 @@
   "faqs": [
     [
       "¿Sale más barato el gimnasio o entrenar en casa?",
-      "Depende del coste por sesión que de verdad haces en cada sitio. Con los ejemplos de la página (24 meses, 3 sesiones por semana en cada sitio) entrenar en casa sale a 1,92 € por sesión y el gimnasio a 3,37 €. Con un equipo caro (3.000 €, 500 € de reventa) y 1 sesión por semana en casa, el gimnasio sale a 3,37 € y casa a 24,04 €. La calculadora lo recalcula con tus datos."
+      "Depende del coste por sesión que de verdad haces en cada sitio. Con los ejemplos de la página (24 meses, 3 sesiones por semana en cada sitio) entrenar en casa sale a 1,92 € por sesión y el gimnasio a 3,37 €. La calculadora lo recalcula con tus datos."
     ],
     [
       "¿Cuántas veces por semana tengo que ir al gimnasio para que compense?",
-      "Es el punto de equilibrio: las sesiones por semana a las que el gimnasio iguala el coste por sesión de entrenar en casa. Con los ejemplos de la página son 7,7 sesiones por semana en el gimnasio con 3 sesiones en casa; por debajo de eso, casa sale más barata por sesión. Si tu equipo es caro y lo usas poco, el equilibrio baja a menos de 1 sesión por semana."
+      "Es el punto de equilibrio: las sesiones por semana a las que el gimnasio iguala el coste por sesión de entrenar en casa. Con los ejemplos son 7,7 sesiones por semana en el gimnasio con 3 en casa; por debajo, casa sale más barata por sesión."
     ],
     [
       "¿Cómo cuento las sesiones si no estoy seguro?",
@@ -82,11 +82,11 @@
     ],
     [
       "¿Qué pasa con la matrícula y la permanencia?",
-      "La matrícula se suma al coste del gimnasio. La permanencia no tiene un campo propio: si tu horizonte es menor que ella, pon la permanencia como horizonte, porque pagarás esas cuotas aunque dejes de ir. Revisa las condiciones de baja de tu contrato: el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios prohíbe en su art. 62.3 las cláusulas que obstaculicen el derecho a poner fin a un contrato de tracto sucesivo (consulta las fuentes)."
+      "La matrícula se suma al coste del gimnasio. La permanencia no tiene campo propio: si tu horizonte es menor, pon la permanencia como horizonte, porque pagarás esas cuotas aunque dejes de ir. Revisa las condiciones de baja de tu contrato (art. 62.3 del TRLGDCU; consulta las fuentes)."
     ],
     [
       "¿Qué no incluye este cálculo?",
-      "No incluye clases dirigidas, la motivación de ir a un sitio concreto, el espacio que ocupa el equipo, el valor de tu tiempo (puedes sumarlo al desplazamiento), cambios de precio, ni mantenimiento o renovación del equipo. Tampoco valora la salud ni el rendimiento: no es consejo médico ni de entrenamiento, consulta con un profesional si tienes dudas sobre tu actividad física."
+      "No incluye clases dirigidas, motivación, el espacio que ocupa el equipo, el valor de tu tiempo (puedes sumarlo al desplazamiento), cambios de precio ni mantenimiento del equipo. Tampoco valora salud ni rendimiento: no es consejo médico ni de entrenamiento; consulta con un profesional."
     ]
   ],
   "sources": "Modelo propio: semanas = meses x 52 / 12; coste del gimnasio = matrícula + cuota x meses + desplazamiento x sesiones; coste de casa = equipo - reventa al final; coste por sesión = coste total / sesiones realizadas; sesiones por semana de equilibrio en el gimnasio = (matrícula + cuota x meses) / (semanas x (coste por sesión en casa - desplazamiento)), y en casa = (equipo - reventa) / (semanas x coste por sesión en el gimnasio). Todas las cifras de la página (30 €, 20 €, 1 €, 800 €, 200 €, 3 sesiones, 24 meses) son ejemplos declarados y editables, no tarifas de ninguna cadena ni precios de ningún fabricante; no se usan cifras externas. Al contratar o darte de baja, revisa las condiciones: el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios prohíbe en su art. 62.3 las cláusulas que obstaculicen el derecho a poner fin a un contrato de tracto sucesivo (BOE consolidado, consultado el 2/10/2026: https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555). Referencia general sobre actividad física: Organización Mundial de la Salud, https://www.who.int/news-room/fact-sheets/detail/physical-activity (consultada el 2/10/2026; no se usan sus cifras en el cálculo). Información orientativa, no asesoramiento médico ni financiero."

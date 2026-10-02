@@ -125,3 +125,5 @@
 - [x] R-retriflex.1 [Constructor -> Estratega] data/clusters.json: retribucion-flexible-me-conviene con relacionadas comparar-ofertas-de-trabajo-neto-real, retencion-irpf-nomina-subir-o-no y deduccion-maternidad-familia-numerosa (la página enlaza a las tres). Publicar antes del 15-nov (las empresas abren la elección para enero). · abierta c38
 
 - [x] R-kilometraje.1 [Constructor -> Estratega] data/clusters.json: kilometraje-y-dietas-exentas-irpf con relacionadas coche-propio-o-carsharing-o-vtc, retencion-irpf-nomina-subir-o-no y comparar-ofertas-de-trabajo-neto-real (la página enlaza a la primera y a la tercera). · abierta c41
+
+- [x] R-aceptartrabajo.1 [Constructor -> Estratega] data/clusters.json: aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad con relacionadas cuanto-cobro-de-paro-prestacion-desempleo, subsidio-desempleo-cuanto-cobro-y-cuanto-dura y capitalizar-paro-o-cobrarlo (la página enlaza a las tres). · abierta c41

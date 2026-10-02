@@ -72,11 +72,11 @@
   "faqs": [
     [
       "¿Compensa más un móvil reacondicionado o uno nuevo?",
-      "Compensa el que tenga menor coste por año de vida esperada: precio menos reventa, más el riesgo esperado de reparación fuera de garantía, entre los años de uso. Con los ejemplos de la página, el reacondicionado cuesta 142,50 € al año y el nuevo 145 €, una diferencia pequeña que cambia con los años de vida y con el precio. La calculadora te da el precio máximo del reacondicionado y los años de vida desde los que el nuevo sale mejor."
+      "Compensa el de menor coste por año de vida esperada: precio menos reventa, más el riesgo de reparación fuera de garantía. Con los ejemplos de la página, el reacondicionado cuesta 142,50 € al año y el nuevo 145 €, diferencia que cambia con los años de vida y el precio."
     ],
     [
       "¿Qué garantía tiene un móvil nuevo y uno de segunda mano?",
-      "Según el texto consolidado del TRLGDCU (art. 120.1, modificado por el Real Decreto-ley 7/2021), el empresario responde de las faltas de conformidad que se manifiesten en tres años desde la entrega de un bien. En los bienes de segunda mano se puede pactar un plazo menor, que no puede ser inferior a un año. Entre particulares no hay vendedor profesional: consulta tus derechos de garantía y qué figura en tu factura."
+      "Según el TRLGDCU (art. 120.1), el vendedor responde de las faltas de conformidad que aparezcan en tres años desde la entrega. En bienes de segunda mano se puede pactar un plazo menor, nunca inferior a un año. Entre particulares no hay vendedor profesional: consulta qué figura en tu factura."
     ],
     [
       "¿A partir de cuántos años de vida compensa comprar el nuevo?",
@@ -84,11 +84,11 @@
     ],
     [
       "¿Cómo se calcula el riesgo de reparación?",
-      "Como un valor esperado: probabilidad de avería cada año, por el coste de la reparación, por los años de vida que quedan fuera de garantía. Con los ejemplos, el nuevo (5 años de vida, 3 de garantía) acumula 2 años sin garantía: 15 % x 150 € x 2 = 45 €. Es un promedio, no lo que te va a costar a ti: una avería real puede costar 0 o varias reparaciones."
+      "Valor esperado: probabilidad de avería cada año, por el coste de la reparación, por los años fuera de garantía. Con los ejemplos, el nuevo acumula 2 años sin garantía: 15 % x 150 € x 2 = 45 €. Es un promedio: la avería real puede costar 0 o varias."
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No valora la calidad del reacondicionado ni quién lo ha reacondicionado, el estado de la batería, las actualizaciones de seguridad que reciba cada modelo, el impacto ambiental, la garantía extendida opcional ni el coste de oportunidad de tu dinero. Los precios, vidas, probabilidades y reventa son ejemplos o hipótesis editables, no datos de mercado."
+      "No valora la calidad de quien reacondiciona, el estado de la batería, las actualizaciones de seguridad, el impacto ambiental, la garantía extendida ni el coste de oportunidad de tu dinero. Precios, vidas, probabilidades y reventa son ejemplos editables, no datos de mercado."
     ]
   ],
   "sources": "Modelo propio: coste total de propiedad = precio x (1 - reventa) + probabilidad anual de avería x coste de reparación x años de vida sin garantía; coste por año = coste total / años de vida esperada; precio de equilibrio del reacondicionado = (coste por año del nuevo x años de vida del reacondicionado - riesgo de reparación del reacondicionado) / (1 - reventa); años de vida desde los que compensa el nuevo = menor número de años (hasta 30) a partir del cual el coste por año del nuevo es igual o menor que el del reacondicionado. Garantía del nuevo en el modelo: 3 años. Todos los precios, años de vida, probabilidades, costes de reparación y porcentajes de reventa son ejemplos declarados y editables, no datos de mercado; se aplica el mismo porcentaje de reventa a ambos. Garantía legal: Real Decreto Legislativo 1/2007 (TRLGDCU), art. 120.1, redacción del Real Decreto-ley 7/2021, de 27 de abril, texto consolidado del BOE consultado el 2/10/2026: https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555 ; Real Decreto-ley 7/2021: https://www.boe.es/buscar/act.php?id=BOE-A-2021-6872 . Información orientativa, no asesoramiento financiero ni jurídico."

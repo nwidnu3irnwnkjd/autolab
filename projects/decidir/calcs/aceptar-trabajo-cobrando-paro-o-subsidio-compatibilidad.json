@@ -1,0 +1,113 @@
+{
+  "slug": "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad",
+  "title": "¿Te compensa trabajar cobrando paro o subsidio?",
+  "description": "Calcula si te compensa aceptar un trabajo mientras cobras paro o subsidio: compatibilidad a tiempo parcial, complemento de apoyo al empleo y suspensión.",
+  "h1": "¿Me compensa aceptar un trabajo mientras cobro el paro o el subsidio?",
+  "lead": "Si cobras el paro y te ofrecen un trabajo a media jornada, compatibilizarlo compensa cuando tu sueldo neto supera la parte del paro que te descuentan (467,50 € con estos datos): con 1.100 € brutos de paro (935 € netos con un 15 % de IRPF), un sueldo neto de 800 € y 6 meses, sumas 7.605 € en vez de 5.610 € (1.995 € más) y el paro se sigue consumiendo. A jornada completa no hay compatibilidad (salvo desde el décimo mes de un paro de más de 12 meses): con un contrato de menos de 12 meses el paro se suspende y conservas los meses que te quedan, y con 12 meses o más se extingue. Con el subsidio, el trabajo se cobra con el complemento de apoyo al empleo (480 € brutos el primer trimestre a jornada completa y menos después, hasta 180 días). Son cifras de 2026 (IPREM de 600 €); la herramienta no incluye autónomos, capitalización, fijos discontinuos, el paro de más de 12 meses a partir de su décimo mes ni territorios forales.",
+  "veredicto": "El paro solo es compatible con un trabajo a tiempo parcial si pides la compatibilidad en los 15 días hábiles siguientes al inicio (art. 282.2 de la LGSS): te descuentan del paro el porcentaje de jornada que trabajas, así que compensa cuando tu sueldo neto supera esa parte (467,50 € con 1.100 € brutos, un 15 % de IRPF y media jornada). Con jornada completa no hay compatibilidad (salvo desde el décimo mes de un paro de más de 12 meses, DA 59.ª): si el contrato dura menos de 12 meses el paro se suspende sin gastar meses (art. 271) y con 12 meses o más se extingue (art. 272.1.c). El subsidio se cobra como complemento de apoyo al empleo, un porcentaje del IPREM que baja por trimestres (480 € brutos el primero a jornada completa), con un máximo de 180 días que se descuentan del subsidio (art. 282.3), y no existe si te contrata una empresa con expediente de regulación de empleo, en la que trabajaste en los últimos 12 meses o un familiar tuyo. Rechazar una oferta adecuada del servicio público de empleo es infracción grave, así que no aceptar solo sale gratis si la oferta no llega por ese cauce (LISOS, arts. 25.4.a y 47.1.b).",
+  "tema": "ahorro",
+  "inputs": [
+    {
+      "id": "tipo",
+      "label": "¿Qué cobras ahora?",
+      "type": "select",
+      "options": [
+        {
+          "v": "paro",
+          "t": "El paro (prestación contributiva)"
+        },
+        {
+          "v": "subsidio",
+          "t": "El subsidio por desempleo"
+        },
+        {
+          "v": "subsidio59",
+          "t": "El subsidio, tras agotar un paro de más de 12 meses reconocido desde el 1-4-2025"
+        }
+      ]
+    },
+    {
+      "id": "cuantia",
+      "label": "Importe bruto mensual de tu paro o subsidio (€, el que te reconoce el SEPE)",
+      "default": 1100,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.cuantia",
+      "ayuda": "Con el subsidio general son 570 € los primeros 180 días, 540 € hasta el día 360 y 480 € después (IPREM de 600 € en 2026); la calculadora usa el mismo importe todos los meses."
+    },
+    {
+      "id": "sueldo",
+      "label": "Sueldo neto mensual del trabajo que te ofrecen (€, lo que ingresarías ya sin Seguridad Social ni retención)",
+      "default": 800,
+      "min": 0,
+      "step": 50,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.sueldo"
+    },
+    {
+      "id": "jornada",
+      "label": "Jornada del trabajo (% de la jornada completa; 100 = completa)",
+      "default": 50,
+      "min": 1,
+      "max": 100,
+      "step": 5,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.jornada"
+    },
+    {
+      "id": "meses",
+      "label": "Meses de paro o subsidio que te quedan por cobrar",
+      "default": 6,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.meses",
+      "ayuda": "El paro dura como máximo 24 meses (720 días, art. 269.1). Mira lo que te queda en tu resolución del SEPE."
+    },
+    {
+      "id": "duracion",
+      "label": "Duración del contrato (meses; si es indefinido, pon 12)",
+      "default": 6,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.duracion"
+    },
+    {
+      "id": "irpf",
+      "label": "Tipo de IRPF que aplicarías al paro o subsidio (%, tu tipo marginal aproximado; 0 si el importe ya es neto)",
+      "default": 15,
+      "min": 0,
+      "step": 1,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.irpf"
+    },
+    {
+      "id": "inicio",
+      "label": "Mes de tu paro o subsidio en que empezarías a trabajar (1 = el primer mes que cobras)",
+      "default": 1,
+      "min": 1,
+      "step": 1,
+      "default_from": "params.aceptar_trabajo_paro_2026.supuestos.inicio",
+      "ayuda": "Con el subsidio fija el trimestre del complemento de apoyo (art. 282.3): cuanto más tarde empieces, menos cobras. Con un paro que dura más de 12 meses cuenta aún más: desde el décimo mes se aplica otra regla (disposición adicional 59.ª) que la herramienta no calcula."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Puedo trabajar y cobrar el paro a la vez?",
+      "Solo a tiempo parcial y si lo pides: el paro es incompatible con un trabajo por cuenta ajena salvo a tiempo parcial con la compatibilidad solicitada, y se te deduce del paro la parte proporcional al tiempo trabajado (art. 282.2 de la LGSS). Se pide en los 15 días hábiles siguientes al inicio del contrato; si te pasas, se aplica desde la solicitud, siempre que la presentes antes de 12 meses. A jornada completa no hay compatibilidad, salvo desde el décimo mes de un paro de más de 12 meses (DA 59.ª): con un contrato de menos de 12 meses el paro se suspende y con 12 meses o más se extingue (arts. 271.1.d y 272.1.c)."
+    ],
+    [
+      "¿Cuánto me descuentan del paro si trabajo media jornada?",
+      "El porcentaje de jornada que trabajas: con media jornada te quitan la mitad del paro. Con 1.100 € brutos de paro (935 € netos con un 15 % de IRPF) cobrarías 467,50 € de paro más el sueldo; con un sueldo neto de 800 € suman 1.267,50 € al mes frente a los 935 € de solo el paro. Compensa mientras tu sueldo neto supere la parte descontada (467,50 € en este ejemplo). La calculadora aplica el IRPF solo al paro; el del sueldo ya va en su neto."
+    ],
+    [
+      "¿Qué es el complemento de apoyo al empleo y cuánto se cobra?",
+      "Es lo que pasa a cobrar quien trabaja mientras cobra el subsidio: un porcentaje del IPREM (600 € en 2026) que depende de tu jornada y del trimestre del subsidio. A jornada completa es el 80 % (480 €) el primer trimestre, el 60 % (360 €) el segundo, el 40 % (240 €) el tercero, el 30 % (180 €) el cuarto y el 20 % (120 €) después; con media jornada, el 70 % (420 €) el primer trimestre. Dura como máximo 180 días, en uno o varios periodos, y cada día se descuenta de la duración del subsidio (art. 282.3 de la LGSS). Son importes brutos."
+    ],
+    [
+      "¿Pierdo los meses de paro que me quedan si acepto un trabajo?",
+      "Depende. Si compatibilizas a tiempo parcial, el paro sigue corriendo mes a mes. Si trabajas a jornada completa (o a tiempo parcial sin pedir la compatibilidad) en un contrato de menos de 12 meses, el paro se suspende sin gastar meses y se reanuda pidiéndolo en los 15 días siguientes al fin del trabajo (arts. 271.1.d, 271.2 y 271.3.b). Con 12 meses o más se extingue (art. 272.1.c), salvo el derecho de opción del art. 269.3, que esta herramienta no calcula. Si tu paro dura más de 12 meses, desde el décimo mes se aplica otro régimen (disposición adicional 59.ª) que tampoco calcula. Con el subsidio, los días cobrados como complemento se restan y, al llegar a 180 o al acabar el trabajo, el subsidio se suspende y se puede reanudar si sigues cumpliendo los requisitos."
+    ],
+    [
+      "¿Cuándo no me compensa aceptar un trabajo mientras cobro el paro?",
+      "Cuando el sueldo neto no supera lo que te descuentan o lo que ya cobras. Con 1.100 € brutos, un 15 % de IRPF y media jornada, un sueldo de 300 € netos deja 5.610 € en 6 meses solo con el paro frente a 4.605 € compatibilizando, 1.005 € menos. Si el contrato es a jornada completa, suspender el paro compensa cuando el sueldo neto supera el paro neto (935 € en este ejemplo), y tampoco hay complemento del subsidio si te contrata una empresa con expediente de regulación de empleo, en la que trabajaste los últimos 12 meses o un familiar tuyo (art. 282.3). Y no aceptar solo sale gratis si la oferta no llega por el servicio público de empleo: rechazar sin causa justificada una oferta adecuada del servicio público de empleo o de una agencia de colocación es infracción grave (LISOS, arts. 25.4.a y 47.1.b)."
+    ]
+  ],
+  "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado leído el 2/10/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), en la redacción del RDL 2/2024: art. 282.2 (paro a tiempo parcial con compatibilidad solicitada: deducción proporcional al tiempo trabajado), art. 282.3 (complemento de apoyo al empleo del subsidio: tabla por trimestre y jornada, máximo 180 días, exclusiones), arts. 271.1.d, 271.2 y 271.3.b (suspensión y reanudación), art. 272.1.c (extinción con 12 meses o más), art. 279.1 (el subsidio se rige por los arts. 271 y 272) y art. 269.1 (máximo 720 días de paro) y disposición adicional 59.ª (paro de más de 12 meses desde el décimo mes: régimen propio que no se modela); Ley sobre Infracciones y Sanciones en el Orden Social (arts. 25.4.a y 47.1.b: https://www.boe.es/buscar/act.php?id=BOE-A-2000-15060); Ley 35/2006 del IRPF, art. 17.1.b (el paro es rendimiento del trabajo: https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a17). IPREM 2026: 600 € al mes (Ley 31/2022, DA 90.ª, prorrogada; cuantías y tabla del complemento del SEPE: https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html). Supuestos propios y editables: paro de 1.100 € brutos, sueldo neto de 800 € a media jornada, 6 meses, tipo de IRPF del 15 % sobre el paro o subsidio; el mes se computa en 30 días y el trimestre del subsidio en 3 meses; el sueldo se introduce neto. No incluye: el paro de más de 12 meses cuyo trabajo llega al décimo mes de prestación (DA 59.ª: la herramienta lo bloquea), el tope de salario del 375 % del IPREM (2.250 € brutos al mes) de la DA 59.ª.5, pendiente de reglamento; el complemento del subsidio tras un paro de más de 12 meses reconocido desde el 1/4/2025 (DA 59.ª.4: la herramienta lo bloquea), autónomos y trabajo por cuenta propia, capitalización del paro, fijos discontinuos, trabajadores agrarios, Renta Activa de Inserción, Ingreso Mínimo Vital, programas de fomento del empleo, el derecho de opción, la retención real del IRPF y los territorios forales (País Vasco y Navarra) en lo que no es la prestación estatal. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."
+}
