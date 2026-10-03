@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Disparadores de actualidad (dueño: Estratega SEO/GEO). Solo stdlib.
 Lee projects/decidir/data/live.json (+ historial) y data/events.json; evalúa reglas OBJETIVAS y, solo si una se activa,
-escribe una nota breve y determinista (plantilla de texto + cifras) en projects/decidir/content/actualidad/<fecha>-<slug>.html.
-Sin disparador no se publica nada. Las cifras del efecto salen de las mismas funciones que el Barómetro
+escribe un BORRADOR determinista (estado «borrador», nunca publicada) en projects/decidir/content/noticias/<fecha>-<slug>.html
+con la estructura de _plantilla.html (4 bloques, cifra y fuente de live.json, <!--f:-->). El Redactor lo edita y lo publica (estado «publicada»);
+el build ignora los borradores. Clave única (también contra content/actualidad/ y piezas ya publicadas): no se duplica.
+Sin disparador no se escribe nada. Las cifras del efecto salen de las mismas funciones que el Barómetro
 (barometro.hipoteca / barometro.coche = port de las calculadoras, verificado por ops/check_barometro.py).
 Reglas (umbrales en RULES):
   euribor    variación mensual >= 0,15 puntos (media mensual BCE, vs mes anterior)
@@ -17,7 +19,8 @@ PROJ = os.path.join(ROOT, "projects/decidir")
 sys.path.insert(0, PROJ)
 import seo, barometro, calcs_loader  # noqa: E402
 
-OUT = os.path.join(PROJ, "content/actualidad")
+OUT = os.path.join(PROJ, "content/noticias")
+LEGACY = os.path.join(PROJ, "content/actualidad")  # solo lectura: claves ya migradas
 RULES = {
     "euribor": {"umbral_pts": 0.15, "cooldown": 20},
     "carburante": {"umbral_pct": 3.0, "dias": 7, "cooldown": 7},
@@ -40,10 +43,17 @@ def _mercado(params, live):
     p = calcs_loader.merge_market(params, live)
     return p
 
-def _wrap(dato_html, efecto_html, calc, extra_fuentes, today):
-    return (f'<p class="lead"><strong>Dato:</strong> {dato_html}</p>\n<h2>Qué cambia en tu decisión</h2>\n{efecto_html}\n'
-            f'<p><a class="btn" href="/decidir/{calc}/">Calcula tu caso con tus números</a></p>\n<h2>Datos y fuente</h2>\n{extra_fuentes}\n{_eventos(calc, today)}')
+def _wrap(dato_html, efecto_html, calc, extra_fuentes, today, afecta="", acciones="", f=""):
+    """Estructura de _plantilla.html: lead + El hecho / A quién afecta / Tu cifra / Qué hacer y plazo."""
+    lead = dato_html[0].upper() + dato_html[1:]
+    efecto_html = efecto_html.replace('<p>', f'<p><!--f: barometro.py ({calc}), params.json y live.json; mismas funciones que la calculadora-->')
+    return (f'<p class="lead">{lead}</p>\n<h2>El hecho</h2>\n<p>{dato_html[0].upper() + dato_html[1:]} <!--f: {f}--></p>\n{extra_fuentes}\n'
+            f'<h2>A quién afecta</h2>\n{afecta}\n<h2>Tu cifra</h2>\n{efecto_html}\n'
+            f'<p><a class="btn" href="/decidir/{calc}/">Calcula tu caso con tus números</a></p>\n<h2>Qué hacer y plazo</h2>\n<ul>{acciones}</ul>\n{_eventos(calc, today)}')
 
+def _meta_extra(n):
+    return dict(tipo="dato-mes", temas=n.get("temas", []), calcs=[n["calc"]], caduca=str(datetime.date.fromisoformat(n["fecha"]) + datetime.timedelta(days=n["caduca_dias"])),
+                estado="borrador", fuentes=[{"nombre": n["fuente_nombre"], "url": n["fuente_url"], "fecha": n["fecha"]}])
 
 # ---------- reglas ----------
 def r_euribor(live, params, today):
@@ -68,7 +78,11 @@ def r_euribor(live, params, today):
     return [dict(regla="euribor", clave=f"euribor-{per}", slug=slug, fecha=eu["fecha_dato"], calc="hipoteca-fija-o-variable",
                  title=f'El Euríbor {"sube" if sube else "baja"} {E(abs(dif), 2)} puntos en {mes.split(" de ")[0]}',
                  description=_trim(f'Euríbor a 12 meses: {E(v, 3)} % en {mes}. En una hipoteca variable de 150.000 € la cuota cambia {E(abs(c1 - c0))} € al mes.', 155),
-                 body=_wrap(dato, efecto, "hipoteca-fija-o-variable", src, today))]
+                 body=_wrap(dato, efecto, "hipoteca-fija-o-variable", src, today,
+                 afecta="<p>A quien tiene una hipoteca variable referenciada al Euríbor a 12 meses y se acerca a su revisión (cada seis o doce meses según contrato). No afecta a las hipotecas a tipo fijo.</p>",
+                 acciones="<li>Mira en tu contrato cuándo es tu próxima revisión y qué índice usa.</li><li>Calcula con tu capital pendiente y tu diferencial cuánto cambiaría la cuota y si compensa una fija.</li><li>La nueva media mensual se publica en los primeros días del mes siguiente (<a href=\"/calendario/\">calendario</a>).</li>",
+                 f="data/live.json euribor12m (valor / anterior)"),
+                 temas=["hipoteca", "euribor"], fuente_nombre=eu["fuente"]["nombre"], fuente_url=eu["fuente"]["url"], caduca_dias=40)]
 
 def _hace(hist, today, dias):
     """Entrada del historial más cercana a `dias` atrás (entre dias-1 y dias+2)."""
@@ -108,7 +122,11 @@ def r_carburante(live, params, today):
                         fecha=d["fecha_dato"], calc="diesel-gasolina-hibrido-electrico",
                         title=f'{nombre}: {"sube" if sube else "baja"} un {N(abs(pct))} % en una semana',
                         description=_trim(f'{nombre} a {E(d["valor"], 3)} €/l, un {N(abs(pct))} % {"más" if sube else "menos"} que hace una semana: {E(abs(g1 - g0), 0)} € al año con 15.000 km.', 155),
-                        body=_wrap(dato, efecto, "diesel-gasolina-hibrido-electrico", src, today)))
+                        body=_wrap(dato, efecto, "diesel-gasolina-hibrido-electrico", src, today,
+                        afecta="<p>A quien conduce un coche de gasolina o diésel y a quien compara motorizaciones antes de comprar. No cambia el precio de la electricidad ni el de la carga eléctrica.</p>",
+                        acciones="<li>Calcula tu gasto anual con tus kilómetros reales.</li><li>Si vas a cambiar de coche, compara motorizaciones a 5 años con los precios actuales.</li>",
+                        f=f"data/live.json {k} (valor / historial hace ~7 días)"),
+                        temas=["carburantes", "coche"], fuente_nombre=d["fuente"]["nombre"], fuente_url=d["fuente"]["url"], caduca_dias=10))
     return out
 
 def r_pvpc(live, params, today):
@@ -127,7 +145,11 @@ def r_pvpc(live, params, today):
     return [dict(regla="pvpc", clave=f"pvpc-{l['fecha_dato']}", slug="luz-pvpc-por-encima-media", fecha=l["fecha_dato"], calc="calefaccion-gas-aerotermia-electrica",
                  title=f'Luz: el PVPC supera un {N(pct, 0)} % la media del mes',
                  description=_trim(f'PVPC de {E(l["valor"], 3)} €/kWh, un {N(pct)} % sobre la media del mes: 10 kWh de calefacción eléctrica cuestan {E(c1)} € ese día.', 155),
-                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today))]
+                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today,
+                 afecta="<p>A quien paga la luz con tarifa PVPC (regulada) y calienta con electricidad. No afecta a quien tiene precio fijo en el mercado libre.</p>",
+                 acciones="<li>Mira en tu factura si estás en PVPC.</li><li>Traslada el consumo flexible a la hora más barata del día.</li><li>Compara tu sistema de calefacción con tus números.</li>",
+                 f="data/live.json luz_pvpc (valor / media_mes)"),
+                 temas=["luz", "pvpc"], fuente_nombre=l["fuente"]["nombre"], fuente_url=l["fuente"]["url"], caduca_dias=3)]
 
 def _clima(live, params, today):
     tm = live.get("datos", {}).get("madrid_tiempo")
@@ -147,7 +169,11 @@ def r_frio(live, params, today):
     return [dict(regla="frio", clave=f"frio-{wk[0]}w{wk[1]}", slug="frio-madrid-prevision", fecha=tm["fecha_dato"], calc="calefaccion-gas-aerotermia-electrica",
                  title=f'Frío en Madrid: mínima prevista de {N(x["min_semana"])} °C',
                  description=_trim(f'Previsión de {N(x["min_semana"])} °C de mínima en Madrid. 10 kWh de calor cuestan {E(gas)} € con gas, {E(aero)} € con aerotermia y {E(elec)} € con electricidad directa.', 155),
-                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today))]
+                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today,
+                 afecta="<p>A quien vive en zonas frías o con calefacción en marcha. La previsión es de Madrid; en otras zonas cambia.</p>",
+                 acciones="<li>Revisa la programación de tu calefacción.</li><li>Compara el coste de gas, aerotermia y electricidad directa con tu vivienda.</li>",
+                 f="data/live.json madrid_tiempo (min_semana) y params.json"),
+                 temas=["calefaccion", "frio"], fuente_nombre=tm["fuente"]["nombre"], fuente_url=tm["fuente"]["url"], caduca_dias=7)]
 
 def r_calor(live, params, today):
     tm = _clima(live, params, today); cfg = RULES["calor"]
@@ -164,7 +190,11 @@ def r_calor(live, params, today):
     return [dict(regla="calor", clave=f"calor-{wk[0]}w{wk[1]}", slug="calor-madrid-prevision", fecha=tm["fecha_dato"], calc="calefaccion-gas-aerotermia-electrica",
                  title=f'Calor en Madrid: máxima prevista de {N(x["max_semana"])} °C',
                  description=_trim(f'Previsión de {N(x["max_semana"])} °C de máxima en Madrid. Una hora de aire acondicionado de 1 kW cuesta {E(p["electricidad_eur_kwh"])} € con la electricidad a {E(p["electricidad_eur_kwh"], 3)} €/kWh.', 155),
-                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today))]
+                 body=_wrap(dato, efecto, "calefaccion-gas-aerotermia-electrica", src, today,
+                 afecta="<p>A quien vive en zonas cálidas y usa aire acondicionado. La previsión es de Madrid; en otras zonas cambia.</p>",
+                 acciones="<li>Usa el aire en las horas más baratas si estás en PVPC.</li><li>Si valoras cambiar de sistema, compara el coste anual de gas, aerotermia y electricidad directa.</li>",
+                 f="data/live.json madrid_tiempo (max_semana) y params.json"),
+                 temas=["luz", "calor"], fuente_nombre=tm["fuente"]["nombre"], fuente_url=tm["fuente"]["url"], caduca_dias=7)]
 
 REGLAS = [r_euribor, r_carburante, r_pvpc, r_frio, r_calor]
 
@@ -174,29 +204,35 @@ def evaluar(live, params, today):
     return out
 
 
-# ---------- escritura idempotente ----------
-def existentes(path=OUT):
+# ---------- escritura idempotente (borradores en content/noticias/) ----------
+def _metas(path):
     res = []
     if os.path.isdir(path):
         for f in os.listdir(path):
-            m = re.match(r"\s*<!--meta\s*(\{.*?\})\s*-->", open(os.path.join(path, f)).read(), re.S) if f.endswith(".html") else None
+            if not f.endswith(".html") or f.startswith("_"): continue
+            m = re.match(r"\s*<!--meta\s*(\{.*?\})\s*-->", open(os.path.join(path, f), encoding="utf-8").read(), re.S)
             if m: res.append(json.loads(m.group(1)))
     return res
 
+def existentes(path=OUT):
+    """Metas ya escritas: noticias (borradores y publicadas) + actualidad heredada (solo lectura)."""
+    return _metas(path) + (_metas(LEGACY) if path == OUT else [])
+
 def escribir(notas, today, path=OUT, dry=False):
-    """Escribe las notas nuevas (misma clave => no se repite; cooldown por regla). Devuelve lista de rutas/ids escritos."""
+    """Escribe los BORRADORES nuevos (misma clave, en cualquier estado => no se repite; cooldown por regla). Devuelve rutas escritas."""
     ex = existentes(path); hechas = []
     for n in notas:
         if any(e.get("clave") == n["clave"] for e in ex): continue
         cd = RULES[n["regla"].split("-")[0]]["cooldown"]
         if any(e.get("regla") == n["regla"] and (today - datetime.date.fromisoformat(e["published"])).days < cd for e in ex): continue
-        meta = {"title": n["title"], "h1": n["title"], "description": n["description"], "published": n["fecha"], "calc": n["calc"],
-                "regla": n["regla"], "clave": n["clave"]}
         fn = os.path.join(path, f'{n["fecha"]}-{n["slug"]}.html')
+        if os.path.exists(fn): continue  # nunca pisar una pieza existente (el Redactor puede haberla editado)
+        meta = {"title": _trim(n["title"], 60), "h1": n["title"], "description": n["description"], "published": n["fecha"], "modified": n["fecha"],
+                **_meta_extra(n), "clave": n["clave"], "regla": n["regla"]}
         hechas.append(fn)
         if not dry:
             os.makedirs(path, exist_ok=True)
-            open(fn, "w").write("<!--meta " + json.dumps(meta, ensure_ascii=False) + " -->\n" + n["body"])
+            open(fn, "w", encoding="utf-8").write("<!--meta " + json.dumps(meta, ensure_ascii=False) + " -->\n" + n["body"] + "\n")
         ex.append(meta)
     return hechas
 
@@ -206,7 +242,7 @@ def main(argv):
     live = seo.load_live(); params = json.load(open(os.path.join(PROJ, "data/params.json")))
     notas = evaluar(live, params, today)
     hechas = escribir(notas, today, dry="--dry" in argv)
-    print(f"disparadores activos: {len(notas)}; notas {'(simuladas) ' if '--dry' in argv else ''}nuevas: {len(hechas)}")
+    print(f"disparadores activos: {len(notas)}; borradores {'(simulados) ' if '--dry' in argv else ''}nuevos: {len(hechas)}")
     for h in hechas: print(" +", os.path.relpath(h, ROOT))
 
 if __name__ == "__main__":

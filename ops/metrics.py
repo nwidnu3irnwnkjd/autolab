@@ -15,7 +15,7 @@ out = [f"# Métricas {proj} ({host}) — {today} (últimos {days} días)"]
 sc = f"https://www.googleapis.com/webmasters/v3/sites/sc-domain:{host}"
 try:
     sm = gauth.get(sc + "/sitemaps", t).get("sitemap", [])
-    out.append("## Search Console\n" + "\n".join(f"- sitemap {s['path']}: pendiente={s.get('isPending')} errores={s.get('errors')} descubiertas={sum(int(c.get('submitted',0)) for c in s.get('contents',[]))} indexadas={sum(int(c.get('indexed',0)) for c in s.get('contents',[]))}" for s in sm))
+    out.append("## Search Console\n" + "\n".join(f"- sitemap {s['path']}: pendiente={s.get('isPending')} errores={s.get('errors')} descubiertas={sum(int(c.get('submitted',0)) for c in s.get('contents',[]))}" for s in sm))
     q = gauth.post(sc + "/searchAnalytics/query", t, {"startDate": str(start), "endDate": str(today), "dimensions": ["page"], "rowLimit": 50})
     rows = q.get("rows", [])
     tot = {k: sum(r[k] for r in rows) for k in ("clicks", "impressions")}
@@ -26,7 +26,7 @@ try:
 except urllib.error.HTTPError as e: out.append(f"Search Console: error HTTP {e.code}: {e.read().decode()[:200]}")
 # URL Inspection API (cuota: 2.000/día por propiedad; solo con --inspect)
 if INSPECT:
-    urls = site.get("inspect") or ["/", "/decidir/hipoteca-fija-o-variable/", "/guias/euribor-hipoteca/", "/barometro/", "/calendario/", "/actualidad/"]
+    urls = site.get("inspect") or ["/", "/decidir/hipoteca-fija-o-variable/", "/guias/euribor-hipoteca/", "/barometro/", "/calendario/", "/noticias/", "/datos/"]
     out.append("\n## Inspección de URLs (URL Inspection API)\n| URL | Veredicto | Cobertura | Rastreo | robots | Fetch | Referentes |\n|---|---|---|---|---|---|---|")
     for u in urls:
         try:

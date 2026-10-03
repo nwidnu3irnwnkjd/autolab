@@ -49,7 +49,30 @@ def ga_top():
     r = ga({"dateRanges": DR, "dimensions": [{"name": "pagePath"}], "metrics": [{"name": "screenPageViews"}], "limit": 5,
             "orderBys": [{"metric": {"metricName": "screenPageViews"}, "desc": True}]}).get("rows", [])
     return "; ".join(f"{x['dimensionValues'][0]['value']} ({x['metricValues'][0]['value']})" for x in r) or "—"
+def noticias_pub():
+    """Piezas publicadas en content/noticias (meta estado «publicada», no `_*`)."""
+    d = os.path.join(ROOT, "projects/decidir/content/noticias"); n = 0
+    for f in os.listdir(d):
+        if f.endswith(".html") and not f.startswith("_"):
+            m = re.match(r"\s*<!--meta\s*(\{.*?\})\s*-->", open(os.path.join(d, f), encoding="utf-8").read(), re.S)
+            n += bool(m and json.loads(m.group(1)).get("estado") == "publicada")
+    return n
+def noticias_known():
+    """Conocidas por Google entre las URL /noticias/ de journal/inspeccion.json (mismo criterio que inspect_all.summary)."""
+    r = json.load(open(os.path.join(ROOT, "journal/inspeccion.json")))["resultados"]
+    r = {u: v for u, v in r.items() if "/noticias/" in u}
+    ok = sum(1 for v in r.values() if v["estado"] and "no reconoce" not in v["estado"].lower() and "unknown" not in v["estado"].lower())
+    return f"{ok}/{len(r)}"
+def gsc_noticias():
+    q = gauth.post(f"https://www.googleapis.com/webmasters/v3/sites/sc-domain:{host}/searchAnalytics/query", tok,
+        {"startDate": str(now.date() - datetime.timedelta(days=7)), "endDate": str(now.date()),
+         "dimensionFilterGroups": [{"filters": [{"dimension": "page", "operator": "contains", "expression": "/noticias/"}]}]})
+    r = q.get("rows", [])
+    return (int(r[0]["clicks"]), int(r[0]["impressions"])) if r else (0, 0)
 n_sm = safe(sitemap_urls)
+n_pub = safe(noticias_pub); n_nk = safe(noticias_known)
+gn = safe(gsc_noticias) if tok != ND else (ND, ND)
+noticias_cell = f"{n_pub} pub · {n_nk} conoc. · {gn[0]} clics · {gn[1]} impr."
 n_known = safe(known)
 g = safe(gsc) if tok != ND else (ND,) * 3
 sess = safe(ga_tot) if tok != ND and pid else (ND, ND)
@@ -60,11 +83,12 @@ HEAD = f"""# KPIs de tráfico (PLAN-TRAFICO) · una fila por ejecución (`python
 **Regla de lectura.** Éxito de la semana 2 (16-oct-2026): **≥ 50 URLs conocidas/indexadas por Google** (con 12 URLs de muestra, «Conocidas» ≥ 12 de 12 y el sitemap procesado en Search Console equivale a ese umbral; hasta entonces, la tendencia de «Conocidas/12» es la señal) **y primeras impresiones** (Impr. 7d > 0). Si el 15-oct «Conocidas» sigue en 0: revisar propiedad y plan B.
 Tendencia ↑ ↓ = compara «Conocidas», «Impr.» y «Sesiones» con la fila anterior (en ese orden). n/d = la API falló. Eventos 7 d: share_click / calc_used / calendar_add / asistente_paso / asistente_resultado (0 si aún no existen). «Sesiones» incluye tráfico propio (no separable).
 
-| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. | Noticias (publicadas · conocidas/URL /noticias/ · GSC 7d) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 """
 lines = open(OUT, encoding="utf-8").read().split("\n") if os.path.exists(OUT) else []
 rows = [l for l in lines if re.match(r"\| \d{4}-\d\d-\d\d ", l)]
+rows = [l if len(l.strip("|").split(" | ")) >= 16 else l + " — |" for l in rows]  # filas anteriores a la columna «Noticias»: celda vacía
 if any(l.startswith(f"| {stamp} ") for l in rows): print(f"Ya hay fila para {stamp}; no se duplica."); sys.exit(0)
 def arrow(a, b):
     try: return "↑" if float(a) > float(b) else "↓" if float(a) < float(b) else "="
@@ -74,7 +98,7 @@ if rows:
     c = [x.strip() for x in rows[-1].strip("|").split("|")]
     tend = "".join(arrow(a, b) for a, b in zip(cur, [c[2], c[4], c[6]]))
 else: tend = "inicio"
-row = f"| {stamp} | {n_sm} | {n_known} | {g[0]} | {g[1]} | {g[2]} | {sess[0]} | {sess[1]} | " + " | ".join(str(e) for e in ev) + f" | {top} | {tend} |"
+row = f"| {stamp} | {n_sm} | {n_known} | {g[0]} | {g[1]} | {g[2]} | {sess[0]} | {sess[1]} | " + " | ".join(str(e) for e in ev) + f" | {top} | {tend} | {noticias_cell} |"
 print(row)
 if "--dry" not in sys.argv:
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
