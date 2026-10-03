@@ -40,3 +40,11 @@ Andoni no usa Claude el fin de semana y quiere aprovechar al máximo los límite
 - Cadencia: tras cada cierre, espera = clamp(3600 × pp_por_ciclo_medido ÷ ritmo_permitido − duración_ciclo, 600 s, 3600 s), con ritmo_permitido = (90 − semanal_actual) ÷ horas_hasta_el_lunes_07:00_CEST (pp/h) y pp_por_ciclo_medido de las últimas líneas de journal/costes.md. Si el 5h > 85 %: esperar al reset de la ventana de 5 h (get_usage → resetsIn). Si el semanal ≥ 90 %: ciclos ligeros (solo Vigilante + kpis) hasta el reset.
 - Tras la próxima autocompactación del contexto del Orquestador (se produce al 97 %), el coste por ciclo debería bajar mucho: MEDIR pp/ciclo en los 2 primeros ciclos y recalcular; si baja a < 0,3 pp, usar ciclos completos continuos (600 s).
 - Contenido de los ciclos de fin de semana: ciclos completos de tráfico (pilar Alquiler, calculadoras fiscales con fecha: paga extra, plusvalía municipal; guías de temporada; mantenimiento Vigilante; kpis; seguimiento de rastreo y sitemaps por API), siempre con verificación Opus de lo fiscal.
+
+## PRIVACIDAD (orden de Andoni, 3-oct; prevalece sobre todo)
+Ningún agente entra en información privada de Andoni ni en su ordenador fuera del proyecto. Reglas para el Orquestador Y para TODO subagente (incluirlas en cada prompt):
+- Solo se lee y escribe dentro de /Users/andonimcbpro/Claude Code/autolab/. Prohibido abrir ~/, Documentos, Descargas, Escritorio, correo, calendario, Drive, Chrome/Safari, llaveros, ~/.ssh, ~/.config (salvo que un script del proyecto ya lo use por sí solo: ops/gauth.py, push), ni listar otras carpetas.
+- Nunca imprimir, copiar ni resumir credenciales, tokens o claves (GitHub, cuenta de servicio, IndexNow); no pegarlas en journal ni en informes.
+- Los conectores (Gmail, Drive, Teams, Stripe, etc.) y el navegador del Orquestador NO se usan en el laboratorio; el QA usa el navegador integrado solo para páginas de entremuchos.com o dist local.
+- Web: solo fuentes oficiales/públicas (BOE, AEAT, SEPE, INE…). No iniciar sesión en nada, no enviar formularios, no descargar ejecutables.
+- Si una tarea requiere algo fuera de esto, se anota en journal/PENDIENTE-ANDONI.md y no se hace.
