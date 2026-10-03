@@ -51,3 +51,9 @@ Ningún agente entra en información privada de Andoni ni en su ordenador fuera 
 
 ## OPTIMIZADOR DE TRÁFICO (orden de Andoni, 3-oct)
 Todo se juzga por tráfico real (buscadores + IA) por token gastado. Rol nuevo: ops/roles/optimizador-trafico.md (Opus, cada 3 ciclos). Su lista ordenada en ops/OPTIMIZACION.md manda sobre el resto del plan de tráfico: el Orquestador delega primero sus 3 acciones top de cada pasada y deja de hacer lo que él marque como bajo retorno. Línea editorial nueva en estudio: ops/PLAN-NOTICIAS.md.
+
+### Giro por la 1.ª pasada del Optimizador (3-oct tarde; lee ops/OPTIMIZACION.md entero al empezar cada ciclo)
+- CONGELADAS las calculadoras nuevas hasta ≥ 50 URLs indexadas (excepción: la de bruto→neto del salario, si el Optimizador la mantiene en su lista). Antes de construir nada con `demanda:` pasar `python3 ops/demanda.py`. Opus solo si cambia una cifra o norma.
+- Orden de ejecución de cada ciclo (por defecto): (1) reescribir títulos/H1/descripciones de las ~45 páginas con título no buscable SIN cambiar URLs (antes de que Google indexe los antiguos); (2) ejemplo resuelto con cifras reales y veredicto numérico en las 9 calculadoras insignia (hipoteca fija/variable, alquilar o comprar, amortizar o invertir, renting…) visible en el HTML sin JS; (3) metrics.py/kpis con la API de Inspección de URL (todas las URLs, diario) en vez del campo `indexed` deprecado; (4) tablas de respuesta con ancla por fila dentro de páginas existentes; (5) bruto→neto; (6) páginas permanentes autoactualizadas por serie de datos (IRAV, Euríbor hoy, PVPC) en lugar de notas mensuales.
+- Noticias (PLAN-NOTICIAS): MVP técnico sí, pero tope 2 piezas/semana hasta que la mitad del sitio esté indexada; priorizar páginas de datos permanentes.
+- OPT1.7: requiere el sí de Andoni (repo GitHub ya hecho el 2-oct; envío a Brave de la home) → solo si él lo pide; anotado en PENDIENTE.
