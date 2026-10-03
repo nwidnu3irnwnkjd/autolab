@@ -1,8 +1,8 @@
 {
   "slug": "comprar-o-alquilar-trastero",
-  "title": "Comprar o alquilar un trastero: ¿qué sale más barato?",
-  "description": "Compara el coste de comprar o alquilar un trastero o guardamuebles a N años: año de equilibrio, valor residual y alquiler con el que compensa comprar.",
-  "h1": "Comprar o alquilar un trastero (o guardamuebles): coste a N años",
+  "title": "Alquilar o comprar un trastero: calcula qué compensa",
+  "description": "Compara el coste de alquilar o comprar un trastero o guardamuebles a N años: año de equilibrio, valor residual y alquiler con el que compensa comprar.",
+  "h1": "Alquilar o comprar un trastero (o guardamuebles): coste a N años",
   "lead": "Comprar un trastero compensa si el alquiler mensual de uno equivalente supera el alquiler de equilibrio, que sale del precio con gastos, los costes anuales y el valor residual; con los ejemplos de la página (9.000 € de compra, 10 % de gastos, 250 € al año de comunidad, IBI y seguro, 10 años, revalorización del 1 % y coste de oportunidad del 2 %) el equilibrio está en unos 32 € al mes: con un alquiler de 70 € al mes compensa comprar y con 30 € al mes, alquilar. Pon tus datos para ver tu año de equilibrio.",
   "veredicto": "Comprar un trastero compensa cuando el alquiler mensual de uno equivalente supera el alquiler de equilibrio (precio con gastos más costes anuales menos valor residual, repartido en los años de uso con la subida del alquiler); por debajo de ese umbral compensa alquilar. Los impuestos de compra, la plusvalía y la hipoteca no están incluidos.",
   "tema": "ahorro",

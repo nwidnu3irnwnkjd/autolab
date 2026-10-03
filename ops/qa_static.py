@@ -108,6 +108,9 @@ def page_url_path(index_html):
     r = os.path.relpath(index_html, DIST).replace(os.sep, "/")
     return "/" + (r[:-len("index.html")] if r.endswith("index.html") else r)
 
+INSIGNIA = {"alquilar-o-comprar", "amortizar-o-invertir", "comprar-coche-o-renting", "contado-o-financiar", "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+            "hipoteca-bonificada-o-sin-vinculaciones", "seguro-todo-riesgo-o-terceros", "subrogar-hipoteca-merece-la-pena", "hipoteca-fija-o-variable"}
+
 # ---------- configuración ----------
 try:
     SITE = json.load(open(os.path.join(PDIR, "data/site.json")))
@@ -230,6 +233,11 @@ def check_pages(only_urls=None):
             elif total > PESO_BLOQ: add("INFO", f"{name}:1", f"peso cargado {total/1024:.1f} KB raw > {PESO_BLOQ/1024:g} KB (informativo; manda gzip {gz/1024:.1f} KB) ({', '.join(parts)})")
             elif total > PESO_AVISO: add("INFO", f"{name}:1", f"peso cargado {total/1024:.1f} KB raw > 60 KB ({', '.join(parts)}); gzip {gz/1024:.1f} KB")
             if gz > GZIP_AVISO: add("AVISO", f"{name}:1", f"peso transferido gzip {gz/1024:.1f} KB > 30 KB (raw {total/1024:.1f} KB)")
+        # insignia (OPTIMIZACION #2): >= 5 cifras en € en el HTML sin JS (los rastreadores de IA no ejecutan JS); INFO
+        if urlp.startswith("/decidir/") and urlp.strip("/").split("/")[-1] in INSIGNIA:
+            _t = re.sub(r"<(script|style)\b.*?</\1>", " ", open(f, encoding="utf-8").read(), flags=re.S)
+            _n = len(re.findall(r"\d[\d.,]*\s*€", html.unescape(re.sub(r"<[^>]+>", " ", _t)))); n_checks += 1
+            if _n < 5: add("INFO", f"{name}:1", f"insignia con {_n} cifras en € en el HTML sin JS (< 5): falta el «Ejemplo resuelto» (python3 ops/gen_ejemplos.py)")
         if not is404 and not p.noindex: indexables.append(urlp)
     return pages, indexables, n_checks
 

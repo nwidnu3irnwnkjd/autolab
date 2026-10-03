@@ -1,8 +1,8 @@
 {
   "slug": "bici-electrica-o-transporte-publico",
-  "title": "Bici eléctrica, transporte público o coche: ahorro real",
-  "description": "Compara el coste anual de bici eléctrica, abono de transporte y coche, los años para amortizar la bici y los km o el abono a partir de los que compensa.",
-  "h1": "Bici eléctrica, transporte público o coche: ¿cuánto ahorras de verdad?",
+  "title": "Bici eléctrica o transporte público: coste al año",
+  "description": "Compara el coste anual de bici eléctrica, abono de transporte y coche, los años para amortizar la bici y los km a partir de los que compensa cada una.",
+  "h1": "Bici eléctrica, transporte público o coche: coste anual y cuándo compensa",
   "lead": "La bici eléctrica sale más barata que el coche cuando haces más kilómetros al año que su coste fijo anual (precio entre años de vida útil, más seguro y robo) dividido entre lo que cuesta cada km del coche menos lo que cuesta cada km de la bici, y más barata que el abono cuando este cuesta más que el coste anual de la bici entre 12. Con tu trayecto, tu abono y tu bici, la calculadora te da el ahorro anual frente a cada modo, los años para amortizarla y esos dos umbrales; no incluye tiempo, comodidad, clima ni las ayudas de tu municipio.",
   "veredicto": "La bici eléctrica compensa frente al coche a partir de los km anuales en que su coste fijo se reparte por debajo de lo que ahorra cada km, y frente al abono si este cuesta más que el coste anual de la bici entre 12; con tus datos la calculadora da el ahorro, los años de amortización y ambos umbrales, sin incluir tiempo, comodidad ni ayudas locales.",
   "tema": "coche",

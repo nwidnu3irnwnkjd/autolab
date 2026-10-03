@@ -1,8 +1,8 @@
 {
   "slug": "luz-fija-o-indexada",
-  "title": "¿Tarifa fija o PVPC? Calculadora de la luz 2026",
-  "description": "Compara tu factura con tarifa fija y con PVPC (precio regulado) según tu consumo y tus horas de uso. Mira cuál te sale más barata en tu caso.",
-  "h1": "Tarifa de luz: precio fijo o indexada (PVPC)",
+  "title": "PVPC o tarifa fija: calcula cuál te sale más barata",
+  "description": "Compara tu factura de la luz con tarifa fija y con PVPC (precio regulado) según tu consumo y tus horas de uso. Mira cuál te sale más barata en tu caso.",
+  "h1": "PVPC o tarifa fija de luz: ¿cuál te sale más barata?",
   "lead": "Una tarifa fija compensa si el precio de su energía queda por debajo del punto de equilibrio con el PVPC, que depende de tu consumo y de a qué horas lo haces. El PVPC compensa si consumes sobre todo en horas valle y llano (la ventaja del valle viene sobre todo de peajes y cargos) o si el mercado se abarata. Con el precio de septiembre, el mes más caro del año, suele ganar la fija; con la media de 12 meses el resultado queda casi empatado. Compara tu oferta con el PVPC usando tus datos.",
   "veredicto": "La tarifa fija compensa si el precio de su energía queda por debajo del punto de equilibrio con el PVPC, que depende de tu perfil de consumo por horas y del precio medio del mercado; como el PVPC varía cada hora y no se puede fijar, el resultado es una estimación con un perfil de consumo, no una previsión.",
   "tema": "energia",

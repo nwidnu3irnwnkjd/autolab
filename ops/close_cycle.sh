@@ -6,6 +6,8 @@
 # peticiones -> línea en journal/costes.md -> UN commit -> pull --rebase (+ repite 2-3 si trae live.json) -> push ->
 # espera a que las páginas nuevas den 200 -> IndexNow -> resumen de 5 líneas para ESTADO.md (el script no lo escribe).
 # --dry-run: ejecuta todo salvo commit, push, curl, IndexNow y la escritura en costes.md.
+# Antes del build corre ops/gen_ejemplos.py (|| true): regenera projects/decidir/data/ejemplos.json con el calcular() real de las 9 insignia
+# (osascript; en GitHub Actions no se ejecuta, el build solo lee el JSON). check.py lo verifica con --check.
 # Variables opcionales: QA_PESO_BLOQ_KB (umbral bloqueante de peso por página, 75 por defecto).
 set -euo pipefail
 
@@ -27,6 +29,7 @@ step() { echo; echo "== $* =="; }
 red() { echo; echo "ROJO en '$1': cierre abortado SIN commit ni push." >&2; exit 1; }
 
 # 2-3. build + check + QA estática
+step "ejemplos resueltos (insignia; en local con osascript; el build solo lee data/ejemplos.json)"; python3 ops/gen_ejemplos.py >/dev/null || true
 step "build"; (cd projects/decidir && python3 build.py) || red build
 step "check"; python3 ops/check.py || red check
 step "qa_static"; python3 ops/qa_static.py --changed | tee "$TMP/qa.txt" || red qa_static

@@ -1,8 +1,8 @@
 {
   "slug": "cambiar-de-operadora-compensa-permanencia",
-  "title": "¿Compensa cambiar de operadora con permanencia?",
-  "description": "Calcula si compensa cambiar de operadora pagando la penalización por permanencia: ahorro neto, mes de equilibrio y si es mejor esperar a que acabe.",
-  "h1": "¿Compensa cambiar de operadora aunque tengas permanencia?",
+  "title": "Cambiar de operadora con permanencia: ¿compensa?",
+  "description": "Calcula si compensa cambiar de operadora pagando la penalización por permanencia: ahorro neto, mes de equilibrio y si es mejor esperar al fin.",
+  "h1": "¿Compensa cambiar de operadora si tienes permanencia?",
   "lead": "Cambiar de operadora compensa aun pagando la penalización si el ahorro de cuotas en tu horizonte supera la penalización más el coste de alta, y a veces es mejor esperar a que acabe la permanencia. Con los ejemplos de la página (cuota actual de 70 €, nueva de 45 € tras 6 meses de promoción a 30 €, 8 meses de permanencia, 100 € de penalización, 50 € de alta y 24 meses), cambiar ya ahorra 540 € y se recupera lo pagado en el mes 4, frente a 440 € si esperas; con una penalización de más de 200 € ya sale mejor esperar. Las promociones expiran: pon tus datos y mira la cuota completa.",
   "veredicto": "Compensa cambiar de operadora aun pagando penalización cuando el ahorro de cuotas en tu horizonte (con la promoción y luego la cuota completa) supera la penalización más el alta; si la penalización es mayor que lo que ahorras de más frente a esperar, compensa esperar a que acabe la permanencia, y si la cuota completa nueva no es menor que la actual, compensa quedarte. La penalización y las condiciones de la promoción están en tu contrato.",
   "tema": "ahorro",

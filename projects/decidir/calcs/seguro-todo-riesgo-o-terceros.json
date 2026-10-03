@@ -1,8 +1,8 @@
 {
   "slug": "seguro-todo-riesgo-o-terceros",
-  "title": "¿Seguro a todo riesgo o a terceros? Calculadora",
+  "title": "Seguro a todo riesgo o terceros: cuál compensa",
   "description": "Calcula si te compensa pagar un seguro a todo riesgo o quedarte con terceros según el valor de tu coche. Compara primas y riesgo con tus números.",
-  "h1": "Seguro de coche: ¿todo riesgo o terceros según lo que vale tu coche?",
+  "h1": "Seguro de coche a todo riesgo o a terceros: ¿cuál compensa según lo que vale tu coche?",
   "lead": "El todo riesgo compensa mientras la pérdida media que te cubre cada año supere la sobreprima que pagas por él; a medida que el coche se deprecia, deja de compensar. Calcula en qué año ocurre con tus números.",
   "veredicto": "El todo riesgo compensa mientras el valor del coche sea varias veces la diferencia de prima con terceros; al depreciarse el coche, cuesta más de lo que recupera. Depende de tu perfil de conducción y de tu capacidad para asumir una reparación.",
   "tema": "coche",

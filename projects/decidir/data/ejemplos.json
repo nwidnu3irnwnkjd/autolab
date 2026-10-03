@@ -1,0 +1,496 @@
+{
+ "alquilar-o-comprar": {
+  "inputs": {
+   "precio": 250000,
+   "entrada": 20,
+   "interes": 3.0,
+   "plazo": 30,
+   "gastos": 10,
+   "ibi": 400,
+   "comunidad": 700,
+   "mant": 1,
+   "revaloriza": 2,
+   "alquiler": 900,
+   "subida": 2,
+   "rentab": 4,
+   "venta": 3,
+   "horizonte": 15
+  },
+  "resultado": {
+   "patrimonioComprar": 204271.9303,
+   "patrimonioAlquilar": 171500.4142,
+   "diferencia": 32771.5161,
+   "anosEquilibrio": 9,
+   "cuotaHipoteca": 843.2081,
+   "costeMensualCompra": 1143.2081,
+   "costeMensualAlquiler": 900
+  },
+  "entradas_texto": "vivienda de 250.000 €, entrada del 20 %, hipoteca al 3,00 % a 30 años, alquiler equivalente de 900 € al mes, revalorización del 2 % anual, rentabilidad de invertir del 4 % anual y horizonte de 15 años",
+  "filas": [
+   [
+    "Patrimonio al comprar",
+    "204.272 €"
+   ],
+   [
+    "Patrimonio al alquilar e invertir",
+    "171.500 €"
+   ],
+   [
+    "Diferencia a favor de comprar",
+    "32.772 €"
+   ],
+   [
+    "Cuota de la hipoteca",
+    "843,21 €/mes"
+   ],
+   [
+    "Coste mensual de comprar (cuota, IBI, comunidad y mantenimiento)",
+    "1.143,21 €/mes"
+   ],
+   [
+    "Año en que comprar empieza a ganar",
+    "9"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, a 15 años comprar deja 32.772 € más de patrimonio que alquilar e invertir la entrada y empieza a ganar en el año 9: si vendes antes, con estos números gana alquilar.",
+  "fecha": "2026-10-03",
+  "datos_fijados": ""
+ },
+ "amortizar-o-invertir": {
+  "inputs": {
+   "capital": 150000,
+   "tipo": 3.0,
+   "anos": 20,
+   "importe": 30000,
+   "aporte": 0,
+   "rentab": 4,
+   "impuesto": 19,
+   "comision": 0,
+   "modo": 1
+  },
+  "resultado": {
+   "patrimonioAmortizar": 54930.786,
+   "patrimonioInvertir": 58944.2924,
+   "diferencia": 4013.5064,
+   "rentabilidadDeEquilibrio": 3.5388,
+   "ganador": "invertir",
+   "cuotaActual": 831.8964,
+   "cuotaTrasAmortizar": 831.8964,
+   "mesesTrasAmortizar": 180,
+   "interesesAhorrados": 20639.7397,
+   "comision": 0
+  },
+  "entradas_texto": "hipoteca de 150.000 € al 3,00 % a 20 años, 30.000 € disponibles, reduciendo el plazo, rentabilidad de invertir del 4 % anual e impuesto sobre ganancias del 19 %",
+  "filas": [
+   [
+    "Patrimonio al amortizar",
+    "54.931 €"
+   ],
+   [
+    "Patrimonio al invertir",
+    "58.944 €"
+   ],
+   [
+    "Diferencia a favor de invertir",
+    "4.014 €"
+   ],
+   [
+    "Intereses ahorrados al amortizar",
+    "20.640 €"
+   ],
+   [
+    "Cuota actual",
+    "831,90 €/mes"
+   ],
+   [
+    "Rentabilidad anual de equilibrio",
+    "3,54 %"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos (inversión al 4 % anual), invertir deja 4.014 € más que amortizar; invertir solo sale mejor si rinde más de un 3,54 % anual (antes de impuestos sobre ganancias), y esa rentabilidad no está garantizada: por debajo, amortizar sale mejor.",
+  "fecha": "2026-10-03",
+  "datos_fijados": ""
+ },
+ "comprar-coche-o-renting": {
+  "inputs": {
+   "precio": 25000,
+   "anos": 4,
+   "reventa": 45,
+   "seguro": 600,
+   "mantenimiento": 500,
+   "impuesto": 80,
+   "tipo": 0,
+   "cuota": 450,
+   "entrada": 0
+  },
+  "resultado": {
+   "costeCompra": 18470,
+   "costeRenting": 21600,
+   "mesCompra": 384.7917,
+   "mesRenting": 450,
+   "cuotaEquilibrio": 384.7917,
+   "intereses": 0,
+   "reventa": 11250,
+   "diferencia": 3130
+  },
+  "entradas_texto": "coche de 25.000 € durante 4 años, valor de reventa del 45 %, seguro de 600 € al año, mantenimiento de 500 € al año, impuesto de 80 € al año, sin financiar, frente a un renting de 450 € al mes con todo incluido",
+  "filas": [
+   [
+    "Coste total de comprar",
+    "18.470 €"
+   ],
+   [
+    "Coste total del renting",
+    "21.600 €"
+   ],
+   [
+    "Diferencia a favor de comprar",
+    "3.130 €"
+   ],
+   [
+    "Coste mensual de comprar",
+    "384,79 €"
+   ],
+   [
+    "Cuota mensual del renting",
+    "450,00 €"
+   ],
+   [
+    "Cuota de renting de equilibrio",
+    "384,79 €/mes"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, comprar sale 3.130 € más barato en 4 años; el renting solo compensaría si su cuota, con todo incluido, bajara de 384,79 € al mes.",
+  "fecha": "2026-10-03",
+  "datos_fijados": ""
+ },
+ "contado-o-financiar": {
+  "inputs": {
+   "precio": 20000,
+   "entrada": 2000,
+   "tin": 7,
+   "comision": 1,
+   "plazo": 48,
+   "seguro": 0,
+   "rentab": 3,
+   "impuesto": 19,
+   "descuento": 0
+  },
+  "resultado": {
+   "costeFinanciar": 2869.5554,
+   "rendimientoNeto": 802.5672,
+   "descuentoPerdido": 0,
+   "ventajaFinanciar": -2066.9882,
+   "tae": 7.7844,
+   "rentabilidadDeEquilibrio": 9.2912,
+   "cuota": 431.0324,
+   "comision": 180,
+   "importeFinanciado": 18000,
+   "ganador": "contado"
+  },
+  "entradas_texto": "compra de 20.000 € con 2.000 € de entrada, préstamo al 7 % TIN con 1 % de comisión a 48 meses, sin descuento por pagar al contado, y tu dinero rindiendo un 3 % anual con un 19 % de impuestos",
+  "filas": [
+   [
+    "Coste de financiar (intereses y comisión)",
+    "2.870 €"
+   ],
+   [
+    "Rendimiento neto de tu dinero si financias",
+    "803 €"
+   ],
+   [
+    "Ventaja de financiar",
+    "-2.067 €"
+   ],
+   [
+    "Cuota mensual",
+    "431,03 €"
+   ],
+   [
+    "TAE real del préstamo",
+    "7,78 %"
+   ],
+   [
+    "Rentabilidad anual de equilibrio",
+    "9,29 %"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, pagar al contado ahorra 2.067 €; financiar solo compensaría si tu dinero rindiera más de un 9,29 % anual antes de impuestos (la TAE real es del 7,78 %) o si te hicieran descuento por pagar al contado.",
+  "fecha": "2026-10-03",
+  "datos_fijados": ""
+ },
+ "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
+  "inputs": {
+   "capital": 150000,
+   "tin": 2.76,
+   "ingresos": 3500,
+   "otras": 0,
+   "tope": 35
+  },
+  "resultado": {
+   "cuota20": 813.9905,
+   "cuota25": 692.7344,
+   "cuota30": 613.1566,
+   "int20": 45357.723,
+   "int25": 57820.3158,
+   "int30": 70736.3713,
+   "esf20": 23.2569,
+   "esf25": 19.7924,
+   "esf30": 17.5188,
+   "cuotaMax": 1225,
+   "plazoMinAnos": 11.9984,
+   "elegido": 20,
+   "extra30": 25378.6483,
+   "alivio30": 200.8339,
+   "extra25": 12462.5929,
+   "alivio25": 121.2561,
+   "extra30vs25": 12916.0555
+  },
+  "entradas_texto": "hipoteca de 150.000 € al 2,76 % (tipo medio de las nuevas hipotecas fijas, BCE, agosto de 2026), ingresos netos de 3.500 € al mes, sin otras deudas y tope de esfuerzo del 35 %",
+  "filas": [
+   [
+    "A 20 años: cuota e intereses totales",
+    "813,99 €/mes · 45.358 €"
+   ],
+   [
+    "A 25 años: cuota e intereses totales",
+    "692,73 €/mes · 57.820 €"
+   ],
+   [
+    "A 30 años: cuota e intereses totales",
+    "613,16 €/mes · 70.736 €"
+   ],
+   [
+    "Cuota máxima con ese tope",
+    "1.225,00 €/mes"
+   ],
+   [
+    "Intereses extra de 30 años frente a 20",
+    "25.379 €"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, el plazo más corto de los tres que cabe en el 35 % de tus ingresos es 20 años; alargar a 30 años baja la cuota 200,83 € al mes pero paga 25.379 € más de intereses.",
+  "fecha": "2026-10-03",
+  "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
+ },
+ "hipoteca-bonificada-o-sin-vinculaciones": {
+  "inputs": {
+   "capital": 150000,
+   "plazo": 25,
+   "tin": 2.76,
+   "bonif": 0.5,
+   "vinc": 300,
+   "aperturaBon": 0,
+   "aperturaSin": 0,
+   "horizonte": 25
+  },
+  "resultado": {
+   "H": 25,
+   "cuotaBon": 692.7344,
+   "cuotaSin": 731.767,
+   "interesesBon": 57820.3158,
+   "interesesSin": 69530.0908,
+   "comisionBon": 0,
+   "comisionSin": 0,
+   "vincTotal": 7500,
+   "costeBon": 65320.3158,
+   "costeSin": 69530.0908,
+   "diferencia": 4209.775,
+   "ahorroIntereses": 11709.775,
+   "ahorroCuotaMes": 39.0326,
+   "bonifMin": 0.322,
+   "vincMax": 468.391,
+   "mejor": 0
+  },
+  "entradas_texto": "hipoteca de 150.000 € a 25 años al 2,76 % con bonificación (tipo medio de las nuevas hipotecas fijas, BCE, agosto de 2026), 0,50 puntos más sin vinculaciones, y vinculaciones de 300 € al año, a 25 años",
+  "filas": [
+   [
+    "Coste total de la bonificada (intereses y vinculaciones)",
+    "65.320 €"
+   ],
+   [
+    "Coste total de la de sin vinculaciones",
+    "69.530 €"
+   ],
+   [
+    "Diferencia a favor de la bonificada",
+    "4.210 €"
+   ],
+   [
+    "Cuota de la bonificada",
+    "692,73 €/mes"
+   ],
+   [
+    "Cuota de la de sin vinculaciones",
+    "731,77 €/mes"
+   ],
+   [
+    "Bonificación mínima para compensar",
+    "0,32 puntos"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, la bonificada ahorra 4.210 € en 25 años y compensa mientras la rebaja del tipo supere 0,32 puntos o las vinculaciones cuesten menos de 468 € al año; por debajo de ese umbral sale más barata la de sin vinculaciones.",
+  "fecha": "2026-10-03",
+  "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
+ },
+ "seguro-todo-riesgo-o-terceros": {
+  "inputs": {
+   "valor": 18000,
+   "deprec": 12,
+   "primaTerceros": 380,
+   "primaTR": 720,
+   "franquicia": 300,
+   "prob": 10,
+   "coste": 3000,
+   "anos": 5
+  },
+  "resultado": {
+   "difPrimaAcum": 1700,
+   "cubiertoEsperado": 1350,
+   "saldoTodoRiesgo": -350,
+   "valorUmbral": 3700,
+   "multiploUmbral": 10.8824,
+   "anoLimite": 1,
+   "valorFinal": 10794.5165,
+   "primaExtraAnual": 340,
+   "compensaDesdeElInicio": false,
+   "ganador": "terceros"
+  },
+  "entradas_texto": "coche de 18.000 € que se deprecia un 12 % al año, prima de 720 € a todo riesgo frente a 380 € a terceros, franquicia de 300 €, probabilidad de siniestro del 10 % al año y reparación media de 3.000 €, a 5 años",
+  "filas": [
+   [
+    "Sobreprima del todo riesgo al año",
+    "340 €"
+   ],
+   [
+    "Sobreprima acumulada en 5 años",
+    "1.700 €"
+   ],
+   [
+    "Pérdida esperada que te cubre en ese plazo",
+    "1.350 €"
+   ],
+   [
+    "Saldo del todo riesgo (cubierto menos sobreprima)",
+    "-350 €"
+   ],
+   [
+    "Valor estimado del coche al final",
+    "10.795 €"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, el todo riesgo te cubre 1.350 € esperados a cambio de 1.700 € de sobreprima en 5 años (saldo de -350 €): no compensa; el resultado cambia si tu probabilidad de siniestro o el coste medio de reparar son mayores.",
+  "fecha": "2026-10-03",
+  "datos_fijados": ""
+ },
+ "subrogar-hipoteca-merece-la-pena": {
+  "inputs": {
+   "capital": 150000,
+   "tipoActual": 3.5,
+   "anos": 20,
+   "tipoNuevo": 2.76,
+   "comision": 0.05,
+   "gastos": 1500,
+   "vinculacion": 300,
+   "horizonte": 10
+  },
+  "resultado": {
+   "cuotaActual": 869.9396,
+   "cuotaNueva": 813.9905,
+   "ahorroCuota": 30.9491,
+   "ahorroIntereses": 13427.7755,
+   "costeCambio": 1575,
+   "mesesEquilibrio": 25,
+   "nuncaRecupera": false,
+   "ahorroNeto5": 2108.2511,
+   "ahorroNetoPlazo": 5852.7755,
+   "ahorroNetoHorizonte": 4839.8598,
+   "tipoEquilibrio": 3.1427,
+   "mesesHorizonte": 120,
+   "ganador": "cambiar"
+  },
+  "entradas_texto": "hipoteca de 150.000 € con 20 años por delante, al 3,50 % actual y al 2,76 % la nueva (tipo medio de las nuevas hipotecas fijas, BCE, agosto de 2026), comisión del 0,05 %, gastos de 1.500 €, vinculaciones de 300 € al año y horizonte de 10 años",
+  "filas": [
+   [
+    "Cuota actual",
+    "869,94 €/mes"
+   ],
+   [
+    "Cuota nueva",
+    "813,99 €/mes"
+   ],
+   [
+    "Ahorro de cuota con vinculaciones",
+    "30,95 €/mes"
+   ],
+   [
+    "Coste del cambio (comisión y gastos)",
+    "1.575 €"
+   ],
+   [
+    "Ahorro neto a 10 años",
+    "4.840 €"
+   ],
+   [
+    "Meses para recuperar el coste",
+    "25"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, cambiar de hipoteca recupera su coste en 25 meses y ahorra 4.840 € netos a 10 años; compensa si el tipo nuevo queda por debajo del 3,14 % y no vendes ni cancelas antes de esos 25 meses.",
+  "fecha": "2026-10-03",
+  "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
+ },
+ "hipoteca-fija-o-variable": {
+  "inputs": {
+   "capital": 150000,
+   "anos": 25,
+   "fijo": 2.8,
+   "dif": 0.8,
+   "euribor": 3.247,
+   "escenario": 0
+  },
+  "resultado": {
+   "cuotaFija": 695.8117,
+   "intFija": 58743.5242,
+   "totalFija": 208743.5242,
+   "cuotaVar1": 795.6531,
+   "cuotaVar2": 795.6531,
+   "intVar": 88695.9391,
+   "totalVar": 238695.9391,
+   "euriborEsc": 3.247,
+   "euriborEquilibrio": 1.9018,
+   "diferencia": 29952.4149,
+   "anosRestantes": 24
+  },
+  "entradas_texto": "hipoteca de 150.000 € a 25 años, fija al 2,80 % frente a Euríbor + 0,80 puntos con el Euríbor en 3,247 % (media de septiembre de 2026, BCE) y sin variación del Euríbor después del primer año",
+  "filas": [
+   [
+    "Cuota de la fija",
+    "695,81 €/mes"
+   ],
+   [
+    "Cuota de la variable el primer año",
+    "795,65 €/mes"
+   ],
+   [
+    "Intereses totales de la fija",
+    "58.744 €"
+   ],
+   [
+    "Intereses totales de la variable",
+    "88.696 €"
+   ],
+   [
+    "Intereses menos con la fija",
+    "29.952 €"
+   ],
+   [
+    "Euríbor medio de equilibrio",
+    "1,90 %"
+   ]
+  ],
+  "veredicto_texto": "Con estos supuestos, la fija sale más barata en intereses si el Euríbor medio de los 24 años siguientes al primero supera el 1,90 %; si se mantiene en 3,247 %, la fija ahorra 29.952 €, y si queda por debajo del 1,90 %, la variable pagaría menos.",
+  "fecha": "2026-10-03",
+  "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
+ }
+}

@@ -1,7 +1,7 @@
 {
   "slug": "universidad-publica-o-privada-o-master",
-  "title": "Universidad pública o privada, grado o máster: coste",
-  "description": "Calcula el sobrecoste de la privada frente a la pública y la diferencia de salario que necesitarías para amortizarlo, con tus cifras y tus hipótesis.",
+  "title": "Universidad pública o privada: calcula el sobrecoste",
+  "description": "Calcula el sobrecoste de la universidad privada frente a la pública y la diferencia de salario que necesitarías para amortizarlo, con tus cifras.",
   "h1": "Universidad pública o privada (grado o máster): ¿compensa el sobrecoste?",
   "lead": "La universidad privada solo compensa en dinero frente a la pública si la diferencia de salario que esperas cada año es mayor que su sobrecoste repartido en tus años de trabajo, y esa diferencia es una hipótesis tuya, no una promesa: con los ejemplos declarados de la página (4 años, matrícula pública de 1.000 € al año y privada de 8.000 €) el sobrecoste es de 28.000 € y haría falta una diferencia de salario de al menos 2.800 € al año durante 10 años; con 2.000 € al año no se amortizaría en ese plazo, y con 4.000 € se amortizaría en 7 años. El retorno real depende del sector, la nota, la red de contactos y el mercado, y no todo lo que importa se mide en euros. Pon tus matrículas (consulta tu universidad) y tus hipótesis.",
   "veredicto": "La privada compensa en dinero solo si la diferencia de salario anual que esperas supera su sobrecoste total dividido entre tus años de trabajo; la calculadora te da ese mínimo con tus datos, y el resultado es una hipótesis, no una promesa: el retorno depende del sector, la nota y el mercado, y no incluye lo que no se mide en euros (vocación, calidad, prácticas, cercanía).",

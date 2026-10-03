@@ -25,6 +25,9 @@ for p in projs:
 # Barómetro (Estratega): cada cifra de /barometro/ debe coincidir con la calculadora real
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_barometro.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_barometro.py")]).returncode != 0: fails += 1
+# Ejemplos resueltos de las insignia (ops/gen_ejemplos.py --check): el JSON vigente debe coincidir con la calculadora real
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "gen_ejemplos.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "gen_ejemplos.py"), "--check"]).returncode != 0: fails += 1
 # Pulso / datos vivos (Estratega): sin red
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_live.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_live.py")]).returncode != 0: fails += 1

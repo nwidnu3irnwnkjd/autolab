@@ -1,8 +1,8 @@
 {
   "slug": "cuanto-cobro-de-paro-prestacion-desempleo",
-  "title": "¿Cuánto cobraré de paro? Calculadora de prestación 2026",
+  "title": "Calcular cuánto cobrarás de paro: prestación 2026",
   "description": "Calcula cuánto cobrarás de paro al mes y cuánto durará la prestación según tu base reguladora y tus días cotizados. Orientativo, con tus datos.",
-  "h1": "¿Cuánto cobraré de paro? Calcula tu prestación mensual y total",
+  "h1": "¿Cuánto cobrarás de paro? Calcula tu prestación mensual y total",
   "lead": "Con una base de cotización de 1.500 € al mes, sin hijos y 720 días cotizados, cobrarías 1.050 € brutos al mes los primeros 180 días y 900 € al mes después, durante 240 días (8 meses), unos 8.100 € en total, salvo que tu base te lleve al máximo (1.225 € al mes sin hijos, 1.400 € con 1 hijo y 1.575 € con 2 o más) o al mínimo (560 € sin hijos y 749 € con hijos), cifras de 2026 que se reducen en proporción si trabajabas a tiempo parcial. La herramienta calcula la prestación mensual y diaria de los dos tramos, el tope que se te aplica, los días que te corresponden según lo cotizado y el total bruto estimado; no incluye la retención del IRPF, los subsidios ni la compatibilidad con un trabajo.",
   "veredicto": "La prestación contributiva es el 70 % de tu base reguladora los 180 primeros días y el 60 % desde el día 181, dentro de un máximo y un mínimo que dependen de tus hijos a cargo y de tu jornada (arts. 270.2 y 270.3 de la LGSS). Si el porcentaje te da más que el máximo cobras el máximo; si te da menos que el mínimo, cobras el mínimo; en el resto de casos, el porcentaje. Los días de prestación dependen de los días cotizados en los seis años anteriores (art. 269.1): desde 360 días cotizados, 120 días de prestación, hasta 720 con 2.160 días o más. Con menos de 360 días cotizados no hay prestación contributiva.",
   "tema": "ahorro",

@@ -1,8 +1,8 @@
 {
   "slug": "caldera-reparar-o-cambiar",
-  "title": "Reparar o cambiar la caldera de gas: ¿qué sale más barato?",
-  "description": "Compara el coste anual de reparar o cambiar tu caldera de gas según el presupuesto, el rendimiento y el gas, con el punto de equilibrio y la amortización.",
-  "h1": "Reparar o cambiar la caldera de gas: ¿qué sale más barato?",
+  "title": "Cambiar la caldera o repararla: calcula qué sale más barato",
+  "description": "Compara el coste anual de reparar o cambiar tu caldera de gas según el presupuesto, el rendimiento y el gas, con punto de equilibrio y amortización.",
+  "h1": "Cambiar la caldera de gas o repararla: ¿qué sale más barato?",
   "lead": "Conviene cambiar la caldera en lugar de repararla si el presupuesto de la reparación supera el punto de equilibrio que sale de tu consumo de gas, tu rendimiento actual y el precio de la nueva; con los ejemplos de la calculadora (8.000 kWh de gas al año, rendimiento del 81 % frente al 92 %, caldera nueva de 2.500 € y la reparada aguanta 5 años) ese punto está en unos 350 €. La calculadora lo recalcula con tus datos y te da el ahorro de gas, los años de amortización y el veredicto; no sustituye el diagnóstico de un técnico autorizado.",
   "veredicto": "Cambiar la caldera sale más barato que repararla cuando el presupuesto de la reparación supera el punto de equilibrio que calcula la herramienta con tu gas, tu rendimiento y el precio de la nueva (con los ejemplos, unos 350 €); por debajo, conviene reparar. Es una estimación económica y no sustituye el diagnóstico de un técnico autorizado.",
   "tema": "energia",

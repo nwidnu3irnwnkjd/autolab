@@ -1,8 +1,8 @@
 {
   "slug": "punto-de-carga-casa-con-o-sin-placas",
-  "title": "Punto de carga en casa para eléctrico: con o sin placas",
-  "description": "Calcula el coste de cargar tu coche eléctrico en casa, con y sin placas solares. Incluye instalación del punto de carga y tus kilómetros al año.",
-  "h1": "Coche eléctrico: punto de carga en casa, con o sin placas",
+  "title": "Punto de carga para coche eléctrico en casa: coste",
+  "description": "Calcula el coste de cargar tu coche eléctrico en casa, con y sin placas solares, incluida la instalación del punto de carga y tus km al año.",
+  "h1": "Coche eléctrico: punto de carga en casa, con o sin placas solares",
   "lead": "Conviene instalar un punto de carga en casa si haces más km al año de los que lo amortizan en 10 años (con los ejemplos de la calculadora: 17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 € y carga pública a 0,45 €/kWh, a partir de unos 3.300 km al año, o unos 2.900 con placas), y que la electricidad de casa sea más barata que la pública. La calculadora te da el ahorro anual con y sin placas, los años de amortización y el coste frente a la gasolina.",
   "veredicto": "El punto de carga en casa compensa si haces más km al año de los que lo amortizan en 10 años y el kWh de casa sale más barato que el de la pública; con los ejemplos, unos 3.300 km al año sin placas y unos 2.900 con ellas. Con tus datos la calculadora da el ahorro, los años de amortización y la comparación con la gasolina.",
   "tema": "energia",

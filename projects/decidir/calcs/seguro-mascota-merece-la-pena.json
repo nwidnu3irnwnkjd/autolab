@@ -1,8 +1,8 @@
 {
   "slug": "seguro-mascota-merece-la-pena",
-  "title": "Seguro de mascota: ¿merece la pena? Calcula si compensa",
-  "description": "Calcula si un seguro de mascota compensa: coste esperado con y sin seguro, probabilidad de equilibrio, peor escenario con carencia y hucha propia.",
-  "h1": "Seguro de mascota: ¿merece la pena?",
+  "title": "Seguro de mascotas: ¿merece la pena? Calculadora",
+  "description": "Calcula si un seguro de mascotas compensa: coste esperado con y sin seguro, probabilidad de equilibrio, peor escenario con carencia y hucha propia.",
+  "h1": "Seguro de mascotas: ¿merece la pena según tu caso?",
   "lead": "Un seguro de mascota no suele compensar por esperanza matemática, sino por reducir la varianza: con los ejemplos de la página (prima de 300 € al año, franquicia de 100 €, evento grave de 1.500 € y probabilidad anual del 10 %), cuesta 160 € más al año de media y solo compensaría si la probabilidad superase el 21,4 %, pero en un año con evento grave pagarías 400 € en vez de 1.500 €. Pon tu prima, tu franquicia, el límite, la carencia y tu estimación de probabilidad, y verás el coste esperado con y sin seguro, la probabilidad de equilibrio y el peor escenario.",
   "veredicto": "El seguro de mascota compensa en valor esperado solo si la probabilidad anual de un gasto grave supera la prima dividida por lo que el seguro paga en un evento; por debajo, es un pago por reducir el riesgo de un desembolso grande, y la calculadora te da ese umbral y el peor escenario con tus datos.",
   "tema": "ahorro",

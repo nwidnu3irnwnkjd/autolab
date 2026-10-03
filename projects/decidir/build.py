@@ -11,6 +11,7 @@ import plan  # plan completo «Compra de vivienda» (Diseñador, R16.4)
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import embed  # widget insertable /embed/<slug>/ y /inserta/ (Diseñador)
+import ejemplos  # «Ejemplo resuelto» estático de las insignia (lee data/ejemplos.json; ops/gen_ejemplos.py)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
 from ui import asset_v, ill, ILL, ICONS, tema, card, catalog_body, notfound_body, head_extra
 
@@ -58,6 +59,7 @@ def render_calc(c, all_calcs):
     _lm = seo.calc_lastmod(c["slug"], params)
     body = f"""
 {ui.calc_header(c)}
+{ejemplos.block(c['slug'])}
 <p class="note upd">Actualizado: <time datetime="{_lm}">{seo.fecha_es(_lm)}</time></p>
 {ui.calc_form(c)}
 {plan.next_block(c['slug'])}
@@ -88,7 +90,7 @@ def main():
     ogimg.build_all(os.path.join(ROOT, "assets"), os.path.join(ROOT, ".cache"))  # og-<tema>.png (solo si cambia ogimg.py)
     shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(DIST, "assets"))
     if os.path.isdir(os.path.join(ROOT, "og")): shutil.copytree(os.path.join(ROOT, "og"), os.path.join(DIST, "og"))  # PNG/JPG por página (commiteados)
-    calcs = calcs_loader.load_calcs(ROOT, params)
+    calcs = ejemplos.apply(calcs_loader.load_calcs(ROOT, params))
     seo.build_clusters(calcs, tema)  # -> data/clusters.json, antes de render_calc
     global BARO, ACTIVE_HUBS
     ACTIVE_HUBS = hubs.eligible(calcs, GUIDES)  # disparador: >= 6 páginas del tema
