@@ -1,11 +1,13 @@
 {
  "datos": {
   "diesel": {
+   "anterior": 1.9268,
+   "anterior_fecha": "2026-10-02",
    "extra": {
-    "detalle": "Media simple de 10741 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10745 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
-   "fecha_consulta": "2026-10-02",
-   "fecha_dato": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
+   "fecha_dato": "2026-10-03",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
@@ -14,11 +16,17 @@
     [
      "2026-10-02",
      1.9268
+    ],
+    [
+     "2026-10-03",
+     1.9238
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9268
+   "valor": 1.9238,
+   "variacion_abs": -0.003,
+   "variacion_pct": -0.16
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -126,7 +134,7 @@
      ]
     ]
    },
-   "fecha_consulta": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
    "fecha_dato": "2026-09-30",
    "fuente": {
     "nombre": "Banco Central Europeo (Data Portal, serie Euribor 1 año, vía Refinitiv)",
@@ -146,11 +154,13 @@
    "variacion_pct": 9.92
   },
   "gasolina95": {
+   "anterior": 1.8299,
+   "anterior_fecha": "2026-10-02",
    "extra": {
-    "detalle": "Media simple de 10380 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10389 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
-   "fecha_consulta": "2026-10-02",
-   "fecha_dato": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
+   "fecha_dato": "2026-10-03",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
@@ -159,27 +169,33 @@
     [
      "2026-10-02",
      1.8299
+    ],
+    [
+     "2026-10-03",
+     1.8205
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8299
+   "valor": 1.8205,
+   "variacion_abs": -0.0094,
+   "variacion_pct": -0.51
   },
   "luz_pvpc": {
-   "anterior": 0.20613,
-   "anterior_fecha": "2026-10-01",
+   "anterior": 0.22065,
+   "anterior_fecha": "2026-10-02",
    "extra": {
     "detalle": "PVPC (precio de la energía por hora), media de las 24 horas del día",
-    "dias_mes": 2,
-    "hora_barata": 14,
+    "dias_mes": 3,
+    "hora_barata": 13,
     "hora_cara": 20,
-    "media_mes": 0.21339,
+    "media_mes": 0.1987,
     "mes": "2026-10",
-    "precio_hora_barata": 0.1297,
-    "precio_hora_cara": 0.37978
+    "precio_hora_barata": 0.04848,
+    "precio_hora_cara": 0.26821
    },
-   "fecha_consulta": "2026-10-02",
-   "fecha_dato": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
+   "fecha_dato": "2026-10-03",
    "fuente": {
     "nombre": "Red Eléctrica de España (REData)",
     "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real"
@@ -188,26 +204,32 @@
     [
      "2026-10-02",
      0.22065
+    ],
+    [
+     "2026-10-03",
+     0.16933
     ]
    ],
    "ok": true,
    "unidad": "€/kWh",
-   "valor": 0.22065,
-   "variacion_abs": 0.01452,
-   "variacion_pct": 7.04
+   "valor": 0.16933,
+   "variacion_abs": -0.05132,
+   "variacion_pct": -23.26
   },
   "madrid_tiempo": {
+   "anterior": 16.7,
+   "anterior_fecha": "2026-10-02",
    "extra": {
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 23.3,
-    "max_semana": 23.3,
-    "min_hoy": 16.5,
-    "min_semana": 12.2
+    "max_hoy": 20.8,
+    "max_semana": 20.8,
+    "min_hoy": 17.7,
+    "min_semana": 9.2
    },
-   "fecha_consulta": "2026-10-02",
-   "fecha_dato": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
+   "fecha_dato": "2026-10-03",
    "fuente": {
     "nombre": "Open-Meteo (CC BY 4.0)",
     "url": "https://open-meteo.com/"
@@ -216,11 +238,17 @@
     [
      "2026-10-02",
      16.7
+    ],
+    [
+     "2026-10-03",
+     17.9
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 16.7
+   "valor": 17.9,
+   "variacion_abs": 1.2,
+   "variacion_pct": 7.19
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
@@ -328,7 +356,7 @@
      ]
     ]
    },
-   "fecha_consulta": "2026-10-02",
+   "fecha_consulta": "2026-10-03",
    "fecha_dato": "2026-08-31",
    "fuente": {
     "nombre": "Banco Central Europeo (Data Portal, MIR: tipos de interés de nuevas operaciones, vivienda, España, fijación inicial superior a 10 años)",
@@ -349,6 +377,6 @@
   }
  },
  "esquema": 1,
- "generado": "2026-10-02",
+ "generado": "2026-10-03",
  "nota": "Datos públicos sin clave; cada dato lleva su fecha y fuente. Generado por ops/refresh_data.py"
 }
