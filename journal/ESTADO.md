@@ -155,3 +155,11 @@
 - Inspección real de Google (3-oct 15:27Z): 1 indexada, 57 descubiertas sin indexar, 103 desconocidas de 161 URL. kpis.py ya lee journal/inspeccion.json.
 - Consumo: 5h 24 %, semanal 65 % (c63 ≈ 2 pp). Ritmo objetivo 90 % el lun 05:00Z.
 - Siguiente (c64): Redactor diario (resumen del día 4-oct, domingo: «La semana en tu bolsillo»), piezas de hechos nuevos del Vigilante; Optimizador pasada 2 (c65); experimentos E1/E2/E3 medición; enlaces inversos; revisar ejemplos/tablas tras cierre.
+
+## Ciclo 64 cerrado · UX, noticias y popularidad (3-oct tarde)
+- RDL 25/2026 (BOE-A-2026-20265; carburantes -20/-13/-6 c/l oct-dic, TUR gas con tope +35 % y deuda diferida 2,051412 c€/kWh que paga quien deje la TUR antes del 1-ene-2027, butano 19,55 €, IVA/IEE luz solo con IPC>15 % por subclase): pendiente de convalidación (plazo ~11-nov, sin fecha oficial). Verificación Opus en journal/verificacion-rdl-25-2026.md; avisos aplicados en calculadoras de gas/coche; piezas publicadas (10 noticias). Vigilar convalidación y IPC 14-oct (decide nov) y 13-nov (decide dic).
+- UX: Director UX/UI (ops/roles/director-ux-ui.md, Opus cada 4 ciclos; próxima pasada c68) → ops/UX.md; ejecutado UX1.1-1.8 (primer input a ≤593 px en móvil, home 9800→6839 px, sin scroll-reveal ni gráficos diferidos [petición de Andoni], validación accesible, barra móvil A/B ux_var, resultado sticky ≥1024). gtag solo en entremuchos.com; eventos result_view y calc_error (verificar en DebugView producción). Pendiente: cabecera sticky 97 px móvil, deposito-letras-o-fondo-monetario desborda a 375 px, iframes embed lazy.
+- Popularidad (orden de Andoni «lo que más gusta, más y más fácil»): ops/popularidad.py → data/popularidad.json con umbral (hoy insuficiente: 38 sesiones); home «Empieza por aquí»; «Otros también usan». Andoni podría activar filtro de tráfico interno en GA4 (opcional).
+- ops/triggers.py escribe borradores en content/noticias; kpis con columnas Noticias, res, err. IndexNow expande sitemaps.
+- Consumo: 5h 33 %, semanal 67 %.
+- Siguiente (c65): Optimizador pasada 2 (resultados E1-E3, indexación inspeccionada), Redactor (resumen domingo + hechos de la cola), arreglar deposito-letras, Vigilante lunes 5-oct (consolidados), seguir el 14-oct.
