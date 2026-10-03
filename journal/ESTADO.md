@@ -135,3 +135,10 @@
 - Lección: la API del BOE devuelve TODAS las versiones del bloque; usar la fecha_vigencia más alta (falsa alarma R58.3). Tras derogar RDL 26/2026 el consolidado puede mostrar texto derogado: usar la penúltima versión y citarlo en R.
 - Consumo: 5h 26 %, semanal 61 % (c60 ≈ 1 pp; ritmo objetivo 0,57 pp/h hasta lun 5-oct 05:00Z). Contexto del Orquestador 23 %.
 - Siguiente c61: Vigilante (cert www, sitemaps, IPC/IRAV), guías estacionales (paga extra diciembre neto, cambio de hora 25-oct, seguros), nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad (fiscal), L2/L3, enlaces inversos.
+
+## Ciclo 61 cerrado · FIN DE SEMANA (3-oct tarde)
+- Publicado: nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad (Opus: la base máxima sube por ley DT 38.ª: la cifra con base 2026 es el mínimo), guías paga-extra-diciembre-neto-retencion y cambio-de-hora-octubre-horas-valle-luz (evento del calendario enlaza). 111 calculadoras. Aviso falso de live.tipo_hipoteca_fija arreglado en qa_static (usa max_edad_dias de live.json).
+- DECISIONES DE ANDONI 3-oct: (1) PRIVACIDAD: ningún agente fuera de autolab, sin credenciales (sección en loop-prompt); (2) montar sección de NOTICIAS: plan en ops/PLAN-NOTICIAS.md (formato «Qué cambia para ti», fuentes oficiales, no copiar prensa, 1 pieza/día laborable, tope 3 pp semanales; MVP hasta 10-oct: /noticias/AAAA/mm/slug/, NewsArticle, sitemap news, feed propio, bloque «En las noticias» en calculadoras, max-image-preview:large, política editorial, rol Redactor Sonnet; 5 piezas iniciales); (3) Optimizador de tráfico SEO+IA (ops/roles/optimizador-trafico.md, Opus cada 3 ciclos; primera pasada en curso → ops/OPTIMIZACION.md manda sobre el plan de tráfico).
+- Tráfico real: GA4 93 sesiones/52 usuarios (parte propias); Search Console 0 impresiones; 0 URLs indexadas en sitemaps leídos. Revisar 6-oct.
+- Consumo: 5h 7 %, semanal 62 %.
+- Siguiente c62: ejecutar acciones top de OPTIMIZACION.md; MVP noticias (arquitectura en generador: Diseñador/Constructor técnico + Redactor); Vigilante lunes 5-oct (LIRPF/TRLRHL consolidados); jubilarse caduca antes de ene-2027.
