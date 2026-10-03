@@ -142,3 +142,9 @@
 - Tráfico real: GA4 93 sesiones/52 usuarios (parte propias); Search Console 0 impresiones; 0 URLs indexadas en sitemaps leídos. Revisar 6-oct.
 - Consumo: 5h 7 %, semanal 62 %.
 - Siguiente c62: ejecutar acciones top de OPTIMIZACION.md; MVP noticias (arquitectura en generador: Diseñador/Constructor técnico + Redactor); Vigilante lunes 5-oct (LIRPF/TRLRHL consolidados); jubilarse caduca antes de ene-2027.
+
+## Ciclo 62 cerrado · 1.ª pasada del Optimizador (ops/OPTIMIZACION.md manda; lee su tabla §3)
+- Hecho: #1 titles/H1/descriptions de 75 páginas (mapa journal/titles-2026-10-03.md, demanda journal/demanda-2026-10-03.md; no repetir demanda.py hoy); #2 «Ejemplo resuelto» en 9 insignia (ops/gen_ejemplos.py → data/ejemplos.json → ejemplos.py; cifras fijas con fecha; close_cycle lo regenera); #3 ops/inspect_all.py (URL Inspection de las 161 URL, 1 vez/20 h, journal/inspeccion.json; tarda >10 min: lanzar en segundo plano) — falta integrarlo en kpis.py.
+- Congeladas las calculadoras nuevas (salvo bruto→neto) hasta ≥ 50 URLs indexadas; noticias con tope 2/semana; Opus solo si cambia cifra/norma.
+- Siguiente (c63): #4 tablas de respuesta numérica con anclas (paro por nómina, dinero para comprar casa, cuota hipoteca, lotería) en páginas existentes; #5 calculadora bruto→neto (Opus ≤40k); #6 páginas de dato persistentes (/datos/irav/, euribor hoy, pvpc) autoactualizadas; #7 barómetro renombrado; MVP noticias técnico (/noticias/…, NewsArticle, max-image-preview:large, política editorial) con 5 piezas; integrar inspect_all en kpis.py.
+- Consumo: 5h 9 %, semanal 63 %.
