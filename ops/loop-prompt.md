@@ -63,3 +63,6 @@ Quiere «chicha»: MÁS de una pieza al día, también en fin de semana, con un 
 
 ## DIRECTOR DE UX/UI (orden de Andoni, 3-oct)
 Rol permanente: ops/roles/director-ux-ui.md (Opus, cada 4 ciclos, auditoría con navegador en móvil/escritorio/oscuro, tendencias vigentes y datos de uso). Su lista en ops/UX.md se ejecuta por el Diseñador (Sonnet) antes de tareas de diseño nuevas; el peso por página no puede crecer.
+
+## LO QUE MÁS LES GUSTA, MÁS Y MÁS FÁCIL (orden de Andoni, 3-oct)
+Los datos de uso mandan: el contenido que más gusta a los usuarios (páginas más vistas, calculadoras más usadas `calc_used`, mayor tiempo, más compartidas/citas y consultas de Search Console con más impresiones/CTR) debe recibir (a) más visibilidad (home «Lo más usado», orden de hubs, «Más consultadas» en /todas/, enlaces internos), (b) más contenido nuevo relacionado (noticias, guías, tablas, variantes) y (c) menos fricción (menos clics, valores por defecto útiles, accesos directos). Mecanismo: `ops/popularidad.py` → `data/popularidad.json` (diario, con umbral mínimo de datos para no reaccionar al ruido y excluyendo nuestro propio tráfico); el Orquestador lo consulta cada ciclo para priorizar backlog, noticias y mejoras de UX/Optimizador.
