@@ -120,6 +120,7 @@ git -c credential.helper="$CH" push origin main
 HASH="$(git rev-parse --short HEAD)"
 
 # KPIs de tráfico (informativo, ~80 s por la URL Inspection API; una fila por hora)
+(nohup python3 ops/inspect_all.py >/dev/null 2>&1 &)  # inspección de las 161 URL en segundo plano (1 vez/20 h)
 step "KPIs (journal/kpis.md, informativo)"; python3 ops/kpis.py || true
 
 # 8. esperar al deploy y IndexNow

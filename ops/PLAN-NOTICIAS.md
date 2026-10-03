@@ -69,3 +69,7 @@ Toda pieza sigue 4 bloques en este orden (plantilla `content/noticias/_plantilla
 - **Después (nov-dic):** temporada fuerte: cambios del 1-ene-2027 (alertas en cuanto salgan SMI, pensiones, cotización), lotería, fin de ejercicio; revisar a 6 semanas con los umbrales de §5 y decidir escalar (2/día) o reducir.
 - **Sin Andoni (todo lo anterior):** formato, cadencia, arquitectura, textos legales informativos, poda y cierre de la sección son reversibles y no tocan su identidad ni su dinero.
 - **Solo Andoni (opcional):** si algún día quiere firmar con nombre real o una sociedad como editor responsable (sube la transparencia que piden Google News y E-E-A-T y es lo que exigiría la LSSI si se monetiza); por defecto seguimos «Editor independiente». **No hace falta** Publisher Center: ya no admite altas y la inclusión en News es automática.
+
+
+## ACTUALIZACIÓN 3-oct (orden de Andoni, prevalece): más volumen
+Más de una pieza al día, también sábados y domingos; resumen diario («Lo que importa hoy») y resumen semanal («La semana en tu bolsillo»); pretende «chicha». Se mantienen los guardarraíles del plan (fuente oficial + fecha, análisis y cifra propia, sin copiar prensa, YMYL). El tope de 2 piezas/semana del Optimizador queda sustituido por seguimiento de indexación a 2 y 6 semanas con recorte automático si la mayoría sale «Rastreada: sin indexar».

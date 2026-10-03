@@ -24,13 +24,11 @@ def sitemap_urls():
         n += len(re.findall(r"<loc>", urllib.request.urlopen(sm, timeout=20).read().decode()))
     return n
 def known():
-    k = 0
-    for u in SAMPLE:
-        r = gauth.post("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", tok,
-            {"inspectionUrl": BASE + u, "siteUrl": f"sc-domain:{host}", "languageCode": "es-ES"})
-        cov = r.get("inspectionResult", {}).get("indexStatusResult", {}).get("coverageState", "")
-        if cov and "no reconoce" not in cov.lower() and "unknown to google" not in cov.lower(): k += 1
-    return k
+    """Lee journal/inspeccion.json (ops/inspect_all.py, todas las URL del sitemap, 1 vez/20 h): «conocidas/total (indexadas)»."""
+    d = json.load(open(os.path.join(ROOT, "journal/inspeccion.json")))
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import inspect_all
+    r = inspect_all.summary(d)
+    return f"{r['conocidas']}/{r['total']} (idx {r['indexadas']})"
 def gsc():
     q = gauth.post(f"https://www.googleapis.com/webmasters/v3/sites/sc-domain:{host}/searchAnalytics/query", tok,
         {"startDate": str(now.date() - datetime.timedelta(days=7)), "endDate": str(now.date())})
@@ -52,7 +50,7 @@ def ga_top():
             "orderBys": [{"metric": {"metricName": "screenPageViews"}, "desc": True}]}).get("rows", [])
     return "; ".join(f"{x['dimensionValues'][0]['value']} ({x['metricValues'][0]['value']})" for x in r) or "—"
 n_sm = safe(sitemap_urls)
-n_known = safe(known) if tok != ND else ND
+n_known = safe(known)
 g = safe(gsc) if tok != ND else (ND,) * 3
 sess = safe(ga_tot) if tok != ND and pid else (ND, ND)
 ev = safe(ga_events) if tok != ND and pid else [ND] * 5
