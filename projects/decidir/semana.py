@@ -4,7 +4,7 @@ journal/vigencias.md (sección «## Novedades normativas», opcional) y data/par
 data/cambios2027.json solo recibe una fila cuando la norma está publicada (valor + fuente). Revertir: quitar las llamadas
 a semana.* en build.py y directorio.py."""
 import json, os, re, html, datetime
-import seo
+import seo, noticias
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PATH2027 = "/que-cambia-1-enero-2027/"
@@ -38,7 +38,7 @@ def _proximo_plazo(today, events):
             if d >= today and (best is None or d < best[0]): best = (d, ev)
     return best
 
-def cards(live=None, today=None, events=None, vig=None):
+def cards(live=None, today=None, events=None, vig=None, sin_noticia=False):
     """Lista de tarjetas {id, titulo, valor, unidad, texto, fecha, fuente:{nombre,url}, calc, etiqueta}. Solo datos usables."""
     today = today or datetime.date.today()
     live = live if live is not None else seo.load_live()
@@ -68,6 +68,11 @@ def cards(live=None, today=None, events=None, vig=None):
         out.append(dict(id="plazo", titulo="Próximo plazo", valor=seo._fmt_fecha(d.isoformat()).rsplit(" de ", 1)[0], unidad=cuando,
                         texto=evn["titulo"] + ".", fecha=None, fuente=evn["fuente"], calc=evn["calc"], dia=d.isoformat()))
     nov = _novedad() if vig is None else vig
+    nf = noticias.featured(noticias.load(today), today)  # tarjeta «Lo que importa hoy» / «Última hora»: enlaza a la pieza, no al BOE
+    if nf:
+        lab, nn = nf; pf = noticias.principal(nn) or {"nombre": "Entre Muchos", "url": "/noticias/"}
+        if not sin_noticia: out.insert(0, dict(id="noticia", titulo=lab, valor="", unidad="", texto=nn["h1"], fecha=nn["published"], fuente=pf, calc=None, href=nn["path"]))
+        if nov and nn.get("tipo") == "alerta" and nn["published"] >= nov["fecha"]: nov = None  # la pieza sustituye a la línea del Vigilante
     if nov:
         out.append(dict(id="novedad", titulo="Novedad normativa", valor="", unidad="", texto=nov["texto"], fecha=nov["fecha"], fuente=dict(nombre="BOE", url=nov["url"]), calc=None))
     for c in out: c["viejo"] = bool(c["fecha"]) and stale(c["fecha"])
@@ -83,15 +88,16 @@ def _li(c, names):
     elif c["viejo"]: meta = f'<span class="sem-old">Dato de <time datetime="{f}">{_fe(f)}</time></span> (no es de esta semana).'
     else: meta = f'Actualizado: <time datetime="{f}">{_fe(f)}</time>.'
     link = f'<a href="/decidir/{c["calc"]}/">{e(names.get(c["calc"], "Calcula tu caso"))}</a>' if c.get("calc") else ""
+    if c.get("href"): link = f'<a href="{c["href"]}">Leer la noticia</a> · <a href="{noticias.PATH}">Todas las noticias</a>'
     val = f'<span class="pk-v">{c["valor"]} <small>{e(c["unidad"])}</small></span>{c.get("delta", "")}' if c["valor"] else ""
     return (f'<li class="pk pk-{c["id"]}{" pk-old" if c["viejo"] else ""}"><span class="pk-h"><svg class="pk-i" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICON.get(c["id"], ICON["novedad"])}</svg><strong>{e(c["titulo"])}</strong></span>'
             f'{val}<span class="pk-t">{e(c["texto"])}</span>'
             f'<span class="pulso-meta">{meta} Fuente: <a href="{c["fuente"]["url"]}" rel="noopener">{e(c["fuente"]["nombre"])}</a>.</span>'
             + (f'<span class="pk-l">{link}</span>' if link else "") + '</li>')
 
-def block(live=None, today=None, events=None, vig=None, names=None):
+def block(live=None, today=None, events=None, vig=None, names=None, sin_noticia=False):
     """Bloque «Esta semana» (home y /actualidad/). '' si no hay ningún dato utilizable."""
-    cs = cards(live, today, events, vig)
+    cs = cards(live, today, events, vig, sin_noticia)
     if not cs: return ""
     names = names or NAMES
     return ('<aside class="pulso semana box" aria-label="Esta semana"><h2>Esta semana</h2><ul>' + "".join(_li(c, names) for c in cs)

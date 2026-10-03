@@ -232,7 +232,7 @@ def _respuesta(c, base):
         if ej: out += " Ejemplo de la página: " + ej
     return out
 
-def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), hubs=(), tablas=(), tablas_md=""):
+def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(), news_md="", hubs=(), tablas=(), tablas_md=""):
     base = site["base_url"].rstrip("/")
     head = (f"# {site['name']}\n\n> {site['name']} ({base}) reúne calculadoras gratuitas en español para decidir entre dos o más opciones "
             "con tus propios números (hipoteca, coche, impuestos, energía, ahorro) en España. Cada página da un veredicto, la cifra que lo justifica, "
@@ -257,6 +257,7 @@ def write_llms(dist, site, calcs, guides, params, tema, icons, extra="", notes=(
     if notes:
         lines.append("\n## Actualidad\n")
         lines += [f"- [{n['h1']}]({base}/actualidad/{n['slug']}/): {n['description']}" for n in notes[:10]]
+    if news_md: lines.append(news_md)  # Noticias (últimos 30 días) con fecha y fuente oficial (noticias.py)
     if extra or tablas:  # c56: datos abiertos descargables, con licencia
         lines.append(f"\n## Datos abiertos (descarga directa)\n\n"
                      f"- Barómetro Entre Muchos (mensual): CSV {base}/barometro/datos.csv · JSON {base}/barometro/datos.json · licencia CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.es).\n"

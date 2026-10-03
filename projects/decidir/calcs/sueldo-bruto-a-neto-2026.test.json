@@ -1,0 +1,819 @@
+{
+  "func": "calcular",
+  "cases": [
+    {
+      "nombre": "defecto: 1.800 € brutos por paga en 14 pagas (25.200 €), Madrid, indefinido",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1638.0,
+        "tipo": 14.2,
+        "ret": 3578.4,
+        "neto": 19983.6,
+        "netoMes12": 1665.3,
+        "netoMesNormal14": 1407.9,
+        "netoMesExtra14": 2952.3,
+        "irpfFinal": 3350.35,
+        "difRenta": 228.05
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.800 € brutos al mes en 12 pagas (21.600 €)",
+      "in": {
+        "bruto": 21600,
+        "pagas": 12,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1404.0,
+        "tipo": 11.4,
+        "ret": 2462.4,
+        "neto": 17733.6,
+        "netoMes12": 1477.8,
+        "netoMesNormal14": 1249.97,
+        "netoMesExtra14": 2616.94,
+        "irpfFinal": 2491.71,
+        "difRenta": -29.31
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.200 € por paga en 12 pagas (14.400 €): por debajo del límite del art. 81, sin retención",
+      "in": {
+        "bruto": 14400,
+        "pagas": 12,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 936.0,
+        "tipo": 0.0,
+        "ret": 0.0,
+        "neto": 13464.0,
+        "netoMes12": 1122.0,
+        "netoMesNormal14": 950.57,
+        "netoMesExtra14": 1979.14,
+        "irpfFinal": 0.0,
+        "difRenta": 0.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "borde 15.876 €: no retiene",
+      "in": {
+        "bruto": 15876,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1031.94,
+        "tipo": 0.0,
+        "ret": 0.0,
+        "neto": 14844.06,
+        "netoMes12": 1237.0,
+        "netoMesNormal14": 1048.01,
+        "netoMesExtra14": 2182.01,
+        "irpfFinal": 0.0,
+        "difRenta": 0.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "borde 15.877 €: retiene",
+      "in": {
+        "bruto": 15877,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1032.01,
+        "tipo": 0.0,
+        "ret": 0.0,
+        "neto": 14844.99,
+        "netoMes12": 1237.08,
+        "netoMesNormal14": 1048.07,
+        "netoMesExtra14": 2182.14,
+        "irpfFinal": 0.0,
+        "difRenta": 0.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "salario mínimo 17.094 € (DA 61.ª)",
+      "in": {
+        "bruto": 17094,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1111.11,
+        "tipo": 3.06,
+        "ret": 523.08,
+        "neto": 15459.81,
+        "netoMes12": 1288.32,
+        "netoMesNormal14": 1091.04,
+        "netoMesExtra14": 2274.68,
+        "irpfFinal": 0.0,
+        "difRenta": 523.08
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "20.048,45 € (fin de la DA 61.ª)",
+      "in": {
+        "bruto": 20048.45,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1303.15,
+        "tipo": 8.95,
+        "ret": 1794.34,
+        "neto": 16950.96,
+        "netoMes12": 1412.58,
+        "netoMesNormal14": 1195.27,
+        "netoMesExtra14": 2499.13,
+        "irpfFinal": 1903.05,
+        "difRenta": -108.71
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "2.500 € por paga en 14 pagas, Cataluña",
+      "in": {
+        "bruto": 35000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "cataluna",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 2275.0,
+        "tipo": 18.08,
+        "ret": 6328.0,
+        "neto": 26397.0,
+        "netoMes12": 2199.75,
+        "netoMesNormal14": 1858.42,
+        "netoMesExtra14": 3906.42,
+        "irpfFinal": 6408.0,
+        "difRenta": -80.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "base máxima de cotización: 61.214,40 €",
+      "in": {
+        "bruto": 61214.4,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 3978.94,
+        "tipo": 24.64,
+        "ret": 15083.23,
+        "neto": 42152.24,
+        "netoMes12": 3512.69,
+        "netoMesNormal14": 2963.51,
+        "netoMesExtra14": 6258.59,
+        "irpfFinal": 14324.07,
+        "difRenta": 759.16
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "por encima de la base máxima: 90.000 € con solidaridad",
+      "in": {
+        "bruto": 90000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 4038.16,
+        "tipo": 30.7,
+        "ret": 27630.0,
+        "neto": 58331.84,
+        "netoMes12": 4860.99,
+        "netoMesNormal14": 4118.49,
+        "netoMesExtra14": 8573.49,
+        "irpfFinal": 26421.2,
+        "difRenta": 1208.8
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "temporal de menos de un año, 14.400 €: mínimo del 2 %",
+      "in": {
+        "bruto": 14400,
+        "pagas": 14,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 471.6,
+        "tipo": 2.0,
+        "ret": 144.0,
+        "neto": 6584.4,
+        "netoMes12": 1097.4,
+        "netoMesNormal14": 1097.4,
+        "netoMesExtra14": 1097.4,
+        "irpfFinal": 0.0,
+        "difRenta": 144.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "temporal de un año o más, 14.400 €: sin mínimo",
+      "in": {
+        "bruto": 14400,
+        "pagas": 14,
+        "contrato": "temp2",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 943.2,
+        "tipo": 0.0,
+        "ret": 0.0,
+        "neto": 13456.8,
+        "netoMes12": 1121.4,
+        "netoMesNormal14": 949.97,
+        "netoMesExtra14": 1978.54,
+        "irpfFinal": 0.0,
+        "difRenta": 0.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "temporal de menos de un año, 30.000 €",
+      "in": {
+        "bruto": 30000,
+        "pagas": 14,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 982.5,
+        "tipo": 2.0,
+        "ret": 300.0,
+        "neto": 13717.5,
+        "netoMes12": 2286.25,
+        "netoMesNormal14": 2286.25,
+        "netoMesExtra14": 2286.25,
+        "irpfFinal": 0.0,
+        "difRenta": 300.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "3 hijos, uno menor de 3 años, Galicia, 40.000 €",
+      "in": {
+        "bruto": 40000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "galicia",
+        "hijos": 3,
+        "menores3": 1,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 2600.0,
+        "tipo": 12.6,
+        "ret": 5040.0,
+        "neto": 32360.0,
+        "netoMes12": 2696.67,
+        "netoMesNormal14": 2280.48,
+        "netoMesExtra14": 4777.62,
+        "irpfFinal": 5093.57,
+        "difRenta": -53.57
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "4 hijos, 2 menores de 3 años, Valencia, 36.000 €",
+      "in": {
+        "bruto": 36000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "valencia",
+        "hijos": 4,
+        "menores3": 2,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 2340.0,
+        "tipo": 5.26,
+        "ret": 1893.6,
+        "neto": 31766.4,
+        "netoMes12": 2647.2,
+        "netoMesNormal14": 2241.17,
+        "netoMesExtra14": 4677.34,
+        "irpfFinal": 1684.01,
+        "difRenta": 209.59
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "120.000 € en Valencia",
+      "in": {
+        "bruto": 120000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "valencia",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 4109.61,
+        "tipo": 34.25,
+        "ret": 41100.0,
+        "neto": 74790.39,
+        "netoMes12": 6232.53,
+        "netoMesNormal14": 5293.25,
+        "netoMesExtra14": 10928.96,
+        "irpfFinal": 43074.62,
+        "difRenta": -1974.62
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "bloqueo: País Vasco",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "pv",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 1
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "bloqueo: más menores de 3 que hijos",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 1,
+        "menores3": 2,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 1
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "bloqueo: bruto 0",
+      "in": {
+        "bruto": 0,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 1
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.500 € por paga en 14 pagas (21.000 €)",
+      "in": {
+        "bruto": 21000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1365.0,
+        "tipo": 10.49,
+        "ret": 2202.9,
+        "neto": 17432.1,
+        "netoMes12": 1452.67,
+        "netoMesNormal14": 1228.9,
+        "netoMesExtra14": 2571.55,
+        "irpfFinal": 2335.25,
+        "difRenta": -132.35
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.500 € al mes en 12 pagas (18.000 €)",
+      "in": {
+        "bruto": 18000,
+        "pagas": 12,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1170.0,
+        "tipo": 5.07,
+        "ret": 912.6,
+        "neto": 15917.4,
+        "netoMes12": 1326.45,
+        "netoMesNormal14": 1123.03,
+        "netoMesExtra14": 2343.56,
+        "irpfFinal": 534.85,
+        "difRenta": 377.75
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "2.000 € por paga en 14 pagas (28.000 €)",
+      "in": {
+        "bruto": 28000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1820.0,
+        "tipo": 15.59,
+        "ret": 4365.2,
+        "neto": 21814.8,
+        "netoMes12": 1817.9,
+        "netoMesNormal14": 1536.53,
+        "netoMesExtra14": 3224.73,
+        "irpfFinal": 4078.16,
+        "difRenta": 287.04
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "2.000 € al mes en 12 pagas (24.000 €)",
+      "in": {
+        "bruto": 24000,
+        "pagas": 12,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1560.0,
+        "tipo": 13.51,
+        "ret": 3242.4,
+        "neto": 19197.6,
+        "netoMes12": 1599.8,
+        "netoMesNormal14": 1352.69,
+        "netoMesExtra14": 2835.37,
+        "irpfFinal": 3038.44,
+        "difRenta": 203.96
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "16.000 €: justo por encima del límite del art. 81",
+      "in": {
+        "bruto": 16000,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1040.0,
+        "tipo": 0.33,
+        "ret": 52.8,
+        "neto": 14907.2,
+        "netoMes12": 1242.27,
+        "netoMesNormal14": 1052.42,
+        "netoMesExtra14": 2191.5,
+        "irpfFinal": 0.0,
+        "difRenta": 52.8
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.800 € por paga en 14 pagas con 2 hijos",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 2,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1638.0,
+        "tipo": 10.36,
+        "ret": 2610.72,
+        "neto": 20951.28,
+        "netoMes12": 1745.94,
+        "netoMesNormal14": 1477.02,
+        "netoMesExtra14": 3090.54,
+        "irpfFinal": 2400.59,
+        "difRenta": 210.13
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "1.800 € por paga en 14 pagas en Cataluña",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "contrato": "indef",
+        "ccaa": "cataluna",
+        "hijos": 0,
+        "menores3": 0,
+        "meses": 6
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1638.0,
+        "tipo": 14.2,
+        "ret": 3578.4,
+        "neto": 19983.6,
+        "netoMes12": 1665.3,
+        "netoMesNormal14": 1407.9,
+        "netoMesExtra14": 2952.3,
+        "irpfFinal": 3582.8,
+        "difRenta": -4.4
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C2: 21.000 € en Madrid, diferencia negativa pero no obligado a declarar",
+      "in": {
+        "bruto": 21000,
+        "pagas": 14,
+        "meses": 6,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1365.0,
+        "tipo": 10.49,
+        "ret": 2202.9,
+        "neto": 17432.1,
+        "netoMes12": 1452.67,
+        "netoMesNormal14": 1228.9,
+        "netoMesExtra14": 2571.55,
+        "irpfFinal": 2335.25,
+        "difRenta": -132.35
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C2: 22.000 € Andalucía, límite inclusive",
+      "in": {
+        "bruto": 22000,
+        "pagas": 14,
+        "meses": 6,
+        "contrato": "indef",
+        "ccaa": "andalucia",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1430.0,
+        "tipo": 11.97,
+        "ret": 2633.4,
+        "neto": 17936.6,
+        "netoMes12": 1494.72,
+        "netoMesNormal14": 1264.16,
+        "netoMesExtra14": 2647.49,
+        "irpfFinal": 2743.25,
+        "difRenta": -109.85
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C2: 22.250 € Andalucía, obligado",
+      "in": {
+        "bruto": 22250,
+        "pagas": 14,
+        "meses": 6,
+        "contrato": "indef",
+        "ccaa": "andalucia",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1446.25,
+        "tipo": 12.32,
+        "ret": 2741.2,
+        "neto": 18062.55,
+        "netoMes12": 1505.21,
+        "netoMesNormal14": 1272.96,
+        "netoMesExtra14": 2666.45,
+        "irpfFinal": 2799.35,
+        "difRenta": -58.15
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C1: temporal de 6 meses, 25.200 € equivalentes (12.600 € cobrados)",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "meses": 6,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 825.3,
+        "tipo": 2.0,
+        "ret": 252.0,
+        "neto": 11522.7,
+        "netoMes12": 1920.45,
+        "netoMesNormal14": 1920.45,
+        "netoMesExtra14": 1920.45,
+        "irpfFinal": 0.0,
+        "difRenta": 252.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C1: temporal de 11 meses, 90.000 € equivalentes",
+      "in": {
+        "bruto": 90000,
+        "pagas": 14,
+        "meses": 11,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 3729.7,
+        "tipo": 29.57,
+        "ret": 24395.25,
+        "neto": 54375.05,
+        "netoMes12": 4943.19,
+        "netoMesNormal14": 4943.19,
+        "netoMesExtra14": 4943.19,
+        "irpfFinal": 23328.83,
+        "difRenta": 1066.42
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C1: temporal de 1 mes, 30.000 € equivalentes, 1 hijo",
+      "in": {
+        "bruto": 30000,
+        "pagas": 14,
+        "meses": 1,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 1,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 163.75,
+        "tipo": 2.0,
+        "ret": 50.0,
+        "neto": 2286.25,
+        "netoMes12": 2286.25,
+        "netoMesNormal14": 2286.25,
+        "netoMesExtra14": 2286.25,
+        "irpfFinal": 0.0,
+        "difRenta": 50.0
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "C1 bloqueo: temporal de menos de un año con 12 meses",
+      "in": {
+        "bruto": 25200,
+        "pagas": 14,
+        "meses": 12,
+        "contrato": "temp1",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 1
+      },
+      "tol": 0.02
+    },
+    {
+      "nombre": "borde art. 85.3: 21.600 € (12 pagas), el tope del 43 % manda",
+      "in": {
+        "bruto": 21600,
+        "pagas": 12,
+        "meses": 6,
+        "contrato": "indef",
+        "ccaa": "madrid",
+        "hijos": 0,
+        "menores3": 0
+      },
+      "expect": {
+        "bloqueado": 0,
+        "ss": 1404.0,
+        "tipo": 11.4,
+        "ret": 2462.4,
+        "neto": 17733.6,
+        "netoMes12": 1477.8,
+        "netoMesNormal14": 1249.97,
+        "netoMesExtra14": 2616.94,
+        "irpfFinal": 2491.71,
+        "difRenta": -29.31
+      },
+      "tol": 0.02
+    }
+  ]
+}

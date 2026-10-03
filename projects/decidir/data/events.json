@@ -200,10 +200,10 @@
       "texto_antes": "Hasta el {fecha} puedes pedir el cambio de tu base de cotización de autónomo, con efecto el día 1 del mes siguiente: ajústala a lo que vas a ganar.",
       "texto_despues": "El {fecha} cerró el plazo de cambio de base de autónomo; el siguiente cierra dentro de dos meses.",
       "fuente": {
-        "nombre": "BOE: Reglamento General de Cotización (RD 2064/1995), art. 45.1, texto consolidado",
+        "nombre": "BOE: Reglamento General de Cotización (RD 2064/1995), art. 43 bis, texto consolidado",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579"
       },
-      "aviso": "Hasta seis cambios al año (art. 45.1 del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo.",
+      "aviso": "Hasta seis cambios al año (art. 43 bis del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo.",
       "plazo": true
     },
     {

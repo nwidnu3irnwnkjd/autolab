@@ -544,5 +544,6 @@
     "jubilacion-anticipada-o-demorada",
     "jubilacion-activa-o-dejar-de-trabajar",
     "plan-pensiones-o-fondo-indexado"
-  ]
+  ],
+  "sueldo-bruto-a-neto-2026": ["retencion-irpf-nomina-subir-o-no", "pagas-extra-prorrateadas-o-14-pagas", "comparar-ofertas-de-trabajo-neto-real"]
 }

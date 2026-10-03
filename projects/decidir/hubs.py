@@ -275,13 +275,14 @@ HUBS = {
                  "si te conviene ser autónomo o asalariado, cuánto aportar a un plan de pensiones y cuánto donar (ambas solo cuentan para 2026 si las haces antes del 31 de diciembre de 2026), "
                  "cómo cobrar un plan en el futuro y, al presentar, si declaras en conjunta o por separado. Cada paso lleva a una calculadora con tus datos; ninguna cifra de esta página es un resultado para tu caso."),
         "groups": [
+            ("Tu sueldo", ["sueldo-bruto-a-neto-2026", "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad"]),
             ("Antes de dar el paso", ["autonomo-o-asalariado", "autonomo-o-sociedad-limitada", "comparar-ofertas-de-trabajo-neto-real"]),
             ("Si ya eres autónomo", ["cuota-autonomos-ingresos-reales-regularizacion", "autonomo-estimacion-directa-o-modulos", "paro-autonomos-cese-actividad-cuanto-cobro"]),
             ("Si alquilas o vendes una vivienda", ["irpf-alquilar-vivienda-rendimiento-neto", "venta-vivienda-plusvalia-irpf-exencion"]),
             ("Antes del 31 de diciembre de 2026", ["plan-pensiones-o-fondo-indexado", "donativos-irpf-cuanto-desgrava-y-cuanto-donar", "compensar-perdidas-ganancias-irpf-antes-fin-de-ano", "retribucion-flexible-me-conviene"]),
             ("Navidad y Hacienda", ["loteria-navidad-premio-neto-hacienda", "paga-extra-navidad-cuanto-cobro-neto", "pagas-extra-prorrateadas-o-14-pagas"]),
             ("Si usas tu coche para trabajar", ["kilometraje-y-dietas-exentas-irpf"]),
-            ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
+            ("Al presentar la declaración y en el futuro", ["retencion-irpf-nomina-subir-o-no", "obligado-a-declarar-renta-dos-pagadores", "declaracion-conjunta-o-individual", "deduccion-maternidad-familia-numerosa", "traspasar-fondo-o-reembolsar-irpf", "rescate-plan-pensiones-capital-o-renta"]),
             ("Si cambia tu situación laboral", ["indemnizacion-despido-objetivo-o-improcedente-neto", "cuanto-cobro-de-paro-prestacion-desempleo", "subsidio-desempleo-cuanto-cobro-y-cuanto-dura", "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", "capitalizar-paro-o-cobrarlo", "jubilacion-anticipada-o-demorada", "finiquito-baja-voluntaria-vacaciones-preaviso"]),
         ],
         "steps": {
@@ -334,6 +335,10 @@ HUBS = {
             "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad": {
                 "name": "Nómina 2027: cuánto sube la cotización",
                 "text": "En 2027 suben el MEI y la cuota de solidaridad, y la base máxima de cotización aumenta por ley. La calculadora da lo que pagarás de más al año según tu bruto.",
+            },
+            "sueldo-bruto-a-neto-2026": {
+                "name": "Sueldo bruto a neto 2026",
+                "text": "Cuánto te queda de un sueldo bruto tras Seguridad Social e IRPF, en 12 o 14 pagas, con tu comunidad y tu situación familiar. La calculadora da el neto al mes y una tabla de 1.200 a 4.000 € brutos.",
             },
             "retencion-irpf-nomina-subir-o-no": {
                 "name": "Retención de IRPF en la nómina: ¿subirla o no?",

@@ -5279,5 +5279,51 @@
       "nota": "Ejemplo editable (no es dato oficial)",
       "bruto_anual": 90000
     }
+  },
+  "sueldo_bruto_neto_2026": {
+    "fuente": "Orden PJC/297/2026, de 30 de marzo, de cotización 2026 (arts. 2, 4, 16, 17 y 33: base máxima 5.101,20 €/mes; trabajador 4,70 % contingencias comunes, 0,15 % MEI, 0,10 % formación profesional y 1,55 % desempleo indefinido o 1,60 % temporal, es decir 6,50 % o 6,55 %; solidaridad 0,19/0,21/0,24 % sobre el exceso); Reglamento del IRPF (RD 439/2007, consolidado a 3/10/2026): art. 81.1 (límite excluyente de retener, redacción RD 142/2024), 83.3 (base), 84 (mínimo), 85.1 y 85.3 (escala y límite del 43 %), 86.1 (tipo con dos decimales) y 86.2 (tipo no inferior al 2 % en contratos de duración inferior al año); Ley 35/2006 del IRPF (consolidada a 30/9/2026): arts. 19.2.f, 20, 57-58, 63, 74 y DA 61.ª. Todas las cifras de escalas, mínimos, art. 20, DA 61.ª, retención y cotización son las de irpf_2026, retencion_irpf_nomina_2026 y autonomo_2026.general (ya verificadas); aquí solo se añaden el tipo mínimo del 2 % y la tabla fija",
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+    "url_rirpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
+    "url_irpf": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
+    "consulta": "consultado el 3/10/2026",
+    "confianza": "A",
+    "retencion_minima_contrato_menos_1_ano_pct": 2,
+    "retencion_minima_nota": "RIRPF art. 86.2 (redacción RD 31/2023): «no podrá ser inferior al 2 por ciento cuando se trate de contratos o relaciones de duración inferior al año»; art. 81.3: el límite excluyente de retener no se aplica cuando corresponde ese tipo mínimo; art. 83.2 regla 1.ª: la cuantía es lo que se vaya a percibir «en el año natural» (contrato de menos de un año: bruto equivalente × meses/12)",
+    "tabla_brutos_por_paga": [
+      1200,
+      1300,
+      1400,
+      1500,
+      1600,
+      1700,
+      1800,
+      1900,
+      2000,
+      2100,
+      2200,
+      2300,
+      2400,
+      2500,
+      2600,
+      2800,
+      3000,
+      3200,
+      3400,
+      3500,
+      3600,
+      3800,
+      4000
+    ],
+    "tabla_nota": "Hipótesis de la tabla, no datos oficiales: contrato indefinido, Comunidad de Madrid, sin hijos; bruto por paga = bruto/12 con 12 pagas o bruto/14 con 14",
+    "rdl_26_2026": "Derogado el 2/10/2026 (BOE-A-2026-20526); no toca arts. 19, 20, 57-63, 74 de la Ley 35/2006 ni 80-88 del Reglamento ni la Orden PJC/297/2026; no se cita como fuente",
+    "pge_2026": "No hay Presupuestos 2026: la base máxima 2026 viene del RDL 3/2026 art. 3 y la Orden art. 2",
+    "supuestos": {
+      "nota": "Ejemplo editable (no es dato oficial): 1.800 € brutos por paga en 14 pagas",
+      "bruto": 25200,
+      "pagas": 14,
+      "meses": 6
+    },
+    "obligado_declarar_limite_eur": 22000,
+    "obligado_declarar_nota": "LIRPF art. 96.2.a: no obligados a declarar quienes solo obtienen rendimientos del trabajo de un pagador hasta 22.000 € (valor de obligado_declarar_2026.limite_trabajo_general)"
   }
 }

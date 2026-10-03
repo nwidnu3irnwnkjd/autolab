@@ -28,6 +28,12 @@ if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_barome
 # Ejemplos resueltos de las insignia (ops/gen_ejemplos.py --check): el JSON vigente debe coincidir con la calculadora real
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "gen_ejemplos.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "gen_ejemplos.py"), "--check"]).returncode != 0: fails += 1
+# Tablas de respuesta de la cola numérica (ops/gen_tablas_respuesta.py --check)
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "gen_tablas_respuesta.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "gen_tablas_respuesta.py"), "--check"]).returncode != 0: fails += 1
+# Tabla fija de sueldo-bruto-a-neto-2026 (ops/gen_tabla_sueldo.py --check, R60.2)
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "gen_tabla_sueldo.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "gen_tabla_sueldo.py"), "--check"]).returncode != 0: fails += 1
 # Pulso / datos vivos (Estratega): sin red
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_live.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_live.py")]).returncode != 0: fails += 1

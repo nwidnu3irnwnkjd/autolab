@@ -140,6 +140,8 @@ def _section(path):
     if path.startswith("/guias/") and path != "/guias/": return "guias"
     if path.startswith("/tablas-2026/") and path != "/tablas-2026/": return "tablas"
     if path.startswith("/actualidad/") and path != "/actualidad/": return "guias"
+    if path.startswith("/datos/") and path != "/datos/": return "datos"
+    if path.startswith("/noticias/"): return "noticias"
     return "hubs"
 
 def write_sitemaps(dist, pages, base):
@@ -147,7 +149,7 @@ def write_sitemaps(dist, pages, base):
     secs = {}
     for u, d, p in pages: secs.setdefault(_section(u[len(base):]), []).append((u, d, p))
     idx = []
-    for name in ("calculadoras", "guias", "tablas", "hubs"):
+    for name in ("calculadoras", "guias", "tablas", "datos", "hubs", "noticias"):
         rows = secs.get(name, [])
         if not rows: continue
         x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(

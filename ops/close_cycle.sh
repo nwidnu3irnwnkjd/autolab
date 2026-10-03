@@ -30,6 +30,7 @@ red() { echo; echo "ROJO en '$1': cierre abortado SIN commit ni push." >&2; exit
 
 # 2-3. build + check + QA estática
 step "ejemplos resueltos (insignia; en local con osascript; el build solo lee data/ejemplos.json)"; python3 ops/gen_ejemplos.py >/dev/null || true
+step "tablas de respuesta (cola numérica; osascript en local; el build solo lee data/tablas_respuesta.json)"; python3 ops/gen_tablas_respuesta.py >/dev/null || true
 step "build"; (cd projects/decidir && python3 build.py) || red build
 step "check"; python3 ops/check.py || red check
 step "qa_static"; python3 ops/qa_static.py --changed | tee "$TMP/qa.txt" || red qa_static

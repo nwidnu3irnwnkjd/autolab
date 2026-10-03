@@ -33,9 +33,15 @@ def main():
     if len(keys) != 1: sys.exit(f"Esperaba 1 clave IndexNow en projects/{proj}/static/, encontradas: {keys}")
     key = keys[0]; key_url = f"{base}/{key}.txt"
 
-    if "--local" in sys.argv: sm = open(os.path.join(pdir, "dist/sitemap.xml")).read()
-    else: sm = get(base + "/sitemap.xml")[1]
-    entries = re.findall(r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", sm)
+    def sitemap(name):
+        return open(os.path.join(pdir, "dist", name)).read() if "--local" in sys.argv else get(base + "/" + name)[1]
+    sm = sitemap("sitemap.xml")
+    if "<sitemapindex" in sm:  # sitemap.xml es un índice: se envían las URLs de cada sitemap hijo (calculadoras, guías, noticias...), no los sitemaps
+        entries = []
+        for child in re.findall(r"<loc>(.*?)</loc>", sm):
+            try: entries += re.findall(r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", sitemap(child.rsplit("/", 1)[1]))
+            except Exception as ex: print(f"aviso: no se pudo leer {child}: {ex}")
+    else: entries = re.findall(r"<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>", sm)
     entries = [(u, d) for u, d in entries if u.split("//")[1].split("/")[0] == host]  # solo nuestro dominio
 
     state = json.load(open(STATE)) if os.path.exists(STATE) else {}

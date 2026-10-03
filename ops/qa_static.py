@@ -142,10 +142,15 @@ def changed_pages(files):
         top = r.split("/")[0]
         if top in ("calcs", "content"):
             stem = os.path.basename(r).split(".")[0]
-            slugs.add(stem)
+            if top == "content" and "/noticias/" in "/" + r and stem.startswith("_"): continue  # plantilla: no se publica
+            if not (top == "content" and "/noticias/" in "/" + r): slugs.add(stem)  # las noticias las valida check_noticia.py (cifras con <!--f:-->), no el YMYL genérico
             for pth in dirs.get(stem, []): paths.add(pth)
             if top == "content" and "/actualidad/" in "/" + r: paths.add("/actualidad/")
             if top == "content" and "/guias/" in "/" + r: paths.add("/guias/")
+            if top == "content" and "/noticias/" in "/" + r:  # pieza AAAA-MM-DD-slug -> /noticias/AAAA/mm/slug/ y portada
+                mm_ = re.match(r"(\d{4})-(\d{2})-\d{2}-(.+)\.html$", os.path.basename(r))
+                if mm_: paths.add(f"/noticias/{mm_.group(1)}/{mm_.group(2)}/{mm_.group(3)}/")
+                paths.add("/noticias/")
         elif top in ("templates", "assets", "static") or r in ("build.py", "ui.py", "seo.py", "bundle.py", "minify.py", "ogimg.py", "calcs_loader.py", "barometro.py"):
             glob_change = True
         elif top == "data":
@@ -185,7 +190,7 @@ def check_pages(only_urls=None):
                     if lp != "/decidir/" + urlp[len("/embed/"):]: add("BLOQUEANTE", f"{name}:1", f"canonical del embed {lp} no apunta a su calculadora completa")
                     if not p.noindex: add("BLOQUEANTE", f"{name}:1", "el embed debe ser noindex,follow")
                     if size_html > 40960: add("BLOQUEANTE", f"{name}:1", f"embed de {size_html/1024:.1f} KB > 40 KB")
-                elif lp != urlp: add("BLOQUEANTE", f"{name}:1", f"canonical {lp} no coincide con la ruta de la página {urlp}")
+                elif lp != urlp and not (p.noindex and exists_in_dist(lp)): add("BLOQUEANTE", f"{name}:1", f"canonical {lp} no coincide con la ruta de la página {urlp}")
         # h1
         n_checks += 1
         if len(p.h1) != 1: add("BLOQUEANTE", f"{name}:{(p.h1 or [1])[0]}", f"{len(p.h1)} elementos h1 (debe haber 1)")
@@ -265,6 +270,20 @@ def check_sitemap(indexables):
     for u in indexables:
         if u not in paths: add("BLOQUEANTE", "dist" + u + "index.html:1", f"página indexable que no está en sitemap.xml")
     return len(locs)
+
+# ---------- noticias (ops/check_noticia.py, 0 tokens): BLOQUEANTE si una pieza publicada no enlaza fuente oficial o no lleva <time> ----------
+def check_noticias():
+    sys.path.insert(0, OPS)
+    try: import check_noticia as cn
+    except Exception as e:
+        add("AVISO", "ops/check_noticia.py", f"no se pudo importar: {e}"); return 0
+    n = 0
+    for f in cn.pieza_files():
+        meta, _, err = cn.parse(f)
+        if err or (meta or {}).get("estado") != "publicada": continue  # borradores y retiradas no entran en el build
+        n += 1
+        for lv, msg in cn.check_file(f, offline=True): add(lv, rel(f), "noticia: " + msg)
+    return n
 
 def check_files():
     for f in ("llms.txt", "robots.txt"):
@@ -606,12 +625,13 @@ def main():
     n_sm = check_sitemap(indexables)
     check_files()
     n_live = check_live()
+    n_news = check_noticias()
     n_ymyl = check_ymyl(slugs if CHANGED else None)
     # ordena: BLOQUEANTE primero
     order = {"BLOQUEANTE": 0, "AVISO": 1, "INFO": 2}
     for lvl, where, msg in sorted(out, key=lambda x: order[x[0]]): print(f"{lvl} · {where} · {msg}")
     nb = sum(1 for o in out if o[0] == "BLOQUEANTE"); ni = sum(1 for o in out if o[0] == "INFO"); na = len(out) - nb - ni
-    print(f"OK: {len(pages)} páginas, {n_page} comprobaciones de página, {n_sm} URLs en sitemap, {n_live} defaults vivos, {n_ymyl} fuentes YMYL; {nb} BLOQUEANTE, {na} AVISO, {ni} INFO")
+    print(f"OK: {len(pages)} páginas, {n_page} comprobaciones de página, {n_sm} URLs en sitemap, {n_live} defaults vivos, {n_ymyl} fuentes YMYL, {n_news} noticias publicadas; {nb} BLOQUEANTE, {na} AVISO, {ni} INFO")
     if CHANGED:
         print("Cambios (git): " + ("global (plantillas/assets/datos): " if glob_change else "") +
               ("; ".join(["/ (home)"] + paths) if paths or glob_change else "ninguna página afectada"))

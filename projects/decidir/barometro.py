@@ -104,6 +104,12 @@ def mes_es(iso):
     y, m, _ = iso.split("-"); return f"{MESES[int(m) - 1]} de {y}"
 def fecha_es(iso):
     y, m, d = iso.split("-"); return f"{int(d)} de {MESES[int(m) - 1]} de {y}"
+def titulo(D):
+    y, m, _ = D["fecha_datos"].split("-")
+    return f"¿Hipoteca fija o variable hoy? A partir de qué Euríbor compensa ({MESES[int(m) - 1]} {y})"
+def titulo_corto(D):
+    y, m, _ = D["fecha_datos"].split("-")
+    return f"¿Hipoteca fija o variable hoy? Euríbor que compensa ({MESES[int(m) - 1][:3]} {y[2:]})"  # <title> <= 60 car.; el H1 lleva la consulta completa
 def fuente_corta(n): return n.split(" (")[0].split(",")[0]
 def el(motor): return "el de gasolina" if motor == "Gasolina" else "el " + motor.lower()
 def r(x, d=4): return None if x is None else round(x, d)
@@ -356,7 +362,8 @@ def page(D, modified):
     eq_txt = f" (por encima de unos {num(c15['km_ano_equilibrio_entre_ambos'])} km al año el orden entre ambos cambia)" if c15["km_ano_equilibrio_entre_ambos"] else ""
     return f"""<article class="guide barometro">
 <p class="kicker">Datos propios · {mes}</p>
-<h1>Barómetro Entre Muchos: hipoteca, coche y ahorro ({mes})</h1>
+<h1>{titulo(D)}</h1>
+<p class="lead">Barómetro Entre Muchos de {mes}: el Euríbor de equilibrio de la hipoteca fija frente a la variable y, más abajo, el coste por km del coche y cuándo invertir compensa más que amortizar.</p>
 <p class="byline note">Por Equipo de Entre Muchos · Datos del <time datetime="{fd}">{fecha_es(fd)}</time> · Página actualizada el <time datetime="{modified}">{fecha_es(modified)}</time> · <a href="#descargas">Descargar datos (CSV, JSON) · CC BY 4.0</a></p>
 <div class="box"><p><strong>Respuesta corta ({mes}):</strong></p><ul>{ans}</ul></div>
 <p>Cada mes calculamos estas cifras con nuestras propias calculadoras y los parámetros de mercado de la fecha. No son opiniones: puedes reproducir cualquier número poniendo los mismos supuestos en la calculadora enlazada.</p>
@@ -425,7 +432,8 @@ def calc_link(slug, D):
     if not D or slug not in CALCS: return ""
     i = CALCS.index(slug); t = answers_text(D)[i]
     anchor = ["hipoteca", "coche", "amortizar"][i]
-    return f'<p class="box"><strong>Dato del mes ({mes_es(D["fecha_datos"])}):</strong> {html.escape(t)} <a href="{PATH}#{anchor}">Ver el Barómetro</a></p>'
+    txt = "¿Hipoteca fija o variable hoy? A partir de qué Euríbor compensa" if i == 0 else "Ver el Barómetro"
+    return f'<p class="box"><strong>Dato del mes ({mes_es(D["fecha_datos"])}):</strong> {html.escape(t)} <a href="{PATH}#{anchor}">{txt}</a></p>'
 
 def home_teaser(D):
     t = answers_text(D)

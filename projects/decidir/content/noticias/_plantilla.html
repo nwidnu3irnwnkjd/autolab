@@ -1,0 +1,26 @@
+<!--meta {"title": "TITULAR de la pestaña, máx. 60 caracteres", "h1": "Titular de la pieza: hecho + consecuencia para el lector", "description": "140-155 caracteres con la cifra y la fuente.", "published": "AAAA-MM-DD", "modified": "AAAA-MM-DD", "tipo": "alerta", "temas": ["tema"], "calcs": ["slug-de-calculadora"], "fuentes": [{"nombre": "Organismo: documento (BOE-A-AAAA-NNNN)", "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-AAAA-NNNN", "fecha": "AAAA-MM-DD"}], "caduca": "AAAA-MM-DD", "estado": "borrador"} -->
+<!--
+PLANTILLA (no publicable: el nombre empieza por «_»). Copia a content/noticias/AAAA-MM-DD-slug.html (el slug es único por mes; en resumen-dia: resumen-AAAA-MM-DD).
+- tipo: alerta | dato-mes | cuenta-atras | explicador | resumen-dia | resumen-semana. estado: borrador | publicada (solo «publicada» entra en el build).
+- Opcionales: "plazo": "AAAA-MM-DD" + "plazo_texto" (botón «Añadir al calendario»), "actualizacion": {"texto","url"} (al caducar), "clave" (migración desde /actualidad/).
+- Cada cifra en € o % lleva en su párrafo un comentario HTML que empieza por «f:» y cita la fuente (como el del ejemplo de abajo), o aparece en params.json, live.json o tests de la calculadora.
+- Corrección visible: <p class="correccion"><strong>Corrección (AAAA-MM-DD):</strong> qué se cambió y por qué.</p> y modified = esa fecha.
+- Valida con: python3 ops/check_noticia.py content/noticias/AAAA-MM-DD-slug.html --estricto
+Tipos alerta / dato-mes / cuenta-atras / explicador: 4 bloques h2 en este orden. Resumen-dia / resumen-semana: ver el final.
+-->
+<p class="lead">Respuesta en una frase con el hecho y su consecuencia.</p>
+<h2>El hecho</h2>
+<p>Qué publica quién y cuándo, con <time datetime="AAAA-MM-DD">fecha</time> y <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-AAAA-NNNN" rel="noopener">enlace al documento oficial</a>. Cita literal opcional ≤ 25 palabras, entre comillas.</p>
+<h2>A quién afecta</h2>
+<ul><li><strong>Afecta:</strong> perfiles concretos.</li><li><strong>No afecta:</strong> quién queda fuera.</li></ul>
+<h2>Tu cifra</h2>
+<p>Ejemplo calculado con la calculadora (mismos supuestos que su test o live.json) <!--f: calcs/slug.test.json caso N-->NNN €.</p>
+<p><a class="btn" href="/decidir/slug-de-calculadora/">Calcula tu caso</a></p>
+<h2>Qué hacer y plazo</h2>
+<ul><li>Acción 1 con fecha.</li><li>Acción 2.</li></ul>
+<!--
+ESTRUCTURA de resumen-dia / resumen-semana (en lugar de los 4 bloques):
+<h2>Los hechos</h2>
+<ol class="hechos"><li><strong>Hecho 1 en una frase</strong> (<time datetime="AAAA-MM-DD">fecha</time>). Efecto para ti. Fuente: <a href="https://...oficial" rel="noopener">organismo</a>. <a href="/noticias/AAAA/mm/slug/">Más</a></li> ... (3 a 6 li)</ol>
+<h2>Qué hacer</h2> (acciones y plazos próximos; los días sin hechos, la lista de plazos próximos de data/events.json con su fuente)
+-->

@@ -1,0 +1,462 @@
+{
+ "cuanto-cobro-de-paro-prestacion-desempleo": {
+  "slug": "cuanto-cobro-de-paro-prestacion-desempleo",
+  "id": "tabla-paro",
+  "h3": "¿Cuánto cobro de paro con una nómina de 1.800 €?",
+  "condiciones": "Cuantía mensual bruta de la prestación contributiva con 720 días cotizados (240 días de prestación, 8 meses), jornada completa y una base de cotización igual a la nómina bruta mensual con las pagas extra prorrateadas (sin horas extra). Se muestran los primeros 180 días (70 %) y el resto (60 %), con el máximo y el mínimo de 2026 según hijos a cargo; antes de IRPF.",
+  "cols": [
+   "Nómina (base)",
+   "Sin hijos: días 1-180 · después",
+   "1 hijo: días 1-180 · después"
+  ],
+  "rows": [
+   {
+    "ancla": "nomina-1000",
+    "celdas": [
+     "1.000 €",
+     "700 € · 600 €",
+     "749 € · 749 €"
+    ]
+   },
+   {
+    "ancla": "nomina-1200",
+    "celdas": [
+     "1.200 €",
+     "840 € · 720 €",
+     "840 € · 749 €"
+    ]
+   },
+   {
+    "ancla": "nomina-1400",
+    "celdas": [
+     "1.400 €",
+     "980 € · 840 €",
+     "980 € · 840 €"
+    ]
+   },
+   {
+    "ancla": "nomina-1600",
+    "celdas": [
+     "1.600 €",
+     "1.120 € · 960 €",
+     "1.120 € · 960 €"
+    ]
+   },
+   {
+    "ancla": "nomina-1800",
+    "celdas": [
+     "1.800 €",
+     "1.225 € · 1.080 €",
+     "1.260 € · 1.080 €"
+    ]
+   },
+   {
+    "ancla": "nomina-2000",
+    "celdas": [
+     "2.000 €",
+     "1.225 € · 1.200 €",
+     "1.400 € · 1.200 €"
+    ]
+   },
+   {
+    "ancla": "nomina-2200",
+    "celdas": [
+     "2.200 €",
+     "1.225 € · 1.225 €",
+     "1.400 € · 1.320 €"
+    ]
+   },
+   {
+    "ancla": "nomina-2400",
+    "celdas": [
+     "2.400 €",
+     "1.225 € · 1.225 €",
+     "1.400 € · 1.400 €"
+    ]
+   },
+   {
+    "ancla": "nomina-2600",
+    "celdas": [
+     "2.600 €",
+     "1.225 € · 1.225 €",
+     "1.400 € · 1.400 €"
+    ]
+   },
+   {
+    "ancla": "nomina-2800",
+    "celdas": [
+     "2.800 €",
+     "1.225 € · 1.225 €",
+     "1.400 € · 1.400 €"
+    ]
+   },
+   {
+    "ancla": "nomina-3000",
+    "celdas": [
+     "3.000 €",
+     "1.225 € · 1.225 €",
+     "1.400 € · 1.400 €"
+    ]
+   }
+  ],
+  "fuentes": [
+   [
+    "LGSS, arts. 269 y 270 (BOE)",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724"
+   ],
+   [
+    "Cuantías 2026 del SEPE",
+    "https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html"
+   ]
+  ],
+  "inputs": {
+   "base": [
+    1000,
+    1200,
+    1400,
+    1600,
+    1800,
+    2000,
+    2200,
+    2400,
+    2600,
+    2800,
+    3000
+   ],
+   "extras": "si",
+   "jornada": 100,
+   "dias": 720,
+   "hijos": [
+    0,
+    1
+   ]
+  },
+  "fecha": "2026-10-03"
+ },
+ "cuanto-ahorrar-para-comprar-casa": {
+  "slug": "cuanto-ahorrar-para-comprar-casa",
+  "id": "tabla-casa",
+  "h3": "¿Cuánto dinero necesito para comprar una casa de 250.000 €?",
+  "condiciones": "Vivienda usada, con entrada del 20 %, 2.500 € de gastos (notaría, registro, gestoría y tasación) y el ITP con el tipo general de cada comunidad (Madrid 6 %, Andalucía 7 %, Cataluña 10 % por debajo de 600.000 €), sin tipos reducidos. El total es entrada + ITP + gastos; la hipoteca cubre el resto del precio.",
+  "cols": [
+   "Precio",
+   "Entrada (20 %)",
+   "Total en Madrid",
+   "Total en Andalucía",
+   "Total en Cataluña"
+  ],
+  "rows": [
+   {
+    "ancla": "casa-100000",
+    "celdas": [
+     "100.000 €",
+     "20.000 €",
+     "28.500 €",
+     "29.500 €",
+     "32.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-150000",
+    "celdas": [
+     "150.000 €",
+     "30.000 €",
+     "41.500 €",
+     "43.000 €",
+     "47.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-200000",
+    "celdas": [
+     "200.000 €",
+     "40.000 €",
+     "54.500 €",
+     "56.500 €",
+     "62.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-250000",
+    "celdas": [
+     "250.000 €",
+     "50.000 €",
+     "67.500 €",
+     "70.000 €",
+     "77.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-300000",
+    "celdas": [
+     "300.000 €",
+     "60.000 €",
+     "80.500 €",
+     "83.500 €",
+     "92.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-350000",
+    "celdas": [
+     "350.000 €",
+     "70.000 €",
+     "93.500 €",
+     "97.000 €",
+     "107.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-400000",
+    "celdas": [
+     "400.000 €",
+     "80.000 €",
+     "106.500 €",
+     "110.500 €",
+     "122.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-450000",
+    "celdas": [
+     "450.000 €",
+     "90.000 €",
+     "119.500 €",
+     "124.000 €",
+     "137.500 €"
+    ]
+   },
+   {
+    "ancla": "casa-500000",
+    "celdas": [
+     "500.000 €",
+     "100.000 €",
+     "132.500 €",
+     "137.500 €",
+     "152.500 €"
+    ]
+   }
+  ],
+  "fuentes": [
+   [
+    "ITP y AJD (BOE)",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-1993-25359"
+   ],
+   [
+    "Normas autonómicas, en «Supuestos y fuentes»",
+    "#supuestos-y-fuentes"
+   ]
+  ],
+  "inputs": {
+   "precio": [
+    100000,
+    150000,
+    200000,
+    250000,
+    300000,
+    350000,
+    400000,
+    450000,
+    500000
+   ],
+   "ccaa": [
+    "madrid",
+    "andalucia",
+    "cataluna"
+   ],
+   "tipo": "usada",
+   "entrada": 20,
+   "gastos": 2500,
+   "anos": 5,
+   "rentab": 0,
+   "interes": 4.247
+  },
+  "fecha": "2026-10-03"
+ },
+ "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
+  "slug": "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
+  "id": "tabla-hipoteca",
+  "h3": "¿Cuánto pago de hipoteca al mes por 150.000 € a 25 años?",
+  "condiciones": "Cuota mensual · intereses totales con un tipo del 4,047 % (Euríbor a 12 meses de 3,247 %, media de septiembre de 2026 del BCE, más 0,8 puntos de diferencial supuesto; Euríbor fijado el 2026-10-03). Sistema francés, sin bonificaciones ni comisiones; la cuota real variará con las revisiones del Euríbor.",
+  "cols": [
+   "Capital",
+   "20 años",
+   "25 años",
+   "30 años"
+  ],
+  "rows": [
+   {
+    "ancla": "hipoteca-100000",
+    "celdas": [
+     "100.000 €",
+     "608 € · 46.030 €",
+     "530 € · 59.131 €",
+     "480 € · 72.846 €"
+    ]
+   },
+   {
+    "ancla": "hipoteca-150000",
+    "celdas": [
+     "150.000 €",
+     "913 € · 69.046 €",
+     "796 € · 88.696 €",
+     "720 € · 109.270 €"
+    ]
+   },
+   {
+    "ancla": "hipoteca-200000",
+    "celdas": [
+     "200.000 €",
+     "1.217 € · 92.061 €",
+     "1.061 € · 118.261 €",
+     "960 € · 145.693 €"
+    ]
+   },
+   {
+    "ancla": "hipoteca-250000",
+    "celdas": [
+     "250.000 €",
+     "1.521 € · 115.076 €",
+     "1.326 € · 147.827 €",
+     "1.200 € · 182.116 €"
+    ]
+   },
+   {
+    "ancla": "hipoteca-300000",
+    "celdas": [
+     "300.000 €",
+     "1.825 € · 138.091 €",
+     "1.591 € · 177.392 €",
+     "1.440 € · 218.539 €"
+    ]
+   }
+  ],
+  "fuentes": [
+   [
+    "Euríbor a 12 meses, BCE",
+    "https://data.ecb.europa.eu/data/datasets/FM/FM.M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA"
+   ]
+  ],
+  "inputs": {
+   "capital": [
+    100000,
+    150000,
+    200000,
+    250000,
+    300000
+   ],
+   "tin": 4.047,
+   "euribor": 3.247,
+   "euribor_periodo": "2026-09",
+   "diferencial": 0.8
+  },
+  "fecha": "2026-10-03"
+ },
+ "loteria-navidad-premio-neto-hacienda": {
+  "slug": "loteria-navidad-premio-neto-hacienda",
+  "id": "tabla-premio",
+  "h3": "¿Cuánto me queda de un premio de 50.000 € de la Lotería de Navidad?",
+  "condiciones": "Premio íntegro de un décimo cobrado por una sola persona: los primeros 40.000 € están exentos y sobre el exceso Hacienda retiene el 20 % (gravamen especial, disposición adicional 33.ª de la Ley del IRPF). No incluye reparto entre varias personas, no residentes ni regímenes forales.",
+  "cols": [
+   "Premio por décimo",
+   "Parte exenta",
+   "Retención (20 % del exceso)",
+   "Neto que cobras"
+  ],
+  "rows": [
+   {
+    "ancla": "premio-100",
+    "celdas": [
+     "100 €",
+     "100 €",
+     "0 €",
+     "100 €"
+    ]
+   },
+   {
+    "ancla": "premio-1000",
+    "celdas": [
+     "1.000 €",
+     "1.000 €",
+     "0 €",
+     "1.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-10000",
+    "celdas": [
+     "10.000 €",
+     "10.000 €",
+     "0 €",
+     "10.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-20000",
+    "celdas": [
+     "20.000 €",
+     "20.000 €",
+     "0 €",
+     "20.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-40000",
+    "celdas": [
+     "40.000 €",
+     "40.000 €",
+     "0 €",
+     "40.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-50000",
+    "celdas": [
+     "50.000 €",
+     "40.000 €",
+     "2.000 €",
+     "48.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-75000",
+    "celdas": [
+     "75.000 €",
+     "40.000 €",
+     "7.000 €",
+     "68.000 €"
+    ]
+   },
+   {
+    "ancla": "premio-100000",
+    "celdas": [
+     "100.000 €",
+     "40.000 €",
+     "12.000 €",
+     "88.000 €"
+    ]
+   }
+  ],
+  "fuentes": [
+   [
+    "Ley 35/2006 del IRPF, DA 33.ª (BOE)",
+    "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#datrigesimatercera"
+   ]
+  ],
+  "inputs": {
+   "premio": [
+    100,
+    1000,
+    10000,
+    20000,
+    40000,
+    50000,
+    75000,
+    100000
+   ],
+   "decimos": 1,
+   "personas": 1
+  },
+  "fecha": "2026-10-03"
+ }
+}

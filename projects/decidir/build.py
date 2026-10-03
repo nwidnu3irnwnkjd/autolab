@@ -8,9 +8,12 @@ import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
 import directorio, asistente  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
 import plan  # plan completo «Compra de vivienda» (Diseñador, R16.4)
+import noticias  # sección /noticias/ «Qué cambia para ti» (Constructor, PLAN-NOTICIAS)
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
+import datos  # /datos/<serie>/: IRAV, Euríbor y luz persistentes (Constructor, E3)
 import embed  # widget insertable /embed/<slug>/ y /inserta/ (Diseñador)
+import respuestas  # tablas de respuesta de la cola numérica (lee data/tablas_respuesta.json; ops/gen_tablas_respuesta.py)
 import ejemplos  # «Ejemplo resuelto» estático de las insignia (lee data/ejemplos.json; ops/gen_ejemplos.py)
 import ui, calcs_loader  # interfaz (Diseñador) y carga de calculadoras (Constructor)
 from ui import asset_v, ill, ILL, ICONS, tema, card, catalog_body, notfound_body, head_extra
@@ -27,14 +30,18 @@ HOME = Template(open(os.path.join(ROOT, "templates/home.html")).read())
 pages = []  # (path, lastmod, priority)
 GUIDES = seo.load_guides(params)  # content/guias/*.html
 LIVE = seo.load_live()  # data/live.json (ops/refresh_data.py): Pulso / «Dato de hoy»
-NOTES = seo.load_actualidad()  # content/actualidad/*.html (ops/triggers.py): solo si hay notas
+NEWS = noticias.load()  # content/noticias/*.html con estado «publicada»
+ALL_NOTES = seo.load_actualidad()  # content/actualidad/*.html (ops/triggers.py)
+_MIGR = {n['clave']: n for n in NEWS if n.get('clave')}  # notas de actualidad ya migradas a una pieza de noticias: no se duplican
+NOTES = [n for n in ALL_NOTES if n.get('clave') not in _MIGR]  # solo si hay notas sin migrar
 BARO = None  # datos del Barómetro (main)
 ACTIVE_HUBS = {}  # hubs que cumplen el disparador (main)
 
-def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None, og_tema=None):
+def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None, og_tema=None, noindex=False):
     """path: '/' o '/decidir/slug/'. Genera index.html en esa carpeta."""
     canonical = site["base_url"].rstrip("/") + path
     extra = head_extra() + "\n" + seo.feed_link()  # Atom /feed.xml (Estratega)
+    if noindex: extra += '\n<meta name="robots" content="noindex,follow">'  # páginas finas (archivos con pocas piezas): fuera del sitemap
     if jsonld:
         extra += "\n" + "\n".join(f'<script type="application/ld+json">{json.dumps(j, ensure_ascii=False, separators=(",", ":"))}</script>' for j in jsonld)
     if og_tema or og:  # SVG 1200x630 única por página con su título (og-svg/, para rasterizar: ver ogimg.py)
@@ -48,14 +55,14 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w").write(out)
-    pages.append((canonical, lastmod or datetime.date.today().isoformat(), priority))
+    if not noindex: pages.append((canonical, lastmod or datetime.date.today().isoformat(), priority))
 
 def render_calc(c, all_calcs):
     faqs = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in c["faqs"])
     related = sorted([x for x in all_calcs if x["slug"] != c["slug"]], key=lambda x: tema(x) != tema(c))  # mismo tema primero (sort estable)
     _aff = seo.related_slugs(c["slug"])  # data/clusters.json (Estratega): 2-3 más afines
     if _aff: related = [x for s in _aff for x in all_calcs if x["slug"] == s]
-    rel_html = seo.guides_html(c["slug"], GUIDES) + barometro.calc_link(c["slug"], BARO) + tablas.calc_link(c["slug"]) + hubs.calc_link(c["slug"], all_calcs, ACTIVE_HUBS) + (("<h2>Otras decisiones relacionadas</h2><ul class=\"cards\">" + "".join(card(x) for x in related) + "</ul>") if related else "")
+    rel_html = noticias.calc_block(c["slug"], NEWS) + seo.guides_html(c["slug"], GUIDES) + barometro.calc_link(c["slug"], BARO) + tablas.calc_link(c["slug"]) + hubs.calc_link(c["slug"], all_calcs, ACTIVE_HUBS) + (("<h2>Otras decisiones relacionadas</h2><ul class=\"cards\">" + "".join(card(x) for x in related) + "</ul>") if related else "")
     _lm = seo.calc_lastmod(c["slug"], params)
     body = f"""
 {ui.calc_header(c)}
@@ -64,6 +71,7 @@ def render_calc(c, all_calcs):
 {ui.calc_form(c)}
 {plan.next_block(c['slug'])}
 {c["content"]}
+{respuestas.block(c["slug"])}
 {seo.ahora_html(c["slug"])}{seo.pulso_html(LIVE, c["slug"])}
 <h2>Preguntas frecuentes</h2>
 {faqs}
@@ -104,7 +112,7 @@ def main():
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', ASIS + directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE) + barometro.home_teaser(BARO)),
+          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', ASIS + directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + noticias.home_card(NEWS) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE, sin_noticia=True) + barometro.home_teaser(BARO)),
           priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
@@ -114,7 +122,7 @@ def main():
         write(f"/guias/{g['slug']}/", g["title"], g["description"], gbody, jsonld=gld, priority="0.7", lastmod=g["modified"], og=f"og-{(tema(next((c for s_ in g.get('calcs', []) for c in calcs if c['slug'] == s_), {'slug': ''})) if g.get('calcs') else 'ahorro')}.png")
     bmod = seo.lastmod(*barometro.FILES, extra=[BARO["fecha_datos"]])
     bdesc = f"Datos propios de {barometro.mes_es(BARO['fecha_datos'])}: Euríbor a partir del cual compensa la hipoteca fija, coste por km según motor y cuándo invertir antes que amortizar."
-    write(barometro.PATH, f"Barómetro de hipoteca, coche y ahorro ({barometro.mes_es(BARO['fecha_datos'])})", bdesc, barometro.page(BARO, bmod),
+    write(barometro.PATH, barometro.titulo_corto(BARO), bdesc, barometro.page(BARO, bmod),
           jsonld=barometro.jsonld(BARO, B, bmod, seo.published("barometro.py"), bdesc, seo.org(B), seo.article, seo.breadcrumbs), priority="0.8", lastmod=bmod)
     TAB = tablas.build(DIST, params, B)  # -> dist/tablas-2026/<slug>/datos.csv y datos.json
     tmod = seo.lastmod(*tablas.FILES); tpub = seo.published("tablas.py")
@@ -124,6 +132,14 @@ def main():
     tdesc = "Tablas oficiales 2026 con fuente: IRPF por comunidad, cuota de autónomos, ITP y AJD, SMI, paro, pensiones, despido y permisos. Con CSV."
     write(tablas.INDEX, "Tablas 2026: IRPF, autónomos, ITP, pensiones y trabajo", tdesc, tablas.index_page(TAB, tmod, seo.AUTHOR),
           jsonld=tablas.index_jsonld(B, tmod, tpub, seo.org(B), seo.breadcrumbs, tdesc), priority="0.7", lastmod=tmod)
+    DAT = datos.build(LIVE, params)  # /datos/*: se regeneran con live.json/params.json
+    if DAT:
+        dpub = seo.published("datos.py")
+        for k, s in DAT.items():
+            write(datos.PATHS[k], s["title"], s["description"], s["body"], jsonld=datos.jsonld(k, DAT, B, dpub, seo.org(B), seo.breadcrumbs), priority="0.8", lastmod=s["fecha"], og_tema={"irav": "hipoteca", "euribor": "hipoteca", "luz": "energia"}[k])
+        dmod_ = max(s["fecha"] for s in DAT.values())
+        write(datos.INDEX, "Datos al día: IRAV, Euríbor y precio de la luz", "Series que se actualizan solas con su fecha y fuente: IRAV e IPC del alquiler, Euríbor a 12 meses y precio de la luz (PVPC) de hoy.", datos.index_page(DAT),
+              jsonld=datos.index_jsonld(DAT, B, dmod_, dpub, seo.org(B), seo.breadcrumbs), priority="0.7", lastmod=dmod_, og_tema="hipoteca")
     ebody, eld, edesc = embed.page(calcs)  # /inserta/ + /embed/<slug>/ (estos últimos noindex y fuera de sitemap: no pasan por write())
     write(embed.PATH, "Inserta una calculadora en tu web — Entre Muchos", edesc, ebody, jsonld=eld, priority="0.5", lastmod=seo.lastmod("embed.py"))
     embed.build(DIST, calcs)
@@ -133,6 +149,8 @@ def main():
         if k in ("hipoteca", "impuestos"):
             pl = "".join(plan.hub_link(spec["path"], pk) for pk in (["compra-vivienda", "alquilar-vivienda"] if k == "hipoteca" else ["autonomo", "despido"]))
             hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", pl)
+        _dk = {"hipoteca": ["euribor", "irav"], "energia": ["luz"]}.get(k)
+        if _dk and DAT: hbody = seo.insert_before(hbody, "<h2>Guías y datos propios</h2>", "<h2>Datos al día</h2><ul class=\"guides\">" + datos.hub_block(DAT, _dk) + "</ul>")
         write(spec["path"], spec["title"], spec["description"], hbody, jsonld=hld, priority="0.8", lastmod=hmod, og=f"og-{spec['tema']}.png")
         HUB_PAGES.append(dict(spec, modified=hmod, published=seo.published("hubs.py")))
     s27body, s27ld = semana.cambios_page(params, calcs, card, seo.lastmod(*semana.FILES), seo.AUTHOR)  # /que-cambia-1-enero-2027/ (c51)
@@ -148,6 +166,7 @@ def main():
         HUB_PAGES.append(dict(path=pp["path"], h1=pp["h1"], description=pp["description"], modified=pmod, published=ppub))
     dbody, dld, dmod = directorio.page(calcs, GUIDES, tmod, tablas.PAGES, tablas.INDEX, ACTIVE_HUBS, NOTES, ICONS, tema, B)
     dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(plan.dir_li(k) for k in plan.PLANES if not k.startswith('_')))  # planes completos (Diseñador)
+    if DAT: dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(f'<li data-k="datos al dia hoy {k}"><a href="{datos.PATHS[k]}">{s["h1"]}</a> <span class="note">{s["resumen"]}</span></li>' for k, s in DAT.items()))
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
           seo.insert_before(dbody, '<div class="search" role="search">', ASIS), jsonld=dld, priority="0.8", lastmod=dmod)
     if GUIDES:
@@ -163,7 +182,25 @@ def main():
             write(f"/actualidad/{n['slug']}/", n["title"], n["description"], nbody, jsonld=nld, priority="0.6", lastmod=n["modified"])
         write("/actualidad/", "Actualidad: datos que cambian decisiones", "Notas breves con datos oficiales cuando el Euríbor, los carburantes, la luz o el tiempo se mueven lo bastante para cambiar una decisión.",
               semana.block(LIVE) + seo.actualidad_index(NOTES), priority="0.6", lastmod=max(n["modified"] for n in NOTES))
+    if NEWS:  # /noticias/ (Constructor): portada, piezas, archivos mensuales y resúmenes; archivo/resúmenes con < 3 elementos van noindex
+        for n in NEWS:
+            nbody, nld, ntema = noticias.piece_page(n, calcs, card, B, tema=tema)
+            write(n["path"], n["title"], n["description"], nbody, jsonld=nld, priority="0.7", lastmod=n["modified"], og_tema=ntema)
+        ibody, ild, imod = noticias.index_page(NEWS, B, semana.block(LIVE, sin_noticia=True))
+        write(noticias.PATH, "Noticias: qué cambia para ti — Entre Muchos", "Hechos oficiales (BOE, INE, BCE, AEAT) que mueven tus cifras: alquiler, hipoteca, impuestos y luz, con fuente, fecha y qué hacer.", ibody, jsonld=ild, priority="0.8", lastmod=imod, og_tema="impuestos")
+        for y_, m_, its, mmod in noticias.months(NEWS):
+            mbody, mld = noticias.month_page(y_, m_, its, B)
+            write(f"/noticias/{y_}/{m_}/", f"Noticias de {noticias._mes_es(y_, m_)} — Entre Muchos", f"Noticias de {noticias._mes_es(y_, m_)}: hechos oficiales y lo que cambian en tus cifras, con fuente y fecha.", mbody, jsonld=mld, priority="0.5", lastmod=mmod, og_tema="impuestos", noindex=len(its) < noticias.THIN)
+        _r = noticias.resumen_page(NEWS, B)
+        if _r:
+            write(noticias.RESUMEN_PATH, "Resúmenes diarios y semanales — Entre Muchos", "Lo que importa hoy y la semana en tu bolsillo: hechos oficiales con su fuente y su efecto en tus cuentas.", _r[0], jsonld=_r[1], priority="0.5", lastmod=_r[2], og_tema="impuestos", noindex=_r[3] < noticias.THIN)
+        noticias.write_feed(DIST, site, NEWS)  # /noticias/feed.xml
+    for n_ in ALL_NOTES:  # nota de /actualidad/ migrada a noticias: redirige a la pieza (sin contenido duplicado)
+        if n_.get("clave") in _MIGR:
+            noticias.stub(BASE, site, DIST, f"/actualidad/{n_['slug']}/", _MIGR[n_["clave"]]["path"], n_["title"], ILL)
+    if _MIGR and not NOTES: noticias.stub(BASE, site, DIST, "/actualidad/", noticias.PATH, "Actualidad: ahora en Noticias", ILL)
     for slug, title, desc in [("como-funciona", "Cómo funciona", "Cómo calculamos: fuentes oficiales (BOE, BCE, INE), Barómetro con datos del mes y verificación de cada cifra antes de publicar. Qué hacemos y qué no."),
+                              ("politica-editorial", "Política editorial", "Cómo elegimos y verificamos cada noticia: solo fuentes oficiales, correcciones con fecha, uso de IA, derechos de autor y contacto."),
                               ("aviso-legal", "Aviso legal", "Titular, condiciones de uso y limitación de responsabilidad."),
                               ("privacidad", "Política de privacidad", "Qué datos tratamos (casi ninguno) y con qué base legal."),
                               ("cookies", "Política de cookies", "Cookies que usa el sitio y cómo gestionarlas."),
@@ -174,8 +211,8 @@ def main():
     open(os.path.join(DIST, "404.html"), "w").write(BASE.substitute(title="Página no encontrada", description="Esta página no existe. Busca una calculadora en el catálogo.", canonical=site["base_url"], og_alt="", og_image=site["base_url"].rstrip("/") + "/assets/og.png", head_extra='<meta name="robots" content="noindex">', body=notfound_body(), scripts="", site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#"))
     bundle.run(ROOT, DIST)  # minifica y recorta CSS/JS por tipo de página (Diseñador)
     seo.copy_static(DIST)  # static/ -> raíz: robots.txt (bots de IA permitidos), clave IndexNow
-    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES, hubs=HUB_PAGES, tablas=tablas.llms_lines(B), tablas_md=tablas.llms_md(TAB, B))  # llms.txt + llms-full.txt
-    seo.write_feed(DIST, site, GUIDES, NOTES, BARO, bmod, hubs=HUB_PAGES, extra=tablas.feed_items(B, tmod, tpub))  # /feed.xml (Atom): actualidad, guías y Barómetro con su fecha real
+    seo.write_llms(DIST, site, calcs, GUIDES, params, tema, ICONS, extra=barometro.llms_md(BARO, B), notes=NOTES, news_md=noticias.llms_md(NEWS, B), hubs=HUB_PAGES, tablas=tablas.llms_lines(B), tablas_md=tablas.llms_md(TAB, B))  # llms.txt + llms-full.txt
+    seo.write_feed(DIST, site, GUIDES, NOTES, BARO, bmod, hubs=HUB_PAGES, extra=tablas.feed_items(B, tmod, tpub) + noticias.feed_items(B, NEWS))  # /feed.xml (Atom): actualidad, guías y Barómetro con su fecha real
     directorio.write_sitemaps(DIST, pages, B)  # sitemap.xml = índice; sitemap-{calculadoras,guias,tablas,hubs}.xml
     host = site["base_url"].split("//")[1].split("/")[0]
     if "pages.dev" not in host and "github.io" not in host: open(os.path.join(DIST, "CNAME"), "w").write(host + "\n")
