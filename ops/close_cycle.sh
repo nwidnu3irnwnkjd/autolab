@@ -29,6 +29,7 @@ step() { echo; echo "== $* =="; }
 red() { echo; echo "ROJO en '$1': cierre abortado SIN commit ni push." >&2; exit 1; }
 
 # 2-3. build + check + QA estática
+step "popularidad (GA4+Search Console, 1 vez/día por caché; el build solo lee data/popularidad.json; informativo)"; python3 ops/popularidad.py || true
 step "ejemplos resueltos (insignia; en local con osascript; el build solo lee data/ejemplos.json)"; python3 ops/gen_ejemplos.py >/dev/null || true
 step "tablas de respuesta (cola numérica; osascript en local; el build solo lee data/tablas_respuesta.json)"; python3 ops/gen_tablas_respuesta.py >/dev/null || true
 step "build"; (cd projects/decidir && python3 build.py) || red build

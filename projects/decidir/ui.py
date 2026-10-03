@@ -77,7 +77,8 @@ def head_extra():
         out.append(f'<script defer data-domain="{site["analytics_plausible_domain"]}" src="https://plausible.io/js/script.js"></script>')
     if site.get("ga4_id"):
         g = site["ga4_id"]
-        out.append(f'<script async src="https://www.googletagmanager.com/gtag/js?id={g}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{g}",{{anonymize_ip:true}});</script>')
+        # UX1.4: GA4 solo en el dominio de producción (localhost/QA no cuentan). Sin gtag definido, los hooks `window.gtag&&` no hacen nada.
+        out.append(f'<script>if(location.hostname==="entremuchos.com"){{window.dataLayer=[];window.gtag=function(){{dataLayer.push(arguments)}};gtag("js",new Date());gtag("config","{g}",{{anonymize_ip:true}});var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id={g}";document.head.appendChild(s)}}</script>')
     if site.get("adsense_client"):
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={site["adsense_client"]}" crossorigin="anonymous"></script>')
     return "\n".join(out)

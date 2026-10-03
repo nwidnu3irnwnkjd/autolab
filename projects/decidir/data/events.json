@@ -204,7 +204,8 @@
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579"
       },
       "aviso": "Hasta seis cambios al año (art. 43 bis del Reglamento General de Cotización): lo pedido en enero y febrero surte efecto el 1 de marzo; en marzo y abril, el 1 de mayo; y así cada dos meses, hasta noviembre y diciembre, con efecto el 1 de enero. Las fechas de este calendario son el último día de cada periodo.",
-      "plazo": true
+      "plazo": true,
+      "noticia": true
     },
     {
       "id": "renuncia-modulos",
@@ -223,6 +224,73 @@
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820"
       },
       "aviso": "Por reglamento, la renuncia se presenta en diciembre del año anterior o con el pago fraccionado del primer trimestre en la forma de la estimación directa (art. 33.1) y dura como mínimo 3 años (art. 33.3). La Orden de módulos de 2027, que fija su plazo, no estaba publicada el 2 de octubre de 2026, y el límite de ingresos de 2027 es el de la ley (150.000 €) salvo prórroga."
+    },
+    {
+      "id": "irav-ipc-ine-publicacion",
+      "titulo": "Publicación del IPC y del IRAV del INE",
+      "tipo": "fechas",
+      "fechas": [
+        "2026-10-14",
+        "2026-11-13",
+        "2026-12-15"
+      ],
+      "antes": 2,
+      "despues": 3,
+      "decision": "Actualización de la renta del alquiler",
+      "que_hacer": "Calcula la subida máxima de tu renta con el IRAV recién publicado.",
+      "calc": "actualizacion-renta-alquiler-irav-ipc",
+      "texto_antes": "El {fecha} el INE publica el IPC y el IRAV del mes anterior: la referencia para actualizar tu alquiler.",
+      "texto_despues": "El {fecha} el INE publicó el IRAV: calcula cuánto te pueden subir el alquiler.",
+      "fuente": {
+        "nombre": "INE: Calendario de difusión 2026 (IPC e IRAV de septiembre, octubre y noviembre)",
+        "url": "https://www.ine.es/dynt3/Calendario/calenHTML.htm"
+      },
+      "aviso": "Fechas del calendario de difusión del INE de 2026 (IRAV: 14 de octubre, 13 de noviembre y 15 de diciembre).",
+      "noticia": true
+    },
+    {
+      "id": "bce-tipos-2026",
+      "titulo": "Decisión de tipos de interés del BCE",
+      "tipo": "fechas",
+      "fechas": [
+        "2026-10-29",
+        "2026-12-17"
+      ],
+      "antes": 3,
+      "despues": 3,
+      "decision": "Hipoteca fija o variable",
+      "que_hacer": "Si tienes hipoteca variable o dudas entre fija y variable, calcula cómo cambiaría tu cuota si el Euríbor se mueve.",
+      "calc": "hipoteca-fija-o-variable",
+      "texto_antes": "El {fecha} el BCE decide los tipos de interés: puede mover el Euríbor y tu cuota variable.",
+      "texto_despues": "El {fecha} el BCE decidió sobre los tipos: comprueba qué haría tu cuota variable.",
+      "fuente": {
+        "nombre": "Banco Central Europeo: calendario de reuniones de política monetaria 2026",
+        "url": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html"
+      },
+      "aviso": "El BCE decide el segundo día de cada reunión (28-29 de octubre y 16-17 de diciembre de 2026); la rueda de prensa es ese segundo día.",
+      "noticia": true
+    },
+    {
+      "id": "modelos-3t-2026",
+      "titulo": "Plazo de los modelos trimestrales del tercer trimestre",
+      "tipo": "fechas",
+      "fechas": [
+        "2026-10-20"
+      ],
+      "antes": 10,
+      "despues": 0,
+      "decision": "Autónomo: estimación directa o módulos",
+      "que_hacer": "Si eres autónomo, presenta el modelo 130 (y 303 si aplica) antes del 20 de octubre; calcula tu rendimiento con tus gastos reales.",
+      "calc": "autonomo-estimacion-directa-o-modulos",
+      "texto_antes": "Hasta el {fecha} puedes presentar los modelos trimestrales del tercer trimestre (130, 303, 111).",
+      "texto_despues": "El {fecha} terminó el plazo de los modelos trimestrales del tercer trimestre.",
+      "fuente": {
+        "nombre": "Agencia Tributaria: Calendario del contribuyente 2026 (tercer trimestre, hasta el 20 de octubre)",
+        "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/calendario-contribuyente/calendario-contribuyente-2026.html"
+      },
+      "aviso": "Plazo del calendario del contribuyente de la Agencia Tributaria para los modelos 111, 130 y 303 del tercer trimestre.",
+      "plazo": true,
+      "noticia": true
     }
   ],
   "pendientes": [
@@ -262,18 +330,6 @@
       },
       "aviso": "Pendiente de norma: las cuantías de 2027 no están publicadas y no damos fecha. Las de 2026 se aprobaron ya entrado el año: el SMI, por el Real Decreto 126/2026 (BOE del 19 de febrero de 2026), y la revalorización del 2,7 % de las pensiones, por el Real Decreto 241/2026. Cuando salgan las de 2027 se actualizarán las Tablas y las calculadoras.",
       "pagina": "/que-cambia-1-enero-2027/"
-    },
-    {
-      "id": "irav-ine-mensual",
-      "titulo": "Publicación mensual del índice IRAV del INE",
-      "decision": "Actualización de la renta del alquiler",
-      "que_hacer": "Calcula la subida de tu renta con el último IRAV publicado y repítelo cuando salga el siguiente.",
-      "calc": "actualizacion-renta-alquiler-irav-ipc",
-      "fuente": {
-        "nombre": "INE: Índice de Referencia de Arrendamientos de Vivienda (IRAV)",
-        "url": "https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos"
-      },
-      "aviso": "Fecha por confirmar: el INE publica el IRAV cada mes, habitualmente hacia mediados de mes, pero no hemos podido verificar el día exacto en su calendario, así que no damos fecha."
     }
   ]
 }

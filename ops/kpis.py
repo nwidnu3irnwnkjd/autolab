@@ -10,7 +10,7 @@ BASE = site["base_url"].rstrip("/"); host = BASE.split("//")[1]; pid = site.get(
 SAMPLE = ["/", "/hipoteca/", "/impuestos/", "/coche/", "/guias/euribor-hipoteca/", "/guias/amortizacion-anticipada-comisiones/",
           "/guias/autonomo-2026-cuota-regularizacion-modulos/", "/decidir/alquilar-o-comprar/", "/decidir/amortizar-o-invertir/",
           "/decidir/autonomo-o-asalariado/", "/tablas-2026/", "/que-cambia-1-enero-2027/"]
-EVENTS = ["share_click", "calc_used", "calendar_add", "asistente_paso", "asistente_resultado"]
+EVENTS = ["share_click", "calc_used", "result_view", "calc_error", "calendar_add", "asistente_paso", "asistente_resultado"]  # UX1.5: result_view y calc_error (em.js, UX1.4)
 ND = "n/d"
 def safe(f):
     try: return f()
@@ -76,19 +76,23 @@ noticias_cell = f"{n_pub} pub · {n_nk} conoc. · {gn[0]} clics · {gn[1]} impr.
 n_known = safe(known)
 g = safe(gsc) if tok != ND else (ND,) * 3
 sess = safe(ga_tot) if tok != ND and pid else (ND, ND)
-ev = safe(ga_events) if tok != ND and pid else [ND] * 5
+ev = safe(ga_events) if tok != ND and pid else [ND] * len(EVENTS)
 top = safe(ga_top) if tok != ND and pid else ND
 HEAD = f"""# KPIs de tráfico (PLAN-TRAFICO) · una fila por ejecución (`python3 ops/kpis.py`, 1 vez por ciclo en close_cycle.sh)
 
 **Regla de lectura.** Éxito de la semana 2 (16-oct-2026): **≥ 50 URLs conocidas/indexadas por Google** (con 12 URLs de muestra, «Conocidas» ≥ 12 de 12 y el sitemap procesado en Search Console equivale a ese umbral; hasta entonces, la tendencia de «Conocidas/12» es la señal) **y primeras impresiones** (Impr. 7d > 0). Si el 15-oct «Conocidas» sigue en 0: revisar propiedad y plan B.
-Tendencia ↑ ↓ = compara «Conocidas», «Impr.» y «Sesiones» con la fila anterior (en ese orden). n/d = la API falló. Eventos 7 d: share_click / calc_used / calendar_add / asistente_paso / asistente_resultado (0 si aún no existen). «Sesiones» incluye tráfico propio (no separable).
+Tendencia ↑ ↓ = compara «Conocidas», «Impr.» y «Sesiones» con la fila anterior (en ese orden). n/d = la API falló. Eventos 7 d: share_click / calc_used / result_view (res) / calc_error (err) / calendar_add / asistente_paso / asistente_resultado (0 si aún no existen; res y err desde UX1.4, y solo cuentan tráfico de entremuchos.com). «Sesiones» incluye tráfico propio (no separable).
 
-| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. | Noticias (publicadas · conocidas/URL /noticias/ · GSC 7d) |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | res | err | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. | Noticias (publicadas · conocidas/URL /noticias/ · GSC 7d) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 """
 lines = open(OUT, encoding="utf-8").read().split("\n") if os.path.exists(OUT) else []
 rows = [l for l in lines if re.match(r"\| \d{4}-\d\d-\d\d ", l)]
 rows = [l if len(l.strip("|").split(" | ")) >= 16 else l + " — |" for l in rows]  # filas anteriores a la columna «Noticias»: celda vacía
+def _res_err(l):  # filas anteriores a UX1.5 (16 celdas): res y err = «n/d» tras la columna calc
+    c = l.strip()[1:-1].strip().split(" | ")
+    return l if len(c) >= 18 else "| " + " | ".join(c[:10] + ["n/d", "n/d"] + c[10:]) + " |"
+rows = [_res_err(l) for l in rows]
 if any(l.startswith(f"| {stamp} ") for l in rows): print(f"Ya hay fila para {stamp}; no se duplica."); sys.exit(0)
 def arrow(a, b):
     try: return "↑" if float(a) > float(b) else "↓" if float(a) < float(b) else "="

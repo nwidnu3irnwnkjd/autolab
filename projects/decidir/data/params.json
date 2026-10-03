@@ -93,7 +93,7 @@
   "fijo_gas_eur_ano": 119,
   "fuente": {
     "gas_eur_kwh": {
-      "valor": "0,064 €/kWh con impuestos en octubre de 2026: TUR.2 (5.000-15.000 kWh/año) variable 5,042762 c€/kWh desde 1/10/2026 + Impuesto sobre Hidrocarburos 0,65 €/GJ (epígrafe 1.10.1, art. 13 del RDL 25/2026) = 0,00234 €/kWh + IVA 21 %. En noviembre y diciembre, solo si el IPC del gas natural supera el 15 % interanual (INE): IVA 10 % (arts. 18.2 y 19.2) e Impuesto sobre Hidrocarburos de 0,3 €/GJ (noviembre) o 0,3 / 0,42 €/GJ (diciembre, arts. 14 y 15), lo que dejaría el precio en torno a 0,057 €/kWh.",
+      "valor": "0,064 €/kWh con impuestos en octubre de 2026: TUR.2 (5.000-15.000 kWh/año) variable 5,042762 c€/kWh desde 1/10/2026 + Impuesto sobre Hidrocarburos 0,65 €/GJ (epígrafe 1.10.1, art. 13 del RDL 25/2026) = 0,00234 €/kWh + IVA 21 %. En noviembre y diciembre, solo si el IPC del gas natural supera el 15 % interanual (INE): IVA 10 % (arts. 18.2 y 19.2) e Impuesto sobre Hidrocarburos de 0,3 €/GJ (noviembre) o 0,3 / 0,42 €/GJ (diciembre, arts. 14 y 15), lo que dejaría el precio en torno a 0,057 €/kWh. El Cn de la TUR incluye el tope temporal del art. 1 del RDL 25/2026: aplicado 3,574741 c€/kWh frente a 5,626153 por fórmula; deuda media 2,051412 c€/kWh (sin impuestos), recuperable desde el 1/1/2027 (art. 1.2-1.4); quien deje la TUR antes la paga (art. 1.6). Sin tope, ≈0,089 €/kWh.",
       "fuente": "BOE-A-2026-20389, Resolución de 30/9/2026 (TUR de gas)",
       "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20389",
       "consulta": "consultado el 2/10/2026",

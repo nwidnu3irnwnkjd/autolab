@@ -1,20 +1,20 @@
 /* Entre Muchos — sistema visual. Tokens en :root; modo oscuro por prefers-color-scheme. */
 :root{
   --bg:#f5f6fa;--surface:#fff;--surface-2:#eef1f8;--fg:#0f1324;--muted:#4f566b;--line:#dfe3ee;
-  --accent:#2548f0;--accent-fg:#fff;--accent-soft:#e8edff;--accent-ink:#1b37c4;
+  --err:#b3261e;--accent:#2548f0;--accent-fg:#fff;--accent-soft:#e8edff;--accent-ink:#1b37c4;
   --ok:#0a7340;--ok-bg:#e4f5ec;--ok-line:#b5e2c8;--warn:#875700;--warn-bg:#fff3d4;--warn-line:#f1d48a;
   --info:#1b37c4;--info-bg:#e8edff;--info-line:#c4d0ff;
   --c1:#2548f0;--c2:#d55a1c;--c3:#0f8a80;--bd:#7b839b;--c4:#9b4dca;--track:#e9ecf4;
   --shadow:0 1px 2px rgba(16,24,48,.06),0 4px 16px rgba(16,24,48,.06);--shadow-lg:0 2px 4px rgba(16,24,48,.06),0 12px 32px rgba(16,24,48,.10);
   --card-border:transparent;--r:14px;--r-sm:10px;
-  --font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font:Inter,"Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --t-sm:15px;--t-base:17px;--t-md:20px;--t-lg:26px;--t-xl:36px;--t-xxl:48px;
   --ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);--out:cubic-bezier(.22,1,.36,1);color-scheme:light;
   --i1:#2548f0;--i2:#f08a4b;--i3:#14a394;--i1s:#b9c7ff;--ib:#e6ebff;--is:#fff;--il:#1b2340;--shine:rgba(255,255,255,.55);
 }
 @media (prefers-color-scheme:dark){:root{
   --bg:#0a0c13;--surface:#121624;--surface-2:#191e30;--fg:#eceff7;--muted:#a5adc4;--line:#262c42;
-  --accent:#7d9bff;--accent-fg:#0a0c13;--accent-soft:#18203d;--accent-ink:#a9bcff;
+  --err:#ff8a80;--accent:#7d9bff;--accent-fg:#0a0c13;--accent-soft:#18203d;--accent-ink:#a9bcff;
   --ok:#5ad692;--ok-bg:#0e2519;--ok-line:#1d4a32;--warn:#f6c453;--warn-bg:#271f0c;--warn-line:#54421a;
   --info:#a9bcff;--info-bg:#161d38;--info-line:#2b3866;
   --c1:#7d9bff;--c2:#ff9a62;--c3:#3fd1c1;--c4:#c792ff;--track:#20263a;--bd:#6f7a9c;
@@ -48,6 +48,8 @@ a:hover{text-decoration-thickness:2px}
 .logo,.site-h nav a{white-space:nowrap}
 @media (max-width:359px){.logo{font-size:17px;gap:6px}.logo svg{width:24px;height:24px}.site-h nav{gap:0}.site-h nav a{padding:0 7px;font-size:14px}}
 
+/* Fuente de respaldo con las métricas de Inter: al llegar Inter el texto no se desplaza (CLS 0) */
+@font-face{font-family:"Inter Fallback";src:local(Arial),local(Helvetica);size-adjust:107.1%;ascent-override:90.4%;descent-override:22.5%;line-gap-override:0%}
 /* Tipografía */
 main.in{padding-top:28px;padding-bottom:64px}
 h1,h2,h3{letter-spacing:-.02em;line-height:1.2;text-wrap:balance}
@@ -303,11 +305,7 @@ article.guide tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,trans
 @keyframes em-pop{0%{transform:scale(.6)}100%{transform:none}}
 /* Movimiento (solo sin reduced motion) */
 @media (prefers-reduced-motion:no-preference){
-  .ph>h1{animation-name:em-up2}
-  .ph>*{animation:em-up .5s var(--out) both}.ph>h1{animation-delay:.05s}.ph>.lead{animation-delay:.1s}
-  .ph>.ph-i{animation:em-up .5s var(--out) both,em-float2 6s .5s ease-in-out infinite alternate}
-  .rv{opacity:0;transform:translateY(16px)}
-  .rv.in{opacity:1;transform:none;transition:opacity .6s var(--out),transform .6s var(--out);transition-delay:var(--rd,0s)}
+  .ph>.ph-i{animation:em-float2 6s ease-in-out infinite alternate}
 }
 @keyframes em-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes em-up2{from{transform:translateY(10px)}to{transform:none}}
@@ -332,7 +330,7 @@ article.guide tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,trans
 .em-tip span{display:flex;align-items:center;gap:6px;white-space:nowrap}
 .em-tip i{width:9px;height:9px;border-radius:50%;flex:none}
 .em-tip em{font-style:normal;font-weight:800;margin-left:auto;padding-left:10px;font-variant-numeric:tabular-nums}
-.em-line-slot:empty{min-height:290px}
+.em-line-slot:empty{min-height:326px}
 .em-lw [hidden]{display:none}
 @media (prefers-reduced-motion:reduce){.em-lw .ll{transition:none}}
 #em-pr-head,#em-pr-foot{display:none}
@@ -455,7 +453,7 @@ main:focus{outline:none}
 .plan-dots{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 12px;padding:0;list-style:none;font-size:var(--t-sm)}
 .plan-dots b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--surface);border:1.5px solid var(--line);font-size:12px}
 .plan-dots [aria-current]{font-weight:700}
-.plan-dots [aria-current] b{background:var(--accent);border-color:var(--accent);color:#fff}
+.plan-dots [aria-current] b{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
 .plan-act{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
 .plan-go{max-width:100%;text-align:center;line-height:1.25}
 .plan-t{flex:1 1 200px}
@@ -468,3 +466,66 @@ main:focus{outline:none}
 .noticia .hechos{padding-left:1.2em}.noticia .hechos li{margin:.5em 0}
 .noticia .correccion,.noticia .nota-caduca{padding:10px 14px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-sm)}
 .noticia .fuentes{padding-left:1.2em}
+
+/* UX1.1: cabecera de calculadora compacta en móvil (formulario en el primer pantallazo). El HTML no cambia: el lead se recorta solo visualmente. */
+@media (max-width:599px){
+  .ph{padding:14px 16px}
+  .ph-i{width:64px;height:48px}
+  .ph h1{margin:10px 0 6px;font-size:28px}
+  .ph .lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:var(--t-base);line-height:1.45}
+  .calc{margin-top:16px;padding:16px}
+  main.in{padding-top:16px}
+}
+@media (min-width:720px){
+  .ph{grid-template-areas:"k i" "h i" "l l";padding:20px 28px;column-gap:20px}
+  .ph-i{width:112px;height:84px}
+  .ph h1{font-size:36px;margin:8px 0 0}
+  .ph .lead{margin-top:10px;font-size:var(--t-base);line-height:1.5;max-width:none}
+  main.in{padding-top:28px}
+  .calc{margin-top:16px}
+}
+
+/* UX1.3: home en móvil. Hero compacto (sin ilustración decorativa) y la lista «Por situación», que el asistente ya sustituye, deja de ocupar sitio. */
+ul.guides[hidden]{display:none}
+@media (max-width:599px){
+  .hero{padding:4px 0 0}
+  .hero .hero-ill{display:none}
+  .hero .kicker{margin-bottom:8px}
+  .hero h1{font-size:34px;margin-bottom:8px}
+  .hero .lead{font-size:var(--t-base);margin:0 0 4px}
+  .hero .search{margin:12px 0 0}
+  .hero .search input{min-height:52px}
+  #top{margin:20px 0 6px}
+  #top+.note{margin:0 0 4px;font-size:14px}
+  #top+.note+ul.guides{margin-top:8px;gap:8px}
+  #top+.note+ul.guides li{padding-top:12px;padding-bottom:12px}
+  #top+.note+ul.guides li::before{top:14px}
+  .asis-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .asis-c{padding:10px 12px;min-height:56px}
+  .asis-c strong{font-size:16px;line-height:1.25}
+  .asis-c span{font-size:14px;line-height:1.35}
+  .hero~#calcs .ill-s,.hero~#calcs p{display:none}
+  .hero~#calcs li{padding:14px 16px}
+  .hero~#calcs .tag{margin-top:6px}
+}
+
+/* UX1.6: mensajes de error bajo el campo (rojo AA sobre superficie en claro y oscuro) */
+.em-err{margin:6px 0 0;font-size:var(--t-sm);font-weight:600;color:var(--err)}
+input[aria-invalid=true]{border-color:var(--err);box-shadow:0 0 0 3px color-mix(in srgb,var(--err) 18%,transparent)}
+/* UX1.8: barra fija de resultado en móvil (solo variante «bar» del A/B) */
+.em-bar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:9;min-height:48px;margin:0;padding:8px 18px;display:block;width:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;border-radius:999px;box-shadow:var(--shadow-lg);font-size:var(--t-sm)}
+.em-bar[hidden]{display:none}
+html:has(.em-bar:not([hidden])){scroll-padding-bottom:80px}
+@media (min-width:600px){.em-bar{display:none}}
+@media print{.em-bar{display:none!important}}
+
+/* UX1.7: objetivos táctiles >= 24 px (WCAG 2.2 2.5.8) */
+ul.guides a{min-height:24px}
+a.note{display:inline-block;min-height:24px;line-height:24px}
+/* UX1.8: escritorio, formulario y resultado en 2 columnas con el resultado fijo (solo CSS) */
+@media (min-width:1024px){
+  .calc:has(>.result:not(:empty)){display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 32px;align-items:start}
+  .calc:has(>.result:not(:empty)) .grid{grid-template-columns:1fr}
+  .calc:has(>.result:not(:empty))>.result{margin-top:0;position:sticky;top:76px}
+  .calc:has(>.result:not(:empty)) .em-res{border-top:0;padding-top:0}
+}

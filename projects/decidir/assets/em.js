@@ -22,6 +22,15 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function reduced() { return !!(RM && RM.matches); }
   var state = new WeakMap();
+  /* Medición (UX1.4): calc_used / result_view / calc_error. UV = grupo del A/B de la barra de resultado (UX1.8; solo móvil, "desk" en el resto). */
+  var CALC = location.pathname.replace(/\/$/, "").split("/").pop(), U = 0, VW = 0, BAD = 0, BR, UV = window.matchMedia && window.matchMedia("(max-width:599px)").matches ? (Math.random() < 0.5 ? "bar" : "ctl") : "desk";
+  function ev(n, p) { try { if (window.gtag) { p = p || {}; p.calc = CALC; p.ux_var = UV; gtag("event", n, p); } } catch (e) {} }
+  /* Región viva aparte y breve (≤160 car.): solo el veredicto se anuncia, no la tabla entera (UX1.6). */
+  function say(el, t) {
+    var l = el._l;
+    if (!l) { l = el._l = document.createElement("div"); l.className = "sr-only"; l.setAttribute("aria-live", "polite"); l.setAttribute("aria-atomic", "true"); el.parentNode.insertBefore(l, el); }
+    l.textContent = t.length > 160 ? t.slice(0, 157).replace(/\s+\S*$/, "") + "…" : t;
+  }
   /* Carga diferida: gráfico de línea (al entrar en pantalla) y módulo de compartir/PDF (al pulsar o en reposo). */
   var SC = document.currentScript, LD = {}, idleX = 0;
   function load(key, cb) {
@@ -38,8 +47,7 @@
     if (!slot) return;
     var go = function () { load("chart", function () { if (slot.isConnected && !slot.firstChild && window.EM.lineChart) slot.appendChild(window.EM.lineChart(cfg)); }); };
     if (window.EM && window.EM.lineChart) return go();
-    if ("IntersectionObserver" in window) { var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); go(); } }, { rootMargin: "300px" }); io.observe(slot); }
-    else go();
+    (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(go, { timeout: 1200 }); // precarga en reposo: el gráfico ya está pintado cuando se llega a él
   }
 
   function countTo(el, from, to, fmt) {
@@ -85,14 +93,34 @@
     return h + '</tbody></table></div>';
   }
 
+  /* result_view (≥ 50 % del veredicto visible, una vez, tras calc_used) y barra fija móvil del A/B (UX1.8). */
+  function watch(el, o, hasBig, fmt, vt) {
+    if (!U || !("IntersectionObserver" in window)) return;
+    if (el._o) el._o.disconnect();
+    var bar = UV === "bar" && o.winner !== "revisar";
+    if (bar) {
+      if (!BR) {
+        BR = document.createElement("button"); BR.type = "button"; BR.className = "em-bar"; BR.hidden = true; document.body.appendChild(BR);
+        BR.onclick = function () { var v = document.querySelector(".em-verdict"); if (v) v.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "center" }); };
+      }
+      BR.textContent = (hasBig && !/\d/.test(vt) ? fmt(o.bigNumber) + " · " : "") + vt + " ↓";
+    } else if (BR) BR.hidden = true;
+    el._o = new IntersectionObserver(function (en) {
+      var on = en[0].isIntersecting;
+      if (bar) BR.hidden = on;
+      if (on && !VW) { VW = 1; ev("result_view"); }
+      if (VW && !bar) el._o.disconnect();
+    }, { threshold: 0.5 });
+    el._o.observe(el.querySelector(".em-verdict"));
+  }
+
   /* EM.renderResult({verdict, tone:'ok'|'warn'|'info', bigNumber, bigLabel, format, bars:[{label,value,color}],
      barsLabel, cols:[...], rows:[[label, v1, v2] | {label, values, strong}], note, el}) */
   function renderResult(o) {
     var el = typeof o.el === "string" ? document.querySelector(o.el) : (o.el || document.getElementById("r"));
-    if (!el) return;
+    if (!el || BAD) return;
     var tone = o.tone === "warn" || o.tone === "info" ? o.tone : "ok", fmt = o.format || eur;
     var prev = state.get(el) || {};
-    el.setAttribute("aria-live", "polite");
     var h = '<div class="em-res em-tone-' + tone + '">';
     h += '<div class="em-verdict ' + tone + '">' + ICON[tone] + '<p>' + o.verdict + '</p></div>';
     var hasBig = typeof o.bigNumber === "number" && isFinite(o.bigNumber);
@@ -108,6 +136,8 @@
     h += '</div>';
     var tmpV = document.createElement("div"); tmpV.innerHTML = o.verdict;
     var key = o.winner !== undefined ? String(o.winner) : tone + "|" + tmpV.textContent.replace(/[\d.,%€\s\u00a0+\-−]+/g, " ").trim();
+    say(el, tmpV.textContent);
+    if (o.winner === "revisar") { if (U && !el._av) ev("calc_error", { kind: "aviso" }); el._av = 1; } else el._av = 0;
     var animateIn = !el.firstChild;
     el.innerHTML = h;
     if (!animateIn) { var res = el.firstChild; res.style.animation = "none"; }
@@ -132,6 +162,7 @@
     });
     if (!idleX) { idleX = 1; setTimeout(function () { loadX(function () {}); }, 2500); }
     state.set(el, { big: hasBig ? o.bigNumber : undefined, f: nf, key: key });
+    watch(el, o, hasBig, fmt, tmpV.textContent);
   }
 
   /* EM.live(inputs, fn, wait): recalcula al cambiar cualquier input (debounce). inputs: selector, formulario, o lista. */
@@ -140,15 +171,40 @@
     if (typeof inputs === "string") list = document.querySelectorAll(inputs);
     else if (inputs && inputs.tagName === "FORM") list = inputs.querySelectorAll("input,select,textarea");
     else list = inputs || [];
-    var t = null, used = 0;
+    var t = null, used = 0, els = [];
     var m = /[#&]v=([^&]*)/.exec(location.hash);
     if (m) m[1].split("~").forEach(function (p) { var k = p.split(":"), e = document.getElementById(decodeURIComponent(k[0])); if (e && e.form && k[1] !== undefined) e.value = decodeURIComponent(k[1]); });
-    function used1() { if (used) return; used = 1; try { if (window.gtag) gtag("event", "calc_used", { calc: location.pathname.replace(/\/$/, "").split("/").pop() }); } catch (e) {} }
-    function run() { clearTimeout(t); t = null; fn(); }
+    function used1() { if (used) return; used = U = 1; ev("calc_used"); }
+    /* UX1.6: entrada vacía o fuera de rango -> aria-invalid, mensaje bajo el campo y aviso en lugar de un resultado viejo. */
+    function gate() {
+      var r = document.getElementById("r"), bad = "";
+      els.forEach(function (i) {
+        var m = "", v = i.validity;
+        if (i.type === "number") m = i.value === "" || v.badInput ? "Escribe un número." : v.rangeUnderflow ? "Pon un valor de " + i.min.replace(".", ",") + " o más." : v.rangeOverflow ? "Pon un valor de " + i.max.replace(".", ",") + " o menos." : "";
+        var e = i._e;
+        if (m) {
+          if (!e) { e = i._e = document.createElement("p"); e.className = "em-err"; e.id = "e-" + i.id; i.parentNode.appendChild(e); i.setAttribute("aria-describedby", e.id); }
+          if (e.textContent !== m) e.textContent = m;
+          i.setAttribute("aria-invalid", "true");
+          if (!i._m && U) ev("calc_error", { field: i.id });
+          if (!bad) bad = (i.labels && i.labels[0] ? i.labels[0].textContent : i.id) + ": " + m.charAt(0).toLowerCase() + m.slice(1);
+        } else if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); i.removeAttribute("aria-describedby"); }
+        i._m = m;
+      });
+      BAD = bad ? 1 : 0;
+      if (BAD && r) {
+        r.innerHTML = '<div class="em-res em-tone-warn"><div class="em-verdict warn">' + ICON.warn + "<p>Revisa los datos. " + esc(bad) + "</p></div></div>";
+        r.style.display = "block"; say(r, "Revisa los datos. " + bad);
+        if (BR) BR.hidden = true;
+      }
+      return !BAD;
+    }
+    function run() { clearTimeout(t); t = null; if (gate()) fn(); }
     function deb() { clearTimeout(t); t = setTimeout(run, wait || 250); }
     Array.prototype.forEach.call(list, function (i) {
       if (typeof i === "string") i = document.getElementById(i);
       if (!i) return;
+      els.push(i);
       i.addEventListener("input", function () { used1(); deb(); });
       i.addEventListener("change", function () { used1(); run(); });
     });

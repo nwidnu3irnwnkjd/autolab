@@ -12,6 +12,7 @@ import noticias  # sección /noticias/ «Qué cambia para ti» (Constructor, PLA
 import semana  # «Esta semana» y /que-cambia-1-enero-2027/ (Estratega, c51)
 import tablas  # /tablas-2026/: tablas oficiales verificadas + cálculo propio + CSV (Estratega, c36)
 import datos  # /datos/<serie>/: IRAV, Euríbor y luz persistentes (Constructor, E3)
+import popularidad  # bucle de popularidad: lee data/popularidad.json (ops/popularidad.py)
 import embed  # widget insertable /embed/<slug>/ y /inserta/ (Diseñador)
 import respuestas  # tablas de respuesta de la cola numérica (lee data/tablas_respuesta.json; ops/gen_tablas_respuesta.py)
 import ejemplos  # «Ejemplo resuelto» estático de las insignia (lee data/ejemplos.json; ops/gen_ejemplos.py)
@@ -66,9 +67,9 @@ def render_calc(c, all_calcs):
     _lm = seo.calc_lastmod(c["slug"], params)
     body = f"""
 {ui.calc_header(c)}
-{ejemplos.block(c['slug'])}
 <p class="note upd">Actualizado: <time datetime="{_lm}">{seo.fecha_es(_lm)}</time></p>
 {ui.calc_form(c)}
+{ejemplos.block(c['slug'])}
 {plan.next_block(c['slug'])}
 {c["content"]}
 {respuestas.block(c["slug"])}
@@ -79,7 +80,7 @@ def render_calc(c, all_calcs):
 <p class="note">{c["sources"]} Parámetros actualizados el {params["fecha"]}. Los cálculos se hacen en tu navegador; no enviamos tus datos a ningún servidor.</p>
 <p class="disclaimer">Esta herramienta es orientativa y no constituye asesoramiento financiero. Comprueba las condiciones concretas de tu contrato y, si la decisión es importante, consulta con un profesional. Lee nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 {embed.block(c)}
-{rel_html}
+{rel_html}{popularidad.otros_block(c['slug'], all_calcs, tema, {x['slug'] for x in related})}
 """
     jsonld = [
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -101,7 +102,7 @@ def main():
     calcs = ejemplos.apply(calcs_loader.load_calcs(ROOT, params))
     seo.build_clusters(calcs, tema)  # -> data/clusters.json, antes de render_calc
     global BARO, ACTIVE_HUBS
-    ACTIVE_HUBS = hubs.eligible(calcs, GUIDES)  # disparador: >= 6 páginas del tema
+    ACTIVE_HUBS = popularidad.order_hubs(hubs.eligible(calcs, GUIDES), calcs)  # disparador: >= 6 páginas del tema; orden por popularidad si hay datos
     B = site["base_url"].rstrip("/")
     BARO = barometro.build(DIST, params, B)  # -> dist/barometro/datos.json (antes de render_calc: "Dato del mes")
     plan.validate(calcs)
@@ -112,7 +113,7 @@ def main():
     calcs_mod = max([seo.calc_lastmod(c["slug"], params) for c in calcs] + [g["modified"] for g in GUIDES])
     home_desc = "Calculadoras para decidir con tus propios números: amortizar plazo o cuota, hipoteca fija o variable, renting o compra y más. Gratis, sin registro."
     write("/", f'{site["name"]} — {site["tagline"]}', home_desc,
-          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', ASIS + directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + noticias.home_card(NEWS) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE, sin_noticia=True) + barometro.home_teaser(BARO)),
+          seo.insert_before(seo.insert_before(HOME.substitute(cards=cards).replace('<a href="/decidir/" id="more">Ver todas las calculadoras</a>', '<a href="/decidir/" id="more">Ver todas las calculadoras</a> · <a href="/todas/">Lista completa</a>', 1), '<h2 id="calculadoras">', popularidad.home_block(calcs) + ASIS + directorio.situacion_html(calcs, GUIDES, ACTIVE_HUBS)), "<h2>Cómo funciona</h2>", directorio.novedades_html(calcs, GUIDES, params) + noticias.home_card(NEWS) + seo.ahora_html() + seo.actualidad_link(NOTES) + hubs.home_link(ACTIVE_HUBS) + semana.block(LIVE, sin_noticia=True) + barometro.home_teaser(BARO)),
           priority="1.0", jsonld=seo.home_jsonld(B, home_desc), lastmod=max(calcs_mod, seo.lastmod("templates/home.html", extra=[seo.live_date("/", LIVE)])))
     write("/decidir/", "Todas las calculadoras de decisión", "Lista de comparadores X o Y con tus números: hipoteca, coche, impuestos, energía.",
           catalog_body(calcs), priority="0.8", lastmod=calcs_mod)
@@ -168,7 +169,7 @@ def main():
     dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(plan.dir_li(k) for k in plan.PLANES if not k.startswith('_')))  # planes completos (Diseñador)
     if DAT: dbody = seo.insert_before(dbody, '<li data-k="calendario barometro mapa tema">', ''.join(f'<li data-k="datos al dia hoy {k}"><a href="{datos.PATHS[k]}">{s["h1"]}</a> <span class="note">{s["resumen"]}</span></li>' for k, s in DAT.items()))
     write(directorio.PATH, "Todas las calculadoras de decisión: lista completa", f"Lista completa de las {len(calcs)} calculadoras de decisión por tema (hipoteca, coche, impuestos, energía, ahorro), con guías y tablas 2026. Filtra por palabra.",
-          seo.insert_before(dbody, '<div class="search" role="search">', ASIS), jsonld=dld, priority="0.8", lastmod=dmod)
+          seo.insert_before(seo.insert_before(dbody, '<div class="search" role="search">', ASIS), '<section class="grp">', popularidad.todas_block(calcs, directorio._li)), jsonld=dld, priority="0.8", lastmod=dmod)
     if GUIDES:
         write("/guias/", "Guías para decidir mejor — Entre Muchos", "Guías cortas con datos y fuentes oficiales para entender tu hipoteca, el Euríbor y la amortización anticipada.",
               seo.guides_index(GUIDES), priority="0.5", lastmod=max(g["modified"] for g in GUIDES))
