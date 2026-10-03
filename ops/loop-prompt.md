@@ -48,3 +48,6 @@ Ningún agente entra en información privada de Andoni ni en su ordenador fuera 
 - Los conectores (Gmail, Drive, Teams, Stripe, etc.) y el navegador del Orquestador NO se usan en el laboratorio; el QA usa el navegador integrado solo para páginas de entremuchos.com o dist local.
 - Web: solo fuentes oficiales/públicas (BOE, AEAT, SEPE, INE…). No iniciar sesión en nada, no enviar formularios, no descargar ejecutables.
 - Si una tarea requiere algo fuera de esto, se anota en journal/PENDIENTE-ANDONI.md y no se hace.
+
+## OPTIMIZADOR DE TRÁFICO (orden de Andoni, 3-oct)
+Todo se juzga por tráfico real (buscadores + IA) por token gastado. Rol nuevo: ops/roles/optimizador-trafico.md (Opus, cada 3 ciclos). Su lista ordenada en ops/OPTIMIZACION.md manda sobre el resto del plan de tráfico: el Orquestador delega primero sus 3 acciones top de cada pasada y deja de hacer lo que él marque como bajo retorno. Línea editorial nueva en estudio: ops/PLAN-NOTICIAS.md.
