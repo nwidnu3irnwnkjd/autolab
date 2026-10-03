@@ -12,3 +12,4 @@ Tendencia ↑ ↓ = compara «Conocidas», «Impr.» y «Sesiones» con la fila 
 | 2026-10-02 20:00Z | 150 | 3 | 0 | 0 | — | 26 | 18 | 1 | 3 | 0 | 10 | 3 | / (130); /decidir/hipoteca-fija-o-variable/ (45); /decidir/ (37); /decidir/alquilar-o-comprar/ (37); /decidir/amortizar-o-invertir/ (30) | ↑=↑ |
 | 2026-10-02 21:00Z | 153 | 5 | 0 | 0 | — | 27 | 18 | 1 | 4 | 0 | 18 | 5 | / (134); /decidir/hipoteca-fija-o-variable/ (47); /decidir/ (37); /decidir/alquilar-o-comprar/ (37); /decidir/amortizar-o-invertir/ (30) | ↑=↑ |
 | 2026-10-02 22:00Z | 156 | 6 | 0 | 0 | — | 30 | 20 | 1 | 4 | 0 | 23 | 5 | / (136); /decidir/hipoteca-fija-o-variable/ (47); /decidir/ (37); /decidir/alquilar-o-comprar/ (37); /decidir/amortizar-o-invertir/ (30) | ↑=↑ |
+| 2026-10-03 14:00Z | 158 | 6 | 0 | 0 | — | 39 | 25 | 1 | 9 | 0 | 39 | 6 | / (153); /decidir/hipoteca-fija-o-variable/ (55); /decidir/ (39); /decidir/alquilar-o-comprar/ (39); /decidir/amortizar-o-invertir/ (31) | ==↑ |

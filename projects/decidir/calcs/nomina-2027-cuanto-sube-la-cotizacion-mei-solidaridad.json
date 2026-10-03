@@ -1,0 +1,67 @@
+{
+  "slug": "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad",
+  "title": "Nómina 2027: cuánto sube el MEI y la solidaridad",
+  "description": "Cuánto más cotizarás en 2027 por el MEI (0,17 %) y la cotización de solidaridad sobre la base máxima, comparado con tu nómina de 2026, según tu sueldo.",
+  "h1": "Nómina de 2027: cuánto más te quitan por el MEI y la cotización de solidaridad",
+  "lead": "Si tu sueldo bruto queda por debajo de la base máxima de cotización, en 2027 cotizarás solo 0,02 puntos más (el MEI pasa del 0,15 % al 0,17 %: 6,00 € más al año con 30.000 € brutos); si la supera, además pagas más cotización de solidaridad: con 90.000 € brutos y la base máxima de 2026 (5.101,20 € al mes), 23,64 € más al año (12,24 € del MEI y 11,40 € de solidaridad). Esa cifra es la subida mínima: la base máxima de 2027 no está publicada, pero la ley la sube cada año (disposición transitoria 38.ª: revalorización más 1,2 puntos) y, si sube un 5 %, con 90.000 € brutos serían 215,52 € más al año, casi todo por cotizar sobre una base más alta y no por el MEI. La ley ya fija para 2027 el MEI y los tipos totales de solidaridad; la parte del trabajador en la solidaridad (0,23, 0,25 y 0,29 %) es nuestro cálculo con la proporción legal, a falta de la orden de cotización de 2027. Edita la base máxima cuando se conozca.",
+  "veredicto": "Por debajo de la base máxima de cotización, en 2027 el trabajador cotiza 0,02 puntos más de tu bruto por el MEI (0,17 % en vez de 0,15 %; disposición transitoria 43.ª de la Ley General de la Seguridad Social); por encima, también sube la cotización adicional de solidaridad (tipos totales de 1,38, 1,50 y 1,75 % en 2027 frente a 1,15, 1,25 y 1,46 % en 2026; art. 19 bis y disposición transitoria 42.ª), de la que al trabajador le corresponde la proporción de las contingencias comunes. Con la base máxima de 2026 (5.101,20 € al mes), que es la subida mínima porque la de 2027 no está publicada y la ley la sube cada año (disposición transitoria 38.ª; con un 5 % más, 90.000 € brutos cotizarían 215,52 € más al año): 30.000 € brutos, 6,00 € más al año; 90.000 €, 23,64 € más (12,24 € de MEI y 11,40 € de solidaridad); 150.000 €, 53,40 € más.",
+  "tema": "impuestos",
+  "inputs": [
+    {
+      "id": "bruto",
+      "label": "Salario bruto anual (€, con pagas extra incluidas)",
+      "default": 90000,
+      "min": 1,
+      "step": 500,
+      "default_from": "params.cotizacion_mei_solidaridad_2027.supuestos.bruto_anual",
+      "ayuda": "Se divide entre 12: pagas extra prorrateadas en la base, sueldo igual todos los meses."
+    },
+    {
+      "id": "contrato",
+      "label": "Tipo de contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "indefinido",
+          "t": "Indefinido"
+        },
+        {
+          "v": "temporal",
+          "t": "Temporal (desempleo 1,60 %)"
+        }
+      ]
+    },
+    {
+      "id": "base27",
+      "label": "Base máxima de cotización de 2027 (€ al mes, supuesto)",
+      "default": 5101.2,
+      "min": 1,
+      "step": 10,
+      "default_from": "params.cotizacion_mei_solidaridad_2027.base_maxima_2027_supuesto_mes",
+      "ayuda": "No está publicada: se usa la de 2026 (5.101,20 €). Cámbiala cuando salga la orden de 2027."
+    }
+  ],
+  "faqs": [
+    [
+      "¿Cuánto sube el MEI en 2027?",
+      "Del 0,15 % al 0,17 % a cargo del trabajador (1,00 % en total, con 0,83 de la empresa), según la disposición transitoria 43.ª de la Ley General de la Seguridad Social. Son 0,02 puntos: con 30.000 € brutos, 6,00 € más al año."
+    ],
+    [
+      "¿Cuándo pago la cotización de solidaridad?",
+      "Solo por la parte del sueldo mensual que supera la base máxima (5.101,20 € al mes en 2026), en tres tramos (art. 19 bis y disposición transitoria 42.ª). En 2027 los tipos totales son 1,38, 1,50 y 1,75 %; al trabajador le corresponde en torno a una sexta parte."
+    ],
+    [
+      "¿Cuál será la base máxima de cotización de 2027?",
+      "No está publicada: a 3 de octubre de 2026 no hay orden de cotización ni Presupuestos de 2027. La calculadora usa la de 2026 y puedes cambiarla. La disposición transitoria 38.ª prevé que se fije con la revalorización más 1,2 puntos."
+    ],
+    [
+      "¿Mi empresa también paga más?",
+      "Sí: el MEI de la empresa pasa del 0,75 % al 0,83 % y su parte de la solidaridad también sube (disposiciones transitorias 42.ª y 43.ª). Esta calculadora solo cuenta lo que cotiza el trabajador."
+    ],
+    [
+      "¿Se notará en mi nómina de enero de 2027?",
+      "Con 90.000 € brutos y la base de 2026, la cotización mensual pasa de 336,52 € a 338,49 €: unos 1,97 € más. Pero la orden de cotización de 2027, aún sin publicar, puede cambiar la base máxima y otros tipos."
+    ]
+  ],
+  "sources": "Ley General de la Seguridad Social, RDL 8/2015, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724), consultado el 3/10/2026 (en cada bloque, la versión de fecha de vigencia más alta): art. 127 bis (Mecanismo de Equidad Intergeneracional: cotización finalista de 1,2 puntos en régimen pleno, no bonificable) y disposición transitoria 43.ª (2026: 0,90 puntos, 0,15 del trabajador; 2027: 1 punto, del que 0,83 la empresa y 0,17 el trabajador); art. 19 bis y disposición transitoria 42.ª (cotización adicional de solidaridad sobre las retribuciones que superen la base máxima, en tres tramos: hasta el 10 % por encima, del 10 % al 50 % y más del 50 %; tipos totales 2026 1,15/1,25/1,46 y 2027 1,38/1,50/1,75 %; el reparto sigue la proporción de las contingencias comunes); disposición transitoria 38.ª (la base máxima la fijan las leyes de Presupuestos con la revalorización más 1,2 puntos). Reglamento General de Cotización, RD 2064/1995 (https://www.boe.es/buscar/act.php?id=BOE-A-1996-1579), art. 72 bis. Orden PJC/297/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296), consultada el 3/10/2026: art. 2 (base máxima de 5.101,20 € al mes), art. 4 (contingencias comunes 28,30 %, 4,70 % el trabajador), art. 16 (MEI), art. 17 (solidaridad de 2026: del trabajador 0,19, 0,21 y 0,24 %) y art. 33 (desempleo 1,55 % indefinido y 1,60 % temporal; formación profesional 0,10 %). A 3/10/2026 no hay orden de cotización de 2027 ni Presupuestos de 2027. Supuestos propios: la base máxima de 2027 (la de 2026), los demás tipos de 2027 (iguales a los de 2026) y los tipos de solidaridad del trabajador de 2027 (0,23, 0,25 y 0,29 %, derivados con la proporción 4,70/28,30 y redondeados a dos decimales como en la Orden de 2026)."
+}

@@ -69,6 +69,7 @@
       "decision": "Calefacción: gas, aerotermia o eléctrica",
       "que_hacer": "El último domingo de octubre a las 3:00 vuelven a ser las 2:00. Revisa el reloj del termostato programable y las horas en que enciendes la calefacción; con tarifa por horas, comprueba cuáles son las más baratas.",
       "calc": "calefaccion-gas-aerotermia-electrica",
+      "guia": "cambio-de-hora-octubre-horas-valle-luz",
       "texto_antes": "El {fecha} cambia la hora (a las 3:00 vuelven a ser las 2:00): revisa la programación de tu calefacción.",
       "texto_despues": "El {fecha} cambió la hora al horario de invierno: revisa la programación de tu calefacción.",
       "fuente": {

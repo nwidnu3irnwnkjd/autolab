@@ -5212,5 +5212,72 @@
     "base_maxima_nota": "Base máxima de cotización de 2026 (Orden PJC/297/2026, BOE-A-2026-7296), igual que params.jubilacion_2026.tope_base_cotizacion_anual / 12; tope de los dos campos de base del modelo.",
     "revalorizacion_hipotesis_2027_pct": 2.7,
     "revalorizacion_nota": "Art. 58.2 LGSS: las pensiones se revalorizan al comienzo de cada año. La de 2027 no está publicada: hipótesis = la de 2026 (2,7 %, RD 241/2026, params.jubilacion_2026.revalorizacion_2026_pct), aplicada a la pensión causada en 2026 y a la pensión máxima de 2027."
+  },
+  "cotizacion_mei_solidaridad_2027": {
+    "fuente": "Ley General de la Seguridad Social (RDL 8/2015, BOE-A-2015-11724, consolidado a 3/10/2026; en todos los bloques leídos la versión de fecha de vigencia más alta): art. 127 bis y DT 43.ª (MEI: 2026 0,90 puntos, 0,75 empresa y 0,15 trabajador; 2027 1,00 punto, 0,83 empresa y 0,17 trabajador; 2028 1,10 con 0,18 del trabajador; 2029 en adelante 1,2 con 0,2); art. 19 bis y DT 42.ª (cotización adicional de solidaridad sobre el exceso de la base máxima, tres tramos: hasta el 10 % por encima de la base máxima, del 10 % al 50 % y más del 50 %; tipos totales 2026 1,15/1,25/1,46 % y 2027 1,38/1,50/1,75 %; reparto entre empresa y trabajador en la misma proporción que las contingencias comunes); DT 38.ª (la base máxima la fijan las leyes de Presupuestos con la revalorización más 1,2 puntos); Reglamento General de Cotización (RD 2064/1995, BOE-A-1996-1579) art. 72 bis (la solidaridad se aplica al exceso de la base que habría correspondido sin tope sobre la base máxima); Orden PJC/297/2026 (BOE-A-2026-7296) art. 2 (base máxima 5.101,20 €/mes desde 1/1/2026), art. 4 (contingencias comunes 28,30 %, 4,70 % el trabajador), art. 16 (MEI 0,90 %, 0,15 % el trabajador), art. 17 (solidaridad 2026: del trabajador 0,19, 0,21 y 0,24 %) y art. 33 (desempleo 1,55 % indefinido y 1,60 % temporal, formación profesional 0,10 % a cargo del trabajador)",
+    "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724",
+    "url_dt_mei": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dt-14",
+    "url_dt_solidaridad": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#dt-13",
+    "url_orden_2026": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296",
+    "consulta": "consultado el 3/10/2026",
+    "confianza": "A (MEI y tipos de solidaridad de 2027, por ley: DT 42.ª y 43.ª); la base máxima de 2027 no existe",
+    "base_maxima_2026_mes": 5101.2,
+    "base_maxima_2027_supuesto_mes": 5101.2,
+    "base_maxima_2027_nota": "Supuesto del modelo, no dato oficial: la base máxima de 2027 la fijará la ley de Presupuestos o, sin ella, un real decreto-ley como el RDL 3/2026 (DT 38.ª LGSS: revalorización más 1,2 puntos); a 3/10/2026 no hay Orden de cotización 2027 ni norma que la fije. Se usa la de 2026 y es editable",
+    "tramos_solidaridad_sobre_base_maxima": [
+      0.1,
+      0.5
+    ],
+    "ratio_trabajador_cc": {
+      "trabajador_pct": 4.7,
+      "total_pct": 28.3
+    },
+    "mei_trabajador_pct": {
+      "2026": 0.15,
+      "2027": 0.17
+    },
+    "mei_total_pct": {
+      "2026": 0.9,
+      "2027": 1.0
+    },
+    "solidaridad_total_pct": {
+      "2026": [
+        1.15,
+        1.25,
+        1.46
+      ],
+      "2027": [
+        1.38,
+        1.5,
+        1.75
+      ]
+    },
+    "solidaridad_trabajador_pct": {
+      "2026": [
+        0.19,
+        0.21,
+        0.24
+      ],
+      "2027": [
+        0.23,
+        0.25,
+        0.29
+      ],
+      "nota": "2026: los de la Orden PJC/297/2026 art. 17. 2027: derivados con la regla de la DT 42.ª (mismo reparto que las contingencias comunes, 4,70/28,30 del tipo total) y redondeados a dos decimales como en la Orden de 2026; es un supuesto porque la Orden de 2027 no está publicada"
+    },
+    "otros_tipos_trabajador_pct": {
+      "contingencias_comunes": 4.7,
+      "desempleo_indefinido": 1.55,
+      "desempleo_temporal": 1.6,
+      "formacion_profesional": 0.1,
+      "nota": "Los de 2026; se mantienen en 2027 como supuesto (la Orden de 2027 no existe)"
+    },
+    "norma_2027_publicada": "No: a 3/10/2026 no hay orden de cotización 2027, ni PGE 2027, ni norma que fije la base máxima de 2027 (búsqueda en el BOE). Solo el MEI y la solidaridad tienen cifra de 2027 en la ley (DT 42.ª y 43.ª)",
+    "rdl_26_2026": "Derogado el 2/10/2026 (BOE-A-2026-20526); no toca los arts. 19 bis ni 127 bis ni las DT 38.ª, 42.ª y 43.ª de la LGSS; no se cita como fuente",
+    "pge_2026": "No hay Presupuestos 2026: la base máxima de 2026 viene del RDL 3/2026 art. 3",
+    "supuestos": {
+      "nota": "Ejemplo editable (no es dato oficial)",
+      "bruto_anual": 90000
+    }
   }
 }

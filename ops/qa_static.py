@@ -294,7 +294,7 @@ def check_live():
             if not d.get("ok"): add("AVISO", w, f"{df}: dato vivo no ok (el build usa default_fallback)"); continue
             try: age = (today - datetime.date.fromisoformat(d.get("fecha_dato") or d.get("fecha_consulta"))).days
             except Exception: add("AVISO", w, f"{df}: sin fecha_dato legible"); continue
-            lim = inp.get("max_edad_dias", MAX_EDAD_ID.get(ident, MAX_EDAD))
+            lim = inp.get("max_edad_dias", d.get("max_edad_dias", MAX_EDAD_ID.get(ident, MAX_EDAD)))
             if age > lim: add("AVISO", w, f"{df}: dato de hace {age} d (> {lim} d); el build usa default_fallback")
     return n
 

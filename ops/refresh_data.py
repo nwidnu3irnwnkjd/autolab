@@ -5,7 +5,7 @@ Fuentes públicas SIN clave (probadas 2026-10-02):
   luz_pvpc    REE apidatos (PVPC por hora, EUR/MWh -> EUR/kWh)
   diesel / gasolina95   Geoportal MITECO (media simple de estaciones, Península y Baleares)
   euribor12m  BCE Data Portal (Euríbor 12 m, media mensual)
-  tipo_hipoteca_fija  BCE Data Portal, dataset MIR (nuevas hipotecas de vivienda en España, tipo acordado, fijación inicial > 10 años), mensual
+  tipo_hipoteca_fija  BCE Data Portal, dataset MIR (nuevas hipotecas de vivienda en España, tipo acordado, fijación inicial > 10 años), MENSUAL: publica a primeros de M+2 (ago -> 1-oct); edad normal hasta ~35 d
   madrid_tiempo  Open-Meteo (CC BY 4.0)
 Tolerante a fallos: si una fuente falla se conserva el dato anterior con ok:false y motivo.
 Uso: python3 ops/refresh_data.py [--out ruta] [--dry]
@@ -136,6 +136,9 @@ def fetch_hipoteca_fija(today):
     fin = datetime.date(y, mo, calendar.monthrange(y, mo)[1]).isoformat()
     if not (0 < v < 15): raise RuntimeError(f"valor implausible {v}")
     return {"valor": round(v, 2), "unidad": "%", "fecha_dato": fin, "max_edad_dias": 60,
+            # frecuencia: serie MENSUAL del BCE; el mes M se publica ~1-2 oct para ago (último-modificado 2026-10-01), es decir ~32-35 d
+            # después de su fecha_dato (fin de mes). Edad normal 0-35 d: no es un fallo de refresco.
+            "frecuencia": "mensual; el dato del mes M se publica a primeros de M+2 (edad normal hasta ~35 d)",
             "anterior": round(pv, 2), "anterior_fecha": pm,
             "extra": {"periodo": m, "periodo_anterior": pm,
                       "detalle": "Tipo de interés medio (tipo anual acordado, no TAE) de las nuevas hipotecas para comprar vivienda en España con más de 10 años de fijación inicial; media mensual de las entidades",

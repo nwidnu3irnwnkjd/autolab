@@ -26,3 +26,4 @@ Las 4 gestiones de indexación/Bing/CNAME (prioridad absoluta). Opcionales: perf
 ## Actualización 2-oct tarde (decisión de Andoni)
 - Sin redes sociales ni perfiles públicos: se descartan "enlace desde perfil", posts y envío de prensa salvo petición suya. Titular legal: «Editor independiente».
 - Las gestiones online (Search Console, Bing, GoDaddy www, README de GitHub) las hace el Orquestador en el navegador integrado cuando Andoni haya iniciado sesión; confirmar en chat las que cambian permisos o ajustes.
+- 3-oct: sección de noticias «Qué cambia para ti» (/noticias/, ≤ 1 pieza/día laborable, solo con hecho oficial + cifra de calculadora, ≤ 3 pp/semana): plan y MVP en ops/PLAN-NOTICIAS.md.
