@@ -3819,12 +3819,12 @@
     }
   },
   "alquiler_irpf_2026": {
-    "fuente": "Ley 35/2006 del IRPF, arts. 22, 23.1, 23.2 y disposición transitoria 38.ª en la redacción de 1/1/2024 por la Ley 12/2023 (leída en el consolidado del BOE el 2/10/2026, que aún no refleja la reversión y muestra la versión del RDL 26/2026); el RDL 26/2026 (BOE-A-2026-20266) estuvo en vigor del 1 al 2/10/2026 y fue derogado por Resolución del Congreso de 2/10/2026 (BOE-A-2026-20526), que deja sin efecto sus modificaciones de la LIRPF; Reglamento del IRPF arts. 13 y 14 (versión 1/4/2007); Ley 12/2023 (en vigor 26/5/2023); Ley 29/1994 art. 17.6",
+    "fuente": "Ley 35/2006 del IRPF, arts. 22, 23.1, 23.2 y disposición transitoria 38.ª en la redacción de 1/1/2024 por la Ley 12/2023 (leída en el consolidado del BOE, que desde el 5/10/2026 refleja la reversión: la última versión del bloque es la de BOE-A-2026-20526 y rige la redacción anterior, Ley 12/2023 / BOE-A-2023-12203; comprobado en la API del BOE el 6/10/2026); el RDL 26/2026 (BOE-A-2026-20266) estuvo en vigor del 1 al 2/10/2026 y fue derogado por Resolución del Congreso de 2/10/2026 (BOE-A-2026-20526), que deja sin efecto sus modificaciones de la LIRPF; Reglamento del IRPF arts. 13 y 14 (versión 1/4/2007); Ley 12/2023 (en vigor 26/5/2023); Ley 29/1994 art. 17.6",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
     "url_rdl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526",
     "url_lau": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003",
-    "consulta": "consultado el 2/10/2026",
+    "consulta": "consultado el 2/10/2026 y comprobado el 6/10/2026 (reversión ya reflejada en el consolidado)",
     "confianza": "B",
     "amortizacion_pct": 3,
     "reduccion_anterior_mayo_2023": 60,
@@ -3834,7 +3834,7 @@
     "reduccion_zona_tensionada_rebaja": 90,
     "rebaja_minima_pct": 5,
     "fecha_ley_12_2023": "2023-05-26",
-    "nota": "RDL 26/2026 derogado (BOE-A-2026-20526, 2/10/2026); se aplica el art. 23.2 de la Ley 12/2023 para todo contrato desde el 26/5/2023. Confianza B: el consolidado del BOE aún no refleja la reversión (texto leído: versión 1/1/2024). Los importes de renta, gastos, valores y tipo son EJEMPLOS editables, no datos oficiales.",
+    "nota": "RDL 26/2026 derogado (BOE-A-2026-20526, 2/10/2026); se aplica el art. 23.2 de la Ley 12/2023 para todo contrato desde el 26/5/2023. El consolidado del BOE refleja desde el 5-oct-2026 la reversión; rige la redacción anterior (Ley 12/2023 / BOE-A-2023-12203), comprobado el 6/10/2026. Los importes de renta, gastos, valores y tipo son EJEMPLOS editables, no datos oficiales.",
     "supuestos": {
       "contrato": "b50",
       "renta": 800,
@@ -3859,7 +3859,7 @@
     "imputacion_general_pct": 2,
     "imputacion_revisado_pct": 1.1,
     "imputacion_revision_periodos": 10,
-    "fuente_85": "Ley 35/2006 del IRPF, art. 85.1 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015): «el 2 por ciento al valor catastral, determinándose proporcionalmente al número de días» y «el porcentaje será el 1,1 por ciento» si los valores catastrales se revisaron y entraron en vigor «en el período impositivo o en el plazo de los diez períodos impositivos anteriores»; art. 24 en su redacción original de 2006 (BOE-A-2006-20764, vigente desde 1/1/2007): con arrendatario cónyuge o pariente hasta el tercer grado «el rendimiento neto total no podrá ser inferior al que resulte de las reglas del artículo 85». El consolidado del BOE muestra como última versión de los arts. 85 y 24 la del RDL 26/2026 (BOE-A-2026-20266, efectos 1/1/2027), derogado por BOE-A-2026-20526 (2/10/2026): no se aplica. Consultado el 2/10/2026. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. La DA 55.ª (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#da-10) vigente solo dice «durante el período impositivo 2023»; el Manual Renta 2025 aún dice «desde 2012» y no se sigue.",
+    "fuente_85": "Ley 35/2006 del IRPF, art. 85.1 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015): «el 2 por ciento al valor catastral, determinándose proporcionalmente al número de días» y «el porcentaje será el 1,1 por ciento» si los valores catastrales se revisaron y entraron en vigor «en el período impositivo o en el plazo de los diez períodos impositivos anteriores»; art. 24 en su redacción original de 2006 (BOE-A-2006-20764, vigente desde 1/1/2007): con arrendatario cónyuge o pariente hasta el tercer grado «el rendimiento neto total no podrá ser inferior al que resulte de las reglas del artículo 85». El consolidado del BOE refleja desde el 5-oct-2026 la reversión de los arts. 85 y 24 (la última versión del bloque es la de BOE-A-2026-20526; la del RDL 26/2026, BOE-A-2026-20266, con efectos 1/1/2027, ya no rige): rige la redacción anterior. Consultado el 2/10/2026. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. La DA 55.ª (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#da-10) vigente solo dice «durante el período impositivo 2023»; el Manual Renta 2025 aún dice «desde 2012» y no se sigue.",
     "url_85": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a85",
     "url_24": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a24",
     "consulta_85": "consultado el 2/10/2026",
