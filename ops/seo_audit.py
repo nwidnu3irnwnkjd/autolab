@@ -68,6 +68,7 @@ def url_of(path):
 
 
 def norm(href, base):
+    if href.lower().startswith(("data:", "mailto:", "tel:", "javascript:")): return None
     u = urlparse(urljoin("https://%s%s" % (HOST, base), href))
     if u.netloc and u.netloc not in (HOST, "www." + HOST): return None
     p = u.path or "/"

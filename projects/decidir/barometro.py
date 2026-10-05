@@ -109,7 +109,9 @@ def titulo(D):
     return f"¿Hipoteca fija o variable hoy? A partir de qué Euríbor compensa ({MESES[int(m) - 1]} {y})"
 def titulo_corto(D):
     y, m, _ = D["fecha_datos"].split("-")
-    return f"¿Hipoteca fija o variable hoy? Euríbor que compensa ({MESES[int(m) - 1][:3]} {y[2:]})"  # <title> <= 60 car.; el H1 lleva la consulta completa
+    mes = MESES[int(m) - 1]  # <title> <= 60 car.; el H1 lleva la consulta completa. Mes completo si cabe; si no, abreviado con año de 4 cifras
+    t = f"Hipoteca fija o variable: Euríbor que compensa ({mes} {y})"
+    return t if len(t) <= 60 else f"Hipoteca fija o variable: Euríbor que compensa ({mes[:3]} {y})"
 def fuente_corta(n): return n.split(" (")[0].split(",")[0]
 def el(motor): return "el de gasolina" if motor == "Gasolina" else "el " + motor.lower()
 def r(x, d=4): return None if x is None else round(x, d)

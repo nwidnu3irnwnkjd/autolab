@@ -39,6 +39,7 @@ Sitemap: https://entremuchos.com/sitemap-calculadoras.xml
 Sitemap: https://entremuchos.com/sitemap-guias.xml
 Sitemap: https://entremuchos.com/sitemap-tablas.xml
 Sitemap: https://entremuchos.com/sitemap-hubs.xml
+Sitemap: https://entremuchos.com/sitemap-datos.xml
 Sitemap: https://entremuchos.com/sitemap-noticias.xml
 Sitemap: https://entremuchos.com/feed.xml
 Sitemap: https://entremuchos.com/noticias/feed.xml

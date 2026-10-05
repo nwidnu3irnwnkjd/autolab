@@ -30,9 +30,12 @@ def _build(live, params):
         out["luz"] = _luz(d)
     return out
 
+def _csv(head, rows):
+    return "\n".join(",".join(str(c) for c in r) for r in [head] + rows) + "\n"
+
 def _cite(path, fecha, nombre):
     return (f'<h2 id="citar">Cómo citar</h2><p>«{e(nombre)}», Entre Muchos, <a href="{path}">entremuchos.com{path}</a>, dato del {fecha_es(fecha)}. '
-            f'Licencia <a href="{LIC}" rel="noopener">CC BY 4.0</a> para la tabla y el texto; las cifras son de la fuente oficial citada. Si una cifra no coincide con la fuente, escríbenos desde <a href="/contacto/">contacto</a>.</p>')
+            f'Licencia <a href="{LIC}" rel="noopener">CC BY 4.0</a> para la tabla y el texto; las cifras son de la fuente oficial citada. Si una cifra no coincide con la fuente, escríbenos desde <a href="/contacto/">contacto</a>. <a href="{path}datos.csv">Descargar CSV</a>.</p>')
 
 def _more(path):
     o = [(p, t) for k, p, t in (("irav", PATHS["irav"], "IRAV e IPC del alquiler"), ("euribor", PATHS["euribor"], "Euríbor a 12 meses"), ("luz", PATHS["luz"], "Precio de la luz hoy")) if p != path]
@@ -75,7 +78,8 @@ def _irav(r):
     desc = f"IRAV de {mes}: {pct(irav)}, e IPC definitivo {pct(ipc)}, con fuente del INE y fecha de publicación. Cómo se aplica a la actualización de tu alquiler."
     ds = dict(name=f"IRAV e IPC para actualizar el alquiler ({mes})", variables=["IRAV (%)", "IPC tasa anual (%)"], keywords=["IRAV", "IPC", "actualización alquiler", "INE"],
               based=[r["url_irav"], r["url_ipc"], r["url_resolucion_irav"]], cov=r["irav_periodo"])
-    return dict(h1=h1, title=f"IRAV hoy: {pct(irav)} en {mes} y IPC del alquiler", description=desc, fecha=pub, body=body, ds=ds, nav="IRAV e IPC del alquiler", resumen=f"IRAV {mes}: {pct(irav)}")
+    csv = _csv(["indice", "periodo", "valor_pct", "publicacion", "fuente"], [["IRAV", r["irav_periodo"], irav, pub, r["url_irav"]], ["IPC", r["irav_periodo"], ipc, "", r["url_ipc"]]])
+    return dict(csv=csv, h1=h1, title=f"IRAV hoy: {pct(irav)} en {mes} y IPC del alquiler", description=desc, fecha=pub, body=body, ds=ds, nav="IRAV e IPC del alquiler", resumen=f"IRAV {mes}: {pct(irav)}")
 
 def _euribor(d):
     x = d["extra"]; ser = x["serie_mensual"]; per = x["periodo"]; mes = mes_es(per + "-01"); v = d["valor"]; f = d["fecha_dato"]
@@ -109,7 +113,8 @@ def _euribor(d):
 </article>"""
     desc = f"Euríbor a 12 meses: {pct(v, 3)} de media en {mes} (BCE), con el histórico mensual de los últimos {len(ser)} meses y cómo afecta a tu hipoteca."
     ds = dict(name="Euríbor a 12 meses, media mensual", variables=["Euríbor 12 meses, media mensual (%)"], keywords=["Euríbor", "hipoteca variable", "BCE"], based=[fu["url"]], cov=f"{ser[0][0]}/{ser[-1][0]}")
-    return dict(h1=h1, title=f"Euríbor hoy: {pct(v, 3)} ({mes}) e histórico", description=desc, fecha=f, body=body, ds=ds, nav="Euríbor a 12 meses", resumen=f"Euríbor {mes}: {pct(v, 3)}")
+    csv = _csv(["mes", "euribor_12m_media_pct"], [[m, val] for m, val in ser])
+    return dict(csv=csv, h1=h1, title=f"Euríbor hoy: {pct(v, 3)} ({mes}) e histórico", description=desc, fecha=f, body=body, ds=ds, nav="Euríbor a 12 meses", resumen=f"Euríbor {mes}: {pct(v, 3)}")
 
 def _luz(d):
     x = d["extra"]; f = d["fecha_dato"]; v = d["valor"]; fu = d["fuente"]
@@ -148,7 +153,8 @@ def _luz(d):
 </article>"""
     desc = f"PVPC del {fecha_es(f)}: media {_eur3(v)}, hora más barata {hh(hb)} y más cara {hh(hc)} (Red Eléctrica)."
     ds = dict(name="Precio de la luz PVPC por día (€/kWh)", variables=["PVPC media diaria (€/kWh)", "PVPC hora más barata (€/kWh)", "PVPC hora más cara (€/kWh)"], keywords=["precio luz hoy", "PVPC", "hora más barata"], based=[fu["url"]], cov=f)
-    return dict(h1=h1, title=f"Precio de la luz hoy, {fecha_es(f)}: {_eur3(v)}", description=desc, fecha=f, body=body, ds=ds, nav="Precio de la luz hoy", resumen=f"PVPC {fecha_es(f)}: {_eur3(v)}")
+    csv = _csv(["dia", "pvpc_media_eur_kwh"], [[dia, val] for dia, val in d.get("historial", [])])
+    return dict(csv=csv, h1=h1, title=f"Precio de la luz hoy, {fecha_es(f)}: {_eur3(v)}", description=desc, fecha=f, body=body, ds=ds, nav="Precio de la luz hoy", resumen=f"PVPC {fecha_es(f)}: {_eur3(v)}")
 
 def build(live, params):
     return _build(live, params)

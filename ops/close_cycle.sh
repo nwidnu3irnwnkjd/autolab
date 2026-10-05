@@ -164,3 +164,5 @@ echo "2. Páginas: $NPAG en dist; nuevas: ${NUEVAS:-ninguna}; deploy: $DEPLOY"
 echo "3. Consumo: 5h $H5 % · semanal $SEM % · extra $EXTRA EUR ($TS)"
 echo "4. Peticiones abiertas: $K (> 1 ciclo: $KOLD)"
 echo "5. QA estática: 0 BLOQUEANTE, $NAVISO AVISO; IndexNow: ${INDEXNOW:-sin salida}"
+
+step "seo_audit (aviso, OPT1.4)"; python3 ops/seo_audit.py decidir | head -12 || true

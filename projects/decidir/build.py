@@ -138,6 +138,8 @@ def main():
         dpub = seo.published("datos.py")
         for k, s in DAT.items():
             write(datos.PATHS[k], s["title"], s["description"], s["body"], jsonld=datos.jsonld(k, DAT, B, dpub, seo.org(B), seo.breadcrumbs), priority="0.8", lastmod=s["fecha"], og_tema={"irav": "hipoteca", "euribor": "hipoteca", "luz": "energia"}[k])
+            os.makedirs(os.path.join(DIST, datos.PATHS[k].strip("/")), exist_ok=True)
+            open(os.path.join(DIST, datos.PATHS[k].strip("/"), "datos.csv"), "w", encoding="utf-8").write(s["csv"])
         dmod_ = max(s["fecha"] for s in DAT.values())
         write(datos.INDEX, "Datos al día: IRAV, Euríbor y precio de la luz", "Series que se actualizan solas con su fecha y fuente: IRAV e IPC del alquiler, Euríbor a 12 meses y precio de la luz (PVPC) de hoy.", datos.index_page(DAT),
               jsonld=datos.index_jsonld(DAT, B, dmod_, dpub, seo.org(B), seo.breadcrumbs), priority="0.7", lastmod=dmod_, og_tema="hipoteca")

@@ -160,8 +160,14 @@ def guide_page(g, calcs, card, base):
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]})
     return body, jsonld
 
+# E4 (OPTIMIZACION §6): puerta desde /guias/ a 8 URL clave. Control sin enlace: paro-autonomos, baja-medica, finiquito, subsidio, contado-o-financiar, hipoteca-bonificada, subrogar, seguro-todo-riesgo.
+EMPIEZA = ('<h2>Lo más buscado</h2><p>Empieza por <a href="/datos/euribor-hoy/">el Euríbor de hoy</a>, <a href="/datos/irav-ipc-alquiler/">el IRAV del alquiler</a> o '
+           '<a href="/datos/precio-luz-hoy/">el precio de la luz</a> (<a href="/datos/">todos los datos</a>). Para decidir: <a href="/decidir/hipoteca-fija-o-variable/">hipoteca fija o variable</a>, '
+           '<a href="/decidir/sueldo-bruto-a-neto-2026/">de bruto a neto</a> o <a href="/decidir/cuanto-cobro-de-paro-prestacion-desempleo/">cuánto cobro de paro</a>. '
+           'Y la <a href="/noticias/2026/10/rdl-25-2026-gasolina-gas-butano-luz/">subida de gasolina, gas y luz</a>.</p>')
+
 def guides_index(guides):
-    return '<h1>Guías para decidir mejor</h1><p class="lead">Explicaciones cortas, con datos y fuentes, para usar las calculadoras con criterio.</p><ul class="cards">' + "".join(
+    return '<h1>Guías para decidir mejor</h1><p class="lead">Explicaciones cortas, con datos y fuentes, para usar las calculadoras con criterio.</p>' + EMPIEZA + '<ul class="cards">' + "".join(
         f'<li><a href="/guias/{g["slug"]}/">{g["h1"]}</a><p>{g["description"]}</p></li>' for g in guides) + "</ul>"
 
 

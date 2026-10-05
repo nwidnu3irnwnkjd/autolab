@@ -1,15 +1,15 @@
 {
- "fecha": "2026-10-03",
+ "fecha": "2026-10-05",
  "ventana_dias": 28,
  "umbral": {
   "sesiones_total": 30,
   "vistas_por_pagina": 5,
   "calculadoras_min": 4
  },
- "sesiones_total": 38,
- "usuarios_total": 28,
+ "sesiones_total": 69,
+ "usuarios_total": 42,
  "suficiente": false,
- "motivo": "sin datos suficientes: 38 sesiones (mín. 30) y 0 calculadoras con ≥ 5 vistas (mín. 4); se usa el orden editorial",
+ "motivo": "sin datos suficientes: 69 sesiones (mín. 30) y 0 calculadoras con ≥ 5 vistas (mín. 4); se usa el orden editorial",
  "score": "3·calc_used + 3·share_click + 2·calendar_add + 2·news_to_calc + vistas + tiempo_medio_s/30 + 2·clics + impresiones/50",
  "limites": [
   "Tráfico propio: se filtra el hostName del sitio; GA4 no permite excluir tráfico interno vía API (depende del filtro de datos de la propiedad).",
