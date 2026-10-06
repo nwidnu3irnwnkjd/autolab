@@ -4,7 +4,7 @@
    "anterior": 1.9181,
    "anterior_fecha": "2026-10-05",
    "extra": {
-    "detalle": "Media simple de 10768 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10769 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -31,13 +31,13 @@
     ],
     [
      "2026-10-06",
-     1.9053
+     1.9052
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9053,
-   "variacion_abs": -0.0128,
+   "valor": 1.9052,
+   "variacion_abs": -0.0129,
    "variacion_pct": -0.67
   },
   "euribor12m": {
@@ -159,7 +159,8 @@
     ]
    ],
    "max_edad_dias": 45,
-   "ok": true,
+   "motivo": "TimeoutError: The read operation timed out",
+   "ok": false,
    "unidad": "%",
    "valor": 3.247,
    "variacion_abs": 0.293,
@@ -169,7 +170,7 @@
    "anterior": 1.8166,
    "anterior_fecha": "2026-10-05",
    "extra": {
-    "detalle": "Media simple de 10407 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10408 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -196,14 +197,14 @@
     ],
     [
      "2026-10-06",
-     1.8028
+     1.8027
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8028,
-   "variacion_abs": -0.0138,
-   "variacion_pct": -0.76
+   "valor": 1.8027,
+   "variacion_abs": -0.0139,
+   "variacion_pct": -0.77
   },
   "luz_pvpc": {
    "anterior": 0.22298,
@@ -321,8 +322,8 @@
     "dias_prevision": 7,
     "max_hoy": 19.8,
     "max_semana": 23.6,
-    "min_hoy": 16.3,
-    "min_semana": 8.2
+    "min_hoy": 16.0,
+    "min_semana": 9.6
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -349,14 +350,14 @@
     ],
     [
      "2026-10-06",
-     16.4
+     15.9
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 16.4,
-   "variacion_abs": 0.8,
-   "variacion_pct": 5.13
+   "valor": 15.9,
+   "variacion_abs": 0.3,
+   "variacion_pct": 1.92
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
