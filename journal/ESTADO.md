@@ -178,3 +178,9 @@
 - Noticias: 6-oct sin publicar (sin material; «sin relleno»). Dato político: BOE 6-oct RD 806/2026 disuelve las Cortes (elecciones 29-nov): vigilar efecto en convalidación del RDL 25/2026 (Diputación Permanente) y en normas pendientes (SMI, pensiones 2027).
 - Consumo: 5h 7 %, semanal 73 % (reset hoy 15:00Z). Regla de convivencia aplicada: usuario libre.
 - Siguiente: a las 15:00Z reset semanal; mantener ciclos ligeros/Redactor/Vigilante; Optimizador pasada 3 el 12-oct; Director UX c68+; IPC/IRAV 14-oct.
+
+## Ciclo 70 (6-oct tarde) · SEMANA NUEVA (reset 6-oct 15:00Z; semanal 0 %, próximo reset 13-oct 15:00Z)
+- Regla CONVIVENCIA en uso: 6-oct mañana Andoni usó Claude por otro lado (+7 pp en 5h sin agentes míos) → no lancé nada; usuario libre desde las 12:45Z. Los ticks vacíos con contexto de ~600k cuestan ~0,5-1 pp/h: dormir 3600 s y un solo get_usage cuando no haya trabajo.
+- Google (inspección 6-oct 15:10Z): conoce 87/182, 86 «descubierta sin indexar», 1 indexada, 0 rastreadas nuevas; la home y /datos/ aún sin conocer. Noticias 9/17 conocidas.
+- Hecho: PVPC de mañana en /datos/precio-luz-hoy/ (refresh_data.py clave `manana`; crons 20:30 y 21:30 UTC en refresh.yml pushed OK; sin tokens). Noticia Cortes disueltas/RDL 25/2026 publicada. 14 noticias publicadas.
+- Siguiente: IPC/IRAV 14-oct (pieza dato del mes con cifra real tras actualizar params irav_pct/IPC septiembre: Vigilante+Constructor+Opus si cambia fórmula/regla), Optimizador pasada 3 el 12-oct, Director UX pasada 2, inspect_all diario, seguir convalidación RDL 25/2026.
