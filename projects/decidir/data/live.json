@@ -4,7 +4,7 @@
    "anterior": 1.9181,
    "anterior_fecha": "2026-10-05",
    "extra": {
-    "detalle": "Media simple de 10771 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10768 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -31,14 +31,14 @@
     ],
     [
      "2026-10-06",
-     1.9098
+     1.9053
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9098,
-   "variacion_abs": -0.0083,
-   "variacion_pct": -0.43
+   "valor": 1.9053,
+   "variacion_abs": -0.0128,
+   "variacion_pct": -0.67
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -169,7 +169,7 @@
    "anterior": 1.8166,
    "anterior_fecha": "2026-10-05",
    "extra": {
-    "detalle": "Media simple de 10411 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10407 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -196,14 +196,14 @@
     ],
     [
      "2026-10-06",
-     1.8071
+     1.8028
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8071,
-   "variacion_abs": -0.0095,
-   "variacion_pct": -0.52
+   "valor": 1.8028,
+   "variacion_abs": -0.0138,
+   "variacion_pct": -0.76
   },
   "luz_pvpc": {
    "anterior": 0.22298,
@@ -246,6 +246,66 @@
      0.21822
     ]
    ],
+   "manana": {
+    "fecha": "2026-10-07",
+    "hora_barata": 15,
+    "hora_cara": 19,
+    "horas": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23
+    ],
+    "max": 0.32736,
+    "media": 0.20988,
+    "min": 0.08494,
+    "precios": [
+     0.20915,
+     0.19367,
+     0.18365,
+     0.17883,
+     0.17312,
+     0.17128,
+     0.19221,
+     0.24721,
+     0.27953,
+     0.2419,
+     0.26702,
+     0.22711,
+     0.20959,
+     0.20532,
+     0.1104,
+     0.08494,
+     0.09009,
+     0.14252,
+     0.26267,
+     0.32736,
+     0.32241,
+     0.30101,
+     0.21904,
+     0.19711
+    ]
+   },
    "ok": true,
    "unidad": "€/kWh",
    "valor": 0.21822,
@@ -259,10 +319,10 @@
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 19.7,
-    "max_semana": 23.3,
-    "min_hoy": 16.2,
-    "min_semana": 8.5
+    "max_hoy": 19.8,
+    "max_semana": 23.6,
+    "min_hoy": 16.3,
+    "min_semana": 8.2
    },
    "fecha_consulta": "2026-10-06",
    "fecha_dato": "2026-10-06",
@@ -289,14 +349,14 @@
     ],
     [
      "2026-10-06",
-     17.0
+     16.4
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 17.0,
-   "variacion_abs": 1.4,
-   "variacion_pct": 8.97
+   "valor": 16.4,
+   "variacion_abs": 0.8,
+   "variacion_pct": 5.13
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
