@@ -2,7 +2,7 @@
 Una URL por serie que se regenera en cada build desde data/live.json y data/params.json (el bot refresh.yml ya los actualiza):
 sin tokens. dateModified = fecha del dato. Nada de memoria: si un dato no está con fuente en el repo, no se muestra.
 Revertir: quitar `import datos` y el bloque datos.* de build.py (y 'datos' en directorio._section)."""
-import html, json, os
+import html, json, os, datetime
 from barometro import num, pct, fecha_es, mes_es
 e = html.escape
 INDEX = "/datos/"
@@ -38,7 +38,7 @@ def _cite(path, fecha, nombre):
             f'Licencia <a href="{LIC}" rel="noopener">CC BY 4.0</a> para la tabla y el texto; las cifras son de la fuente oficial citada. Si una cifra no coincide con la fuente, escríbenos desde <a href="/contacto/">contacto</a>. <a href="{path}datos.csv">Descargar CSV</a>.</p>')
 
 def _more(path):
-    o = [(p, t) for k, p, t in (("irav", PATHS["irav"], "IRAV e IPC del alquiler"), ("euribor", PATHS["euribor"], "Euríbor a 12 meses"), ("luz", PATHS["luz"], "Precio de la luz hoy")) if p != path]
+    o = [(p, t) for k, p, t in (("irav", PATHS["irav"], "IRAV e IPC del alquiler"), ("euribor", PATHS["euribor"], "Euríbor a 12 meses"), ("luz", PATHS["luz"], "Precio de la luz hoy y mañana")) if p != path]
     return '<p class="note">Más datos al día: ' + " · ".join(f'<a href="{p}">{t}</a>' for p, t in o) + f' · <a href="{INDEX}">todas las series</a> · <a href="/barometro/">Barómetro</a>.</p>'
 
 def _irav(r):
@@ -116,27 +116,71 @@ def _euribor(d):
     csv = _csv(["mes", "euribor_12m_media_pct"], [[m, val] for m, val in ser])
     return dict(csv=csv, h1=h1, title=f"Euríbor hoy: {pct(v, 3)} ({mes}) e histórico", description=desc, fecha=f, body=body, ds=ds, nav="Euríbor a 12 meses", resumen=f"Euríbor {mes}: {pct(v, 3)}")
 
+_TR = {"valle": (range(0, 8), "00:00 a 08:00"), "punta": ((10, 11, 12, 13, 18, 19, 20, 21), "10:00 a 14:00 y 18:00 a 22:00"),
+       "llano": ((8, 9, 14, 15, 16, 17, 22, 23), "08:00 a 10:00, 14:00 a 18:00 y 22:00 a 24:00")}
+
+def _tramo(h, finde):
+    """Periodo 2.0TD de una hora peninsular (Circular CNMC 3/2020, art. 7.3): sábados, domingos y festivos nacionales, todo valle."""
+    if finde or h < 8: return "valle"
+    return "punta" if h in _TR["punta"][0] else "llano"
+
+def _manana(d):
+    """-> manana válido (publicado, de mañana respecto al dato de hoy y no caducado) o None."""
+    m = d.get("manana")
+    try:
+        f = datetime.date.fromisoformat(d["fecha_dato"])
+        ok = (m and datetime.date.fromisoformat(m["fecha"]) == f + datetime.timedelta(days=1) and m["fecha"] >= datetime.date.today().isoformat()
+              and 23 <= len(m["precios"]) <= 25 and len(m["horas"]) == len(m["precios"]))
+    except Exception:
+        return None
+    return m if ok else None
+
 def _luz(d):
-    x = d["extra"]; f = d["fecha_dato"]; v = d["valor"]; fu = d["fuente"]
+    x = d["extra"]; f = d["fecha_dato"]; v = d["valor"]; fu = d["fuente"]; m = _manana(d)
     hb, hc = x["hora_barata"], x["hora_cara"]; pb, pc = x["precio_hora_barata"], x["precio_hora_cara"]
     hh = lambda h: f"{h:02d}:00 a {(h + 1) % 24:02d}:00"
-    h1 = f"Precio de la luz hoy, {fecha_es(f)}: {_eur3(v)}"
+    h1 = f"Precio de la luz hoy y mañana, {fecha_es(f)}: {_eur3(v)}"
     rows = ""
     for i, (dia, val) in enumerate(reversed(d.get("historial", []))):
         rows += f'<tr id="{dia}"><th scope="row">{fecha_es(dia)}</th><td>{_eur3(val)}</td></tr>'
     mm = f' La media de {mes_es(x["mes"] + "-01")} hasta hoy ({x["dias_mes"]} días) es de {_eur3(x["media_mes"])}.' if x.get("media_mes") is not None and x.get("mes") else ""
+    lead_m = sec_m = ""
+    modif = f; csv_m = ""
+    if m:
+        modif = max(f, d.get("fecha_consulta") or f)
+        mf = m["fecha"]; finde = datetime.date.fromisoformat(mf).weekday() >= 5
+        acc = {}
+        for h, p in zip(m["horas"], m["precios"]): acc.setdefault(_tramo(h, finde), []).append(p)
+        tr = ""
+        for t in ("valle", "llano", "punta"):
+            if t in acc:
+                fr = "Todo el día (sábado, domingo o festivo nacional)" if finde else _TR[t][1]
+                tr += f'<tr><th scope="row">{t.capitalize()}</th><td>{fr}</td><td>{_eur3(sum(acc[t]) / len(acc[t]))}</td></tr>'
+        lead_m = (f' <strong>Mañana, {fecha_es(mf)}</strong>, la media será de <strong>{_eur3(m["media"])}</strong>, con la hora más barata de {hh(m["hora_barata"])} '
+                  f'({_eur3(m["min"])}) y la más cara de {hh(m["hora_cara"])} ({_eur3(m["max"])}).')
+        hr = "".join(f'<tr><th scope="row">{h:02d}:00</th><td>{_eur3(p)}</td><td>{_tramo(h, finde)}</td></tr>' for h, p in zip(m["horas"], m["precios"]))
+        sec_m = f"""<h2 id="manana">Precio de la luz mañana, {fecha_es(mf)}</h2>
+<p>Red Eléctrica publica el PVPC del día siguiente hacia las 20:15 (hora peninsular). Mañana: media <strong>{_eur3(m["media"])}</strong>, mínimo {_eur3(m["min"])} ({hh(m["hora_barata"])}) y máximo {_eur3(m["max"])} ({hh(m["hora_cara"])}).</p>
+<div class="em-tw"><table><thead><tr><th scope="col">Tramo 2.0TD</th><th scope="col">Franja</th><th scope="col">Media mañana</th></tr></thead><tbody>{tr}</tbody></table></div>
+<p class="note">Franjas de la tarifa 2.0TD según el art. 7.3 de la <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2020-1066" rel="noopener">Circular 3/2020 de la CNMC</a>, en hora peninsular; en festivos nacionales todo el día es valle. Para ver en qué horas conviene poner la lavadora o el termo, usa la <a href="/decidir/horas-valle-luz-lavadora-termo-cuanto-ahorro/">calculadora de horas valle</a>.</p>
+<details><summary>Precio hora a hora de mañana</summary><div class="em-tw"><table><thead><tr><th scope="col">Hora</th><th scope="col">PVPC</th><th scope="col">Tramo</th></tr></thead><tbody>{hr}</tbody></table></div></details>"""
+        csv_m = "".join(f"{mf},{h},{p},{_tramo(h, finde)}\n" for h, p in zip(m["horas"], m["precios"]))
+    else:
+        sec_m = ('<h2 id="manana">Precio de la luz mañana</h2><p>El PVPC de mañana aún no está publicado: Red Eléctrica lo publica hacia las 20:15 (hora peninsular) y esta página se actualiza sola después. '
+                 'Mientras tanto, las <a href="/decidir/horas-valle-luz-lavadora-termo-cuanto-ahorro/">horas valle</a> (de 00:00 a 08:00 y todo el fin de semana) son siempre las más baratas en la factura.</p>')
     body = f"""<article class="guide barometro tablas">
 <p class="kicker"><a href="{INDEX}">Datos al día</a> · Energía</p>
 <h1>{e(h1)}</h1>
-<p class="byline note">Por Equipo de Entre Muchos · Dato del <time datetime="{f}">{fecha_es(f)}</time> · Consultado el {fecha_es(d["fecha_consulta"])} · Esta página se regenera cada día</p>
-<p class="lead"><strong>Respuesta corta:</strong> el PVPC (tarifa regulada) del {fecha_es(f)} cuesta de media <strong>{_eur3(v)}</strong>; la hora más barata es de {hh(hb)} ({_eur3(pb)}) y la más cara, de {hh(hc)} ({_eur3(pc)}). Fuente: {A(fu["url"], "Red Eléctrica de España (REData)")}.</p>
-<h2 id="hoy">El día, de un vistazo</h2>
+<p class="byline note">Por Equipo de Entre Muchos · Dato del <time datetime="{f}">{fecha_es(f)}</time> · Consultado el {fecha_es(d["fecha_consulta"])} · Esta página se regenera cada día y al publicarse el precio de mañana</p>
+<p class="lead"><strong>Respuesta corta:</strong> el PVPC (tarifa regulada) de hoy, {fecha_es(f)}, cuesta de media <strong>{_eur3(v)}</strong>; la hora más barata es de {hh(hb)} ({_eur3(pb)}) y la más cara, de {hh(hc)} ({_eur3(pc)}).{lead_m} Fuente: {A(fu["url"], "Red Eléctrica de España (REData)")}.</p>
+<h2 id="hoy">El día de hoy, de un vistazo</h2>
 <div class="em-tw"><table><thead><tr><th scope="col">Concepto</th><th scope="col">Precio</th><th scope="col">Hora</th></tr></thead><tbody>
 <tr id="media"><th scope="row">Media de las 24 horas</th><td>{_eur3(v)}</td><td>Todo el día</td></tr>
 <tr id="barata"><th scope="row">Hora más barata</th><td>{_eur3(pb)}</td><td>{hh(hb)}</td></tr>
 <tr id="cara"><th scope="row">Hora más cara</th><td>{_eur3(pc)}</td><td>{hh(hc)}</td></tr>
 </tbody></table></div>
 <p class="note">Precio de la energía por hora en el mercado regulado (PVPC), media de las 24 horas, en €/kWh sin peajes, cargos ni impuestos: no es lo que pagas en la factura final.{e(mm)}</p>
+{sec_m}
 <h2 id="dias">Media diaria reciente</h2>
 <div class="em-tw"><table><thead><tr><th scope="col">Día</th><th scope="col">Media PVPC</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h2 id="que-hacer">Qué hacer con este dato</h2>
@@ -151,10 +195,12 @@ def _luz(d):
 {_more(PATHS["luz"])}
 <p class="disclaimer">Información orientativa, no constituye asesoramiento. Lee <a href="/como-funciona/">cómo trabajamos</a>.</p>
 </article>"""
-    desc = f"PVPC del {fecha_es(f)}: media {_eur3(v)}, hora más barata {hh(hb)} y más cara {hh(hc)} (Red Eléctrica)."
-    ds = dict(name="Precio de la luz PVPC por día (€/kWh)", variables=["PVPC media diaria (€/kWh)", "PVPC hora más barata (€/kWh)", "PVPC hora más cara (€/kWh)"], keywords=["precio luz hoy", "PVPC", "hora más barata"], based=[fu["url"]], cov=f)
+    desc = f"Luz hoy: media {_eur3(v)}, barata {hh(hb)}, cara {hh(hc)}." + (f" Mañana: media {_eur3(m['media'])} y tramos valle, llano y punta (REE)." if m else " Mañana, al publicarse (REE).")
+    ds = dict(name="Precio de la luz PVPC por día (€/kWh)", variables=["PVPC media diaria (€/kWh)", "PVPC hora más barata (€/kWh)", "PVPC hora más cara (€/kWh)"], keywords=["precio luz hoy", "precio luz mañana", "PVPC", "hora más barata"], based=[fu["url"]], cov=(f"{f}/{m['fecha']}" if m else f))
     csv = _csv(["dia", "pvpc_media_eur_kwh"], [[dia, val] for dia, val in d.get("historial", [])])
-    return dict(csv=csv, h1=h1, title=f"Precio de la luz hoy, {fecha_es(f)}: {_eur3(v)}", description=desc, fecha=f, body=body, ds=ds, nav="Precio de la luz hoy", resumen=f"PVPC {fecha_es(f)}: {_eur3(v)}")
+    if m:
+        csv += "\n" + _csv(["dia_manana", "hora", "pvpc_eur_kwh", "tramo_2_0td"], []) + csv_m
+    return dict(csv=csv, h1=h1, title=f"Precio de la luz hoy y mañana: {_eur3(v)} de media", description=desc, fecha=modif, body=body, ds=ds, nav="Precio de la luz hoy y mañana", resumen=f"PVPC {fecha_es(f)}: {_eur3(v)}")
 
 def build(live, params):
     return _build(live, params)

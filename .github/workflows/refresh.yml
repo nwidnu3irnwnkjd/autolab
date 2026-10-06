@@ -2,6 +2,8 @@ name: Refrescar datos vivos
 on:
   schedule:
     - cron: "15 7 * * *"
+    - cron: "30 20 * * *"  # PVPC de mañana (REE publica ≈20:15 hora peninsular; UTC cubre verano e invierno)
+    - cron: "30 21 * * *"
   workflow_dispatch:
 permissions:
   contents: write

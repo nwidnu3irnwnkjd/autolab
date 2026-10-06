@@ -34,3 +34,6 @@
 
 ## HECHO el 2-oct tarde (sesión de Claude en el navegador de Andoni)
 Indexación solicitada de las 5 URL clave, 5 sitemaps enviados, autolab-reader con permiso «Completo», sitemap.xml enviado en Bing. Solo quedan opcionales: CNAME www (GoDaddy) y descripción del repo de GitHub (necesita su «sí»).
+
+## Si el push de refresh.yml se rechaza (R51.2, precio de la luz de mañana)
+Editar .github/workflows/refresh.yml desde GitHub (el token del bot puede no tener permiso `workflow`): añadir bajo `schedule:` junto a `- cron: "15 7 * * *"` las líneas `- cron: "30 20 * * *"` y `- cron: "30 21 * * *"`. Sin esto, la página muestra el PVPC de mañana solo tras el refresh de las 07:15 UTC del día siguiente (ya como «hoy»), es decir, no llega a mostrar «mañana».

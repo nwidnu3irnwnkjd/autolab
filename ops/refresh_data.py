@@ -63,9 +63,18 @@ def fetch_luz(today):
     days = {}
     for k, v in rows.items():
         days.setdefault(k[:10], []).append((k[11:13], v))
-    full = sorted(d for d, l in days.items() if len(l) >= 23)
+    full = sorted(d for d, l in days.items() if len(l) >= 23 and d <= today.isoformat())  # «hoy» nunca es mañana
     if not full: raise RuntimeError("sin ningún día completo")
     day = full[-1]
+    manana = None  # PVPC de mañana: REE lo publica ≈20:15 (hora peninsular); si aún no está, null (no es un fallo)
+    tm = days.get(tomorrow.isoformat())
+    if tm and 23 <= len(tm) <= 25:
+        mp = [v for _, v in tm]
+        if all(0.0 < v < 3.0 for v in mp) and 0.0 < sum(mp) / len(mp) < 1.5:
+            mn_, mx_ = min(tm, key=lambda x: x[1]), max(tm, key=lambda x: x[1])
+            manana = {"fecha": tomorrow.isoformat(), "horas": [int(h) for h, _ in tm], "precios": [round(v, 5) for v in mp],
+                      "media": round(sum(mp) / len(mp), 5), "min": round(mn_[1], 5), "max": round(mx_[1], 5),
+                      "hora_barata": int(mn_[0]), "hora_cara": int(mx_[0])}
     avg = lambda l: sum(v for _, v in l) / len(l)
     cur = days[day]
     cheapest = min(cur, key=lambda x: x[1]); dearest = max(cur, key=lambda x: x[1])
@@ -75,7 +84,7 @@ def fetch_luz(today):
     ayer = round(avg(days[prevs[-1]]), 5) if prevs else None
     if not (0.0 < avg(cur) < 1.5): raise RuntimeError(f"valor implausible {avg(cur)}")
     return {
-        "valor": round(avg(cur), 5), "unidad": "€/kWh", "fecha_dato": day,
+        "valor": round(avg(cur), 5), "unidad": "€/kWh", "fecha_dato": day, "manana": manana,
         "anterior": ayer, "anterior_fecha": prevs[-1] if prevs else None,
         "extra": {"media_mes": round(sum(mes) / len(mes), 5), "mes": ym, "dias_mes": len([d for d in full if d[:7] == ym]),
                   "hora_barata": int(cheapest[0]), "precio_hora_barata": round(cheapest[1], 5),

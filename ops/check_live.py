@@ -20,6 +20,17 @@ def schema(live, name):
         if d.get("ok") is False: ok(d.get("motivo"), f"{name}.{k}: ok:false sin motivo")
         if d.get("valor") is not None: ok(isinstance(d["valor"], (int, float)), f"{name}.{k}: valor no numérico")
         if d.get("fecha_dato"): datetime.date.fromisoformat(d["fecha_dato"])
+        if k == "luz_pvpc": schema_manana(d, f"{name}.{k}")
+
+def schema_manana(d, name):
+    m = d.get("manana")
+    if m is None: return
+    f = datetime.date.fromisoformat(m["fecha"])
+    ok(f == datetime.date.fromisoformat(d["fecha_dato"]) + datetime.timedelta(days=1), f"{name}: manana no es fecha_dato+1")
+    ok(23 <= len(m.get("precios", [])) <= 25 and len(m.get("horas", [])) == len(m.get("precios", [])), f"{name}: manana nº de horas")
+    ok(all(isinstance(p, (int, float)) and 0 < p < 3 for p in m.get("precios", [])), f"{name}: manana precios")
+    ok(m.get("min") == min(m["precios"]) and m.get("max") == max(m["precios"]) and abs(m["media"] - sum(m["precios"]) / len(m["precios"])) < 1e-4, f"{name}: manana media/min/max")
+    ok(m["horas"][m["precios"].index(m["min"])] == m.get("hora_barata") and m["horas"][m["precios"].index(m["max"])] == m.get("hora_cara"), f"{name}: manana horas barata/cara")
 
 TODAY = datetime.date(2026, 10, 2)
 def mk(valor, fecha, unidad, **kw):
@@ -133,5 +144,20 @@ with tempfile.TemporaryDirectory() as t:
     def boom2(): raise RuntimeError("BCE caído")
     res, fallos = refresh_data.run(p, {"tipo_hipoteca_fija": boom2}, today=datetime.date(2026, 10, 3))
     d = res["datos"]["tipo_hipoteca_fija"]; ok(fallos == ["tipo_hipoteca_fija"] and d["ok"] is False and d["valor"] == 2.76 and "BCE" in d["motivo"], "tipo fija: fallo conserva valor")
+# ---- PVPC de mañana: publicado / no publicado / página (datos.py) ----
+import datos
+_pr = [0.1 + 0.01 * i for i in range(24)]
+_man = dict(fecha="2026-10-05", horas=list(range(24)), precios=_pr, media=round(sum(_pr) / 24, 5), min=min(_pr), max=max(_pr), hora_barata=0, hora_cara=23)
+_L = json.loads(json.dumps(SAMPLE)); _L["datos"]["luz_pvpc"].update(manana=_man, fecha_consulta="2026-10-04", fecha_dato="2026-10-04")
+_n0 = len(fails); schema_manana(_L["datos"]["luz_pvpc"], "muestra"); ok(len(fails) == _n0, "schema manana válido")
+_bad = json.loads(json.dumps(_L)); _bad["datos"]["luz_pvpc"]["manana"]["fecha"] = "2026-10-09"; _n1 = len(fails); schema_manana(_bad["datos"]["luz_pvpc"], "x")
+ok(len(fails) > _n1, "schema manana: detecta fecha incorrecta"); del fails[_n1:]
+_L["datos"]["luz_pvpc"].update(fecha_dato="2026-10-04")
+_real = datetime.date; datos.datetime = type("DT", (), {"date": type("D", (_real,), {"today": staticmethod(lambda: _real(2026, 10, 4))}), "timedelta": datetime.timedelta})
+_P = {"renta_alquiler_2026": {}}
+_S = datos.build(_L, _P).get("luz"); ok(_S and 'id="manana"' in _S["body"] and "Valle" in _S["body"] and "Punta" in _S["body"] and "2026-10-05,23," in _S["csv"] and "hoy y mañana" in _S["h1"], "página con mañana")
+_S0 = datos.build(SAMPLE if False else json.loads(json.dumps(SAMPLE)), _P).get("luz"); ok(_S0 and "aún no está publicado" in _S0["body"] and "dia_manana" not in _S0["csv"], "página sin mañana (null/ausente)")
+_N = json.loads(json.dumps(_L)); _N["datos"]["luz_pvpc"]["manana"] = None; ok("aún no está publicado" in datos.build(_N, _P)["luz"]["body"], "manana=null")
+datos.datetime = datetime
 print("FALLOS:\n- " + "\n- ".join(fails) if fails else "OK check_live: Pulso + live.json")
 sys.exit(1 if fails else 0)
