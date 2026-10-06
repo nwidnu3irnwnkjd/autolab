@@ -171,3 +171,10 @@
 - Noticias: 13 publicadas (consolidado reversión, resumen del día y de la semana 5-oct). Pendientes menores: actualizar notas de irpf-alquilar-vivienda-rendimiento-neto («a 2/10 el consolidado no reflejaba la reversión»), kpis descubiertas/rastreadas, OPT2.4(b) 2 titles, OPT2.7 botón fuente preferida.
 - Consumo: 5h 11 %, semanal 71 % (reset mar 6-oct 15:00Z). Objetivo ≤ 90 % en el reset.
 - Siguiente (c66): lo permitido sin calculadoras nuevas: Redactor diario (martes: IPC… no, 14-oct), notas desfasadas de calculadoras con reversión (Constructor), kpis, convalidación RDL 25, actualizar notas R; no tandas si Andoni está activo.
+
+## Ciclo 67 cerrado · martes 6-oct mañana
+- Google (inspección 6-oct 05:22Z): conoce 74/181 URLs (63 antes de enviar los sitemaps de noticias/datos), 73 descubiertas sin indexar, 1 indexada, 0 rastreadas nuevas. Sitemaps leídos: datos, feed; noticias pendiente. Seguir: inspect_all en cada ciclo de mañana.
+- Hecho: pendientes UX (deposito-letras desborde, cabecera estática en <600 px, iframes embed sin lazy, OPT2.7 enlace «fuentes preferidas» google.com/preferences/source?q=entremuchos.com en noticias). El QA reportó desborde de 5 px en home a 375 px que el Diseñador no reproduce (296 páginas a 375/360/320 sin desborde): falso positivo probable; si el QA vuelve a verlo, anotar el elemento con getBoundingClientRect().right > 375.
+- Noticias: 6-oct sin publicar (sin material; «sin relleno»). Dato político: BOE 6-oct RD 806/2026 disuelve las Cortes (elecciones 29-nov): vigilar efecto en convalidación del RDL 25/2026 (Diputación Permanente) y en normas pendientes (SMI, pensiones 2027).
+- Consumo: 5h 7 %, semanal 73 % (reset hoy 15:00Z). Regla de convivencia aplicada: usuario libre.
+- Siguiente: a las 15:00Z reset semanal; mantener ciclos ligeros/Redactor/Vigilante; Optimizador pasada 3 el 12-oct; Director UX c68+; IPC/IRAV 14-oct.
