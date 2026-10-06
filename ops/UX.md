@@ -68,3 +68,10 @@ Las 112 calculadoras a 375 px: máximo 593 (todas ≤ 700). A 1280 px, 27 de 112
 - Peso: +89 B de HTML por página (el nuevo script de gtag con condición); home −129 B. Sin librerías. Página más pesada sin cambios.
 - Pendientes: página /deposito-letras-o-fondo-monetario/ ya tenía una tabla de contenido que desborda a 375 px (419 vs 360; no la causan estos cambios); la cabecera sticky de 97 px en móvil (acción 7) sigue sin tocar.
 
+
+## Resultados pasada 1b (2026-10-06, Diseñador)
+- **Desborde de /decidir/deposito-letras-o-fondo-monetario/** (tabla simple hija directa de `main`, 419 frente a 375 px): app.css `@media(max-width:480px){main>table{display:block;overflow-x:auto}}` (+90 B). Auditoría por iframe a 375 px de las 112 calculadoras, 20 guías y las noticias (133 páginas): 0 con scrollWidth > 375.
+- **Cabecera sticky (acción 7)**: medida 97 px (2 filas: logo + 4 enlaces, ≈12 % de 812 px). Se descarta compactarla a ≤ 56 px (los enlaces no caben en una fila a 375 px sin perder navegación); por debajo de 600 px pasa a `position:static` (+45 B): altura útil +97 px al desplazarse, la navegación sigue arriba de la página y en el pie. Escritorio sin cambios (sticky, 60 px).
+- **Iframes de embed.py**: quitado `loading="lazy"` del código de inserción y de la vista previa de /inserta/ (width/height ya reservan el hueco). Medido en /inserta/ a 375 px: CLS 0,000, 0 iframes lazy.
+- **OPT2.7**: URL oficial verificada en la documentación de Google Search Central (deeplink `https://www.google.com/preferences/source?q=...`, estado «fully rolled out», act. 18-sep-2026); enlace discreto en el pie de cada noticia y en /noticias/. +~0,2 KB.
+- Peticiones UX abiertas restantes: ninguna (solo OPT2.7 iba al Diseñador).

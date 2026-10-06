@@ -17,7 +17,7 @@ def height(c):
 
 
 def code(c):
-    return (f'<iframe src="{B}/embed/{c["slug"]}/" width="100%" height="{height(c)}" loading="lazy" '
+    return (f'<iframe src="{B}/embed/{c["slug"]}/" width="100%" height="{height(c)}" '
             f'title="{html.escape(c["h1"], quote=True)} — Entre Muchos" style="border:0"></iframe>')
 
 
@@ -78,7 +78,7 @@ def page(calcs):
     exs = "".join(f"""<section class="emb-ex"><h3>{html.escape(c["h1"])}</h3>
 <textarea readonly rows="3" aria-label="Código de {html.escape(c["slug"], quote=True)}" data-code>{html.escape(code(c))}</textarea>
 <p><button type="button" class="btn2" data-copy>Copiar código</button> <span class="em-toast" role="status" aria-live="polite" data-copied></span> <a href="/decidir/{c["slug"]}/">Ver la calculadora completa</a></p>
-<details open><summary>Vista previa</summary><iframe src="/embed/{c["slug"]}/" width="100%" height="{height(c)}" loading="lazy" title="Vista previa: {html.escape(c["h1"], quote=True)}" style="border:0"></iframe></details></section>""" for c in ex)
+<details open><summary>Vista previa</summary><iframe src="/embed/{c["slug"]}/" width="100%" height="{height(c)}" title="Vista previa: {html.escape(c["h1"], quote=True)}" style="border:0"></iframe></details></section>""" for c in ex)
     body = f"""<article class="guide hub">
 <p class="kicker">Para webs y blogs</p>
 <h1>Inserta una calculadora de Entre Muchos en tu web</h1>

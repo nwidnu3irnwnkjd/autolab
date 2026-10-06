@@ -139,7 +139,7 @@ def piece_page(n, calcs, card, base, today=None, tema=None):
 <p class="byline note">Por <a href="/como-funciona/">{seo.AUTHOR}</a> · Publicado el <time datetime="{n["published"]}">{_fe(n["published"])}</time>{upd}</p>
 {cad}{n["body"]}
 {_ics(n)}<h2>Fuentes</h2><ul class="fuentes">{fu}</ul>
-<p class="note">Si ves un error, escríbenos a <a href="mailto:hola@entremuchos.com">hola@entremuchos.com</a>: lo corregimos y lo dejamos anotado con su fecha (<a href="{POLITICA}">política editorial</a>).</p>
+<p class="note">Si ves un error, escríbenos a <a href="mailto:hola@entremuchos.com">hola@entremuchos.com</a>: lo corregimos y lo dejamos anotado con su fecha (<a href="{POLITICA}">política editorial</a>). ¿Nos lees en Google? Puedes <a href="https://www.google.com/preferences/source?q=entremuchos.com" rel="noopener">añádenos como fuente preferida en Google</a>.</p>
 <p class="disclaimer">Información orientativa, no constituye asesoramiento financiero, fiscal ni legal. La fuente oficial manda sobre este texto. Lee <a href="/como-funciona/">cómo trabajamos</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 {calc_block_}
 </article>"""
@@ -179,7 +179,7 @@ def index_page(news, base, semana_html="", today=None):
     body = (f'<h1>Noticias: qué cambia para ti</h1><p class="lead">Cada hecho oficial que mueve una cifra de tus decisiones (alquiler, hipoteca, impuestos, luz), con su fuente, su fecha y lo que te toca hacer. '
             f'Sin prensa de segunda mano: solo BOE, INE, BCE, AEAT y demás organismos, y tu cifra calculada con nuestras calculadoras. Cómo trabajamos: <a href="{POLITICA}">política editorial</a>.</p>'
             f'{dest}{semana_html}<h2>Últimas noticias</h2><ul class="cards">' + "".join(_li(n) for n in ult) + f'</ul>{resb}{arch}'
-            f'<p class="note">Suscríbete por <a href="{FEED_PATH}">feed Atom</a> · <a href="{POLITICA}">Política editorial y correcciones</a>.</p>')
+            f'<p class="note">Suscríbete por <a href="{FEED_PATH}">feed Atom</a> · <a href="{POLITICA}">Política editorial y correcciones</a> · <a href="https://www.google.com/preferences/source?q=entremuchos.com" rel="noopener">Añádenos como fuente preferida en Google</a>.</p>')
     mod = max(n["modified"] for n in news)
     return body, [seo.breadcrumbs(base, [("Inicio", "/"), ("Noticias", None)])], mod
 
