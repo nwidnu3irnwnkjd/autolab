@@ -4537,7 +4537,7 @@
     "limite_cuota_43_pct": 43,
     "reduccion_3_o_mas_descendientes": 600,
     "cotizacion_trabajador_pct": 6.5,
-    "cotizacion_trabajador_desglose": "contingencias comunes 4,70 + desempleo indefinido 1,55 + formación profesional 0,10 + MEI 0,15 (Orden de cotización 2026 y RDL 3/2026; fiscal-fuentes 5.3)",
+    "cotizacion_trabajador_desglose": "contingencias comunes 4,70 + desempleo indefinido 1,55 + formación profesional 0,10 + MEI 0,15 (Orden PJC/297/2026 y RDL 3/2026; fiscal-fuentes 5.3)",
     "base_maxima_cotizacion_mes": 5101.2,
     "umbral_equilibrio_eur": 100,
     "meses_adelanto_supuesto": 12,

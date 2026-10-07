@@ -211,3 +211,9 @@
 - alquilar-o-comprar reverificada (Opus) y corregida: H1 sin la «N» («a 10, 15 o 20 años»), nota de doble cruce («comprar supera a alquilar entre los años X e Y…»), declarada la deducción estatal 10 % del alquiler del RDL 29 (con ella el ejemplo baja a ≈+9,4k y cruce año 13), sin deducción por compra desde 2013, tope 2 % solo dentro del contrato hasta 31-12-2027. calefaccion: caso de test con defaults (gas 7.612 €; con 0,089 → 8.753 €). Casos típicos en 10 calculadoras más (29/29 coinciden). Pendiente: tren-avion-o-coche (enlace Geoportal sin validar), seguro-salud sin enlace.
 ## Ciclo 78 (7-oct noche)
 - retencion-irpf-nomina-subir-o-no reverificada (Opus, oráculo 1.500 casos 0 disc.) y texto con la deducción estatal 10 % alquiler (RDL 29, solo baja el IRPF final). /todas/ con grupo «Trabajo y prestaciones» (15). Fichero journal/PEDIR-A-ANDONI-ENLACES.md con textos para cotorrita.bar/Lavarte/etxea.com y 8 directorios gratuitos válidos (Curlie, awesome-personal-finance, awesome-web-tools, awesome-calculators, Show HN, Product Hunt, Uneed, SaaSHub). Pendiente: noticia luz del jueves 8-oct (esperar bot 20:30/21:30Z).
+
+## Ciclo 79 (7-oct)
+Editor de calidad pasó las 19 guías (lead directo, FAQs ≤50 palabras, títulos con consultas reales). Opus verificó 3 puntos legales: 11 frases corregidas (euribor-hipoteca, clausulas-contrato-alquiler, revisa-tu-contrato checklist, luz x2); Sonnet re-check OK. Build/check/qa_static 0 BLOQUEANTE. Pendiente: noticia luz mañana (REE 0.0), BOE 8-oct, IPC 14-oct.
+
+## Ciclo 80 (7-oct noche)
+Opus re-verificó paga-extra-navidad (publicable, 828 casos 0 disc.; R1 aplicado: Orden PJC/297/2026 en params; R2 pendiente: parámetros 2027 con MEI 0,17 a partir de 1-1-2027). Barrido de vigencia: 9 archivos con «pendiente de convalidación» junto al RDL 25. Pendiente tras 14-oct: IRAV 2,47 % (actualizacion-renta-alquiler-irav-ipc l.25 y checklist l.41). Noticia luz 8-oct pendiente (REE).
