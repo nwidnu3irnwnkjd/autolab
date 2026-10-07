@@ -134,3 +134,37 @@ Nota 1-5 (antes → después): título / lead con condición+cifra de test.json 
 ## Peticiones [Editor -> Constructor] (no bloqueantes): calefaccion-gas-aerotermia-electrica: añadir un caso en test.json con los valores por defecto de la página para poder citar cifras en el lead; seguro-salud, tren-avion-o-coche y portatil-o-movil: fuentes con fecha de consulta si se citan enlaces externos.
 ## Resumen
 - FAQs > 50 p en las 15: ≈ 45 → 0. Leads sin cifra del ejemplo: 7 → 1 (calefacción). Verificado: ver abajo.
+
+# Editorial (Editor de calidad) · pasada 7 · 2026-10-07 · 19 guías (cola tarea 3; ninguna revisada antes en editorial.md)
+
+Nota 1-5 (antes → después): título (consulta real) / lead con condición+cifra / FAQ ≤ 50 p / fuentes con enlace y fecha / fechas caducables y novedades. Solo redacción en meta y lead de content/guias/*.html; sin tocar cifras legales, fórmulas ni calcs. Campo calcs revisado en las 19: todos los slugs existen y son los de cada tema.
+- ahorrar-factura-luz-potencia-horas-valle-tarifa · 3 → 5 · lead con 42 €/63 €/180 € y 15 € (ya en el cuerpo), 3 FAQs de 69/69/58 a ≤ 50 p
+- amortizacion-anticipada-comisiones · 4 → 5 · title «Amortización anticipada hipoteca: comisiones y cómo funciona» (consulta real, 60), FAQ 2 de 59 a ≤ 50
+- antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos · 3 → 5 · lead reordenado (cifras 417 € y 220 € al lado de cada decisión), 4 FAQs de 89/65/58/46 a ≤ 50
+- autonomo-2026-cuota-regularizacion-modulos · 3 → 5 · lead con condición y cifra (1.800 € netos → General 3, 302,65 €), 3 FAQs de 85/95/59 a ≤ 50
+- base-liquidable-tramos-irpf-2026 · 4 → 5 · lead abre con la respuesta (278 € por 1.000 €, marginal 27,8 % frente a 18,99 %)
+- black-friday-y-navidad-sin-deudas · 4 → 4 · lead abre con la fecha (27-nov, calculada); no hay cifra de calculadora que citar (por diseño: sin presupuesto «medio»)
+- cambio-de-hora-octubre-horas-valle-luz · 4 → 5 · 3 FAQs de 52/59/65 a ≤ 50
+- checklist-casa-antes-del-invierno · 3 → 5 · lead con 739/919/15 €, 6.000 €/28 años y 30 €/año (test.json de las calculadoras), description «precio del día» en lugar de «de hoy»
+- clausulas-contrato-alquiler · 3 → 5 · title «Cláusulas del contrato de alquiler: abusivas y nulas» (consulta real), lead 210 → ~135 p, 4 FAQs de 116/102/69/77 a ≤ 50; conservadas las marcas RDL 28/29 «pendiente de convalidación»
+- cuanto-cuesta-tener-coche · 4 → 4 · lead con condición (pocos km: fijo; muchos: variable); sin cifra de calculadora (por diseño)
+- cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora · 4 → 5 · 2 FAQs de 74/55 a ≤ 52 (la 2.ª, 50), description sin «de hoy»
+- euribor-hipoteca · 5 → 5 · sin cambios (FAQs ≤ 50, lead con 80 €/punto, nota con {{periodo_euribor_es}})
+- loteria-navidad-hacienda-decimos-compartidos-penas · 4 → 5 · 3 FAQs de 62/63/55 a ≤ 48
+- me-han-despedido-indemnizacion-paro-plazos · 3 → 5 · title «Me han despedido: qué tengo que hacer, indemnización y paro» (consulta real, 59), lead con 13.151 €/21.699 € y plazos, 2 FAQs de 77/72 a ≤ 48
+- paga-extra-diciembre-neto-retencion · 4 → 5 · 3 FAQs de 63/53/53 a ≤ 48, lead más corto con 1.275 € y 845,38 €
+- renta-2027-ejercicio-2026-paso-a-paso · 4 → 5 · lead con 1.500 €/30 % y 80 % de 250 €, FAQ 2 de 63 a ≤ 50
+- revisa-tu-contrato-de-alquiler-checklist · 3 → 5 · lead 174 → ~135 p con 3.600 € y 2 %, 3 FAQs de 70/74/87 a ≤ 50; RDL 28/29 intactos
+- subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas · 3 → 5 · lead con 139 € y 4.598 €, 3 FAQs de 87/80/63 a ≤ 52
+- tu-casa-en-invierno-que-mirar-primero · 3 → 5 · lead con 739/919/15 € y 28 años, description «en invierno» (no «este invierno»), frase caducable «la temporada aún no ha empezado» sustituida
+
+## Fechas caducables revisadas a 7-oct-2026
+- Todas las menciones de «2026», «hoy», «este año» están bien a esta fecha. Las «de hoy» restantes son datos templados (pvpc_hoy, fecha_*) o etiquetas de enlace a /datos/*-hoy/. Fuentes: la mayoría llevan «consultada el 2/3-10-2026» en la nota; sin fecha de consulta en amortizacion-anticipada-comisiones (Fuentes), euribor-hipoteca y black-friday (solo «consultada el 2 de octubre» en nota); no se inventó ninguna fecha.
+
+## Posibles errores legales / para el Verificador (no modificados)
+- euribor-hipoteca.html línea 24: «el interés nunca puede ser negativo… y el banco tampoco puede ponerte un suelo (Ley 5/2019, art. 21.3 y 21.4)»: las dos mitades parecen contradecirse; contrastar con el texto del art. 21.
+- cuanto-gasta-cada-aparato…html y ahorrar-factura-luz…html: «impuestos vigentes en octubre de 2026; noviembre-diciembre según RDL 25/2026»: confirmar tras la convalidación (aún sin fecha oficial).
+- antes-fin-de-ano…html línea 63: «Cifras vigentes el 2-10-2026»; tras RDL 28/29 (7-oct) no afecta a plan/donativos/pérdidas, pero conviene que el Vigilante lo confirme.
+- clausulas-contrato-alquiler.html y revisa-tu-contrato…html: varias frases «interpretación nuestra sobre el alcance temporal» (RDL 29/2026 sin transitoria expresa) y la prórroga extraordinaria DF 5.ª; revisar cuando se convalide. Las cifras 2 % / 2,47 % coinciden en ambas guías.
+## Resumen
+- FAQs > 50 p en las 19 guías: 41 → 0 (todas ≤ 50 por recuento de palabras); leads sin cifra: 8 → 2 (por diseño). Verificado: build OK (187 páginas), check.py 13660/13660, qa_static --changed 0 BLOQUEANTE.
