@@ -3,7 +3,7 @@
   "title": "Cocinar en casa o comer fuera: calcula tu ahorro al año",
   "description": "Calcula cuánto cambia tu gasto al año si sustituyes comidas fuera o menús del día por cocinar en casa, con tu tiempo valorado y la hora de equilibrio.",
   "h1": "Cocinar en casa o comer fuera: cuánto cambia tu gasto al año",
-  "lead": "Cocinar en casa compensa frente a comer fuera mientras tu hora valga menos que el valor de equilibrio, que sale de lo que ahorras por comida dividido entre los minutos extra que te cuesta cocinar; con los ejemplos de la página (menú de 13 €, 4 € por ración en casa, 30 minutos de cocinar y 15 de desplazamiento, 3 comidas por semana y 220 días laborables) sustituirlas ahorra 1.188 € al año sin valorar tu tiempo, y compensa mientras tu hora valga menos de 36 € (a 10 €/h ahorras 858 €; a 40 €/h, comer fuera sale 132 € mejor). Pon tus precios y el valor de tu hora.",
+  "lead": "Cocinar en casa compensa frente a comer fuera mientras tu hora valga menos que el valor de equilibrio. Con los ejemplos (menú de 13 €, 4 € por ración en casa, 30 minutos de cocinar y 15 de desplazamiento, 3 comidas por semana, 220 días laborables) ahorras 1.188 € al año sin valorar tu tiempo y compensa mientras tu hora valga menos de 36 €: a 10 €/h ahorras 858 € y a 40 €/h comer fuera sale 132 € mejor. Pon tus precios y el valor de tu hora.",
   "veredicto": "Cocinar en casa compensa frente a comer fuera mientras el valor de tu hora sea menor que el ahorro por comida dividido entre los minutos extra que te cuesta cocinar frente a desplazarte; por encima de ese valor sale mejor comer fuera. Cuántas comidas sustituyes solo cambia cuánto ahorras, no cuál opción gana.",
   "tema": "ahorro",
   "inputs": [
@@ -82,7 +82,7 @@
     ],
     [
       "¿Qué pasa con el táper y el menú del día?",
-      "El táper entra como cocinar en casa: pon en «coste por ración» lo que te cuesta la compra y, en el tiempo, el que dedicas a preparar cada ración (si cocinas varias a la vez, reparte los minutos). El menú del día entra como precio medio de cada comida fuera; si pagas aparte café o bebida, súmalo."
+      "El táper cuenta como cocinar en casa: pon en «coste por ración» lo que cuesta la compra y, en minutos, lo que dedicas a cada ración (si cocinas varias a la vez, reparte). El menú del día entra como precio medio de cada comida fuera; suma aparte café o bebida."
     ],
     [
       "¿Qué no incluye este cálculo?",

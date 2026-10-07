@@ -3,7 +3,7 @@
   "title": "Hipoteca bonificada: calcula si compensa las vinculaciones",
   "description": "En el ejemplo, la hipoteca bonificada ahorra 4.210 € en 25 años si la rebaja del tipo supera 0,32 puntos. Mira si te compensa a ti.",
   "h1": "Hipoteca bonificada o sin vinculaciones: ¿cuál sale más barata?",
-  "lead": "La hipoteca bonificada sale más barata si la rebaja del tipo ahorra más intereses de lo que cuestan las vinculaciones y las comisiones; si la rebaja es pequeña o las vinculaciones son caras, sale mejor la de sin vinculaciones. Pon capital, plazo, tipo, bonificación y el coste anual de los productos, y la calculadora te da el coste total a tu horizonte, la diferencia de cuota y la bonificación mínima que compensa.",
+  "lead": "La hipoteca bonificada sale más barata si la rebaja del tipo ahorra más intereses de lo que cuestan las vinculaciones y las comisiones. Con un ejemplo de 150.000 € a 25 años, TIN del 2,76 % con bonificación (3,26 % sin ella) y 300 € al año de vinculaciones, la bonificada cuesta 65.320 € en total frente a 69.530 €, unos 4.210 € menos; compensa mientras la rebaja sea de al menos 0,32 puntos. Pon tus datos para ver tu coste total y la bonificación mínima.",
   "veredicto": "La hipoteca bonificada solo compensa si la bonificación del tipo supera la bonificación mínima que calcula la página con tu capital, plazo, tipo, comisiones y coste de vinculaciones; por debajo de ese umbral sale más barata la de sin vinculaciones.",
   "tema": "hipoteca",
   "inputs": [
@@ -69,11 +69,11 @@
   "faqs": [
     [
       "¿Qué es una hipoteca bonificada?",
-      "Es una hipoteca cuyo tipo de interés baja si contratas otros productos con la entidad: domiciliar la nómina, un seguro de hogar o de vida, una tarjeta o un plan de pensiones, por ejemplo. Las condiciones concretas y los puntos de rebaja de cada producto están en tu oferta vinculante y en la escritura."
+      "Es una hipoteca cuyo tipo baja si contratas otros productos con la entidad: nómina domiciliada, seguro de hogar o de vida, tarjeta o plan de pensiones. Los puntos de rebaja de cada producto están en tu oferta vinculante y en la escritura."
     ],
     [
       "¿Qué cuenta como coste de las vinculaciones?",
-      "Solo lo que pagas de más respecto a lo que harías igualmente: la diferencia entre la prima del seguro del banco y la de un seguro externo equivalente, la cuota anual de la tarjeta si no la tendrías, las comisiones de la cuenta. Si ya cobras la nómina en esa cuenta, domiciliarla no te cuesta nada."
+      "Solo lo que pagas de más respecto a lo que harías igualmente: la diferencia entre la prima del banco y la de un seguro externo equivalente, la tarjeta si no la tendrías, las comisiones de la cuenta. Si ya cobras la nómina ahí, domiciliarla no cuesta nada."
     ],
     [
       "¿Qué pasa si dejo de cumplir una vinculación?",

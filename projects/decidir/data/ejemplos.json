@@ -492,5 +492,1023 @@
   "veredicto_texto": "Con estos supuestos, la fija sale más barata en intereses si el Euríbor medio de los 24 años siguientes al primero supera el 1,90 %; si se mantiene en 3,247 %, la fija ahorra 29.952 €, y si queda por debajo del 1,90 %, la variable pagaría menos.",
   "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
+ },
+ "_casos": {
+  "cuanto-cobro-de-paro-prestacion-desempleo": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "base": 1200,
+      "extras": "si",
+      "hijos": 0,
+      "jornada": 100,
+      "dias": 720
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 1200,
+      "tope": 1225,
+      "minimo": 560,
+      "hijos": 0,
+      "raw1": 840,
+      "m1": 840,
+      "dia1": 28,
+      "ap1": 0,
+      "raw2": 720,
+      "m2": 720,
+      "dia2": 24,
+      "ap2": 0,
+      "dur": 240,
+      "d1": 180,
+      "d2": 60,
+      "meses": 8,
+      "dias": 720,
+      "t1": 5040,
+      "t2": 1440,
+      "total": 6480
+     },
+     "titulo": "Base de 1.200 € y 720 días cotizados, 0 hijos a cargo",
+     "texto": "cobrarías 840 € al mes los primeros 180 días y 720 € al mes los 60 siguientes: 6.480 € en 240 días (8 meses)."
+    },
+    {
+     "inputs": {
+      "base": 2500,
+      "extras": "si",
+      "hijos": 0,
+      "jornada": 100,
+      "dias": 1080
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 2500,
+      "tope": 1225,
+      "minimo": 560,
+      "hijos": 0,
+      "raw1": 1750,
+      "m1": 1225,
+      "dia1": 40.8333,
+      "ap1": 1,
+      "raw2": 1500,
+      "m2": 1225,
+      "dia2": 40.8333,
+      "ap2": 1,
+      "dur": 360,
+      "d1": 180,
+      "d2": 180,
+      "meses": 12,
+      "dias": 1080,
+      "t1": 7350,
+      "t2": 7350,
+      "total": 14700
+     },
+     "titulo": "Base de 2.500 € y 1.080 días cotizados, 0 hijos a cargo",
+     "texto": "cobrarías 1.225 € al mes los primeros 180 días y 1.225 € al mes los 180 siguientes: 14.700 € en 360 días (12 meses); el máximo legal (1.225 €/mes con 0 hijos a cargo) limita la cuantía."
+    },
+    {
+     "inputs": {
+      "base": 1800,
+      "extras": "si",
+      "hijos": 2,
+      "jornada": 100,
+      "dias": 1440
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 1800,
+      "tope": 1575,
+      "minimo": 749,
+      "hijos": 2,
+      "raw1": 1260,
+      "m1": 1260,
+      "dia1": 42,
+      "ap1": 0,
+      "raw2": 1080,
+      "m2": 1080,
+      "dia2": 36,
+      "ap2": 0,
+      "dur": 480,
+      "d1": 180,
+      "d2": 300,
+      "meses": 16,
+      "dias": 1440,
+      "t1": 7560,
+      "t2": 10800,
+      "total": 18360
+     },
+     "titulo": "Base de 1.800 € y 1.440 días cotizados, 2 hijos a cargo",
+     "texto": "cobrarías 1.260 € al mes los primeros 180 días y 1.080 € al mes los 300 siguientes: 18.360 € en 480 días (16 meses)."
+    }
+   ]
+  },
+  "capitalizar-paro-o-cobrarlo": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "meses": 12,
+      "br": 1500,
+      "hijos": 0,
+      "cobrados": 0,
+      "actividad": "si",
+      "inversion": 6000,
+      "cuota": 205.88,
+      "arranque": 6
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "primera": 1050,
+      "total": 11700,
+      "totalCob": 9000,
+      "mesesCob": 9,
+      "valorActual": 11501.3438,
+      "pagoUnico": 6000,
+      "mesesSub": 27.1827,
+      "subMes": 205.88,
+      "subTotal": 5596.3654,
+      "capTotal": 11596.3654,
+      "coste": 103.6346,
+      "dif": 2596.3654,
+      "propioCap": 0,
+      "propioCob": 6000,
+      "saldoCap": -0.0,
+      "saldoCob": -935.28,
+      "colchonCap": -0.0,
+      "colchonCob": -4.5428,
+      "recCap": 7235.28,
+      "recCob": 6300,
+      "reintegro": 6000,
+      "costeTodo": 198.6562,
+      "n": 12,
+      "tope": 1225,
+      "inversion": 6000
+     },
+     "titulo": "12 meses por cobrar, base de 1.500 €, inversión de 6.000 €, cuota de autónomo de 205,88 €/mes",
+     "texto": "capitalizando cobrarías 6.000 € de golpe y unos 5.596 € más como ayuda a la cuota (11.596 € en total); cobrando mes a mes con la actividad solo se admiten 9 meses (9.000 €), así que capitalizar da 2.596 € más en esas condiciones."
+    },
+    {
+     "inputs": {
+      "meses": 18,
+      "br": 2000,
+      "hijos": 0,
+      "cobrados": 6,
+      "actividad": "si",
+      "inversion": 15000,
+      "cuota": 205.88,
+      "arranque": 12
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "primera": 1200,
+      "total": 21600,
+      "totalCob": 10800,
+      "mesesCob": 9,
+      "valorActual": 21044.25,
+      "pagoUnico": 15000,
+      "mesesSub": 30.1334,
+      "subMes": 205.88,
+      "subTotal": 6203.8704,
+      "capTotal": 21203.8704,
+      "coste": 396.1296,
+      "dif": 10403.8704,
+      "propioCap": 0,
+      "propioCob": 15000,
+      "saldoCap": 0.0,
+      "saldoCob": -6670.56,
+      "colchonCap": 0.0,
+      "colchonCob": -32.4002,
+      "recCap": 17470.56,
+      "recCob": 10800,
+      "reintegro": 15000,
+      "costeTodo": 555.75,
+      "n": 18,
+      "tope": 1225,
+      "inversion": 15000
+     },
+     "titulo": "18 meses por cobrar, base de 2.000 €, inversión de 15.000 €, cuota de autónomo de 205,88 €/mes",
+     "texto": "capitalizando cobrarías 15.000 € de golpe y unos 6.204 € más como ayuda a la cuota (21.204 € en total); cobrando mes a mes con la actividad solo se admiten 9 meses (10.800 €), así que capitalizar da 10.404 € más en esas condiciones."
+    }
+   ]
+  },
+  "finiquito-baja-voluntaria-vacaciones-preaviso": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 24000,
+      "pagas": 14,
+      "mes": 10,
+      "dia": 15,
+      "vacAnual": 30,
+      "vacDisf": 10,
+      "incumple": 0,
+      "tipo": 12
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "salMes": 829.4931,
+      "pagasPend": 996.8944,
+      "vacDev": 23.6712,
+      "vacPend": 13.6712,
+      "vacImporte": 898.9304,
+      "brutoDev": 2725.3179,
+      "descuento": 0,
+      "descAplicado": 0,
+      "cot": 121.3337,
+      "irpf": 327.0381,
+      "neto": 2276.946,
+      "exceso": 0,
+      "salDia": 65.7534,
+      "doy": 288,
+      "netoSinDesc": 2276.946,
+      "resto": 0,
+      "valorDiaNeto": 53.589,
+      "motivo": ""
+     },
+     "titulo": "24.000 € brutos al año en 14 pagas, baja el 15/10, 10 de 30 días de vacaciones disfrutados, IRPF del 12 %",
+     "texto": "finiquito bruto de 2.725 € (mes 829 €, pagas 997 €, vacaciones 899 €) y unos 2.277 € netos tras 121 € de cotización y 327 € de IRPF estimado."
+    },
+    {
+     "inputs": {
+      "bruto": 30000,
+      "pagas": 12,
+      "mes": 6,
+      "dia": 30,
+      "vacAnual": 30,
+      "vacDisf": 5,
+      "incumple": 15,
+      "tipo": 15
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 3,
+      "salMes": 2500,
+      "pagasPend": 0,
+      "vacDev": 14.8767,
+      "vacPend": 9.8767,
+      "vacImporte": 811.7846,
+      "brutoDev": 3311.7846,
+      "descuento": 1232.8767,
+      "descAplicado": 1232.8767,
+      "cot": 215.266,
+      "irpf": 496.7677,
+      "neto": 1366.8742,
+      "exceso": 0,
+      "salDia": 82.1918,
+      "doy": 181,
+      "netoSinDesc": 2599.7509,
+      "resto": 0,
+      "valorDiaNeto": 64.5205,
+      "motivo": ""
+     },
+     "titulo": "30.000 € brutos al año en 12 pagas, baja el 30/6, 5 de 30 días de vacaciones disfrutados, IRPF del 15 %",
+     "texto": "finiquito bruto de 3.312 € (mes 2.500 €, pagas 0 €, vacaciones 812 €) y unos 1.367 € netos tras 215 € de cotización y 497 € de IRPF estimado; el preaviso incumplido (15 días) resta 1.233 €."
+    },
+    {
+     "inputs": {
+      "bruto": 18000,
+      "pagas": 14,
+      "mes": 3,
+      "dia": 31,
+      "vacAnual": 30,
+      "vacDisf": 0,
+      "incumple": 0,
+      "tipo": 8
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "salMes": 1285.7143,
+      "pagasPend": 639.3054,
+      "vacDev": 7.3973,
+      "vacPend": 7.3973,
+      "vacImporte": 364.7964,
+      "brutoDev": 2289.8161,
+      "descuento": 0,
+      "descAplicado": 0,
+      "cot": 121.2118,
+      "irpf": 183.1853,
+      "neto": 1985.4191,
+      "exceso": 0,
+      "salDia": 49.3151,
+      "doy": 90,
+      "netoSinDesc": 1985.4191,
+      "resto": 0,
+      "valorDiaNeto": 42.1644,
+      "motivo": ""
+     },
+     "titulo": "18.000 € brutos al año en 14 pagas, baja el 31/3, 0 de 30 días de vacaciones disfrutados, IRPF del 8 %",
+     "texto": "finiquito bruto de 2.290 € (mes 1.286 €, pagas 639 €, vacaciones 365 €) y unos 1.985 € netos tras 121 € de cotización y 183 € de IRPF estimado."
+    }
+   ]
+  },
+  "indemnizacion-despido-objetivo-o-improcedente-neto": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 24000,
+      "anios": 3,
+      "meses": 0,
+      "antes": 0,
+      "oferta": 0,
+      "marginal": 24,
+      "tipo": "objetivo",
+      "causa": "eco"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 4,
+      "M": 36,
+      "salDia": 65.7534,
+      "diasObj": 60,
+      "legalObj": 3945.2055,
+      "diasImp": 99,
+      "legalImp": 6509.589,
+      "legal": 3945.2055,
+      "exento": 3945.2055,
+      "trib": 0,
+      "red": 0,
+      "irpf": 0,
+      "neto": 3945.2055,
+      "netoLegal": 3945.2055,
+      "netoObj": 3945.2055,
+      "netoImp": 6509.589,
+      "difBruta": 0,
+      "difNeta": 0,
+      "impMenosObj": 2564.3836,
+      "topeObj": 0,
+      "topeImp": 0,
+      "reduccionAplica": 1,
+      "motivo": ""
+     },
+     "titulo": "24.000 € brutos al año, 3 años de antigüedad, despido objetivo",
+     "texto": "la indemnización legal sería de 3.945 € brutos (3.945 € netos); si un juez lo declarase improcedente serían 6.510 €."
+    },
+    {
+     "inputs": {
+      "bruto": 30000,
+      "anios": 8,
+      "meses": 0,
+      "antes": 0,
+      "oferta": 10000,
+      "marginal": 30,
+      "tipo": "objetivo",
+      "causa": "eco"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "M": 96,
+      "salDia": 82.1918,
+      "diasObj": 160,
+      "legalObj": 13150.6849,
+      "diasImp": 264,
+      "legalImp": 21698.6301,
+      "legal": 13150.6849,
+      "exento": 10000,
+      "trib": 0,
+      "red": 0,
+      "irpf": 0,
+      "neto": 10000,
+      "netoLegal": 13150.6849,
+      "netoObj": 13150.6849,
+      "netoImp": 21698.6301,
+      "difBruta": -3150.6849,
+      "difNeta": -3150.6849,
+      "impMenosObj": 8547.9452,
+      "topeObj": 0,
+      "topeImp": 0,
+      "reduccionAplica": 1,
+      "motivo": ""
+     },
+     "titulo": "30.000 € brutos al año, 8 años de antigüedad, despido objetivo, oferta de 10.000 €",
+     "texto": "la legal serían 13.151 €: la oferta queda 3.151 € por debajo y te quedarían 10.000 € netos."
+    },
+    {
+     "inputs": {
+      "bruto": 30000,
+      "anios": 8,
+      "meses": 0,
+      "antes": 0,
+      "oferta": 30000,
+      "marginal": 30,
+      "tipo": "improcedente",
+      "causa": "otra"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 3,
+      "M": 96,
+      "salDia": 82.1918,
+      "diasObj": 160,
+      "legalObj": 13150.6849,
+      "diasImp": 264,
+      "legalImp": 21698.6301,
+      "legal": 21698.6301,
+      "exento": 21698.6301,
+      "trib": 8301.3699,
+      "red": 2490.411,
+      "irpf": 1743.2877,
+      "neto": 28256.7123,
+      "netoLegal": 21698.6301,
+      "netoObj": 13150.6849,
+      "netoImp": 21698.6301,
+      "difBruta": 8301.3699,
+      "difNeta": 6558.0822,
+      "impMenosObj": 8547.9452,
+      "topeObj": 0,
+      "topeImp": 0,
+      "reduccionAplica": 1,
+      "motivo": ""
+     },
+     "titulo": "30.000 € brutos al año, 8 años de antigüedad, despido improcedente, oferta de 30.000 €",
+     "texto": "la legal (improcedente) serían 21.699 € y la oferta la supera en 8.301 €: te quedarían 28.257 € netos tras 1.743 € de IRPF estimado al 30 %."
+    }
+   ]
+  },
+  "paga-extra-navidad-cuanto-cobro-neto": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "importe": 1500,
+      "devengo": "semestral",
+      "situacion": "todo",
+      "mes": 9,
+      "dia": 1,
+      "diassin": 0,
+      "ret": 15,
+      "forma": "14"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "dias": 184,
+      "diasPeriodo": 184,
+      "pct": 100,
+      "bruta": 1500,
+      "retencion": 225,
+      "neto": 1275,
+      "cotizada": 97.5,
+      "netoReal": 1177.5
+     },
+     "titulo": "Paga de 1.500 €, devengo semestral, todo el periodo trabajado, retención del 15 %",
+     "texto": "corresponden 184 de 184 días: 1.500,00 € brutos y 1.275,00 € netos tras 225,00 € de retención (si además descuentas la cotización, 1.177,50 €)."
+    },
+    {
+     "inputs": {
+      "importe": 2000,
+      "devengo": "anual",
+      "situacion": "alta",
+      "mes": 4,
+      "dia": 1,
+      "diassin": 0,
+      "ret": 18,
+      "forma": "14"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "dias": 275,
+      "diasPeriodo": 365,
+      "pct": 75.3425,
+      "bruta": 1506.85,
+      "retencion": 271.23,
+      "neto": 1235.62,
+      "cotizada": 97.95,
+      "netoReal": 1137.67
+     },
+     "titulo": "Paga de 2.000 €, devengo anual, alta el 1/4, retención del 18 %",
+     "texto": "corresponden 275 de 365 días: 1.506,85 € brutos y 1.235,62 € netos tras 271,23 € de retención (si además descuentas la cotización, 1.137,67 €)."
+    },
+    {
+     "inputs": {
+      "importe": 1800,
+      "devengo": "semestral",
+      "situacion": "baja",
+      "mes": 10,
+      "dia": 31,
+      "diassin": 0,
+      "ret": 12,
+      "forma": "14"
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 5,
+      "dias": 123,
+      "diasPeriodo": 184,
+      "pct": 66.8478,
+      "bruta": 1203.26,
+      "retencion": 144.39,
+      "neto": 1058.87,
+      "cotizada": 78.21,
+      "netoReal": 980.66
+     },
+     "titulo": "Paga de 1.800 €, devengo semestral, baja el 31/10, retención del 12 %",
+     "texto": "corresponden 123 de 184 días: 1.203,26 € brutos y 1.058,87 € netos tras 144,39 € de retención (si además descuentas la cotización, 980,66 €)."
+    }
+   ]
+  },
+  "loteria-navidad-premio-neto-hacienda": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "premio": 400000,
+      "decimos": 1,
+      "personas": 1,
+      "cobro": "uno"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 2,
+      "netoDecimo": 328000,
+      "exentoDecimo": 40000,
+      "sujetoDecimo": 360000,
+      "retDecimo": 72000,
+      "bruto": 400000,
+      "exento": 40000,
+      "sujeto": 360000,
+      "retencion": 72000,
+      "cuota": 72000,
+      "netoTotal": 328000,
+      "brutoPersona": 400000,
+      "exentoPersona": 40000,
+      "sujetoPersona": 360000,
+      "retPersona": 72000,
+      "netoPersona": 328000,
+      "pctNeto": 82
+     },
+     "titulo": "Premio de 400.000 € por décimo",
+     "texto": "quedan exentos 40.000 €, tributa el exceso de 360.000 € y la retención es de 72.000 €: cobras 328.000 €."
+    },
+    {
+     "inputs": {
+      "premio": 40000,
+      "decimos": 1,
+      "personas": 1,
+      "cobro": "uno"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 1,
+      "netoDecimo": 40000,
+      "exentoDecimo": 40000,
+      "sujetoDecimo": 0,
+      "retDecimo": 0,
+      "bruto": 40000,
+      "exento": 40000,
+      "sujeto": 0,
+      "retencion": 0,
+      "cuota": 0,
+      "netoTotal": 40000,
+      "brutoPersona": 40000,
+      "exentoPersona": 40000,
+      "sujetoPersona": 0,
+      "retPersona": 0,
+      "netoPersona": 40000,
+      "pctNeto": 100
+     },
+     "titulo": "Premio de 40.000 € por décimo",
+     "texto": "el premio queda exento (40.000 €) y cobras el 100 %: 40.000 €."
+    },
+    {
+     "inputs": {
+      "premio": 400000,
+      "decimos": 1,
+      "personas": 4,
+      "cobro": "cotitulares"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 3,
+      "netoDecimo": 328000,
+      "exentoDecimo": 40000,
+      "sujetoDecimo": 360000,
+      "retDecimo": 72000,
+      "bruto": 400000,
+      "exento": 40000,
+      "sujeto": 360000,
+      "retencion": 72000,
+      "cuota": 72000,
+      "netoTotal": 328000,
+      "brutoPersona": 100000,
+      "exentoPersona": 10000,
+      "sujetoPersona": 90000,
+      "retPersona": 18000,
+      "netoPersona": 82000,
+      "pctNeto": 82
+     },
+     "titulo": "Premio de 400.000 € por décimo, repartido entre 4 personas",
+     "texto": "quedan exentos 40.000 €, tributa el exceso de 360.000 € y la retención es de 72.000 €: cobras 328.000 € (82.000 € por persona)."
+    }
+   ]
+  },
+  "baja-medica-cuanto-cobro-incapacidad-temporal": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "sueldo": 1800,
+      "pagas": "prorr",
+      "cont": "comun",
+      "dias": 30,
+      "mejora": 0,
+      "tipo": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 3,
+      "brDia": 60,
+      "salDia": 60,
+      "s60": 36,
+      "s75": 45,
+      "n0": 3,
+      "n60": 17,
+      "n75": 10,
+      "nFull": 0,
+      "prest60": 612,
+      "prest75": 450,
+      "prest": 1062,
+      "compl0": 0,
+      "compl60": 0,
+      "compl75": 0,
+      "compl": 0,
+      "salFull": 0,
+      "ingreso": 1062,
+      "habitual": 1800,
+      "perdida": 738,
+      "perdidaNeta": 738,
+      "perdida3": 180,
+      "perdida75": 15,
+      "perdida60": 24,
+      "perdida0": 60,
+      "perdidaMes": 450,
+      "empSub": 432,
+      "empresa": 432,
+      "entidad": 630,
+      "tope": 0
+     },
+     "titulo": "1.800 € de sueldo mensual (pagas prorrateadas), enfermedad común, 30 días de baja, sin mejora de convenio",
+     "texto": "cobrarías 1.062 € en esos 30 días frente a 1.800 € de sueldo habitual, es decir 738 € menos; la empresa adelanta 432 € y el resto lo paga la entidad gestora."
+    },
+    {
+     "inputs": {
+      "sueldo": 2200,
+      "pagas": "14",
+      "cont": "comun",
+      "dias": 60,
+      "mejora": 0,
+      "tipo": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 3,
+      "brDia": 85.5556,
+      "salDia": 85.5556,
+      "s60": 51.3333,
+      "s75": 64.1667,
+      "n0": 3,
+      "n60": 17,
+      "n75": 40,
+      "nFull": 0,
+      "prest60": 872.6667,
+      "prest75": 2566.6667,
+      "prest": 3439.3333,
+      "compl0": 0,
+      "compl60": 0,
+      "compl75": 0,
+      "compl": 0,
+      "salFull": 0,
+      "ingreso": 3439.3333,
+      "habitual": 5133.3333,
+      "perdida": 1694.0,
+      "perdidaNeta": 1694.0,
+      "perdida3": 256.6667,
+      "perdida75": 21.3889,
+      "perdida60": 34.2222,
+      "perdida0": 85.5556,
+      "perdidaMes": 641.6667,
+      "empSub": 616,
+      "empresa": 616,
+      "entidad": 2823.3333,
+      "tope": 0
+     },
+     "titulo": "2.200 € de sueldo mensual (14 pagas), enfermedad común, 60 días de baja, sin mejora de convenio",
+     "texto": "cobrarías 3.439 € en esos 60 días frente a 5.133 € de sueldo habitual, es decir 1.694 € menos; la empresa adelanta 616 € y el resto lo paga la entidad gestora."
+    },
+    {
+     "inputs": {
+      "sueldo": 1800,
+      "pagas": "prorr",
+      "cont": "prof",
+      "dias": 30,
+      "mejora": 0,
+      "tipo": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 3,
+      "brDia": 60,
+      "salDia": 60,
+      "s60": 36,
+      "s75": 45,
+      "n0": 0,
+      "n60": 0,
+      "n75": 29,
+      "nFull": 1,
+      "prest60": 0,
+      "prest75": 1305,
+      "prest": 1305,
+      "compl0": 0,
+      "compl60": 0,
+      "compl75": 0,
+      "compl": 0,
+      "salFull": 60,
+      "ingreso": 1365,
+      "habitual": 1800,
+      "perdida": 435,
+      "perdidaNeta": 435,
+      "perdida3": 30,
+      "perdida75": 15,
+      "perdida60": 24,
+      "perdida0": 60,
+      "perdidaMes": 450,
+      "empSub": 0,
+      "empresa": 60,
+      "entidad": 1305,
+      "tope": 0
+     },
+     "titulo": "1.800 € de sueldo mensual (pagas prorrateadas), accidente de trabajo, 30 días de baja, sin mejora de convenio",
+     "texto": "cobrarías 1.365 € en esos 30 días frente a 1.800 € de sueldo habitual, es decir 435 € menos; la empresa adelanta 0 € y el resto lo paga la entidad gestora."
+    }
+   ]
+  },
+  "pagas-extra-prorrateadas-o-14-pagas": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 24000,
+      "extras": 2,
+      "contrato": "indef",
+      "ret": 15,
+      "situacion": "todo",
+      "mes": 10,
+      "dia": 31
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "pagaExtra": 1714.29,
+      "mensual14": 1714.29,
+      "mensual12": 2000,
+      "baseCot": 2000,
+      "cotMes": 130,
+      "baseDiaria": 66.67,
+      "retMes14": 257.14,
+      "retMesPaga14": 514.29,
+      "retMes12": 300,
+      "netoMes14": 1327.14,
+      "netoMesPaga14": 2784.29,
+      "netoMes12": 1570,
+      "difMensual": 242.86,
+      "bajoSmi": 0,
+      "netoAnual14": 18840,
+      "netoAnual12": 18840,
+      "difAnual": 0,
+      "retAnual14": 3600,
+      "retAnual12": 3600,
+      "cotAnual": 1560
+     },
+     "titulo": "24.000 € brutos al año, 2 pagas extra, retención del 15 %",
+     "texto": "con 14 pagas el mes normal es de 1.714 € brutos (1.327,14 € netos) y los meses con paga 2.784,29 € netos; prorrateadas cobrarías 2.000 € brutos (1.570,00 € netos) cada mes. Neto anual: 18.840 € frente a 18.840 €, igual en ambos casos."
+    },
+    {
+     "inputs": {
+      "bruto": 36000,
+      "extras": 2,
+      "contrato": "indef",
+      "ret": 18,
+      "situacion": "todo",
+      "mes": 10,
+      "dia": 31
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "pagaExtra": 2571.43,
+      "mensual14": 2571.43,
+      "mensual12": 3000,
+      "baseCot": 3000,
+      "cotMes": 195,
+      "baseDiaria": 100,
+      "retMes14": 462.86,
+      "retMesPaga14": 925.71,
+      "retMes12": 540,
+      "netoMes14": 1913.57,
+      "netoMesPaga14": 4022.14,
+      "netoMes12": 2265,
+      "difMensual": 351.43,
+      "bajoSmi": 0,
+      "netoAnual14": 27180,
+      "netoAnual12": 27180,
+      "difAnual": 0,
+      "retAnual14": 6480,
+      "retAnual12": 6480,
+      "cotAnual": 2340
+     },
+     "titulo": "36.000 € brutos al año, 2 pagas extra, retención del 18 %",
+     "texto": "con 14 pagas el mes normal es de 2.571 € brutos (1.913,57 € netos) y los meses con paga 4.022,14 € netos; prorrateadas cobrarías 3.000 € brutos (2.265,00 € netos) cada mes. Neto anual: 27.180 € frente a 27.180 €, igual en ambos casos."
+    }
+   ]
+  },
+  "retencion-irpf-nomina-subir-o-no": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 24000,
+      "ret": 10,
+      "hijos": 0,
+      "menores3": 0,
+      "reparto": "entero",
+      "pagador2": 0,
+      "ccaa": "madrid",
+      "euribor": 3.247
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "cuota": 3038.4387,
+      "cuotaIntegra": 3038.4387,
+      "ded": 0,
+      "ret1": 2400,
+      "ret2": 0,
+      "retenido": 2400,
+      "resultado": 638.4387,
+      "tipo0": 12.6602,
+      "tipo0p2": 0,
+      "alcanza1": 1,
+      "alcanza2": 0,
+      "tipoLegal": 13.51,
+      "tipo2": 0,
+      "obligado": 1,
+      "limiteObl": 22000,
+      "coste": 20.7301,
+      "orientativo": 0
+     },
+     "titulo": "24.000 € brutos al año, un pagador, Comunidad de Madrid, sin hijos, retención del 10 %",
+     "texto": "el IRPF de ese año sería de 3.038 € y te retienen 2.400 €: saldrías a pagar 638 € en la renta; la retención que dejaría el resultado en 0 sería del 12,66 % y la mínima legal estimada del 13,51 %."
+    },
+    {
+     "inputs": {
+      "bruto": 30000,
+      "ret": 12,
+      "hijos": 0,
+      "menores3": 0,
+      "reparto": "entero",
+      "pagador2": 0,
+      "ccaa": "madrid",
+      "euribor": 3.247
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "cuota": 4598.0187,
+      "cuotaIntegra": 4598.0187,
+      "ded": 0,
+      "ret1": 3600,
+      "ret2": 0,
+      "retenido": 3600,
+      "resultado": 998.0187,
+      "tipo0": 15.3267,
+      "tipo0p2": 0,
+      "alcanza1": 1,
+      "alcanza2": 0,
+      "tipoLegal": 16.42,
+      "tipo2": 0,
+      "obligado": 1,
+      "limiteObl": 22000,
+      "coste": 32.4057,
+      "orientativo": 0
+     },
+     "titulo": "30.000 € brutos al año, un pagador, Comunidad de Madrid, sin hijos, retención del 12 %",
+     "texto": "el IRPF de ese año sería de 4.598 € y te retienen 3.600 €: saldrías a pagar 998 € en la renta; la retención que dejaría el resultado en 0 sería del 15,33 % y la mínima legal estimada del 16,42 %."
+    },
+    {
+     "inputs": {
+      "bruto": 45000,
+      "ret": 20,
+      "hijos": 0,
+      "menores3": 0,
+      "reparto": "entero",
+      "pagador2": 0,
+      "ccaa": "madrid",
+      "euribor": 3.247
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "cuota": 8881.4624,
+      "cuotaIntegra": 8881.4624,
+      "ded": 0,
+      "ret1": 9000,
+      "ret2": 0,
+      "retenido": 9000,
+      "resultado": -118.5376,
+      "tipo0": 19.7366,
+      "tipo0p2": 0,
+      "alcanza1": 1,
+      "alcanza2": 0,
+      "tipoLegal": 21.06,
+      "tipo2": 0,
+      "obligado": 1,
+      "limiteObl": 22000,
+      "coste": 3.8489,
+      "orientativo": 0
+     },
+     "titulo": "45.000 € brutos al año, un pagador, Comunidad de Madrid, sin hijos, retención del 20 %",
+     "texto": "el IRPF de ese año sería de 8.881 € y te retienen 9.000 €: te devolverían 119 €; la retención que dejaría el resultado en 0 sería del 19,74 % y la mínima legal estimada del 21,06 %."
+    }
+   ]
+  },
+  "jubilacion-anticipada-o-demorada": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "edad": 62,
+      "cot": 38,
+      "br": 2000,
+      "eleg_a": 63,
+      "eleg_m": 0,
+      "fin": 85,
+      "irpf": 0,
+      "ipc": 2.7
+     },
+     "resultado": {
+      "ordM": 780,
+      "edadOrdinaria": 65,
+      "cotAlCausar": 39,
+      "estado": "ok",
+      "pensionOrdinaria": 2166.4134,
+      "pensionElegida": 1663.74,
+      "coefPct": 19,
+      "extraPct": 0,
+      "complemento": 0,
+      "dt34": 0,
+      "ordRealM": 780,
+      "mesesDiff": -24,
+      "pctBase": 100,
+      "pctBaseOrd": 100,
+      "avisoMinima": 0,
+      "acumElegida": 701485.0939,
+      "acumOrdinaria": 806562.2278,
+      "diferencia": -105077.1339,
+      "equilibrioEdad": 72.5833
+     },
+     "titulo": "62 años, 38 años cotizados, base reguladora de 2.000 €, jubilación a los 63 años, cobrando hasta los 85",
+     "texto": "a la edad ordinaria que te corresponde (65 años) cobrarías 2.166 € al mes y jubilándote 24 meses antes 1.664 € (reducción del 19 %); hasta los 85 acumularías 105.077 € menos, y la opción de jubilarte más tarde supera en acumulado a la otra solo si cobras más allá de los 72,6 años."
+    },
+    {
+     "inputs": {
+      "edad": 64,
+      "cot": 38,
+      "br": 2000,
+      "eleg_a": 67,
+      "eleg_m": 0,
+      "fin": 85,
+      "irpf": 0,
+      "ipc": 2.7
+     },
+     "resultado": {
+      "ordM": 780,
+      "edadOrdinaria": 65,
+      "cotAlCausar": 41,
+      "estado": "ok",
+      "pensionOrdinaria": 2054,
+      "pensionElegida": 2339.7264,
+      "coefPct": 0,
+      "extraPct": 8,
+      "complemento": 0,
+      "dt34": 0,
+      "ordRealM": 780,
+      "mesesDiff": 24,
+      "pctBase": 100,
+      "pctBaseOrd": 100,
+      "avisoMinima": 0,
+      "acumElegida": 761660.9716,
+      "acumOrdinaria": 764710.3927,
+      "diferencia": -3049.4211,
+      "equilibrioEdad": 85.8333
+     },
+     "titulo": "64 años, 38 años cotizados, base reguladora de 2.000 €, jubilación a los 67 años, cobrando hasta los 85",
+     "texto": "a la edad ordinaria que te corresponde (65 años) cobrarías 2.054 € al mes y jubilándote 24 meses después 2.340 € (incremento del 8 %); hasta los 85 acumularías 3.049 € menos, y la opción de jubilarte más tarde supera en acumulado a la otra solo si cobras más allá de los 85,8 años."
+    }
+   ]
+  }
  }
 }

@@ -3,7 +3,7 @@
   "title": "Bootcamp, FP o curso online: cuánto cuesta y se recupera",
   "description": "Calcula el coste total de un bootcamp, FP o curso online (matrícula y sueldo que dejas de cobrar), los meses para recuperarlo y el valor a N años.",
   "h1": "Bootcamp, FP o curso online: coste y retorno de formarte",
-  "lead": "Formarte para cambiar de trabajo compensa si la subida neta de sueldo que esperas supera la subida mínima que calcula la página; con los ejemplos de la página (matrícula de 6.000 €, 6 meses de formación cobrando la mitad de un sueldo de 1.500 €, 3 meses de búsqueda y una subida neta esperada de 500 € al mes), el coste total es de 10.500 €, se recupera en 21 meses desde que cobras la subida y a 5 años deja 15.000 €; con una subida de 120 € al mes, a 5 años pierdes 4.380 €. La subida es una hipótesis tuya, no una promesa de empleo ni de sueldo.",
+  "lead": "Formarte para cambiar de trabajo compensa si la subida neta de sueldo que esperas supera la subida mínima que calcula la página. Con los ejemplos (matrícula de 6.000 €, 6 meses cobrando la mitad de un sueldo de 1.500 €, 3 meses de búsqueda y subida neta de 500 € al mes) el coste total es de 10.500 €, se recupera en 21 meses desde que cobras la subida y a 5 años deja 15.000 €; con 120 € al mes, a 5 años pierdes 4.380 €. La subida es una hipótesis tuya, no una promesa de sueldo.",
   "veredicto": "Una formación compensa en tu horizonte cuando la subida neta de sueldo que esperas supera la subida mínima (coste total dividido entre los meses que cobras la subida); por debajo de ese umbral no compensa, y si la diferencia es menor del 5 % del coste, es un empate práctico. La subida y los meses de búsqueda son hipótesis tuyas, no una promesa de empleo.",
   "tema": "ahorro",
   "inputs": [
@@ -67,19 +67,19 @@
   "faqs": [
     [
       "¿Cuánto cuesta realmente un curso, bootcamp o FP?",
-      "Es la matrícula (tras becas o gratuidad) más el sueldo que dejas de cobrar mientras te formas. Con los ejemplos de la página son 6.000 € de matrícula más 4.500 € de sueldo (6 meses cobrando la mitad de 1.500 €): 10.500 € en total. Con una formación gratuita y compaginada con tu trabajo, el coste puede ser 0 €."
+      "La matrícula (tras becas) más el sueldo que dejas de cobrar mientras te formas. Con los ejemplos: 6.000 € de matrícula y 4.500 € de sueldo (6 meses cobrando la mitad de 1.500 €), 10.500 € en total. Con formación gratuita y compaginada con tu trabajo, puede ser 0 €."
     ],
     [
       "¿En cuántos meses se recupera la inversión?",
-      "El coste total dividido entre la subida neta mensual que esperas. Con los ejemplos son 21 meses desde que empiezas a cobrar la subida (10.500 € entre 500 €), a los que se suman los meses de formación y de búsqueda. Con una subida de 120 € al mes serían unos 88 meses, más allá de un horizonte de 5 años."
+      "El coste total entre la subida neta mensual esperada. Con los ejemplos, 21 meses desde que empiezas a cobrar la subida (10.500 € entre 500 €), más los meses de formación y búsqueda. Con 120 € al mes serían unos 88 meses, más allá de un horizonte de 5 años."
     ],
     [
       "¿Qué subida de sueldo necesito para que compense?",
-      "La subida mínima es el coste total entre los meses que llegas a cobrarla dentro del horizonte. Con los ejemplos, a 5 años son unos 206 € netos al mes. Si tu subida esperada queda por debajo, no compensa en ese horizonte. La subida es una hipótesis tuya: la página no cifra sueldos de mercado ni promete empleo."
+      "El coste total entre los meses que llegas a cobrar la subida dentro del horizonte. Con los ejemplos, a 5 años son unos 206 € netos al mes; si tu subida esperada queda por debajo, no compensa. La subida es hipótesis tuya: la página no cifra sueldos ni promete empleo."
     ],
     [
       "¿La FP es gratuita o tiene becas?",
-      "Depende de tu comunidad, del tipo de centro (público o privado) y de tu situación. Por eso la beca o gratuidad es un dato que escribes tú: consulta tu comunidad y pon el porcentaje de la matrícula que te cubren. Aunque la matrícula sea 0 €, el sueldo que dejas de cobrar sigue contando como coste."
+      "Depende de tu comunidad, del tipo de centro (público o privado) y de tu situación, así que la beca o gratuidad la escribes tú: pon el porcentaje de matrícula que te cubren. Aunque la matrícula sea 0 €, el sueldo que dejas de cobrar sigue contando como coste."
     ],
     [
       "¿Qué no incluye esta estimación?",

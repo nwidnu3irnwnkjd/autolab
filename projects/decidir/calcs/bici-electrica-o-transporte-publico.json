@@ -1,9 +1,9 @@
 {
   "slug": "bici-electrica-o-transporte-publico",
-  "title": "Bici eléctrica o transporte público: coste al año",
+  "title": "Bici eléctrica, transporte público o coche: coste anual",
   "description": "Compara el coste anual de bici eléctrica, abono de transporte y coche, los años para amortizar la bici y los km a partir de los que compensa cada una.",
   "h1": "Bici eléctrica, transporte público o coche: coste anual y cuándo compensa",
-  "lead": "La bici eléctrica sale más barata que el coche cuando haces más kilómetros al año que su coste fijo anual (precio entre años de vida útil, más seguro y robo) dividido entre lo que cuesta cada km del coche menos lo que cuesta cada km de la bici, y más barata que el abono cuando este cuesta más que el coste anual de la bici entre 12. Con tu trayecto, tu abono y tu bici, la calculadora te da el ahorro anual frente a cada modo, los años para amortizarla y esos dos umbrales; no incluye tiempo, comodidad, clima ni las ayudas de tu municipio.",
+  "lead": "Con los ejemplos de la página (10 km al día, 220 días, bici de 1.800 € y abono de 40 €) la bici eléctrica cuesta 411 € al año frente a 438 € del coche y 480 € del abono: compensa frente al coche desde unos 2.000 km al año y frente al abono si este cuesta más de unos 34 € al mes. Pon tu trayecto, tu abono y tu bici para ver el ahorro anual, los años para amortizarla y esos umbrales; no incluye tiempo, comodidad, clima ni ayudas de tu municipio.",
   "veredicto": "La bici eléctrica compensa frente al coche a partir de los km anuales en que su coste fijo se reparte por debajo de lo que ahorra cada km, y frente al abono si este cuesta más que el coste anual de la bici entre 12; con tus datos la calculadora da el ahorro, los años de amortización y ambos umbrales, sin incluir tiempo, comodidad ni ayudas locales.",
   "tema": "coche",
   "inputs": [
@@ -77,7 +77,7 @@
   "faqs": [
     [
       "¿Sale más barato ir en bici eléctrica, en transporte público o en coche?",
-      "Depende de tus kilómetros al año y de lo que pagues por el abono y el combustible. El coche cuesta por km, el abono es una cuota fija y la bici tiene un coste fijo (su precio repartido en su vida útil) más un coste pequeño por km. La calculadora compara los tres con tus datos y te dice cuál es el más barato."
+      "Depende de tus km al año y de lo que pagues por abono y combustible. Con los ejemplos (10 km al día, 220 días), la bici cuesta 411 € al año, el coche 438 € y el abono 480 €. Mete tus datos para ver cuál gana en tu caso."
     ],
     [
       "¿En cuántos años se amortiza una bici eléctrica?",
@@ -93,7 +93,7 @@
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No incluye el tiempo del trayecto, la comodidad, el clima, el aparcamiento ni los costes fijos del coche (seguro, impuesto, ITV). Tampoco las ayudas a la compra de bicis eléctricas, que dependen de tu municipio o comunidad: consulta tu ayuntamiento. Supone que la bici sustituye todos los desplazamientos y que no la revendes. Es información orientativa."
+      "No incluye el tiempo del trayecto, la comodidad, el clima, el aparcamiento ni los costes fijos del coche (seguro, impuesto, ITV), ni las ayudas a la compra de bicis, que dependen de tu municipio o comunidad. Supone que la bici sustituye todos los desplazamientos y que no la revendes. Orientativo."
     ]
   ],
   "sources": "Modelo propio: coste anual del coche = km al año x coste por km; coste anual del abono = cuota mensual x 12 (la pones tú); coste anual de la bici = precio / vida útil + seguro y robo + km al año x (mantenimiento + carga). Coste por km del coche por defecto: precio medio de la gasolina 95 (Geoportal de gasolineras, MITECO, https://geoportalgasolineras.es/, dato del día de la última actualización de la página) x 6,5 l/100 km + 0,08 €/km de desgaste; si no hay dato vivo, 1,833 €/l (consulta 2/10/2026). Carga por defecto: 12 Wh/km x precio medio del PVPC del día (Red Eléctrica de España, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) + 0,02 €/km de mantenimiento; si no hay dato vivo, 0,22 €/kWh (consulta 2/10/2026). Años de amortización = precio de la bici / (coste anual del coche o del abono menos mantenimiento, carga y seguro de la bici). Km mínimos frente al coche = (precio / vida útil + seguro) / (coste por km del coche menos coste por km de la bici). Abono mínimo = coste anual de la bici / 12. Consumo, desgaste, mantenimiento, carga, vida útil, reventa (0 €), trayecto, precio de la bici, seguro y abono son ejemplos o supuestos editables, no cifras oficiales ni tarifas de una ciudad concreta. Información orientativa, no asesoramiento."

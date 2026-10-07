@@ -3,7 +3,7 @@
   "title": "Universidad pública o privada: calcula el sobrecoste",
   "description": "Calcula el sobrecoste de la universidad privada frente a la pública y la diferencia de salario que necesitarías para amortizarlo, con tus cifras.",
   "h1": "Universidad pública o privada (grado o máster): ¿compensa el sobrecoste?",
-  "lead": "La universidad privada solo compensa en dinero frente a la pública si la diferencia de salario que esperas cada año es mayor que su sobrecoste repartido en tus años de trabajo, y esa diferencia es una hipótesis tuya, no una promesa: con los ejemplos declarados de la página (4 años, matrícula pública de 1.000 € al año y privada de 8.000 €) el sobrecoste es de 28.000 € y haría falta una diferencia de salario de al menos 2.800 € al año durante 10 años; con 2.000 € al año no se amortizaría en ese plazo, y con 4.000 € se amortizaría en 7 años. El retorno real depende del sector, la nota, la red de contactos y el mercado, y no todo lo que importa se mide en euros. Pon tus matrículas (consulta tu universidad) y tus hipótesis.",
+  "lead": "La universidad privada solo compensa en dinero frente a la pública si la diferencia de salario que esperas cada año supera su sobrecoste repartido en tus años de trabajo, y esa diferencia es una hipótesis tuya, no una promesa. Con los ejemplos (4 años, matrícula pública de 1.000 € al año y privada de 8.000 €) el sobrecoste es de 28.000 € y haría falta una diferencia de al menos 2.800 € al año durante 10 años; con 2.000 € no se amortizaría en ese plazo y con 4.000 € sí, en 7 años. Pon tus matrículas y tus hipótesis.",
   "veredicto": "La privada compensa en dinero solo si la diferencia de salario anual que esperas supera su sobrecoste total dividido entre tus años de trabajo; la calculadora te da ese mínimo con tus datos, y el resultado es una hipótesis, no una promesa: el retorno depende del sector, la nota y el mercado, y no incluye lo que no se mide en euros (vocación, calidad, prácticas, cercanía).",
   "tema": "ahorro",
   "inputs": [
@@ -67,23 +67,23 @@
   "faqs": [
     [
       "¿Cuánto más tendría que ganar para que compense la universidad privada?",
-      "La diferencia de salario mínima es el sobrecoste total de la privada (matrícula adicional más coste de vida adicional menos ayudas) dividido entre los años de trabajo que consideres, si no descuentas. Con los ejemplos de la página son 28.000 € de sobrecoste y 2.800 € al año durante 10 años. Es una cuenta, no una previsión: la diferencia de salario real no está garantizada y depende de ti, del sector y del mercado."
+      "El sobrecoste total de la privada (matrícula adicional más coste de vida adicional menos ayudas) entre los años de trabajo que consideres, sin descuento. Con los ejemplos: 28.000 € de sobrecoste y 2.800 € al año durante 10 años. Es una cuenta, no una previsión."
     ],
     [
       "¿La universidad privada garantiza un mejor sueldo?",
-      "No. La calculadora no predice ingresos: la diferencia de salario es una hipótesis que escribes tú, y puede ser cero o negativa. El resultado profesional depende del sector, de la nota, de la red de contactos, de las prácticas y del mercado de trabajo. Si pones 0, la calculadora te muestra que la privada nunca se amortiza en dinero; si pones una cifra, te dice si cubre el sobrecoste, no si se va a dar."
+      "No. La calculadora no predice ingresos: la diferencia de salario es una hipótesis tuya y puede ser cero o negativa. El resultado profesional depende del sector, la nota, los contactos, las prácticas y el mercado. Si pones 0, la privada nunca se amortiza en dinero."
     ],
     [
       "¿Cuánto cuesta una matrícula pública o privada?",
-      "Depende. Las matrículas públicas varían por comunidad autónoma, universidad, titulación y número de créditos: consulta los precios públicos de tu universidad. Las privadas fijan su propio precio. Los importes de la página (1.000 € y 8.000 € al año) son ejemplos para ver el cálculo, no cifras oficiales. Escribe las de las universidades que comparas, y recuerda que una beca puede cambiar el coste de cualquiera de las dos."
+      "Depende. Las públicas varían por comunidad, universidad, titulación y créditos: consulta los precios públicos de tu universidad. Las privadas fijan su precio. Los importes de la página (1.000 € y 8.000 € al año) son ejemplos, no cifras oficiales; una beca puede cambiar el coste de cualquiera."
     ],
     [
       "¿Qué hago con las becas y el coste de vivir fuera?",
-      "Se escriben como diferencias entre las dos opciones: si la privada te queda en tu ciudad y la pública te obliga a mudarte, pon el coste de vida adicional en negativo; si tienes más beca en una opción, la diferencia de ayudas. Las becas dependen de tu renta y de tu convocatoria: consulta la oficina de becas de tu universidad o el Ministerio. Los costes de vida que son iguales en las dos opciones no se cuentan."
+      "Como diferencias entre las dos opciones: si la pública te obliga a mudarte y la privada no, pon el coste de vida adicional en negativo; si una tiene más beca, la diferencia. Las becas dependen de tu renta y convocatoria: consulta a tu universidad o al Ministerio."
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye lo que no se mide en euros (vocación, calidad de la enseñanza, prácticas, ambiente, cercanía a casa), los ingresos que dejas de ganar mientras estudias, los impuestos ni los costes que son iguales en las dos opciones. Es una ayuda para ver la parte económica de una decisión que tiene más partes. La tasa de descuento es opcional: con 0 no se descuenta el dinero futuro."
+      "No incluye lo que no se mide en euros (vocación, calidad de la enseñanza, prácticas, cercanía a casa), los ingresos que dejas de ganar mientras estudias, los impuestos ni los costes iguales en las dos opciones. Con tasa de descuento 0 no se descuenta el dinero futuro."
     ]
   ],
   "sources": "Modelo propio: sobrecoste anual de la privada = matrícula privada − matrícula pública + coste de vida adicional − ayudas adicionales, pagado al inicio de cada año de estudio; sobrecoste total = sobrecoste anual x años de estudio; diferencia de salario mínima = sobrecoste (en valor actual) / factor de descuento de los años de trabajo; años de trabajo para amortizar = sobrecoste / diferencia de salario cuando la tasa es 0 (con tasa positiva, años necesarios descontando el dinero futuro); VAN = diferencia de salario descontada − sobrecoste descontado. La diferencia de salario es una hipótesis del usuario, no un dato de mercado ni una previsión. Las matrículas de la página (1.000 € al año la pública y 8.000 € la privada) y los demás valores por defecto son ejemplos declarados, no cifras oficiales: las matrículas públicas las fija cada comunidad autónoma y universidad (consulta los precios públicos de tu universidad) y las privadas fijan su precio. Información sobre becas: Ministerio de Educación, FP y Deportes, https://www.becaseducacion.gob.es/ (consulta 2/10/2026). Información orientativa, no asesoramiento."

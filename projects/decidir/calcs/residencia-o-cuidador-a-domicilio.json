@@ -3,7 +3,7 @@
   "title": "Cuánto cuesta una residencia o un cuidador a domicilio",
   "description": "Compara cuánto cuesta al mes una residencia y un cuidador a domicilio, con cotización, adaptación y horas de familia, y las horas de equilibrio.",
   "h1": "Residencia o cuidador a domicilio: coste real mensual de cada opción",
-  "lead": "El cuidado a domicilio cuesta menos que una residencia mientras las horas diarias de cuidador no pasen del punto de equilibrio, que depende de la cuota de la residencia, el coste por hora con cotización, la adaptación de la vivienda y el cuidado familiar que valores: con los ejemplos de la página (residencia 2.500 al mes, 6 horas de cuidador a 12 € la hora con una cotización de ejemplo del 30 %, 6.000 € de adaptación repartidos en 5 años y 400 € al mes de cuidado familiar) la residencia sale a 2.500 € y el domicilio a 3.347 €, y el equilibrio está en 4,2 horas al día; con 2 horas de cuidador y sin cuidado familiar, el domicilio sale a 1.049 €. Esta página mide solo dinero: no valora la atención ni la seguridad, ni cubre la Ley de Dependencia ni las prestaciones (consulta a los servicios sociales de tu comunidad).",
+  "lead": "El cuidado a domicilio cuesta menos que una residencia mientras las horas diarias de cuidador no pasen del punto de equilibrio. Con los ejemplos (residencia a 2.500 € al mes, 6 horas de cuidador a 12 € la hora con una cotización de ejemplo del 30 %, 6.000 € de adaptación en 5 años y 400 € al mes de cuidado familiar) la residencia sale a 2.500 € y el domicilio a 3.347 €, y el equilibrio está en 4,2 horas al día; con 2 horas y sin cuidado familiar, el domicilio sale a 1.049 €. Mide solo dinero: no valora la atención ni la seguridad, ni cubre la Ley de Dependencia (consulta a los servicios sociales de tu comunidad).",
   "veredicto": "El cuidado a domicilio cuesta menos que la residencia solo mientras las horas diarias de cuidador queden por debajo del equilibrio que sale de tus datos: cuota de la residencia, coste por hora con cotización, adaptación de la vivienda repartida y valor del cuidado familiar. Es una comparación de coste, no una recomendación sobre el cuidado.",
   "tema": "ahorro",
   "inputs": [
@@ -70,15 +70,15 @@
   "faqs": [
     [
       "¿Qué sale más barato, una residencia o un cuidador a domicilio?",
-      "Depende de las horas diarias de cuidador que haga falta contratar. Con los ejemplos de la página (residencia a 2.500 € al mes, 12 € la hora con cotización de ejemplo del 30 %, 6.000 € de adaptación en 5 años y 400 € de cuidado familiar) el domicilio con 6 horas diarias sale a 3.347 € y con 2 horas a 1.049 €. El punto de equilibrio está en 4,2 horas al día; con tus datos cambiará."
+      "Depende de las horas diarias de cuidador. Con los ejemplos de la página (residencia a 2.500 € al mes), el domicilio sale a 3.347 € con 6 horas al día y a 1.049 € con 2 horas y sin cuidado familiar; el equilibrio está en 4,2 horas al día."
     ],
     [
       "¿Cuántas horas de cuidador compensan frente a la residencia?",
-      "Es el punto de equilibrio: las horas diarias en las que el domicilio iguala a la residencia. Con los ejemplos son 4,2 horas al día; por debajo, el domicilio sale más barato en dinero, y por encima, la residencia. Cuanto más valores el cuidado familiar o más cueste adaptar la vivienda, menos horas de cuidador caben antes de igualar."
+      "Son las horas diarias en que el domicilio iguala a la residencia. Con los ejemplos, 4,2 al día; por debajo, el domicilio sale más barato en dinero y por encima, la residencia. Adaptar la vivienda o valorar el cuidado familiar reduce esas horas."
     ],
     [
       "¿Qué cotización lleva contratar a un cuidador?",
-      "Esta página no cita cifras legales: el porcentaje de cotización es un dato que pones tú, y el de ejemplo (30 %) no es una cifra oficial. Consulta el que corresponde a tu caso en la Seguridad Social o con un gestor antes de decidir, porque cambia el coste por hora real del cuidador."
+      "Esta página no cita cifras legales: el porcentaje de cotización lo pones tú, y el de ejemplo (30 %) no es oficial. Consulta el que corresponde a tu caso en la Seguridad Social o con un gestor, porque cambia el coste real por hora del cuidador."
     ],
     [
       "¿Incluye la Ley de Dependencia o las ayudas?",
@@ -86,7 +86,7 @@
     ],
     [
       "¿Qué no incluye este cálculo?",
-      "No incluye la atención, la seguridad ni el bienestar de la persona, que son lo principal de esta decisión, ni vacaciones o bajas del cuidador, gastos médicos, alimentación en casa o cambios de precio. No es consejo sanitario ni legal: para valorar qué cuidado necesita, consulta con profesionales de la salud y los servicios sociales."
+      "No incluye la atención, la seguridad ni el bienestar de la persona, que son lo principal de esta decisión, ni vacaciones o bajas del cuidador, gastos médicos, alimentación ni cambios de precio. No es consejo sanitario ni legal: consulta con profesionales de la salud y los servicios sociales."
     ]
   ],
   "sources": "Modelo propio: coste del cuidador = horas diarias x coste por hora x (1 + cotización) x 365 / 12; adaptación mensual = gasto de adaptación / (años x 12); domicilio = cuidador + adaptación + cuidado familiar valorado - ayudas; residencia = cuota - ayudas; horas de equilibrio = (cuota de la residencia - adaptación mensual - cuidado familiar) / (coste por hora x (1 + cotización) x 365 / 12), con mínimo 0. Todas las cifras de la página (2.500 €, 6 horas, 12 €, 30 %, 6.000 €, 5 años, 400 €) son ejemplos declarados y editables, no precios de ningún centro ni cifras legales; el porcentaje de cotización debe consultarse en la Seguridad Social, https://www.seg-social.es (consultada el 2/10/2026). La Ley de Dependencia y las prestaciones por comunidad no están cubiertas: Instituto de Mayores y Servicios Sociales, https://www.imserso.es (consultado el 2/10/2026), y los servicios sociales de tu comunidad. Información orientativa, sin consejo sanitario ni legal."

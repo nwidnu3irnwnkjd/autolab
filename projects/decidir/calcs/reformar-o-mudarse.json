@@ -3,7 +3,7 @@
   "title": "¿Reformar la casa o mudarte? Coste y años de equilibrio",
   "description": "Compara reformar tu casa o mudarte: coste neto de cada opción a N años, año de equilibrio y presupuesto máximo con el que reformar compensa.",
   "h1": "Reformar la casa (baño o cocina) o mudarse: coste total y años de equilibrio",
-  "lead": "Reformar compensa frente a mudarse cuando el presupuesto de la obra, una vez restado el valor que recuperas al vender, queda por debajo del coste de mudarte (gastos de compraventa, diferencia de precio, mudanza y obras de adecuación) más la variación de gastos mensuales de los años que vivas allí; con los ejemplos de la página (reforma de 20.000 €, 50 % recuperado al vender, vivienda de 250.000 €, 10 % de gastos de compraventa, 3.000 € de mudanza y obras, 50 € menos al mes y 10 años) reformar cuesta 10.000 € netos frente a 22.000 € de mudarse, y seguiría compensando hasta un presupuesto de 44.000 €. Pon tus datos para ver tu año de equilibrio.",
+  "lead": "Reformar compensa frente a mudarse si el presupuesto de la obra, restado lo que recuperas al vender, queda por debajo del coste de mudarte más la variación de gastos mensuales de tus años allí. Con los ejemplos (reforma de 20.000 €, 50 % recuperado al vender, vivienda de 250.000 €, 10 % de gastos de compraventa, 3.000 € de mudanza y obras, 50 € menos al mes y 10 años) reformar cuesta 10.000 € netos frente a 22.000 € de mudarse, y compensa hasta un presupuesto de 44.000 €.",
   "veredicto": "Reformar compensa frente a mudarse mientras el coste neto de la reforma (presupuesto menos el valor que recuperas al vender, que es una hipótesis tuya) sea menor que el coste de mudarte más la variación mensual de gastos de los años que vivas; la calculadora da el año de equilibrio y el presupuesto máximo con el que reformar sigue ganando. Impuestos de compraventa, plusvalía, deducciones e hipoteca no están incluidos.",
   "tema": "ahorro",
   "inputs": [
@@ -67,15 +67,15 @@
   "faqs": [
     [
       "¿Cuándo compensa reformar en vez de mudarse?",
-      "Cuando el coste neto de la reforma (presupuesto menos el valor que recuperas al vender) es menor que el coste de mudarte más la variación mensual de gastos de tus años de horizonte. Con los ejemplos de la página, reformar cuesta 10.000 € netos y mudarse 22.000 € a 10 años, y reformar compensa mientras el presupuesto no pase de 44.000 €. Con tus cifras saldrá otra."
+      "Cuando el coste neto de la reforma (presupuesto menos lo que recuperas al vender) es menor que el de mudarte más la variación mensual de gastos en tu horizonte. Con los ejemplos, reformar cuesta 10.000 € netos y mudarse 22.000 € a 10 años; reformar compensa hasta 44.000 €."
     ],
     [
       "¿Qué es el año de equilibrio?",
-      "Es el número de años en que las dos opciones cuestan lo mismo: mudarse tiene un coste inicial alto pero puede bajar los gastos mensuales (o subirlos). Con los ejemplos sale a los 30 años: mudarse ahorra 600 € al año y no compensa los 18.000 € de diferencia inicial hasta entonces. Si no hay cruce en 40 años, una opción cuesta menos en todo ese plazo."
+      "Son los años en que ambas opciones cuestan lo mismo. Con los ejemplos, 30 años: mudarse ahorra 600 € al año y no compensa 18.000 € de diferencia hasta entonces. Si no hay cruce en 40 años, una cuesta menos siempre."
     ],
     [
       "¿Qué porcentaje de la reforma se recupera al vender?",
-      "No hay una cifra única: depende de la vivienda, la zona y el estado del mercado. Por eso es un dato que pones tú (50 % es solo un ejemplo declarado) y es la hipótesis que más mueve el resultado; consulta una tasación de tu vivienda antes y después de la obra. Con 0 % la reforma cuesta todo su presupuesto."
+      "No hay cifra única: depende de la vivienda, la zona y el mercado. Es un dato que pones tú (50 % es solo un ejemplo) y el que más mueve el resultado; pide una tasación antes y después de la obra. Con 0 %, la reforma cuesta todo su presupuesto."
     ],
     [
       "¿Qué gastos de compraventa debo poner?",

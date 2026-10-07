@@ -3,7 +3,7 @@
   "title": "Hipoteca a 30, 25 o 20 años: cuota e intereses totales",
   "description": "En el ejemplo, alargar la hipoteca a 30 años baja la cuota 200,83 € al mes, pero paga 25.379 € más de intereses. Calcula con tu importe.",
   "h1": "Hipoteca a 30, 25 o 20 años: cuánto pagas de cuota y de intereses",
-  "lead": "Conviene el plazo más corto, entre 20, 25 y 30 años, cuya cuota quede dentro del 35 % de tus ingresos netos (regla orientativa, no legal): con un tipo mayor que 0 %, cuanto más corto es el plazo, menos intereses pagas; alargarlo solo compensa si la cuota no te cabe. Pon capital, tipo e ingresos y verás cuota, intereses y esfuerzo de cada plazo.",
+  "lead": "Conviene el plazo más corto cuya cuota quede dentro del 35 % de tus ingresos netos (regla orientativa, no legal). Con 150.000 € al 2,76 % y 3.500 € netos, a 20 años pagas 814 € al mes y 45.358 € de intereses; a 25, 693 € y 57.820 €; a 30, 613 € y 70.736 €. Alargar el plazo solo compensa si la cuota no te cabe. Pon tu capital, tipo e ingresos para ver tus cifras.",
   "veredicto": "El plazo más corto de los tres que deje la cuota (más tus otras deudas) dentro del tope de esfuerzo que fijes es el que menos intereses paga; si solo cabe a 30 años o en ninguno, la página lo dice y calcula el plazo mínimo que cumpliría el tope.",
   "tema": "hipoteca",
   "inputs": [
@@ -52,7 +52,7 @@
     ],
     [
       "¿Qué es el esfuerzo hipotecario?",
-      "Es el porcentaje de tus ingresos netos mensuales que se va en cuotas de deuda. Aquí se calcula como (cuota de la hipoteca + otras cuotas de deuda) entre ingresos netos. El 35 % es una referencia de prudencia habitual, no una norma; cada banco aplica sus propios criterios de solvencia."
+      "Es el porcentaje de tus ingresos netos mensuales que se va en cuotas de deuda: (cuota de la hipoteca + otras cuotas) entre ingresos netos. El 35 % es una referencia de prudencia, no una norma; cada banco aplica sus criterios de solvencia."
     ],
     [
       "¿Me conviene el plazo más largo para tener la cuota baja?",

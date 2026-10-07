@@ -119,6 +119,108 @@ EJEMPLOS = {
 }
 VIVOS = {"hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-bonificada-o-sin-vinculaciones", "subrogar-hipoteca-merece-la-pena", "hipoteca-fija-o-variable"}
 
+# ---------- «Casos típicos» (tarea 4 de COLA-TRABAJO): 2-3 casos por calculadora NO insignia, misma calcular() real ----------
+def ej_paro(i, r):
+    tope = f"; el máximo legal ({eur(r['tope'])}/mes con {r['hijos']} hijos a cargo) limita la cuantía" if r["ap1"] else ""
+    return (f"Base de {eur(i['base'])} y {num(i['dias'])} días cotizados, {i['hijos']} hijos a cargo",
+            f"cobrarías {eur(r['m1'])} al mes los primeros {r['d1']} días y {eur(r['m2'])} al mes los {r['d2']} siguientes: {eur(r['total'])} en {r['dur']} días ({num(r['meses'], 0)} meses){tope}.")
+def ej_capitalizar(i, r):
+    return (f"{i['meses']} meses por cobrar, base de {eur(i['br'])}, inversión de {eur(i['inversion'])}, cuota de autónomo de {eur(i['cuota'], 2)}/mes",
+            f"capitalizando cobrarías {eur(r['pagoUnico'])} de golpe y unos {eur(r['subTotal'])} más como ayuda a la cuota ({eur(r['capTotal'])} en total); cobrando mes a mes con la actividad solo se admiten {r['mesesCob']} meses ({eur(r['totalCob'])}), así que capitalizar da {eur(abs(r['dif']))} " + ("más" if r["dif"] >= 0 else "menos") + " en esas condiciones.")
+def ej_finiquito(i, r):
+    d = f"; el preaviso incumplido ({i['incumple']} días) resta {eur(r['descAplicado'])}" if r["descuento"] > 0 else ""
+    return (f"{eur(i['bruto'])} brutos al año en {i['pagas']} pagas, baja el {i['dia']}/{i['mes']}, {i['vacDisf']} de {i['vacAnual']} días de vacaciones disfrutados, IRPF del {pct(i['tipo'], 0)}",
+            f"finiquito bruto de {eur(r['brutoDev'])} (mes {eur(r['salMes'])}, pagas {eur(r['pagasPend'])}, vacaciones {eur(r['vacImporte'])}) y unos {eur(r['neto'])} netos tras {eur(r['cot'])} de cotización y {eur(r['irpf'])} de IRPF estimado{d}.")
+def ej_despido(i, r):
+    obj = i["tipo"] == "objetivo"
+    base = f"{eur(i['bruto'])} brutos al año, {i['anios']} años de antigüedad, despido {'objetivo' if obj else 'improcedente'}"
+    if i["oferta"] > 0:
+        base += f", oferta de {eur(i['oferta'])}"
+        if r["difBruta"] < 0:
+            f = f"la legal serían {eur(r['legal'])}: la oferta queda {eur(abs(r['difBruta']))} por debajo y te quedarían {eur(r['neto'])} netos."
+        else:
+            f = f"la legal (improcedente) serían {eur(r['legal'])} y la oferta la supera en {eur(r['difBruta'])}: te quedarían {eur(r['neto'])} netos tras {eur(r['irpf'])} de IRPF estimado al {pct(i['marginal'], 0)}."
+    else:
+        f = f"la indemnización legal sería de {eur(r['legal'])} brutos ({eur(r['neto'])} netos); si un juez lo declarase improcedente serían {eur(r['legalImp'])}." if obj else f"la indemnización legal sería de {eur(r['legal'])} brutos ({eur(r['neto'])} netos); si el despido fuera objetivo serían {eur(r['legalObj'])}."
+    return (base, f)
+def ej_navidad(i, r):
+    sit = {"todo": "todo el periodo trabajado", "alta": f"alta el {i['dia']}/{i['mes']}", "baja": f"baja el {i['dia']}/{i['mes']}"}[i["situacion"]]
+    return (f"Paga de {eur(i['importe'])}, devengo {i['devengo']}, {sit}, retención del {pct(i['ret'], 0)}",
+            f"corresponden {r['dias']} de {r['diasPeriodo']} días: {eur(r['bruta'], 2)} brutos y {eur(r['neto'], 2)} netos tras {eur(r['retencion'], 2)} de retención (si además descuentas la cotización, {eur(r['netoReal'], 2)}).")
+def ej_loteria(i, r):
+    com = f", repartido entre {i['personas']} personas" if i["personas"] > 1 else ""
+    if r["sujeto"] == 0:
+        f = f"el premio queda exento ({eur(r['exento'])}) y cobras el 100 %: {eur(r['netoTotal'])}."
+    else:
+        pp = f" ({eur(r['netoPersona'])} por persona)" if i["personas"] > 1 else ""
+        f = f"quedan exentos {eur(r['exento'])}, tributa el exceso de {eur(r['sujeto'])} y la retención es de {eur(r['retencion'])}: cobras {eur(r['netoTotal'])}{pp}."
+    return (f"Premio de {eur(i['premio'])} por décimo{com}", f)
+def ej_baja(i, r):
+    tipo = "accidente de trabajo" if i["cont"] == "prof" else "enfermedad común"
+    return (f"{eur(i['sueldo'])} de sueldo mensual ({'14 pagas' if i['pagas'] == '14' else 'pagas prorrateadas'}), {tipo}, {i['dias']} días de baja, sin mejora de convenio",
+            f"cobrarías {eur(r['ingreso'])} en esos {i['dias']} días frente a {eur(r['habitual'])} de sueldo habitual, es decir {eur(r['perdida'])} menos; la empresa adelanta {eur(r['empSub'])} y el resto lo paga la entidad gestora.")
+def ej_extras(i, r):
+    return (f"{eur(i['bruto'])} brutos al año, {i['extras']} pagas extra, retención del {pct(i['ret'], 0)}",
+            f"con 14 pagas el mes normal es de {eur(r['mensual14'])} brutos ({eur(r['netoMes14'], 2)} netos) y los meses con paga {eur(r['netoMesPaga14'], 2)} netos; prorrateadas cobrarías {eur(r['mensual12'])} brutos ({eur(r['netoMes12'], 2)} netos) cada mes. Neto anual: {eur(r['netoAnual14'])} frente a {eur(r['netoAnual12'])}" + (", igual en ambos casos." if r["difAnual"] == 0 else "."))
+def ej_retencion(i, r):
+    a = r["resultado"]
+    return (f"{eur(i['bruto'])} brutos al año, un pagador, Comunidad de Madrid, sin hijos, retención del {pct(i['ret'], 0)}",
+            f"el IRPF de ese año sería de {eur(r['cuota'])} y te retienen {eur(r['retenido'])}: " + (f"saldrías a pagar {eur(a)} en la renta" if a > 0 else f"te devolverían {eur(-a)}") + f"; la retención que dejaría el resultado en 0 sería del {pct(r['tipo0'])} y la mínima legal estimada del {pct(r['tipoLegal'])}.")
+def ej_jubilacion(i, r):
+    ant = r["mesesDiff"] < 0
+    return (f"{i['edad']} años, {i['cot']} años cotizados, base reguladora de {eur(i['br'])}, jubilación a los {i['eleg_a']} años, cobrando hasta los {i['fin']}",
+            f"a la edad ordinaria que te corresponde ({num(r['ordRealM'] / 12, 0)} años) cobrarías {eur(r['pensionOrdinaria'])} al mes y jubilándote {abs(r['mesesDiff'])} meses " + ("antes" if ant else "después") + f" {eur(r['pensionElegida'])} ({'reducción del ' + pct(r['coefPct'], 0) if ant else 'incremento del ' + pct(r['extraPct'], 0)}); hasta los {i['fin']} acumularías {eur(abs(r['diferencia']))} " + ("más" if r["diferencia"] >= 0 else "menos") + f", y la opción de jubilarte más tarde supera en acumulado a la otra solo si cobras más allá de los {num(r['equilibrioEdad'], 1)} años.")
+
+CASOS = {
+    "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
+        {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
+        {"base": 2500, "extras": "si", "hijos": 0, "jornada": 100, "dias": 1080},
+        {"base": 1800, "extras": "si", "hijos": 2, "jornada": 100, "dias": 1440}]),
+    "capitalizar-paro-o-cobrarlo": (ej_capitalizar, [
+        {"meses": 12, "br": 1500, "hijos": 0, "cobrados": 0, "actividad": "si", "inversion": 6000, "cuota": 205.88, "arranque": 6},
+        {"meses": 18, "br": 2000, "hijos": 0, "cobrados": 6, "actividad": "si", "inversion": 15000, "cuota": 205.88, "arranque": 12}]),
+    "finiquito-baja-voluntaria-vacaciones-preaviso": (ej_finiquito, [
+        {"bruto": 24000, "pagas": 14, "mes": 10, "dia": 15, "vacAnual": 30, "vacDisf": 10, "incumple": 0, "tipo": 12},
+        {"bruto": 30000, "pagas": 12, "mes": 6, "dia": 30, "vacAnual": 30, "vacDisf": 5, "incumple": 15, "tipo": 15},
+        {"bruto": 18000, "pagas": 14, "mes": 3, "dia": 31, "vacAnual": 30, "vacDisf": 0, "incumple": 0, "tipo": 8}]),
+    "indemnizacion-despido-objetivo-o-improcedente-neto": (ej_despido, [
+        {"bruto": 24000, "anios": 3, "meses": 0, "antes": 0, "oferta": 0, "marginal": 24, "tipo": "objetivo", "causa": "eco"},
+        {"bruto": 30000, "anios": 8, "meses": 0, "antes": 0, "oferta": 10000, "marginal": 30, "tipo": "objetivo", "causa": "eco"},
+        {"bruto": 30000, "anios": 8, "meses": 0, "antes": 0, "oferta": 30000, "marginal": 30, "tipo": "improcedente", "causa": "otra"}]),
+    "paga-extra-navidad-cuanto-cobro-neto": (ej_navidad, [
+        {"importe": 1500, "devengo": "semestral", "situacion": "todo", "mes": 9, "dia": 1, "diassin": 0, "ret": 15, "forma": "14"},
+        {"importe": 2000, "devengo": "anual", "situacion": "alta", "mes": 4, "dia": 1, "diassin": 0, "ret": 18, "forma": "14"},
+        {"importe": 1800, "devengo": "semestral", "situacion": "baja", "mes": 10, "dia": 31, "diassin": 0, "ret": 12, "forma": "14"}]),
+    "loteria-navidad-premio-neto-hacienda": (ej_loteria, [
+        {"premio": 400000, "decimos": 1, "personas": 1, "cobro": "uno"},
+        {"premio": 40000, "decimos": 1, "personas": 1, "cobro": "uno"},
+        {"premio": 400000, "decimos": 1, "personas": 4, "cobro": "cotitulares"}]),
+    "baja-medica-cuanto-cobro-incapacidad-temporal": (ej_baja, [
+        {"sueldo": 1800, "pagas": "prorr", "cont": "comun", "dias": 30, "mejora": 0, "tipo": 0},
+        {"sueldo": 2200, "pagas": "14", "cont": "comun", "dias": 60, "mejora": 0, "tipo": 0},
+        {"sueldo": 1800, "pagas": "prorr", "cont": "prof", "dias": 30, "mejora": 0, "tipo": 0}]),
+    "pagas-extra-prorrateadas-o-14-pagas": (ej_extras, [
+        {"bruto": 24000, "extras": 2, "contrato": "indef", "ret": 15, "situacion": "todo", "mes": 10, "dia": 31},
+        {"bruto": 36000, "extras": 2, "contrato": "indef", "ret": 18, "situacion": "todo", "mes": 10, "dia": 31}]),
+    "retencion-irpf-nomina-subir-o-no": (ej_retencion, [
+        {"bruto": 24000, "ret": 10, "hijos": 0, "menores3": 0, "reparto": "entero", "pagador2": 0, "ccaa": "madrid", "euribor": 3.247},
+        {"bruto": 30000, "ret": 12, "hijos": 0, "menores3": 0, "reparto": "entero", "pagador2": 0, "ccaa": "madrid", "euribor": 3.247},
+        {"bruto": 45000, "ret": 20, "hijos": 0, "menores3": 0, "reparto": "entero", "pagador2": 0, "ccaa": "madrid", "euribor": 3.247}]),
+    "jubilacion-anticipada-o-demorada": (ej_jubilacion, [
+        {"edad": 62, "cot": 38, "br": 2000, "eleg_a": 63, "eleg_m": 0, "fin": 85, "irpf": 0, "ipc": 2.7},
+        {"edad": 64, "cot": 38, "br": 2000, "eleg_a": 67, "eleg_m": 0, "fin": 85, "irpf": 0, "ipc": 2.7}]),
+}
+
+def generar_casos(fecha):
+    out = {}
+    for slug, (fn, lista) in CASOS.items():
+        cs = []
+        for inp in lista:
+            r = ejecutar(slug, inp); t, f = fn(inp, r)
+            cs.append({"inputs": inp, "resultado": r, "titulo": t, "texto": f})
+        out[slug] = {"fecha": fecha, "casos": cs}
+    return out
+
 def ejecutar(slug, inputs):
     """calcular() real del .js (funciones puras antes de 'function eur(', igual que ops/check.py)."""
     js = open(os.path.join(PDIR, "calcs", slug + ".js"), encoding="utf-8").read().split("function eur(")[0]
@@ -147,10 +249,28 @@ def main():
             v = cur.get(slug)
             if not v or any(v.get(k) != nuevo[k] for k in ("inputs", "resultado", "entradas_texto", "filas", "veredicto_texto")):
                 print(f"✗ ejemplos: {slug} no coincide con la calculadora (regenera con python3 ops/gen_ejemplos.py)"); malos += 1
-        print(f"{'OK' if not malos else 'FALLOS'}: ejemplos resueltos {len(EJEMPLOS) - malos}/{len(EJEMPLOS)} coinciden con la calculadora"); return 1 if malos else 0
-    out = generar(datetime.date.today().isoformat())
+        cc = cur.get("_casos", {}); tot = len(EJEMPLOS) + len(CASOS)
+        for slug, nuevo in generar_casos("x").items():
+            v = cc.get(slug)
+            if not v or v["casos"] != nuevo["casos"]:
+                print(f"✗ casos típicos: {slug} no coincide con la calculadora (regenera con python3 ops/gen_ejemplos.py)"); malos += 1
+        print(f"{'OK' if not malos else 'FALLOS'}: ejemplos y casos típicos {tot - malos}/{tot} coinciden con la calculadora"); return 1 if malos else 0
+    hoy = datetime.date.today().isoformat()
+    out = generar(hoy); out["_casos"] = generar_casos(hoy)
+    try: old = json.load(open(OUT, encoding="utf-8"))
+    except Exception: old = {}
+    for k, v in out.items():  # conserva la fecha de lo que no ha cambiado
+        o = old.get(k)
+        if k == "_casos":
+            for sl, vv in v.items():
+                oo = (o or {}).get(sl)
+                if oo and oo["casos"] == vv["casos"]: vv["fecha"] = oo["fecha"]
+        elif o and all(o.get(x) == v[x] for x in ("inputs", "resultado", "entradas_texto", "filas", "veredicto_texto")): v["fecha"] = o["fecha"]
     json.dump(out, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1); open(OUT, "a").write("\n")
-    for s, v in out.items(): print(f"{s}: {v['veredicto_texto']}")
+    for s, v in out.items():
+        if s != "_casos": print(f"{s}: {v['veredicto_texto']}")
+    for s, v in out["_casos"].items():
+        for c in v["casos"]: print(f"[casos] {s}: {c['titulo']}: {c['texto']}")
     return 0
 
 if __name__ == "__main__":

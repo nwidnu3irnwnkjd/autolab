@@ -3,7 +3,7 @@
   "title": "Subrogar hipoteca: calcula si merece la pena el cambio",
   "description": "En el ejemplo, subrogar la hipoteca recupera su coste en 25 meses y ahorra 4.840 € netos a 10 años. Calcula si compensa con tu tipo.",
   "h1": "Subrogar la hipoteca: ¿compensa cambiar de banco o a tipo fijo?",
-  "lead": "Cambiar de hipoteca compensa si el ahorro de cuota recupera el coste del cambio (comisión y gastos) antes de que vendas o canceles; si no, mejor quedarte. Calcula en cuántos meses lo recuperas con tus datos.",
+  "lead": "Cambiar de hipoteca compensa si el ahorro de cuota recupera el coste del cambio (comisión y gastos) antes de que vendas o canceles. Con un ejemplo de 150.000 € a 20 años, del 3,5 % al 2,6 %, 0,05 % de comisión y 1.500 € de gastos, la cuota baja 43 € al mes, el cambio cuesta 1.575 € y se recupera en 19 meses; si vas a vender o cancelar antes, mejor quedarte. Calcula tus meses con tus datos.",
   "veredicto": "Cambiar la hipoteca (subrogación o novación) compensa si el ahorro de cuota e intereses supera la comisión y los gastos del cambio dentro del tiempo que vas a conservar el préstamo; calcula el punto de equilibrio con tus condiciones.",
   "tema": "hipoteca",
   "inputs": [
@@ -69,7 +69,7 @@
   "faqs": [
     [
       "¿Compensa cambiar la hipoteca de banco?",
-      "Compensa cuando el ahorro mensual de cuota, descontadas las vinculaciones de la nueva oferta, recupera el coste del cambio (comisión más gastos) antes de que vendas la vivienda o canceles la hipoteca. Si el diferencial de tipos es pequeño o te quedan pocos años, normalmente no compensa. La calculadora te da los meses de equilibrio con tus cifras."
+      "Cuando el ahorro mensual de cuota, descontadas las vinculaciones de la nueva oferta, recupera el coste del cambio (comisión más gastos) antes de que vendas o canceles. Si la diferencia de tipos es pequeña o te quedan pocos años, normalmente no. La calculadora da los meses de equilibrio."
     ],
     [
       "¿Qué es subrogar una hipoteca y en qué se diferencia de novar?",
@@ -77,7 +77,7 @@
     ],
     [
       "¿Cuánto puede cobrarme mi banco por cancelar o subrogar?",
-      "Depende de cuándo se firmó tu hipoteca y de si es fija o variable. Para contratos posteriores a la Ley 5/2019, el artículo 23 fija límites legales y, al pasar de variable a un tipo fijo, la comisión está más limitada; para contratos anteriores rige su escritura y la normativa que les aplicaba. Consulta tu escritura y el límite legal aplicable en el BOE; el banco debe darte por escrito el importe exacto."
+      "Depende de cuándo firmaste y del tipo. En contratos posteriores a la Ley 5/2019, el artículo 23 fija límites legales (más estrictos al pasar de variable a fijo); en los anteriores rige tu escritura. Consúltala: el banco debe darte el importe por escrito."
     ],
     [
       "¿Qué gastos tiene el cambio además de la comisión?",

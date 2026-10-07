@@ -3,7 +3,7 @@
   "title": "Adoptar o comprar un perro: coste del primer año y anual",
   "description": "Calcula cuánto cuesta tener un perro el primer año, cada año y en total, adoptando o comprando, con tu pienso, tu veterinario y tu seguro como datos.",
   "h1": "Tener un perro: coste del primer año y anual, adoptando o comprando",
-  "lead": "Adoptar sale más barato que comprar si la cuota de adopción es menor que el precio de compra, y esa diferencia es solo el precio de entrada, que pesa poco frente al gasto corriente: con los ejemplos de la página (pienso de 40 € al mes, veterinario y otros de 250 € al año, 250 € de gastos iniciales, 200 € de adopción, 800 € de compra y 12 años) el primer año cuesta 1.180 € adoptando y 1.780 € comprando, y después 730 € al año. Pon tu tamaño, tus gastos y tus precios para ver el coste anual y el total.",
+  "lead": "Adoptar sale más barato que comprar si la cuota de adopción es menor que el precio de compra, pero esa diferencia solo afecta a la entrada. Con los ejemplos (pienso de 40 € al mes, veterinario de 250 € al año, 250 € de gastos iniciales, 200 € de adopción, 800 € de compra y 12 años) el primer año cuesta 1.180 € adoptando y 1.780 € comprando, y después 730 € al año. Pon tus gastos y precios para ver el coste anual y el total.",
   "veredicto": "Adoptar cuesta menos que comprar cuando la cuota de adopción es menor que el precio de compra, y la diferencia es solo el precio de entrada; el gasto corriente (pienso, veterinario, seguro) es el mismo y suele pesar más que la entrada en el total de varios años.",
   "tema": "ahorro",
   "inputs": [
@@ -95,7 +95,7 @@
     ],
     [
       "¿Cuánto cuesta el primer año de un perro?",
-      "El primer año suma la entrada (cuota de adopción o precio de compra), los gastos iniciales y el gasto anual. Con los ejemplos, 1.180 € adoptando (200 € de cuota, 250 € de gastos iniciales y 730 € de gasto anual) y 1.780 € comprando (800 € de precio). A partir del segundo año, solo el gasto anual."
+      "Suma la entrada (adopción o compra), los gastos iniciales y el gasto anual. Con los ejemplos: 1.180 € adoptando (200 € de cuota, 250 € iniciales y 730 € anuales) y 1.780 € comprando (800 €). Desde el segundo año, solo el gasto anual."
     ],
     [
       "¿Es más barato adoptar o comprar un perro?",
@@ -103,7 +103,7 @@
     ],
     [
       "¿Qué pesa más, el precio de entrada o el gasto corriente?",
-      "Con los ejemplos y 12 años, la entrada pesa un 2,2 % del total si adoptas y un 8,2 % si compras; el resto es gasto corriente y gastos iniciales. Por eso el gasto anual (pienso, veterinario, seguro) decide más el coste total que la forma de conseguir al perro, aunque con pocos años la entrada pesa más."
+      "Con los ejemplos y 12 años, la entrada pesa un 2,2 % del total si adoptas y un 8,2 % si compras; el resto son gastos iniciales y corrientes. Por eso decide más el gasto anual que cómo consigues al perro, aunque con pocos años la entrada pesa más."
     ],
     [
       "¿Qué no incluye esta estimación?",

@@ -1,9 +1,9 @@
 {
   "slug": "amortizar-plazo-o-cuota",
-  "title": "¿Amortizar plazo o cuota? Calculadora con tus números",
+  "title": "¿Amortizar plazo o cuota? Cuánto ahorras en cada caso",
   "description": "Descubre si te ahorras más intereses reduciendo plazo o cuota al amortizar parte de tu hipoteca. Calcula con tu capital pendiente, tipo y años restantes.",
   "h1": "Amortizar hipoteca: ¿reduzco plazo o cuota?",
-  "lead": "Con la misma amortización anticipada, reducir plazo ahorra más intereses; reducir cuota te da aire cada mes. Calcula cuánto es cada cosa en tu caso.",
+  "lead": "Con la misma amortización anticipada, reducir plazo ahorra más intereses y reducir cuota te da aire cada mes. Con 10.000 € amortizados en una hipoteca de 120.000 € al 3 % a 20 años, reducir cuota baja la cuota de 665 € a 610 € y reducir plazo acorta la hipoteca a 214 meses en vez de 240. Calcula tu caso con tus números.",
   "veredicto": "Con la misma amortización, reducir plazo ahorra más intereses; reducir cuota solo compensa si necesitas el alivio mensual.",
   "inputs": [
     {
@@ -57,7 +57,7 @@
     ],
     [
       "¿Cuánto me cobra el banco por amortizar?",
-      "En hipotecas variables firmadas desde 2019 la comisión máxima es 0,25 % los 3 primeros años (0,15 % en 5 años) y 0 % después; en fijas, 2 % los 10 primeros años y 1,5 % después, y solo si el banco tiene pérdida financiera. Muchas hipotecas no cobran nada: mira tu escritura."
+      "En variables firmadas desde 2019, el máximo es 0,25 % los 3 primeros años (0,15 % en 5) y 0 % después; en fijas, 2 % los 10 primeros años y 1,5 % después, y solo con pérdida financiera. Muchas no cobran nada: mira tu escritura."
     ],
     [
       "¿Y la desgravación fiscal de la hipoteca?",

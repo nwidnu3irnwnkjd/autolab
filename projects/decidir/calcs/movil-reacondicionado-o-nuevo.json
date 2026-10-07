@@ -3,7 +3,7 @@
   "title": "Móvil reacondicionado o nuevo: ¿cuál sale más barato?",
   "description": "Compara móvil nuevo y reacondicionado o usado: coste total y por año, riesgo de reparación, garantía legal y desde cuántos años compensa el nuevo.",
   "h1": "Móvil reacondicionado, usado o nuevo: coste por año y garantía",
-  "lead": "Un móvil reacondicionado o usado compensa si su coste por año de vida esperada (precio menos reventa, más el riesgo de reparación fuera de garantía) es menor que el del nuevo; con los ejemplos de la página sale a 142,50 € al año frente a 145 € del nuevo, y el nuevo solo gana si dura 6 años o más, o si el reacondicionado cuesta más de unos 459 €. Pon tus precios, los años que esperas que dure cada uno y la garantía que te dan, y verás el coste por año, el riesgo de reparación y el precio máximo al que compensa el reacondicionado.",
+  "lead": "Un móvil reacondicionado compensa si su coste por año de vida esperada (precio menos reventa, más el riesgo de reparación fuera de garantía) es menor que el del nuevo. Con los ejemplos sale a 142,50 € al año frente a 145 € del nuevo, y el nuevo solo gana si dura 6 años o más o si el reacondicionado cuesta más de unos 459 €. Pon tus precios, los años de vida y la garantía para ver tu coste por año.",
   "veredicto": "El reacondicionado o usado compensa mientras su precio sea menor que el precio de equilibrio que calcula la página con tus años de vida, garantía y reventa; el nuevo gana si le esperas una vida más larga que la que indica la calculadora o si el reacondicionado no baja de ese precio.",
   "tema": "ahorro",
   "inputs": [
@@ -80,7 +80,7 @@
     ],
     [
       "¿A partir de cuántos años de vida compensa comprar el nuevo?",
-      "Cuando el coste por año del nuevo baja del que tiene el reacondicionado. Con los ejemplos de la página ocurre a partir de 6 años de vida del nuevo, manteniendo 3 años para el reacondicionado, un 15 % de probabilidad de avería y 150 € por reparación. Con otros datos el umbral cambia: la calculadora lo recalcula."
+      "Cuando el coste por año del nuevo baja del reacondicionado. Con los ejemplos, a partir de 6 años de vida del nuevo (reacondicionado: 3 años, 15 % de probabilidad de avería, 150 € por reparación). Con otros datos el umbral cambia; la calculadora lo recalcula."
     ],
     [
       "¿Cómo se calcula el riesgo de reparación?",
