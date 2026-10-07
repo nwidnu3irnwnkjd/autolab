@@ -215,6 +215,50 @@ def ej_maternidad(i, r):
     return (f"{p}, {i['mesesMat']} meses con derecho{f}{g}",
             f"la deducción anual sería de {eur(r['deduccion'])} (maternidad {eur(r['mat'])}, guardería {eur(r['guar'])}, familia numerosa {eur(r['fam'])}); cobrándola por adelantado, {eur(r['anticipoMes'])} al mes.")
 
+CCAA_N = {"madrid": "Madrid", "cataluna": "Cataluña", "galicia": "Galicia"}
+def ej_sueldo(i, r):
+    pg = "14 pagas" if int(i["pagas"]) == 14 else "12 pagas"
+    h = f", {hj(i['hijos'])}" if i["hijos"] else ""
+    return (f"{eur(i['bruto'])} brutos al año, {pg}, {CCAA_N.get(i['ccaa'], i['ccaa'])}, contrato indefinido{h}",
+            f"cobrarías {eur(r['neto'])} netos al año tras {eur(r['ss'])} de Seguridad Social y {eur(r['ret'])} de retención de IRPF (tipo del {pct(r['tipo'], 1)}): {eur(r['netoMes12'], 2)} al mes si te prorratean las pagas" + (f", o {eur(r['netoMesNormal14'], 2)} los meses normales y {eur(r['netoMesExtra14'], 2)} los de paga extra." if int(i["pagas"]) == 14 else "."))
+def ej_luz(i, r):
+    g = "la tarifa fija" if r["diferencia"] < 0 else "el PVPC"
+    return (f"{num(i['consumo'])} kWh al año, {num(i['potencia'], 2)} kW de potencia, {i['pctPunta']} % del consumo en punta y {i['pctLlano']} % en llano, tarifa fija a {num(i['precioFijo'], 3)} €/kWh frente a PVPC a {num(i['pvpc'], 3)} €/kWh",
+            f"la tarifa fija costaría {eur(r['costeFija'])} al año y el PVPC {eur(r['costePvpc'])}: con estos supuestos sale mejor {g} por {eur(abs(r['diferencia']))} al año.")
+def ej_placas(i, r):
+    sub = f", {eur(i['subv'])} de subvención" if i["subv"] else ""
+    return (f"instalación de {num(i['potencia'])} kW por {eur(i['coste'])}{sub}, consumo de {num(i['consumo'])} kWh al año, {i['pctAuto']} % de autoconsumo, {num(i['prod'])} kWh producidos por kW, energía a {num(i['precio'], 3)} €/kWh y excedentes a {num(i['comp'], 3)} €/kWh",
+            f"ahorrarías unos {eur(r['ahorro1'])} el primer año en factura y cobrarías {eur(r['comp1'])} por excedentes; la inversión de {eur(r['neto'])} se recuperaría en {num(r['anosAmort'], 1)} años y el ahorro neto acumulado en la vida de la instalación sería de {eur(r['ahorroNeto'])}.")
+def ej_salud(i, r):
+    emp = f", con {eur(i['empresa'])} al mes pagados por la empresa" if i["empresa"] else ""
+    sin = r["sinSeguro"] < r["conSeguro"]
+    return (f"prima de {eur(i['prima'])} al año{emp}, {i['actos']} consultas o pruebas al año a {eur(i['coste'])} cada una en privado, copago de {eur(i['copago'])}, a {i['horizonte']} años",
+            f"con seguro gastarías {eur(r['conSeguro'])} y pagando cada acto sin seguro {eur(r['sinSeguro'])}: " + ("sale más barato no tener seguro" if sin else "sale más barato el seguro") + f" por {eur(abs(r['diferencia']))}; el seguro compensaría con unos {num(r['actosEq'], 1)} actos al año.")
+def ej_coche_ns(i, r):
+    nuevo = r["tcoNuevo"] < r["tcoSemi"]
+    fin = f", financiado al {pct(i['tin'], 1)}" if i["tin"] else ""
+    return (f"coche nuevo de {eur(i['pnuevo'])} o seminuevo de {eur(i['psemi'])} con {i['edad']} años, {i['anos']} años de uso{fin}",
+            f"el coste real del nuevo sería {eur(r['tcoNuevo'])} y el del seminuevo {eur(r['tcoSemi'])}: sale más barato el {'nuevo' if nuevo else 'seminuevo'} por {eur(abs(r['diferencia']))}" + (f"; el nuevo solo compensaría si costara {eur(r['precioEquilibrio'])} o menos." if not nuevo else "."))
+def ej_tren(i, r):
+    m = {0: "el coche", 1: "el tren", 2: "el avión"}[r["barato"]]
+    return (f"{num(i['dist'])} km, {i['viaj']} " + ("viajero" if i["viaj"] == 1 else "viajeros") + f", tren a {eur(i['tren'])} y avión a {eur(i['avion'])} por persona y trayecto, {num(i['htren'], 1)} h en tren y {num(i['havion'], 1)} h en avión, coche a {num(i['kmcoche'], 2)} €/km",
+            f"el coste del trayecto es de {eur(r['costeCoche'])} en coche, {eur(r['costeTren'])} en tren y {eur(r['costeAvion'])} en avión (en total para el grupo): lo más barato es {m}; en coche tardarías {num(r['tiempoCoche'], 1)} h.")
+def ej_tele(i, r):
+    v = f", valorando tu hora a {eur(i['valorHora'])}" if i["valorHora"] else ""
+    return (f"{i['dias']} días de teletrabajo a la semana, {eur(i['desp'])} de desplazamiento y {i['min']} minutos de trayecto al día, comida de {eur(i['comida'])} fuera, {eur(i['casa'])} de gasto extra en casa por día, {eur(i['comp'])} de compensación al mes y {eur(i['equip'])} de equipamiento{v}",
+            f"el balance anual es de {eur(r['netoAnual'])} ({eur(r['ahorroDesplazamiento'])} de desplazamiento y {eur(r['ahorroComida'])} de comida ahorrados, {eur(r['costeCasa'])} de gasto en casa y {eur(r['equipamientoAnual'])} de equipamiento) y ganarías {num(r['horasAhorradas'])} horas al año de trayecto.")
+def ej_cocinar(i, r):
+    v = f", valorando tu hora a {eur(i['vh'])}" if i["vh"] else ""
+    return (f"{i['fuera']} " + ("comida" if i["fuera"] == 1 else "comidas") + f" fuera a la semana a {eur(i['precio'])}, cocinando en casa por {eur(i['racion'])} la ración, {i['minCook']} minutos de cocina y {i['minDesp']} de desplazamiento, {i['dias']} días al año{v}",
+            f"comer fuera te cuesta {eur(r['gastoFuera'])} al año y cocinar las mismas comidas en casa {eur(r['gastoCasaMismas'])}: ahorras {eur(r['ahorroDinero'])} al año a cambio de {num(r['horasExtra'])} horas más de cocina" + (f"; con tu hora a {eur(i['vh'])}, " + ("sigue ganando cocinar." if r["ganador"] == 0 else "ya compensa más comer fuera.") if i["vh"] else f", y cocinar deja de compensar si tu hora vale más de {eur(r['vhEq'])}."))
+def ej_fondo(i, r):
+    return (f"gastos esenciales de {eur(i['gastos'])} al mes, {eur(i['ahorro'])} ahorrados y {eur(i['aport'])} al mes de aportación" + (", perfil de mayor riesgo (empleo e ingresos)" if i["empleo"] or i["ingresos"] else ""),
+            f"te convendría un fondo de {num(r['meses'], 1)} meses de gastos, es decir {eur(r['objetivo'])}: " + (f"te faltan {eur(r['falta'])} y lo alcanzarías en {r['mesesAlcanzar']} meses." if r["falta"] > 0 else "ya lo tienes cubierto."))
+def ej_reformar(i, r):
+    ref = r["diferencia"] > 0
+    return (f"reforma de {eur(i['reforma'])} que recuperas un {pct(i['recup'], 0)} al vender, vivienda de {eur(i['valor'])}, gastos de mudanza y compraventa del {pct(i['gastosPct'], 0)} y {eur(i['extras'])} extra, a {i['anios']} " + ("año" if i["anios"] == 1 else "años"),
+            f"reformar costaría {eur(r['costeReformar'])} y mudarse {eur(r['costeMudarse'])}: sale más barato " + ("reformar" if ref else "mudarse") + f" por {eur(abs(r['diferencia']))}.")
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -284,6 +328,45 @@ CASOS = {
     "deduccion-maternidad-familia-numerosa": (ej_maternidad, [
         {"n3": "1", "mesesMat": 12, "guarMeses": 10, "guarGasto": 3000, "fam": "general", "hijosFam": 3, "mesesFam": 12, "cotiz": 3500},
         {"n3": "2", "mesesMat": 12, "guarMeses": 0, "guarGasto": 0, "fam": "no", "hijosFam": 3, "mesesFam": 12, "cotiz": 3500}]),
+    "sueldo-bruto-a-neto-2026": (ej_sueldo, [
+        {"bruto": 25200, "pagas": 14, "contrato": "indef", "ccaa": "madrid", "hijos": 0, "menores3": 0, "meses": 6},
+        {"bruto": 35000, "pagas": 14, "contrato": "indef", "ccaa": "cataluna", "hijos": 0, "menores3": 0, "meses": 6},
+        {"bruto": 40000, "pagas": 14, "contrato": "indef", "ccaa": "galicia", "hijos": 3, "menores3": 1, "meses": 6}]),
+    "luz-fija-o-indexada": (ej_luz, [
+        {"consumo": 3000, "potencia": 4.6, "pctPunta": 30, "pctLlano": 30, "precioFijo": 0.15, "potFija": 0.0779, "pvpc": 0.184, "hip": 0},
+        {"consumo": 4200, "potencia": 5.5, "pctPunta": 30, "pctLlano": 30, "precioFijo": 0.1, "potFija": 0.0779, "pvpc": 0.21339, "hip": 10},
+        {"consumo": 2500, "potencia": 3.45, "pctPunta": 10, "pctLlano": 10, "precioFijo": 0.22, "potFija": 0.0902, "pvpc": 0.12, "hip": -10}]),
+    "placas-solares-merece-la-pena": (ej_placas, [
+        {"potencia": 4, "coste": 6000, "subv": 0, "consumo": 4000, "pctAuto": 40, "prod": 1610, "precio": 0.18, "comp": 0.07},
+        {"potencia": 6, "coste": 12000, "subv": 1500, "consumo": 3000, "pctAuto": 30, "prod": 1280, "precio": 0.25, "comp": 0.1},
+        {"potencia": 4, "coste": 9000, "subv": 0, "consumo": 4000, "pctAuto": 30, "prod": 1165, "precio": 0.13, "comp": 0.07}]),
+    "seguro-salud-privado-merece-la-pena": (ej_salud, [
+        {"prima": 900, "empresa": 0, "subidaPrima": 4, "actos": 8, "coste": 60, "copago": 8, "subidaPrecios": 2, "horizonte": 10},
+        {"prima": 900, "empresa": 0, "subidaPrima": 4, "actos": 25, "coste": 60, "copago": 8, "subidaPrecios": 2, "horizonte": 10},
+        {"prima": 900, "empresa": 50, "subidaPrima": 0, "actos": 8, "coste": 60, "copago": 8, "subidaPrecios": 0, "horizonte": 10}]),
+    "coche-nuevo-o-seminuevo": (ej_coche_ns, [
+        {"pnuevo": 25000, "psemi": 17500, "edad": 3, "anos": 5, "dep1": 18, "gastos": 1000, "extra": 300, "tin": 0},
+        {"pnuevo": 25000, "psemi": 17500, "edad": 3, "anos": 5, "dep1": 18, "gastos": 1000, "extra": 300, "tin": 6.5}]),
+    "tren-avion-o-coche": (ej_tren, [
+        {"dist": 620, "viaj": 2, "tren": 60, "avion": 110, "htren": 3.5, "havion": 4.5, "kmcoche": 0.2, "extras": 40},
+        {"dist": 620, "viaj": 4, "tren": 60, "avion": 110, "htren": 3.5, "havion": 4.5, "kmcoche": 0.2, "extras": 40},
+        {"dist": 620, "viaj": 1, "tren": 150, "avion": 110, "htren": 8, "havion": 4.5, "kmcoche": 0.2, "extras": 40}]),
+    "teletrabajo-o-oficina-coste-real": (ej_tele, [
+        {"dias": 2, "desp": 6, "min": 60, "valorHora": 0, "casa": 0.7, "comida": 5, "comp": 0, "equip": 300},
+        {"dias": 2, "desp": 2, "min": 60, "valorHora": 0, "casa": 5, "comida": 1, "comp": 20, "equip": 0},
+        {"dias": 5, "desp": 1, "min": 60, "valorHora": 15, "casa": 0.5, "comida": 0, "comp": 0, "equip": 900}]),
+    "cocinar-en-casa-o-comer-fuera": (ej_cocinar, [
+        {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 0, "sust": 3, "dias": 220},
+        {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 40, "sust": 3, "dias": 220},
+        {"fuera": 3, "precio": 13, "racion": 4, "minCook": 30, "minDesp": 15, "vh": 10, "sust": 3, "dias": 220}]),
+    "fondo-de-emergencia-cuantos-meses-necesito": (ej_fondo, [
+        {"gastos": 1500, "empleo": 0, "ingresos": 0, "dep": 1, "otro": 0, "ahorro": 3000, "aport": 200},
+        {"gastos": 1500, "empleo": 2, "ingresos": 1, "dep": 2, "otro": 0, "ahorro": 3000, "aport": 200},
+        {"gastos": 1500, "empleo": 0, "ingresos": 0, "dep": 1, "otro": 0, "ahorro": 6000, "aport": 200}]),
+    "reformar-o-mudarse": (ej_reformar, [
+        {"reforma": 20000, "recup": 50, "valor": 250000, "gastosPct": 10, "dif": 0, "extras": 3000, "mensual": -50, "anios": 10},
+        {"reforma": 20000, "recup": 50, "valor": 250000, "gastosPct": 10, "dif": 0, "extras": 3000, "mensual": -50, "anios": 1},
+        {"reforma": 60000, "recup": 30, "valor": 250000, "gastosPct": 3, "dif": 0, "extras": 500, "mensual": 80, "anios": 10}]),
 }
 
 def generar_casos(fecha):

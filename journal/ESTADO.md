@@ -217,3 +217,6 @@ Editor de calidad pasó las 19 guías (lead directo, FAQs ≤50 palabras, títul
 
 ## Ciclo 80 (7-oct noche)
 Opus re-verificó paga-extra-navidad (publicable, 828 casos 0 disc.; R1 aplicado: Orden PJC/297/2026 en params; R2 pendiente: parámetros 2027 con MEI 0,17 a partir de 1-1-2027). Barrido de vigencia: 9 archivos con «pendiente de convalidación» junto al RDL 25. Pendiente tras 14-oct: IRAV 2,47 % (actualizacion-renta-alquiler-irav-ipc l.25 y checklist l.41). Noticia luz 8-oct pendiente (REE).
+
+## Ciclo 81 (7-oct noche)
+Casos típicos en 10 calculadoras más (30 en total, 39/39 coinciden con el motor). Director UX pasada 3 (estática): 10 acciones en ops/UX.md (etiquetas largas 522/900, Google Fonts en 190 págs y /privacidad/ no lo dice, coma decimal en 790 campos, botón «Aplicar este caso», CTA en guías). Siguiente: Diseñador ejecuta acciones 1,3,4,2/10. Luz 8-oct aún sin publicar (REE).

@@ -89,3 +89,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-07T20:20Z | 17 | 12 | 0.55 | ciclo 78 cierre: Opus, Constructor, Estratega (modo continuo); peticiones abiertas: 18; páginas: 302
 2026-10-07T20:58Z | 17 | 12 | 0.55 | ciclo 79 cierre: editor-calidad,verificador-fiscal,constructor,qa; peticiones abiertas: 18; páginas: 302
 2026-10-07T21:23Z | 12 | 11 | 0.55 | ciclo 80 cierre: verificador-fiscal,constructor(barrido); peticiones abiertas: 18; páginas: 302
+2026-10-07T21:46Z | 12 | 11 | 0.55 | ciclo 81 cierre: constructor,director-ux; peticiones abiertas: 18; páginas: 302
