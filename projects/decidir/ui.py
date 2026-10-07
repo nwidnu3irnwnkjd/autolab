@@ -1,5 +1,5 @@
 """Interfaz del sitio (dueño: Diseñador): iconos, temas, tarjetas, catálogo, 404, cabecera y formulario de calculadora, head extra."""
-import json, os, html, hashlib
+import json, os, html, hashlib, re
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 site = json.load(open(os.path.join(ROOT, "data/site.json")))
@@ -97,14 +97,32 @@ def calc_header(c):
 <h1>{c["h1"]}</h1>
 <p class="lead">{c["lead"]}</p></header>"""
 
+def split_label(lab):
+    """Etiqueta corta (con la unidad) + texto de ayuda. Solo si la etiqueta supera 45 caracteres."""
+    if len(lab) <= 45: return lab, ""
+    m = re.match(r"^(.*?) \((.*)\)(.*)$", lab)
+    if m:
+        base, inner, tail = m.group(1), m.group(2), m.group(3)
+        p = re.split(r"\s*[;,]\s*", inner, 1)
+        if len(p[0]) <= 12: short, rest = f"{base} ({p[0]}){tail}", (p[1] if len(p) > 1 else "")
+        else: short, rest = base + tail, inner
+    elif "; " in lab: short, rest = lab.split("; ", 1)
+    else: return lab, ""
+    rest = rest.strip()
+    return short, (rest[:1].upper() + rest[1:] if rest else "")
+
 def calc_form(c):
-    """Formulario .calc con inputs/selects."""
-    inputs = "".join(
-        f'<div><label for="{i["id"]}">{i["label"]}</label>'
-        + (f'<select id="{i["id"]}">' + "".join(f'<option value="{o["v"]}">{o["t"]}</option>' for o in i["options"]) + "</select>"
-           if i.get("type") == "select" else
-           f'<input id="{i["id"]}" type="number" inputmode="decimal" value="{i["default"]}" min="{i.get("min",0)}" step="{i.get("step","any")}">')
-        + "</div>" for i in c["inputs"])
+    """Formulario .calc con inputs/selects. Los numéricos son type=text inputmode=decimal data-n: em.js acepta coma decimal y puntos de miles."""
+    def one(i):
+        short, hint = split_label(i["label"])
+        h = f'<small class="hint" id="h-{i["id"]}">{hint}</small>' if hint else ""
+        d = f' aria-describedby="h-{i["id"]}"' if hint else ""
+        return (f'<div><label for="{i["id"]}">{short}</label>{h}'
+            + (f'<select id="{i["id"]}"{d}>' + "".join(f'<option value="{o["v"]}">{o["t"]}</option>' for o in i["options"]) + "</select>"
+               if i.get("type") == "select" else
+               f'<input id="{i["id"]}" type="text" inputmode="decimal" autocomplete="off" data-n value="{i["default"]}" min="{i.get("min",0)}"' + f'{d}>')
+            + "</div>")
+    inputs = "".join(one(i) for i in c["inputs"])
     return f"""<div class="calc">
 <form id="f" onsubmit="return false"><div class="grid">{inputs}</div><button id="go" type="button">Calcular con mis números</button></form>
 <div class="result" id="r"></div>

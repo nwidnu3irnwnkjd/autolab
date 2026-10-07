@@ -131,7 +131,7 @@
     1
    ]
   },
-  "fecha": "2026-10-07"
+  "fecha": "2026-10-08"
  },
  "cuanto-ahorrar-para-comprar-casa": {
   "slug": "cuanto-ahorrar-para-comprar-casa",
@@ -271,13 +271,13 @@
    "rentab": 0,
    "interes": 4.247
   },
-  "fecha": "2026-10-07"
+  "fecha": "2026-10-08"
  },
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
   "slug": "hipoteca-20-25-o-30-anos-cuota-vs-intereses",
   "id": "tabla-hipoteca",
   "h3": "¿Cuánto pago de hipoteca al mes por 150.000 € a 25 años?",
-  "condiciones": "Cuota mensual · intereses totales con un tipo del 4,047 % (Euríbor a 12 meses de 3,247 %, media de septiembre de 2026 del BCE, más 0,8 puntos de diferencial supuesto; Euríbor fijado el 2026-10-07). Sistema francés, sin bonificaciones ni comisiones; la cuota real variará con las revisiones del Euríbor.",
+  "condiciones": "Cuota mensual · intereses totales con un tipo del 4,047 % (Euríbor a 12 meses de 3,247 %, media de septiembre de 2026 del BCE, más 0,8 puntos de diferencial supuesto; Euríbor fijado el 2026-10-08). Sistema francés, sin bonificaciones ni comisiones; la cuota real variará con las revisiones del Euríbor.",
   "cols": [
    "Capital",
    "20 años",
@@ -350,7 +350,7 @@
    "euribor_periodo": "2026-09",
    "diferencial": 0.8
   },
-  "fecha": "2026-10-07"
+  "fecha": "2026-10-08"
  },
  "loteria-navidad-premio-neto-hacienda": {
   "slug": "loteria-navidad-premio-neto-hacienda",
@@ -457,6 +457,6 @@
    "decimos": 1,
    "personas": 1
   },
-  "fecha": "2026-10-07"
+  "fecha": "2026-10-08"
  }
 }

@@ -181,27 +181,40 @@
     var t = null, used = 0, els = [];
     var m = /[#&]v=([^&]*)/.exec(location.hash);
     if (m) m[1].split("~").forEach(function (p) { var k = p.split(":"), e = document.getElementById(decodeURIComponent(k[0])); if (e && e.form && k[1] !== undefined) e.value = decodeURIComponent(k[1]); });
+    function rd(i) { if (i._d) i.setAttribute("aria-describedby", i._d); else i.removeAttribute("aria-describedby"); }
+    /* UX3.3: campos data-n (type=text): «2,76», «150.000» y «150000» valen igual. Solo se normaliza lo escrito por el usuario (isTrusted); los valores puestos por código no cambian. */
+    var VD = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value");
+    function prep(i) {
+      if (i._d !== undefined || !i.hasAttribute("data-n")) return;
+      i._d = i.getAttribute("aria-describedby") || "";
+      Object.defineProperty(i, "value", { configurable: true,
+        get: function () { var s = VD.get.call(i); if (!i._u) return s; s = s.replace(/\s/g, ""); return s.indexOf(",") > -1 ? s.replace(/\./g, "").replace(",", ".") : /^-?[1-9]\d{0,2}(\.\d{3})+$/.test(s) ? s.replace(/\./g, "") : s; },
+        set: function (v) { i._u = 0; VD.set.call(i, v); } });
+      i.addEventListener("input", function (e) { if (e.isTrusted) i._u = 1; });
+      i.addEventListener("blur", function () { var s = i.value; if (i._u && /^-?\d+(\.\d+)?$/.test(s)) VD.set.call(i, num(s, (s.split(".")[1] || "").length).replace(/^(-?)(\d+)$/, "$1$2")); });
+    }
     function used1() { if (used) return; used = U = 1; ev("calc_used"); }
     /* UX1.6: entrada vacía o fuera de rango -> aria-invalid, mensaje bajo el campo y aviso en lugar de un resultado viejo. */
     function gate() {
       var r = document.getElementById("r"), bad = "", hint = "";
       els.forEach(function (i) {
-        var m = "", v = i.validity;
-        if (i.type === "number") m = i.value === "" || v.badInput ? "Escribe un número." : v.rangeUnderflow ? "Pon un valor de " + i.min.replace(".", ",") + " o más." : v.rangeOverflow ? "Pon un valor de " + i.max.replace(".", ",") + " o menos." : "";
+        var m = "", v = i.validity, s = i.value, x = /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN;
+        if (i.hasAttribute("data-n")) m = isNaN(x) ? "Escribe un número." : i.min !== "" && x < +i.min ? "Pon un valor de " + i.min.replace(".", ",") + " o más." : "";
+        else if (i.type === "number") m = i.value === "" || v.badInput ? "Escribe un número." : v.rangeUnderflow ? "Pon un valor de " + i.min.replace(".", ",") + " o más." : v.rangeOverflow ? "Pon un valor de " + i.max.replace(".", ",") + " o menos." : "";
         var e = i._e, pend = m && i === document.activeElement; // UX2.4: sin rojo mientras se escribe; el error llega al salir del campo
         if (pend) {
-          if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); i.removeAttribute("aria-describedby"); }
+          if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); rd(i); }
           i._p = 1; i._m = ""; if (!hint) hint = (i.labels && i.labels[0] ? i.labels[0].textContent : i.id).split(/[(,]/)[0].trim().slice(0, 40);
           return;
         }
         i._p = 0;
         if (m) {
-          if (!e) { e = i._e = document.createElement("p"); e.className = "em-err"; e.id = "e-" + i.id; i.parentNode.appendChild(e); i.setAttribute("aria-describedby", e.id); }
+          if (!e) { e = i._e = document.createElement("p"); e.className = "em-err"; e.id = "e-" + i.id; i.parentNode.appendChild(e); i.setAttribute("aria-describedby", (i._d ? i._d + " " : "") + e.id); }
           if (e.textContent !== m) e.textContent = m;
           i.setAttribute("aria-invalid", "true");
           if (!i._m && U) ev("calc_error", { field: i.id });
           if (!bad) bad = (i.labels && i.labels[0] ? i.labels[0].textContent : i.id) + ": " + m.charAt(0).toLowerCase() + m.slice(1);
-        } else if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); i.removeAttribute("aria-describedby"); }
+        } else if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); rd(i); }
         i._m = m;
       });
       BAD = bad || hint ? 1 : 0;
@@ -219,7 +232,7 @@
     Array.prototype.forEach.call(list, function (i) {
       if (typeof i === "string") i = document.getElementById(i);
       if (!i) return;
-      els.push(i);
+      els.push(i); prep(i);
       i.addEventListener("input", function () { used1(); deb(); });
       i.addEventListener("change", function () { used1(); run(); });
       i.addEventListener("blur", function () { if (i._p) run(); });
