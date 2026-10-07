@@ -144,11 +144,15 @@ def fecha_es(iso):
 def guide_page(g, calcs, card, base):
     rel = [c for s in g.get("calcs", []) for c in calcs if c["slug"] == s]
     calc_block = ('<h2>Calcúlalo con tus números</h2><ul class="cards">' + "".join(card(c) for c in rel) + "</ul>") if rel else ""
+    body_html = g["body"]
+    if rel:  # CTA a la calculadora relacionada justo bajo la respuesta corta
+        cta = f'\n<p><a class="btn2" data-ev="guide_to_calc" href="/decidir/{rel[0]["slug"]}/">Calcula el tuyo: {rel[0]["h1"]} →</a></p>'
+        body_html = re.sub(r'(<p class="lead">.*?</p>)', lambda m: m.group(1) + cta, body_html, count=1, flags=re.S)
     body = f"""<article class="guide">
 <p class="kicker"><a href="/guias/">Guías</a></p>
 <h1>{g["h1"]}</h1>
 <p class="byline note">Por {AUTHOR} · Publicado el <time datetime="{g["published"]}">{fecha_es(g["published"])}</time> · Actualizado el <time datetime="{g["modified"]}">{fecha_es(g["modified"])}</time></p>
-{g["body"]}
+{body_html}
 <p class="disclaimer">Información orientativa, no constituye asesoramiento financiero ni legal. Revisa tus documentos (factura, contrato o escritura) y, si la decisión es importante, consulta con un profesional. Lee cómo trabajamos en <a href="/como-funciona/">Cómo funciona</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
 {calc_block}
 </article>"""

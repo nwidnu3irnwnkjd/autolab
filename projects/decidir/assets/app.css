@@ -7,7 +7,7 @@
   --c1:#2548f0;--c2:#d55a1c;--c3:#0f8a80;--bd:#7b839b;--c4:#9b4dca;--track:#e9ecf4;
   --shadow:0 1px 2px rgba(16,24,48,.06),0 4px 16px rgba(16,24,48,.06);--shadow-lg:0 2px 4px rgba(16,24,48,.06),0 12px 32px rgba(16,24,48,.10);
   --card-border:transparent;--r:14px;--r-sm:10px;
-  --font:Inter,"Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --t-sm:15px;--t-base:17px;--t-md:20px;--t-lg:26px;--t-xl:36px;--t-xxl:48px;
   --ease:cubic-bezier(.2,.7,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);--out:cubic-bezier(.22,1,.36,1);color-scheme:light;
   --i1:#2548f0;--i2:#f08a4b;--i3:#14a394;--i1s:#b9c7ff;--ib:#e6ebff;--is:#fff;--il:#1b2340;--shine:rgba(255,255,255,.55);
@@ -49,8 +49,6 @@ a:hover{text-decoration-thickness:2px}
 @media (max-width:599px){.site-h{position:static}}
 @media (max-width:359px){.logo{font-size:17px;gap:6px}.logo svg{width:24px;height:24px}.site-h nav{gap:0}.site-h nav a{padding:0 7px;font-size:14px}}
 
-/* Fuente de respaldo con las métricas de Inter: al llegar Inter el texto no se desplaza (CLS 0) */
-@font-face{font-family:"Inter Fallback";src:local(Arial),local(Helvetica);size-adjust:107.1%;ascent-override:90.4%;descent-override:22.5%;line-gap-override:0%}
 /* Tipografía */
 main.in{padding-top:28px;padding-bottom:64px}
 h1,h2,h3{letter-spacing:-.02em;line-height:1.2;text-wrap:balance}

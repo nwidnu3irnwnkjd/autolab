@@ -223,3 +223,6 @@ Casos típicos en 10 calculadoras más (30 en total, 39/39 coinciden con el moto
 
 ## Ciclo 82 (8-oct madrugada)
 Noticia «Luz el 8-oct» publicada (media 0,18335 €/kWh, −12,6 %; 14 h barata / 20 h cara; cifras de horas-valle verificada). UX pasada 3 acciones 1,3,4,7: etiquetas cortas + ayuda (522→75 etiquetas >60 car.), campos numéricos inputmode=decimal con coma/miles (em.js normaliza lecturas; resultados idénticos, probado en navegador: 300000 y 2,5), «Aplicar este caso» botón, 13 px mínimo. +≈0,8 KB gz. 0 desbordes a 375 px en 8 páginas. Pendiente UX: 2 y 10 (Google Fonts + /privacidad/; decisión mía: autoalojar o fuente sistema), 5, 6, 8, 9. BOE 8-oct sin leer (resumen del día).
+
+## Ciclo 83 (8-oct madrugada)
+Google Fonts eliminado (fuente del sistema; 0 terceros de fuentes), /privacidad/ veraz con el código, CTA «Calcula el tuyo» bajo el lead de 19 guías, Editor de calidad en 19 noticias (lead en resumen del 7-oct, salvedad convalidación). QA propio 375 px: 0 desbordes en 10 páginas. RIESGO ABIERTO: GA4 sin banner y cookies.html incorrecto → cola ítem 10 (prioritario c84).
