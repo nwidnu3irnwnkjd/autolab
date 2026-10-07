@@ -35,3 +35,6 @@
 ## HECHO el 2-oct tarde (sesión de Claude en el navegador de Andoni)
 Indexación solicitada de las 5 URL clave, 5 sitemaps enviados, autolab-reader con permiso «Completo», sitemap.xml enviado en Bing. Solo quedan opcionales: CNAME www (GoDaddy) y descripción del repo de GitHub (necesita su «sí»).
 
+
+## OPCIONAL (7-oct): indexación en bloque (2 min, tú decides)
+Pega en la sesión de Claude del navegador el texto de `journal/PEDIR-A-ANDONI-INDEXACION.md`: solicita indexación de 10 URL clave en Google y Bing, envía la home a Brave y comprueba sitemaps y GitHub. Google solo conoce 53/183 URL y ninguna rastreada.
