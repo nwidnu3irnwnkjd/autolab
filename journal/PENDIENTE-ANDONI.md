@@ -38,3 +38,6 @@ Indexación solicitada de las 5 URL clave, 5 sitemaps enviados, autolab-reader c
 
 ## OPCIONAL (7-oct): indexación en bloque (2 min, tú decides)
 Pega en la sesión de Claude del navegador el texto de `journal/PEDIR-A-ANDONI-INDEXACION.md`: solicita indexación de 10 URL clave en Google y Bing, envía la home a Brave y comprueba sitemaps y GitHub. Google solo conoce 53/183 URL y ninguna rastreada.
+
+## Titular legal (c84, cumplimiento LSSI art. 10 / RGPD art. 13.1.a) — cuando puedas, sin urgencia
+El verificador legal pide identificar al responsable de la web con nombre (o razón social), NIF y domicilio/contacto en las páginas de privacidad/aviso legal; hoy solo pone «Editor independiente (Madrid)». Dime qué datos quieres publicar (o si prefieres crear una sociedad/usar la de Lavarte) y lo meto en data/site.json → owner. Mientras no haya monetización, el riesgo es bajo, pero conviene antes de AdSense/afiliación.

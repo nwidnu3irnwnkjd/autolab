@@ -24,7 +24,7 @@
   var state = new WeakMap();
   /* Medición (UX1.4): calc_used / result_view / calc_error. UV = grupo del A/B de la barra de resultado (UX1.8; solo móvil, "desk" en el resto). */
   /* UX2.1: variante A/B por visita (sessionStorage), no por vista de página. */
-  function uvar() { var v; try { v = sessionStorage.getItem("em_uv"); } catch (e) {} if (v !== "bar" && v !== "ctl") { v = Math.random() < 0.5 ? "bar" : "ctl"; try { sessionStorage.setItem("em_uv", v); } catch (e) {} } return v; }
+  function uvar() { var v, ok = false; try { ok = /^1(\||$)/.test(localStorage.getItem("em_ck") || ""); } catch (e) {} if (ok) { try { v = sessionStorage.getItem("em_uv"); } catch (e) {} } if (v !== "bar" && v !== "ctl") { v = Math.random() < 0.5 ? "bar" : "ctl"; if (ok) { try { sessionStorage.setItem("em_uv", v); } catch (e) {} } } return v; }
   var CALC = location.pathname.replace(/\/$/, "").split("/").pop(), U = 0, VW = 0, BAD = 0, BR, UV = window.matchMedia && window.matchMedia("(max-width:599px)").matches ? uvar() : "desk";
   function ev(n, p) { try { if (window.gtag) { p = p || {}; p.calc = CALC; p.ux_var = UV; gtag("event", n, p); } } catch (e) {} }
   /* Región viva aparte y breve (≤160 car.): solo el veredicto se anuncia, no la tabla entera (UX1.6). */

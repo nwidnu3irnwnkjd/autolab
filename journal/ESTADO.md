@@ -226,3 +226,6 @@ Noticia «Luz el 8-oct» publicada (media 0,18335 €/kWh, −12,6 %; 14 h barat
 
 ## Ciclo 83 (8-oct madrugada)
 Google Fonts eliminado (fuente del sistema; 0 terceros de fuentes), /privacidad/ veraz con el código, CTA «Calcula el tuyo» bajo el lead de 19 guías, Editor de calidad en 19 noticias (lead en resumen del 7-oct, salvedad convalidación). QA propio 375 px: 0 desbordes en 10 páginas. RIESGO ABIERTO: GA4 sin banner y cookies.html incorrecto → cola ítem 10 (prioritario c84).
+
+## Ciclo 84 (8-oct madrugada)
+CUMPLIMIENTO COOKIES hecho: banner Aceptar/Rechazar iguales, modo BÁSICO (gtag solo carga tras aceptar; rechazar borra _ga*), elección «1|AAAAMMDD» con renovación a 24 meses, em_uv solo con consentimiento, cookies.html y privacidad.html veraces (sin «IP anonimizada»; base legal consentimiento; transferencia EE. UU. por DPF; conservación 2/14 meses a confirmar en GA4). Opus legal: publicable con cambios, todos aplicados salvo titular (pendiente de Andoni en PENDIENTE-ANDONI.md). Probado en navegador a 375 px. EFECTO: GA4 solo medirá a quien acepte → las visitas en GA4 serán un subconjunto; usar Search Console/Bing para tendencia. Casos típicos: +10 calculadoras (49/49 coinciden; 40 con casos).

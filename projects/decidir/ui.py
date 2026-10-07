@@ -84,7 +84,26 @@ def head_extra():
     if site.get("ga4_id"):
         g = site["ga4_id"]
         # UX1.4: GA4 solo en el dominio de producción (localhost/QA no cuentan). Sin gtag definido, los hooks `window.gtag&&` no hacen nada.
-        out.append(f'<script>if(location.hostname==="entremuchos.com"){{window.dataLayer=[];window.gtag=function(){{dataLayer.push(arguments)}};gtag("js",new Date());gtag("config","{g}",{{anonymize_ip:true}});var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id={g}";document.head.appendChild(s)}}</script>')
+        # Modo básico (AEPD): gtag.js y config NO se cargan hasta que el usuario acepta (em_ck "1|AAAAMMDD", o "1" antiguo). Elección válida 24 meses.
+        # Solo en entremuchos.com; en localhost con ?cookies=1 se ve el banner (sin gtag).
+        host_js = ('var P=location.hostname==="entremuchos.com",L=location.hostname==="localhost"&&/[?&]cookies=1/.test(location.search),K="em_ck",v=null,r=null;try{r=localStorage.getItem(K)}catch(e){}'
+                   'if(r){var q=r.split("|");if(q[0]==="1"||q[0]==="0"){v=q[0];if(/^\\d{8}$/.test(q[1]||"")){var t=q[1];if(new Date()-new Date(+t.slice(0,4),+t.slice(4,6)-1,+t.slice(6,8))>730*864e5)v=null}}}'
+                   'function T(){var n=new Date();return n.getFullYear()*10000+(n.getMonth()+1)*100+n.getDate()}')
+        gt = ('function G(){if(!P||window.gtag)return;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};'
+              'gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied"});gtag("consent","update",{analytics_storage:"granted"});'
+              'gtag("js",new Date());gtag("config","' + g + '");var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id=' + g + '";document.head.appendChild(s)}'
+              'function X(){window["ga-disable-' + g + '"]=true;if(window.gtag){try{gtag("consent","update",{analytics_storage:"denied"})}catch(e){}window.gtag=null}'
+              'var h=location.hostname.split("."),ds=[""],i,n,c=document.cookie.split(";"),j;for(i=0;i<h.length-1;i++){n=h.slice(i).join(".");ds.push(";domain="+n);ds.push(";domain=."+n)}'
+              'for(j=0;j<c.length;j++){n=c[j].split("=")[0].trim();if(n==="_ga"||n.indexOf("_ga_")===0)for(i=0;i<ds.length;i++)document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;max-age=0;path=/"+ds[i]}}'
+              'if(v==="1")G();else if(v==="0")X();')
+        bn = ('function B(){var d=document.getElementById("ckb");if(d)return;d=document.createElement("div");d.id="ckb";d.setAttribute("role","dialog");d.setAttribute("aria-label","Cookies");'
+              'd.innerHTML=\'<p>Usamos Google Analytics para medir visitas, solo si aceptas. <a href="/cookies/">Más información</a></p><button type="button" data-v="1">Aceptar</button><button type="button" data-v="0">Rechazar</button>\';'
+              'd.onclick=function(e){var b=e.target.closest("button");if(!b)return;try{localStorage.setItem(K,b.dataset.v+"|"+T())}catch(x){}'
+              'if(b.dataset.v==="1")G();else X();d.remove()};document.body.appendChild(d)}'
+              'var st=document.createElement("style");st.textContent="#ckb{position:fixed;left:0;right:0;bottom:0;z-index:99;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px 16px;background:#fff;color:#1a1d29;border-top:1px solid #c9ccd8;font:14px/1.4 system-ui,sans-serif}#ckb p{margin:0;flex:1 1 260px}#ckb a{color:inherit;text-decoration:underline}#ckb button{font:inherit;font-weight:600;padding:7px 16px;border-radius:8px;border:1px solid #1a1d29;background:transparent;color:inherit;cursor:pointer}@media (prefers-color-scheme:dark){#ckb{background:#161a26;color:#eceff7;border-color:#3a4054}#ckb button{border-color:#eceff7}}";document.head.appendChild(st);'
+              'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ck]");if(a&&(P||L)){e.preventDefault();B()}});'
+              'document.addEventListener("DOMContentLoaded",function(){if((P||L)&&v!=="1"&&v!=="0")B()})')
+        out.append('<script>(function(){' + host_js + gt + bn + '})()</script>')
     if site.get("adsense_client"):
         out.append(f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={site["adsense_client"]}" crossorigin="anonymous"></script>')
     return "\n".join(out)

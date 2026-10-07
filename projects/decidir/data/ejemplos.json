@@ -3225,6 +3225,1014 @@
      "texto": "reformar costaría 42.000 € y mudarse 17.600 €: sale más barato mudarse por 24.400 €."
     }
    ]
+  },
+  "pension-viudedad-cuanto-cobro": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "br": 1600,
+      "causante": "pensionista",
+      "ingresos": 0,
+      "edad": 66,
+      "hijos": 0,
+      "union": "matrimonio",
+      "anos": 30,
+      "otra": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "temporal": 0,
+      "pct": 60,
+      "mes_pre": 960,
+      "mes": 960,
+      "anual": 13440,
+      "capado": 0,
+      "minimo": 936.2,
+      "falta": 0,
+      "pos": 0,
+      "alt": 0,
+      "mant": 0,
+      "limite": 22548.8,
+      "cargas": 0,
+      "rend": 0,
+      "br": 1600,
+      "cap": 3359.6
+     },
+     "titulo": "pensión del fallecido con base reguladora de 1.600 €, viudo o viuda de 66 años",
+     "texto": "la pensión sería del 60 % de la base reguladora: 960,00 € al mes (13.440 € al año en 14 pagas)."
+    },
+    {
+     "inputs": {
+      "br": 1600,
+      "causante": "pensionista",
+      "ingresos": 8000,
+      "edad": 66,
+      "hijos": 0,
+      "union": "matrimonio",
+      "anos": 30,
+      "otra": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "temporal": 0,
+      "pct": 52,
+      "mes_pre": 832,
+      "mes": 832,
+      "anual": 11648,
+      "capado": 0,
+      "minimo": 936.2,
+      "falta": 104.2,
+      "pos": 60,
+      "alt": 0,
+      "mant": 0,
+      "limite": 22548.8,
+      "cargas": 0,
+      "rend": 8000,
+      "br": 1600,
+      "cap": 3359.6
+     },
+     "titulo": "pensión del fallecido con base reguladora de 1.600 €, viudo o viuda de 66 años, otros ingresos de 8.000 € al año",
+     "texto": "la pensión sería del 52 % de la base reguladora: 832,00 € al mes (11.648 € al año en 14 pagas); queda 104,20 € por debajo de la pensión mínima de referencia (936,20 €/mes)."
+    },
+    {
+     "inputs": {
+      "br": 1200,
+      "causante": "pensionista",
+      "ingresos": 0,
+      "edad": 40,
+      "hijos": 1,
+      "union": "matrimonio",
+      "anos": 30,
+      "otra": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "temporal": 0,
+      "pct": 70,
+      "mes_pre": 840,
+      "mes": 840,
+      "anual": 11760,
+      "capado": 0,
+      "minimo": 1256.6,
+      "falta": 416.6,
+      "pos": 0,
+      "alt": 0,
+      "mant": 0,
+      "limite": 19373.6,
+      "cargas": 1,
+      "rend": 0,
+      "br": 1200,
+      "cap": 3359.6
+     },
+     "titulo": "pensión del fallecido con base reguladora de 1.200 €, viudo o viuda de 40 años, 1 hijo a cargo",
+     "texto": "la pensión sería del 70 % de la base reguladora: 840,00 € al mes (11.760 € al año en 14 pagas); queda 416,60 € por debajo de la pensión mínima de referencia (1.256,60 €/mes)."
+    }
+   ]
+  },
+  "diesel-gasolina-hibrido-electrico": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "km": 15000,
+      "anos": 5,
+      "compraDiesel": 28000,
+      "compraGasolina": 25000,
+      "compraHibrido": 29000,
+      "compraElectrico": 35000,
+      "consDiesel": 5.5,
+      "consGasolina": 6.5,
+      "consHibrido": 4.8,
+      "consElectrico": 17,
+      "precioDiesel": 1.5,
+      "precioGasolina": 1.55,
+      "kwhCasa": 0.17,
+      "pctCasa": 70,
+      "kwhPublico": 0.45,
+      "seguroDiesel": 600,
+      "seguroGasolina": 580,
+      "seguroHibrido": 620,
+      "seguroElectrico": 650,
+      "mantDiesel": 450,
+      "mantGasolina": 400,
+      "mantHibrido": 400,
+      "mantElectrico": 300,
+      "impDiesel": 80,
+      "impGasolina": 80,
+      "impHibrido": 70,
+      "impElectrico": 40,
+      "resDiesel": 40,
+      "resGasolina": 42,
+      "resHibrido": 45,
+      "resElectrico": 40
+     },
+     "resultado": {
+      "costeDiesel": 28637.5,
+      "costeGasolina": 27356.25,
+      "costeHibrido": 26980,
+      "costeElectrico": 29188.5,
+      "costeKmDiesel": 0.3818,
+      "costeKmGasolina": 0.3648,
+      "costeKmHibrido": 0.3597,
+      "costeKmElectrico": 0.3892,
+      "mesDiesel": 477.2917,
+      "mesGasolina": 455.9375,
+      "mesHibrido": 449.6667,
+      "mesElectrico": 486.475,
+      "costeKmX": 0.3597,
+      "ganador": 2,
+      "segundo": 1,
+      "kmEquilibrio": 12144.2125,
+      "hayEquilibrio": 1,
+      "diferencia": 376.25,
+      "precioKwh": 0.254
+     },
+     "titulo": "15.000 km al año durante 5 años, 70 % de la recarga en casa",
+     "texto": "coste total de 28.638 € (diésel), 27.356 € (gasolina), 26.980 € (híbrido), 29.189 € (eléctrico): sale más barato el híbrido (0,36 €/km, 450 € al mes) por 376 € sobre el siguiente."
+    },
+    {
+     "inputs": {
+      "km": 30000,
+      "anos": 6,
+      "compraDiesel": 28000,
+      "compraGasolina": 25000,
+      "compraHibrido": 29000,
+      "compraElectrico": 35000,
+      "consDiesel": 5.5,
+      "consGasolina": 6.5,
+      "consHibrido": 4.8,
+      "consElectrico": 17,
+      "precioDiesel": 1.5,
+      "precioGasolina": 1.55,
+      "kwhCasa": 0.17,
+      "pctCasa": 70,
+      "kwhPublico": 0.45,
+      "seguroDiesel": 600,
+      "seguroGasolina": 580,
+      "seguroHibrido": 620,
+      "seguroElectrico": 650,
+      "mantDiesel": 450,
+      "mantGasolina": 400,
+      "mantHibrido": 400,
+      "mantElectrico": 300,
+      "impDiesel": 80,
+      "impGasolina": 80,
+      "impHibrido": 70,
+      "impElectrico": 40,
+      "resDiesel": 40,
+      "resGasolina": 42,
+      "resHibrido": 45,
+      "resElectrico": 40
+     },
+     "resultado": {
+      "costeDiesel": 38430,
+      "costeGasolina": 38995,
+      "costeHibrido": 35882,
+      "costeElectrico": 34712.4,
+      "costeKmDiesel": 0.2135,
+      "costeKmGasolina": 0.2166,
+      "costeKmHibrido": 0.1993,
+      "costeKmElectrico": 0.1928,
+      "mesDiesel": 533.75,
+      "mesGasolina": 541.5972,
+      "mesHibrido": 498.3611,
+      "mesElectrico": 482.1167,
+      "costeKmX": 0.1928,
+      "ganador": 3,
+      "segundo": 2,
+      "kmEquilibrio": 23756.1392,
+      "hayEquilibrio": 1,
+      "diferencia": 1169.6,
+      "precioKwh": 0.254
+     },
+     "titulo": "30.000 km al año durante 6 años, 70 % de la recarga en casa",
+     "texto": "coste total de 38.430 € (diésel), 38.995 € (gasolina), 35.882 € (híbrido), 34.712 € (eléctrico): sale más barato el eléctrico (0,19 €/km, 482 € al mes) por 1.170 € sobre el siguiente."
+    },
+    {
+     "inputs": {
+      "km": 6000,
+      "anos": 8,
+      "compraDiesel": 28000,
+      "compraGasolina": 25000,
+      "compraHibrido": 29000,
+      "compraElectrico": 35000,
+      "consDiesel": 5.5,
+      "consGasolina": 6.5,
+      "consHibrido": 4.8,
+      "consElectrico": 17,
+      "precioDiesel": 1.5,
+      "precioGasolina": 1.55,
+      "kwhCasa": 0.17,
+      "pctCasa": 40,
+      "kwhPublico": 0.45,
+      "seguroDiesel": 600,
+      "seguroGasolina": 580,
+      "seguroHibrido": 620,
+      "seguroElectrico": 650,
+      "mantDiesel": 450,
+      "mantGasolina": 400,
+      "mantHibrido": 400,
+      "mantElectrico": 300,
+      "impDiesel": 80,
+      "impGasolina": 80,
+      "impHibrido": 70,
+      "impElectrico": 40,
+      "resDiesel": 40,
+      "resGasolina": 42,
+      "resHibrido": 45,
+      "resElectrico": 30
+     },
+     "resultado": {
+      "costeDiesel": 29800,
+      "costeGasolina": 27816,
+      "costeHibrido": 28241.2,
+      "costeElectrico": 35178.08,
+      "costeKmDiesel": 0.6208,
+      "costeKmGasolina": 0.5795,
+      "costeKmHibrido": 0.5884,
+      "costeKmElectrico": 0.7329,
+      "mesDiesel": 310.4167,
+      "mesGasolina": 289.75,
+      "mesHibrido": 294.1792,
+      "mesElectrico": 366.4383,
+      "costeKmX": 0.5795,
+      "ganador": 1,
+      "segundo": 2,
+      "kmEquilibrio": 8017.0778,
+      "hayEquilibrio": 1,
+      "diferencia": 425.2,
+      "precioKwh": 0.338
+     },
+     "titulo": "6.000 km al año durante 8 años, 40 % de la recarga en casa",
+     "texto": "coste total de 29.800 € (diésel), 27.816 € (gasolina), 28.241 € (híbrido), 35.178 € (eléctrico): sale más barato la gasolina (0,58 €/km, 290 € al mes) por 425 € sobre el siguiente."
+    }
+   ]
+  },
+  "potencia-contratada-luz-bajar-compensa": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "kwActual": 4.6,
+      "kwNuevo": 3.45,
+      "pico": 3.0,
+      "eurKw": 28.429836,
+      "costeCambio": 0,
+      "anos": 3
+     },
+     "resultado": {
+      "costeActual": 166.3308,
+      "costeNuevo": 124.7481,
+      "ahorroAnual": 41.5827,
+      "ahorroNeto": 124.7481,
+      "aniosAmort": 0,
+      "margen": 0.45,
+      "ahorroMinimo": 57.8542,
+      "pctBaja": 25.0,
+      "estado": 0,
+      "ganador": 0
+     },
+     "titulo": "bajar de 4,60 a 3,45 kW con un pico de 3,00 kW, a 3 años",
+     "texto": "la parte de potencia pasaría de 166,33 € a 124,75 € al año: 41,58 € menos al año; en 3 años ahorrarías 124,75 € netos."
+    },
+    {
+     "inputs": {
+      "kwActual": 4.6,
+      "kwNuevo": 3.45,
+      "pico": 3.6,
+      "eurKw": 28.429836,
+      "costeCambio": 0,
+      "anos": 3
+     },
+     "resultado": {
+      "costeActual": 166.3308,
+      "costeNuevo": 124.7481,
+      "ahorroAnual": 41.5827,
+      "ahorroNeto": 124.7481,
+      "aniosAmort": 0,
+      "margen": -0.15,
+      "ahorroMinimo": 36.1589,
+      "pctBaja": 25.0,
+      "estado": 1,
+      "ganador": 1
+     },
+     "titulo": "bajar de 4,60 a 3,45 kW con un pico de 3,60 kW, a 3 años",
+     "texto": "la parte de potencia pasaría de 166,33 € a 124,75 € al año: 41,58 € menos al año; en 3 años ahorrarías 124,75 € netos; tu pico de consumo (3,60 kW) supera la potencia nueva y habría cortes, así que no compensa."
+    },
+    {
+     "inputs": {
+      "kwActual": 4.6,
+      "kwNuevo": 3.45,
+      "pico": 3.0,
+      "eurKw": 28.429836,
+      "costeCambio": 200,
+      "anos": 3
+     },
+     "resultado": {
+      "costeActual": 166.3308,
+      "costeNuevo": 124.7481,
+      "ahorroAnual": 41.5827,
+      "ahorroNeto": -75.2519,
+      "aniosAmort": 4.8097,
+      "margen": 0.45,
+      "ahorroMinimo": 57.8542,
+      "pctBaja": 25.0,
+      "estado": 2,
+      "ganador": 1
+     },
+     "titulo": "bajar de 4,60 a 3,45 kW con un pico de 3,00 kW, con 200 € de coste del cambio, a 3 años",
+     "texto": "la parte de potencia pasaría de 166,33 € a 124,75 € al año: 41,58 € menos al año; en 3 años el cambio te costaría 75,25 € más de lo que ahorras; se recuperaría en 4,8 años."
+    }
+   ]
+  },
+  "jubilarse-en-2026-o-en-2027-edad-y-pension": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "nac_a": 1960,
+      "nac_m": 1,
+      "cot_a": 35,
+      "cot_m": 0,
+      "b_rec": 3000,
+      "b_ant": 2200
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "a26_estado": 0,
+      "a26_t": 24322,
+      "a26_req": 802,
+      "a26_cot": 421,
+      "a26_pct": 96.77,
+      "a26_demora": 0,
+      "a26_demoraAlt": 0,
+      "a26_br": 2022.8571,
+      "a26_brNew": 2021.968,
+      "a26_brOld": 2022.8571,
+      "a26_pension": 1957.5189,
+      "a27_estado": 0,
+      "a27_t": 24324,
+      "a27_req": 804,
+      "a27_cot": 423,
+      "a27_pct": 96.17,
+      "a27_demora": 0,
+      "a27_demoraAlt": 2,
+      "a27_br": 2022.8571,
+      "a27_brNew": 2021.0336,
+      "a27_brOld": 2022.8571,
+      "a27_pension": 1945.3817,
+      "pf_t": 24322,
+      "pf_req": 802,
+      "pf_cot": 421,
+      "pf_pct": 96.77,
+      "pf_pension": 1957.5189,
+      "demoraPosible": 0,
+      "a26_pension_ene27": 2010.3719,
+      "dif": -64.9902
+     },
+     "titulo": "nacido en enero de 1960, 35 años y 0 meses cotizados, base reguladora de 2.022,86 €",
+     "texto": "jubilándote en noviembre de 2026 cobrarías 1.957,52 € al mes (96,77 % de la base) y en enero de 2027 1.945,38 € (96,17 %); la de 2026 revalorizada en enero de 2027 sería de 2.010,37 €: esperar a 2027 no sube la pensión."
+    },
+    {
+     "inputs": {
+      "nac_a": 1960,
+      "nac_m": 1,
+      "cot_a": 38,
+      "cot_m": 2,
+      "b_rec": 3000,
+      "b_ant": 2200
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "a26_estado": 0,
+      "a26_t": 24322,
+      "a26_req": 780,
+      "a26_cot": 459,
+      "a26_pct": 100,
+      "a26_demora": 22,
+      "a26_demoraAlt": 0,
+      "a26_br": 2022.8571,
+      "a26_brNew": 2021.968,
+      "a26_brOld": 2022.8571,
+      "a26_pension": 2022.8571,
+      "a27_estado": 0,
+      "a27_t": 24324,
+      "a27_req": 804,
+      "a27_cot": 461,
+      "a27_pct": 100,
+      "a27_demora": 0,
+      "a27_demoraAlt": 2,
+      "a27_br": 2022.8571,
+      "a27_brNew": 2021.0336,
+      "a27_brOld": 2022.8571,
+      "a27_pension": 2022.8571,
+      "pf_t": 24322,
+      "pf_req": 780,
+      "pf_cot": 459,
+      "pf_pct": 100,
+      "pf_pension": 2022.8571,
+      "demoraPosible": 1,
+      "a26_pension_ene27": 2077.4743,
+      "dif": -54.6171
+     },
+     "titulo": "nacido en enero de 1960, 38 años y 2 meses cotizados, base reguladora de 2.022,86 €",
+     "texto": "jubilándote en noviembre de 2026 cobrarías 2.022,86 € al mes (100,00 % de la base) y en enero de 2027 2.022,86 € (100,00 %); la de 2026 revalorizada en enero de 2027 sería de 2.077,47 €: esperar a 2027 no sube la pensión."
+    }
+   ]
+  },
+  "guarderia-cuidadora-o-reducir-jornada": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "guarderia": 350,
+      "ayuda": 0,
+      "cuidadora": 800,
+      "salario": 1500,
+      "reduccion": 50,
+      "perdidaNeta": 0,
+      "oportunidad": 0,
+      "meses": 30
+     },
+     "resultado": {
+      "costeMesGuarderia": 350,
+      "costeMesCuidadora": 800,
+      "costeMesReducir": 750,
+      "totalGuarderia": 10500,
+      "totalCuidadora": 24000,
+      "totalReducir": 22500,
+      "perdidaMes": 750,
+      "oportunidadMes": 0,
+      "ahorroVsSiguiente": 12000,
+      "salarioEquilibrio": 700,
+      "guarderiaEquilibrio": 750,
+      "mejorExterna": "guardería",
+      "ganador": "guardería"
+     },
+     "titulo": "guardería de 350 €/mes, cuidadora de 800 €/mes o reducir jornada un 50 % con 1.500 € de salario, durante 30 meses",
+     "texto": "coste de 10.500 € la guardería, 24.000 € la cuidadora y 22.500 € reducir jornada (350,00 €, 800,00 € y 750,00 € al mes): sale más barata la guardería por 12.000 € sobre la siguiente."
+    },
+    {
+     "inputs": {
+      "guarderia": 420,
+      "ayuda": 100,
+      "cuidadora": 900,
+      "salario": 2400,
+      "reduccion": 40,
+      "perdidaNeta": 33,
+      "oportunidad": 15,
+      "meses": 24
+     },
+     "resultado": {
+      "costeMesGuarderia": 320,
+      "costeMesCuidadora": 900,
+      "costeMesReducir": 910.8,
+      "totalGuarderia": 7680,
+      "totalCuidadora": 21600,
+      "totalReducir": 21859.2,
+      "perdidaMes": 792,
+      "oportunidadMes": 118.8,
+      "ahorroVsSiguiente": 13920,
+      "salarioEquilibrio": 843.2148,
+      "guarderiaEquilibrio": 1000,
+      "mejorExterna": "guardería",
+      "ganador": "guardería"
+     },
+     "titulo": "guardería de 420 €/mes con 100 € de ayuda, cuidadora de 900 €/mes o reducir jornada un 40 % con 2.400 € de salario, durante 24 meses",
+     "texto": "coste de 7.680 € la guardería, 21.600 € la cuidadora y 21.859 € reducir jornada (320,00 €, 900,00 € y 910,80 € al mes): sale más barata la guardería por 13.920 € sobre la siguiente."
+    }
+   ]
+  },
+  "declaracion-conjunta-o-individual": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "tipo": "mat",
+      "b1": 42000,
+      "b2": 0,
+      "ss": 2730,
+      "ahorro": 0,
+      "hijosMenores": 1,
+      "hijosMayores": 1,
+      "ccaa": "madrid"
+     },
+     "resultado": {
+      "cuotaIndividual": 7138.8667,
+      "cuotaConjunta": 5252.1653,
+      "diferencia": 1886.7014,
+      "ahorroConjunta": 1886.7014,
+      "ahorroIndividual": 0,
+      "ganador": "conjunta",
+      "umbralSegundoSueldo": 5971.1696,
+      "conjuntaSiempre": false,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "matrimonio con rendimientos de 42.000 €, 2 hijos, Comunidad de Madrid",
+     "texto": "la cuota sería de 7.139 € en individual y 5.252 € en conjunta: conviene la conjunta por 1.887 €."
+    },
+    {
+     "inputs": {
+      "tipo": "mat",
+      "b1": 32000,
+      "b2": 30000,
+      "ss": 4030,
+      "ahorro": 800,
+      "hijosMenores": 0,
+      "hijosMayores": 2,
+      "ccaa": "madrid"
+     },
+     "resultado": {
+      "cuotaIndividual": 8918.1346,
+      "cuotaConjunta": 12569.4046,
+      "diferencia": -3651.27,
+      "ahorroConjunta": 0,
+      "ahorroIndividual": 3651.27,
+      "ganador": "individual",
+      "umbralSegundoSueldo": 5169.0124,
+      "conjuntaSiempre": false,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "matrimonio con rendimientos de 32.000 € y 30.000 €, 2 hijos, Comunidad de Madrid",
+     "texto": "la cuota sería de 8.918 € en individual y 12.569 € en conjunta: conviene la individual por 3.651 €."
+    },
+    {
+     "inputs": {
+      "tipo": "mono",
+      "b1": 34000,
+      "b2": 0,
+      "ss": 2210,
+      "ahorro": 300,
+      "hijosMenores": 1,
+      "hijosMayores": 1,
+      "ccaa": "asturias"
+     },
+     "resultado": {
+      "cuotaIndividual": 4346.556,
+      "cuotaConjunta": 3723.056,
+      "diferencia": 623.5,
+      "ahorroConjunta": 623.5,
+      "ahorroIndividual": 0,
+      "ganador": "conjunta",
+      "umbralSegundoSueldo": null,
+      "conjuntaSiempre": false,
+      "orientativo": 0,
+      "ccaaNombre": "Asturias"
+     },
+     "titulo": "familia monoparental con rendimientos de 34.000 €, 2 hijos, Asturias",
+     "texto": "la cuota sería de 4.347 € en individual y 3.723 € en conjunta: conviene la conjunta por 624 €."
+    }
+   ]
+  },
+  "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 30000,
+      "contrato": "indefinido",
+      "base27": 5101.2
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "mes26": 162.5,
+      "mes27": 163,
+      "anual26": 1950,
+      "anual27": 1956,
+      "sube": 6,
+      "dMei": 6,
+      "dSol": 0,
+      "dBase": 0,
+      "mei27": 51,
+      "sol26": 0,
+      "sol27": 0,
+      "solMes27": 0,
+      "umbral27": 61214.4,
+      "umbral26": 61214.4,
+      "pctBruto": 0.02
+     },
+     "titulo": "30.000 € brutos al año, contrato indefinido",
+     "texto": "la cotización del trabajador pasaría de 162,50 € a 163,00 € al mes (1.950,00 € a 1.956,00 € al año): 6,00 € más al año, de los que 6,00 € son del MEI; sin cuota de solidaridad por estar por debajo de la base máxima."
+    },
+    {
+     "inputs": {
+      "bruto": 90000,
+      "contrato": "indefinido",
+      "base27": 5101.2
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "mes26": 336.52,
+      "mes27": 338.49,
+      "anual26": 4038.24,
+      "anual27": 4061.88,
+      "sube": 23.64,
+      "dMei": 12.24,
+      "dSol": 11.4,
+      "dBase": 0,
+      "mei27": 104.04,
+      "sol26": 59.28,
+      "sol27": 70.68,
+      "solMes27": 5.89,
+      "umbral27": 61214.4,
+      "umbral26": 61214.4,
+      "pctBruto": 0.0263
+     },
+     "titulo": "90.000 € brutos al año, contrato indefinido",
+     "texto": "la cotización del trabajador pasaría de 336,52 € a 338,49 € al mes (4.038,24 € a 4.061,88 € al año): 23,64 € más al año, de los que 12,24 € son del MEI y 11,40 € de la cuota de solidaridad."
+    },
+    {
+     "inputs": {
+      "bruto": 150000,
+      "contrato": "indefinido",
+      "base27": 5101.2
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "mes26": 348.48,
+      "mes27": 352.93,
+      "anual26": 4181.76,
+      "anual27": 4235.16,
+      "sube": 53.4,
+      "dMei": 12.24,
+      "dSol": 41.16,
+      "dBase": 0,
+      "mei27": 104.04,
+      "sol26": 202.8,
+      "sol27": 243.96,
+      "solMes27": 20.33,
+      "umbral27": 61214.4,
+      "umbral26": 61214.4,
+      "pctBruto": 0.0356
+     },
+     "titulo": "150.000 € brutos al año, contrato indefinido",
+     "texto": "la cotización del trabajador pasaría de 348,48 € a 352,93 € al mes (4.181,76 € a 4.235,16 € al año): 53,40 € más al año, de los que 12,24 € son del MEI y 41,16 € de la cuota de solidaridad."
+    }
+   ]
+  },
+  "cuanto-cuesta-un-bebe-el-primer-ano": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "equip": 900,
+      "panalim": 130,
+      "ropa": 350,
+      "salud": 0,
+      "cuidado": 350,
+      "mesesC": 4,
+      "perdida": 2400,
+      "ayudas": 0
+     },
+     "resultado": {
+      "bruto": 6610,
+      "ayudasAplicadas": 0,
+      "total": 6610,
+      "mensualMedio": 550.8333,
+      "ahorroPrevio": 1377.5,
+      "mayor": 5,
+      "pesoMayor": 36.3086,
+      "flexibles": 1250,
+      "pesoFlex": 18.9107,
+      "ahorro10": 125,
+      "cuidadoTotal": 1400,
+      "panalimTotal": 1560,
+      "saludTotal": 0
+     },
+     "titulo": "equipamiento de 900 €, pañales y alimentación de 130 €/mes, ropa de 350 € y 350 €/mes de cuidado durante 4 meses",
+     "texto": "el primer año costaría 6.610 € (unos 550,83 € al mes); lo recomendable sería ahorrar 1.377,50 € antes del nacimiento."
+    },
+    {
+     "inputs": {
+      "equip": 900,
+      "panalim": 130,
+      "ropa": 350,
+      "salud": 0,
+      "cuidado": 350,
+      "mesesC": 4,
+      "perdida": 2400,
+      "ayudas": 1000
+     },
+     "resultado": {
+      "bruto": 6610,
+      "ayudasAplicadas": 1000,
+      "total": 5610,
+      "mensualMedio": 467.5,
+      "ahorroPrevio": 1377.5,
+      "mayor": 5,
+      "pesoMayor": 36.3086,
+      "flexibles": 1250,
+      "pesoFlex": 18.9107,
+      "ahorro10": 125,
+      "cuidadoTotal": 1400,
+      "panalimTotal": 1560,
+      "saludTotal": 0
+     },
+     "titulo": "equipamiento de 900 €, pañales y alimentación de 130 €/mes, ropa de 350 € y 350 €/mes de cuidado durante 4 meses, con 1.000 € de ayudas",
+     "texto": "el primer año costaría 6.610 € (5.610 € tras ayudas, unos 467,50 € al mes); lo recomendable sería ahorrar 1.377,50 € antes del nacimiento."
+    },
+    {
+     "inputs": {
+      "equip": 1500,
+      "panalim": 130,
+      "ropa": 350,
+      "salud": 45,
+      "cuidado": 420,
+      "mesesC": 9,
+      "perdida": 0,
+      "ayudas": 0
+     },
+     "resultado": {
+      "bruto": 7730,
+      "ayudasAplicadas": 0,
+      "total": 7730,
+      "mensualMedio": 644.1667,
+      "ahorroPrevio": 2112.5,
+      "mayor": 4,
+      "pesoMayor": 48.9004,
+      "flexibles": 2390,
+      "pesoFlex": 30.9185,
+      "ahorro10": 239,
+      "cuidadoTotal": 3780,
+      "panalimTotal": 1560,
+      "saludTotal": 540
+     },
+     "titulo": "equipamiento de 1.500 €, pañales y alimentación de 130 €/mes, ropa de 350 € y 420 €/mes de cuidado durante 9 meses",
+     "texto": "el primer año costaría 7.730 € (unos 644,17 € al mes); lo recomendable sería ahorrar 2.112,50 € antes del nacimiento."
+    }
+   ]
+  },
+  "venta-vivienda-plusvalia-irpf-exencion": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "venta": 320000,
+      "adq": 180000,
+      "gcomp": 16000,
+      "gventa": 9000,
+      "hipoteca": 60000,
+      "sit": "hab",
+      "reinv": 150000,
+      "otras": 3000
+     },
+     "resultado": {
+      "invalido": 0,
+      "transmision": 311000,
+      "adquisicion": 196000,
+      "ganancia": 115000,
+      "exenta": 68725.0996,
+      "base": 46274.9004,
+      "cuota": 9657.7291,
+      "neto": 241342.2709,
+      "necesaria": 251000,
+      "cuotaSin": 25450,
+      "cuotaTotal": 0,
+      "ratio": 0.5976,
+      "tipoMedio": 20.8703
+     },
+     "titulo": "vivienda habitual vendida por 320.000 €, comprada por 180.000 €, 60.000 € de hipoteca pendiente, reinvirtiendo 150.000 €",
+     "texto": "la ganancia patrimonial es de 115.000 €; exenta por reinversión 68.725 €, tributa 46.275 € con una cuota de 9.658 € y te quedan 241.342 € netos tras cancelar la hipoteca."
+    },
+    {
+     "inputs": {
+      "venta": 320000,
+      "adq": 180000,
+      "gcomp": 16000,
+      "gventa": 9000,
+      "hipoteca": 60000,
+      "sit": "hab",
+      "reinv": 251000,
+      "otras": 3000
+     },
+     "resultado": {
+      "invalido": 0,
+      "transmision": 311000,
+      "adquisicion": 196000,
+      "ganancia": 115000,
+      "exenta": 115000,
+      "base": 0,
+      "cuota": 0,
+      "neto": 251000,
+      "necesaria": 251000,
+      "cuotaSin": 25450,
+      "cuotaTotal": 0,
+      "ratio": 1,
+      "tipoMedio": 0
+     },
+     "titulo": "vivienda habitual vendida por 320.000 €, comprada por 180.000 €, 60.000 € de hipoteca pendiente, reinvirtiendo 251.000 €",
+     "texto": "la ganancia patrimonial es de 115.000 €; queda totalmente exenta y te quedan 251.000 € netos tras cancelar la hipoteca (sin la exención serían 25.450 € de IRPF)."
+    },
+    {
+     "inputs": {
+      "venta": 320000,
+      "adq": 180000,
+      "gcomp": 16000,
+      "gventa": 9000,
+      "hipoteca": 60000,
+      "sit": "nohab",
+      "reinv": 0,
+      "otras": 3000
+     },
+     "resultado": {
+      "invalido": 0,
+      "transmision": 311000,
+      "adquisicion": 196000,
+      "ganancia": 115000,
+      "exenta": 0,
+      "base": 115000,
+      "cuota": 25450,
+      "neto": 225550,
+      "necesaria": 0,
+      "cuotaSin": 25450,
+      "cuotaTotal": 0,
+      "ratio": 0,
+      "tipoMedio": 22.1304
+     },
+     "titulo": "vivienda no habitual vendida por 320.000 €, comprada por 180.000 €, 60.000 € de hipoteca pendiente",
+     "texto": "la ganancia patrimonial es de 115.000 €; sin exención la cuota es de 25.450 € y te quedan 225.550 € netos tras cancelar la hipoteca."
+    }
+   ]
+  },
+  "cuota-autonomos-ingresos-reales-regularizacion": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "prev": 1800,
+      "real": 2400,
+      "base": 1200,
+      "cambio": 0,
+      "mcambio": 0,
+      "meses": 12,
+      "plur": 0
+     },
+     "resultado": {
+      "compPrev": 1674,
+      "tramoPrev": 6,
+      "minPrev": 960.78,
+      "maxPrev": 1700,
+      "bloqueo": 0,
+      "tipo": 0.315,
+      "meses": 12,
+      "compReal": 2232,
+      "tramoReal": 9,
+      "minReal": 1274.51,
+      "maxReal": 2330,
+      "baseMedia": 1200,
+      "cuotaProv": 378,
+      "pagado": 4536,
+      "regul": 281.6478,
+      "baseDefinitiva": 1274.51,
+      "definitiva": 4817.6478,
+      "recomendada": 2232,
+      "regulRec": 0,
+      "plurRed": 0,
+      "escenario": 1,
+      "cuotaMinReal": 401.4706,
+      "cuotaMaxReal": 733.95,
+      "cuotaMinPrev": 302.6457,
+      "cuotaMaxPrev": 535.5,
+      "cuotaDef": 401.4706,
+      "cuotaRec": 703.08,
+      "plur": 0
+     },
+     "titulo": "rendimiento previsto de 1.800,00 €/mes, real de 2.400,00 €/mes y base elegida de 1.200,00 €/mes durante 12 meses",
+     "texto": "pagaste 4.536,00 € de cuota provisional y la definitiva sería de 4.817,65 €: tendrías que pagar 281,65 € más al regularizar."
+    },
+    {
+     "inputs": {
+      "prev": 3000,
+      "real": 1300,
+      "base": 2000,
+      "cambio": 0,
+      "mcambio": 0,
+      "meses": 12,
+      "plur": 0
+     },
+     "resultado": {
+      "compPrev": 2790,
+      "tramoPrev": 11,
+      "minPrev": 1437.91,
+      "maxPrev": 3190,
+      "bloqueo": 0,
+      "tipo": 0.315,
+      "meses": 12,
+      "compReal": 1209,
+      "tramoReal": 4,
+      "minReal": 950.98,
+      "maxReal": 1300,
+      "baseMedia": 2000,
+      "cuotaProv": 630,
+      "pagado": 7560,
+      "regul": -2646,
+      "baseDefinitiva": 1300,
+      "definitiva": 4914,
+      "recomendada": 1437.91,
+      "regulRec": -521.2998,
+      "plurRed": 0,
+      "escenario": 2,
+      "cuotaMinReal": 299.5587,
+      "cuotaMaxReal": 409.5,
+      "cuotaMinPrev": 452.9417,
+      "cuotaMaxPrev": 1004.85,
+      "cuotaDef": 409.5,
+      "cuotaRec": 452.9417,
+      "plur": 0
+     },
+     "titulo": "rendimiento previsto de 3.000,00 €/mes, real de 1.300,00 €/mes y base elegida de 2.000,00 €/mes durante 12 meses",
+     "texto": "pagaste 7.560,00 € y la definitiva sería de 4.914,00 €: te devolverían 2.646,00 € al regularizar."
+    },
+    {
+     "inputs": {
+      "prev": 1800,
+      "real": 1800,
+      "base": 1674,
+      "cambio": 0,
+      "mcambio": 0,
+      "meses": 12,
+      "plur": 0
+     },
+     "resultado": {
+      "compPrev": 1674,
+      "tramoPrev": 6,
+      "minPrev": 960.78,
+      "maxPrev": 1700,
+      "bloqueo": 0,
+      "tipo": 0.315,
+      "meses": 12,
+      "compReal": 1674,
+      "tramoReal": 6,
+      "minReal": 960.78,
+      "maxReal": 1700,
+      "baseMedia": 1674,
+      "cuotaProv": 527.31,
+      "pagado": 6327.72,
+      "regul": 0,
+      "baseDefinitiva": 1674,
+      "definitiva": 6327.72,
+      "recomendada": 1674,
+      "regulRec": 0,
+      "plurRed": 0,
+      "escenario": 0,
+      "cuotaMinReal": 302.6457,
+      "cuotaMaxReal": 535.5,
+      "cuotaMinPrev": 302.6457,
+      "cuotaMaxPrev": 535.5,
+      "cuotaDef": 527.31,
+      "cuotaRec": 527.31,
+      "plur": 0
+     },
+     "titulo": "rendimiento previsto de 1.800,00 €/mes, real de 1.800,00 €/mes y base elegida de 1.674,00 €/mes durante 12 meses",
+     "texto": "pagas 6.327,72 € y la definitiva es la misma: no hay regularización."
+    }
+   ]
   }
  }
 }

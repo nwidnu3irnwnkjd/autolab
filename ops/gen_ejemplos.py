@@ -259,6 +259,61 @@ def ej_reformar(i, r):
     return (f"reforma de {eur(i['reforma'])} que recuperas un {pct(i['recup'], 0)} al vender, vivienda de {eur(i['valor'])}, gastos de mudanza y compraventa del {pct(i['gastosPct'], 0)} y {eur(i['extras'])} extra, a {i['anios']} " + ("año" if i["anios"] == 1 else "años"),
             f"reformar costaría {eur(r['costeReformar'])} y mudarse {eur(r['costeMudarse'])}: sale más barato " + ("reformar" if ref else "mudarse") + f" por {eur(abs(r['diferencia']))}.")
 
+# ---------- Casos típicos, tanda 3: las entradas salen de calcs/<slug>.test.json (mismos casos que verifica ops/check.py) ----------
+def T(slug, *idx):
+    t = json.load(open(os.path.join(PDIR, "calcs", slug + ".test.json"), encoding="utf-8"))["cases"]
+    return [t[k]["in"] for k in idx]
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+def fm(t): return f"{MESES[int(t) % 12]} de {int(t) // 12}"
+def ej_viudedad(i, r):
+    ing = f", otros ingresos de {eur(i['ingresos'])} al año" if i["ingresos"] else ""
+    h = f", {hj(i['hijos'])} a cargo" if i["hijos"] else ""
+    return (f"pensión del fallecido con base reguladora de {eur(i['br'])}, viudo o viuda de {i['edad']} años{h}{ing}",
+            f"la pensión sería del {pct(r['pct'], 0)} de la base reguladora: {eur(r['mes'], 2)} al mes ({eur(r['anual'])} al año en 14 pagas)" + (f"; queda {eur(r['falta'], 2)} por debajo de la pensión mínima de referencia ({eur(r['minimo'], 2)}/mes)." if r["falta"] > 0 else "."))
+def ej_motor(i, r):
+    n = ["diésel", "gasolina", "híbrido", "eléctrico"]
+    cs = [("diésel", r["costeDiesel"]), ("gasolina", r["costeGasolina"]), ("híbrido", r["costeHibrido"]), ("eléctrico", r["costeElectrico"])]
+    return (f"{num(i['km'])} km al año durante {i['anos']} años, {i['pctCasa']} % de la recarga en casa",
+            "coste total de " + ", ".join(f"{eur(v)} ({k})" for k, v in cs) + f": sale más barato " + ("la" if r["ganador"] == 1 else "el") + f" {n[r['ganador']]} ({num(r['costeKmX'], 2)} €/km, {eur(r['mesDiesel' if r['ganador'] == 0 else 'mesGasolina' if r['ganador'] == 1 else 'mesHibrido' if r['ganador'] == 2 else 'mesElectrico'])} al mes) por {eur(r['diferencia'])} sobre el siguiente.")
+def ej_potencia(i, r):
+    pic = f"; tu pico de consumo ({num(i['pico'], 2)} kW) supera la potencia nueva y habría cortes, así que no compensa" if i["pico"] > i["kwNuevo"] else ""
+    cam = f", con {eur(i['costeCambio'])} de coste del cambio" if i["costeCambio"] else ""
+    rec = f"; se recuperaría en {num(r['aniosAmort'], 1)} años" if r["aniosAmort"] > 0 else ""
+    return (f"bajar de {num(i['kwActual'], 2)} a {num(i['kwNuevo'], 2)} kW con un pico de {num(i['pico'], 2)} kW{cam}, a {i['anos']} años",
+            f"la parte de potencia pasaría de {eur(r['costeActual'], 2)} a {eur(r['costeNuevo'], 2)} al año: {eur(r['ahorroAnual'], 2)} menos al año; " + (f"en {i['anos']} años ahorrarías {eur(r['ahorroNeto'], 2)} netos" if r["ahorroNeto"] >= 0 else f"en {i['anos']} años el cambio te costaría {eur(-r['ahorroNeto'], 2)} más de lo que ahorras") + f"{rec}{pic}.")
+def ej_jub2627(i, r):
+    return (f"nacido en {MESES[i['nac_m'] - 1]} de {i['nac_a']}, {i['cot_a']} años y {i['cot_m']} meses cotizados, base reguladora de {eur(r['a26_br'], 2)}",
+            f"jubilándote en {fm(r['a26_t'])} cobrarías {eur(r['a26_pension'], 2)} al mes ({pct(r['a26_pct'], 2)} de la base) y en {fm(r['a27_t'])} {eur(r['a27_pension'], 2)} ({pct(r['a27_pct'], 2)}); la de 2026 revalorizada en enero de 2027 sería de {eur(r['a26_pension_ene27'], 2)}: " + ("esperar a 2027 no sube la pensión." if r["dif"] <= 0 else "esperar a 2027 la sube."))
+def ej_guarderia(i, r):
+    return (f"guardería de {eur(i['guarderia'])}/mes" + (f" con {eur(i['ayuda'])} de ayuda" if i["ayuda"] else "") + f", cuidadora de {eur(i['cuidadora'])}/mes o reducir jornada un {i['reduccion']} % con {eur(i['salario'])} de salario, durante {i['meses']} meses",
+            f"coste de {eur(r['totalGuarderia'])} la guardería, {eur(r['totalCuidadora'])} la cuidadora y {eur(r['totalReducir'])} reducir jornada ({eur(r['costeMesGuarderia'], 2)}, {eur(r['costeMesCuidadora'], 2)} y {eur(r['costeMesReducir'], 2)} al mes): sale más barata {'la ' if r['ganador'] != 'reducir jornada' else ''}{r['ganador']} por {eur(r['ahorroVsSiguiente'])} sobre la siguiente.")
+def ej_conjunta(i, r):
+    h = i["hijosMenores"] + i["hijosMayores"]
+    sit = "matrimonio" if i["tipo"] == "mat" else "familia monoparental"
+    seg = f" y {eur(i['b2'])}" if i["b2"] else ""
+    return (f"{sit} con rendimientos de {eur(i['b1'])}{seg}, {hj(h)}, {r['ccaaNombre']}",
+            f"la cuota sería de {eur(r['cuotaIndividual'])} en individual y {eur(r['cuotaConjunta'])} en conjunta: " + ("conviene la conjunta" if r["ganador"] == "conjunta" else "conviene la individual" if r["ganador"] == "individual" else "da igual") + (f" por {eur(abs(r['diferencia']))}." if r["ganador"] != "empate" else " (no hay cuota en ninguna)."))
+def ej_nomina27(i, r):
+    return (f"{eur(i['bruto'])} brutos al año, contrato {i['contrato']}",
+            f"la cotización del trabajador pasaría de {eur(r['mes26'], 2)} a {eur(r['mes27'], 2)} al mes ({eur(r['anual26'], 2)} a {eur(r['anual27'], 2)} al año): {eur(r['sube'], 2)} más al año, de los que {eur(r['dMei'], 2)} son del MEI" + (f" y {eur(r['dSol'], 2)} de la cuota de solidaridad." if r["dSol"] > 0 else "; sin cuota de solidaridad por estar por debajo de la base máxima."))
+def ej_bebe(i, r):
+    ay = f", con {eur(i['ayudas'])} de ayudas" if i["ayudas"] else ""
+    return (f"equipamiento de {eur(i['equip'])}, pañales y alimentación de {eur(i['panalim'])}/mes, ropa de {eur(i['ropa'])} y {eur(i['cuidado'])}/mes de cuidado durante {i['mesesC']} meses{ay}",
+            f"el primer año costaría {eur(r['bruto'])} (" + (f"{eur(r['total'])} tras ayudas, " if i["ayudas"] else "") + f"unos {eur(r['mensualMedio'], 2)} al mes); lo recomendable sería ahorrar {eur(r['ahorroPrevio'], 2)} antes del nacimiento.")
+def ej_venta(i, r):
+    sit = {"hab": "vivienda habitual", "hab65": "vivienda habitual de mayor de 65 años", "nohab": "vivienda no habitual"}[i["sit"]]
+    reinv = f", reinvirtiendo {eur(i['reinv'])}" if i["reinv"] else ""
+    return (f"{sit} vendida por {eur(i['venta'])}, comprada por {eur(i['adq'])}, {eur(i['hipoteca'])} de hipoteca pendiente{reinv}",
+            f"la ganancia patrimonial es de {eur(r['ganancia'])}" + (f"; exenta por reinversión {eur(r['exenta'])}, tributa {eur(r['base'])} con una cuota de {eur(r['cuota'])} y te quedan {eur(r['neto'])} netos tras cancelar la hipoteca." if r["cuota"] > 0 and r["exenta"] > 0 else f"; queda totalmente exenta y te quedan {eur(r['neto'])} netos tras cancelar la hipoteca (sin la exención serían {eur(r['cuotaSin'])} de IRPF)." if r["exenta"] >= r["ganancia"] and r["ganancia"] > 0 else f"; sin exención la cuota es de {eur(r['cuota'])} y te quedan {eur(r['neto'])} netos tras cancelar la hipoteca."))
+def ej_cuota_aut(i, r):
+    if r["escenario"] == 1:
+        f = f"pagaste {eur(r['pagado'], 2)} de cuota provisional y la definitiva sería de {eur(r['definitiva'], 2)}: tendrías que pagar {eur(r['regul'], 2)} más al regularizar."
+    elif r["escenario"] == 2:
+        f = f"pagaste {eur(r['pagado'], 2)} y la definitiva sería de {eur(r['definitiva'], 2)}: te devolverían {eur(-r['regul'], 2)} al regularizar."
+    else:
+        f = f"pagas {eur(r['pagado'], 2)} y la definitiva es la misma: no hay regularización."
+    return (f"rendimiento previsto de {eur(i['prev'], 2)}/mes, real de {eur(i['real'], 2)}/mes y base elegida de {eur(i['base'], 2)}/mes durante {i['meses']} meses", f)
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -367,6 +422,16 @@ CASOS = {
         {"reforma": 20000, "recup": 50, "valor": 250000, "gastosPct": 10, "dif": 0, "extras": 3000, "mensual": -50, "anios": 10},
         {"reforma": 20000, "recup": 50, "valor": 250000, "gastosPct": 10, "dif": 0, "extras": 3000, "mensual": -50, "anios": 1},
         {"reforma": 60000, "recup": 30, "valor": 250000, "gastosPct": 3, "dif": 0, "extras": 500, "mensual": 80, "anios": 10}]),
+    "pension-viudedad-cuanto-cobro": (ej_viudedad, T("pension-viudedad-cuanto-cobro", 0, 1, 3)),
+    "diesel-gasolina-hibrido-electrico": (ej_motor, T("diesel-gasolina-hibrido-electrico", 0, 1, 2)),
+    "potencia-contratada-luz-bajar-compensa": (ej_potencia, T("potencia-contratada-luz-bajar-compensa", 0, 2, 3)),
+    "jubilarse-en-2026-o-en-2027-edad-y-pension": (ej_jub2627, T("jubilarse-en-2026-o-en-2027-edad-y-pension", 0, 2)),
+    "guarderia-cuidadora-o-reducir-jornada": (ej_guarderia, T("guarderia-cuidadora-o-reducir-jornada", 0, 1)),
+    "declaracion-conjunta-o-individual": (ej_conjunta, T("declaracion-conjunta-o-individual", 0, 1, 7)),
+    "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad": (ej_nomina27, T("nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad", 0, 1, 7)),
+    "cuanto-cuesta-un-bebe-el-primer-ano": (ej_bebe, T("cuanto-cuesta-un-bebe-el-primer-ano", 0, 2, 4)),
+    "venta-vivienda-plusvalia-irpf-exencion": (ej_venta, T("venta-vivienda-plusvalia-irpf-exencion", 0, 3, 5)),
+    "cuota-autonomos-ingresos-reales-regularizacion": (ej_cuota_aut, T("cuota-autonomos-ingresos-reales-regularizacion", 0, 1, 2)),
 }
 
 def generar_casos(fecha):
