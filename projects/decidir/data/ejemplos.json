@@ -21,6 +21,7 @@
    "patrimonioAlquilar": 171500.4142,
    "diferencia": 32771.5161,
    "anosEquilibrio": 9,
+   "ultimoAnoComprar": 15,
    "cuotaHipoteca": 843.2081,
    "costeMensualCompra": 1143.2081,
    "costeMensualAlquiler": 900
@@ -1508,6 +1509,787 @@
      },
      "titulo": "64 años, 38 años cotizados, base reguladora de 2.000 €, jubilación a los 67 años, cobrando hasta los 85",
      "texto": "a la edad ordinaria que te corresponde (65 años) cobrarías 2.054 € al mes y jubilándote 24 meses después 2.340 € (incremento del 8 %); hasta los 85 acumularías 3.049 € menos, y la opción de jubilarte más tarde supera en acumulado a la otra solo si cobras más allá de los 85,8 años."
+    }
+   ]
+  },
+  "autonomo-o-asalariado": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "bruto": 30000,
+      "factura": 45000,
+      "gastos": 3000,
+      "ccaa": "madrid",
+      "hijos": "0",
+      "contrato": "indef"
+     },
+     "resultado": {
+      "netoAsalariado": 23451.9813,
+      "ssTrabajador": 1950,
+      "irpfAsalariado": 4598.0187,
+      "costeEmpresa": 39195,
+      "ssEmpresa": 9195,
+      "netoAutonomo": 29551.8442,
+      "cuotaReta": 5435.2998,
+      "irpfAutonomo": 7012.856,
+      "facturaIgual": 36402.1906,
+      "netoAutonomoAlCoste": 25507.2098,
+      "diferencia": 6099.8629,
+      "ganador": "autonomo",
+      "baseMensual": 1437.91,
+      "cuotaMensual": 452.9417,
+      "tabla": "general",
+      "tramo": 10,
+      "baseMax": 0,
+      "solidaridad": 0,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "30.000 € brutos como asalariado frente a 45.000 € facturados sin IVA y 3.000 € de gastos como autónomo, Madrid, 0 hijos",
+     "texto": "como asalariado quedarían 23.452 € netos al año y como autónomo 29.552 € (cuota de autónomos de 5.435 €); para igualar el neto de asalariado tendrías que facturar unos 36.402 €."
+    },
+    {
+     "inputs": {
+      "bruto": 24000,
+      "factura": 30000,
+      "gastos": 2000,
+      "ccaa": "madrid",
+      "hijos": "1",
+      "contrato": "indef"
+     },
+     "resultado": {
+      "netoAsalariado": 19848.5086,
+      "ssTrabajador": 1560,
+      "irpfAsalariado": 2591.4914,
+      "costeEmpresa": 31356,
+      "ssEmpresa": 7356,
+      "netoAutonomo": 20150.7216,
+      "cuotaReta": 4817.6478,
+      "irpfAutonomo": 3031.6306,
+      "facturaIgual": 29589.3287,
+      "netoAutonomoAlCoste": 21148.602,
+      "diferencia": 302.213,
+      "ganador": "autonomo",
+      "baseMensual": 1274.51,
+      "cuotaMensual": 401.4706,
+      "tabla": "general",
+      "tramo": 8,
+      "baseMax": 0,
+      "solidaridad": 0,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "24.000 € brutos como asalariado frente a 30.000 € facturados sin IVA y 2.000 € de gastos como autónomo, Madrid, 1 hijo",
+     "texto": "como asalariado quedarían 19.849 € netos al año y como autónomo 20.151 € (cuota de autónomos de 4.818 €); para igualar el neto de asalariado tendrías que facturar unos 29.589 €."
+    }
+   ]
+  },
+  "comparar-ofertas-de-trabajo-neto-real": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "brutoA": 32000,
+      "brutoB": 36000,
+      "ccaa": "madrid",
+      "pagas": "14",
+      "desplA": 600,
+      "desplB": 1800,
+      "horasA": 40,
+      "horasB": 40
+     },
+     "resultado": {
+      "ssA": 2080,
+      "irpfA": 5117.8787,
+      "netoA": 24802.1213,
+      "netoTrasA": 24202.1213,
+      "netoMesA": 2066.8434,
+      "netoPagaA": 1771.5801,
+      "horaA": 13.4286,
+      "horasAnoA": 1802.2857,
+      "ssB": 2340,
+      "irpfB": 6157.5987,
+      "netoB": 27502.4013,
+      "netoTrasB": 25702.4013,
+      "netoMesB": 2291.8668,
+      "netoPagaB": 1964.4572,
+      "horaB": 14.261,
+      "horasAnoB": 1802.2857,
+      "dif": 1500.28,
+      "ganador": "b",
+      "ganNum": 2,
+      "brutoIgual": 34222.4066,
+      "subidaIgual": 2222.4066,
+      "unaCero": 0,
+      "ganadorHora": "b",
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid",
+      "pagas": 14,
+      "semanas": 45.0571
+     },
+     "titulo": "oferta A de 32.000 € brutos y B de 36.000 €, 14 pagas, Madrid, desplazamiento de 600 € al año en A y 1.800 € en B",
+     "texto": "neto al año 24.802 € (A) y 27.502 € (B); descontado el desplazamiento, 24.202 € frente a 25.702 €: gana B por 1.500 € al año."
+    },
+    {
+     "inputs": {
+      "brutoA": 28000,
+      "brutoB": 30000,
+      "ccaa": "madrid",
+      "pagas": "12",
+      "desplA": 0,
+      "desplB": 1200,
+      "horasA": 40,
+      "horasB": 40
+     },
+     "resultado": {
+      "ssA": 1820.0,
+      "irpfA": 4078.1587,
+      "netoA": 22101.8413,
+      "netoTrasA": 22101.8413,
+      "netoMesA": 1841.8201,
+      "netoPagaA": 1841.8201,
+      "horaA": 12.2632,
+      "horasAnoA": 1802.2857,
+      "ssB": 1950,
+      "irpfB": 4598.0187,
+      "netoB": 23451.9813,
+      "netoTrasB": 22251.9813,
+      "netoMesB": 1954.3318,
+      "netoPagaB": 1954.3318,
+      "horaB": 12.3465,
+      "horasAnoB": 1802.2857,
+      "dif": 150.14,
+      "ganador": "b",
+      "ganNum": 2,
+      "brutoIgual": 28222.4066,
+      "subidaIgual": 222.4066,
+      "unaCero": 0,
+      "ganadorHora": "b",
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid",
+      "pagas": 12,
+      "semanas": 45.0571
+     },
+     "titulo": "oferta A de 28.000 € brutos y B de 30.000 €, 12 pagas, Madrid, desplazamiento de 0 € al año en A y 1.200 € en B",
+     "texto": "neto al año 22.102 € (A) y 23.452 € (B); descontado el desplazamiento, 22.102 € frente a 22.252 €: gana B por 150 € al año."
+    }
+   ]
+  },
+  "cuanto-ahorrar-para-comprar-casa": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "precio": 250000,
+      "ccaa": "madrid",
+      "tipo": "usada",
+      "entrada": 20,
+      "gastos": 2500,
+      "anos": 5,
+      "rentab": 0,
+      "interes": 3.0
+     },
+     "resultado": {
+      "impuestos": 15000,
+      "itp": 15000,
+      "iva": 0,
+      "ajd": 0,
+      "entrada": 50000,
+      "hipoteca": 200000,
+      "totalNecesario": 67500,
+      "ahorroMensual": 1125,
+      "cuotaHipoteca": 948.4226,
+      "costeTotal": 267500,
+      "pctExtra": 7,
+      "tipoMedio": 6,
+      "ltv": 80,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid",
+      "aportadoRentab": 67500
+     },
+     "titulo": "vivienda usada de 250.000 € en Comunidad de Madrid, entrada del 20 %, 2.500 € de otros gastos, 5 años para ahorrar, hipoteca al 3,0 %",
+     "texto": "necesitarías 67.500 € ahorrados (50.000 € de entrada, 15.000 € de impuestos y otros gastos), unos 1.125 € al mes; cuota de 948,42 €/mes."
+    },
+    {
+     "inputs": {
+      "precio": 180000,
+      "ccaa": "andalucia",
+      "tipo": "nueva",
+      "entrada": 20,
+      "gastos": 2500,
+      "anos": 4,
+      "rentab": 0,
+      "interes": 3.0
+     },
+     "resultado": {
+      "impuestos": 20160,
+      "itp": 0,
+      "iva": 18000,
+      "ajd": 2160,
+      "entrada": 36000,
+      "hipoteca": 144000,
+      "totalNecesario": 58660,
+      "ahorroMensual": 1222.0833,
+      "cuotaHipoteca": 682.8643,
+      "costeTotal": 202660,
+      "pctExtra": 12.5889,
+      "tipoMedio": 11.2,
+      "ltv": 80,
+      "orientativo": 0,
+      "ccaaNombre": "Andalucía",
+      "aportadoRentab": 58660
+     },
+     "titulo": "vivienda nueva de 180.000 € en Andalucía, entrada del 20 %, 2.500 € de otros gastos, 4 años para ahorrar, hipoteca al 3,0 %",
+     "texto": "necesitarías 58.660 € ahorrados (36.000 € de entrada, 20.160 € de impuestos y otros gastos), unos 1.222 € al mes; cuota de 682,86 €/mes."
+    }
+   ]
+  },
+  "subsidio-desempleo-cuanto-cobro-y-cuanto-dura": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "situ": "agotado",
+      "dias": 360,
+      "edad": 40,
+      "hijos": 1,
+      "conyuge": "no",
+      "renta": 0,
+      "rentaOtros": 0,
+      "jub": "no"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "umbral": 915.75,
+      "miembros": 2,
+      "propiaOk": 1,
+      "cargas": 1,
+      "rentaOk": 1,
+      "perCapita": 0,
+      "gen": 1,
+      "motivo": 0,
+      "meses": 30,
+      "d52": 0,
+      "dur": 900,
+      "dias1": 180,
+      "dias2": 180,
+      "dias3": 540,
+      "m1": 570,
+      "m2": 540,
+      "m3": 480,
+      "tot1": 3420,
+      "tot2": 3240,
+      "tot3": 8640,
+      "total": 15300
+     },
+     "titulo": "paro agotado, 360 días cotizados, 40 años, 1 hijo a cargo, sin rentas propias",
+     "texto": "el subsidio sería de 570 € al mes los primeros 180 días, 540 € los 180 siguientes y 480 € el resto: 15.300 € en 30 meses."
+    },
+    {
+     "inputs": {
+      "situ": "insuf",
+      "dias": 200,
+      "edad": 35,
+      "hijos": 0,
+      "conyuge": "no",
+      "renta": 0,
+      "rentaOtros": 0,
+      "jub": "no"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "umbral": 915.75,
+      "miembros": 1,
+      "propiaOk": 1,
+      "cargas": 0,
+      "rentaOk": 1,
+      "perCapita": 0,
+      "gen": 1,
+      "motivo": 0,
+      "meses": 6,
+      "d52": 0,
+      "dur": 180,
+      "dias1": 180,
+      "dias2": 0,
+      "dias3": 0,
+      "m1": 570,
+      "m2": 540,
+      "m3": 480,
+      "tot1": 3420,
+      "tot2": 0,
+      "tot3": 0,
+      "total": 3420
+     },
+     "titulo": "cotización insuficiente para el paro, 200 días cotizados, 35 años, 0 hijos a cargo, sin rentas propias",
+     "texto": "el subsidio sería de 570 € al mes los primeros 180 días: 3.420 € en 6 meses."
+    }
+   ]
+  },
+  "permiso-nacimiento-cuanto-cobro-y-como-repartir": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "sueldoA": 3200,
+      "sueldoB": 2400,
+      "mono": "no",
+      "amp": 0,
+      "semA": 19,
+      "semB": 19,
+      "complA": 0,
+      "complB": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 1,
+      "maxA": 19,
+      "maxB": 19,
+      "semanalA": 746.6667,
+      "semanalB": 560,
+      "prestA": 14186.6667,
+      "prestB": 10640,
+      "complA": 0,
+      "complB": 0,
+      "totalA": 14186.6667,
+      "totalB": 10640,
+      "dejadoA": 14186.6667,
+      "dejadoB": 10640,
+      "perdidaA": 0,
+      "perdidaB": 0,
+      "prest": 24826.6667,
+      "compl": 0,
+      "total": 24826.6667,
+      "perdida": 0,
+      "rateA": 0,
+      "rateB": 0,
+      "optA": 19,
+      "optB": 19,
+      "perdidaOpt": 0,
+      "ahorro": 0
+     },
+     "titulo": "dos progenitores con sueldos de 3.200 € y 2.400 € al mes, 19 semanas cada uno",
+     "texto": "la prestación sería de 14.187 € y 10.640 €: 24.827 € entre los dos."
+    },
+    {
+     "inputs": {
+      "sueldoA": 2000,
+      "sueldoB": 2400,
+      "mono": "si",
+      "amp": 0,
+      "semA": 19,
+      "semB": 19,
+      "complA": 0,
+      "complB": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "esc": 4,
+      "maxA": 32,
+      "maxB": 0,
+      "semanalA": 466.6667,
+      "semanalB": 0,
+      "prestA": 8866.6667,
+      "prestB": 0,
+      "complA": 0,
+      "complB": 0,
+      "totalA": 8866.6667,
+      "totalB": 0,
+      "dejadoA": 8866.6667,
+      "dejadoB": 0,
+      "perdidaA": 0,
+      "perdidaB": 0,
+      "prest": 8866.6667,
+      "compl": 0,
+      "total": 8866.6667,
+      "perdida": 0,
+      "rateA": 0,
+      "rateB": 0,
+      "optA": 19,
+      "optB": 0,
+      "perdidaOpt": 0,
+      "ahorro": 0
+     },
+     "titulo": "familia monoparental con sueldo de 2.000 €/mes, permiso de 32 semanas",
+     "texto": "la prestación sería de 8.867 € en total (466,67 € por semana)."
+    }
+   ]
+  },
+  "empleada-hogar-cuanto-cuesta-contratar-cotizacion": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "modo": "horas",
+      "horas": 20,
+      "importe": 10,
+      "pagas": "prorr",
+      "fam": "no",
+      "meses": 12,
+      "tipo": "indef"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "retMes": 866.6667,
+      "base": 785,
+      "tramo": 4,
+      "cuotaEmp": 174.8195,
+      "cuotaSin": 247.6675,
+      "ahorroMes": 72.848,
+      "cuotaTrab": 50.24,
+      "costeMes": 1041.4862,
+      "costeTotal": 12497.834,
+      "netoMes": 816.4267,
+      "minMes": 827.6667,
+      "minHora": 9.55,
+      "cumple": 1,
+      "horasMes": 86.6667,
+      "costeHora": 12.0171,
+      "difMin": 39,
+      "pctEmp": 22.27,
+      "meses": 12,
+      "rcc": 37.052,
+      "cc": 185.26,
+      "bdes": 35.796,
+      "porHoras": 1,
+      "baseMinima": 0,
+      "limite": 877,
+      "baseSig": 970,
+      "saltoEmp": 41.1995,
+      "saltoTrab": 11.84
+     },
+     "titulo": "empleada de hogar, 20 h al mes a 10,00 €/h, contrato indefinido",
+     "texto": "la cuota de la familia empleadora sería de 174,82 €/mes (la de la trabajadora, 50,24 €); coste total de 1.041,49 €/mes, 12.498 € en 12 meses."
+    },
+    {
+     "inputs": {
+      "modo": "mensual",
+      "horas": 20,
+      "importe": 900,
+      "pagas": "14",
+      "fam": "no",
+      "meses": 12,
+      "tipo": "indef"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "retMes": 1050,
+      "base": 970,
+      "tramo": 5,
+      "cuotaEmp": 216.019,
+      "cuotaSin": 306.035,
+      "ahorroMes": 90.016,
+      "cuotaTrab": 62.08,
+      "costeMes": 1266.019,
+      "costeTotal": 15192.228,
+      "netoMes": 987.92,
+      "minMes": 712.25,
+      "minHora": 8.2183,
+      "cumple": 1,
+      "horasMes": 86.6667,
+      "costeHora": 14.6079,
+      "difMin": 337.75,
+      "pctEmp": 22.27,
+      "meses": 12,
+      "rcc": 45.784,
+      "cc": 228.92,
+      "bdes": 44.232,
+      "porHoras": 0,
+      "baseMinima": 0,
+      "limite": 1061,
+      "baseSig": 1151,
+      "saltoEmp": 40.3087,
+      "saltoTrab": 11.584
+     },
+     "titulo": "empleada de hogar, 900 € al mes en 14 pagas, contrato indefinido",
+     "texto": "la cuota de la familia empleadora sería de 216,02 €/mes (la de la trabajadora, 62,08 €); coste total de 1.266,02 €/mes, 15.192 € en 12 meses."
+    }
+   ]
+  },
+  "plan-pensiones-o-fondo-indexado": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "aportacion": 1500,
+      "anos": 25,
+      "renta": 35000,
+      "ccaa": "madrid",
+      "rescate": "1",
+      "rentab": 4,
+      "comPlan": 1.0,
+      "comFondo": 0.2
+     },
+     "resultado": {
+      "limite": 1500,
+      "aportacionEfectiva": 1500,
+      "excede": 0,
+      "ahorroFiscalAnual": 417,
+      "tipoMarginal": 27.8,
+      "valorPlanBruto": 56329.5634,
+      "impuestoRescate": 22503.1986,
+      "tipoMedioRescate": 39.9492,
+      "valorFondoBruto": 63123.4692,
+      "impuestoFondo": 5260.9285,
+      "patrimonioPlan": 49491.276,
+      "patrimonioFondo": 57862.5407,
+      "diferencia": -8371.2647,
+      "ganador": "fondo",
+      "patrimonioPlan10": 52037.9741,
+      "diferencia10": -5824.5666,
+      "ganador10": "fondo",
+      "diferenciaSinReinvertir": -7983.7496,
+      "tipoEquilibrio": 25.088,
+      "hayEquilibrio": 1,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "1.500 € al año durante 25 años, renta de 35.000 €, Madrid, rentabilidad del 4 %, comisiones del 1,0 % y 0,2 %, rescate en un solo pago",
+     "texto": "el plan ahorra 417 € al año de IRPF (límite de aportación 1.500 €) y deja 49.491 € netos frente a 57.863 € del fondo: gana el fondo por 8.371 €."
+    },
+    {
+     "inputs": {
+      "aportacion": 3000,
+      "anos": 15,
+      "renta": 50000,
+      "ccaa": "madrid",
+      "rescate": "1",
+      "rentab": 4,
+      "comPlan": 1.0,
+      "comFondo": 0.2
+     },
+     "resultado": {
+      "limite": 1500,
+      "aportacionEfectiva": 1500,
+      "excede": 1,
+      "ahorroFiscalAnual": 538.5,
+      "tipoMarginal": 35.9,
+      "valorPlanBruto": 28735.322,
+      "impuestoRescate": 11729.256,
+      "tipoMedioRescate": 40.8183,
+      "valorFondoBruto": 30717.4281,
+      "impuestoFondo": 1605.6599,
+      "patrimonioPlan": 27146.1097,
+      "patrimonioFondo": 29111.7682,
+      "diferencia": -1965.6585,
+      "ganador": "fondo",
+      "patrimonioPlan10": 28559.3852,
+      "diferencia10": -552.383,
+      "ganador10": "fondo",
+      "diferenciaSinReinvertir": -1683.0049,
+      "tipoEquilibrio": 33.9777,
+      "hayEquilibrio": 1,
+      "orientativo": 0,
+      "ccaaNombre": "Comunidad de Madrid"
+     },
+     "titulo": "3.000 € al año durante 15 años, renta de 50.000 €, Madrid, rentabilidad del 4 %, comisiones del 1,0 % y 0,2 %, rescate en un solo pago",
+     "texto": "el plan ahorra 539 € al año de IRPF (límite de aportación 1.500 €) y deja 27.146 € netos frente a 29.112 € del fondo: gana el fondo por 1.966 €."
+    }
+   ]
+  },
+  "donativos-irpf-cuanto-desgrava-y-cuanto-donar": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "donado": 100,
+      "recurrente": "1",
+      "bl": 25000,
+      "adicional": 0,
+      "ambito": "comun"
+     },
+     "resultado": {
+      "invalido": 0,
+      "limite": 2500,
+      "baseDeduccion": 100,
+      "exceso": 0,
+      "deduccion": 80,
+      "costeNeto": 20,
+      "importeTramo80": 250,
+      "pctEfectivo": 80,
+      "costeEuroResto": 0.55,
+      "deduccionTotal": 80,
+      "deduccionAdicional": 0,
+      "costeNetoAdicional": 0,
+      "hayTramoResto": 1,
+      "avisoBase": 0
+     },
+     "titulo": "donativo de 100 € recurrente, base liquidable de 25.000 €, comunidad de régimen común",
+     "texto": "deducirías 80 € en la renta y te costaría 20 € netos (80 % de desgravación efectiva)."
+    },
+    {
+     "inputs": {
+      "donado": 300,
+      "recurrente": "0",
+      "bl": 25000,
+      "adicional": 0,
+      "ambito": "comun"
+     },
+     "resultado": {
+      "invalido": 0,
+      "limite": 2500,
+      "baseDeduccion": 300,
+      "exceso": 0,
+      "deduccion": 220,
+      "costeNeto": 80,
+      "importeTramo80": 250,
+      "pctEfectivo": 73.3333,
+      "costeEuroResto": 0.6,
+      "deduccionTotal": 220,
+      "deduccionAdicional": 0,
+      "costeNetoAdicional": 0,
+      "hayTramoResto": 1,
+      "avisoBase": 0
+     },
+     "titulo": "donativo de 300 €, base liquidable de 25.000 €, comunidad de régimen común",
+     "texto": "deducirías 220 € en la renta y te costaría 80 € netos (73 % de desgravación efectiva)."
+    },
+    {
+     "inputs": {
+      "donado": 1000,
+      "recurrente": "0",
+      "bl": 30000,
+      "adicional": 0,
+      "ambito": "comun"
+     },
+     "resultado": {
+      "invalido": 0,
+      "limite": 3000,
+      "baseDeduccion": 1000,
+      "exceso": 0,
+      "deduccion": 500,
+      "costeNeto": 500,
+      "importeTramo80": 250,
+      "pctEfectivo": 50,
+      "costeEuroResto": 0.6,
+      "deduccionTotal": 500,
+      "deduccionAdicional": 0,
+      "costeNetoAdicional": 0,
+      "hayTramoResto": 1,
+      "avisoBase": 0
+     },
+     "titulo": "donativo de 1.000 €, base liquidable de 30.000 €, comunidad de régimen común",
+     "texto": "deducirías 500 € en la renta y te costaría 500 € netos (50 % de desgravación efectiva)."
+    }
+   ]
+  },
+  "obligado-a-declarar-renta-dos-pagadores": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "t1": 18000,
+      "t2": 2000,
+      "t3": 0,
+      "noRet": "0",
+      "capRet": 0,
+      "inmo": 0,
+      "esp": "0",
+      "obl": "0",
+      "reg": "comun"
+     },
+     "resultado": {
+      "limiteTrabajo": 15876,
+      "totalTrabajo": 20000,
+      "resto": 2000,
+      "nMotivos": 1,
+      "margen": 0,
+      "todo": 20000,
+      "estado": 1,
+      "supuesto": 2,
+      "exceso": 4124,
+      "limite": 15876
+     },
+     "titulo": "18.000 € del primer pagador y 2.000 € del segundo",
+     "texto": "sumas 20.000 € y, al superar el segundo pagador los 1.500 €, el límite baja a 15.876 €: lo superas en 4.124 € y estarías obligado a declarar."
+    },
+    {
+     "inputs": {
+      "t1": 14000,
+      "t2": 1500,
+      "t3": 0,
+      "noRet": "0",
+      "capRet": 0,
+      "inmo": 0,
+      "esp": "0",
+      "obl": "0",
+      "reg": "comun"
+     },
+     "resultado": {
+      "limiteTrabajo": 22000,
+      "totalTrabajo": 15500,
+      "resto": 1500,
+      "nMotivos": 0,
+      "margen": 6500,
+      "todo": 15500,
+      "estado": 0,
+      "supuesto": 0,
+      "exceso": 0,
+      "limite": 0
+     },
+     "titulo": "14.000 € del primer pagador y 1.500 € del segundo",
+     "texto": "sumas 15.500 €, por debajo del límite de 22.000 € (margen de 6.500 €): por este supuesto no estarías obligado a declarar."
+    }
+   ]
+  },
+  "deduccion-maternidad-familia-numerosa": {
+   "fecha": "2026-10-07",
+   "casos": [
+    {
+     "inputs": {
+      "n3": "1",
+      "mesesMat": 12,
+      "guarMeses": 10,
+      "guarGasto": 3000,
+      "fam": "general",
+      "hijosFam": 3,
+      "mesesFam": 12,
+      "cotiz": 3500
+     },
+     "resultado": {
+      "invalido": 0,
+      "mat": 1200,
+      "guar": 833.3333,
+      "fam": 1200,
+      "especial": 0,
+      "exceso": 0,
+      "deduccion": 3233.3333,
+      "recorte": 0,
+      "anticipoMes": 200,
+      "anticipoAnual": 2400,
+      "resto": 833.3333,
+      "hijosExtra": 0
+     },
+     "titulo": "1 hijo menor de 3 años, 12 meses con derecho, familia numerosa general con 3 hijos, 3.000 € de guardería en 10 meses",
+     "texto": "la deducción anual sería de 3.233 € (maternidad 1.200 €, guardería 833 €, familia numerosa 1.200 €); cobrándola por adelantado, 200 € al mes."
+    },
+    {
+     "inputs": {
+      "n3": "2",
+      "mesesMat": 12,
+      "guarMeses": 0,
+      "guarGasto": 0,
+      "fam": "no",
+      "hijosFam": 3,
+      "mesesFam": 12,
+      "cotiz": 3500
+     },
+     "resultado": {
+      "invalido": 0,
+      "mat": 2400,
+      "guar": 0,
+      "fam": 0,
+      "especial": 0,
+      "exceso": 0,
+      "deduccion": 2400,
+      "recorte": 0,
+      "anticipoMes": 200,
+      "anticipoAnual": 2400,
+      "resto": 0,
+      "hijosExtra": 0
+     },
+     "titulo": "2 hijos menores de 3 años, 12 meses con derecho",
+     "texto": "la deducción anual sería de 2.400 € (maternidad 2.400 €, guardería 0 €, familia numerosa 0 €); cobrándola por adelantado, 200 € al mes."
     }
    ]
   }

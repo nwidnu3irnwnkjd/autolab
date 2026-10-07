@@ -99,6 +99,72 @@
     "anosAmortizacionAero": 42.03
    },
    "tol": 1
+  },
+  {
+   "in": {
+    "sup": 80,
+    "demanda": 75,
+    "anos": 10,
+    "instGas": 2500,
+    "instAero": 9000,
+    "instElec": 2000,
+    "pelec": 0.23,
+    "rendGas": 0.92,
+    "scop": 3.2,
+    "rendElec": 1,
+    "mantGas": 100,
+    "mantAero": 120,
+    "mantElec": 0,
+    "ayuda": 0,
+    "fijoGas": 119,
+    "fijoAero": 0,
+    "fijoElec": 0,
+    "aisl": 0.7,
+    "pgas": 0.064
+   },
+   "expect": {
+    "costeGas": 7611.74,
+    "costeAero": 13218.75,
+    "costeElec": 11660.0,
+    "anualGas": 511.17,
+    "anualAero": 421.88,
+    "anualElec": 966.0,
+    "anosAmortizacionAero": 72.79
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "sup": 80,
+    "demanda": 75,
+    "anos": 10,
+    "instGas": 2500,
+    "instAero": 9000,
+    "instElec": 2000,
+    "pelec": 0.23,
+    "rendGas": 0.92,
+    "scop": 3.2,
+    "rendElec": 1,
+    "mantGas": 100,
+    "mantAero": 120,
+    "mantElec": 0,
+    "ayuda": 0,
+    "fijoGas": 119,
+    "fijoAero": 0,
+    "fijoElec": 0,
+    "aisl": 0.7,
+    "pgas": 0.089
+   },
+   "expect": {
+    "costeGas": 8753.04,
+    "costeAero": 13218.75,
+    "costeElec": 11660.0,
+    "anualGas": 625.3,
+    "anualAero": 421.88,
+    "anualElec": 966.0,
+    "anosAmortizacionAero": 31.95
+   },
+   "tol": 1
   }
  ]
 }

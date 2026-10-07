@@ -84,6 +84,125 @@
     "costeMensualAlquiler": 1100
    },
    "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 2,
+    "alquiler": 900,
+    "subida": 2,
+    "rentab": 4,
+    "venta": 3,
+    "horizonte": 8
+   },
+   "expect": {
+    "diferencia": -3375.98,
+    "anosEquilibrio": 0
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 2,
+    "alquiler": 900,
+    "subida": 2,
+    "rentab": 4,
+    "venta": 3,
+    "horizonte": 9
+   },
+   "expect": {
+    "diferencia": 1104.73,
+    "anosEquilibrio": 9,
+    "patrimonioComprar": 132302.28
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 3,
+    "alquiler": 900,
+    "subida": 2,
+    "rentab": 6.5,
+    "venta": 3,
+    "horizonte": 40
+   },
+   "expect": {
+    "patrimonioComprar": 1003695.77,
+    "patrimonioAlquilar": 1182682.2,
+    "diferencia": -178986.44,
+    "anosEquilibrio": 10,
+    "ultimoAnoComprar": 26
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 20,
+    "interes": 3.0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 2,
+    "alquiler": 900,
+    "subida": 1,
+    "rentab": 4,
+    "venta": 3,
+    "horizonte": 15
+   },
+   "expect": {
+    "diferencia": 17142.34,
+    "anosEquilibrio": 11
+   },
+   "tol": 1
+  },
+  {
+   "in": {
+    "precio": 250000,
+    "entrada": 0,
+    "interes": 0,
+    "plazo": 30,
+    "gastos": 10,
+    "ibi": 400,
+    "comunidad": 700,
+    "mant": 1,
+    "revaloriza": 2,
+    "alquiler": 900,
+    "subida": 2,
+    "rentab": 4,
+    "venta": 3,
+    "horizonte": 15
+   },
+   "expect": {
+    "diferencia": 156315.9,
+    "anosEquilibrio": 3
+   },
+   "tol": 1
   }
  ]
 }

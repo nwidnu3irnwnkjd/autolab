@@ -85,3 +85,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-07T17:17Z | 11 | 8 | 0.55 | ciclo 74 cierre: Constructor, Opus, QA propio (modo continuo); peticiones abiertas: 18; páginas: 302
 2026-10-07T18:47Z | 15 | 9 | 0.55 | ciclo 75 cierre: Director UX Opus, Disenador x2, Constructor, revision propia; peticiones abiertas: 19; páginas: 302
 2026-10-07T19:21Z | 15 | 10 | 0.55 | ciclo 76 cierre: Opus, Constructor, Editor, Redactor (modo continuo); peticiones abiertas: 19; páginas: 302
+2026-10-07T19:51Z | 17 | 11 | 0.55 | ciclo 77 cierre: Opus, Constructor x2 (modo continuo); peticiones abiertas: 19; páginas: 302

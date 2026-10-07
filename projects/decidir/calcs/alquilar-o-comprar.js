@@ -29,15 +29,15 @@ function simular(d) {
   return { porAno: porAno, cuota: cuota, costeMesCompra0: costeMesCompra0 };
 }
 function calcular(d) {
-  var s = simular(d), fin = s.porAno[s.porAno.length - 1], eq = 0;
-  for (var k = 0; k < s.porAno.length; k++) { if (s.porAno[k].comprar > s.porAno[k].alquilar) { eq = k + 1; break; } }
+  var s = simular(d), fin = s.porAno[s.porAno.length - 1], eq = 0, ult = 0;
+  for (var k = 0; k < s.porAno.length; k++) { if (s.porAno[k].comprar > s.porAno[k].alquilar) { if (!eq) eq = k + 1; ult = k + 1; } }
   // Serie anual para el gráfico: año 0 = recién comprado (si vendieras hoy: entrada menos gastos de venta) y al final de cada año.
   var P0 = d.precio, d0 = P0 * d.entrada / 100, serie = [{ anio: 0, comprar: P0 * (1 - d.venta / 100) - (P0 - d0), alquilar: d0 + P0 * d.gastos / 100 }];
   s.porAno.forEach(function (v, k) { serie.push({ anio: k + 1, comprar: v.comprar, alquilar: v.alquilar }); });
   return {
     serieAnual: serie,
     patrimonioComprar: fin.comprar, patrimonioAlquilar: fin.alquilar, diferencia: fin.comprar - fin.alquilar,
-    anosEquilibrio: eq, cuotaHipoteca: s.cuota, costeMensualCompra: s.costeMesCompra0, costeMensualAlquiler: d.alquiler
+    anosEquilibrio: eq, ultimoAnoComprar: ult, cuotaHipoteca: s.cuota, costeMensualCompra: s.costeMesCompra0, costeMensualAlquiler: d.alquiler
   };
 }
 function eur(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); }
@@ -53,8 +53,9 @@ function pintar() {
   var verdict = (comprar ? 'Con estos supuestos, comprar te deja ' : 'Con estos supuestos, alquilar e invertir te deja ') + EM.eur(abs) + ' más de patrimonio dentro de ' + d.horizonte + ' años.';
   if (abs < 1) verdict = 'Con estos supuestos, comprar y alquilar te dejan el mismo patrimonio dentro de ' + d.horizonte + ' años.';
   var note = '<p><strong>Lectura:</strong> ';
-  if (r.anosEquilibrio > 0) note += 'comprar empieza a superar a alquilar a partir del <strong>año ' + r.anosEquilibrio + '</strong>: si vas a vivir ahí menos tiempo, con estos supuestos alquilar sale mejor. ';
-  else note += 'en estos ' + d.horizonte + ' años comprar no llega a superar a alquilar: necesitaría más años, más revalorización o menos rentabilidad en la inversión. ';
+  if (r.anosEquilibrio > 0 && !comprar && r.ultimoAnoComprar >= r.anosEquilibrio) note += 'comprar supera a alquilar entre los años <strong>' + r.anosEquilibrio + '</strong> y <strong>' + r.ultimoAnoComprar + '</strong>, pero al final de los ' + d.horizonte + ' años vuelve a ganar alquilar e invertir. ';
+  else if (r.anosEquilibrio > 0) note += 'comprar empieza a superar a alquilar a partir del <strong>año ' + r.anosEquilibrio + '</strong>: si vas a vivir ahí menos tiempo, con estos supuestos alquilar sale mejor. ';
+  else note += 'en estos ' + d.horizonte + ' años comprar no llega a superar a alquilar: necesitaría más revalorización, menos rentabilidad en la inversión o, según el caso, más años (con rentabilidad alta la diferencia puede empeorar con el tiempo). ';
   note += 'Comprar cuesta al mes ' + EM.eur(r.costeMensualCompra) + ' (cuota de ' + EM.eur(r.cuotaHipoteca) + ' más IBI, comunidad, seguro y mantenimiento) frente a ' + EM.eur(r.costeMensualAlquiler) + ' de alquiler. ';
   note += 'El resultado depende sobre todo del horizonte y de la revalorización que supongas: cambia esos dos datos antes de decidir.</p>';
   EM.renderResult({

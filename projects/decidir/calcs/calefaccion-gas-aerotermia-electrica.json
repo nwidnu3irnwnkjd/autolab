@@ -3,7 +3,7 @@
   "title": "Calefacción: ¿gas, aerotermia o eléctrica? Calculadora",
   "description": "Compara el coste anual de calentar tu casa con gas, aerotermia o electricidad, incluida la inversión. Mete tus datos y mira cuál sale más barata.",
   "h1": "Calefacción de gas, aerotermia o eléctrica: ¿cuál sale más barata?",
-  "lead": "La aerotermia suele ser la calefacción más barata de usar, pero su mayor instalación solo se compensa si gastas bastante calefacción y la usas varios años. Esta calculadora compara el coste total de caldera de gas, aerotermia o emisores eléctricos durante esos años, con tu zona climática, aislamiento y tarifas.",
+  "lead": "La aerotermia suele ser la calefacción más barata de usar, pero su mayor instalación solo se compensa si gastas bastante calefacción y la usas varios años. Esta calculadora compara el coste total de caldera de gas, aerotermia o emisores eléctricos durante esos años, con tu zona climática, aislamiento y tarifas. Con los valores de partida (80 m², 75 kWh/m², aislamiento bueno, 10 años, gas a 0,064 €/kWh con el tope temporal del RDL 25/2026 y luz a 0,23 €/kWh) el gas sale en unos 7.612 € frente a 13.219 € de la aerotermia y 11.660 € de la eléctrica; sin el tope (≈0,089 €/kWh) el gas subiría a unos 8.753 € y seguiría siendo la más barata en ese caso.",
   "veredicto": "La aerotermia suele ser la más barata de usar, pero solo compensa su mayor instalación si la vivienda gasta bastante calefacción y la usas varios años; la eléctrica directa es barata de instalar y cara de mantener.",
   "tema": "energia",
   "inputs": [

@@ -171,6 +171,50 @@ def ej_jubilacion(i, r):
     return (f"{i['edad']} años, {i['cot']} años cotizados, base reguladora de {eur(i['br'])}, jubilación a los {i['eleg_a']} años, cobrando hasta los {i['fin']}",
             f"a la edad ordinaria que te corresponde ({num(r['ordRealM'] / 12, 0)} años) cobrarías {eur(r['pensionOrdinaria'])} al mes y jubilándote {abs(r['mesesDiff'])} meses " + ("antes" if ant else "después") + f" {eur(r['pensionElegida'])} ({'reducción del ' + pct(r['coefPct'], 0) if ant else 'incremento del ' + pct(r['extraPct'], 0)}); hasta los {i['fin']} acumularías {eur(abs(r['diferencia']))} " + ("más" if r["diferencia"] >= 0 else "menos") + f", y la opción de jubilarte más tarde supera en acumulado a la otra solo si cobras más allá de los {num(r['equilibrioEdad'], 1)} años.")
 
+def hj(n):
+    n = int(n); return f"{n} hijo" + ("" if n == 1 else "s")
+def ej_autonomo(i, r):
+    return (f"{eur(i['bruto'])} brutos como asalariado frente a {eur(i['factura'])} facturados sin IVA y {eur(i['gastos'])} de gastos como autónomo, Madrid, {hj(i['hijos'])}",
+            f"como asalariado quedarían {eur(r['netoAsalariado'])} netos al año y como autónomo {eur(r['netoAutonomo'])} (cuota de autónomos de {eur(r['cuotaReta'])}); para igualar el neto de asalariado tendrías que facturar unos {eur(r['facturaIgual'])}.")
+def ej_ofertas(i, r):
+    return (f"oferta A de {eur(i['brutoA'])} brutos y B de {eur(i['brutoB'])}, {i['pagas']} pagas, Madrid, desplazamiento de {eur(i['desplA'])} al año en A y {eur(i['desplB'])} en B",
+            f"neto al año {eur(r['netoA'])} (A) y {eur(r['netoB'])} (B); descontado el desplazamiento, {eur(r['netoTrasA'])} frente a {eur(r['netoTrasB'])}: " + ("gana B" if r["dif"] > 0 else "gana A") + f" por {eur(abs(r['dif']))} al año.")
+def ej_casa(i, r):
+    tipo = "nueva" if i["tipo"] == "nueva" else "usada"
+    return (f"vivienda {tipo} de {eur(i['precio'])} en {r['ccaaNombre']}, entrada del {pct(i['entrada'], 0)}, {eur(i['gastos'])} de otros gastos, {i['anos']} años para ahorrar, hipoteca al {pct(i['interes'], 1)}",
+            f"necesitarías {eur(r['totalNecesario'])} ahorrados ({eur(r['entrada'])} de entrada, {eur(r['impuestos'])} de impuestos y otros gastos), unos {eur(r['ahorroMensual'])} al mes; cuota de {eur(r['cuotaHipoteca'], 2)}/mes.")
+def ej_subsidio(i, r):
+    s = "paro agotado" if i["situ"] == "agotado" else "cotización insuficiente para el paro"
+    return (f"{s}, {i['dias']} días cotizados, {i['edad']} años, {hj(i['hijos'])} a cargo, sin rentas propias",
+            f"el subsidio sería de {eur(r['m1'])} al mes los primeros {r['dias1']} días" + (f", {eur(r['m2'])} los {r['dias2']} siguientes y {eur(r['m3'])} el resto" if r["dias2"] else "") + f": {eur(r['total'])} en {r['meses']} meses.")
+def ej_permiso(i, r):
+    if i["mono"] == "si":
+        return (f"familia monoparental con sueldo de {eur(i['sueldoA'])}/mes, permiso de {r['maxA']} semanas",
+                f"la prestación sería de {eur(r['prestA'])} en total ({eur(r['semanalA'], 2)} por semana).")
+    return (f"dos progenitores con sueldos de {eur(i['sueldoA'])} y {eur(i['sueldoB'])} al mes, 19 semanas cada uno",
+            f"la prestación sería de {eur(r['prestA'])} y {eur(r['prestB'])}: {eur(r['prest'])} entre los dos.")
+def ej_hogar(i, r):
+    m = {"horas": f"{num(i['horas'])} h al mes a {eur(i['importe'], 2)}/h", "mensual": f"{eur(i['importe'])} al mes en {'14' if i['pagas'] == '14' else '12'} pagas", "interna": f"interna con {eur(i['importe'])} al mes"}[i["modo"]]
+    return (f"empleada de hogar, {m}, contrato {'indefinido' if i['tipo'] == 'indef' else 'temporal'}",
+            f"la cuota de la familia empleadora sería de {eur(r['cuotaEmp'], 2)}/mes (la de la trabajadora, {eur(r['cuotaTrab'], 2)}); coste total de {eur(r['costeMes'], 2)}/mes, {eur(r['costeTotal'])} en {r['meses']} meses.")
+def ej_plan(i, r):
+    return (f"{eur(i['aportacion'])} al año durante {i['anos']} años, renta de {eur(i['renta'])}, Madrid, rentabilidad del {pct(i['rentab'], 0)}, comisiones del {pct(i['comPlan'], 1)} y {pct(i['comFondo'], 1)}, rescate en un solo pago",
+            f"el plan ahorra {eur(r['ahorroFiscalAnual'])} al año de IRPF (límite de aportación {eur(r['limite'])}) y deja {eur(r['patrimonioPlan'])} netos frente a {eur(r['patrimonioFondo'])} del fondo: " + ("gana el fondo" if r["diferencia"] < 0 else "gana el plan") + f" por {eur(abs(r['diferencia']))}.")
+def ej_donativos(i, r):
+    return (f"donativo de {eur(i['donado'])}" + (" recurrente" if i["recurrente"] == "1" else "") + f", base liquidable de {eur(i['bl'])}, comunidad de régimen común",
+            f"deducirías {eur(r['deduccion'])} en la renta y te costaría {eur(r['costeNeto'])} netos ({pct(r['pctEfectivo'], 0)} de desgravación efectiva).")
+def ej_obligado(i, r):
+    pg = f"{eur(i['t1'])} del primer pagador y {eur(i['t2'])} del segundo"
+    if r["estado"] == 1:
+        return (pg, f"sumas {eur(r['totalTrabajo'])} y, al superar el segundo pagador los 1.500 €, el límite baja a {eur(r['limite'])}: lo superas en {eur(r['exceso'])} y estarías obligado a declarar.")
+    return (pg, f"sumas {eur(r['totalTrabajo'])}, por debajo del límite de {eur(r['limiteTrabajo'])} (margen de {eur(r['margen'])}): por este supuesto no estarías obligado a declarar.")
+def ej_maternidad(i, r):
+    p = f"{i['n3']} hijos menores de 3 años" if i["n3"] != "1" else "1 hijo menor de 3 años"
+    f = "" if i["fam"] == "no" else f", familia numerosa general con {i['hijosFam']} hijos"
+    g = f", {eur(i['guarGasto'])} de guardería en {i['guarMeses']} meses" if i["guarGasto"] else ""
+    return (f"{p}, {i['mesesMat']} meses con derecho{f}{g}",
+            f"la deducción anual sería de {eur(r['deduccion'])} (maternidad {eur(r['mat'])}, guardería {eur(r['guar'])}, familia numerosa {eur(r['fam'])}); cobrándola por adelantado, {eur(r['anticipoMes'])} al mes.")
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -209,6 +253,37 @@ CASOS = {
     "jubilacion-anticipada-o-demorada": (ej_jubilacion, [
         {"edad": 62, "cot": 38, "br": 2000, "eleg_a": 63, "eleg_m": 0, "fin": 85, "irpf": 0, "ipc": 2.7},
         {"edad": 64, "cot": 38, "br": 2000, "eleg_a": 67, "eleg_m": 0, "fin": 85, "irpf": 0, "ipc": 2.7}]),
+    "autonomo-o-asalariado": (ej_autonomo, [
+        {"bruto": 30000, "factura": 45000, "gastos": 3000, "ccaa": "madrid", "hijos": "0", "contrato": "indef"},
+        {"bruto": 24000, "factura": 30000, "gastos": 2000, "ccaa": "madrid", "hijos": "1", "contrato": "indef"}]),
+    "comparar-ofertas-de-trabajo-neto-real": (ej_ofertas, [
+        {"brutoA": 32000, "brutoB": 36000, "ccaa": "madrid", "pagas": "14", "desplA": 600, "desplB": 1800, "horasA": 40, "horasB": 40},
+        {"brutoA": 28000, "brutoB": 30000, "ccaa": "madrid", "pagas": "12", "desplA": 0, "desplB": 1200, "horasA": 40, "horasB": 40}]),
+    "cuanto-ahorrar-para-comprar-casa": (ej_casa, [
+        {"precio": 250000, "ccaa": "madrid", "tipo": "usada", "entrada": 20, "gastos": 2500, "anos": 5, "rentab": 0, "interes": 3.0},
+        {"precio": 180000, "ccaa": "andalucia", "tipo": "nueva", "entrada": 20, "gastos": 2500, "anos": 4, "rentab": 0, "interes": 3.0}]),
+    "subsidio-desempleo-cuanto-cobro-y-cuanto-dura": (ej_subsidio, [
+        {"situ": "agotado", "dias": 360, "edad": 40, "hijos": 1, "conyuge": "no", "renta": 0, "rentaOtros": 0, "jub": "no"},
+        {"situ": "insuf", "dias": 200, "edad": 35, "hijos": 0, "conyuge": "no", "renta": 0, "rentaOtros": 0, "jub": "no"}]),
+    "permiso-nacimiento-cuanto-cobro-y-como-repartir": (ej_permiso, [
+        {"sueldoA": 3200, "sueldoB": 2400, "mono": "no", "amp": 0, "semA": 19, "semB": 19, "complA": 0, "complB": 0},
+        {"sueldoA": 2000, "sueldoB": 2400, "mono": "si", "amp": 0, "semA": 19, "semB": 19, "complA": 0, "complB": 0}]),
+    "empleada-hogar-cuanto-cuesta-contratar-cotizacion": (ej_hogar, [
+        {"modo": "horas", "horas": 20, "importe": 10, "pagas": "prorr", "fam": "no", "meses": 12, "tipo": "indef"},
+        {"modo": "mensual", "horas": 20, "importe": 900, "pagas": "14", "fam": "no", "meses": 12, "tipo": "indef"}]),
+    "plan-pensiones-o-fondo-indexado": (ej_plan, [
+        {"aportacion": 1500, "anos": 25, "renta": 35000, "ccaa": "madrid", "rescate": "1", "rentab": 4, "comPlan": 1.0, "comFondo": 0.2},
+        {"aportacion": 3000, "anos": 15, "renta": 50000, "ccaa": "madrid", "rescate": "1", "rentab": 4, "comPlan": 1.0, "comFondo": 0.2}]),
+    "donativos-irpf-cuanto-desgrava-y-cuanto-donar": (ej_donativos, [
+        {"donado": 100, "recurrente": "1", "bl": 25000, "adicional": 0, "ambito": "comun"},
+        {"donado": 300, "recurrente": "0", "bl": 25000, "adicional": 0, "ambito": "comun"},
+        {"donado": 1000, "recurrente": "0", "bl": 30000, "adicional": 0, "ambito": "comun"}]),
+    "obligado-a-declarar-renta-dos-pagadores": (ej_obligado, [
+        {"t1": 18000, "t2": 2000, "t3": 0, "noRet": "0", "capRet": 0, "inmo": 0, "esp": "0", "obl": "0", "reg": "comun"},
+        {"t1": 14000, "t2": 1500, "t3": 0, "noRet": "0", "capRet": 0, "inmo": 0, "esp": "0", "obl": "0", "reg": "comun"}]),
+    "deduccion-maternidad-familia-numerosa": (ej_maternidad, [
+        {"n3": "1", "mesesMat": 12, "guarMeses": 10, "guarGasto": 3000, "fam": "general", "hijosFam": 3, "mesesFam": 12, "cotiz": 3500},
+        {"n3": "2", "mesesMat": 12, "guarMeses": 0, "guarGasto": 0, "fam": "no", "hijosFam": 3, "mesesFam": 12, "cotiz": 3500}]),
 }
 
 def generar_casos(fecha):

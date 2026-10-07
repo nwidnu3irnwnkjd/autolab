@@ -2,7 +2,7 @@
   "slug": "alquilar-o-comprar",
   "title": "¿Alquilar o comprar vivienda? Calculadora con tus números",
   "description": "Con un piso de 250.000 € y alquiler de 900 €, comprar deja 32.772 € más a 15 años y compensa desde el año 9 (ejemplo). Calcula con tus datos.",
-  "h1": "Alquilar o comprar vivienda: ¿qué sale mejor a N años?",
+  "h1": "Alquilar o comprar vivienda: ¿qué sale mejor a 10, 15 o 20 años?",
   "lead": "Comprar suele compensar si te quedas muchos años y la vivienda se revaloriza; alquilar e invertir la entrada suele ganar si te mudas pronto o el precio apenas sube. La calculadora compara el patrimonio neto de ambos caminos con tus números y para España, y te dice desde qué año empieza a ganar comprar.",
   "veredicto": "Comprar suele compensar si te quedas muchos años y la vivienda se revaloriza; alquilar e invertir suele ganar si te mudas pronto o el precio apenas sube.",
   "tema": "hipoteca",
@@ -80,6 +80,7 @@
     {
       "id": "subida",
       "label": "Subida anual del alquiler (%)",
+      "ayuda": "Hasta el 31-12-2027 la actualización anual dentro del contrato no puede superar el 2 % (RDL 29/2026, DF 6.ª, pendiente de convalidación); al renovar o cambiar de piso el alquiler sigue al mercado: prueba también 3 %.",
       "default": 2,
       "min": -20,
       "step": 0.1
@@ -125,8 +126,8 @@
     ],
     [
       "¿Qué no incluye este cálculo?",
-      "No incluye desgravaciones fiscales, impuestos sobre la rentabilidad de las inversiones, posible plusvalía de la venta, comisiones de la hipoteca ni subidas del IBI o la comunidad. Tampoco valora aspectos no económicos como estabilidad, libertad de mudarte o el valor de vivir en casa propia."
+      "No incluye desgravaciones (como la deducción estatal del alquiler, pendiente de convalidar), impuestos sobre la inversión, plusvalía municipal ni IRPF de la venta, comisiones de la hipoteca ni subidas del IBI o la comunidad. Tampoco valora estabilidad, libertad de mudarte o vivir en casa propia."
     ]
   ],
-  "sources": "Modelo propio simplificado: hipoteca a tipo fijo con amortización francesa, gastos y alquiler iniciales introducidos por ti, revalorización y rentabilidad en tasa anual constante, IBI y comunidad constantes, mantenimiento sobre el valor de la vivienda. Los gastos de compra (ITP/AJD, notaría, registro) varían por comunidad autónoma: consulta la normativa de la tuya (Agencia Tributaria y hacienda autonómica). Sin impuestos sobre las inversiones."
+  "sources": "Modelo propio simplificado: hipoteca a tipo fijo con amortización francesa, gastos y alquiler iniciales introducidos por ti, revalorización y rentabilidad en tasa anual constante, IBI y comunidad constantes, mantenimiento sobre el valor de la vivienda. Los gastos de compra (ITP/AJD, notaría, registro) varían por comunidad autónoma: consulta la normativa de la tuya (Agencia Tributaria y hacienda autonómica). Sin impuestos sobre las inversiones. No hay deducción por compra de vivienda habitual para compras desde 2013, y el alquiler sube cada año el porcentaje indicado durante todo el horizonte. No incluye la deducción estatal del 10 % del alquiler (RDL 29/2026, LIRPF 68.6; máx. 1.163 € al año, base imponible < 33.007,20 €), pendiente de convalidación: si tienes derecho, en el ejemplo comprar pasa a ganar por ≈ 9.400 € y el cruce al año 13."
 }
