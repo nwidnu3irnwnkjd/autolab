@@ -552,6 +552,7 @@ html.q-on .hero{padding-bottom:0}
 article.dir{display:flex;flex-direction:column;align-items:stretch}
 article.dir>*{order:2}
 article.dir>:is(.kicker,h1,.byline,.lead,.search,#dc){order:1}
+article.dir>section.grp{content-visibility:auto;contain-intrinsic-size:auto 600px}
 article.dir>.kicker{align-self:flex-start}
 article.dir>h1,article.dir>.lead{margin-bottom:12px}
 article.dir:has(#dq:not(:placeholder-shown))>.asis{display:none}

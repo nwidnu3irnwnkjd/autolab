@@ -38,6 +38,8 @@ NOTES = [n for n in ALL_NOTES if n.get('clave') not in _MIGR]  # solo si hay not
 BARO = None  # datos del Barómetro (main)
 ACTIVE_HUBS = {}  # hubs que cumplen el disparador (main)
 
+SPEC = '<script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/decidir/*"},"eagerness":"moderate"}]}</script>'
+
 def write(path, title, description, body, scripts="", jsonld=None, priority="0.6", lastmod=None, og=None, og_tema=None, noindex=False):
     """path: '/' o '/decidir/slug/'. Genera index.html en esa carpeta."""
     canonical = site["base_url"].rstrip("/") + path
@@ -50,6 +52,8 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     _n = path.strip("/").replace("/", "-") or "home"  # og:image por página: og/<slug>.png|jpg (rasterizado y commiteado, ops/og_raster.py); si no existe, PNG por tema
     _f = next((_n + e for e in (".png", ".jpg") if os.path.exists(os.path.join(ROOT, "og", _n + e))), None)
     _img = site["base_url"].rstrip("/") + ("/og/" + _f if _f else "/assets/" + (og or "og.png"))
+    if path in ("/", "/todas/", "/hipoteca/", "/coche/", "/energia/", "/impuestos/", "/ahorro/") or path.startswith("/guias/"):
+        scripts += SPEC  # prefetch conservador de calculadoras (solo Chromium; no prerender, no toca cookies)
     out = BASE.substitute(title=html.escape(title), description=html.escape(description), canonical=canonical, og_alt=html.escape(title, quote=True), og_image=_img,
                           head_extra=extra, body=body, scripts=scripts, site_name=site["name"], year=site["year"]).replace("/assets/illustrations.svg#", ILL + "#")
     out = minify.html(out)
