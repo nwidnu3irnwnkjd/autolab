@@ -77,9 +77,11 @@ def home_card(news, today=None):
     f = featured(news, today)
     if not f: return ""
     lab, n = f
+    ult = [x for x in news if x.get("tipo") not in RESUMENES and x is not n][:3]
+    lst = ('<p class="kicker">Últimas noticias</p><ul class="guides">' + "".join(f'<li><a href="{x["path"]}">{x["h1"]}</a></li>' for x in ult) + "</ul>") if ult else ""
     return (f'<aside class="box noticia-card" aria-label="{e(lab)}"><p class="kicker">{e(lab)}</p>'
             f'<p><a href="{n["path"]}"><strong>{n["h1"]}</strong></a></p>'
-            f'<p class="note">{_t(n)} · {e(n["description"])} <a href="{PATH}">Todas las noticias</a></p></aside>\n')
+            f'<p class="note">{_t(n)} · {e(n["description"])} <a href="{PATH}">Todas las noticias</a></p>{lst}</aside>\n')
 
 def calc_block(slug, news, today=None, maxn=2):
     """«En las noticias» de una calculadora: ≤ 2 piezas no caducadas de ≤ 60 días con la calculadora en `calcs`; '' si no hay; ≤ 1 KB."""
@@ -121,6 +123,17 @@ def _ics(n):
     from urllib.parse import quote
     return f'<p><a class="btn" href="data:text/calendar;charset=utf-8,{quote(ics)}" download="plazo-{d}.ics">Añadir al calendario ({_fe(d)})</a></p>'
 
+def _kick_rel(n):
+    """Enlaces contextuales en la cabecera de la pieza: resumen del día de su fecha y, en los resúmenes, el índice y la semana (≤ 3)."""
+    try: news = load()
+    except Exception: return ""
+    if n.get("tipo") == "resumen-semana": return f' · <a href="{RESUMEN_PATH}">Todos los resúmenes</a>'
+    if n.get("tipo") == "resumen-dia":
+        sem = sorted((x for x in news if x.get("tipo") == "resumen-semana" and x["published"] >= n["published"]), key=lambda x: x["published"])
+        return f' · <a href="{RESUMEN_PATH}">Todos los resúmenes</a>' + (f' · <a href="{sem[0]["path"]}">La semana</a>' if sem else "")
+    d = next((x for x in news if x.get("tipo") == "resumen-dia" and x["published"] == n["published"]), None)
+    return f' · <a href="{d["path"]}">Resumen del día</a>' if d else ""
+
 def piece_page(n, calcs, card, base, today=None, tema=None):
     """(body, jsonld, tema_og). El cuerpo del archivo ya trae sus 4 bloques; aquí van byline, fuentes, corrección y calculadoras."""
     today = _today(today)
@@ -134,7 +147,7 @@ def piece_page(n, calcs, card, base, today=None, tema=None):
                + (f' {e(a["texto"])}' if a.get("texto") else "") + (f' <a href="{a["url"]}">Ver el dato vigente</a>.' if a.get("url") else "") + "</p>")
     fu = "".join(f'<li><a href="{f["url"]}" rel="noopener">{e(f["nombre"])}</a>' + (f' (<time datetime="{f["fecha"]}">{_fe(f["fecha"])}</time>)' if f.get("fecha") else "") + "</li>" for f in n["fuentes"])
     body = f"""<article class="guide noticia">
-<p class="kicker"><a href="{PATH}">Noticias</a> · {e(tipo_es(n))}</p>
+<p class="kicker"><a href="{PATH}">Noticias</a> · <a href="/noticias/{n["y"]}/{n["m"]}/">{_mes_es(n["y"], n["m"])}</a> · {e(tipo_es(n))}{_kick_rel(n)}</p>
 <h1>{n["h1"]}</h1>
 <p class="byline note">Por <a href="/como-funciona/">{seo.AUTHOR}</a> · Publicado el <time datetime="{n["published"]}">{_fe(n["published"])}</time>{upd}</p>
 {cad}{n["body"]}

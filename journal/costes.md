@@ -82,3 +82,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-07T06:28Z | 5 | 5 | 0.55 | ciclo 71 cierre: Vigilante/Redactor, Opus x4, Constructores x2, QA (usuario libre); peticiones abiertas: 18; páginas: 298
 2026-10-07T12:44Z | 5 | 6 | 0.55 | ciclo 72 cierre: Redactor x2, Estratega (a peticion de Andoni); peticiones abiertas: 18; páginas: 302
 2026-10-07T16:52Z | 5 | 8 | 0.55 | ciclo 73 cierre: Editor, Constructor, Vigilante, QA (modo continuo); peticiones abiertas: 18; páginas: 302
+2026-10-07T17:17Z | 11 | 8 | 0.55 | ciclo 74 cierre: Constructor, Opus, QA propio (modo continuo); peticiones abiertas: 18; páginas: 302
