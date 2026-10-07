@@ -192,3 +192,4 @@
 - TRAMPA DE VERSIONES BOE: cuando LAU/LIRPF/TRLRHL/Ley 12/2023 se actualicen, LAU art. 10 tendrá versión RDL 28 (15-nov) como «más alta»; LIRPF arts. 24 y 85 versiones 2027 serán del RDL 29: fijarse en el id de versión. Vigilar convalidación (Diputación Permanente/Pleno) y reconsultar consolidados.
 - Fix: datos.py sirve el último dato bueno si el refresco falla (timeout del BCE) → /datos/euribor-hoy/ ya no desaparece.
 - Consumo: semanal ~5 %, usuario libre.
+- 7-oct 07:53Z inspección Google: conocidas BAJAN a 53/183 (antes 87), 52 «descubierta sin indexar», 5 con estado vacío (¿cuota/errores de API?), 125 desconocidas, 1 indexada. Sin rastreo todavía. Para la pasada 3 del Optimizador (12-oct): ¿Google «olvida» URLs descubiertas por baja prioridad? Plan B: pedir a Andoni que, desde su navegador, solicite indexación de las ~10 URLs mejores (home, /noticias/, /datos/…) y reenvíe sitemaps; y Brave (OPT1.7).
