@@ -1,6 +1,6 @@
 """Directorio /todas/, bloques de portada (Por situación, Novedades) y sitemaps por secciones (Estratega, c50)."""
 import html, json, os, re, datetime
-import seo, semana
+import seo, semana, ui
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PATH = "/todas/"
@@ -35,9 +35,11 @@ def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, note
     items = []  # (nombre, ruta) para el ItemList
     secs = []
     by = {}
-    for c in calcs: by.setdefault(tema(c), []).append(c)
-    for t, (name, _) in icons.items():
-        lst = by.get(t)
+    for c in calcs: by.setdefault(ui.etiqueta(c), []).append(c)  # UX2.11: agrupa por la etiqueta visible (Trabajo y prestaciones separa las laborales de Ahorro)
+    order = [(n, t) for t, (n, _) in icons.items()]
+    order.append((ui.LAB_NAME, "trabajo"))
+    for name, t in order:
+        lst = by.get(name)
         if not lst: continue
         h = active_hubs.get(t)
         hl = f' <a class="note" href="{h["path"]}">Ver el mapa «{e(h["nav"])}»</a>' if h else ""
