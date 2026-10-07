@@ -4,7 +4,7 @@
    "anterior": 1.9052,
    "anterior_fecha": "2026-10-06",
    "extra": {
-    "detalle": "Media simple de 10766 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10775 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-07",
    "fecha_dato": "2026-10-07",
@@ -35,14 +35,14 @@
     ],
     [
      "2026-10-07",
-     1.9026
+     1.8993
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.9026,
-   "variacion_abs": -0.0026,
-   "variacion_pct": -0.14
+   "valor": 1.8993,
+   "variacion_abs": -0.0059,
+   "variacion_pct": -0.31
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -173,7 +173,7 @@
    "anterior": 1.8027,
    "anterior_fecha": "2026-10-06",
    "extra": {
-    "detalle": "Media simple de 10403 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10413 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
    "fecha_consulta": "2026-10-07",
    "fecha_dato": "2026-10-07",
@@ -204,14 +204,14 @@
     ],
     [
      "2026-10-07",
-     1.8021
+     1.7992
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8021,
-   "variacion_abs": -0.0006,
-   "variacion_pct": -0.03
+   "valor": 1.7992,
+   "variacion_abs": -0.0035,
+   "variacion_pct": -0.19
   },
   "luz_pvpc": {
    "anterior": 0.21822,
@@ -272,10 +272,10 @@
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 21.4,
-    "max_semana": 25.1,
-    "min_hoy": 14.1,
-    "min_semana": 8.6
+    "max_hoy": 21.3,
+    "max_semana": 25.7,
+    "min_hoy": 14.0,
+    "min_semana": 7.6
    },
    "fecha_consulta": "2026-10-07",
    "fecha_dato": "2026-10-07",
@@ -306,14 +306,14 @@
     ],
     [
      "2026-10-07",
-     14.2
+     17.5
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 14.2,
-   "variacion_abs": -1.7,
-   "variacion_pct": -10.69
+   "valor": 17.5,
+   "variacion_abs": 1.6,
+   "variacion_pct": 10.06
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
