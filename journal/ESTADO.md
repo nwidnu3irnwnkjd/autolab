@@ -193,3 +193,7 @@
 - Fix: datos.py sirve el último dato bueno si el refresco falla (timeout del BCE) → /datos/euribor-hoy/ ya no desaparece.
 - Consumo: semanal ~5 %, usuario libre.
 - 7-oct 07:53Z inspección Google: conocidas BAJAN a 53/183 (antes 87), 52 «descubierta sin indexar», 5 con estado vacío (¿cuota/errores de API?), 125 desconocidas, 1 indexada. Sin rastreo todavía. Para la pasada 3 del Optimizador (12-oct): ¿Google «olvida» URLs descubiertas por baja prioridad? Plan B: pedir a Andoni que, desde su navegador, solicite indexación de las ~10 URLs mejores (home, /noticias/, /datos/…) y reenvíe sitemaps; y Brave (OPT1.7).
+## Resultado de la sesión de navegador de Andoni (7-oct tarde)
+- Search Console: 9/10 URL con indexación solicitada (la 7, /decidir/hipoteca-fija-o-variable/, dio error genérico de Google; reintentar mañana); /guias/ ya indexada. sitemap-datos.xml y sitemap-noticias.xml «Correcto» (3 y 17 descubiertas). sitemap.xml y feed.xml «No se ha podido obtener»: el fichero responde 200 y es XML válido, los sitemaps hijos sí se leen → fallo transitorio de GSC; reenviados por API el 7-oct.
+- Brave: enviado («Success»). GitHub OK (descripción, web, 10 topics). Bing: faltaba sitemap-noticias → enviado («Processing», 17); 10 URL enviadas (cuota 100/día).
+- Pendiente: reintentar solicitud de indexación de /decidir/hipoteca-fija-o-variable/ (otro día); medir con inspect_all el 8-oct si las 9 pasan a «rastreadas».

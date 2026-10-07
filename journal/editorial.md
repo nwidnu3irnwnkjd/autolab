@@ -87,3 +87,26 @@
 
 ## Resumen
 - FAQs > 50 p: 38 → 0; leads sin condición 1 → 0. Sin peticiones al Constructor (ninguna cifra nueva). Verificado: build OK, check.py 10523/10523, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 5 · 2026-10-07 · 15 calculadoras (cola tarea 3; sin revisar y con FAQs > 50 p; popularidad.json sin datos suficientes, se usó la lista de semillas sin sugerencia de demanda-2026-10-03)
+
+Nota 1-5 (antes → después): título / lead con condición+cifra / FAQ ≤ 50 p / fuentes / tono. Solo textos de calcs/*.json; sin tocar fórmulas, tests ni cifras legales.
+- bici-electrica-o-transporte-publico · 3 → 5 · title con «coche» (consulta real), lead con 411/438/480 € y umbrales de test.json, 2 FAQs recortadas
+- academia-idiomas-presencial-online-o-intensivo · 3 → 5 · lead 141 → ~90 p con punto de equilibrio primero, FAQ 3 recortada
+- adoptar-o-comprar-perro-coste-anual · 4 → 5 · lead más corto, FAQs 2 y 4 recortadas
+- coche-propio-o-carsharing-o-vtc · 4 → 5 · lead sin cifras ajenas al test, FAQ 5 recortada
+- cocinar-en-casa-o-comer-fuera · 4 → 5 · lead directo, FAQ 4 recortada
+- curso-online-bootcamp-o-fp-coste-y-retorno · 3 → 5 · lead más corto, 4 FAQs a ≤ 50 p
+- deposito-letras-o-fondo-monetario · 2 → 4 · lead 175 → ~105 p; FAQs de 243/174/142/137/124 p a ≤ 50 p (el detalle —retenciones, Ceuta y Melilla, base 360, traspasos art. 94.1.a— sigue en «Supuestos y fuentes»); queda lead largo
+- reformar-o-mudarse · 4 → 5 · lead más corto, 3 FAQs recortadas
+- residencia-o-cuidador-a-domicilio · 3 → 5 · lead sin «€» olvidado, FAQ 1 aclara «sin cuidado familiar» en el caso de 2 h (coherente con test.json), 4 FAQs recortadas
+- universidad-publica-o-privada-o-master · 3 → 5 · lead más corto, 5 FAQs de 68-77 p a ≤ 50 p
+- subrogar-hipoteca-merece-la-pena · 2 → 5 · lead sin cifra → con ejemplo de test.json (cuota −43 €, coste 1.575 €, 19 meses), FAQs 1 y 3 recortadas
+- hipoteca-bonificada-o-sin-vinculaciones · 3 → 5 · lead con cifras del test (65.320 € frente a 69.530 €, 0,32 puntos), 2 FAQs recortadas
+- hipoteca-20-25-o-30-anos-cuota-vs-intereses · 3 → 5 · lead con cuotas e intereses de los tres plazos, FAQ 2 recortada
+- movil-reacondicionado-o-nuevo · 4 → 5 · lead más corto, FAQ 3 recortada
+- amortizar-plazo-o-cuota · 2 → 4 · lead sin cifra → con ejemplo de test.json (665 → 610 €, 214 meses), title «cuánto ahorras en cada caso», FAQ 4 recortada (cifras legales intactas)
+
+## Posibles errores legales: ninguno detectado en estas 15 (no se tocó ninguna cifra legal). Nota para el Verificador: amortizar-plazo-o-cuota FAQ 4 (comisión 0,25 %/3 años o 0,15 %/5 años en variables, 2 %/10 años y 1,5 % después en fijas) y deposito-letras-o-fondo-monetario (arts. citados) conviene contrastarlos con el texto consolidado en su próxima pasada.
+## Resumen
+- FAQs > 50 p en las 15: ≈ 48 → 0. Leads sin cifra de ejemplo: 3 → 0. Verificado: build OK, check.py 13623/13623, qa_static --changed 0 BLOQUEANTE.
