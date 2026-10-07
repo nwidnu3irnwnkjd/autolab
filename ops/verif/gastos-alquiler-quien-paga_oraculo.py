@@ -7,6 +7,7 @@ INTERPRETACION
 - Gestion inmobiliaria y formalizacion (art. 20.1 ultimo parrafo): del arrendador siempre en vivienda (pf o pj, Ley 12/2023): lo cobrado al inquilino es rechazable.
 - Suministros con contador (20.3) siempre del inquilino y pequenas reparaciones (21.4) del inquilino: no entran en el calculo (solo texto).
 - Zona tensionada (17.6): solo aviso, no cambia el importe. Tope de subida = 2 x s (s = % maximo de actualizacion de la renta, dato del usuario, >= 0). Borde: p == 2s cabe.
+- RDL 29/2026 (en vigor 8-10-2026, pendiente de convalidacion), art. 20 LAU nuevo: el IBI NO es repercutible al inquilino (salvo obligado tributario); la tasa de basuras suele tener al ocupante como contribuyente (TRLRHL 23.1.b y 23.2.a) y sigue siendo suya en contratos firmados desde el 8-10-2026 (firma="despues"; sin transitoria expresa, lectura propia por la regla general de que el contrato se rige por la ley de su firma; supuesto S, confianza B). Comunidad, tope 2x y honorarios (ahora art. 20.2/20.3) no cambian de mecanica.
 - Se asume que el arrendador repercute las tres partidas y la agencia con los importes dados; «cuota de comunidad» = importe anual vigente antes de la subida de este ano.
 """
 import json, os, random, subprocess, sys
@@ -20,8 +21,9 @@ def model(d):
     pct = (0.0 if d["acuerdo"] == "no" else min(d["subidaPedida"], tope)) if limitado else d["subidaPedida"]
     com_ped = d["comunidad"] * (1 + d["subidaPedida"] / 100.0)
     com_ley = d["comunidad"] * (1 + pct / 100.0) if valido else 0.0
-    ibi_ley = d["ibi"] if valido else 0.0
-    bas_ley = d["basuras"] if valido else 0.0
+    nuevo = d.get("firma", "antes") == "despues"
+    ibi_ley = d["ibi"] if (valido and not nuevo) else 0.0
+    bas_ley = d["basuras"] if valido else 0.0   # tasa de basuras: el ocupante suele ser el contribuyente (TRLRHL 23.1.b, 23.2.a): sigue siendo repercutible con firma despues
     hon_ley = 0.0
     pedido = com_ped + d["ibi"] + d["basuras"] + d["honorarios"]
     ley = com_ley + ibi_ley + bas_ley + hon_ley
@@ -40,13 +42,15 @@ def V(**k): x = dict(B); x.update(k); return x
 CASES = [("1 ejemplo", V()), ("2 borde p=2s", V(subidaPedida=4.94)), ("3 p justo encima", V(subidaPedida=4.95)), ("4 sin importe anual", V(pacto="sinimp")),
  ("5 sin pacto", V(pacto="no")), ("6 fuera de 5/7 anos", V(tramo="fuera")), ("7 renta 0 -> comunidad no sube", V(subidaRenta=0)), ("8 todo conforme", V(subidaPedida=0, honorarios=0)),
  ("9 todo cero", V(comunidad=0, ibi=0, basuras=0, subidaPedida=0, honorarios=0)), ("10 sin pacto y sin honorarios", V(pacto="no", honorarios=0, subidaPedida=0)),
- ("11 A1 sin acuerdo dentro", V(acuerdo="no")), ("12 A2 sin acuerdo, pedida 3 %", V(acuerdo="no", subidaPedida=3)), ("13 A3 sin acuerdo fuera", V(acuerdo="no", tramo="fuera")), ("14 sin acuerdo y pacto invalido", V(acuerdo="no", pacto="sinimp")), ("15 seguro sumado a comunidad", V(comunidad=750))]
+ ("11 A1 sin acuerdo dentro", V(acuerdo="no")), ("12 A2 sin acuerdo, pedida 3 %", V(acuerdo="no", subidaPedida=3)), ("13 A3 sin acuerdo fuera", V(acuerdo="no", tramo="fuera")), ("14 sin acuerdo y pacto invalido", V(acuerdo="no", pacto="sinimp")), ("15 seguro sumado a comunidad", V(comunidad=750)),
+ ("16 RDL29 firma despues: IBI no repercutible", V(firma="despues")), ("17 firma despues y fuera de 5/7", V(firma="despues", tramo="fuera")), ("18 firma despues sin pacto", V(firma="despues", pacto="no")),
+ ("19 firma despues, subida en el tope, sin honorarios", V(firma="despues", subidaPedida=4.94, honorarios=0)), ("21 UI por defecto antes (basuras 0, renta 2 %)", V(basuras=0, subidaRenta=2)), ("22 UI por defecto despues", V(basuras=0, subidaRenta=2, firma="despues")), ("23 UI antes con renta 2,47", V(basuras=0)), ("24 despues, basuras del inquilino 100, renta 2", V(subidaRenta=2, firma="despues")), ("20 firma despues, todo cero", V(firma="despues", comunidad=0, ibi=0, basuras=0, subidaPedida=0, honorarios=0))]
 if __name__ == "__main__":
     rnd = random.Random(58)
     def mk():
         return dict(pacto=rnd.choice(["ok", "ok", "sinimp", "no"]), comunidad=rnd.choice([0, 300, 600, rnd.uniform(0, 3000)]), ibi=rnd.choice([0, 400, rnd.uniform(0, 1500)]),
                     basuras=rnd.choice([0, 100, rnd.uniform(0, 400)]), subidaPedida=rnd.choice([0, 2.47, 4.94, 5, 10, rnd.uniform(0, 30)]), subidaRenta=rnd.choice([0, 1, 2.47, 3, rnd.uniform(0, 6)]),
-                    tramo=rnd.choice(["dentro", "dentro", "fuera"]), acuerdo=rnd.choice(["si", "si", "no"]), honorarios=rnd.choice([0, 500, rnd.uniform(0, 2000)]))
+                    firma=rnd.choice(["antes", "despues"]), tramo=rnd.choice(["dentro", "dentro", "fuera"]), acuerdo=rnd.choice(["si", "si", "no"]), honorarios=rnd.choice([0, 500, rnd.uniform(0, 2000)]))
     sweep = [mk() for _ in range(800)]
     allc = [c for _, c in CASES] + sweep; jr = js(allc); bad = 0
     for i, c in enumerate(allc):

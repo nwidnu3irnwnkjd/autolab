@@ -53,7 +53,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, a 15 años comprar deja 32.772 € más de patrimonio que alquilar e invertir la entrada y empieza a ganar en el año 9: si vendes antes, con estos números gana alquilar.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": ""
  },
  "amortizar-o-invertir": {
@@ -108,7 +108,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos (inversión al 4 % anual), invertir deja 4.014 € más que amortizar; invertir solo sale mejor si rinde más de un 3,54 % anual (antes de impuestos sobre ganancias), y esa rentabilidad no está garantizada: por debajo, amortizar sale mejor.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": ""
  },
  "comprar-coche-o-renting": {
@@ -161,7 +161,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, comprar sale 3.130 € más barato en 4 años; el renting solo compensaría si su cuota, con todo incluido, bajara de 384,79 € al mes.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": ""
  },
  "contado-o-financiar": {
@@ -216,7 +216,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, pagar al contado ahorra 2.067 €; financiar solo compensaría si tu dinero rindiera más de un 9,29 % anual antes de impuestos (la TAE real es del 7,78 %) o si te hicieran descuento por pagar al contado.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": ""
  },
  "hipoteca-20-25-o-30-anos-cuota-vs-intereses": {
@@ -270,7 +270,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, el plazo más corto de los tres que cabe en el 35 % de tus ingresos es 20 años; alargar a 30 años baja la cuota 200,83 € al mes pero paga 25.379 € más de intereses.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
  },
  "hipoteca-bonificada-o-sin-vinculaciones": {
@@ -330,7 +330,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, la bonificada ahorra 4.210 € en 25 años y compensa mientras la rebaja del tipo supere 0,32 puntos o las vinculaciones cuesten menos de 468 € al año; por debajo de ese umbral sale más barata la de sin vinculaciones.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
  },
  "seguro-todo-riesgo-o-terceros": {
@@ -380,7 +380,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, el todo riesgo te cubre 1.350 € esperados a cambio de 1.700 € de sobreprima en 5 años (saldo de -350 €): no compensa; el resultado cambia si tu probabilidad de siniestro o el coste medio de reparar son mayores.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": ""
  },
  "subrogar-hipoteca-merece-la-pena": {
@@ -437,7 +437,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, cambiar de hipoteca recupera su coste en 25 meses y ahorra 4.840 € netos a 10 años; compensa si el tipo nuevo queda por debajo del 3,14 % y no vendes ni cancelas antes de esos 25 meses.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
  },
  "hipoteca-fija-o-variable": {
@@ -490,7 +490,7 @@
    ]
   ],
   "veredicto_texto": "Con estos supuestos, la fija sale más barata en intereses si el Euríbor medio de los 24 años siguientes al primero supera el 1,90 %; si se mantiene en 3,247 %, la fija ahorra 29.952 €, y si queda por debajo del 1,90 %, la variable pagaría menos.",
-  "fecha": "2026-10-06",
+  "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
  }
 }

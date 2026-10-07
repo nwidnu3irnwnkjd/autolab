@@ -3,7 +3,7 @@
  "title": "Imputación de rentas inmobiliarias: piso vacío o alquilado",
  "description": "Calcula la imputación de rentas inmobiliarias de un piso vacío (1,1 % o 2 %) frente al IRPF de alquilarlo con reducción, y si es a un familiar.",
  "h1": "Piso vacío o alquilado: cuánto IRPF pagas por la imputación de rentas y por el alquiler",
- "lead": "Un piso vacío paga IRPF aunque no cobres nada, porque Hacienda te imputa como renta el 1,1 % del valor catastral (el 2 % si el catastro no se ha revisado en los últimos 10 años), y alquilarlo solo te hace pagar más IRPF si el rendimiento neto, ya reducido, supera esa imputación. En el ejemplo (valor catastral de 60.000 €, 800 € al mes durante todo el año, 7.000 € de gastos con amortización, reducción del 50 % y tipo marginal del 30 %), vacío pagas 198 € de IRPF y pierdes 7.198 € al año entre gastos e impuestos; alquilado pagas 390 € y te quedan 2.210 € netos. Con esos gastos, alquilar te cuesta más IRPF que dejarlo vacío a partir de 693,33 € al mes (783,33 € con la imputación del 2 %). Si se lo alquilas a un familiar hasta el tercer grado, cobrando 650 € al mes tributas igual que vacío (198 €), porque el rendimiento no puede ser inferior a la imputación. La calculadora aplica la redacción de la Ley del IRPF anterior al Real Decreto-ley 26/2026 (arts. 23.2, 24 y 85, DT 38.ª y DA 55.ª), derogado el 2 de octubre de 2026 (BOE-A-2026-20526). No incluye el recargo del IBI a viviendas vacías, la compensación de pérdidas ni las deducciones autonómicas.",
+ "lead": "Un piso vacío paga IRPF aunque no cobres nada, porque Hacienda te imputa como renta el 1,1 % del valor catastral (en 2026, el 2 % si el catastro no se revisó desde 2012; DA 55.ª, pendiente de convalidación), y alquilarlo solo te hace pagar más IRPF si el rendimiento neto, ya reducido, supera esa imputación. En el ejemplo (valor catastral de 60.000 €, 800 € al mes durante todo el año, 7.000 € de gastos con amortización, reducción del 50 % y tipo marginal del 30 %), vacío pagas 198 € de IRPF y pierdes 7.198 € al año entre gastos e impuestos; alquilado pagas 390 € y te quedan 2.210 € netos. Con esos gastos, alquilar te cuesta más IRPF que dejarlo vacío a partir de 693,33 € al mes (783,33 € con la imputación del 2 %). Si se lo alquilas a un familiar hasta el tercer grado, cobrando 650 € al mes tributas igual que vacío (198 €), porque el rendimiento no puede ser inferior a la imputación. El Real Decreto-ley 26/2026 se derogó el 2 de octubre de 2026 (BOE-A-2026-20526), pero el RDL 29/2026 (en vigor desde el 8-10-2026, pendiente de convalidación) recupera la DA 55.ª: si tu catastro se revisó entre 2012 y 2015, la imputación de 2026 es también del 1,1 %, opción que tienes en el desplegable; sus cambios del art. 23.2 solo afectan a contratos desde el 1-12-2026 y los de los arts. 24 y 85 empiezan en 2027, y no se aplican. No incluye el recargo del IBI a viviendas vacías, la compensación de pérdidas ni las deducciones autonómicas.",
  "veredicto": "Depende de tu renta y de tus gastos. En el ejemplo (catastral 60.000 €, 800 € al mes, 7.000 € de gastos, reducción del 50 %, tipo del 30 %) vacío pagas 198 € de IRPF (imputación del 1,1 %) y alquilado 390 €, pero te quedan 2.210 € frente a -7.198 €. Alquilar cuesta más IRPF que dejarlo vacío a partir de 693,33 € al mes; a un familiar, por debajo de esa renta tributas igual que vacío.",
  "tema": "hipoteca",
  "inputs": [
@@ -25,11 +25,15 @@
      "t": "1,1 % (valores catastrales revisados y en vigor entre 2016 y 2026)"
     },
     {
+     "v": "r12",
+     "t": "1,1 % solo en 2026 (valores catastrales revisados y en vigor entre 2012 y 2015: DA 55.ª, RDL 29/2026, pendiente de convalidación)"
+    },
+    {
      "v": "g",
      "t": "2 % (resto de casos)"
     }
    ],
-   "ayuda": "Art. 85.1: 1,1 % si los valores catastrales se revisaron por valoración colectiva y entraron en vigor entre 2016 y 2026 (el año y los diez anteriores); 2 % en los demás casos. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. Lo ves en el recibo del IBI o en la sede del Catastro."
+   "ayuda": "Art. 85.1: 1,1 % si los valores catastrales se revisaron por valoración colectiva y entraron en vigor entre 2016 y 2026 (el año y los diez anteriores); 2 % en los demás casos. Si tu municipio se revisó entre 2012 y 2015, la DA 55.ª recuperada por el RDL 29/2026 (en vigor desde el 8-10-2026, con efectos desde el 1-1-2026, pendiente de convalidación) da el 1,1 % también en 2026: elige la segunda opción; si el decreto se deroga, sería el 2 %. Lo ves en el recibo del IBI o en la sede del Catastro."
   },
   {
    "id": "dv",
@@ -106,11 +110,11 @@
  "faqs": [
   [
    "¿Tributa un piso vacío en el IRPF?",
-   "Sí, si no es tu vivienda habitual: se imputa como renta el 1,1 % del valor catastral (2 % si el catastro no se revisó en los últimos 10 años) por los días vacíos. Con 60.000 € de valor catastral y un tipo del 30 %, son 198 €."
+   "Sí, si no es tu vivienda habitual: se imputa como renta el 1,1 % del valor catastral (en 2026, 2 % si el catastro no se revisó desde 2012; DA 55.ª, pendiente de convalidación) por los días vacíos. Con 60.000 € de valor catastral y un tipo del 30 %, son 198 €."
   ],
   [
    "¿Qué diferencia hay entre el 1,1 % y el 2 %?",
-   "El 1,1 % exige que la revisión catastral entrara en vigor entre 2016 y 2026; si fue entre 2012 y 2015, en 2026 es el 2 %, porque la ampliación desde 2012 (DA 55.ª) solo rige para 2023. Con 60.000 €: 660 € o 1.200 €."
+   "El 1,1 % exige una revisión catastral en vigor entre 2016 y 2026; si fue entre 2012 y 2015, la DA 55.ª recuperada por el RDL 29/2026 (en vigor desde el 8-10-2026, pendiente de convalidación) también da el 1,1 % en 2026; si se deroga, sería el 2 %. Con 60.000 €: 660 € o 1.200 €."
   ],
   [
    "¿Si alquilo el piso, dejo de pagar por la imputación?",
@@ -122,7 +126,7 @@
   ],
   [
    "¿Qué pasó con el Real Decreto-ley 26/2026?",
-   "Estuvo en vigor del 1 al 2 de octubre de 2026 y el Congreso lo derogó (BOE-A-2026-20526). Sus cambios en el art. 23.2, la DT 38.ª, la DA 55.ª y los arts. 24 y 85 no se aplican: se usan la Ley 12/2023 y la redacción anterior."
+   "Estuvo en vigor del 1 al 2 de octubre de 2026 y el Congreso lo derogó (BOE-A-2026-20526). El RDL 29/2026, en vigor desde el 8-10-2026 y pendiente de convalidación, recupera la DA 55.ª (1,1 % en 2026 también para revisiones de 2012 a 2015, incluido aquí); sus cambios en el art. 23.2 (solo contratos desde el 1-12-2026) y en los arts. 24 y 85 (2027) no se aplican."
   ]
  ],
  "sources": "Ley 35/2006 del IRPF, texto consolidado (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764), consultado el 2/10/2026: art. 85 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015), art. 24 en su redacción original, art. 23.1 y 23.2 en la redacción de la Ley 12/2023 (BOE-A-2023-12203) y disposición transitoria 38.ª. El BOE consolidado refleja desde el 5-oct-2026 la reversión del Real Decreto-ley 26/2026 (BOE-A-2026-20266) en los arts. 23, 24 y 85, por la Resolución del Congreso de 2/10/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526): rige la redacción anterior. Agencia Tributaria, Manual práctico de Renta 2025: imputación de rentas inmobiliarias, arrendamiento a parientes y amortización. Los importes del ejemplo y el tipo marginal son supuestos editables, no datos oficiales."

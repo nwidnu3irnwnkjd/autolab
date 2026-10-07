@@ -3,8 +3,8 @@
   "title": "Quién paga la comunidad, el IBI y la agencia en un alquiler",
   "description": "Quién paga comunidad, IBI, basuras e inmobiliaria en un alquiler de vivienda y cuánto pueden subir, según la LAU. Calcula lo que puedes rechazar.",
   "h1": "Gastos del alquiler: quién paga comunidad, IBI, basuras e inmobiliaria y cuánto pueden subir",
-  "lead": "Si tu contrato de alquiler de vivienda recoge por escrito que pagas comunidad, IBI y basuras con su importe anual, esos gastos son tuyos, pero durante los 5 primeros años (7 si el casero es persona jurídica) la comunidad solo puede subir si lo acordáis y nunca más del doble del % en que pueda subir la renta, y los honorarios de la inmobiliaria son del casero. En el ejemplo (comunidad de 600 €, IBI y basuras de 500 €, una subida de la comunidad del 10 % que aceptas o prevé tu contrato, 500 € de honorarios únicos y una renta que puede subir como máximo un 2,47 %) te repercuten 1.660 € este año y la ley te obliga a pagar 1.129,64 €: puedes rechazar 530,36 €, de ellos 30,36 € de subida por encima del 4,94 % y los 500 € de honorarios. Si no has aceptado la subida ni la prevé tu contrato, la comunidad no sube este año. Si el pacto no consta por escrito con el importe anual, comunidad, IBI y basuras los paga el casero (arts. 20.1 y 20.2 de la Ley de Arrendamientos Urbanos).",
-  "veredicto": "Depende de tu contrato. Con pacto escrito y con importe anual, pagas comunidad, IBI y basuras; sin él, los paga el casero. Los honorarios de agencia y de formalización son del casero en una vivienda. Dentro de los 5 primeros años (7 con casero persona jurídica) la comunidad solo sube si lo acordáis y nunca más del doble del % en que pueda subir la renta. En el ejemplo (subida máxima de renta del 2,47 %), el tope es el 4,94 %: de 1.660 € repercutidos este año, la ley te obliga a pagar 1.129,64 € y puedes rechazar 530,36 €.",
+  "lead": "Si tu contrato de alquiler de vivienda se firmó antes del 8-10-2026 y recoge por escrito que pagas comunidad, IBI y basuras con su importe anual, esos gastos son tuyos; si se firma desde el 8-10-2026, el IBI ya no se puede repercutir al inquilino salvo que él sea el obligado tributario (art. 20, RDL 29/2026, en vigor desde el 8-10-2026, pendiente de convalidación), y la tasa de basuras sigue siendo tuya cuando la ordenanza te hace contribuyente como ocupante. La ley no trae transición expresa y leemos que afecta a contratos firmados desde esa fecha (interpretación nuestra; la lectura contraria lo aplicaría también a los recibos posteriores de contratos anteriores). En ambos casos, durante los 5 primeros años (7 si el casero es persona jurídica) la comunidad solo puede subir si lo acordáis y nunca más del doble del % en que pueda subir la renta (hasta 2027, sin nuevo pacto, un 2 %, luego un tope de comunidad del 4 %), y los honorarios de la inmobiliaria son del casero. En el ejemplo (contrato anterior al 8-10-2026, comunidad de 600 €, IBI de 400 €, una subida de la comunidad del 10 % que aceptas o prevé tu contrato, 500 € de honorarios únicos y una renta que puede subir como máximo un 2 %) te repercuten 1.560 € este año y la ley te obliga a pagar 1.024 €: puedes rechazar 536 €, de ellos 36 € de subida por encima del 4 % y los 500 € de honorarios; con los mismos datos en un contrato firmado desde el 8-10-2026 pagarías solo 624 € (la comunidad) y podrías rechazar 936 €. Si el pacto no consta por escrito con el importe anual, la comunidad la paga el casero (arts. 20.1 y 20.2 de la Ley de Arrendamientos Urbanos).",
+  "veredicto": "Depende de tu contrato y de la fecha de firma. Con pacto escrito y con importe anual, pagas la comunidad y, si el contrato es anterior al 8-10-2026, también el IBI y las basuras; desde esa fecha el IBI no se puede repercutir al inquilino (RDL 29/2026, en vigor desde el 8-10-2026, pendiente de convalidación) y las tasas solo si el obligado tributario es el propietario. Los honorarios de agencia y formalización son del casero en una vivienda. Dentro de los 5 primeros años (7 con casero persona jurídica) la comunidad solo sube si lo acordáis y nunca más del doble del % en que pueda subir la renta. En el ejemplo anterior al 8-10-2026 (subida máxima de renta del 2 %, tope del 4 %): de 1.560 € repercutidos, la ley te obliga a pagar 1.024 € y puedes rechazar 536 €.",
   "tema": "hipoteca",
   "inputs": [
     {
@@ -28,6 +28,22 @@
       "ayuda": "Para que valga, el pacto debe constar por escrito y fijar el importe anual de los gastos a la fecha del contrato (art. 20.1)."
     },
     {
+      "id": "firma",
+      "label": "Fecha de firma de tu contrato",
+      "type": "select",
+      "options": [
+        {
+          "v": "antes",
+          "t": "Entre el 26-5-2023 y el 7-10-2026"
+        },
+        {
+          "v": "despues",
+          "t": "Desde el 8-10-2026"
+        }
+      ],
+      "ayuda": "Desde el 8-10-2026 el IBI y las tasas no se pueden repercutir al inquilino (art. 20, RDL 29/2026, pendiente de convalidación). Sin transición expresa en la ley, lo leemos para contratos firmados desde esa fecha: es interpretación nuestra (confianza B)."
+    },
+    {
       "id": "comunidad",
       "label": "Comunidad y otros gastos generales no tributarios que pagas ahora, antes de la subida (€ al año)",
       "default": 600,
@@ -38,11 +54,12 @@
     },
     {
       "id": "ibi",
-      "label": "IBI y tasa de basuras del año (€ al año)",
+      "label": "IBI y tasas cuyo obligado tributario es el propietario (€ al año)",
       "default": 400,
       "min": 0,
       "step": 50,
-      "default_from": "params.gastos_alquiler_2026.supuestos.ibi"
+      "default_from": "params.gastos_alquiler_2026.supuestos.ibi",
+      "ayuda": "Desde el 8-10-2026 el IBI no se puede repercutir al inquilino. La tasa de basuras suele tener al ocupante como contribuyente (TRLRHL 23.1.b y 23.2.a): si en tu recibo eres tú el obligado, no la incluyas aquí, es tuya con cualquier contrato; si lo es el propietario, súmala. En contratos anteriores al 8-10-2026 todo lo que pongas aquí se puede repercutir con pacto válido."
     },
     {
       "id": "subidaPedida",
@@ -53,45 +70,32 @@
       "default_from": "params.gastos_alquiler_2026.supuestos.subida_pedida"
     },
     {
-      "id": "acuerdo",
-      "label": "¿Tu contrato prevé cómo sube la cuota o aceptaste la subida?",
-      "type": "select",
-      "options": [
-        {
-          "v": "si",
-          "t": "Sí"
-        },
-        {
-          "v": "no",
-          "t": "No"
-        }
-      ],
-      "ayuda": "El art. 20.2 solo deja subir estos gastos por acuerdo; una cláusula de revisión del contrato cuenta como acuerdo. Solo importa dentro de los 5 o 7 primeros años."
-    },
-    {
       "id": "subidaRenta",
       "label": "Subida máxima que admite tu renta este año (%)",
-      "default": 2.47,
+      "default": 2,
       "min": 0,
       "step": 0.01,
-      "default_from": "params.renta_alquiler_2026.irav_pct",
-      "ayuda": "Es el % máximo de actualización de tu renta (IRAV o IPC; mira la calculadora de actualización de la renta). Si tu contrato no tiene cláusula de actualización, pon 0: leemos que entonces la comunidad tampoco puede subir."
+      "ayuda": "% máximo en que puede subir tu renta este año. Por defecto 2 %: hasta el 31-12-2027, sin nuevo pacto, la renta no sube más del 2 % (DF 6.ª del RDL 29/2026, pendiente de convalidación; el IRAV solo manda si es menor), lo que da un tope de comunidad del 4 %; con el IRAV actual (2,47 %) y sin esa regla sería el 4,94 %. Si tu contrato no tiene cláusula de actualización, pon 0: leemos que entonces la comunidad tampoco puede subir."
     },
     {
       "id": "tramo",
-      "label": "Años de contrato",
+      "label": "Años de contrato y acuerdo sobre la subida",
       "type": "select",
       "options": [
         {
-          "v": "dentro",
-          "t": "Dentro de los 5 primeros años (7 si el casero es persona jurídica, no un autónomo)"
+          "v": "dentro-si",
+          "t": "Dentro de los 5 primeros años (7 si el casero es persona jurídica) y mi contrato prevé la subida o la acepté"
+        },
+        {
+          "v": "dentro-no",
+          "t": "Dentro de los 5 o 7 primeros años y no la he aceptado ni la prevé mi contrato"
         },
         {
           "v": "fuera",
           "t": "Pasados esos 5 o 7 años"
         }
       ],
-      "ayuda": "Cuenta desde la fecha del contrato (o desde que te entregaron la vivienda, si fue después), con sus prórrogas incluidas (art. 9.1)."
+      "ayuda": "Cuenta desde la fecha del contrato (o desde que te entregaron la vivienda, si fue después), con sus prórrogas incluidas (art. 9.1). El tope solo deja subir la comunidad por acuerdo; una cláusula de revisión del contrato cuenta como acuerdo. Fusiona dos preguntas para no superar 8 campos."
     },
     {
       "id": "honorarios",
@@ -105,24 +109,28 @@
   "faqs": [
     [
       "¿Quién paga la comunidad y el IBI en un alquiler?",
-      "El casero, salvo que el contrato lo traslade al inquilino por escrito fijando el importe anual de esos gastos a la fecha del contrato. Sin ese pacto escrito y con importe, no te los pueden cobrar (art. 20.1 LAU)."
+      "La comunidad, el inquilino solo si el contrato lo dice por escrito con importe anual; si no, el casero. El IBI también era trasladable en contratos anteriores al 8-10-2026; desde esa fecha no (art. 20, RDL 29/2026, pendiente de convalidación). La tasa de basuras depende de quién sea el contribuyente."
+    ],
+    [
+      "¿Puede el casero cobrarme el IBI en un contrato firmado desde el 8-10-2026?",
+      "No, salvo que el inquilino sea el obligado tributario. Es la regla del RDL 29/2026, en vigor desde el 8-10-2026 y pendiente de convalidar. Sin transitoria expresa, leemos que vale para contratos firmados desde esa fecha: interpretación nuestra; la contraria alcanzaría los recibos posteriores."
     ],
     [
       "¿Quién paga la inmobiliaria en un alquiler de vivienda?",
-      "El casero: los gastos de gestión inmobiliaria y de formalización del contrato son del arrendador, sea particular o empresa, en contratos desde mayo de 2023 (art. 20.1 LAU). Los anteriores pueden tener otro régimen."
+      "El casero: la gestión inmobiliaria y la formalización del contrato son del arrendador, sea particular o empresa, en contratos desde mayo de 2023; desde el 8-10-2026 también novaciones y renovaciones (RDL 29/2026, pendiente de convalidación)."
     ],
     [
       "¿Cuánto puede subir la comunidad si la pago yo?",
-      "Durante los 5 primeros años (7 con casero persona jurídica), solo si lo acordáis y nunca más del doble del % en que pueda subir la renta; con una renta que sube un 2,47 %, hasta un 4,94 %. El IBI y las tasas no tienen ese tope (art. 20.2)."
+      "Durante los 5 primeros años (7 con casero persona jurídica), solo si lo acordáis y nunca más del doble del % en que pueda subir la renta; hasta 2027, sin nuevo pacto, la renta sube como máximo un 2 %: hasta un 4 %. El IBI no tiene ese tope."
     ],
     [
       "¿Pago yo la luz, el agua y la tasa de basuras?",
-      "Luz, agua y gas con contador individual son tuyos (art. 20.3). La tasa de basuras suele ser un tributo: solo es tuya si el pacto escrito con importe anual la incluye."
+      "Luz, agua y gas con contador individual son tuyos. La tasa de basuras suele tenerte como contribuyente si ocupas la vivienda (TRLRHL 23.1.b); si el obligado es el propietario, en contratos desde el 8-10-2026 no se te puede repercutir."
     ],
     [
       "¿Quién paga las reparaciones de un piso alquilado?",
       "Las necesarias para que sea habitable, el casero, sin subir la renta, salvo que el daño sea imputable al inquilino. Las pequeñas por el desgaste del uso ordinario, el inquilino (arts. 21.1 y 21.4 LAU)."
     ]
   ],
-  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 20.1 (pacto de gastos generales por escrito y con importe anual; gestión inmobiliaria y formalización a cargo del arrendador, redacción de la Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203), art. 20.2 (tope del doble de la subida de la renta en los 5 o 7 primeros años, salvo tributos), art. 20.3 (suministros con contador), art. 21.1 y 21.4 (reparaciones), art. 17.6 (zona tensionada) y art. 18.1 (actualización de la renta). Ley General Tributaria 58/2003, art. 2.2.a: las tasas son tributos (https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186). Redacción vigente tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). El 2,47 % es el IRAV de agosto de 2026 (INE, https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos), consultado el 2/10/2026. Los importes de comunidad, IBI, basuras y honorarios son ejemplos editables, no datos oficiales."
+  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 20.1 (pacto de gastos generales por escrito y con importe anual; gestión inmobiliaria y formalización a cargo del arrendador, redacción de la Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203), art. 20.2 (tope del doble de la subida de la renta en los 5 o 7 primeros años, salvo tributos), art. 20.3 (suministros con contador), art. 21.1 y 21.4 (reparaciones), art. 17.6 (zona tensionada) y art. 18.1 (actualización de la renta). Ley General Tributaria 58/2003, art. 2.2.a: las tasas son tributos (https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186). Redacción anterior tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Real Decreto-ley 29/2026, art. 3 (nueva redacción de los arts. 20 y 36.5 de la LAU; en vigor desde el 8-10-2026, pendiente de convalidación; BOE núm. 249 de 7-10-2026, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20823), consultado el 7/10/2026: el IBI y las tasas no se repercuten al inquilino salvo que sea obligado tributario (la tasa de basuras suele tener como contribuyente al ocupante: TRLRHL, art. 23.1.b y 23.2.a); con la nueva numeración, gestión y formalización pasan al art. 20.2, el tope del doble al 20.3 y los suministros al 20.4. No hay disposición transitoria expresa para el art. 20: leemos que se aplica a contratos firmados desde el 8-10-2026 (interpretación nuestra, confianza B). El 2,47 % es el IRAV de agosto de 2026 (INE, https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos), consultado el 2/10/2026. Los importes de comunidad, IBI, basuras y honorarios son ejemplos editables, no datos oficiales."
 }

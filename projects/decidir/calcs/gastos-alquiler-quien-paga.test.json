@@ -378,6 +378,256 @@
     "limitado": 1
    },
    "tol": 1
+  },
+  {
+   "nombre": "RDL 29: contrato desde el 8-10-2026, el IBI no se repercute y la basura del ocupante sí",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 30.36,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 729.64,
+    "rechazable": 930.36,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "RDL 29: contrato desde el 8-10-2026, pasados 5/7 años: solo comunidad y basuras",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "fuera",
+    "honorarios": 500,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 660.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 760.0,
+    "rechazable": 900.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "RDL 29: contrato desde el 8-10-2026 sin pacto: todo del casero",
+   "in": {
+    "pacto": "no",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 660.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 100.0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 0.0,
+    "rechazable": 1660.0,
+    "limitado": 0
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "RDL 29: contrato desde el 8-10-2026, subida en el tope, sin honorarios",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 4.94,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 0,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 0.0,
+    "pedido": 1129.64,
+    "tuCargo": 729.64,
+    "rechazable": 400.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "RDL 29: contrato desde el 8-10-2026, todo a cero",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 0,
+    "ibi": 0,
+    "basuras": 0,
+    "subidaPedida": 0,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 0,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 0.0,
+    "excesoComunidad": 0.0,
+    "ibiRechazable": 0.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 0.0,
+    "pedido": 0.0,
+    "tuCargo": 0.0,
+    "rechazable": 0.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "UI por defecto, contrato anterior al 8-10-2026 (renta 2 %, tope 4 %): 1.560 / 1.024 / 536",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 0,
+    "subidaPedida": 10,
+    "subidaRenta": 2,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.0,
+    "comunidadLegal": 624.0,
+    "excesoComunidad": 36.0,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1560.0,
+    "tuCargo": 1024.0,
+    "rechazable": 536.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "UI por defecto, contrato desde el 8-10-2026: paga solo la comunidad (624), rechazable 936",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 0,
+    "subidaPedida": 10,
+    "subidaRenta": 2,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.0,
+    "comunidadLegal": 624.0,
+    "excesoComunidad": 36.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1560.0,
+    "tuCargo": 624.0,
+    "rechazable": 936.0,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "anterior al 8-10-2026 con renta 2,47 % (IRAV sin tope del 2 %): 1.560 / 1.029,64 / 530,36",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 0,
+    "subidaPedida": 10,
+    "subidaRenta": 2.47,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si"
+   },
+   "expect": {
+    "topePct": 4.94,
+    "comunidadLegal": 629.64,
+    "excesoComunidad": 30.36,
+    "ibiRechazable": 0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1560.0,
+    "tuCargo": 1029.64,
+    "rechazable": 530.36,
+    "limitado": 1
+   },
+   "tol": 1
+  },
+  {
+   "nombre": "desde el 8-10-2026 con basuras de 100 € del ocupante (contribuyente): tuCargo 724",
+   "in": {
+    "pacto": "ok",
+    "comunidad": 600,
+    "ibi": 400,
+    "basuras": 100,
+    "subidaPedida": 10,
+    "subidaRenta": 2,
+    "tramo": "dentro",
+    "honorarios": 500,
+    "acuerdo": "si",
+    "firma": "despues"
+   },
+   "expect": {
+    "topePct": 4.0,
+    "comunidadLegal": 624.0,
+    "excesoComunidad": 36.0,
+    "ibiRechazable": 400.0,
+    "basurasRechazable": 0,
+    "honorariosRechazable": 500.0,
+    "pedido": 1660.0,
+    "tuCargo": 724.0,
+    "rechazable": 936.0,
+    "limitado": 1
+   },
+   "tol": 1
   }
  ]
 }

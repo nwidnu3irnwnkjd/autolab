@@ -79,3 +79,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-06T06:02Z | 7 | 73 | 0.55 | ciclo 67 cierre: Vigilante, Redactor, Disenador x2, QA (usuario libre); peticiones abiertas: 15; páginas: 296
 2026-10-06T06:39Z | 0 | 73 | 0.55 | ciclo 68 cierre: Vigilante, Redactor x2 (usuario libre); peticiones abiertas: 15; páginas: 297
 2026-10-06T15:21Z | 5 | 0 | 0.55 | ciclo 70 cierre: Constructor, Redactor (usuario libre; semana nueva); peticiones abiertas: 15; páginas: 297
+2026-10-07T06:28Z | 5 | 5 | 0.55 | ciclo 71 cierre: Vigilante/Redactor, Opus x4, Constructores x2, QA (usuario libre); peticiones abiertas: 18; páginas: 298

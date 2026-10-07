@@ -66,7 +66,7 @@
     },
     {
       "id": "garantia",
-      "label": "Garantía adicional que te piden (mensualidades de renta: aval, depósito o seguro)",
+      "label": "Garantía adicional que te piden (mensualidades de renta: aval o depósito; el seguro de impago no se puede exigir desde el 8-10-2026)",
       "default": 3,
       "min": 0,
       "step": 0.5,
@@ -112,5 +112,5 @@
       "Durante los 5 primeros años (7 con empresa) no se actualiza. En cada prórroga posterior, el casero puede pedir que se complete hasta 1 mensualidad de la renta vigente, o tú que se reduzca (art. 36.2 de la LAU)."
     ]
   ],
-  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 36.1 (fianza de 1 mensualidad en vivienda y 2 en uso distinto), art. 36.2 (actualización en prórrogas), art. 36.4 (interés legal pasado un mes de la entrega de llaves), art. 36.5 (garantía adicional de hasta 2 mensualidades en vivienda con contratos de hasta 5 años, o 7 si el arrendador es persona jurídica), art. 17.2 (no más de 1 mensualidad por adelantado) y art. 20.1 (gestión inmobiliaria y formalización a cargo del arrendador, Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Redacción vigente tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Los importes de renta, duración y lo que te piden son ejemplos editables, no datos oficiales."
+  "sources": "Ley 29/1994 de Arrendamientos Urbanos, texto consolidado del BOE (https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003), consultada el 2/10/2026: art. 36.1 (fianza de 1 mensualidad en vivienda y 2 en uso distinto), art. 36.2 (actualización en prórrogas), art. 36.4 (interés legal pasado un mes de la entrega de llaves), art. 36.5 (garantía adicional de hasta 2 mensualidades en vivienda con contratos de hasta 5 años, o 7 si el arrendador es persona jurídica), art. 17.2 (no más de 1 mensualidad por adelantado) y art. 20.1 (gestión inmobiliaria y formalización a cargo del arrendador, Ley 12/2023, https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203). Redacción vigente tras la Resolución de 2/10/2026 que deroga el Real Decreto-ley 26/2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526). Real Decreto-ley 29/2026, art. 3 (BOE-A-2026-20823, https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20823), consultado el 7/10/2026: el art. 36.5 nuevo prohíbe exigir al inquilino un seguro de impago, mantiene la garantía adicional de hasta 2 mensualidades (hasta 5 o 7 años) y la limita a 1 en la vivienda temporal firmada desde el 8-10-2026 (los de temporada anteriores siguen con el régimen anterior hasta su fin, DT 8.ª de la LAU), y el art. 20 pasa los honorarios de gestión y formalización al apartado 20.2; en vigor desde el 8-10-2026, pendiente de convalidación. La calculadora no cambia sus cifras. Los importes de renta, duración y lo que te piden son ejemplos editables, no datos oficiales."
 }

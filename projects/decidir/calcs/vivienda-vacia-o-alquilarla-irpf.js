@@ -1,5 +1,5 @@
 // Piso vacio o alquilado: IRPF por imputacion de rentas (art. 85) frente a rendimiento del alquiler. Parametros: data/params.json -> alquiler_irpf_2026 (fuentes y fechas alli).
-var P = {"imp": {"g": 2, "r": 1.1}, "dias": 365};
+var P = {"imp": {"g": 2, "r": 1.1, "r12": 1.1}, "dias": 365};
 function calcular(d) {
   var D = P.dias, t = d.tipo / 100, p = Number(d.contrato) / 100, dv = Math.min(Math.max(Math.round(d.dv), 0), D - 1), da = D - dv, fam = d.fam === "si";
   var impA = d.cat * P.imp[d.rev] / 100, cuotaA = impA * t, resA = -d.gastos - cuotaA;
@@ -30,7 +30,7 @@ function pintar() {
     : '<p><strong>Umbral:</strong> con tus gastos y la reducción del ' + EM.num(Number(d.contrato)) + ' %, alquilar te cuesta más IRPF que tenerlo vacío a partir de <strong>' + EM.eur(r.rstar) + ' al mes</strong> (' + (d.renta >= r.rstar ? 'tu renta lo supera' : 'tu renta no llega') + '). Por debajo, pagas menos impuestos que vacío, pero esa cifra no es la renta que te compensa: cobras ' + EM.eur(r.ing) + ' al año.</p>';
   note += '<p><strong>Cómo se calcula:</strong> vacío, tributas el ' + pc + ' del valor catastral (' + EM.eur(r.impA) + ') al tipo marginal que indicas; los gastos no son deducibles. Alquilado, tributas por el rendimiento neto (renta menos gastos de los días alquilados) con la reducción del art. 23.2' + (d.dv > 0 ? ', más la imputación de los ' + d.dv + ' días vacíos (' + EM.eur(r.impdv) + ')' : '') + '. Los gastos incluyen la amortización, que no sale de tu cuenta pero es coste real del inmueble.</p>';
   note += '<p><strong>Límites:</strong> el tipo marginal es una aproximación; la calculadora no resta las pérdidas del alquiler de tus otras rentas, aunque la ley sí lo permite (art. 48), salvo el exceso de intereses y reparaciones sobre los ingresos, que se arrastra 4 años (art. 23.1): con pérdidas, el IRPF real del alquilado es menor que el que ves; se supone que los gastos se deducen por días alquilados; no incluye el recargo del IBI a viviendas vacías, que fijan algunos ayuntamientos, ni Ceuta, Melilla, País Vasco y Navarra, ni inmuebles sin valor catastral, vivienda habitual, IVA o alquiler turístico.</p>';
-  note += '<p><strong>Vigencia (2/10/2026):</strong> el Real Decreto-ley 26/2026 estuvo en vigor del 1 al 2 de octubre y fue derogado (BOE-A-2026-20526); sus cambios en el art. 23.2, la DT 38.ª (efectos 1/10/2026), la DA 55.ª (1,1 % en 2026) y los arts. 24 y 85 (2027) no se aplican.</p>';
+  note += '<p><strong>Vigencia (7/10/2026):</strong> el Real Decreto-ley 26/2026 estuvo en vigor del 1 al 2 de octubre y fue derogado (BOE-A-2026-20526). El RDL 29/2026 (en vigor desde el 8-10-2026, pendiente de convalidación) recupera la DA 55.ª con efectos desde el 1-1-2026: el 1,1 % también para revisiones catastrales de 2012 a 2015 (opción propia del desplegable); sus cambios en el art. 23.2 solo afectan a contratos firmados desde el 1-12-2026 y los de los arts. 24 y 85 empiezan en 2027, y no se aplican aquí.</p>';
   EM.renderResult({
     winner: "alquilar", verdict: verdict, tone: "ok",
     bigNumber: r.resB, bigLabel: "te quedan al año alquilado, después de gastos e IRPF", format: EM.eur,

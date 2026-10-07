@@ -16,7 +16,7 @@ JS = os.path.join(ROOT, "projects/decidir/calcs/vivienda-vacia-o-alquilarla-irpf
 
 def model(d):
     cat, g, R, t, dv = F(str(d["cat"])), F(str(d["gastos"])), F(str(d["renta"])), F(str(d["tipo"])) / 100, int(d["dv"])
-    pimp = F(11, 1000) if d["rev"] == "r" else F(2, 100)
+    pimp = F(11, 1000) if d["rev"] in ("r", "r12") else F(2, 100)   # r12: DA 55.ª (RDL 29/2026, efectos 1-1-2026): revisiones 2012-2015 tambien 1,1 % en 2026
     p = F(int(d["contrato"]), 100)
     da = 365 - dv
     impA = cat * pimp
@@ -49,11 +49,11 @@ def V(**k): x = dict(B); x.update(k); return x
 CASES = [("1 ejemplo", V()), ("2 imputacion 2 %", V(rev="g")), ("3 renta en el umbral 693,33", V(renta=693.33)), ("4 familiar renta 650 (minimo)", V(fam="si", renta=650)),
  ("5 familiar renta 800", V(fam="si")), ("6 60 dias vacio", V(dv=60)), ("7 364 dias vacio", V(dv=364)), ("8 reduccion 90", V(contrato="90")), ("9 reduccion 70 familiar", V(contrato="70", fam="si", renta=600)),
  ("10 perdida", V(gastos=12000)), ("11 gastos 0", V(gastos=0)), ("12 renta 0", V(renta=0)), ("13 tipo 0", V(tipo=0)), ("14 tipo 54", V(tipo=54)), ("15 catastral 0", V(cat=0)),
- ("16 neto 0 exacto", V(renta=7000 / 12)), ("17 familiar renta 0", V(fam="si", renta=0)), ("18 familiar con vacio 120", V(fam="si", dv=120, renta=500))]
+ ("16 neto 0 exacto", V(renta=7000 / 12)), ("17 familiar renta 0", V(fam="si", renta=0)), ("18 familiar con vacio 120", V(fam="si", dv=120, renta=500)), ("19 revision 2012-2015 (DA 55.a, RDL 29)", V(rev="r12")), ("20 r12 familiar vacio 60", V(rev="r12", fam="si", dv=60, renta=500))]
 if __name__ == "__main__":
     rnd = random.Random(60)
     def mk():
-        return dict(cat=rnd.choice([0, 20000, 60000, 150000, round(rnd.uniform(0, 400000), 2)]), rev=rnd.choice(["r", "g"]), dv=rnd.choice([0, 0, 1, 30, 180, 364, rnd.randint(0, 364)]),
+        return dict(cat=rnd.choice([0, 20000, 60000, 150000, round(rnd.uniform(0, 400000), 2)]), rev=rnd.choice(["r", "r12", "g"]), dv=rnd.choice([0, 0, 1, 30, 180, 364, rnd.randint(0, 364)]),
                     renta=rnd.choice([0, 400, 800, 1500, round(rnd.uniform(0, 3500), 2)]), gastos=rnd.choice([0, 3000, 7000, 12000, round(rnd.uniform(0, 30000), 2)]),
                     contrato=rnd.choice(["50", "60", "70", "90"]), fam=rnd.choice(["no", "si"]), tipo=rnd.choice([0, 19, 30, 37, 45, 54, round(rnd.uniform(0, 54), 1)]))
     sweep = [mk() for _ in range(900)]

@@ -3807,6 +3807,8 @@
     "multiplicador_tope_incremento": 2,
     "anios_tope_persona_fisica": 5,
     "anios_tope_persona_juridica": 7,
+    "rdl29_2026": "RDL 29/2026 (BOE-A-2026-20823, BOE 7-10-2026), art. 3: LAU art. 20 nuevo (el IBI no es repercutible al inquilino salvo obligado tributario; la tasa de basuras suele tener al ocupante como contribuyente, TRLRHL 23.1.b y 23.2.a; gestión y formalización al 20.2; tope del doble al 20.3; suministros al 20.4) y art. 36.5 (no se puede exigir seguro de impago). En vigor desde el 8-10-2026, pendiente de convalidación. Sin transitoria expresa: se aplica a contratos firmados desde el 8-10-2026 (interpretación propia, confianza B). Consultado el 7/10/2026.",
+    "url_rdl29_2026": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20823",
     "nota": "Cifras de la LAU leídas en el consolidado del BOE el 2/10/2026. El tope de subida de lo repercutido es el doble del % máximo de actualización de la renta; ese % (IRAV/IPC) lo calcula el usuario o sale de params.renta_alquiler_2026. La tasa de basuras se trata como tributo (LGT 2.2.a). Importes de ejemplo editables, no datos oficiales.",
     "supuestos": {
       "pacto": "ok",
@@ -3859,6 +3861,8 @@
     "imputacion_general_pct": 2,
     "imputacion_revisado_pct": 1.1,
     "imputacion_revision_periodos": 10,
+    "imputacion_revisado_2012_2015_2026_pct": 1.1,
+    "nota_da55": "DA 55.ª LIRPF recuperada por el RDL 29/2026 (BOE-A-2026-20823, art. 6), con efectos desde el 1-1-2026: imputación del 1,1 % también con revisión catastral en vigor desde 2012 (2012-2015) en 2026. En vigor desde el 8-10-2026, pendiente de convalidación. Consultado el 7/10/2026.",
     "fuente_85": "Ley 35/2006 del IRPF, art. 85.1 en la redacción de la Ley 26/2014 (BOE-A-2014-12327, vigente desde 1/1/2015): «el 2 por ciento al valor catastral, determinándose proporcionalmente al número de días» y «el porcentaje será el 1,1 por ciento» si los valores catastrales se revisaron y entraron en vigor «en el período impositivo o en el plazo de los diez períodos impositivos anteriores»; art. 24 en su redacción original de 2006 (BOE-A-2006-20764, vigente desde 1/1/2007): con arrendatario cónyuge o pariente hasta el tercer grado «el rendimiento neto total no podrá ser inferior al que resulte de las reglas del artículo 85». El consolidado del BOE refleja desde el 5-oct-2026 la reversión de los arts. 85 y 24 (la última versión del bloque es la de BOE-A-2026-20526; la del RDL 26/2026, BOE-A-2026-20266, con efectos 1/1/2027, ya no rige): rige la redacción anterior. Consultado el 2/10/2026. En 2026 el 1,1 % exige que la revisión entrara en vigor entre 2016 y 2026. La ampliación a revisiones desde 2012 (disposición adicional 55.ª) solo rige para 2023: el Real Decreto-ley 26/2026, que la extendía a 2026, fue derogado. Si tu municipio se revisó entre 2012 y 2015, en 2026 es el 2 %. La DA 55.ª (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#da-10) vigente solo dice «durante el período impositivo 2023»; el Manual Renta 2025 aún dice «desde 2012» y no se sigue.",
     "url_85": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a85",
     "url_24": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a24",
@@ -3868,13 +3872,13 @@
     }
   },
   "renta_alquiler_2026": {
-    "fuente": "Ley 29/1994 de Arrendamientos Urbanos, art. 18.1-2 (redacción RDL 7/2019, en vigor 6/3/2019) y disposición adicional 11.ª (IRAV, añadida por la Ley 12/2023); Resolución del INE de 18/12/2024 (IRAV, efectos 1/1/2025); IRAV de agosto de 2026 = 2,47 % y IPC definitivo de agosto de 2026 = 4,3 % (INE, API tabla 76134), leídos en INEbase; el RDL 26/2026 (tope del 2 %) estuvo en vigor del 1 al 2/10/2026 y fue derogado (BOE-A-2026-20526)",
+    "fuente": "Ley 29/1994 de Arrendamientos Urbanos, art. 18.1-2 y disposición adicional 11.ª (IRAV, Ley 12/2023); Real Decreto-ley 29/2026, art. 3 (nueva redacción del art. 18.1: IRAV «en todo caso», cláusula sin índice = IRAV) y disposición final 6.ª (tope del 2 % hasta el 31/12/2027), BOE núm. 249 de 7/10/2026, en vigor desde el 8/10/2026 y pendiente de convalidación (los Reales Decretos-ley 26/2026 y 27/2026, casi idénticos, fueron derogados el 2/10/2026; si este se derogara, en principio sin efecto retroactivo); disposición transitoria 4.ª.1 de la Ley 12/2023 en la redacción del art. 4.Dos del RDL 29/2026 (IRAV y art. 18.1 para contratos anteriores al 26/5/2023); Resolución del INE de 18/12/2024 (IRAV); IRAV de agosto de 2026 = 2,47 % y IPC definitivo de agosto de 2026 = 4,3 % (INE, API tabla 76134)",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003",
     "url_irav": "https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177110&idp=1254735976607&menu=ultiDatos",
     "url_resolucion_irav": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-26685",
     "url_ipc": "https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736176802&menu=ultiDatos&idp=1254735976607",
     "url_derogacion": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526",
-    "consulta": "consultado el 2026-10-02",
+    "consulta": "consultado el 2026-10-07 (RDL 29/2026); IRAV e IPC consultados el 2026-10-02",
     "confianza": "B",
     "irav_pct": 2.47,
     "irav_periodo": "2026-08",
@@ -3883,18 +3887,23 @@
     "ipc_periodo": "2026-08 (índice definitivo, último publicado; el avance de septiembre, 4,9 %, publicado el 2026-09-29, no es el índice definitivo)",
     "fecha_ley_12_2023": "2023-05-26",
     "fecha_rdl_7_2019": "2019-03-06",
-    "nota": "Confianza B: el art. 18 sigue hablando del IPC; que el IRAV limite a los contratos firmados desde el 26/5/2023 se apoya en la DA 11.ª, en la DT 4.ª original de la Ley 12/2023 y en el criterio del INE, sin sentencia que lo cierre. El IRAV de septiembre se publica con el IPC de septiembre (mediados de octubre de 2026). El IPC por defecto es el último definitivo (agosto de 2026); vale el último IPC publicado a la fecha de actualización. Importes de renta de ejemplo: supuestos editables, no oficiales.",
+    "nota": "Desde el 8/10/2026 el art. 18.1 de la LAU habla del IRAV literalmente (RDL 29/2026, art. 3). Salvedad: el RDL 29/2026 está en vigor y pendiente de convalidación; el tope del 2 % de su DF 6.ª no es el del RDL 26/2026 (derogado el 2/10/2026). El IRAV de septiembre se publica con el IPC de septiembre (mediados de octubre de 2026). El IPC por defecto es el último definitivo (agosto de 2026); vale el último publicado a la fecha de actualización. Importes de renta de ejemplo: supuestos editables, no oficiales.",
     "supuestos": {
       "firma": "post",
       "indice": "ipc",
       "renta": 800,
-      "mes": 10,
       "pide": 860,
-      "zona": "no"
-    }
+      "aniv": "2026-10-08",
+      "sup": "no"
+    },
+    "url_rdl29": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20823",
+    "tope_rdl29_pct": 2,
+    "rdl29_aniv_desde": "2026-10-08",
+    "rdl29_aniv_hasta": "2027-12-31",
+    "rdl29_estado": "en vigor desde el 2026-10-08, pendiente de convalidación"
   },
   "venta_vivienda_2026": {
-    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): arts. 33.4.b, 34, 35, 38, 49, 66.1, 76 y disposición transitoria 9.ª (redacción Ley 26/2014; escala del ahorro por Ley 7/2024, vigente desde 1/1/2025); Reglamento del IRPF arts. 41 y 41 bis (redacción RD 960/2013, BOE-A-2013-12771). Nota 2/10/2026: el RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado, BOE-A-2026-20526; sus novedades (41 bis.3, DA 65.ª y 66.ª LIRPF) no aplican)",
+    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): arts. 33.4.b, 34, 35, 38, 49, 66.1, 76 y disposición transitoria 9.ª (redacción Ley 26/2014; escala del ahorro por Ley 7/2024, vigente desde 1/1/2025); Reglamento del IRPF arts. 41 y 41 bis (redacción RD 960/2013, BOE-A-2013-12771). Nota 2/10/2026: el RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado, BOE-A-2026-20526; sus novedades (41 bis.3, DA 65.ª y 66.ª LIRPF) vuelven con el RDL 29/2026, en vigor desde el 8-10-2026, pendiente de convalidación; no se modelan)",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
     "url_rdl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266",
@@ -4394,7 +4403,7 @@
     "url_lisos": "https://www.boe.es/buscar/act.php?id=BOE-A-2000-15060"
   },
   "compensar_perdidas_2026": {
-    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): arts. 33.5.f y g, 37.2, 46, 49 (límite del 25 % y 4 años, redacción Ley 26/2014 vigente desde 1/1/2015, sin calendario posterior), 66.1 y 76 (escala del ahorro, Ley 7/2024); DA 12.ª (25 % fijo desde 2018), DT 7.ª.7; DA 39.ª caducada en 2026. El RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado (BOE-A-2026-20526); su art. 95 ter (Cuenta Financia Europa) no aplica.",
+    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): arts. 33.5.f y g, 37.2, 46, 49 (límite del 25 % y 4 años, redacción Ley 26/2014 vigente desde 1/1/2015, sin calendario posterior), 66.1 y 76 (escala del ahorro, Ley 7/2024); DA 12.ª (25 % fijo desde 2018), DT 7.ª.7; DA 39.ª caducada en 2026. El RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado (BOE-A-2026-20526); su art. 95 ter (Cuenta Financia Europa) vuelve con el RDL 29/2026 (en vigor desde el 8-10-2026, pendiente de convalidación) y no se modela.",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "consulta": "consultado el 2/10/2026",
     "confianza": "A",
@@ -4416,7 +4425,7 @@
     }
   },
   "traspasar_fondo_2026": {
-    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): art. 94.1.a (diferimiento al reembolsar fondos de inversión o transmitir SICAV con más de 500 socios y participación del 5 % o menos en 12 meses, destinando el importe a otras IIC; excluidos los fondos cotizados y sus acciones; no se aplica si se pone el dinero a disposición del contribuyente), art. 94.2 y DT 36.ª (IIC extranjeras UCITS inscritas en la CNMV), art. 37.2 y 94.1.a (FIFO), art. 35 (gastos de transmisión), art. 49.1 (compensación, 25 %), arts. 66.1 y 76 (escala del ahorro, Ley 7/2024), art. 101.6 (sin retención si no se computa la ganancia). Revisado el 3-10-2026: sin cambios por la derogación del RDL 26/2026 (BOE-A-2026-20526). El art. 95 ter (Cuenta de Ahorro e Inversión Financia Europa) que añadía ya no está en vigor.",
+    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): art. 94.1.a (diferimiento al reembolsar fondos de inversión o transmitir SICAV con más de 500 socios y participación del 5 % o menos en 12 meses, destinando el importe a otras IIC; excluidos los fondos cotizados y sus acciones; no se aplica si se pone el dinero a disposición del contribuyente), art. 94.2 y DT 36.ª (IIC extranjeras UCITS inscritas en la CNMV), art. 37.2 y 94.1.a (FIFO), art. 35 (gastos de transmisión), art. 49.1 (compensación, 25 %), arts. 66.1 y 76 (escala del ahorro, Ley 7/2024), art. 101.6 (sin retención si no se computa la ganancia). Revisado el 3-10-2026: sin cambios por la derogación del RDL 26/2026 (BOE-A-2026-20526). El art. 95 ter (Cuenta de Ahorro e Inversión Financia Europa) vuelve con el RDL 29/2026 (en vigor desde el 8-10-2026, pendiente de convalidación) y no se modela.",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "consulta": "consultado el 2/10/2026",
     "confianza": "A",

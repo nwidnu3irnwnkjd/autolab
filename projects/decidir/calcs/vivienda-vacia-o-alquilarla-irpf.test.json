@@ -475,6 +475,56 @@
     "famAplica": 0.0
    },
    "tol": 0.5
+  },
+  {
+   "nombre": "DA 55.ª (RDL 29/2026): revisión catastral 2012-2015, 1,1 % también en 2026",
+   "in": {
+    "cat": 60000,
+    "rev": "r12",
+    "dv": 0,
+    "renta": 800,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "no",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 390.0,
+    "resB": 2210.0,
+    "dif": 9408.0,
+    "rstar": 693.33,
+    "minimo": 660.0,
+    "famAplica": 0.0
+   },
+   "tol": 0.5
+  },
+  {
+   "nombre": "DA 55.ª con familiar y 60 días vacío",
+   "in": {
+    "cat": 60000,
+    "rev": "r12",
+    "dv": 60,
+    "renta": 500,
+    "gastos": 7000,
+    "contrato": "50",
+    "fam": "si",
+    "tipo": 30
+   },
+   "expect": {
+    "impA": 660.0,
+    "cuotaA": 198.0,
+    "resA": -7198.0,
+    "cuotaB": 198.0,
+    "resB": -2184.3,
+    "dif": 5013.7,
+    "rstar": 693.33,
+    "minimo": 551.51,
+    "famAplica": 1.0
+   },
+   "tol": 0.5
   }
  ]
 }

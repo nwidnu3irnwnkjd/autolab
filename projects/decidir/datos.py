@@ -12,7 +12,15 @@ A = lambda u, t: f'<a href="{e(u)}" rel="noopener">{e(t)}</a>'
 
 def _live(live, k):
     d = (live or {}).get("datos", {}).get(k)
-    return d if d and d.get("ok") else None
+    if not d: return None
+    if d.get("ok"): return d
+    # el último refresco falló (p. ej. timeout del BCE): sirve el último dato bueno mientras no supere su edad máxima
+    try:
+        import datetime
+        age = (datetime.date.today() - datetime.date.fromisoformat(d.get("fecha_dato") or d.get("fecha_consulta"))).days
+        if d.get("valor") is not None and 0 <= age <= d.get("max_edad_dias", 7): return d
+    except Exception: pass
+    return None
 
 def _eur3(x): return num(x, 3) + " €/kWh"
 
@@ -58,10 +66,10 @@ def _irav(r):
 <p class="note">Solo mostramos los meses de 2026 que hemos leído con fuente en el INE; cada mes nuevo se añadirá aquí con su fecha de publicación. El IRAV de septiembre se publica con el IPC de septiembre, a mediados de octubre de 2026. El avance del IPC de septiembre (4,9 %) se publicó el 29 de septiembre y no es el índice definitivo, así que no sirve para actualizar un alquiler.</p>
 <h2 id="contrato">Cómo se aplica a tu contrato</h2>
 <ul>
-<li><strong>Contrato firmado desde el 26 de mayo de 2023:</strong> la actualización anual no puede superar el IRAV (disposición adicional 11.ª de la {A(r["url"], "Ley 29/1994")}, añadida por la Ley 12/2023, y {A(r["url_resolucion_irav"], "Resolución del INE")}), salvo que el contrato fije otro índice más bajo. Con el IRAV de {mes}, una renta de 800 € subiría como máximo a {num(ej, 2)} € al mes.</li>
-<li><strong>Contrato anterior:</strong> la referencia sigue siendo la que pacte el contrato, y a falta de pacto, el IPC (art. 18 de la Ley 29/1994). Con el IPC de {mes}, 800 € serían {num(round(800 * (1 + ipc / 100), 2), 2)} € (importe de ejemplo, no oficial).</li>
-<li>Una norma de urgencia (RDL 26/2026) fijó un tope del 2 % y estuvo en vigor solo del 1 al 2 de octubre de 2026; fue derogada ({A(r["url_derogacion"], "BOE-A-2026-20526")}). Hoy no hay tope del 2 %.</li>
-<li>El índice que corresponde es el último publicado en la fecha de actualización de tu contrato. Confianza {e(r.get("confianza", ""))}: que el IRAV limite solo a los contratos firmados desde el 26/5/2023 se apoya en la ley y en el criterio del INE, sin sentencia que lo cierre; si tu caso es dudoso, consulta con un profesional.</li>
+<li><strong>Contrato firmado desde el 26 de mayo de 2023:</strong> la actualización anual no puede superar el IRAV (disposición adicional 11.ª de la {A(r["url"], "Ley 29/1994")}, añadida por la Ley 12/2023, y {A(r["url_resolucion_irav"], "Resolución del INE")}), salvo que el contrato fije otro índice más bajo. Con el IRAV de {mes}, una renta de 800 € subiría como máximo a {num(ej, 2)} € al mes, salvo que el aniversario caiga entre el 8-10-2026 y el 31-12-2027: ahí manda, sin nuevo pacto, el tope del 2 % (816 €), como se explica más abajo.</li>
+<li><strong>Contrato anterior:</strong> la referencia es la que pacte el contrato; según el {A(r.get("url_rdl29", r["url"]), "RDL 29/2026")}, el art. 18.1 pone en todo caso el tope del IRAV, también para estos contratos (pendiente de convalidación). Aunque el contrato diga «IPC», la subida queda como máximo en el IRAV (que por definición no supera al IPC) y, hasta 2027, en el 2 % sin nuevo pacto (DT 4.ª de la Ley 12/2023, en la redacción del RDL 29/2026, y art. 18.1).</li>
+<li><strong>Tope del 2 % hasta el 31 de diciembre de 2027:</strong> el RDL 26/2026 fijó un tope del 2 % y estuvo en vigor solo del 1 al 2 de octubre de 2026; fue derogado ({A(r["url_derogacion"], "BOE-A-2026-20526")}). Pero el {A(r.get("url_rdl29", r["url"]), "RDL 29/2026")} (disposición final 6.ª) repone un tope: en cualquier contrato de vivienda sujeto a la LAU, si el aniversario de la actualización cae entre el 8-10-2026 y el 31-12-2027, no hay incremento alguno si la renta supera el límite del índice estatal de precios de referencia y, en otro caso, sube lo que fije un nuevo pacto y, sin él, como máximo un 2 % (el IRAV solo manda si es menor). Con 800 €, el 2 % serían 816 € al mes. <strong>En vigor desde el 8-10-2026, pendiente de convalidación en el Congreso</strong>: si se deroga, vuelve la regla anterior, sin efectos retroactivos.</li>
+<li>El índice que corresponde es el último publicado en la fecha de actualización de tu contrato. Confianza {e(r.get("confianza", ""))}: que el IRAV limite a todos los contratos se apoya en la ley y en el criterio del INE, sin sentencia que lo cierre, y el tope del 2 % está pendiente de convalidación; si tu caso es dudoso, consulta con un profesional.</li>
 </ul>
 <h2 id="calcula">Calcula tu actualización y entiende el resto del alquiler</h2>
 <ul class="guides">
