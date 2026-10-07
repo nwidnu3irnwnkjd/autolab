@@ -83,3 +83,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-07T12:44Z | 5 | 6 | 0.55 | ciclo 72 cierre: Redactor x2, Estratega (a peticion de Andoni); peticiones abiertas: 18; páginas: 302
 2026-10-07T16:52Z | 5 | 8 | 0.55 | ciclo 73 cierre: Editor, Constructor, Vigilante, QA (modo continuo); peticiones abiertas: 18; páginas: 302
 2026-10-07T17:17Z | 11 | 8 | 0.55 | ciclo 74 cierre: Constructor, Opus, QA propio (modo continuo); peticiones abiertas: 18; páginas: 302
+2026-10-07T18:47Z | 15 | 9 | 0.55 | ciclo 75 cierre: Director UX Opus, Disenador x2, Constructor, revision propia; peticiones abiertas: 19; páginas: 302

@@ -45,10 +45,14 @@
           var ok = q.every(function (w) { return hay.indexOf(w) >= 0; }) && (!tema || li.getAttribute("data-t") === tema);
           li.hidden = !ok; if (ok) shown++;
         });
+        var qon = !!(q.join("").length > 1 && inp.closest(".hero")); // UX2.7: buscando en la home, solo búsqueda + resultados
+        document.documentElement.classList.toggle("q-on", qon);
+        if (count && inp.closest(".hero")) count.className = qon ? "note" : "sr-only";
         list.hidden = shown === 0;
         if (empty) empty.hidden = shown > 0;
         if (count) count.textContent = (q.length || tema || always) ? (shown === 0 ? "Sin resultados" : shown + (shown === 1 ? " calculadora" : " calculadoras")) : "";
       }
+      list.addEventListener("click", function (e) { if (inp.value && e.target.closest("a")) try { gtag("event", "search_click"); } catch (x) {} });
       chips.forEach(function (c) { c.addEventListener("click", function () { setTema(c.getAttribute("data-t")); apply(); }); });
       var reset = document.getElementById("reset");
       if (reset) reset.addEventListener("click", function () { inp.value = ""; setTema(""); apply(); inp.focus(); });

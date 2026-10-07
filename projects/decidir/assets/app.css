@@ -170,6 +170,8 @@ main p,main li,main summary{overflow-wrap:anywhere}
 .em-tw td,.em-tw thead th{white-space:nowrap;overflow-wrap:normal}
 .em-tw tbody th{min-width:7.5em}
 .em-tw table{font-variant-numeric:tabular-nums}
+/* UX2.3: primera columna fija con corte visible al desplazar */
+.em-tw tbody th,.em-tw thead tr:first-child th:first-child{position:sticky;left:0;z-index:1;background:var(--surface);box-shadow:1px 0 0 var(--line)}
 .note{font-size:var(--t-sm);color:var(--muted)}
 .disclaimer{font-size:var(--t-sm);color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:32px}
 details{background:var(--surface);border:1px solid var(--card-border);box-shadow:var(--shadow);border-radius:var(--r-sm);margin:10px 0}
@@ -255,6 +257,8 @@ ul.cards[hidden]{display:none}
 
 /* ===== Fase 2: ilustración y movimiento ===== */
 .kicker{display:inline-flex;align-items:center;gap:8px;font-size:var(--t-sm);font-weight:600;color:var(--accent-ink);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin:0 0 14px}
+article>.kicker{display:block;width:fit-content;max-width:100%;border-radius:18px;line-height:1.45}
+.lead{text-wrap:pretty}
 .kicker a{color:inherit;text-decoration:none}.kicker a:hover{text-decoration:underline}
 @media (prefers-color-scheme:dark){.kicker{color:var(--accent)}}
 .site-h nav a[aria-current]{color:var(--fg);background:var(--surface-2)}
@@ -383,17 +387,20 @@ article.guide>p.lead strong:not(:first-child){font-weight:700;color:var(--fg)}
 article.guide tbody tr:nth-child(even) td,article.guide tbody tr:nth-child(even) th{background:color-mix(in srgb,var(--fg) 3.5%,transparent)}
 article.guide thead th{font-size:13px}
 @media (max-width:480px){
-  article.guide .em-tw{overflow:visible}
-  article.guide table,article.guide tbody{display:block;background:none;border:0;box-shadow:none}
-  article.guide thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-  article.guide tbody tr{display:block;margin:0 0 12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow);overflow:hidden}
-  article.guide tbody tr:hover{background:var(--surface)}
-  article.guide tbody tr:nth-child(even) td,article.guide tbody tr:nth-child(even) th{background:none}
-  article.guide tbody th,article.guide tbody td{display:block;white-space:normal;min-width:0;text-align:left;padding:8px 14px;border-bottom:1px solid var(--line)}
-  article.guide tbody th{background:var(--surface-2);font-size:var(--t-base);padding:10px 14px}
-  article.guide td[data-label]{display:flex;justify-content:space-between;gap:14px;text-align:right}
-  article.guide td[data-label]::before{content:attr(data-label);flex:none;max-width:45%;text-align:left;font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;padding-top:2px}
-  article.guide tbody tr>:last-child{border-bottom:0}
+ article.guide .em-tw:has(th:nth-child(5)){overflow:visible;
+  table,tbody{display:block;background:none;border:0;box-shadow:none}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  tbody tr{display:block;margin:0 0 12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--shadow);overflow:hidden}
+  tbody tr:hover{background:var(--surface)}
+  tbody tr:nth-child(even) td,tbody tr:nth-child(even) th{background:none}
+  tbody th,tbody td{display:block;position:static;box-shadow:none;white-space:normal;min-width:0;text-align:left;padding:8px 14px;border-bottom:1px solid var(--line)}
+  tbody th{background:var(--surface-2);font-size:var(--t-base);padding:10px 14px}
+  td[data-label]{display:flex;justify-content:space-between;gap:14px;text-align:right}
+  td[data-label]::before{content:attr(data-label);flex:none;max-width:45%;text-align:left;font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;padding-top:2px}
+  tbody tr>:last-child{border-bottom:0}
+ }
+  article.guide .em-tw:not(:has(th:nth-child(5))) :is(td,th){white-space:normal;padding:7px 6px;font-size:14px}
+  article.guide .em-tw:not(:has(th:nth-child(5))) tbody th{white-space:nowrap;min-width:0}
 }
 /* Hub /hipoteca/: stepper vertical */
 article.hub{counter-reset:paso}
@@ -513,6 +520,8 @@ ul.guides[hidden]{display:none}
 
 /* UX1.6: mensajes de error bajo el campo (rojo AA sobre superficie en claro y oscuro) */
 .em-err{margin:6px 0 0;font-size:var(--t-sm);font-weight:600;color:var(--err)}
+.result[data-h] .em-res{opacity:.45}
+.result[data-h]::before{content:attr(data-h);display:block;margin:0 0 8px;font-size:var(--t-sm);color:var(--muted)}
 input[aria-invalid=true]{border-color:var(--err);box-shadow:0 0 0 3px color-mix(in srgb,var(--err) 18%,transparent)}
 /* UX1.8: barra fija de resultado en móvil (solo variante «bar» del A/B) */
 .em-bar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:9;min-height:48px;margin:0;padding:8px 18px;display:block;width:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;border-radius:999px;box-shadow:var(--shadow-lg);font-size:var(--t-sm)}
@@ -528,6 +537,30 @@ a.note{display:inline-block;min-height:24px;line-height:24px}
 @media (min-width:1024px){
   .calc:has(>.result:not(:empty)){display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 32px;align-items:start}
   .calc:has(>.result:not(:empty)) .grid{grid-template-columns:1fr}
-  .calc:has(>.result:not(:empty))>.result{margin-top:0;position:sticky;top:76px}
+  .calc:has(>.result:not(:empty))>.result{margin-top:0;align-self:stretch}
+  /* UX2.2: sticky solo el veredicto (fondo opaco); el resultado es más alto que el formulario y un sticky entero nunca se engancha */
+  .calc:has(>.result:not(:empty)) .em-verdict.fx{position:sticky;top:76px;z-index:2;background-image:linear-gradient(var(--ok-bg),var(--ok-bg));background-color:var(--surface)}
+  .calc:has(>.result:not(:empty)) .em-verdict.warn{background-image:linear-gradient(var(--warn-bg),var(--warn-bg))}
+  .calc:has(>.result:not(:empty)) .em-verdict.info{background-image:linear-gradient(var(--info-bg),var(--info-bg))}
+  .calc:has(>.result:not(:empty))>.result>.em-res{min-height:100%}
   .calc:has(>.result:not(:empty)) .em-res{border-top:0;padding-top:0}
 }
+
+/* UX2.7: buscando en la home (≥ 2 letras) solo se ven el buscador y los resultados */
+html.q-on main>:not(.hero):not(#calcs):not(#empty):not(.more){display:none}
+html.q-on .hero-ill,html.q-on .hero .lead,html.q-on .hero .kicker{display:none}
+html.q-on .hero{padding-bottom:0}
+/* UX2.7: en /todas/ el filtro va justo bajo el lead, por encima del asistente */
+article.dir{display:flex;flex-direction:column;align-items:stretch}
+article.dir>*{order:2}
+article.dir>:is(.kicker,h1,.byline,.lead,.search,#dc){order:1}
+article.dir>.kicker{align-self:flex-start}
+article.dir>h1,article.dir>.lead{margin-bottom:12px}
+article.dir:has(#dq:not(:placeholder-shown))>.asis{display:none}
+@media (max-width:599px){article.dir>.lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}}
+/* UX2.8: Novedades en una línea por enlace */
+#novedades+ul .note{display:none}
+#novedades+ul li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#novedades+ul li{padding-top:9px;padding-bottom:9px;min-height:0}
+@media (max-width:599px){main>h1+.lead{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+#tabla-sueldo thead th{white-space:normal;min-width:5.5em}

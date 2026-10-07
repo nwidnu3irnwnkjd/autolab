@@ -3,9 +3,9 @@
   "slug": "cuanto-cobro-de-paro-prestacion-desempleo",
   "id": "tabla-paro",
   "h3": "¿Cuánto cobro de paro con una nómina de 1.800 €?",
-  "condiciones": "Cuantía mensual bruta de la prestación contributiva con 720 días cotizados (240 días de prestación, 8 meses), jornada completa y una base de cotización igual a la nómina bruta mensual con las pagas extra prorrateadas (sin horas extra). Se muestran los primeros 180 días (70 %) y el resto (60 %), con el máximo y el mínimo de 2026 según hijos a cargo; antes de IRPF.",
+  "condiciones": "Cuantía mensual bruta de la prestación contributiva con 720 días cotizados (240 días de prestación, 8 meses), jornada completa y una base de cotización igual a la nómina bruta mensual con las pagas extra prorrateadas (sin horas extra). Se muestran los primeros 180 días (70 %) y el resto (60 %), con el máximo y el mínimo de 2026 según hijos a cargo; antes de IRPF. «Nómina» es aquí la base de cotización con las pagas extra prorrateadas: quien cobra 1.800 € en 14 pagas tiene una base de 2.100 € y le salen 1.225 € en los dos tramos.",
   "cols": [
-   "Nómina (base)",
+   "Nómina (base, con pagas prorrateadas)",
    "Sin hijos: días 1-180 · después",
    "1 hijo: días 1-180 · después"
   ],

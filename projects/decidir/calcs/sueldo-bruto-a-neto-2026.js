@@ -55,7 +55,8 @@ function tablaSueldo(d) {
 // Filas HTML de la tabla (la misma cadena que ops/gen_tabla_sueldo.py escribe en el HTML estatico; EM.num formatea).
 function htmlTabla(d) {
   return tablaSueldo(d).map(function (r) {
-    return '<tr id="bruto-' + r.m + '"><th scope="row">' + EM.num(r.m, 0) + '</th><td class="n">' + EM.num(r.bruto12, 0) + '</td><td class="n">' + EM.num(r.tipo12, 2) + ' %</td><td class="n">' + EM.num(r.neto12, 0) + '</td><td class="n">' + EM.num(r.bruto14, 0) + '</td><td class="n">' + EM.num(r.tipo14, 2) + ' %</td><td class="n">' + EM.num(r.normal14, 0) + '</td><td class="n">' + EM.num(r.extra14, 0) + '</td></tr>';
+    var c = function (v) { return '<td class="n">' + v + '</td>'; };
+    return '<tr id="bruto-' + r.m + '"><th scope="row">' + EM.num(r.m, 0) + '</th>' + c(EM.num(r.neto12, 0)) + c(EM.num(r.normal14, 0)) + c(EM.num(r.extra14, 0)) + c(EM.num(r.tipo12, 2) + ' %') + c(EM.num(r.tipo14, 2) + ' %') + c(EM.num(r.bruto12, 0)) + c(EM.num(r.bruto14, 0)) + '</tr>';
   }).join("");
 }
 function eur(x) { return EM.eur(x); }

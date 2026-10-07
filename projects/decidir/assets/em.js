@@ -23,7 +23,9 @@
   function reduced() { return !!(RM && RM.matches); }
   var state = new WeakMap();
   /* Medición (UX1.4): calc_used / result_view / calc_error. UV = grupo del A/B de la barra de resultado (UX1.8; solo móvil, "desk" en el resto). */
-  var CALC = location.pathname.replace(/\/$/, "").split("/").pop(), U = 0, VW = 0, BAD = 0, BR, UV = window.matchMedia && window.matchMedia("(max-width:599px)").matches ? (Math.random() < 0.5 ? "bar" : "ctl") : "desk";
+  /* UX2.1: variante A/B por visita (sessionStorage), no por vista de página. */
+  function uvar() { var v; try { v = sessionStorage.getItem("em_uv"); } catch (e) {} if (v !== "bar" && v !== "ctl") { v = Math.random() < 0.5 ? "bar" : "ctl"; try { sessionStorage.setItem("em_uv", v); } catch (e) {} } return v; }
+  var CALC = location.pathname.replace(/\/$/, "").split("/").pop(), U = 0, VW = 0, BAD = 0, BR, UV = window.matchMedia && window.matchMedia("(max-width:599px)").matches ? uvar() : "desk";
   function ev(n, p) { try { if (window.gtag) { p = p || {}; p.calc = CALC; p.ux_var = UV; gtag("event", n, p); } } catch (e) {} }
   /* Región viva aparte y breve (≤160 car.): solo el veredicto se anuncia, no la tabla entera (UX1.6). */
   function say(el, t) {
@@ -103,7 +105,11 @@
         BR = document.createElement("button"); BR.type = "button"; BR.className = "em-bar"; BR.hidden = true; document.body.appendChild(BR);
         BR.onclick = function () { var v = document.querySelector(".em-verdict"); if (v) v.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "center" }); };
       }
-      BR.textContent = (hasBig && !/\d/.test(vt) ? fmt(o.bigNumber) + " · " : "") + vt + " ↓";
+      /* UX2.1: cifra del resultado (no la del usuario) + etiqueta corta, sin elipsis */
+      var lb = (o.bigLabel || vt).replace(/<[^>]*>/g, "").replace(/^Con (estos|tus) (datos|supuestos)[,:]?\s*/i, "").split(/[.;:,(]/)[0].trim();
+      if (lb.length > 24) lb = lb.slice(0, 24).replace(/\s+\S*$/, "");
+      lb = lb.replace(/(\s+(con|la|el|los|las|de|del|a|en|y|que|por|para|un|una|partir|primeros|primer|\d+))+$/i, "");
+      BR.textContent = (hasBig ? fmt(o.bigNumber) + (lb ? " · " + lb : "") : lb || vt.slice(0, 30)) + " ↓";
     } else if (BR) BR.hidden = true;
     el._o = new IntersectionObserver(function (en) {
       var on = en[0].isIntersecting;
@@ -143,6 +149,7 @@
     if (!animateIn) { var res = el.firstChild; res.style.animation = "none"; }
     if (prev.key !== undefined && prev.key !== key && !reduced()) el.querySelector(".em-verdict").classList.add("em-win");
     el.style.display = "block";
+    var vf = el.querySelector(".em-verdict"); if (vf.offsetHeight < innerHeight * 0.4) vf.classList.add("fx"); // UX2.2: sticky solo si cabe
     if (o.line) lazyChart(el.querySelector(".em-line-slot"), o.line);
     if (hasBig) countTo(el.querySelector(".em-big .num"), prev.big === undefined ? 0 : prev.big, o.bigNumber, fmt);
     var rects = el.querySelectorAll(".br"), pf = prev.f || [], nf = [];
@@ -177,11 +184,17 @@
     function used1() { if (used) return; used = U = 1; ev("calc_used"); }
     /* UX1.6: entrada vacía o fuera de rango -> aria-invalid, mensaje bajo el campo y aviso en lugar de un resultado viejo. */
     function gate() {
-      var r = document.getElementById("r"), bad = "";
+      var r = document.getElementById("r"), bad = "", hint = "";
       els.forEach(function (i) {
         var m = "", v = i.validity;
         if (i.type === "number") m = i.value === "" || v.badInput ? "Escribe un número." : v.rangeUnderflow ? "Pon un valor de " + i.min.replace(".", ",") + " o más." : v.rangeOverflow ? "Pon un valor de " + i.max.replace(".", ",") + " o menos." : "";
-        var e = i._e;
+        var e = i._e, pend = m && i === document.activeElement; // UX2.4: sin rojo mientras se escribe; el error llega al salir del campo
+        if (pend) {
+          if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); i.removeAttribute("aria-describedby"); }
+          i._p = 1; i._m = ""; if (!hint) hint = (i.labels && i.labels[0] ? i.labels[0].textContent : i.id).split(/[(,]/)[0].trim().slice(0, 40);
+          return;
+        }
+        i._p = 0;
         if (m) {
           if (!e) { e = i._e = document.createElement("p"); e.className = "em-err"; e.id = "e-" + i.id; i.parentNode.appendChild(e); i.setAttribute("aria-describedby", e.id); }
           if (e.textContent !== m) e.textContent = m;
@@ -191,7 +204,9 @@
         } else if (e) { e.remove(); i._e = null; i.removeAttribute("aria-invalid"); i.removeAttribute("aria-describedby"); }
         i._m = m;
       });
-      BAD = bad ? 1 : 0;
+      BAD = bad || hint ? 1 : 0;
+      if (r) { if (hint && !bad) r.setAttribute("data-h", "Completa: " + hint); else r.removeAttribute("data-h"); }
+      if (hint && !bad) { say(r, "Completa: " + hint); return false; }
       if (BAD && r) {
         r.innerHTML = '<div class="em-res em-tone-warn"><div class="em-verdict warn">' + ICON.warn + "<p>Revisa los datos. " + esc(bad) + "</p></div></div>";
         r.style.display = "block"; say(r, "Revisa los datos. " + bad);
@@ -207,11 +222,21 @@
       els.push(i);
       i.addEventListener("input", function () { used1(); deb(); });
       i.addEventListener("change", function () { used1(); run(); });
+      i.addEventListener("blur", function () { if (i._p) run(); });
     });
     run();
     return run;
   }
 
+
+  /* UX2.5: «Aplicar este caso» (a.caso, href #v=id:valor~…): rellena el formulario, recalcula y sube al veredicto. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.caso"); if (!a) return;
+    var m = /v=([^&]*)/.exec(a.hash), f = 0; if (!m) return;
+    m[1].split("~").forEach(function (p) { var k = p.split(":"), i = document.getElementById(decodeURIComponent(k[0])); if (i && i.form && k[1] !== undefined) { i.value = decodeURIComponent(k[1]); i.dispatchEvent(new Event("input", { bubbles: true })); f = 1; } });
+    if (!f) return; e.preventDefault(); ev("caso_click");
+    setTimeout(function () { var v = document.querySelector(".em-verdict") || document.getElementById("r"); if (v) v.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "center" }); }, 350);
+  });
 
   window.EM = { renderResult: renderResult, live: live, eur: eur, num: num, _: { COLORS: COLORS, esc: esc, reduced: reduced } };
 })();

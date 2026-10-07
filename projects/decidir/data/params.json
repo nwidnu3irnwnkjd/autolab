@@ -6,7 +6,7 @@
     "fuente": "Real Decreto 126/2026 (SMI 2026)",
     "url": "https://www.boe.es/boe/dias/2026/02/19/pdfs/BOE-A-2026-3815.pdf",
     "confianza": "A",
-    "consulta": "consultado el 2/10/2026"
+    "consulta": "consultado el 2/10/2026 y recontrastado el 07/10/2026 (SEPE, cuantías anuales)"
   },
   "finiquito_baja_voluntaria_2026": {
     "fuente": "Estatuto de los Trabajadores (RDL 2/2015, BOE-A-2015-11430, consolidado a 30/9/2026): art. 29 (liquidación y pago del salario), art. 31 (dos gratificaciones extraordinarias al año, prorrateables por convenio), art. 38.1 (vacaciones de al menos 30 días naturales, «no sustituible por compensación económica»; la compensación de las devengadas y no disfrutadas al extinguirse el contrato la establece el art. 11 del Convenio 132 de la OIT, ratificado por España, BOE-A-1974-1055, y la aplica el Tribunal Supremo), art. 49.1.d (dimisión con el preaviso que señalen los convenios colectivos o la costumbre del lugar), art. 49.2 (propuesta de documento de liquidación y presencia de un representante legal al firmar el finiquito), art. 50 (extinción por voluntad del trabajador con causa justa, indemnización del despido improcedente) y art. 59.1 (un año para reclamar); Ley General de la Seguridad Social (RDL 8/2015, BOE-A-2015-11724): art. 147.1 (las vacaciones devengadas y no disfrutadas que se retribuyen al extinguirse la relación se liquidan y cotizan aparte, sin prorrateo y con el tope máximo del mes o meses afectados) y art. 267.1.a (situación legal de desempleo: el despido y la extinción por causas objetivas sí; la resolución voluntaria solo en los supuestos de los arts. 40, 41.3, 49.1.m y 50 del Estatuto); Ley 35/2006 del IRPF: art. 17.1.a (sueldos y salarios son rendimientos del trabajo); Reglamento del IRPF (RD 439/2007): art. 80.1 (la retención es el tipo aplicado a la cuantía total de las retribuciones abonadas), 86.1 y 87.2.3.º (tipo único regularizable al extinguirse el contrato); Reglamento General de Cotización (RD 2064/1995, BOE-A-1996-1579) art. 23.1.A (las percepciones superiores al mensual se prorratean en doce meses); Orden PJC/297/2026 (cotización 2026) y RDL 3/2026 (tope de base de 5.101,20 €/mes)",
@@ -4175,7 +4175,9 @@
     "url_sepe_cuantias": "https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html",
     "consolidados": "LGSS consolidada a 31/07/2026: art. 269 (apartado 3 modificado por el RDL 2/2024, sin efecto en la escala) y art. 270 (apartado 2 modificado por la Ley 31/2022, en vigor desde 1/1/2023); sin cambios posteriores",
     "rdl_26_2026": "BOE-A-2026-20266: no toca los arts. 147, 269 ni 270 de la LGSS (sin menciones a desempleo ni IPREM); no se cita como fuente. No hay PGE 2026: el IPREM sigue el de la Ley 31/2022",
-    "consulta": "consultado el 2/10/2026",
+    "consulta": "consultado el 07/10/2026",
+    "smi_referencia": "SMI 2026: 1.221 € al mes en 14 pagas (RD 126/2026, BOE-A-2026-3815; SEPE, cuantías anuales, consultado el 07/10/2026); solo informativo, no entra en el cálculo",
+    "smi_mensual_14_pagas": 1221,
     "confianza": "A",
     "iprem_mensual": 600,
     "iprem_mas_sexta": 700,

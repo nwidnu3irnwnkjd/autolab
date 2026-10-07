@@ -26,10 +26,16 @@ def tema(c):
                    ("energia", ["luz", "energia", "solar", "placas", "gas", "tarifa", "bombona"])]:
         if any(k in s for k in kws): return t
     return "ahorro"
+# UX2.9: etiqueta visible (no cambia URL, tema, hub ni og) para las calculadoras laborales que caían en «Ahorro e inversión»
+_LAB = ("paro", "subsidio", "despido", "finiquito", "baja-medica", "incapacidad", "jubila", "permiso", "viudedad", "excedencia", "nomina", "sueldo", "empleada-hogar", "aceptar-trabajo", "pagas-extra", "teletrabajo", "reduccion-jornada", "guarderia-cuidadora")
+LAB_NAME = "Trabajo y prestaciones"
+def etiqueta(c):
+    t = tema(c)
+    return LAB_NAME if t == "ahorro" and any(k in c["slug"] for k in _LAB) else ICONS[t][0]
 def card(c):
     t = tema(c); name, svg = ICONS[t]
     k = c["slug"].replace("-", " ")  # el buscador usa textContent + data-k (antes data-q repetía título, descripción y tema: ~11 KB en la home)
-    return f'<li data-k="{k}" data-t="{t}"><svg class="ill-s" viewBox="0 0 160 120" aria-hidden="true"><use href="/assets/illustrations.svg#{t}"/></svg><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{name}</span></li>'
+    return f'<li data-k="{k}" data-t="{t}"><svg class="ill-s" viewBox="0 0 160 120" aria-hidden="true"><use href="/assets/illustrations.svg#{t}"/></svg><a href="/decidir/{c["slug"]}/">{c["h1"]}</a><p>{c["description"]}</p><span class="tag">{etiqueta(c)}</span></li>'
 
 HOME_N = 6
 def home_cards(calcs, n=HOME_N):
@@ -87,7 +93,7 @@ HUB_PATHS = {"hipoteca": "/hipoteca/", "coche": "/coche/", "energia": "/energia/
 
 def calc_header(c):
     """Cabecera .ph de una calculadora."""
-    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="{HUB_PATHS.get(tema(c), "/decidir/#" + tema(c))}">{ICONS[tema(c)][0]}</a></p>{ill(tema(c), "ph-i", 220, 165)}
+    return f"""<header class="ph ph-{tema(c)}"><p class="kicker"><a href="{HUB_PATHS.get(tema(c), "/decidir/#" + tema(c))}">{etiqueta(c)}</a></p>{ill(tema(c), "ph-i", 220, 165)}
 <h1>{c["h1"]}</h1>
 <p class="lead">{c["lead"]}</p></header>"""
 

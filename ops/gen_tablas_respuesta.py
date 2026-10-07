@@ -44,8 +44,8 @@ def t_paro():
     rows = [dict(ancla=f"nomina-{b}", celdas=[eur(b), f"{eur(s['m1'])} · {eur(s['m2'])}", f"{eur(c['m1'])} · {eur(c['m2'])}"]) for b, s, c in zip(bases, sin, con)]
     return dict(slug="cuanto-cobro-de-paro-prestacion-desempleo", id="tabla-paro",
         h3="¿Cuánto cobro de paro con una nómina de 1.800 €?",
-        condiciones="Cuantía mensual bruta de la prestación contributiva con 720 días cotizados (240 días de prestación, 8 meses), jornada completa y una base de cotización igual a la nómina bruta mensual con las pagas extra prorrateadas (sin horas extra). Se muestran los primeros 180 días (70 %) y el resto (60 %), con el máximo y el mínimo de 2026 según hijos a cargo; antes de IRPF.",
-        cols=["Nómina (base)", "Sin hijos: días 1-180 · después", "1 hijo: días 1-180 · después"], rows=rows,
+        condiciones="Cuantía mensual bruta de la prestación contributiva con 720 días cotizados (240 días de prestación, 8 meses), jornada completa y una base de cotización igual a la nómina bruta mensual con las pagas extra prorrateadas (sin horas extra). Se muestran los primeros 180 días (70 %) y el resto (60 %), con el máximo y el mínimo de 2026 según hijos a cargo; antes de IRPF. «Nómina» es aquí la base de cotización con las pagas extra prorrateadas: quien cobra 1.800 € en 14 pagas tiene una base de 2.100 € y le salen 1.225 € en los dos tramos.",
+        cols=["Nómina (base, con pagas prorrateadas)", "Sin hijos: días 1-180 · después", "1 hijo: días 1-180 · después"], rows=rows,
         fuentes=[["LGSS, arts. 269 y 270 (BOE)", "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724"], ["Cuantías 2026 del SEPE", "https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html"]],
         inputs=dict(base=bases, extras="si", jornada=100, dias=720, hijos=[0, 1]))
 
