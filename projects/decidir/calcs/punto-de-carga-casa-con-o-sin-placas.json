@@ -83,15 +83,15 @@
   "faqs": [
     [
       "¿Compensa instalar un punto de carga en casa?",
-      "Compensa si el kWh de casa sale más barato que el de la carga pública y haces los km suficientes para amortizarlo. Con los ejemplos de esta página (17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 €, electricidad a 0,18 €/kWh y pública a 0,45 €/kWh) se amortiza en unos 2,2 años sin placas y 1,9 con ellas con 15.000 km al año, y a partir de unos 3.300 km al año en 10 años."
+      "Si el kWh de casa es más barato que el de la pública y haces km suficientes. Con los ejemplos (17 kWh/100 km, 80 % en casa, punto de 1.200 €, 0,18 y 0,45 €/kWh) se amortiza en unos 2,2 años sin placas y 1,9 con ellas con 15.000 km."
     ],
     [
       "¿Cuánto cuesta cargar un coche eléctrico en casa?",
-      "Los kWh que consume el coche por el precio de tu electricidad. Con 17 kWh/100 km y 0,18 €/kWh son unos 3 € cada 100 km, frente a unos 7,65 € en pública a 0,45 €/kWh. Con tus datos, la calculadora da el coste anual de cada forma de recargar y el de un coche de gasolina equivalente."
+      "Los kWh que consume el coche por el precio de tu electricidad. Con 17 kWh/100 km y 0,18 €/kWh son unos 3 € cada 100 km, frente a unos 7,65 € en pública a 0,45 €/kWh. La calculadora da el coste anual de cada opción y el de la gasolina."
     ],
     [
       "¿Cómo cambian las placas el coste de cargar?",
-      "La parte de la carga que cubren tus placas se valora a lo que dejas de ingresar por esos kWh como excedentes (0,07 €/kWh sin impuestos, ejemplo de la calculadora de placas, por 1,2718), en lugar de a lo que pagarías a la red. Con 40 % de placas y los ejemplos, el ahorro anual frente a la pública pasa de unos 550 € a unos 625 €. Las placas no están incluidas en el coste del punto."
+      "Lo que cubren las placas se valora a lo que dejas de ingresar como excedentes (0,07 €/kWh sin impuestos por 1,2718), no a lo que pagarías a la red. Con 40 % de placas, el ahorro frente a la pública pasa de unos 550 a unos 625 € al año."
     ],
     [
       "¿Y si cargo de noche con tarifa con discriminación horaria?",
@@ -99,7 +99,7 @@
     ],
     [
       "¿Qué pasa si la carga pública es barata?",
-      "Si el kWh de la pública no es mucho más caro que el de casa, el ahorro se reduce y el punto puede no amortizarse. Con los ejemplos y la pública a 0,20 €/kWh, el punto tarda unos 31 años sin placas y unos 10,6 con el 40 % de placas, más de los 10 años del modelo. Sigue saliendo más barato que la gasolina, pero ya no por el punto de carga."
+      "Si la pública no es mucho más cara que casa, quizá no se amortice. Con los ejemplos y la pública a 0,20 €/kWh, tarda unos 31 años sin placas y unos 10,6 con 40 % de placas, más de los 10 del modelo. Sigue siendo más barato que la gasolina."
     ]
   ],
   "sources": "Modelo propio simplificado: kWh al año = km x consumo / 100; coste en casa = kWh de casa x precio de la electricidad (y la parte de placas a 0,07 x 1,2718 €/kWh, la compensación de excedentes que dejas de ingresar, igual que en la calculadora de placas); coste de la pública = kWh x precio; gasolina = km x 6,5 l/100 km x precio (consumo de ejemplo, data/params.json viaje_coche). Amortización = coste del punto / (coste de cargarlo todo en pública - coste con punto). Horizonte de 10 años y euros constantes, sin descuento (hipótesis del modelo, data/params.json punto_carga_2026). Electricidad: por defecto, PVPC medio del mes en curso (Red Eléctrica, REData, https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real) con impuesto eléctrico e IVA (x 1,2718) cuando ya hay 7 días del mes; si no, 0,1812 €/kWh, PVPC medio de los últimos 12 meses con impuestos (consultado el 2/10/2026). Gasolina 95: media simple de gasolineras de la Península y Baleares (MITECO, Geoportal de gasolineras, https://geoportalgasolineras.es/). Carga pública 0,45 €/kWh y punto de carga de 1.200 € (rango habitual de presupuestos de vivienda 800-1.600 €, Autosolar, consultado el 2/10/2026): ejemplos editables, no datos oficiales ni tarifas de empresas. Consumo del coche, km y % de carga en casa: ejemplos editables. Información orientativa, no un presupuesto ni asesoramiento."

@@ -93,7 +93,7 @@
   "faqs": [
     [
       "¿Cuántos meses de gastos conviene tener en un fondo de emergencia?",
-      "No hay una cifra oficial: es una guía habitual que depende de lo estable que sea tu ingreso y de a quién mantienes. Esta calculadora usa una hipótesis propia: 3 meses para un asalariado indefinido o funcionario, 6 si el empleo es temporal o autónomo, +1 si los ingresos son variables, +0,5 por persona a cargo (hasta +2), -1 si otra persona del hogar tiene ingresos estables, con un mínimo de 3 y un máximo de 12. Con los ejemplos de la página (indefinido, 1 persona a cargo) salen 3,5 meses; un autónomo con ingresos variables y 2 personas a cargo, 8 meses."
+      "No hay cifra oficial: es una guía habitual. La calculadora usa una hipótesis propia: 3 meses si eres asalariado indefinido o funcionario, 6 si temporal o autónomo, +1 con ingresos variables, +0,5 por persona a cargo (hasta +2), -1 si otra persona del hogar tiene ingresos estables."
     ],
     [
       "¿Cuánto dinero es eso en euros?",
@@ -101,15 +101,15 @@
     ],
     [
       "¿Cuánto tardaría en reunirlo?",
-      "El tiempo es lo que te falta dividido entre tu aportación mensual, redondeado hacia arriba. Con 3.000 € ahorrados y 200 € al mes, los 2.250 € que faltan para 5.250 € se juntan en 12 meses; para 12.000 € (9.000 € por reunir) serían 45 meses, unos 3 años y 9 meses. Si tardas mucho, un primer hito de 1 mes de gastos ya te da margen."
+      "Lo que te falta dividido entre tu aportación mensual, redondeado hacia arriba. Con 3.000 € ahorrados y 200 € al mes, los 2.250 € que faltan para 5.250 € se juntan en 12 meses; para 12.000 €, en 45. Un primer hito de 1 mes de gastos ya da margen."
     ],
     [
       "¿Dónde conviene guardar el fondo de emergencia?",
-      "Donde puedas disponer del dinero cuando lo necesites sin perder capital: una cuenta de acceso inmediato o un producto líquido y sin riesgo de pérdida. Inmovilizarlo o invertirlo en algo cuyo valor puede bajar justo cuando lo necesitas va contra el propósito del fondo. Comprueba si tu entidad está cubierta por el Fondo de Garantía de Depósitos. No es asesoramiento financiero ni recomienda ningún producto concreto."
+      "Donde puedas disponer del dinero sin perder capital: una cuenta de acceso inmediato o un producto líquido sin riesgo de pérdida. Invertirlo en algo que puede bajar justo cuando lo necesitas va contra su propósito. Mira si tu entidad cubre el Fondo de Garantía de Depósitos. No es asesoramiento."
     ],
     [
       "¿Qué no incluye esta calculadora?",
-      "No incluye el paro que podrías cobrar, los seguros que cubren parte del riesgo, deudas con cuotas altas, gastos extraordinarios previsibles (coche, salud, reformas), la inflación ni los intereses que genere el ahorro. Es una orientación para fijar un objetivo, no un plan financiero personalizado ni asesoramiento financiero: para una decisión importante consulta a un profesional."
+      "No incluye el paro que podrías cobrar, los seguros que cubren parte del riesgo, deudas con cuotas altas, gastos extraordinarios previsibles (coche, salud, reformas), la inflación ni los intereses del ahorro. Es una orientación para fijar un objetivo, no asesoramiento financiero: para decisiones importantes consulta a un profesional."
     ]
   ],
   "sources": "Modelo propio, sin norma ni cifra oficial: meses recomendados = base según empleo (indefinido o funcionario 3, temporal 6, autónomo 6) + 1 si ingresos variables + 0,5 por persona a cargo (máximo +2) - 1 si otra persona del hogar tiene ingresos estables, con un mínimo de 3 y un máximo de 12; es una hipótesis de trabajo editable en la lógica, no una ley ni una recomendación oficial. Objetivo = meses × gastos mensuales imprescindibles; tiempo = lo que falta ÷ aportación mensual, redondeado hacia arriba, sin intereses ni inflación. Consulta general de educación financiera: Finanzas para Todos, Banco de España y CNMV (https://www.finanzasparatodos.es). Garantía de depósitos: Fondo de Garantía de Depósitos de Entidades de Crédito (https://www.fgd.es). Supuestos no oficiales y editables: gastos de 1.500 €/mes, 1 persona a cargo, 3.000 € ahorrados y 200 € de aportación mensual. Consultado el 2/10/2026. Información orientativa, no asesoramiento financiero."

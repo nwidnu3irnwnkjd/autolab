@@ -6,6 +6,12 @@
     {"in": {"capital": 150000, "anos": 25, "fijo": 2.9, "dif": 0.8, "euribor": 2.10, "escenario": 0},
      "expect": {"intFija": 61061.92, "intVar": 61061.92, "diferencia": 0, "euriborEquilibrio": 2.10}, "tol": 0.01},
     {"in": {"capital": 200000, "anos": 30, "fijo": 3.0, "dif": 1.0, "euribor": 2.10, "escenario": 2},
-     "expect": {"cuotaFija": 843.21, "intFija": 103554.90, "cuotaVar1": 854.03, "cuotaVar2": 1079.24, "intVar": 185824.44, "euriborEquilibrio": 1.994, "diferencia": 82269.54}, "tol": 1}
+     "expect": {"cuotaFija": 843.21, "intFija": 103554.90, "cuotaVar1": 854.03, "cuotaVar2": 1079.24, "intVar": 185824.44, "euriborEquilibrio": 1.994, "diferencia": 82269.54}, "tol": 1},
+    {"in": {"capital": 150000, "anos": 25, "fijo": 2.76, "dif": 0.8, "euribor": 3.247, "escenario": 0},
+     "expect": {"intFija": 57820.32, "intVar": 88695.94, "diferencia": 30875.62, "euriborEquilibrio": 1.8585, "anosRestantes": 24}, "tol": 0.01},
+    {"in": {"capital": 150000, "anos": 25, "fijo": 0, "dif": 0.8, "euribor": 3.247, "escenario": 0},
+     "expect": {"intFija": 0, "euriborEquilibrio": -5, "diferencia": 88695.94}, "tol": 0.01},
+    {"in": {"capital": 100000, "anos": 24.5, "fijo": 3, "dif": 1, "euribor": 2.5, "escenario": 0},
+     "expect": {"anosRestantes": 23.5}, "tol": 0.001}
   ]
 }

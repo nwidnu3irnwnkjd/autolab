@@ -222,3 +222,5 @@ Estado OPT1 (medido 5-oct): 1.1 hecha (45→29 sin sugerencias; se cierra), 1.2 
 ## 2026-10-07 · Diseñador (pasada 2 UX)
 - [x] UX2.10 [Diseñador -> Orquestador] build.py/gen_tabla_sueldo: mover «Neto al mes» a la primera columna de cada grupo (hoy fuera de vista a 375 px) y mover en el HTML de la home «Últimas noticias» (aside.noticia-card) justo tras «Empieza por aquí»: hoy el orden es solo CSS (`order`), y el orden de foco no coincide con el visual · abierta
 - [ ] UX2.11 [Diseñador -> Estratega] directorio.py: grupo «Trabajo y prestaciones» en /todas/ (la etiqueta ya sale en tarjeta y cabecera vía ui.etiqueta) · abierta
+
+[Editor -> Constructor] (2026-10-07, pasada 6, no bloqueante) calefaccion-gas-aerotermia-electrica: añadir en test.json un caso con los valores por defecto de la página (80 m², 75 kWh/m², 10 años, gas 2.500 €/0,064, luz 0,23) para citar cifras en el lead. seguro-salud-privado-merece-la-pena, tren-avion-o-coche, portatil-o-movil-comprar-renting-o-financiar: añadir fuente con fecha de consulta si se cita enlace externo.

@@ -110,3 +110,27 @@ Nota 1-5 (antes → después): título / lead con condición+cifra / FAQ ≤ 50 
 ## Posibles errores legales: ninguno detectado en estas 15 (no se tocó ninguna cifra legal). Nota para el Verificador: amortizar-plazo-o-cuota FAQ 4 (comisión 0,25 %/3 años o 0,15 %/5 años en variables, 2 %/10 años y 1,5 % después en fijas) y deposito-letras-o-fondo-monetario (arts. citados) conviene contrastarlos con el texto consolidado en su próxima pasada.
 ## Resumen
 - FAQs > 50 p en las 15: ≈ 48 → 0. Leads sin cifra de ejemplo: 3 → 0. Verificado: build OK, check.py 13623/13623, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 6 · 2026-10-07 · 15 calculadoras no fiscales (cola tarea 3; con FAQs > 50 p y distintas de las 15 de la pasada 5; no quedaban 15 sin revisar y con ese defecto, así que se escogieron las de más FAQs largas; guías no hizo falta)
+
+Nota 1-5 (antes → después): título / lead con condición+cifra de test.json / FAQ ≤ 50 p / fuentes con enlace y fecha / tono. Solo textos de calcs/*.json; sin tocar fórmulas, tests ni cifras legales.
+- cambiar-ventanas-aislamiento-merece-la-pena · 3 → 5 · title con «¿Compensa…?» (consulta real), lead con 28 años y 43 % mínimo (test.json), 5 FAQs a ≤ 50 p
+- comprar-o-alquilar-trastero · 3 → 5 · title «¿qué sale más barato?» (consulta real), 5 FAQs a ≤ 50 p
+- reparar-o-comprar-electrodomestico · 3 → 5 · lead con equilibrio 110 € frente a 150 € (test.json), 5 FAQs
+- luz-fija-o-indexada · 3 → 5 · lead con 739 € / 919 € / 15 € (test.json), 4 FAQs (detalle de impuestos 2026 sigue en la sección «Impuestos» del HTML)
+- potencia-contratada-luz-bajar-compensa · 4 → 5 · 4 FAQs a ≤ 50 p
+- cambiar-electrodomestico-antiguo-merece-la-pena · 3 → 5 · title con «por clase A», lead con 30 €/año, 22 años y 283 kWh mínimos, 3 FAQs
+- coche-nuevo-o-seminuevo · 4 → 5 · 3 FAQs recortadas (art. 120 TRLGDCU intacto)
+- tren-avion-o-coche · 3 → 4 · title «Tren, avión o coche: …» (consulta real), lead con 120/164/220 €, 4 FAQs; fuentes: 1 enlace sin fecha
+- punto-de-carga-casa-con-o-sin-placas · 4 → 5 · 4 FAQs a ≤ 50 p
+- portatil-o-movil-comprar-renting-o-financiar · 3 → 4 · title «Portátil o móvil: …», 3 FAQs; fuentes: 1 enlace sin fecha
+- seguro-salud-privado-merece-la-pena · 3 → 4 · lead con 17 actos y 6.250 € (test.json), 2 FAQs; fuentes: modelo propio sin enlaces (aceptable: sin cifras externas)
+- fondo-de-emergencia-cuantos-meses-necesito · 4 → 4 · 3 FAQs a ≤ 50 p; fuentes: 2 enlaces sin «consultado»
+- calefaccion-gas-aerotermia-electrica · 3 → 4 · 3 FAQs; lead sin cifra del ejemplo (los defaults de la página no coinciden con ningún caso de test.json: ver petición)
+- contado-o-financiar · 4 → 5 · lead con 2.067 € y 9,29 % (test.json), 3 FAQs
+- comedor-escolar-o-tupper · 4 → 5 · 2 FAQs recortadas
+
+## Posibles errores legales: ninguno detectado (no se tocó ninguna cifra legal). Nota para el Verificador: luz-fija-o-indexada FAQ 2 (condiciones de rebaja de IVA/IEE nov-dic según RDL 25/2026) se acortó; el detalle completo queda en la sección «Impuestos» de content/luz-fija-o-indexada.html. Confirmar vigencia en el barrido de vigencia.
+## Peticiones [Editor -> Constructor] (no bloqueantes): calefaccion-gas-aerotermia-electrica: añadir un caso en test.json con los valores por defecto de la página para poder citar cifras en el lead; seguro-salud, tren-avion-o-coche y portatil-o-movil: fuentes con fecha de consulta si se citan enlaces externos.
+## Resumen
+- FAQs > 50 p en las 15: ≈ 45 → 0. Leads sin cifra del ejemplo: 7 → 1 (calefacción). Verificado: ver abajo.

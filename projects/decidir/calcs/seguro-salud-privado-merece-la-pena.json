@@ -3,7 +3,7 @@
   "title": "Seguro de salud privado: ¿merece la pena? Calcula su coste",
   "description": "Compara el coste de un seguro de salud privado con pagar cada consulta o prueba por tu cuenta: punto de equilibrio de actos al año y coste a N años.",
   "h1": "Seguro de salud privado: ¿merece la pena?",
-  "lead": "Un seguro de salud privado compensa en coste solo si usas al año más consultas, pruebas o urgencias privadas que su punto de equilibrio, que es tu prima dividida por lo que ahorras en cada acto frente a pagarlo por tu cuenta; por debajo de ese número, sale más barato pagar cada acto aparte, y lo que decide entonces es la cobertura y el acceso (listas de espera, libre elección), no el dinero. Pon tu prima, copago, actos esperados y el precio de pagar cada acto sin seguro, y verás el coste a N años y el equilibrio.",
+  "lead": "Un seguro de salud privado compensa en coste solo si usas al año más consultas, pruebas o urgencias privadas que su punto de equilibrio: tu prima dividida entre lo que ahorras por acto frente a pagarlo aparte. Con los ejemplos (900 € de prima, 60 € por acto, 8 € de copago) el equilibrio está en unos 17 actos al año; con 8 actos, pagar cada uno cuesta unos 6.250 € menos en 10 años. Por debajo de ese número decide la cobertura y el acceso, no el dinero.",
   "veredicto": "Un seguro de salud privado compensa en coste solo si esperas más actos médicos al año que el equilibrio que calcula la página con tu prima, tu copago y el precio de pagar cada acto sin seguro; por debajo, pagar aparte cuesta menos, y la decisión es de cobertura y acceso, no solo de coste.",
   "tema": "ahorro",
   "inputs": [
@@ -67,19 +67,19 @@
   "faqs": [
     [
       "¿Merece la pena un seguro de salud privado?",
-      "En coste, solo si usas más actos privados al año que el equilibrio, que es tu parte de la prima dividida por lo que ahorras por acto (precio sin seguro menos copago). Con los ejemplos de la página (900 € de prima, 60 € por acto, 8 € de copago) el equilibrio está en 17,3 actos el primer año y 19,0 de media en 10 años con las subidas del ejemplo; con 8 actos al año, pagar cada uno por tu cuenta cuesta unos 6.250 € menos en 10 años, y con 25 actos el seguro cuesta unos 3.429 € menos. Pero es una decisión de cobertura y acceso, no solo de coste."
+      "En coste, solo si usas más actos privados al año que el equilibrio: prima entre ahorro por acto. Con los ejemplos (900 € de prima, 60 € por acto, 8 € de copago) son 17,3 actos; con 8, pagar aparte cuesta unos 6.250 € menos en 10 años."
     ],
     [
       "¿Cuántos actos al año debo poner?",
-      "Los que tú esperes usar en la sanidad privada: no hay una estadística en la página, el 8 es un ejemplo editable. Cuenta consultas, pruebas y urgencias de un año normal tuyo o de tu familia. Si cambias el número, la calculadora te dice si estás por encima o por debajo del equilibrio. Si tienes dudas sobre tu salud, habla con un profesional sanitario: esta calculadora no valora necesidades médicas."
+      "Los que esperes usar en la sanidad privada: la página no da estadística y el 8 es un ejemplo editable. Cuenta consultas, pruebas y urgencias de un año normal tuyo o de tu familia. Si dudas sobre tu salud, habla con un profesional: la calculadora no valora necesidades médicas."
     ],
     [
       "¿Qué cambia si el seguro es de la empresa?",
-      "Si tu empresa paga una parte de la prima, pon ese porcentaje y la calculadora solo cuenta tu parte. Con los ejemplos de la página y el 50 % a cargo de la empresa (sin subidas), pagarías 450 € de prima al año y con 8 actos el seguro cuesta 5.140 € en 10 años frente a 4.800 € sin seguro: sigue saliendo algo más caro en coste, pero el equilibrio baja a 8,7 actos al año. No incluye el efecto fiscal de un seguro de empresa."
+      "Si tu empresa paga parte de la prima, pon ese porcentaje. Con los ejemplos y el 50 % a cargo de la empresa, con 8 actos el seguro cuesta 5.140 € en 10 años frente a 4.800 € sin seguro; el equilibrio baja a 8,7 actos. No incluye efecto fiscal."
     ],
     [
       "¿Qué no mide la calculadora?",
-      "Las listas de espera, la libre elección de médico y la tranquilidad de tener cobertura no tienen precio en la calculadora y para muchas personas son lo más importante. Tampoco incluye urgencias graves u hospitalizaciones (que podrían costar mucho más que los actos habituales), preexistencias, carencias, exclusiones de la póliza ni el efecto fiscal. Los importes son ejemplos tuyos, no tarifas de aseguradoras ni de clínicas."
+      "No pone precio a las listas de espera, la libre elección de médico ni la tranquilidad, que para muchos son lo más importante. Tampoco incluye urgencias graves u hospitalizaciones, preexistencias, carencias, exclusiones ni efecto fiscal. Los importes son ejemplos tuyos, no tarifas de aseguradoras."
     ],
     [
       "¿Compara con la sanidad pública?",

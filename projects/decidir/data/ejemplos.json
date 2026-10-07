@@ -444,29 +444,30 @@
   "inputs": {
    "capital": 150000,
    "anos": 25,
-   "fijo": 2.8,
+   "fijo": 2.76,
    "dif": 0.8,
    "euribor": 3.247,
    "escenario": 0
   },
   "resultado": {
-   "cuotaFija": 695.8117,
-   "intFija": 58743.5242,
-   "totalFija": 208743.5242,
+   "cuotaFija": 692.7344,
+   "intFija": 57820.3158,
+   "totalFija": 207820.3158,
    "cuotaVar1": 795.6531,
    "cuotaVar2": 795.6531,
    "intVar": 88695.9391,
    "totalVar": 238695.9391,
    "euriborEsc": 3.247,
-   "euriborEquilibrio": 1.9018,
-   "diferencia": 29952.4149,
+   "euriborEquilibrio": 1.8585,
+   "diferencia": 30875.6233,
+   "sinEquilibrio": "",
    "anosRestantes": 24
   },
-  "entradas_texto": "hipoteca de 150.000 € a 25 años, fija al 2,80 % frente a Euríbor + 0,80 puntos con el Euríbor en 3,247 % (media de septiembre de 2026, BCE) y sin variación del Euríbor después del primer año",
+  "entradas_texto": "hipoteca de 150.000 € a 25 años, fija al 2,76 % frente a Euríbor + 0,80 puntos con el Euríbor en 3,247 % (media de septiembre de 2026, BCE) y sin variación del Euríbor después del primer año",
   "filas": [
    [
     "Cuota de la fija",
-    "695,81 €/mes"
+    "692,73 €/mes"
    ],
    [
     "Cuota de la variable el primer año",
@@ -474,7 +475,7 @@
    ],
    [
     "Intereses totales de la fija",
-    "58.744 €"
+    "57.820 €"
    ],
    [
     "Intereses totales de la variable",
@@ -482,14 +483,14 @@
    ],
    [
     "Intereses menos con la fija",
-    "29.952 €"
+    "30.876 €"
    ],
    [
     "Euríbor medio de equilibrio",
-    "1,90 %"
+    "1,86 %"
    ]
   ],
-  "veredicto_texto": "Con estos supuestos, la fija sale más barata en intereses si el Euríbor medio de los 24 años siguientes al primero supera el 1,90 %; si se mantiene en 3,247 %, la fija ahorra 29.952 €, y si queda por debajo del 1,90 %, la variable pagaría menos.",
+  "veredicto_texto": "Con estos supuestos, si el Euríbor se queda, de forma estable, por encima del 1,86 % durante los 24 años siguientes al primero, la fija sale más barata en intereses; si se mantiene en 3,247 %, la fija ahorra 30.876 €, y si queda estable por debajo, la variable pagaría menos. Si el Euríbor sube o baja con el tiempo el resultado cambia y los primeros años pesan más: con el Euríbor subiendo del 1 % al 2,95 % la variable ahorraría 7.200 € y bajando del 2,95 % al 1 % costaría 12.372 € más (ambas sendas con la misma media, 1,975 %, por encima del umbral; cifras comprobadas con ops/verif/hipoteca-fija-o-variable.py).",
   "fecha": "2026-10-07",
   "datos_fijados": "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
  },

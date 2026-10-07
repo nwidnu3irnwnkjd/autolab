@@ -132,7 +132,16 @@ ok(calcs_loader.resolve_default(_inp, PARAMS, SAMPLE, TODAY) == 2.76, "subrogar:
 _old = json.loads(json.dumps(SAMPLE)); _old["datos"]["tipo_hipoteca_fija"]["fecha_dato"] = "2026-05-31"
 ok(calcs_loader.resolve_default(_inp, PARAMS, _old, TODAY) == PARAMS["tipo_hipoteca_fija_medio"], "subrogar: dato viejo -> respaldo oficial de params")
 _bad = json.loads(json.dumps(SAMPLE)); _bad["datos"]["tipo_hipoteca_fija"].update(ok=False, motivo="caída")
-ok(calcs_loader.resolve_default(_inp, PARAMS, _bad, TODAY) == PARAMS["tipo_hipoteca_fija_medio"], "subrogar: dato con fallo -> respaldo")
+_bad["datos"]["tipo_hipoteca_fija"]["valor"] = 2.70  # ok=false pero dentro de max_edad_dias: se sigue usando el último dato bueno (como datos.py)
+ok(calcs_loader.resolve_default(_inp, PARAMS, _bad, TODAY) == 2.7, "subrogar: ok=false dentro de max_edad -> último dato bueno")
+_badold = json.loads(json.dumps(_bad)); _badold["datos"]["tipo_hipoteca_fija"]["fecha_dato"] = "2026-05-31"
+ok(calcs_loader.resolve_default(_inp, PARAMS, _badold, TODAY) == PARAMS["tipo_hipoteca_fija_medio"], "subrogar: ok=false y viejo -> respaldo")
+ok(calcs_loader.aviso_respaldo(_inp, PARAMS, _badold, TODAY) == "" or "respaldo" in calcs_loader.aviso_respaldo(_inp, PARAMS, _badold, TODAY), "respaldo: aviso coherente")
+ok("respaldo" in calcs_loader.aviso_respaldo(_inp, PARAMS, _badold, datetime.date(2026, 12, 15)), "respaldo antiguo (> 45 días) -> aviso con fecha")
+ok(calcs_loader.aviso_respaldo(_inp, PARAMS, SAMPLE, TODAY) == "", "dato vivo fresco -> sin aviso")
+_fv = json.load(open(os.path.join(ROOT, "projects/decidir/calcs/hipoteca-fija-o-variable.json")))
+_fi = next(i for i in _fv["inputs"] if i["id"] == "fijo")
+ok(_fi.get("default_from") == "live.tipo_hipoteca_fija" and _fi.get("default_fallback") == "params.tipo_hipoteca_fija_medio", "fija-o-variable: fijo toma el tipo medio vivo (mismo que el Barómetro)")
 ok(PARAMS.get("tipo_hipoteca_fija_periodo") and "Banco Central Europeo" in PARAMS.get("tipo_hipoteca_fija_fuente", "") and PARAMS["tipo_hipoteca_fija_medio"] != 2.6, "params: tipo fija con fuente y periodo")
 _Dv = barometro.compute(PARAMS, "https://x.test", live=SAMPLE)["hipoteca_fija_o_variable"]["supuestos"]
 ok(_Dv["tipo_fijo_referencia"] == 2.76 and _Dv["tipo_fijo_dato_vivo"] and _Dv["tipo_fijo_periodo"] == "2026-08", "barómetro: usa el dato vivo con su mes")

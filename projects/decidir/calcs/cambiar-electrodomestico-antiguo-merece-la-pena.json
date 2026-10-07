@@ -1,9 +1,9 @@
 {
   "slug": "cambiar-electrodomestico-antiguo-merece-la-pena",
-  "title": "Cambiar electrodoméstico antiguo: ¿merece la pena?",
+  "title": "Cambiar electrodoméstico antiguo por clase A: ¿compensa?",
   "description": "Calcula si merece la pena cambiar tu nevera, lavadora o secadora por una de clase A: años de amortización, ahorro en luz y kWh evitados con tus datos.",
   "h1": "¿Merece la pena cambiar un electrodoméstico antiguo por uno de clase A?",
-  "lead": "Cambiar un electrodoméstico que aún funciona por uno de clase A solo compensa por la luz si el ahorro anual en kWh, por tu precio de la luz, supera el precio neto del nuevo repartido en los años que lo vas a usar. Con los ejemplos de la página (nevera de 300 kWh al año frente a 170 kWh, y 650 € de precio) no se cumple, y la calculadora te da los kWh mínimos que tendrías que ahorrar. Cambia los consumos por los de tu etiqueta y tu aparato.",
+  "lead": "Cambiar un electrodoméstico que aún funciona por uno de clase A solo compensa por la luz si el ahorro anual en kWh, por tu precio de la luz, supera el precio neto del nuevo repartido en los años de uso. Con los ejemplos de la página (nevera de 300 kWh al año frente a 170 kWh, 650 € de precio y 0,23 €/kWh) ahorras unos 30 € al año, tardarías unos 22 años en amortizarlo y necesitarías ahorrar al menos 283 kWh al año: no compensa. Cámbialos por los tuyos.",
   "veredicto": "Cambiar un electrodoméstico que funciona por uno de clase A compensa solo si el ahorro anual de luz, por tu precio del kWh, cubre el precio neto del nuevo en los años que cuentas; la calculadora te da los kWh al año mínimos que tendrías que ahorrar, y el ahorro real depende de tu uso.",
   "tema": "energia",
   "inputs": [
@@ -94,19 +94,19 @@
   "faqs": [
     [
       "¿Compensa cambiar un electrodoméstico antiguo por uno clase A?",
-      "Por la luz sola, solo si el ahorro anual en kWh, multiplicado por el precio del kWh, supera el precio neto del aparato nuevo repartido en los años que lo vas a usar. La calculadora te dice los kWh al año mínimos y los compara con los tuyos. Si el aparato actual ya no funciona, la decisión es otra: elegir el nuevo más eficiente por precio y consumo."
+      "Por la luz sola, solo si el ahorro anual en kWh por el precio del kWh supera el precio neto del nuevo repartido en sus años de uso. La calculadora da los kWh mínimos y los compara con los tuyos. Si el actual ya no funciona, elige el más eficiente."
     ],
     [
       "¿Cómo sé cuánto consume mi electrodoméstico viejo?",
-      "Lo más fiable es medirlo con un medidor de consumo enchufable durante unos días y llevarlo a un año; la placa de características solo da la potencia. En un aparato nuevo, la etiqueta energética europea indica el consumo: en neveras, en kWh al año; en lavadoras y lavavajillas, por 100 ciclos, que tendrás que convertir según tus lavados."
+      "Lo más fiable es medirlo con un medidor enchufable durante unos días y llevarlo a un año; la placa solo da la potencia. En uno nuevo, la etiqueta europea indica el consumo: en neveras, kWh al año; en lavadoras y lavavajillas, por 100 ciclos, que deberás convertir según tus lavados."
     ],
     [
       "¿Qué significan las clases A a G de la etiqueta energética?",
-      "Desde marzo de 2021 la etiqueta europea de neveras, lavadoras y lavavajillas usa una escala de la A (más eficiente) a la G, sin los antiguos A+++. Las letras nuevas son más exigentes, así que un aparato de hace diez años que era A+++ no equivale a una A de hoy: compara siempre los kWh, no la letra."
+      "Desde marzo de 2021 la etiqueta europea de neveras, lavadoras y lavavajillas va de la A (más eficiente) a la G, sin los antiguos A+++. Las letras nuevas son más exigentes: compara los kWh, no la letra."
     ],
     [
       "¿Y si el aparato viejo todavía funciona bien?",
-      "Entonces cambiarlo adelanta una compra que harías igualmente más adelante, y esa pérdida de vida útil cuenta contra el cambio. La calculadora lo refleja repartiendo el precio neto del nuevo en sus años de vida y comparándolo con el ahorro de luz. Si se ha estropeado, compara también con reparar o comprar."
+      "Entonces cambiarlo adelanta una compra que harías igualmente, y esa vida útil perdida cuenta contra el cambio. La calculadora reparte el precio neto del nuevo en sus años de vida y lo compara con el ahorro de luz. Si se ha estropeado, compara también con reparar o comprar."
     ],
     [
       "¿Qué no incluye este cálculo?",

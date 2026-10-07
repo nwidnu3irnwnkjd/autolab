@@ -32,9 +32,12 @@ function calcular(d) {
     cuotaVar1: v.cuota1, cuotaVar2: v.cuota2, intVar: v.intereses, totalVar: P + v.intereses,
     euriborEsc: euriborEsc, euriborEquilibrio: eq,
     diferencia: v.intereses - intFija, // >0: la fija paga menos; <0: la variable paga menos
-    anosRestantes: d.anos - 1
+    // Sin cruce dentro de [-5 %, 30 %]: la bisección se queda en un extremo. «fija»: la variable cuesta más con cualquier Euríbor (p. ej. fija al 0 %).
+    sinEquilibrio: eq <= -4.99 ? "fija" : eq >= 29.99 ? "variable" : "",
+    anosRestantes: Math.round((d.anos - 1) * 10) / 10
   };
 }
+function anosTxt(x) { return (Math.round(x * 10) / 10).toLocaleString("es-ES", { maximumFractionDigits: 1 }); }
 function eur(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }); }
 function eur2(x) { return x.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 function pct(x) { return x.toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "\u00a0%"; }
@@ -48,8 +51,14 @@ function pintar() {
   if (abs < 1) verdict = 'En este escenario las dos opciones pagan los mismos intereses.';
   else if (r.diferencia > 0) { gana = "fija"; verdict = 'En este escenario la fija te sale ' + EM.eur(abs) + ' más barata en intereses.'; }
   else { gana = "variable"; verdict = 'En este escenario la variable te sale ' + EM.eur(abs) + ' más barata en intereses.'; }
-  var note = '<p><strong>Lectura:</strong> el Euríbor de equilibrio es <strong>' + pct(r.euriborEquilibrio) + '</strong>. ';
-  note += 'Si crees que el Euríbor medio de los próximos ' + r.anosRestantes + ' años estará por encima de ' + pct(r.euriborEquilibrio) + ', te conviene la fija; si crees que estará por debajo, la variable pagará menos intereses. ';
+  var note = '<p><strong>Lectura:</strong> ';
+  if (r.sinEquilibrio === "fija") note += 'con estos tipos la fija paga menos intereses con cualquier Euríbor razonable (no hay Euríbor de equilibrio). ';
+  else if (r.sinEquilibrio === "variable") note += 'con estos tipos la variable paga menos intereses con cualquier Euríbor razonable (no hay Euríbor de equilibrio). ';
+  else {
+    note += 'el Euríbor de equilibrio es <strong>' + pct(r.euriborEquilibrio) + '</strong>. ';
+    note += 'Si el Euríbor se queda, de forma estable, por encima de ' + pct(r.euriborEquilibrio) + ' durante los ' + anosTxt(r.anosRestantes) + ' años siguientes al primero, te conviene la fija; si se queda por debajo, la variable pagará menos intereses. ';
+    note += 'Si sube o baja con el tiempo el resultado cambia, y los primeros años pesan más. ';
+  }
   note += 'Hoy el Euríbor está en ' + pct(d.euribor) + ' y en tu escenario lo usamos a ' + pct(r.euriborEsc) + '. ';
   note += 'Si el Euríbor se descontrola, tu cuota variable puede cambiar mucho en cada revisión; la fija no se mueve.</p>';
   EM.renderResult({

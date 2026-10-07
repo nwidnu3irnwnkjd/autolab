@@ -29,7 +29,8 @@ def load_live(path=LIVE_PATH):
         return {}
 
 def _fresh(d, today, did=None):
-    if not isinstance(d, dict) or d.get("ok") is False or not isinstance(d.get("valor"), (int, float)) or not d.get("fecha_dato"):
+    # ok=false (el último refresco falló) no descarta el dato mientras siga dentro de su edad máxima (igual que datos.py `_live`)
+    if not isinstance(d, dict) or not isinstance(d.get("valor"), (int, float)) or not d.get("fecha_dato"):
         return False
     try: f = datetime.date.fromisoformat(d["fecha_dato"])
     except ValueError: return False
@@ -92,6 +93,36 @@ def resolve_default(i, params, live=None, today=None):
     except Exception:
         return i.get("default")
 
+MAX_EDAD_RESPALDO = 45  # días: un valor de respaldo de params más antiguo lleva aviso visible
+
+def _fecha_respaldo(fb, params):
+    """Fecha (date) del valor de respaldo `fb` de params, o None si no se puede saber."""
+    k = fb[len("params."):] if fb.startswith("params.") else fb
+    cand = {"euribor_12m": ["fecha_euribor"], "tipo_hipoteca_fija_medio": ["tipo_hipoteca_fija_periodo"],
+            "diesel_eur_l": ["fecha_combustibles"], "gasolina_eur_l": ["fecha_combustibles"]}.get(k, []) + ["fecha"]
+    for c in cand:
+        v = params.get(c)
+        if not v: continue
+        try:
+            if len(v) == 7:  # AAAA-MM -> último día del mes
+                y, m = int(v[:4]), int(v[5:])
+                return (datetime.date(y + m // 12, m % 12 + 1, 1) - datetime.timedelta(days=1))
+            return datetime.date.fromisoformat(v)
+        except ValueError: continue
+    return None
+
+def aviso_respaldo(i, params, live=None, today=None):
+    """Texto de aviso si el default de `i` sale del respaldo de params y ese valor es antiguo (o no tiene fecha); '' si no."""
+    ref, fb = i.get("default_from") or "", i.get("default_fallback")
+    if not fb or not ref.startswith("live.") or live_value(live, ref, i, today): return ""
+    today = today or datetime.date.today()
+    f = _fecha_respaldo(fb, params)
+    nom = i.get("label", i.get("id", "")).split(" (")[0]
+    if f is None: return f"«{nom}»: el valor por defecto es de respaldo y no tiene fecha; compruébalo y cámbialo por el de tu oferta."
+    if (today - f).days > MAX_EDAD_RESPALDO:
+        return f"«{nom}»: el dato actualizado no está disponible y el valor por defecto es de respaldo, fechado el {f.strftime('%d/%m/%Y')}; puede estar desfasado, cámbialo por el de tu oferta."
+    return ""
+
 def load_calcs(root, params):
     calcs = []
     cdir = os.path.join(root, "calcs")
@@ -106,5 +137,7 @@ def load_calcs(root, params):
             for i in c["inputs"]:
                 if i.get("default_from"):
                     i["default"] = resolve_default(i, params, live)
+                    av = aviso_respaldo(i, params, live)
+                    if av: c["sources"] = c.get("sources", "") + " Aviso: " + av
             calcs.append(c)
     return calcs

@@ -3,7 +3,7 @@
   "title": "Pagar al contado o financiar un coche: ¿qué compensa?",
   "description": "En el ejemplo, pagar al contado ahorra 2.067 €; financiar solo compensa si tu dinero rinde más de un 9,29 % anual. Calcula con tu oferta.",
   "h1": "Pagar al contado o financiar (coche u otra compra): ¿qué te sale mejor?",
-  "lead": "Financiar compensa si tu dinero rinde, después de impuestos, más que la TAE real del préstamo (el coste anual efectivo, con comisión y seguro) y no hay descuento por pagar al contado; si no, pagar al contado sale mejor. Calcula el punto exacto con tus números.",
+  "lead": "Financiar compensa si tu dinero rinde, después de impuestos, más que la TAE real del préstamo (el coste anual efectivo, con comisión y seguro) y no hay descuento por pagar al contado; si no, sale mejor pagar al contado. Con los ejemplos de la página (20.000 €, 2.000 € de entrada, TIN del 7 % a 48 meses y 3 % de rentabilidad) pagar al contado ahorra unos 2.067 € y financiar solo compensaría si tu dinero rindiera más de un 9,29 % anual. Calcula con tu oferta.",
   "veredicto": "Financiar compensa si tu dinero rinde, tras impuestos, más que la TAE real del préstamo (comisión y seguros incluidos) y no hay descuento por pagar al contado; con ofertas a interés bajo o cero es más probable.",
   "tema": "ahorro",
   "inputs": [
@@ -74,15 +74,15 @@
   "faqs": [
     [
       "¿Es mejor pagar al contado o financiar?",
-      "Pagar al contado sale mejor cuando el préstamo cuesta más (TAE real) de lo que rinde tu dinero después de impuestos, o cuando hay descuento por pagar de golpe. Financiar compensa con intereses muy bajos o nulos si de verdad mantienes el dinero rentando. La calculadora te da la rentabilidad de equilibrio con tus datos."
+      "Cuando el préstamo cuesta más (TAE real) de lo que rinde tu dinero después de impuestos, o hay descuento por pagar de golpe. Financiar compensa con intereses muy bajos o nulos si de verdad mantienes el dinero rentando. La calculadora da la rentabilidad de equilibrio con tus datos."
     ],
     [
       "¿Qué es la TAE real del préstamo?",
-      "Es el coste anual efectivo de lo que pagas por el préstamo, incluyendo la comisión de apertura y, aquí, el seguro opcional. Suele ser mayor que el TIN (el tipo de interés nominal) porque la comisión y los seguros encarecen lo que recibes. Se calcula buscando el tipo que iguala las cuotas con el dinero neto que recibes."
+      "Es el coste anual efectivo del préstamo, con la comisión de apertura y, aquí, el seguro opcional. Suele ser mayor que el TIN (tipo nominal) porque comisión y seguros encarecen lo que recibes. Se calcula buscando el tipo que iguala las cuotas con el dinero neto que recibes."
     ],
     [
       "¿Qué rentabilidad debo poner?",
-      "Una que consideres prudente después de comisiones, no la mejor de los últimos años. Un depósito o una cuenta remunerada rinden menos que un fondo, pero con menos riesgo. El 3 % por defecto es solo un valor de partida, no una previsión: prueba varios y mira cuánto cambia la conclusión."
+      "Una que consideres prudente después de comisiones, no la mejor de los últimos años. Un depósito o cuenta remunerada rinde menos que un fondo, con menos riesgo. El 3 % por defecto es solo un punto de partida, no una previsión: prueba varios y mira cuánto cambia la conclusión."
     ],
     [
       "¿Cuenta el descuento por pagar al contado?",

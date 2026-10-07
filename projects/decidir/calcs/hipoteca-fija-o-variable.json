@@ -1,7 +1,7 @@
 {
   "slug": "hipoteca-fija-o-variable",
   "title": "Hipoteca fija o variable hoy: ¿cuál te sale más barata?",
-  "description": "En el ejemplo, con un Euríbor medio del 3,247 % la fija ahorra 29.952 €; sale mejor si supera el 1,90 %. Compáralo con tus datos.",
+  "description": "En el ejemplo, con un Euríbor medio del 3,247 % la fija ahorra 30.876 €; sale mejor si se mantiene por encima del 1,86 %. Compáralo con tus datos.",
   "h1": "Hipoteca fija o variable hoy: ¿cuál te sale más barata?",
   "lead": "Nadie sabe dónde estará el Euríbor, pero sí puedes saber a partir de qué nivel te conviene la fija. Mete las dos ofertas y compara escenarios.",
   "veredicto": "La fija compensa si el Euríbor se mantiene por encima de un nivel que esta calculadora te calcula; la variable gana si baja o se mantiene bajo.",
@@ -22,10 +22,13 @@
     },
     {
       "id": "fijo",
-      "label": "Tipo fijo ofrecido (%)",
-      "default": 2.8,
+      "label": "Tipo fijo ofrecido (%; por defecto, el tipo medio de las nuevas hipotecas fijas, BCE)",
+      "default": 2.76,
       "min": 0,
-      "step": 0.01
+      "step": 0.01,
+      "default_from": "live.tipo_hipoteca_fija",
+      "default_round": 2,
+      "default_fallback": "params.tipo_hipoteca_fija_medio"
     },
     {
       "id": "dif",
@@ -71,7 +74,7 @@
   "faqs": [
     [
       "¿Qué es el Euríbor de equilibrio?",
-      "Es el Euríbor medio, durante los años posteriores al primero, a partir del cual la hipoteca variable acaba pagando más intereses totales que la fija. Si esperas un Euríbor medio por encima, la fija sale más barata; si esperas uno por debajo, la variable."
+      "Es el nivel de Euríbor, mantenido estable tras el primer año, a partir del cual la variable acaba pagando más intereses que la fija. Si el Euríbor sube o baja con el tiempo, el resultado cambia y pesan más los primeros años."
     ],
     [
       "¿Cada cuánto se revisa una hipoteca variable?",
@@ -90,5 +93,5 @@
       "Entonces no cambian la comparación y puedes ignorarlas siempre que introduzcas los tipos ya con la bonificación aplicada. Si solo una oferta las exige (seguros, nómina, tarjeta), compara los tipos finales y suma el coste real de esos productos."
     ]
   ],
-  "sources": "Euríbor: valores oficiales publicados por el Banco de España (media mensual a 12 meses); el valor por defecto es el último dato mensual publicado (BCE, el mismo que ves en «Dato de hoy») y puedes cambiarlo por el de tu oferta. Cuotas con el sistema de amortización francesa. Modelo simplificado: revisión anual, un solo cambio de Euríbor tras el primer año que se mantiene hasta el final, sin comisiones, seguros ni bonificaciones."
+  "sources": "Euríbor 12 meses, media mensual (BCE; el mismo valor oficial lo publica el Banco de España en el BOE): el valor por defecto es el último dato mensual publicado (el mismo que ves en «Dato de hoy») y puedes cambiarlo por el de tu oferta. El tipo fijo por defecto es el tipo medio de las nuevas hipotecas fijas a más de 10 años (BCE, último mes publicado); cámbialo por el de tu oferta. Cuotas con el sistema de amortización francesa. Modelo simplificado: revisión anual, un solo cambio de Euríbor tras el primer año que se mantiene hasta el final, sin comisiones, seguros ni bonificaciones."
 }

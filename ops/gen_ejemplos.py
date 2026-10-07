@@ -103,7 +103,7 @@ def ej_fija_variable(i, r):
                ("Intereses totales de la fija", eur(r["intFija"])), ("Intereses totales de la variable", eur(r["intVar"])),
                ("Intereses menos con la " + ("fija" if r["diferencia"] > 0 else "variable"), eur(abs(r["diferencia"]))),
                ("Euríbor medio de equilibrio", pct(r["euriborEquilibrio"]))],
-        frase=f"Con estos supuestos, la fija sale más barata en intereses si el Euríbor medio de los {r['anosRestantes']} años siguientes al primero supera el {pct(r['euriborEquilibrio'])}; si se mantiene en {pct(i['euribor'], 3)}, la fija ahorra {eur(abs(r['diferencia']))}, y si queda por debajo del {pct(r['euriborEquilibrio'])}, la variable pagaría menos.")
+        frase=f"Con estos supuestos, si el Euríbor se queda, de forma estable, por encima del {pct(r['euriborEquilibrio'])} durante los {num(r['anosRestantes'], 0) if r['anosRestantes'] == int(r['anosRestantes']) else num(r['anosRestantes'], 1)} años siguientes al primero, la fija sale más barata en intereses; si se mantiene en {pct(i['euribor'], 3)}, la fija ahorra {eur(abs(r['diferencia']))}, y si queda estable por debajo, la variable pagaría menos. Si el Euríbor sube o baja con el tiempo el resultado cambia y los primeros años pesan más: con el Euríbor subiendo del 1 % al 2,95 % la variable ahorraría 7.200 € y bajando del 2,95 % al 1 % costaría 12.372 € más (ambas sendas con la misma media, 1,975 %, por encima del umbral; cifras comprobadas con ops/verif/hipoteca-fija-o-variable.py).")
 
 DATOS_FIJOS = "tipo medio de las nuevas hipotecas fijas 2,76 % (BCE, media de agosto de 2026) y Euríbor 12 meses 3,247 % (BCE, media de septiembre de 2026), tal como estaban en data/live.json el 3-oct-2026; se fijan aquí y no cambian solos"
 EJEMPLOS = {
@@ -115,7 +115,7 @@ EJEMPLOS = {
     "hipoteca-bonificada-o-sin-vinculaciones": (ej_bonificada, {"capital": 150000, "plazo": 25, "tin": 2.76, "bonif": 0.5, "vinc": 300, "aperturaBon": 0, "aperturaSin": 0, "horizonte": 25}),
     "seguro-todo-riesgo-o-terceros": (ej_seguro, {"valor": 18000, "deprec": 12, "primaTerceros": 380, "primaTR": 720, "franquicia": 300, "prob": 10, "coste": 3000, "anos": 5}),
     "subrogar-hipoteca-merece-la-pena": (ej_subrogar, {"capital": 150000, "tipoActual": 3.5, "anos": 20, "tipoNuevo": 2.76, "comision": 0.05, "gastos": 1500, "vinculacion": 300, "horizonte": 10}),
-    "hipoteca-fija-o-variable": (ej_fija_variable, {"capital": 150000, "anos": 25, "fijo": 2.8, "dif": 0.8, "euribor": 3.247, "escenario": 0}),
+    "hipoteca-fija-o-variable": (ej_fija_variable, {"capital": 150000, "anos": 25, "fijo": 2.76, "dif": 0.8, "euribor": 3.247, "escenario": 0}),
 }
 VIVOS = {"hipoteca-20-25-o-30-anos-cuota-vs-intereses", "hipoteca-bonificada-o-sin-vinculaciones", "subrogar-hipoteca-merece-la-pena", "hipoteca-fija-o-variable"}
 

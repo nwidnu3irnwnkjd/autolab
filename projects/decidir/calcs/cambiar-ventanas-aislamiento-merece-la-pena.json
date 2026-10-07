@@ -1,9 +1,9 @@
 {
   "slug": "cambiar-ventanas-aislamiento-merece-la-pena",
-  "title": "Cambiar ventanas: ¿merece la pena? Años para amortizar",
+  "title": "¿Compensa cambiar ventanas o aislar? Años para amortizar",
   "description": "Calcula en cuántos años se amortiza cambiar las ventanas o aislar tu vivienda según tu gasto de climatización, el coste de la obra y tu consumo real.",
   "h1": "¿Merece la pena cambiar las ventanas o aislar la vivienda?",
-  "lead": "Cambiar ventanas o aislar compensa si el ahorro acumulado en tu horizonte supera el coste neto, es decir, si ahorras al menos el porcentaje mínimo que calcula esta página con tu gasto y tu presupuesto; el porcentaje de ahorro es un supuesto tuyo, no una promesa. Con los datos de ejemplo (800 € al año, 20 % de ahorro y 6.000 € de coste) te dice en cuántos años se amortiza. Cámbialos por los tuyos para ver tu plazo.",
+  "lead": "Cambiar ventanas o aislar compensa si el ahorro acumulado en tu horizonte supera el coste neto, es decir, si ahorras al menos el porcentaje mínimo que calcula esta página; ese porcentaje es un supuesto tuyo, no una promesa. Con los datos de ejemplo (800 € al año de gasto, 20 % de ahorro, 6.000 € de coste y 15 años) se amortiza en unos 28 años y necesitarías ahorrar al menos un 43 %, así que no compensa. Cámbialos por los tuyos.",
   "veredicto": "Aislar o cambiar ventanas compensa si el ahorro acumulado en tu horizonte supera el coste neto; la página calcula el porcentaje mínimo de ahorro que necesitas con tu gasto y tu presupuesto, porque el ahorro real depende de la vivienda y los hábitos y no se puede prometer.",
   "tema": "energia",
   "inputs": [
@@ -83,23 +83,23 @@
   "faqs": [
     [
       "¿En cuántos años se amortiza cambiar las ventanas?",
-      "Depende de tu gasto, de cuánto ahorres y de lo que cueste: la amortización simple es el coste neto entre el ahorro del primer año. La calculadora la da también con subida de la energía y descontando el dinero a tu tasa. Además calcula el porcentaje mínimo de ahorro para amortizar en tu horizonte."
+      "Depende de tu gasto, del ahorro y del coste: la amortización simple es el coste neto entre el ahorro del primer año. La calculadora la da también con subida de la energía y descontada a tu tasa, y calcula el ahorro mínimo para amortizar en tu horizonte."
     ],
     [
       "¿Cuánto se ahorra de calefacción con ventanas nuevas o aislamiento?",
-      "No hay una cifra única. El IDAE cita en una guía ahorros de hasta el 45 % de las pérdidas de calor al mejorar las ventanas en un ejemplo concreto y del orden del 30 % con medidas de aislamiento, pero tu ahorro real depende del estado de partida, la orientación y tus hábitos. Por eso el porcentaje es una entrada editable y no un dato."
+      "No hay una cifra única. El IDAE cita en un ejemplo hasta un 45 % menos de pérdidas de calor al mejorar ventanas y del orden del 30 % con aislamiento, pero tu ahorro depende del estado de partida, la orientación y tus hábitos. Por eso el porcentaje es editable."
     ],
     [
       "¿Hay ayudas o deducciones por mejorar la eficiencia energética?",
-      "Sí: en el IRPF existen deducciones del 20 %, 40 % o 60 % según la mejora conseguida y con límites, para obras con pagos hasta el 31 de diciembre de 2026 (la del 60 %, para comunidades, hasta 2027) y con certificado de eficiencia energética. Tienen requisitos, así que confirma los requisitos antes de contar con ellas y escribe en la calculadora solo el importe que tengas confirmado; además pueden existir ayudas autonómicas."
+      "Sí: en el IRPF hay deducciones del 20 %, 40 % o 60 % según la mejora, con límites, para obras pagadas hasta el 31 de diciembre de 2026 (la del 60 % de comunidades, hasta 2027) y con certificado energético. Anota solo el importe confirmado; puede haber ayudas autonómicas."
     ],
     [
       "¿Qué es el VAN (valor actual neto) y por qué sale distinto de la amortización?",
-      "El VAN suma los ahorros de cada año, valorados a la tasa que elijas, y resta el coste. Una amortización en 9 años puede tener VAN negativo con una tasa alta, porque un euro ahorrado dentro de 9 años vale menos que hoy. Si el VAN es positivo en tu horizonte, la actuación compensa incluso valorando el dinero."
+      "El VAN suma los ahorros de cada año, valorados a la tasa que elijas, y resta el coste. Una amortización en 9 años puede tener VAN negativo con tasa alta, porque un euro ahorrado dentro de 9 años vale menos que hoy. Si el VAN es positivo, compensa."
     ],
     [
       "¿Qué no cuenta esta calculadora?",
-      "No pone precio al confort, al ruido ni a las humedades y condensaciones, que a veces son el motivo real de reformar; tampoco la vida útil de la obra más allá de tu horizonte, ni la financiación, ni el mantenimiento. Supone que el ahorro es un porcentaje fijo de tu gasto actual, que sube con la energía."
+      "No pone precio al confort, al ruido ni a las humedades, que a veces son el motivo real de reformar; tampoco la vida útil más allá del horizonte, la financiación ni el mantenimiento. Supone un ahorro porcentual fijo sobre tu gasto, que sube con la energía."
     ]
   ],
   "sources": "Modelo propio: ahorro del año t = gasto anual x % de ahorro x (1 + subida)^(t-1); coste neto = coste - ayudas; amortización simple = coste neto / ahorro del primer año; con subida y descontada, año (con fracción lineal) en que el ahorro acumulado, sin o con descuento a tu tasa, iguala el coste neto; VAN = suma de los ahorros descontados - coste neto; porcentaje mínimo = coste neto / (gasto x suma de los factores de subida del horizonte). Rangos de ahorro orientativos, no promesas: del 30 % de ahorro del orden de magnitud que cita el IDAE para mejoras de aislamiento y del 45 % de reducción de pérdidas de calor al mejorar las ventanas en un ejemplo suyo, en la Guía práctica de rehabilitación de edificios del IDAE (https://www.idae.es/uploads/documentos/documentos_10501_Guia_practica_rehabilitacion_edificios_aislamiento_5266ec2a.pdf, consultado el 2/10/2026); el ahorro de tu vivienda puede ser muy distinto. Deducciones del IRPF por obras de mejora de la eficiencia energética del 20 %, 40 % y 60 % (disposición adicional 50.ª de la Ley 35/2006, https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764; pagos hasta el 31/12/2026, y hasta el 31/12/2027 la del 60 % de comunidades; consultado el 2/10/2026): no se modelan; solo cuentan si introduces su importe en «Ayudas», con certificado y requisitos. Supuestos de ejemplo, no oficiales y editables: gasto de 800 €, ahorro del 20 %, coste de 6.000 €, horizonte de 15 años, subida de la energía del 2 % y tasa del 3 %. Información orientativa, no un presupuesto ni asesoramiento."
