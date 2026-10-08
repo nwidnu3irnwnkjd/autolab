@@ -4894,6 +4894,1179 @@
      "texto": "netos de impuestos, el depósito te dejaría 474,00 €, las Letras 448,54 € y el fondo 268,60 €: sale mejor el depósito por 25,46 € sobre la segunda opción."
     }
    ]
+  },
+  "actualizacion-renta-alquiler-irav-ipc": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "renta": 800,
+      "firma": "post",
+      "indice": "ipc",
+      "aniv": "2026-10-08",
+      "irav": 2.47,
+      "ipc": 4.3,
+      "pide": 860,
+      "sup": "no"
+     },
+     "resultado": {
+      "noModelado": 0,
+      "exacto": 1,
+      "pct": 2,
+      "escenario": 3,
+      "ventana": 1,
+      "nueva": 816,
+      "subidaMes": 16,
+      "subidaAnio": 192,
+      "nuevaSinTope": 819.76,
+      "mesCobro": 11,
+      "excesoMes": 44,
+      "excesoAnio": 528
+     },
+     "titulo": "renta de 800,00 € al mes, contrato posterior a mayo de 2023, cláusula con IPC, IRAV del 2,47 %, IPC del 4,30 % y aniversario el 8/10/2026 (dentro del periodo con tope del 2 %)",
+     "texto": "la renta pasaría de 800,00 € a 816,00 € al mes (2,00 %, 16,00 € más al mes y 192,00 € más al año); sin tope serían 819,76 €."
+    },
+    {
+     "inputs": {
+      "renta": 800,
+      "firma": "post",
+      "indice": "ipc",
+      "aniv": "2028-01-01",
+      "irav": 2.47,
+      "ipc": 4.3,
+      "pide": 819.76,
+      "sup": "no"
+     },
+     "resultado": {
+      "noModelado": 0,
+      "exacto": 1,
+      "pct": 2.47,
+      "escenario": 2,
+      "ventana": 0,
+      "nueva": 819.76,
+      "subidaMes": 19.76,
+      "subidaAnio": 237.12,
+      "nuevaSinTope": 819.76,
+      "mesCobro": 2,
+      "excesoMes": 0,
+      "excesoAnio": 0
+     },
+     "titulo": "renta de 800,00 € al mes, contrato posterior a mayo de 2023, cláusula con IPC, IRAV del 2,47 %, IPC del 4,30 % y aniversario el 1/1/2028 (fuera del periodo con tope del 2 %)",
+     "texto": "la renta pasaría de 800,00 € a 819,76 € al mes (2,47 %, 19,76 € más al mes y 237,12 € más al año)."
+    },
+    {
+     "inputs": {
+      "renta": 1000,
+      "firma": "post",
+      "indice": "ipc",
+      "aniv": "2026-10-08",
+      "irav": 2.47,
+      "ipc": 1.8,
+      "pide": 1018,
+      "sup": "no"
+     },
+     "resultado": {
+      "noModelado": 0,
+      "exacto": 1,
+      "pct": 1.8,
+      "escenario": 2,
+      "ventana": 1,
+      "nueva": 1018,
+      "subidaMes": 18,
+      "subidaAnio": 216,
+      "nuevaSinTope": 1018,
+      "mesCobro": 11,
+      "excesoMes": 0,
+      "excesoAnio": 0
+     },
+     "titulo": "renta de 1.000,00 € al mes, contrato posterior a mayo de 2023, cláusula con IPC, IRAV del 2,47 %, IPC del 1,80 % y aniversario el 8/10/2026 (dentro del periodo con tope del 2 %)",
+     "texto": "la renta pasaría de 1.000,00 € a 1.018,00 € al mes (1,80 %, 18,00 € más al mes y 216,00 € más al año)."
+    }
+   ]
+  },
+  "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "grado": "total",
+      "origen": "comun",
+      "base": 2000,
+      "edad": 52,
+      "anos": 25,
+      "trabajo": "no",
+      "salario": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 1714.2857,
+      "pct_anos": 100,
+      "pen": 942.8571,
+      "capado": 0,
+      "comp": 0,
+      "minimo": 690.2,
+      "topup": 0,
+      "pen_final": 942.8571,
+      "cual": 0,
+      "tanto": 0,
+      "pagado": 942.8571,
+      "total_mes": 942.8571,
+      "exenta": 0,
+      "anual": 13200.0,
+      "rest": 178,
+      "tot": 478,
+      "suelo": 684.3
+     },
+     "titulo": "incapacidad permanente total, por enfermedad común, base de cotización de 2.000 €, 52 años y 25 años cotizados, sin trabajar",
+     "texto": "con una base reguladora de 1.714,29 €, cobrarías 942,86 € al mes en 14 pagas, 13.200 € al año."
+    },
+    {
+     "inputs": {
+      "grado": "absoluta",
+      "origen": "comun",
+      "base": 2000,
+      "edad": 52,
+      "anos": 25,
+      "trabajo": "no",
+      "salario": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 1714.2857,
+      "pct_anos": 100,
+      "pen": 1714.2857,
+      "capado": 0,
+      "comp": 0,
+      "minimo": 936.2,
+      "topup": 0,
+      "pen_final": 1714.2857,
+      "cual": 0,
+      "tanto": 0,
+      "pagado": 1714.2857,
+      "total_mes": 1714.2857,
+      "exenta": 1,
+      "anual": 24000,
+      "rest": 178,
+      "tot": 478,
+      "suelo": 0
+     },
+     "titulo": "incapacidad permanente absoluta, por enfermedad común, base de cotización de 2.000 €, 52 años y 25 años cotizados, sin trabajar",
+     "texto": "con una base reguladora de 1.714,29 €, cobrarías 1.714,29 € al mes en 14 pagas, 24.000 € al año. La pensión de incapacidad absoluta y gran incapacidad está exenta de IRPF."
+    },
+    {
+     "inputs": {
+      "grado": "gran",
+      "origen": "comun",
+      "base": 2000,
+      "edad": 52,
+      "anos": 25,
+      "trabajo": "no",
+      "salario": 0
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "br": 1714.2857,
+      "pct_anos": 100,
+      "pen": 1714.2857,
+      "capado": 0,
+      "comp": 1240.98,
+      "minimo": 1404.3,
+      "topup": 0,
+      "pen_final": 1714.2857,
+      "cual": 0,
+      "tanto": 0,
+      "pagado": 2955.2657,
+      "total_mes": 2955.2657,
+      "exenta": 1,
+      "anual": 41373.72,
+      "rest": 178,
+      "tot": 478,
+      "suelo": 0
+     },
+     "titulo": "incapacidad permanente con gran incapacidad, por enfermedad común, base de cotización de 2.000 €, 52 años y 25 años cotizados, sin trabajar",
+     "texto": "con una base reguladora de 1.714,29 €, cobrarías 2.955,27 € al mes en 14 pagas, 41.374 € al año, suma de 1.714,29 € de pensión y 1.240,98 € de complemento por gran incapacidad. La pensión de incapacidad absoluta y gran incapacidad está exenta de IRPF."
+    }
+   ]
+  },
+  "irpf-alquilar-vivienda-rendimiento-neto": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "contrato": "b50",
+      "renta": 800,
+      "meses": 12,
+      "otros": 900,
+      "interep": 2500,
+      "adq": 120000,
+      "cat": 60000,
+      "tipo": 30
+     },
+     "resultado": {
+      "noModelado": 0,
+      "ingresos": 9600,
+      "amort": 3600,
+      "finDeducido": 2500,
+      "previo": 2600,
+      "pct": 50,
+      "reduccion": 1300,
+      "reducido": 1300,
+      "cuota": 390,
+      "neto": 5810,
+      "rentaCubre": 283.3333,
+      "rentaIrpf": 583.3333,
+      "n50": 5810,
+      "n60": 5888,
+      "n70": 5966,
+      "n90": 6122,
+      "r60": 792.6136,
+      "r70": 785.7143,
+      "r90": 773.1959
+     },
+     "titulo": "alquiler de 800 € al mes durante 12 meses, 900 € de gastos, 2.500 € de intereses, tipo marginal del 30 % y reducción del 50 %",
+     "texto": "ingresas 9.600 € y el rendimiento previo es de 2.600 €; con la reducción del 50 % tributas por 1.300 €, pagas 390 € de IRPF y te quedan 5.810 € netos tras gastos e impuesto."
+    },
+    {
+     "inputs": {
+      "contrato": "b70",
+      "renta": 1100,
+      "meses": 12,
+      "otros": 900,
+      "interep": 2500,
+      "adq": 120000,
+      "cat": 60000,
+      "tipo": 37
+     },
+     "resultado": {
+      "noModelado": 0,
+      "ingresos": 13200,
+      "amort": 3600,
+      "finDeducido": 2500,
+      "previo": 6200,
+      "pct": 70,
+      "reduccion": 4340,
+      "reducido": 1860.0,
+      "cuota": 688.2,
+      "neto": 9111.8,
+      "rentaCubre": 283.3333,
+      "rentaIrpf": 583.3333,
+      "n50": 8653,
+      "n60": 8882.4,
+      "n70": 9111.8,
+      "n90": 9570.6,
+      "r60": 1100,
+      "r70": 1100,
+      "r90": 1060.2977
+     },
+     "titulo": "alquiler de 1.100 € al mes durante 12 meses, 900 € de gastos, 2.500 € de intereses, tipo marginal del 37 % y reducción del 70 %",
+     "texto": "ingresas 13.200 € y el rendimiento previo es de 6.200 €; con la reducción del 70 % tributas por 1.860 €, pagas 688 € de IRPF y te quedan 9.112 € netos tras gastos e impuesto."
+    },
+    {
+     "inputs": {
+      "contrato": "b90",
+      "renta": 950,
+      "meses": 12,
+      "otros": 900,
+      "interep": 2500,
+      "adq": 120000,
+      "cat": 60000,
+      "tipo": 30
+     },
+     "resultado": {
+      "noModelado": 0,
+      "ingresos": 11400,
+      "amort": 3600,
+      "finDeducido": 2500,
+      "previo": 4400,
+      "pct": 90,
+      "reduccion": 3960,
+      "reducido": 440.0,
+      "cuota": 132.0,
+      "neto": 7868,
+      "rentaCubre": 283.3333,
+      "rentaIrpf": 583.3333,
+      "n50": 7340,
+      "n60": 7472,
+      "n70": 7604,
+      "n90": 7868,
+      "r60": 950,
+      "r70": 950,
+      "r90": 950
+     },
+     "titulo": "alquiler de 950 € al mes durante 12 meses, 900 € de gastos, 2.500 € de intereses, tipo marginal del 30 % y reducción del 90 % (zona tensionada)",
+     "texto": "ingresas 11.400 € y el rendimiento previo es de 4.400 €; con la reducción del 90 % tributas por 440 €, pagas 132 € de IRPF y te quedan 7.868 € netos tras gastos e impuesto."
+    }
+   ]
+  },
+  "horas-valle-luz-lavadora-termo-cuanto-ahorro": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "kwhUso": 1.0,
+      "usosSem": 6,
+      "kwhTermo": 10,
+      "pctDesp": 70,
+      "precioPunta": 0.2048,
+      "precioLlano": 0.1331,
+      "precioValle": 0.1194,
+      "franja": 0
+     },
+     "resultado": {
+      "kwhAnio": 834.2857,
+      "kwhDesp": 584,
+      "precioOrigen": 0.1693,
+      "precioValle": 0.1519,
+      "ahorroKwh": 0.0174,
+      "ahorroAnual": 10.1759,
+      "ahorroMes": 0.848,
+      "ahorroMax": 14.537,
+      "costeHoy": 98.8625,
+      "costeValle": 88.6865,
+      "estado": 0,
+      "ganador": 0
+     },
+     "titulo": "lavadora de 1,0 kWh por uso y 6 usos a la semana, termo de 10 kWh a la semana, 70 % desplazable al valle, precios de 0,2048/0,1331/0,1194 €/kWh (punta/llano/valle) y uso actual en el llano",
+     "texto": "moverlo al valle bajaría ese consumo de 98,86 € a 88,69 € al año: ahorrarías 10,18 € al año (0,85 € al mes)."
+    },
+    {
+     "inputs": {
+      "kwhUso": 1.0,
+      "usosSem": 6,
+      "kwhTermo": 10,
+      "pctDesp": 70,
+      "precioPunta": 0.2048,
+      "precioLlano": 0.1331,
+      "precioValle": 0.1194,
+      "franja": 1
+     },
+     "resultado": {
+      "kwhAnio": 834.2857,
+      "kwhDesp": 584,
+      "precioOrigen": 0.2605,
+      "precioValle": 0.1519,
+      "ahorroKwh": 0.1086,
+      "ahorroAnual": 63.4324,
+      "ahorroMes": 5.286,
+      "ahorroMax": 90.6177,
+      "costeHoy": 152.119,
+      "costeValle": 88.6865,
+      "estado": 0,
+      "ganador": 0
+     },
+     "titulo": "lavadora de 1,0 kWh por uso y 6 usos a la semana, termo de 10 kWh a la semana, 70 % desplazable al valle, precios de 0,2048/0,1331/0,1194 €/kWh (punta/llano/valle) y uso actual en la punta",
+     "texto": "moverlo al valle bajaría ese consumo de 152,12 € a 88,69 € al año: ahorrarías 63,43 € al año (5,29 € al mes)."
+    },
+    {
+     "inputs": {
+      "kwhUso": 1.0,
+      "usosSem": 6,
+      "kwhTermo": 10,
+      "pctDesp": 70,
+      "precioPunta": 0.2048,
+      "precioLlano": 0.1331,
+      "precioValle": 0.2,
+      "franja": 0
+     },
+     "resultado": {
+      "kwhAnio": 834.2857,
+      "kwhDesp": 584,
+      "precioOrigen": 0.1693,
+      "precioValle": 0.2544,
+      "ahorroKwh": -0.0851,
+      "ahorroAnual": -49.6912,
+      "ahorroMes": -4.1409,
+      "ahorroMax": -70.9874,
+      "costeHoy": 98.8625,
+      "costeValle": 148.5537,
+      "estado": 2,
+      "ganador": 1
+     },
+     "titulo": "lavadora de 1,0 kWh por uso y 6 usos a la semana, termo de 10 kWh a la semana, 70 % desplazable al valle, precios de 0,2048/0,1331/0,2000 €/kWh (punta/llano/valle) y uso actual en el llano",
+     "texto": "el valle es más caro que tu franja actual: pasarías de 98,86 € a 148,55 € al año en ese consumo y pagarías 49,69 € más; no compensa mover."
+    }
+   ]
+  },
+  "aire-acondicionado-inverter-o-ventilador-coste-verano": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "kwInv": 0.6,
+      "kwAlt": 0.05,
+      "horas": 6,
+      "dias": 90,
+      "precio": 0.2,
+      "compraInv": 800,
+      "compraAlt": 40,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhInv": 324,
+      "kwhAlt": 27,
+      "costeInv": 82.4168,
+      "costeAlt": 6.8681,
+      "ahorroAnual": -75.5487,
+      "extraCompra": 760,
+      "totalInv": 1624.1676,
+      "totalAlt": 108.6806,
+      "diferencia": -1515.487,
+      "aniosAmort": -1,
+      "horasEq": -1,
+      "esVentilador": 1,
+      "ganador": 1
+     },
+     "titulo": "inverter de 0,6 kW (compra de 800 €) frente a una alternativa de 0,05 kW (compra de 40 €), 6 horas al día durante 90 días, 0,20 €/kWh y 10 años de vida",
+     "texto": "el inverter costaría 82,42 € al año de luz y el ventilador 6,87 €; con la compra repartida en 10 años, el ventilador sale 1.515 € más barato."
+    },
+    {
+     "inputs": {
+      "kwInv": 0.6,
+      "kwAlt": 1.0,
+      "horas": 6,
+      "dias": 90,
+      "precio": 0.2,
+      "compraInv": 800,
+      "compraAlt": 500,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhInv": 324,
+      "kwhAlt": 540,
+      "costeInv": 82.4168,
+      "costeAlt": 137.3613,
+      "ahorroAnual": 54.9445,
+      "extraCompra": 300,
+      "totalInv": 1624.1676,
+      "totalAlt": 1873.6127,
+      "diferencia": 249.4451,
+      "aniosAmort": 5.4601,
+      "horasEq": 3.276,
+      "esVentilador": 0,
+      "ganador": 0
+     },
+     "titulo": "inverter de 0,6 kW (compra de 800 €) frente a una alternativa de 1,00 kW (compra de 500 €), 6 horas al día durante 90 días, 0,20 €/kWh y 10 años de vida",
+     "texto": "el inverter costaría 82,42 € al año de luz y la alternativa 137,36 €; con la compra repartida en 10 años, el inverter sale 249 € más barato. El inverter compensa a partir de 3,3 horas al día."
+    },
+    {
+     "inputs": {
+      "kwInv": 0.6,
+      "kwAlt": 1.0,
+      "horas": 1,
+      "dias": 90,
+      "precio": 0.2,
+      "compraInv": 800,
+      "compraAlt": 500,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhInv": 54,
+      "kwhAlt": 90,
+      "costeInv": 13.7361,
+      "costeAlt": 22.8935,
+      "ahorroAnual": 9.1574,
+      "extraCompra": 300,
+      "totalInv": 937.3613,
+      "totalAlt": 728.9355,
+      "diferencia": -208.4258,
+      "aniosAmort": 32.7603,
+      "horasEq": 3.276,
+      "esVentilador": 0,
+      "ganador": 1
+     },
+     "titulo": "inverter de 0,6 kW (compra de 800 €) frente a una alternativa de 1,00 kW (compra de 500 €), 1 hora al día durante 90 días, 0,20 €/kWh y 10 años de vida",
+     "texto": "el inverter costaría 13,74 € al año de luz y la alternativa 22,89 €; con la compra repartida en 10 años, la alternativa sale 208 € más barato."
+    }
+   ]
+  },
+  "freidora-de-aire-u-horno-cuanto-gasta": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "alt": 0,
+      "usos": 4,
+      "precio": 0.2,
+      "precioGas": 0.064,
+      "kwFr": 1.4,
+      "minFr": 20,
+      "minAlt": 35,
+      "compra": 80
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhFr": 0.5367,
+      "kwhAlt": 1.125,
+      "costeFr": 0.1365,
+      "costeAlt": 0.2862,
+      "usosAno": 208,
+      "anualFr": 28.3948,
+      "anualAlt": 59.5232,
+      "amortAnual": 10,
+      "totalFr": 38.3948,
+      "diferencia": 21.1284,
+      "ahorroEnergia": 31.1284,
+      "aniosAmort": 2.57,
+      "usosEq": 1.285,
+      "esGas": 0,
+      "ganador": 0
+     },
+     "titulo": "freidora de aire de 1,4 kW (compra de 80 €) frente al horno eléctrico tradicional, 4 usos a la semana, 20 minutos de cocción con la freidora frente a 35 con la otra opción",
+     "texto": "la freidora costaría 28,39 € al año de energía (38,39 € con la compra repartida) y el horno eléctrico tradicional 59,52 €: sale más barato la freidora por 21,13 € al año."
+    },
+    {
+     "inputs": {
+      "alt": 2,
+      "usos": 4,
+      "precio": 0.2,
+      "precioGas": 0.064,
+      "kwFr": 1.4,
+      "minFr": 20,
+      "minAlt": 8,
+      "compra": 80
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhFr": 0.5367,
+      "kwhAlt": 0.1067,
+      "costeFr": 0.1365,
+      "costeAlt": 0.0271,
+      "usosAno": 208,
+      "anualFr": 28.3948,
+      "anualAlt": 5.6437,
+      "amortAnual": 10,
+      "totalFr": 38.3948,
+      "diferencia": -32.7511,
+      "ahorroEnergia": -22.7511,
+      "aniosAmort": -1,
+      "usosEq": -1,
+      "esGas": 0,
+      "ganador": 1
+     },
+     "titulo": "freidora de aire de 1,4 kW (compra de 80 €) frente al microondas, 4 usos a la semana, 20 minutos de cocción con la freidora frente a 8 con la otra opción",
+     "texto": "la freidora costaría 28,39 € al año de energía (38,39 € con la compra repartida) y el microondas 5,64 €: sale más barato la alternativa por 32,75 € al año."
+    },
+    {
+     "inputs": {
+      "alt": 3,
+      "usos": 4,
+      "precio": 0.2,
+      "precioGas": 0.064,
+      "kwFr": 1.4,
+      "minFr": 20,
+      "minAlt": 35,
+      "compra": 80
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhFr": 0.5367,
+      "kwhAlt": 1.4333,
+      "costeFr": 0.1365,
+      "costeAlt": 0.0917,
+      "usosAno": 208,
+      "anualFr": 28.3948,
+      "anualAlt": 19.0805,
+      "amortAnual": 10,
+      "totalFr": 38.3948,
+      "diferencia": -19.3142,
+      "ahorroEnergia": -9.3142,
+      "aniosAmort": -1,
+      "usosEq": -1,
+      "esGas": 1,
+      "ganador": 1
+     },
+     "titulo": "freidora de aire de 1,4 kW (compra de 80 €) frente al horno de gas, 4 usos a la semana, 20 minutos de cocción con la freidora frente a 35 con la otra opción",
+     "texto": "la freidora costaría 28,39 € al año de energía (38,39 € con la compra repartida) y el horno de gas 19,08 €: sale más barato la alternativa por 19,31 € al año."
+    }
+   ]
+  },
+  "paro-autonomos-cese-actividad-cuanto-cobro": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "base": 1200,
+      "m48": 24,
+      "m24": 24,
+      "hijos": 0,
+      "causa": "eco",
+      "edad": 45,
+      "trabaja": "no",
+      "anterior": "nunca"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "prest": 840,
+      "raw": 840,
+      "tope": 1225,
+      "minimo": 560,
+      "ap": 0,
+      "dur": 8,
+      "total": 6720,
+      "condTrabajo": 0,
+      "condEdad": 0,
+      "hijos": 0,
+      "m48": 24,
+      "m24": 24
+     },
+     "titulo": "base de cotización de 1.200 €/mes, 24 meses cotizados por cese en 48 meses, 0 hijos a cargo, cese por motivos económicos y 45 años",
+     "texto": "cobrarías 840,00 € al mes durante 8 meses: 6.720,00 € en total."
+    },
+    {
+     "inputs": {
+      "base": 2000,
+      "m48": 24,
+      "m24": 24,
+      "hijos": 0,
+      "causa": "eco",
+      "edad": 45,
+      "trabaja": "no",
+      "anterior": "nunca"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "prest": 1225,
+      "raw": 1400,
+      "tope": 1225,
+      "minimo": 560,
+      "ap": 1,
+      "dur": 8,
+      "total": 9800,
+      "condTrabajo": 0,
+      "condEdad": 0,
+      "hijos": 0,
+      "m48": 24,
+      "m24": 24
+     },
+     "titulo": "base de cotización de 2.000 €/mes, 24 meses cotizados por cese en 48 meses, 0 hijos a cargo, cese por motivos económicos y 45 años",
+     "texto": "cobrarías 1.225,00 € al mes durante 8 meses: 9.800,00 € en total; el tope legal de 1.225 €/mes limita la cuantía (el 70 % de tu base serían 1.400,00 €)."
+    },
+    {
+     "inputs": {
+      "base": 800,
+      "m48": 24,
+      "m24": 24,
+      "hijos": 0,
+      "causa": "eco",
+      "edad": 45,
+      "trabaja": "no",
+      "anterior": "nunca"
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "prest": 560,
+      "raw": 560,
+      "tope": 1225,
+      "minimo": 560,
+      "ap": 0,
+      "dur": 8,
+      "total": 4480,
+      "condTrabajo": 0,
+      "condEdad": 0,
+      "hijos": 0,
+      "m48": 24,
+      "m24": 24
+     },
+     "titulo": "base de cotización de 800 €/mes, 24 meses cotizados por cese en 48 meses, 0 hijos a cargo, cese por motivos económicos y 45 años",
+     "texto": "cobrarías 560,00 € al mes durante 8 meses: 4.480,00 € en total."
+    }
+   ]
+  },
+  "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "tipo": "paro",
+      "cuantia": 1100,
+      "sueldo": 800,
+      "jornada": 50,
+      "meses": 6,
+      "duracion": 6,
+      "irpf": 15,
+      "inicio": 1
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "cn": 935,
+      "H": 6,
+      "M": 6,
+      "nw": 6,
+      "totalA": 5610,
+      "restA": 0,
+      "ext": 0,
+      "nCae": 0,
+      "caeBruto": 0,
+      "cae1": 0,
+      "riesgo12": 0,
+      "bOk": 1,
+      "cOk": 1,
+      "mensualB": 1267.5,
+      "totalB": 7605,
+      "restB": 0,
+      "totalC": 4800,
+      "restC": 6,
+      "umbralB": 467.5,
+      "umbralC": 935,
+      "gananciaB": 1995,
+      "gananciaC": -810,
+      "winner": 2,
+      "second": 1,
+      "margen": 1995,
+      "empate": 0
+     },
+     "titulo": "paro de 1.100 € brutos al mes con 6 meses por cobrar, trabajo de 800 € netos al mes al 50 % de jornada durante 6 meses e IRPF del 15 %",
+     "texto": "seguir solo con el paro daría 5.610 €; compatibilizar daría 7.605 € y trabajar renunciando al paro 4.800 €: sale mejor compatibilizar el trabajo con el paro por 1.995 € sobre la segunda opción."
+    },
+    {
+     "inputs": {
+      "tipo": "paro",
+      "cuantia": 1100,
+      "sueldo": 1400,
+      "jornada": 100,
+      "meses": 6,
+      "duracion": 6,
+      "irpf": 15,
+      "inicio": 1
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "cn": 935,
+      "H": 6,
+      "M": 6,
+      "nw": 6,
+      "totalA": 5610,
+      "restA": 0,
+      "ext": 0,
+      "nCae": 0,
+      "caeBruto": 0,
+      "cae1": 0,
+      "riesgo12": 0,
+      "bOk": 0,
+      "cOk": 1,
+      "mensualB": 1400,
+      "totalB": 0,
+      "restB": 0,
+      "totalC": 8400,
+      "restC": 6,
+      "umbralB": 0,
+      "umbralC": 935,
+      "gananciaB": 0,
+      "gananciaC": 2790,
+      "winner": 3,
+      "second": 1,
+      "margen": 2790,
+      "empate": 0
+     },
+     "titulo": "paro de 1.100 € brutos al mes con 6 meses por cobrar, trabajo de 1.400 € netos al mes al 100 % de jornada durante 6 meses e IRPF del 15 %",
+     "texto": "seguir solo con el paro daría 5.610 €; compatibilizar no es posible a jornada completa y trabajar renunciando al paro 8.400 €: sale mejor trabajar renunciando al paro por 2.790 € sobre la segunda opción."
+    },
+    {
+     "inputs": {
+      "tipo": "paro",
+      "cuantia": 1100,
+      "sueldo": 1400,
+      "jornada": 100,
+      "meses": 6,
+      "duracion": 12,
+      "irpf": 15,
+      "inicio": 1
+     },
+     "resultado": {
+      "bloqueo": 0,
+      "cn": 935,
+      "H": 12,
+      "M": 6,
+      "nw": 6,
+      "totalA": 5610,
+      "restA": 0,
+      "ext": 1,
+      "nCae": 0,
+      "caeBruto": 0,
+      "cae1": 0,
+      "riesgo12": 0,
+      "bOk": 0,
+      "cOk": 1,
+      "mensualB": 1400,
+      "totalB": 0,
+      "restB": 0,
+      "totalC": 16800,
+      "restC": 0,
+      "umbralB": 0,
+      "umbralC": 467.5,
+      "gananciaB": 0,
+      "gananciaC": 11190,
+      "winner": 3,
+      "second": 1,
+      "margen": 11190,
+      "empate": 0
+     },
+     "titulo": "paro de 1.100 € brutos al mes con 6 meses por cobrar, trabajo de 1.400 € netos al mes al 100 % de jornada durante 12 meses e IRPF del 15 %",
+     "texto": "seguir solo con el paro daría 5.610 €; compatibilizar no es posible a jornada completa y trabajar renunciando al paro 16.800 €: sale mejor trabajar renunciando al paro por 11.190 € sobre la segunda opción."
+    }
+   ]
+  },
+  "seguro-hogar-con-o-sin-franquicia": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "primaSin": 300,
+      "primaCon": 240,
+      "franq": 300,
+      "frec": 0.15,
+      "coste": 400,
+      "capital": 100000,
+      "horizonte": 10,
+      "fondo": 2000
+     },
+     "resultado": {
+      "ahorroAnual": 60,
+      "ahorroTotal": 600,
+      "pagaSiniestro": 300,
+      "perdidaAnual": 45,
+      "perdidaTotal": 450,
+      "netoAnual": 15,
+      "netoTotal": 150,
+      "frecEquilibrio": 0.2,
+      "aniosEntreSiniestros": 5,
+      "siniestrosEquilibrio": 2,
+      "peorAno1": 240,
+      "fondoCubre": 1,
+      "tasaSin": 3,
+      "mejor": 0
+     },
+     "titulo": "póliza sin franquicia de 300 € al año frente a 240 € con franquicia de 300 €, 0,15 siniestros pequeños al año de 400 € de media y horizonte de 10 años",
+     "texto": "con franquicia ahorras 60 € al año de prima y pagas de tu bolsillo 45,00 € al año en siniestros: a 10 años quedas 150 € a favor, así que sale mejor la póliza con franquicia; se igualan con unos 0,20 siniestros al año."
+    },
+    {
+     "inputs": {
+      "primaSin": 300,
+      "primaCon": 240,
+      "franq": 300,
+      "frec": 0.5,
+      "coste": 400,
+      "capital": 100000,
+      "horizonte": 10,
+      "fondo": 2000
+     },
+     "resultado": {
+      "ahorroAnual": 60,
+      "ahorroTotal": 600,
+      "pagaSiniestro": 300,
+      "perdidaAnual": 150,
+      "perdidaTotal": 1500,
+      "netoAnual": -90,
+      "netoTotal": -900,
+      "frecEquilibrio": 0.2,
+      "aniosEntreSiniestros": 5,
+      "siniestrosEquilibrio": 2,
+      "peorAno1": 240,
+      "fondoCubre": 1,
+      "tasaSin": 3,
+      "mejor": 1
+     },
+     "titulo": "póliza sin franquicia de 300 € al año frente a 240 € con franquicia de 300 €, 0,50 siniestros pequeños al año de 400 € de media y horizonte de 10 años",
+     "texto": "con franquicia ahorras 60 € al año de prima y pagas de tu bolsillo 150,00 € al año en siniestros: a 10 años pierdes 900 €, así que sale mejor la póliza sin franquicia; se igualan con unos 0,20 siniestros al año."
+    }
+   ]
+  },
+  "mudanza-empresa-o-furgoneta": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "vol": 20,
+      "dist": 50,
+      "empresa": 900,
+      "alqdia": 90,
+      "kmfurgo": 0.231,
+      "extras": 60,
+      "nayud": 2,
+      "eurayud": 12
+     },
+     "resultado": {
+      "costeFurgo": 269.1,
+      "reserva": 100,
+      "costeFurgoConReserva": 369.1,
+      "costeEmpresa": 900,
+      "m3Furgo": 13.455,
+      "m3Empresa": 45,
+      "viajes": 1,
+      "dias": 1,
+      "km": 100,
+      "horasTuyas": 5.25,
+      "horasCarga": 4,
+      "diferencia": 630.9,
+      "tipo": 3,
+      "horaEq": 101.1238,
+      "kmEq": 900,
+      "presupuestoEq": 369.1
+     },
+     "titulo": "mudanza de 20 m3 a 50 km, empresa a 900 €, furgoneta a 90 € al día, 2 ayudantes a 12 € la hora y 60 € de extras",
+     "texto": "la furgoneta costaría 269,10 € (369,10 € con reserva de daños) en 1 viaje y 1 día de alquiler, con unas 5,3 horas tuyas, frente a 900 € de la empresa: la furgoneta sale más barata."
+    },
+    {
+     "inputs": {
+      "vol": 20,
+      "dist": 50,
+      "empresa": 250,
+      "alqdia": 90,
+      "kmfurgo": 0.231,
+      "extras": 60,
+      "nayud": 2,
+      "eurayud": 12
+     },
+     "resultado": {
+      "costeFurgo": 269.1,
+      "reserva": 100,
+      "costeFurgoConReserva": 369.1,
+      "costeEmpresa": 250,
+      "m3Furgo": 13.455,
+      "m3Empresa": 12.5,
+      "viajes": 1,
+      "dias": 1,
+      "km": 100,
+      "horasTuyas": 5.25,
+      "horasCarga": 4,
+      "diferencia": -19.1,
+      "tipo": 1,
+      "horaEq": 0,
+      "kmEq": 8,
+      "presupuestoEq": 369.1
+     },
+     "titulo": "mudanza de 20 m3 a 50 km, empresa a 250 €, furgoneta a 90 € al día, 2 ayudantes a 12 € la hora y 60 € de extras",
+     "texto": "la furgoneta costaría 269,10 € (369,10 € con reserva de daños) en 1 viaje y 1 día de alquiler, con unas 5,3 horas tuyas, frente a 250 € de la empresa: la empresa sale más barata."
+    },
+    {
+     "inputs": {
+      "vol": 45,
+      "dist": 400,
+      "empresa": 900,
+      "alqdia": 90,
+      "kmfurgo": 0.231,
+      "extras": 60,
+      "nayud": 2,
+      "eurayud": 12
+     },
+     "resultado": {
+      "costeFurgo": 1190.4,
+      "reserva": 225,
+      "costeFurgoConReserva": 1415.4,
+      "costeEmpresa": 900,
+      "m3Furgo": 26.4533,
+      "m3Empresa": 20,
+      "viajes": 3,
+      "dias": 4,
+      "km": 2400,
+      "horasTuyas": 39,
+      "horasCarga": 9,
+      "diferencia": -290.4,
+      "tipo": 1,
+      "horaEq": 0,
+      "kmEq": 255,
+      "presupuestoEq": 1415.4
+     },
+     "titulo": "mudanza de 45 m3 a 400 km, empresa a 900 €, furgoneta a 90 € al día, 2 ayudantes a 12 € la hora y 60 € de extras",
+     "texto": "la furgoneta costaría 1.190,40 € (1.415,40 € con reserva de daños) en 3 viajes y 4 días de alquiler, con unas 39,0 horas tuyas, frente a 900 € de la empresa: la empresa sale más barata."
+    }
+   ]
+  },
+  "gasolinera-low-cost-compensa-desviarse": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "litros": 40,
+      "dif": 0.08,
+      "km": 6,
+      "cons": 6.5,
+      "precio": 1.833,
+      "valorHora": 0,
+      "vel": 40
+     },
+     "resultado": {
+      "bruto": 3.2,
+      "combustible": 0.7149,
+      "tiempo": 0,
+      "neto": 2.4851,
+      "kmEquilibrio": 26.858,
+      "litrosMin": 8.9359,
+      "costeKm": 0.1191
+     },
+     "titulo": "40 litros con 0,08 €/l de diferencia, 6 km de desvío entre ida y vuelta, consumo de 6,5 l/100 km y gasolina a 1,833 €/l",
+     "texto": "ahorras 3,20 € en el depósito y gastas 0,71 € de combustible en el desvío: te quedan 2,49 € netos; compensa hasta 26,9 km de desvío."
+    },
+    {
+     "inputs": {
+      "litros": 40,
+      "dif": 0.08,
+      "km": 40,
+      "cons": 6.5,
+      "precio": 1.833,
+      "valorHora": 0,
+      "vel": 40
+     },
+     "resultado": {
+      "bruto": 3.2,
+      "combustible": 4.7658,
+      "tiempo": 0,
+      "neto": -1.5658,
+      "kmEquilibrio": 26.858,
+      "litrosMin": 59.5725,
+      "costeKm": 0.1191
+     },
+     "titulo": "40 litros con 0,08 €/l de diferencia, 40 km de desvío entre ida y vuelta, consumo de 6,5 l/100 km y gasolina a 1,833 €/l",
+     "texto": "ahorras 3,20 € en el depósito y gastas 4,77 € de combustible en el desvío: pierdes 1,57 €; solo compensaría hasta 26,9 km de desvío."
+    },
+    {
+     "inputs": {
+      "litros": 40,
+      "dif": 0.08,
+      "km": 10,
+      "cons": 6.5,
+      "precio": 1.833,
+      "valorHora": 15,
+      "vel": 40
+     },
+     "resultado": {
+      "bruto": 3.2,
+      "combustible": 1.1915,
+      "tiempo": 3.75,
+      "neto": -1.7414,
+      "kmEquilibrio": 6.4758,
+      "litrosMin": 61.7681,
+      "costeKm": 0.4941
+     },
+     "titulo": "40 litros con 0,08 €/l de diferencia, 10 km de desvío entre ida y vuelta, consumo de 6,5 l/100 km y gasolina a 1,833 €/l, contando tu tiempo a 15 €/h",
+     "texto": "ahorras 3,20 € en el depósito y gastas 1,19 € de combustible en el desvío: pierdes 1,74 €; solo compensaría hasta 6,5 km de desvío."
+    }
+   ]
+  },
+  "kilometraje-y-dietas-exentas-irpf": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "km": 8000,
+      "pagokm": 0.26,
+      "costekm": 0.17,
+      "peajes": 300,
+      "diasSin": 40,
+      "diasCon": 10,
+      "dieta": 40,
+      "tipo": 30
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 1,
+      "cobradoKm": 2080,
+      "exentoKm": 2080,
+      "tribKm": 0,
+      "exentoPeajes": 300,
+      "exentoSin": 1066.8,
+      "tribSin": 533.2,
+      "exentoCon": 400,
+      "tribCon": 0,
+      "exentoTotal": 3846.8,
+      "tribTotal": 533.2,
+      "ssExtra": 34.658,
+      "irpfExtra": 149.5626,
+      "cargaExtra": 184.2206,
+      "costeCoche": 1360,
+      "netoCoche": 720,
+      "netoDietas": 1815.7794,
+      "cobradoDietas": 2000,
+      "pagoEq": 0.17,
+      "ahorroIRPF": 1079.0274,
+      "ahorroSS": 250.042,
+      "ganNum": 1
+     },
+     "titulo": "8.000 km a 0,26 €/km con un coche de 0,17 €/km, 300 € de peajes, 40 días de dieta sin pernocta y 10 con pernocta a 40,00 € y tipo del 30 %",
+     "texto": "quedan exentos 3.846,80 € y tributan 533,20 €, con 184,22 € de impuestos y cotización extra; el coche te cuesta 1.360 € y te deja 720,00 € netos."
+    },
+    {
+     "inputs": {
+      "km": 8000,
+      "pagokm": 0.4,
+      "costekm": 0.3,
+      "peajes": 0,
+      "diasSin": 0,
+      "diasCon": 0,
+      "dieta": 40,
+      "tipo": 30
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 2,
+      "cobradoKm": 3200,
+      "exentoKm": 2080,
+      "tribKm": 1120,
+      "exentoPeajes": 0,
+      "exentoSin": 0,
+      "tribSin": 0,
+      "exentoCon": 0,
+      "tribCon": 0,
+      "exentoTotal": 2080,
+      "tribTotal": 1120,
+      "ssExtra": 72.8,
+      "irpfExtra": 314.16,
+      "cargaExtra": 386.96,
+      "costeCoche": 2400,
+      "netoCoche": 413.04,
+      "netoDietas": 0,
+      "cobradoDietas": 0,
+      "pagoEq": 0.3211,
+      "ahorroIRPF": 583.44,
+      "ahorroSS": 135.2,
+      "ganNum": 1
+     },
+     "titulo": "8.000 km a 0,40 €/km con un coche de 0,30 €/km, 0 € de peajes, 0 días de dieta sin pernocta y 0 con pernocta a 40,00 € y tipo del 30 %",
+     "texto": "quedan exentos 2.080,00 € y tributan 1.120,00 €, con 386,96 € de impuestos y cotización extra; el coche te cuesta 2.400 € y te deja 413,04 € netos."
+    },
+    {
+     "inputs": {
+      "km": 8000,
+      "pagokm": 0.1,
+      "costekm": 0.17,
+      "peajes": 300,
+      "diasSin": 0,
+      "diasCon": 0,
+      "dieta": 40,
+      "tipo": 30
+     },
+     "resultado": {
+      "bloqueado": 0,
+      "escenario": 4,
+      "cobradoKm": 800,
+      "exentoKm": 800,
+      "tribKm": 0,
+      "exentoPeajes": 300,
+      "exentoSin": 0,
+      "tribSin": 0,
+      "exentoCon": 0,
+      "tribCon": 0,
+      "exentoTotal": 1100,
+      "tribTotal": 0,
+      "ssExtra": 0,
+      "irpfExtra": 0,
+      "cargaExtra": 0,
+      "costeCoche": 1360,
+      "netoCoche": -560,
+      "netoDietas": 0,
+      "cobradoDietas": 0,
+      "pagoEq": 0.17,
+      "ahorroIRPF": 308.55,
+      "ahorroSS": 71.5,
+      "ganNum": 2
+     },
+     "titulo": "8.000 km a 0,10 €/km con un coche de 0,17 €/km, 300 € de peajes, 0 días de dieta sin pernocta y 0 con pernocta a 40,00 € y tipo del 30 %",
+     "texto": "todo queda exento (1.100,00 €) y no tributa nada; el coche te cuesta 1.360 € y te hace perder 560,00 € netos."
+    }
+   ]
   }
  }
 }

@@ -356,6 +356,71 @@ def ej_deposito(i, r):
             f"netos de impuestos, el depósito te dejaría {eur(r['netoDep'], 2)}, las Letras {eur(r['netoLet'], 2)} y el fondo {eur(r['netoFon'], 2)}: sale mejor {n}" + (f" por {eur(r['diferencia'], 2)} sobre la segunda opción." if r["ganador"] != "empate" else "."))
 
 
+# ---------- Casos típicos, tanda 5 (alquiler, trabajo, energía, hogar, coche): entradas de calcs/<slug>.test.json ----------
+def fdate(x):
+    a, m, d = x.split("-"); return f"{int(d)}/{int(m)}/{a}"
+def ej_irav(i, r):
+    ind = {"ipc": "cláusula con IPC", "igc": "cláusula sin índice", "none": "sin cláusula", "otro": "otro índice pactado"}[i["indice"]]
+    ven = "dentro del periodo con tope del 2 %" if r["ventana"] else "fuera del periodo con tope del 2 %"
+    if r["subidaMes"] == 0:
+        f = f"la renta se queda en {eur(r['nueva'], 2)} al mes: no hay subida."
+    else:
+        f = f"la renta pasaría de {eur(i['renta'], 2)} a {eur(r['nueva'], 2)} al mes ({pct(r['pct'])}, {eur(r['subidaMes'], 2)} más al mes y {eur(r['subidaAnio'], 2)} más al año)" + (f"; sin tope serían {eur(r['nuevaSinTope'], 2)}." if abs(r["nuevaSinTope"] - r["nueva"]) > 0.005 else ".")
+    return (f"renta de {eur(i['renta'], 2)} al mes, contrato posterior a mayo de 2023, {ind}, IRAV del {pct(i['irav'])}, IPC del {pct(i['ipc'])} y aniversario el {fdate(i['aniv'])} ({ven})", f)
+def ej_incap(i, r):
+    g = {"total": "total", "absoluta": "absoluta", "gran": "con gran incapacidad"}[i["grado"]]
+    ex = " La pensión de incapacidad absoluta y gran incapacidad está exenta de IRPF." if r["exenta"] else ""
+    cp = f", suma de {eur(r['pen_final'], 2)} de pensión y {eur(r['comp'], 2)} de complemento por gran incapacidad" if r["comp"] else ""
+    return (f"incapacidad permanente {g}, por enfermedad común, base de cotización de {eur(i['base'])}, {i['edad']} años y {num(i['anos'])} años cotizados, sin trabajar",
+            f"con una base reguladora de {eur(r['br'], 2)}, cobrarías {eur(r['pagado'], 2)} al mes en 14 pagas, {eur(r['anual'])} al año{cp}.{ex}")
+def ej_irpf_alq(i, r):
+    c = {"b50": "reducción del 50 %", "a60": "reducción del 60 % (contrato anterior a mayo de 2023)", "b70": "reducción del 70 %", "b90": "reducción del 90 % (zona tensionada)"}[i["contrato"]]
+    return (f"alquiler de {eur(i['renta'])} al mes durante {i['meses']} meses, {eur(i['otros'])} de gastos, {eur(i['interep'])} de intereses, tipo marginal del {pct(i['tipo'], 0)} y {c}",
+            f"ingresas {eur(r['ingresos'])} y el rendimiento previo es de {eur(r['previo'])}; con la reducción del {pct(r['pct'], 0)} tributas por {eur(r['reducido'])}, pagas {eur(r['cuota'])} de IRPF y te quedan {eur(r['neto'])} netos tras gastos e impuesto.")
+def ej_valle(i, r):
+    fr = {0: "el llano", 1: "la punta", 2: "la punta y el llano a partes iguales"}[i["franja"]]
+    base = f"lavadora de {num(i['kwhUso'], 1)} kWh por uso y {i['usosSem']} usos a la semana, termo de {num(i['kwhTermo'])} kWh a la semana, {i['pctDesp']} % desplazable al valle, precios de {num(i['precioPunta'], 4)}/{num(i['precioLlano'], 4)}/{num(i['precioValle'], 4)} €/kWh (punta/llano/valle) y uso actual en {fr}"
+    if r["estado"] == 2: f = f"el valle es más caro que tu franja actual: pasarías de {eur(r['costeHoy'], 2)} a {eur(r['costeValle'], 2)} al año en ese consumo y pagarías {eur(abs(r['ahorroAnual']), 2)} más; no compensa mover."
+    else: f = f"moverlo al valle bajaría ese consumo de {eur(r['costeHoy'], 2)} a {eur(r['costeValle'], 2)} al año: ahorrarías {eur(r['ahorroAnual'], 2)} al año ({eur(r['ahorroMes'], 2)} al mes)."
+    return (base, f)
+def ej_aire(i, r):
+    n = "el ventilador" if r["esVentilador"] else "la alternativa"
+    if r["ganador"] == 0: f = f"el inverter costaría {eur(r['costeInv'], 2)} al año de luz y {n} {eur(r['costeAlt'], 2)}; con la compra repartida en {i['vida']} años, el inverter sale {eur(abs(r['diferencia']))} más barato."
+    else: f = f"el inverter costaría {eur(r['costeInv'], 2)} al año de luz y {n} {eur(r['costeAlt'], 2)}; con la compra repartida en {i['vida']} años, {n} sale {eur(abs(r['diferencia']))} más barato."
+    if r["horasEq"] > 0 and r["ganador"] == 0: f += f" El inverter compensa a partir de {num(r['horasEq'], 1)} horas al día."
+    return (f"inverter de {num(i['kwInv'], 1)} kW (compra de {eur(i['compraInv'])}) frente a una alternativa de {num(i['kwAlt'], 2)} kW (compra de {eur(i['compraAlt'])}), {num(i['horas'])} {'hora' if i['horas'] == 1 else 'horas'} al día durante {i['dias']} días, {eur(i['precio'], 2)}/kWh y {i['vida']} años de vida", f)
+def ej_freidora(i, r):
+    alt = ["el horno eléctrico tradicional", "el horno eléctrico ventilado", "el microondas", "el horno de gas"][i["alt"]]
+    altf = alt.replace("el ", "al ", 1)
+    w = "la freidora" if r["ganador"] == 0 else "la alternativa" if r["ganador"] == 1 else "ninguna claramente"
+    f = f"la freidora costaría {eur(r['anualFr'], 2)} al año de energía ({eur(r['totalFr'], 2)} con la compra repartida) y {alt} {eur(r['anualAlt'], 2)}: sale más barato {w}" + (f" por {eur(abs(r['diferencia']), 2)} al año." if r["ganador"] != 2 else " (diferencia de menos del 5 %).")
+    return (f"freidora de aire de {num(i['kwFr'], 1)} kW (compra de {eur(i['compra'])}) frente {altf}, {i['usos']} usos a la semana, {i['minFr']} minutos de cocción con la freidora frente a {i['minAlt']} con la otra opción", f)
+def ej_paro_aut(i, r):
+    return (f"base de cotización de {eur(i['base'])}/mes, {i['m48']} meses cotizados por cese en 48 meses, {i['hijos']} hijos a cargo, cese por motivos económicos y {i['edad']} años",
+            f"cobrarías {eur(r['prest'], 2)} al mes durante {r['dur']} meses: {eur(r['total'], 2)} en total" + (f"; el tope legal de {eur(r['tope'])}/mes limita la cuantía (el 70 % de tu base serían {eur(r['raw'], 2)})." if r["ap"] == 1 else "."))
+def ej_aceptar(i, r):
+    w = {1: "seguir solo con el paro", 2: "compatibilizar el trabajo con el paro", 3: "trabajar renunciando al paro"}[r["winner"]]
+    return (f"paro de {eur(i['cuantia'])} brutos al mes con {i['meses']} meses por cobrar, trabajo de {eur(i['sueldo'])} netos al mes al {i['jornada']} % de jornada durante {i['duracion']} meses e IRPF del {pct(i['irpf'], 0)}",
+            f"seguir solo con el paro daría {eur(r['totalA'])}; compatibilizar " + (f"daría {eur(r['totalB'])}" if r["bOk"] else "no es posible a jornada completa") + f" y trabajar renunciando al paro {eur(r['totalC'])}: sale mejor {w} por {eur(r['margen'])} sobre la segunda opción.")
+def ej_seg_hogar(i, r):
+    w = "la póliza con franquicia" if r["mejor"] == 0 else "la póliza sin franquicia"
+    return (f"póliza sin franquicia de {eur(i['primaSin'])} al año frente a {eur(i['primaCon'])} con franquicia de {eur(i['franq'])}, {num(i['frec'], 2)} siniestros pequeños al año de {eur(i['coste'])} de media y horizonte de {i['horizonte']} años",
+            f"con franquicia ahorras {eur(r['ahorroAnual'])} al año de prima y pagas de tu bolsillo {eur(r['perdidaAnual'], 2)} al año en siniestros: " + (f"a {i['horizonte']} años quedas {eur(r['netoTotal'])} a favor" if r["netoTotal"] >= 0 else f"a {i['horizonte']} años pierdes {eur(abs(r['netoTotal']))}") + f", así que sale mejor {w}; se igualan con unos {num(r['frecEquilibrio'], 2)} siniestros al año.")
+def ej_mudanza(i, r):
+    t = {1: "la empresa sale más barata", 2: "la furgoneta ahorra algo, pero la reserva por daños se lo come", 3: "la furgoneta sale más barata"}[r["tipo"]]
+    return (f"mudanza de {i['vol']} m3 a {i['dist']} km, empresa a {eur(i['empresa'])}, furgoneta a {eur(i['alqdia'])} al día, {i['nayud']} ayudantes a {eur(i['eurayud'])} la hora y {eur(i['extras'])} de extras",
+            f"la furgoneta costaría {eur(r['costeFurgo'], 2)} ({eur(r['costeFurgoConReserva'], 2)} con reserva de daños) en {r['viajes']} {'viaje' if r['viajes'] == 1 else 'viajes'} y {r['dias']} {'día' if r['dias'] == 1 else 'días'} de alquiler, con unas {num(r['horasTuyas'], 1)} horas tuyas, frente a {eur(r['costeEmpresa'])} de la empresa: {t}.")
+def ej_gasolinera(i, r):
+    f = f"ahorras {eur(r['bruto'], 2)} en el depósito y gastas {eur(r['combustible'], 2)} de combustible en el desvío: " + (f"te quedan {eur(r['neto'], 2)} netos; compensa hasta {num(r['kmEquilibrio'], 1)} km de desvío." if r["neto"] > 0 else f"pierdes {eur(abs(r['neto']), 2)}; solo compensaría hasta {num(r['kmEquilibrio'], 1)} km de desvío.")
+    t = f"{i['litros']} litros con {eur(i['dif'], 2)}/l de diferencia, {i['km']} km de desvío entre ida y vuelta, consumo de {num(i['cons'], 1)} l/100 km y gasolina a {eur(i['precio'], 3)}/l" + (f", contando tu tiempo a {eur(i['valorHora'])}/h" if i["valorHora"] else "")
+    return (t, f)
+def ej_km_dietas(i, r):
+    if r["tribTotal"] == 0: f = f"todo queda exento ({eur(r['exentoTotal'], 2)}) y no tributa nada"
+    else: f = f"quedan exentos {eur(r['exentoTotal'], 2)} y tributan {eur(r['tribTotal'], 2)}, con {eur(r['cargaExtra'], 2)} de impuestos y cotización extra"
+    k = f"; el coche te cuesta {eur(r['costeCoche'])} y te deja {eur(r['netoCoche'], 2)} netos" if i["km"] else ""
+    return (f"{num(i['km'])} km a {eur(i['pagokm'], 2)}/km con un coche de {eur(i['costekm'], 2)}/km, {eur(i['peajes'])} de peajes, {i['diasSin']} días de dieta sin pernocta y {i['diasCon']} con pernocta a {eur(i['dieta'], 2)} y tipo del {pct(i['tipo'], 0)}",
+            f + (k.replace("te deja -", "te hace perder ").replace("te deja", "te deja") if r["netoCoche"] >= 0 else f"; el coche te cuesta {eur(r['costeCoche'])} y te hace perder {eur(abs(r['netoCoche']), 2)} netos" if i["km"] else "") + ".")
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -484,6 +549,18 @@ CASOS = {
     "excedencia-o-reduccion-jornada": (ej_excedencia, T("excedencia-o-reduccion-jornada", 0, 1)),
     "movil-reacondicionado-o-nuevo": (ej_movil, T("movil-reacondicionado-o-nuevo", 0, 1)),
     "deposito-letras-o-fondo-monetario": (ej_deposito, T("deposito-letras-o-fondo-monetario", 0, 3)),
+    "actualizacion-renta-alquiler-irav-ipc": (ej_irav, T("actualizacion-renta-alquiler-irav-ipc", 1, 4, 11)),
+    "incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar": (ej_incap, T("incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar", 0, 1, 2)),
+    "irpf-alquilar-vivienda-rendimiento-neto": (ej_irpf_alq, T("irpf-alquilar-vivienda-rendimiento-neto", 0, 2, 3)),
+    "horas-valle-luz-lavadora-termo-cuanto-ahorro": (ej_valle, T("horas-valle-luz-lavadora-termo-cuanto-ahorro", 0, 1, 4)),
+    "aire-acondicionado-inverter-o-ventilador-coste-verano": (ej_aire, T("aire-acondicionado-inverter-o-ventilador-coste-verano", 0, 1, 2)),
+    "freidora-de-aire-u-horno-cuanto-gasta": (ej_freidora, T("freidora-de-aire-u-horno-cuanto-gasta", 0, 2, 3)),
+    "paro-autonomos-cese-actividad-cuanto-cobro": (ej_paro_aut, T("paro-autonomos-cese-actividad-cuanto-cobro", 0, 1, 4)),
+    "aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad": (ej_aceptar, T("aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad", 0, 1, 2)),
+    "seguro-hogar-con-o-sin-franquicia": (ej_seg_hogar, T("seguro-hogar-con-o-sin-franquicia", 0, 1)),
+    "mudanza-empresa-o-furgoneta": (ej_mudanza, T("mudanza-empresa-o-furgoneta", 0, 1, 3)),
+    "gasolinera-low-cost-compensa-desviarse": (ej_gasolinera, T("gasolinera-low-cost-compensa-desviarse", 0, 1, 4)),
+    "kilometraje-y-dietas-exentas-irpf": (ej_km_dietas, T("kilometraje-y-dietas-exentas-irpf", 0, 2, 3)),
 }
 
 def generar_casos(fecha):

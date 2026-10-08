@@ -78,6 +78,11 @@ def js(src):
 _TOK = re.compile(r"""("(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|`(?:[^`\\]|\\.)*`)""")
 
 
+def _num(m):
+    i, d = m.group(1), m.group(2).rstrip("0")
+    return i if not d else ("" if i == "0" else i) + "." + d
+
+
 def _squeeze(s):
     # Protege strings/plantillas; los regex literales se protegen porque contienen caracteres que nunca estamos tocando salvo espacios
     # (los espacios dentro de un regex SÍ importan): detectarlos de nuevo es frágil, así que solo se tocan espacios entre palabras/puntuación segura
@@ -92,7 +97,13 @@ def _squeeze(s):
         if "/" in p and re.search(r"[=(,:!&|?]\s*/[^/*]", p):  # línea con regex literal: solo colapsar tabuladores
             parts[k] = p; continue
         p = re.sub(r"[ \t]{2,}", " ", p)
+        p = re.sub(r"(?<=[\w)\]]) ([+\-/]) (?=[\w(.])", r"\1", p)  # a + b, a - b, a / b (no toca ++/--, ni signos unarios)
         p = re.sub(r" ?([{};,=:?<>*&|()\[\]]) ?", r"\1", p)
+        p = re.sub(r"(?<![\w.$])(\d+)\.(\d+)(?![\w.$])", _num, p)  # 3.20 -> 3.2, 0.19 -> .19, 5.00 -> 5
+        p = re.sub(r" !(?==)", "!", p)  # " !==" -> "!=="
+        p = re.sub(r" ([+\-])=", r"\1=", p)  # " +=" -> "+="
+        if k > 0: p = re.sub(r"^ \+ ", "+", p)  # "cadena" + x
+        if k + 1 < len(parts): p = re.sub(r" \+ $", "+", p)  # x + "cadena"
         parts[k] = p
     return "".join(parts)
 
