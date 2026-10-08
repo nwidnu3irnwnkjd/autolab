@@ -235,3 +235,6 @@ UX pasada 3 completa (acciones 1-10 salvo 5 ya hecha c83): veredicto del ejemplo
 
 ## Ciclo 86 (8-oct madrugada)
 Opus reverificó indemnizacion-despido-objetivo-o-improcedente-neto (oráculo 900+22, 0 disc.; norma sin cambios; RDL 25/28/29 no afectan): 1 cambio obligatorio de texto (escenario 3: el veredicto dependía de r.trib, ya no dice «el exceso tributa» cuando tributable=0), conciliación → art. 65.1 LRJS (suspende), coma rota, fecha 8/10; aplicados por Constructor (+20 comprobaciones, caso nuevo en test). Editor pasada 8: 12 calculadoras, 14 FAQs recortadas, 10 a 5/5; tests con defaults en diesel e hipoteca. Pendiente: params.json indemnizacion_despido_2026.fuente aún «consolidado a 30/9/2026» (actualizar en próxima re-verificación). BOE 8-oct sin leer.
+
+## Ciclo 87 (8-oct 03:00)
+Vigilante: calendario verificado hasta 29-oct (INE 14/26/27/30-oct, BCE 29-oct, AEAT 3T 20-oct, Ley 4/2026 23-oct, hora 25-oct); congreso.es: sin Pleno semanas 5-11 y 12-18 oct → convalidación RDL 25/28/29 sin fecha oficial (estimaciones ~11/18-nov propias). Cola de noticias completada. Constructor: enlace roto BdE arreglado en euribor-hipoteca, fechas de consulta 8/10 en 3 guías y params indemnización (norma verificada vigente; art. 7 LIRPF modificado el 7-oct solo en ñ). BOE 8-oct aún no publicado a las 02:30 → leer tras 07:00.

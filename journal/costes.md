@@ -95,3 +95,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-07T23:13Z | 15 | 11 | 0.55 | ciclo 84 cierre: constructor,verificador-legal,qa-propio; peticiones abiertas: 18; páginas: 303
 2026-10-07T23:40Z | 16 | 12 | 0.55 | ciclo 85 cierre: disenador,estratega-seo,qa-propio; peticiones abiertas: 18; páginas: 303
 2026-10-08T00:11Z | 1 | 12 | 0.55 | ciclo 86 cierre: verificador-fiscal,constructor,editor-calidad; peticiones abiertas: 18; páginas: 303
+2026-10-08T00:35Z | 2 | 12 | 0.55 | ciclo 87 cierre: vigilante,constructor; peticiones abiertas: 18; páginas: 303
