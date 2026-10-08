@@ -212,14 +212,14 @@
     ],
     [
      "2026-10-08",
-     1.7964
+     1.7963
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.7964,
-   "variacion_abs": -0.0026,
-   "variacion_pct": -0.14
+   "valor": 1.7963,
+   "variacion_abs": -0.0027,
+   "variacion_pct": -0.15
   },
   "luz_pvpc": {
    "anterior": 0.20988,
@@ -344,9 +344,9 @@
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
     "max_hoy": 20.1,
-    "max_semana": 26.4,
+    "max_semana": 26.8,
     "min_hoy": 12.9,
-    "min_semana": 6.0
+    "min_semana": 5.9
    },
    "fecha_consulta": "2026-10-08",
    "fecha_dato": "2026-10-08",
@@ -381,14 +381,14 @@
     ],
     [
      "2026-10-08",
-     13.3
+     12.4
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 13.3,
-   "variacion_abs": -3.4,
-   "variacion_pct": -20.36
+   "valor": 12.4,
+   "variacion_abs": -4.3,
+   "variacion_pct": -25.75
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
