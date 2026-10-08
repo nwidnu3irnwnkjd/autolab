@@ -660,6 +660,12 @@
     "impMenosObj": 18904.11
    },
    "tol": 1
+  },
+  {
+   "nombre": "objetivo 52.c con oferta entre legal de 20 días e improcedente: toda exenta, sin 'el exceso tributa' (escenario 3)",
+   "in": {"bruto": 30000, "anios": 8, "meses": 0, "antes": 0, "tipo": "objetivo", "oferta": 21698, "marginal": 37, "causa": "eco"},
+   "expect": {"bloqueado": 0, "escenario": 3, "exento": 21698, "trib": 0, "neto": 21698},
+   "tol": 1
   }
- ]
+]
 }

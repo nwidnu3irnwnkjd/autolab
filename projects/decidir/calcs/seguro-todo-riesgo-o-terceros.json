@@ -3,7 +3,7 @@
   "title": "Seguro a todo riesgo o terceros: cuál compensa",
   "description": "En el ejemplo, el todo riesgo cuesta 1.700 € más en 5 años y cubre 1.350 € esperados: no compensa. Calcula con el valor de tu coche.",
   "h1": "Seguro de coche a todo riesgo o a terceros: ¿cuál compensa según lo que vale tu coche?",
-  "lead": "El todo riesgo compensa mientras la pérdida media que te cubre cada año supere la sobreprima que pagas por él; a medida que el coche se deprecia, deja de compensar. Calcula en qué año ocurre con tus números.",
+  "lead": "El todo riesgo compensa mientras la pérdida media que te cubre cada año supere la sobreprima que pagas por él; al depreciarse el coche, deja de compensar. Con los ejemplos de la página (coche de 18.000 €, 12 % de depreciación al año, 720 € de todo riesgo frente a 380 € de terceros, franquicia de 300 €) la sobreprima es de 340 € al año y el umbral está en un valor del coche de unos 3.700 €. Calcula con tus números en qué año ocurre.",
   "veredicto": "El todo riesgo compensa mientras el valor del coche sea varias veces la diferencia de prima con terceros; al depreciarse el coche, cuesta más de lo que recupera. Depende de tu perfil de conducción y de tu capacidad para asumir una reparación.",
   "tema": "coche",
   "inputs": [
@@ -67,7 +67,7 @@
   "faqs": [
     [
       "¿Cuándo deja de compensar el todo riesgo?",
-      "Cuando la pérdida media que te cubre cada año es menor que la sobreprima que pagas por él. Como el coche se deprecia y el pago máximo no puede superar su valor, con los años el todo riesgo cubre menos. La calculadora te da el valor mínimo del coche y el año en que se cruza ese umbral."
+      "Cuando la pérdida media que te cubre cada año es menor que la sobreprima. Como el coche se deprecia y el pago no puede superar su valor, con los años cubre menos. La calculadora te da el valor mínimo del coche y el año en que se cruza el umbral."
     ],
     [
       "¿Qué es el valor venal?",

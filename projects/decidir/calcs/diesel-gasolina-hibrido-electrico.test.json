@@ -138,6 +138,53 @@
     "diferencia": 425.2
    },
    "tol": 1
-  }
- ]
+  },
+   {
+    "nombre": "valores por defecto de la página (ganador híbrido)",
+    "in": {
+     "km": 15000,
+     "anos": 5,
+     "compraDiesel": 28000,
+     "compraGasolina": 25000,
+     "compraHibrido": 29000,
+     "compraElectrico": 35000,
+     "consDiesel": 5.5,
+     "consGasolina": 6.5,
+     "consHibrido": 4.8,
+     "consElectrico": 17,
+     "precioDiesel": 1.927,
+     "precioGasolina": 1.833,
+     "kwhCasa": 0.17,
+     "pctCasa": 70,
+     "kwhPublico": 0.45,
+     "seguroDiesel": 600,
+     "seguroGasolina": 580,
+     "seguroHibrido": 620,
+     "seguroElectrico": 650,
+     "mantDiesel": 450,
+     "mantGasolina": 400,
+     "mantHibrido": 400,
+     "mantElectrico": 300,
+     "impDiesel": 80,
+     "impGasolina": 80,
+     "impHibrido": 70,
+     "impElectrico": 40,
+     "resDiesel": 40,
+     "resGasolina": 42,
+     "resHibrido": 45,
+     "resElectrico": 40
+    },
+    "expect": {
+     "costeDiesel": 30398.88,
+     "costeGasolina": 28735.88,
+     "costeHibrido": 27998.8,
+     "costeElectrico": 29188.5,
+     "costeKmX": 0.3733,
+     "ganador": 2,
+     "kmEquilibrio": 10269.25,
+     "diferencia": 737.08
+    },
+    "tol": 1
+   }
+]
 }

@@ -3,7 +3,7 @@
   "title": "Hipoteca: aportar más entrada o conservar ahorros",
   "description": "Compara aportar más entrada a la hipoteca o conservar ese dinero ahorrado: patrimonio a N años, rentabilidad de equilibrio y aviso de liquidez.",
   "h1": "Hipoteca: ¿aportar más entrada o conservar tus ahorros?",
-  "lead": "Aportar más entrada compensa si tu ahorro rendiría, neto de impuestos, menos que el tipo de la hipoteca, y conservarlo compensa si rendiría más (más todavía si aportar te baja el tipo): con los ejemplos de la página (30.000 € de entrada extra sobre 150.000 € de hipoteca a 25 años, ahorro al 2 % neto, 10 años) gana aportar, pero solo si ese dinero no es tu colchón de emergencia. Pon tu tipo, tu horizonte y la rentabilidad que esperas y verás el patrimonio de cada opción y la rentabilidad que las iguala.",
+  "lead": "Aportar más entrada compensa si tu ahorro rendiría, neto de impuestos, menos que el tipo de la hipoteca, y conservarlo compensa si rendiría más (más todavía si aportar te baja el tipo): con los ejemplos de la página (30.000 € de entrada extra sobre 150.000 € de hipoteca a 25 años, ahorro al 2 % neto, 10 años) gana aportar (unos 2.200 € más de patrimonio a los 10 años con un TIN del 2,76 %), pero solo si ese dinero no es tu colchón de emergencia. Pon tu tipo, tu horizonte y la rentabilidad que esperas y verás el patrimonio de cada opción y la rentabilidad que las iguala.",
   "veredicto": "Aportar más entrada gana a N años cuando el interés que dejas de pagar supera lo que rendiría ese dinero ahorrado (y la cuota que te ahorras, también ahorrada); conservarlo gana cuando rinde más; la página da el patrimonio de cada opción, la rentabilidad neta que las iguala, y declara empate práctico si la diferencia es menor del 5 % de la entrada extra. La rentabilidad es una hipótesis tuya y la liquidez del dinero conservado no entra en el cálculo.",
   "tema": "hipoteca",
   "inputs": [
@@ -63,7 +63,7 @@
   "faqs": [
     [
       "¿Es mejor aportar más entrada a la hipoteca o conservar los ahorros?",
-      "Depende de lo que rinda tu ahorro frente al tipo de la hipoteca. Si tu ahorro rinde, neto de impuestos, menos que el tipo, aportar deja más patrimonio; si rinde más, sale mejor conservarlo. La calculadora te da esa rentabilidad de equilibrio con tus datos, y aparte decide cuánta liquidez necesitas."
+      "Depende de lo que rinda tu ahorro frente al tipo de la hipoteca. Si rinde menos que el tipo, neto de impuestos, aportar deja más patrimonio; si rinde más, conviene conservarlo. La calculadora da esa rentabilidad de equilibrio, y tú decide cuánta liquidez necesitas."
     ],
     [
       "¿Qué rentabilidad pongo a mis ahorros?",
@@ -79,7 +79,7 @@
     ],
     [
       "¿Qué no incluye esta comparación?",
-      "No incluye seguros, comisiones, gastos de la compraventa ni los impuestos sobre los intereses de tu ahorro (están en la rentabilidad neta que pones). Supone tipo fijo todo el plazo y que la cuota que te ahorras al aportar la ahorras cada mes a la misma rentabilidad; si la gastas, aportar sale peor."
+      "No incluye seguros, comisiones, gastos de compraventa ni impuestos sobre los intereses del ahorro (van en la rentabilidad neta que pones). Supone tipo fijo todo el plazo y que la cuota que ahorras al aportar se ahorra cada mes a esa rentabilidad; si la gastas, aportar sale peor."
     ]
   ],
   "sources": "Modelo propio: hipoteca a tipo fijo en amortización francesa. Aportar: capital = capital - entrada extra, al TIN menos la bajada indicada (mínimo 0); la cuota que te ahorras respecto a conservar se ahorra cada mes a la rentabilidad indicada. Conservar: capital completo al TIN, y la entrada extra queda ahorrada y crece a la rentabilidad neta anual efectiva (capitalización mensual equivalente). Patrimonio a N años = ahorro acumulado - deuda pendiente. Rentabilidad de equilibrio: la rentabilidad neta anual que iguala el patrimonio de ambas opciones a N años (búsqueda numérica entre -20 % y 20 %). Empate práctico si la diferencia es menor del 5 % de la entrada extra (criterio de la página). Información general sobre hipotecas y su amortización: <a href=\"https://clientebancario.bde.es/pcb/es/\" rel=\"noopener\">Portal del Cliente Bancario del Banco de España</a>. TIN de ejemplo: tipo medio de las nuevas hipotecas de vivienda con más de 10 años de fijación inicial, Banco Central Europeo (Data Portal, MIR), dato de agosto de 2026: <a href=\"https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.ES.B.A2C.P.R.A.2250.EUR.N\" rel=\"noopener\">BCE</a>. Capital, entrada extra, plazo, horizonte y rentabilidad del ahorro (2 %) son ejemplos declarados y editables, no ofertas, previsiones ni datos oficiales. No incluye seguros, comisiones, gastos de compraventa ni impuestos sobre los intereses del ahorro. Información orientativa, no asesoramiento."

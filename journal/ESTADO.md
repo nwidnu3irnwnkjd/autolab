@@ -232,3 +232,6 @@ CUMPLIMIENTO COOKIES hecho: banner Aceptar/Rechazar iguales, modo BÁSICO (gtag 
 
 ## Ciclo 85 (8-oct madrugada)
 UX pasada 3 completa (acciones 1-10 salvo 5 ya hecha c83): veredicto del ejemplo con negrita solo en la 1.ª frase y sin nota «ops/verif» pública, content-visibility en /todas/ (buscador y 0 desbordes probados), speculation rules prefetch en home/hubs/guías/todas. Enlazado interno: 61 enlaces contextuales en ~40 páginas, mínimo de inlinks 4→8 en las 15 más débiles (0 huérfanas). Nota: negrita del veredicto de hipoteca-fija-o-variable acaba en coma (cosmético). E-UX5 (medir calc_error/calc_used) en 14 días con consentimiento: ojo, datos solo de quien acepta.
+
+## Ciclo 86 (8-oct madrugada)
+Opus reverificó indemnizacion-despido-objetivo-o-improcedente-neto (oráculo 900+22, 0 disc.; norma sin cambios; RDL 25/28/29 no afectan): 1 cambio obligatorio de texto (escenario 3: el veredicto dependía de r.trib, ya no dice «el exceso tributa» cuando tributable=0), conciliación → art. 65.1 LRJS (suspende), coma rota, fecha 8/10; aplicados por Constructor (+20 comprobaciones, caso nuevo en test). Editor pasada 8: 12 calculadoras, 14 FAQs recortadas, 10 a 5/5; tests con defaults en diesel e hipoteca. Pendiente: params.json indemnizacion_despido_2026.fuente aún «consolidado a 30/9/2026» (actualizar en próxima re-verificación). BOE 8-oct sin leer.

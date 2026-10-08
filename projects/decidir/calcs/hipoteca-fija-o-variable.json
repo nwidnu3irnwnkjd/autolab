@@ -3,7 +3,7 @@
   "title": "Hipoteca fija o variable hoy: ¿cuál te sale más barata?",
   "description": "En el ejemplo, con un Euríbor medio del 3,247 % la fija ahorra 30.876 €; sale mejor si se mantiene por encima del 1,86 %. Compáralo con tus datos.",
   "h1": "Hipoteca fija o variable hoy: ¿cuál te sale más barata?",
-  "lead": "Nadie sabe dónde estará el Euríbor, pero sí puedes saber a partir de qué nivel te conviene la fija. Mete las dos ofertas y compara escenarios.",
+  "lead": "La fija te conviene si el Euríbor medio durante la vida de la hipoteca supera el Euríbor de equilibrio que sale de tus dos ofertas, y la variable si queda por debajo. Nadie sabe dónde estará el Euríbor, pero la calculadora te da ese nivel y compara escenarios con tus datos.",
   "veredicto": "La fija compensa si el Euríbor se mantiene por encima de un nivel que esta calculadora te calcula; la variable gana si baja o se mantiene bajo.",
   "inputs": [
     {

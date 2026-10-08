@@ -168,3 +168,22 @@ Nota 1-5 (antes → después): título (consulta real) / lead con condición+cif
 - clausulas-contrato-alquiler.html y revisa-tu-contrato…html: varias frases «interpretación nuestra sobre el alcance temporal» (RDL 29/2026 sin transitoria expresa) y la prórroga extraordinaria DF 5.ª; revisar cuando se convalide. Las cifras 2 % / 2,47 % coinciden en ambas guías.
 ## Resumen
 - FAQs > 50 p en las 19 guías: 41 → 0 (todas ≤ 50 por recuento de palabras); leads sin cifra: 8 → 2 (por diseño). Verificado: build OK (187 páginas), check.py 13660/13660, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 8 · 2026-10-08 · 12 calculadoras no fiscales (cola tarea 3; mayor demanda según demanda-2026-10-03 y aún sin nota 5 en pasadas previas)
+
+Nota 1-5 (antes → después). Solo textos de calcs/*.json (lead y FAQs); sin tocar fórmulas, tests ni cifras legales.
+- aire-acondicionado-inverter-o-ventilador-coste-verano · 4 → 5 · FAQ 5 de 80 a ≤ 50 p
+- caldera-reparar-o-cambiar · 4 → 5 · FAQ 1 de 64 a ≤ 50 p
+- cambiar-de-operadora-compensa-permanencia · 4 → 5 · FAQ 3 de 56 a ≤ 50 p
+- comprar-o-alquilar-herramienta · 4 → 5 · FAQ 2 de 65 a ≤ 50 p
+- comprar-coche-o-renting · 3 → 5 · lead con cifras de test.json caso 1 (385 € frente a 450 €/mes, 3.130 € menos), FAQ 1 a ≤ 50 p. Fuentes: Ley 16/2011 con fecha; sigue sin URL oficial para el 45 % de reventa (orientativo)
+- diesel-gasolina-hibrido-electrico · 3 → 4 · FAQ 2 a ≤ 50 p; lead sin cifra del ejemplo (no la he extraído del test.json; lo deja al Constructor)
+- gimnasio-o-entrenar-en-casa · 4 → 5 · FAQ 3 de 56 a ≤ 50 p
+- seguro-mascota-merece-la-pena · 4 → 5 · FAQ 2 de 55 a ≤ 50 p
+- seguro-todo-riesgo-o-terceros · 3 → 5 · lead con 340 €/año de sobreprima (720-380) y umbral de 3.700 € (test.json), FAQ 1 de 58 a ≤ 50 p
+- suscripciones-cuanto-gasto-al-ano · 4 → 5 · FAQ 2 de 63 a ≤ 50 p
+- hipoteca-mas-entrada-o-conservar-ahorros · 4 → 5 · lead con +2.202 € de patrimonio a 10 años (TIN 2,76 %, test.json), FAQs 1 y 5 a ≤ 50 p
+- hipoteca-fija-o-variable · 3 → 4 · lead con condición de Euríbor de equilibrio (antes 26 p sin respuesta); sin cifra porque el default (Euríbor en vivo 3,247) no coincide con el caso de test.json (equilibrio 1,992 %)
+
+## Peticiones al Constructor/Opus (no bloqueantes): hipoteca-fija-o-variable y diesel-gasolina-hibrido-electrico: añadir en test.json un caso con los valores por defecto para poder citar una cifra en el lead. Sin dudas legales en estas 12.
+## Resumen: FAQs > 50 p en las 12: 14 → 0. Leads con cifra: +4. Verificado: build OK, check.py 13660/13660, qa_static --changed 0 BLOQUEANTE.

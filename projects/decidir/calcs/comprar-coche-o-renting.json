@@ -3,7 +3,7 @@
   "title": "¿Comprar coche o renting? Calculadora de coste total",
   "description": "En el ejemplo, comprar sale 3.130 € más barato en 4 años; el renting solo compensa si su cuota baja de 385 €/mes. Calcula con tus cifras.",
   "h1": "Comprar coche o renting: ¿qué me sale más barato?",
-  "lead": "Comprar suele salir más barato si conservas el coche muchos años, y el renting compensa si cambias a menudo y la cuota incluye lo que tú pagarías aparte. Esta calculadora compara el coste total de comprar y vender al final con el de un renting a los mismos años, con tus números y para particulares.",
+  "lead": "Comprar sale más barato si conservas el coche varios años y el renting compensa si cambias a menudo y la cuota incluye lo que pagarías aparte. Con 25.000 € de coche, 4 años, reventa del 45 %, seguro de 600 €, mantenimiento de 500 €, impuesto de 80 € y un renting de 450 € al mes, comprar sin financiar cuesta unos 385 € al mes frente a 450 € del renting (3.130 € menos en total). Con tus números cambia el resultado.",
   "veredicto": "Comprar suele salir más barato si conservas el coche muchos años; el renting compensa si cambias a menudo y valoras la cuota cerrada.",
   "inputs": [
     {
@@ -85,7 +85,7 @@
   "faqs": [
     [
       "¿Qué sale más barato, comprar un coche o hacer renting?",
-      "Depende de tus números: del precio de compra, de cuánto valga el coche al venderlo, de lo que pagues de seguro y mantenimiento y de la cuota del renting. Esta calculadora suma todos los costes de cada opción durante los años que elijas y te dice cuál gana y por cuánto."
+      "Depende de tus números: precio de compra, reventa, seguro, mantenimiento y cuota del renting. La calculadora suma todos los costes de cada opción durante los años que elijas y te dice cuál gana y por cuánto."
     ],
     [
       "¿Qué incluye normalmente la cuota de renting?",
