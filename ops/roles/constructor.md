@@ -56,3 +56,7 @@ En las 4 fiscales de c25-c28 (alquiler, maternidad, venta de vivienda, módulos)
 
 ## Tarea de mejora (ciclos de mantenimiento, c48; Sonnet ≤ 100k; métrica: peticiones `-> Constructor` cerradas en ≤ 2 ciclos, avisos R1+R2 de `qa_static --fiscal` 20 → 0)
 Orden: (1) peticiones `[Vigilante -> Constructor]` (vigencias: nota visible con fecha si no da tiempo a corregir); (2) `python3 ops/qa_static.py --fiscal --full`: R1 (falta `url` en el bloque de params; `irpf_2026` sola arregla 11 calculadoras) y R2 (cifra de `var P` sin respaldo en params: compensar, traspasar y venta-vivienda 570/5190/22440/35940; retención 61214.4/0.065/22000/15876/1500; paro 30; cuota autónomos 653.59): mover a params con fuente y fecha o justificar en preverif por qué no es cifra legal; R3 solo en la calculadora que ya estés tocando; R6 no se rellena hacia atrás; (3) peticiones `[Editor -> Constructor]`. Cero cambios de cálculo sin test que lo demuestre; build + check en verde.
+
+
+## Campos numéricos (c91)
+Tras tocar `assets/em.js` o los campos de `ui.py`: ejecutar `python3 ops/test_numinput.py` (tras build) y probar a escribir sobre un valor por defecto con decimales (p. ej. Euríbor 3.248). Va incluido en `ops/check.py` y bloquea.

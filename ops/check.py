@@ -37,5 +37,8 @@ if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "gen_tabla_su
 # Pulso / datos vivos (Estratega): sin red
 if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "check_live.py")):
     if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "check_live.py")]).returncode != 0: fails += 1
+# Campos numéricos (type=text, data-n): normalización de em.js + data-dec (ops/test_numinput.py; BLOQUEANTE)
+if "decidir" in projs and os.path.exists(os.path.join(ROOT, "ops", "test_numinput.py")):
+    if subprocess.run([sys.executable, os.path.join(ROOT, "ops", "test_numinput.py")]).returncode != 0: fails += 1
 print(f"{'OK' if not fails else 'FALLOS'}: {total - fails}/{total} comprobaciones")
 sys.exit(1 if fails else 0)

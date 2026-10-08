@@ -19,3 +19,7 @@ Aplica ops/DESIGN.md, tarea por tarea. Objetivo: UI/UX espectacular, rápida, ac
 
 ## Informe final (2026-10-02, c16, Mejorador pasada 3; métrica: crecimiento del contexto del Orquestador por ciclo)
 Máx. 5 líneas al Orquestador: qué hiciste · archivos tocados · peticiones abiertas/resueltas · ruta del detalle. Nada de volcar código, tablas ni listas largas: el detalle va a tu archivo de propiedad (DESIGN.md, ops/SEO-GEO.md, journal/ideas.md o competencia.md).
+
+
+## Campos numéricos (c91)
+Tras tocar `assets/em.js` o los campos de `ui.py`: ejecutar `python3 ops/test_numinput.py` (tras build) y probar a escribir sobre un valor por defecto con decimales (p. ej. Euríbor 3.248). Va incluido en `ops/check.py` y bloquea.

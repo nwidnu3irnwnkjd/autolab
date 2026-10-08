@@ -3903,11 +3903,11 @@
     "rdl29_estado": "en vigor desde el 2026-10-08, pendiente de convalidación"
   },
   "venta_vivienda_2026": {
-    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 2/10/2026): arts. 33.4.b, 34, 35, 38, 49, 66.1, 76 y disposición transitoria 9.ª (redacción Ley 26/2014; escala del ahorro por Ley 7/2024, vigente desde 1/1/2025); Reglamento del IRPF arts. 41 y 41 bis (redacción RD 960/2013, BOE-A-2013-12771). Nota 2/10/2026: el RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado, BOE-A-2026-20526; sus novedades (41 bis.3, DA 65.ª y 66.ª LIRPF) vuelven con el RDL 29/2026, en vigor desde el 8-10-2026, pendiente de convalidación; no se modelan)",
+    "fuente": "Ley 35/2006 del IRPF (texto consolidado, consultado el 8/10/2026): arts. 33.4.b, 34, 35, 38, 49, 66.1, 76 y disposición transitoria 9.ª (redacción Ley 26/2014; escala del ahorro por Ley 7/2024, vigente desde 1/1/2025); Reglamento del IRPF arts. 41 y 41 bis (redacción RD 960/2013, BOE-A-2013-12771). Nota 2/10/2026: el RDL 26/2026 estuvo en vigor del 1 al 2 de octubre de 2026 y fue derogado, BOE-A-2026-20526; sus novedades (41 bis.3, DA 65.ª y 66.ª LIRPF) vuelven con el RDL 29/2026, en vigor desde el 8-10-2026, pendiente de convalidación; no se modelan)",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
     "url_rdl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20266",
-    "consulta": "consultado el 2/10/2026",
+    "consulta": "consultado el 8/10/2026",
     "confianza": "A",
     "plazo_reinversion_anos": 2,
     "edad_exencion": 65,
