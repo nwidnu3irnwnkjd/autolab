@@ -336,6 +336,30 @@
     "cuotaSin": 1140.0
    },
    "tol": 1
+  },
+  {
+   "nombre": "borde: ganancia 300.001 sin otras rentas (tramo del 30 %)",
+   "in": {
+    "venta": 505001,
+    "adq": 196000,
+    "gcomp": 0,
+    "gventa": 9000,
+    "hipoteca": 60000,
+    "sit": "nohab",
+    "reinv": 0,
+    "otras": 0
+   },
+   "expect": {
+    "invalido": 0,
+    "ganancia": 300001,
+    "exenta": 0,
+    "base": 300001,
+    "cuota": 71880.3,
+    "neto": 364120.7,
+    "necesaria": 0,
+    "cuotaSin": 71880.3
+   },
+   "tol": 1
   }
  ]
 }

@@ -102,3 +102,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-08T03:01Z | 9 | 13 | 0.55 | ciclo 91 cierre: verificador-fiscal,constructor; peticiones abiertas: 18; páginas: 303
 2026-10-08T03:35Z | 10 | 13 | 0.55 | ciclo 92 cierre: constructor,disenador,qa-propio; peticiones abiertas: 18; páginas: 303
 2026-10-08T04:05Z | 11 | 13 | 0.55 | ciclo 93 cierre: verificador-fiscal,constructor; peticiones abiertas: 18; páginas: 303
+2026-10-08T04:31Z | 12 | 14 | 0.55 | ciclo 94 cierre: constructor; peticiones abiertas: 18; páginas: 303
