@@ -31,6 +31,10 @@ def _file_date(rel, first=False):
     d = _git(["log", "-1", "--format=%cs", "--", rel])
     return d or datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat()
 
+def _git_date(rel):
+    """Fecha del último commit del archivo (línea base de data/lastmod.json; ignora cambios sin commitear)."""
+    return _git(["log", "-1", "--format=%cs", "--", rel])
+
 def lastmod(*rels, extra=()):
     ds = [d for d in [_file_date(r) for r in rels] + list(extra) if d]
     return max(ds) if ds else TODAY
@@ -45,7 +49,11 @@ def calc_files(slug):
 def calc_lastmod(slug, params):
     # La fecha de parámetros (p. ej. Euríbor) aparece en la página: es contenido.
     # También la fecha de los datos vivos (Pulso) que se muestran en esa página.
-    return lastmod(*calc_files(slug), extra=[params.get("fecha", ""), live_date(slug)])
+    # OPT3.2: solo contenido material (texto, json, js, fecha de parámetros y del dato vivo mostrado), vía data/lastmod.json.
+    import lastmod_store as _ls
+    mat = _ls.material(*calc_files(slug), params.get("fecha", ""), live_date(slug))
+    base = max([d for d in [_git_date(r) for r in calc_files(slug)] + [params.get("fecha", ""), live_date(slug)] if d] or [TODAY])
+    return _ls.get(f"/decidir/{slug}/", mat, base)
 
 
 # ---------- clústeres ----------
@@ -123,7 +131,9 @@ def load_guides(params):
             if isinstance(v, str): body = body.replace("{{" + k + "}}", v)
         g["body"] = body
         rel = f"content/guias/{f}"
-        g["modified"] = lastmod(rel, extra=[params.get("fecha", "")] + gdates if "{{" in raw else [])
+        import lastmod_store as _ls
+        _x = [params.get("fecha", "")] + gdates if "{{" in raw else []
+        g["modified"] = _ls.get(f"/guias/{g['slug']}/", _ls.material(rel, *_x), max([d for d in [_git_date(rel)] + _x if d] or [TODAY]))
         g["published"] = g.get("published") or published(rel)
         out.append(g)
     return out

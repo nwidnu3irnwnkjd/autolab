@@ -224,3 +224,10 @@ Estado OPT1 (medido 5-oct): 1.1 hecha (45→29 sin sugerencias; se cierra), 1.2 
 - [x] UX2.11 [Diseñador -> Estratega] directorio.py: grupo «Trabajo y prestaciones» en /todas/ (la etiqueta ya sale en tarjeta y cabecera vía ui.etiqueta) · hecha (directorio.py agrupa por ui.etiqueta; 15 calculadoras; build+check+qa_static 0 bloqueantes)
 
 [Editor -> Constructor] (2026-10-07, pasada 6, no bloqueante) calefaccion-gas-aerotermia-electrica: añadir en test.json un caso con los valores por defecto de la página (80 m², 75 kWh/m², 10 años, gas 2.500 €/0,064, luz 0,23) para citar cifras en el lead. seguro-salud-privado-merece-la-pena, tren-avion-o-coche, portatil-o-movil-comprar-renting-o-financiar: añadir fuente con fecha de consulta si se cita enlace externo.
+
+## 2026-10-08 · Optimizador (pasada 3, ver ops/OPTIMIZACION.md)
+- [ ] OPT3.1 [Optimizador -> Orquestador -> Andoni] texto diario 9-13 oct «Solicitar indexación» de 10 URL nuevas (listas día 1-2 en OPTIMIZACION §2; días 3-5 por demanda.py, excluir control E7) + mismas en BWT; registrar pedidas en journal/indexacion-pedidas.txt · hecho = 50 pedidas
+- [ ] OPT3.2 [Optimizador -> Constructor] seo.calc_lastmod/lastmod: solo contenido material (params, cifras, live_date mostrado), no plantilla/CSS/UX · hecho = < 30 URL con lastmod de los últimos 2 días sin cambio de params
+- [ ] OPT3.3 [Optimizador -> Orquestador] kpis.py: columna «rastreadas no pedidas» (lee journal/indexacion-pedidas.txt) para el criterio de descongelado (b) y E7
+- [ ] OPT3.4 [Optimizador -> Orquestador] noticias ≤ 1/día y cada una en la petición del día; sin barridos de plantilla sin cambio de cifra; congelado nuevo: ≥ 30 rastreadas + ≥ 10 orgánicas + ≥ 80 % indexadas (sustituye OPT2.8)
+- [ ] OPT3.5 [Optimizador -> Orquestador -> Andoni] Zenodo + datos.gob.es Aplicaciones (preparar ficha y ZIP de CSV; Andoni crea cuenta) y enlace en pie/Recursos de sus webs (bloques de PEDIR-A-ANDONI-ENLACES)

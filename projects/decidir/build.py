@@ -3,7 +3,7 @@
 import json, os, shutil, html, datetime, hashlib
 from string import Template
 import minify, ogimg, bundle  # minificador y og:image por tema (Diseñador)
-import seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, JSON-LD, llms.txt
+import lastmod_store, seo  # SEO técnico + GEO (Estratega): lastmod real, clústeres, guías, JSON-LD, llms.txt
 import hubs  # /hipoteca/ y futuros hubs temáticos (Estratega)
 import barometro  # /barometro/ con datos propios fechados (Estratega)
 import directorio, asistente  # /todas/, Por situación, Novedades, sitemaps por secciones (Estratega, c50)
@@ -60,7 +60,7 @@ def write(path, title, description, body, scripts="", jsonld=None, priority="0.6
     d = os.path.join(DIST, path.strip("/"))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w").write(out)
-    if not noindex: pages.append((canonical, lastmod or datetime.date.today().isoformat(), priority))
+    if not noindex: pages.append((canonical, lastmod_store.resolve(path, body, lastmod or datetime.date.today().isoformat()), priority))
 
 def render_calc(c, all_calcs):
     faqs = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in c["faqs"])
@@ -224,6 +224,7 @@ def main():
     host = site["base_url"].split("//")[1].split("/")[0]
     if "pages.dev" not in host and "github.io" not in host: open(os.path.join(DIST, "CNAME"), "w").write(host + "\n")
     open(os.path.join(DIST, "_headers"), "w").write("/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n")
+    lastmod_store.save()
     print(f"OK: {len(pages)} páginas, {len(calcs)} calculadoras → dist/")
 
 if __name__ == "__main__":

@@ -1,0 +1,11 @@
+# URLs pedidas a Google (Inspección > Solicitar indexación) el 2026-10-07; una por línea
+/
+/noticias/
+/datos/
+/datos/precio-luz-hoy/
+/datos/irav-ipc-alquiler/
+/decidir/sueldo-bruto-a-neto-2026/
+/decidir/hipoteca-fija-o-variable/
+/noticias/2026/10/rdl-28-29-2026-alquiler-vivienda/
+/guias/
+/todas/

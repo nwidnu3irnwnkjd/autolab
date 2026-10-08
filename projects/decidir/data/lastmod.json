@@ -1,0 +1,754 @@
+{
+"/": {
+"d": "2026-10-08",
+"h": "f8dbf4449413f2ac"
+},
+"/ahorro/": {
+"d": "2026-10-08",
+"h": "d9f7da0e0d186714"
+},
+"/aviso-legal/": {
+"d": "2026-10-03",
+"h": "a1b54461a64fe9c7"
+},
+"/barometro/": {
+"d": "2026-10-08",
+"h": "6855fa0300e7a2f7"
+},
+"/calendario/": {
+"d": "2026-10-08",
+"h": "1805fbc16b6ff83f"
+},
+"/coche/": {
+"d": "2026-10-07",
+"h": "6f65bfbb816f0653"
+},
+"/como-funciona/": {
+"d": "2026-10-03",
+"h": "4464a6209e45ca76"
+},
+"/contacto/": {
+"d": "2026-10-01",
+"h": "ce5917934c108bb3"
+},
+"/cookies/": {
+"d": "2026-10-08",
+"h": "c0b8f72dea460a78"
+},
+"/datos/": {
+"d": "2026-10-07",
+"h": "27b9c0c4878d3e9a"
+},
+"/datos/euribor-hoy/": {
+"d": "2026-09-30",
+"h": "2973bc9aaa6ea658"
+},
+"/datos/irav-ipc-alquiler/": {
+"d": "2026-09-15",
+"h": "ad001d78a8a39d73"
+},
+"/datos/precio-luz-hoy/": {
+"d": "2026-10-07",
+"h": "f2251d4455f79a36"
+},
+"/decidir/": {
+"d": "2026-10-08",
+"h": "1b88c67b9b373174"
+},
+"/decidir/academia-idiomas-presencial-online-o-intensivo/": {
+"d": "2026-10-07",
+"h": "603b3387c72c84ea"
+},
+"/decidir/aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad/": {
+"d": "2026-10-03",
+"h": "f473adf9d91060d3"
+},
+"/decidir/actualizacion-renta-alquiler-irav-ipc/": {
+"d": "2026-10-08",
+"h": "e7c2625fb450b6d5"
+},
+"/decidir/adoptar-o-comprar-perro-coste-anual/": {
+"d": "2026-10-07",
+"h": "0a43b9b2921c9138"
+},
+"/decidir/aire-acondicionado-inverter-o-ventilador-coste-verano/": {
+"d": "2026-10-08",
+"h": "9fd50e1316fa12d1"
+},
+"/decidir/alquilar-o-comprar/": {
+"d": "2026-10-07",
+"h": "b3627a36dd49a17a"
+},
+"/decidir/amortizar-o-invertir/": {
+"d": "2026-10-05",
+"h": "f156b22c314944c2"
+},
+"/decidir/amortizar-plazo-o-cuota/": {
+"d": "2026-10-07",
+"h": "0223a83d01481859"
+},
+"/decidir/autonomo-estimacion-directa-o-modulos/": {
+"d": "2026-10-02",
+"h": "5046763787d74d23"
+},
+"/decidir/autonomo-o-asalariado/": {
+"d": "2026-10-02",
+"h": "9c4aa03d9269e4ed"
+},
+"/decidir/autonomo-o-sociedad-limitada/": {
+"d": "2026-10-02",
+"h": "d47985f6841c3cd0"
+},
+"/decidir/baja-medica-cuanto-cobro-incapacidad-temporal/": {
+"d": "2026-10-02",
+"h": "8531cb91baffc0f1"
+},
+"/decidir/bici-electrica-o-transporte-publico/": {
+"d": "2026-10-08",
+"h": "28c86a9554aab039"
+},
+"/decidir/caldera-reparar-o-cambiar/": {
+"d": "2026-10-08",
+"h": "c69317bb2b5a36e5"
+},
+"/decidir/calefaccion-gas-aerotermia-electrica/": {
+"d": "2026-10-08",
+"h": "0644341a8a5a8b32"
+},
+"/decidir/cambiar-de-operadora-compensa-permanencia/": {
+"d": "2026-10-08",
+"h": "6fe8fdee195bce91"
+},
+"/decidir/cambiar-electrodomestico-antiguo-merece-la-pena/": {
+"d": "2026-10-07",
+"h": "811fcbe3e92db0f0"
+},
+"/decidir/cambiar-ventanas-aislamiento-merece-la-pena/": {
+"d": "2026-10-07",
+"h": "72140946c1effcb3"
+},
+"/decidir/capitalizar-paro-o-cobrarlo/": {
+"d": "2026-10-08",
+"h": "c1a4c823d1a77bc0"
+},
+"/decidir/coche-nuevo-o-seminuevo/": {
+"d": "2026-10-07",
+"h": "36b381cd7ec6bd4e"
+},
+"/decidir/coche-propio-o-carsharing-o-vtc/": {
+"d": "2026-10-07",
+"h": "004f1a4cf7157eeb"
+},
+"/decidir/coche-segunda-mano-particular-o-concesionario/": {
+"d": "2026-10-02",
+"h": "8ca1e56a8dca56b2"
+},
+"/decidir/cocinar-en-casa-o-comer-fuera/": {
+"d": "2026-10-08",
+"h": "7556390c86dfbdce"
+},
+"/decidir/comedor-escolar-o-tupper/": {
+"d": "2026-10-08",
+"h": "ecd4c727da8a41d8"
+},
+"/decidir/comparar-ofertas-de-trabajo-neto-real/": {
+"d": "2026-10-08",
+"h": "1b6a80a84f2f77c2"
+},
+"/decidir/compensar-perdidas-ganancias-irpf-antes-fin-de-ano/": {
+"d": "2026-10-07",
+"h": "2cb230c9581c601d"
+},
+"/decidir/comprar-coche-o-renting/": {
+"d": "2026-10-08",
+"h": "667a48af5b0b1ac0"
+},
+"/decidir/comprar-o-alquilar-herramienta/": {
+"d": "2026-10-08",
+"h": "88ba9f42a04d1935"
+},
+"/decidir/comprar-o-alquilar-trastero/": {
+"d": "2026-10-07",
+"h": "559810cea94a1926"
+},
+"/decidir/contado-o-financiar/": {
+"d": "2026-10-07",
+"h": "8b5ec17f6576bf59"
+},
+"/decidir/cuanto-ahorrar-para-comprar-casa/": {
+"d": "2026-10-03",
+"h": "9a38bfb7ac3867d1"
+},
+"/decidir/cuanto-cobro-de-paro-prestacion-desempleo/": {
+"d": "2026-10-08",
+"h": "4a49fd4d4fa6a827"
+},
+"/decidir/cuanto-cuesta-un-bebe-el-primer-ano/": {
+"d": "2026-10-08",
+"h": "aaee0b7491ab1dc2"
+},
+"/decidir/cuota-autonomos-ingresos-reales-regularizacion/": {
+"d": "2026-10-08",
+"h": "1ba988e88779ee76"
+},
+"/decidir/curso-online-bootcamp-o-fp-coste-y-retorno/": {
+"d": "2026-10-07",
+"h": "58a137c75f2c3a9f"
+},
+"/decidir/declaracion-conjunta-o-individual/": {
+"d": "2026-10-02",
+"h": "8041a048d2626b11"
+},
+"/decidir/deduccion-maternidad-familia-numerosa/": {
+"d": "2026-10-02",
+"h": "807169e2b1301cae"
+},
+"/decidir/deposito-letras-o-fondo-monetario/": {
+"d": "2026-10-07",
+"h": "d6f3475b738a2a69"
+},
+"/decidir/diesel-gasolina-hibrido-electrico/": {
+"d": "2026-10-08",
+"h": "13df7cc01d41b642"
+},
+"/decidir/donativos-irpf-cuanto-desgrava-y-cuanto-donar/": {
+"d": "2026-10-02",
+"h": "49ae8d70c6b2d54d"
+},
+"/decidir/empleada-hogar-cuanto-cuesta-contratar-cotizacion/": {
+"d": "2026-10-07",
+"h": "54c3a0c3a23960de"
+},
+"/decidir/equipaje-y-asiento-avion-coste-real/": {
+"d": "2026-10-03",
+"h": "d80fb50ccc901810"
+},
+"/decidir/excedencia-o-reduccion-jornada/": {
+"d": "2026-10-08",
+"h": "1534a1712dc348b7"
+},
+"/decidir/fianza-y-garantias-adicionales-alquiler/": {
+"d": "2026-10-07",
+"h": "9d9a5221a2ba4e15"
+},
+"/decidir/fibra-y-movil-juntos-o-por-separado/": {
+"d": "2026-10-07",
+"h": "6c3e5dce2060f7b8"
+},
+"/decidir/finiquito-baja-voluntaria-vacaciones-preaviso/": {
+"d": "2026-10-02",
+"h": "e94f55cf302fb3ff"
+},
+"/decidir/fondo-de-emergencia-cuantos-meses-necesito/": {
+"d": "2026-10-08",
+"h": "e181257bf0731834"
+},
+"/decidir/freidora-de-aire-u-horno-cuanto-gasta/": {
+"d": "2026-10-07",
+"h": "3362978fe9e0f0fc"
+},
+"/decidir/garaje-comprar-alquilar-o-aparcar-en-la-calle/": {
+"d": "2026-10-02",
+"h": "1fbeafa25ddd8cad"
+},
+"/decidir/gasolinera-low-cost-compensa-desviarse/": {
+"d": "2026-10-02",
+"h": "322759b7d85a823f"
+},
+"/decidir/gastos-alquiler-quien-paga/": {
+"d": "2026-10-07",
+"h": "2c56232b836d26e8"
+},
+"/decidir/gimnasio-o-entrenar-en-casa/": {
+"d": "2026-10-08",
+"h": "bca3013e0dc26ca6"
+},
+"/decidir/guarderia-cuidadora-o-reducir-jornada/": {
+"d": "2026-10-08",
+"h": "ca3a092323ba0ee4"
+},
+"/decidir/hipoteca-20-25-o-30-anos-cuota-vs-intereses/": {
+"d": "2026-10-08",
+"h": "186f3170066b0d56"
+},
+"/decidir/hipoteca-bonificada-o-sin-vinculaciones/": {
+"d": "2026-10-08",
+"h": "a669bd99189cbc98"
+},
+"/decidir/hipoteca-fija-o-variable/": {
+"d": "2026-10-08",
+"h": "d79c875749ea7893"
+},
+"/decidir/hipoteca-mas-entrada-o-conservar-ahorros/": {
+"d": "2026-10-08",
+"h": "9c03ac26984bc839"
+},
+"/decidir/horas-valle-luz-lavadora-termo-cuanto-ahorro/": {
+"d": "2026-10-07",
+"h": "52833641328aca05"
+},
+"/decidir/hotel-o-apartamento-viaje-en-grupo/": {
+"d": "2026-10-07",
+"h": "92b349eaadbd6c5a"
+},
+"/decidir/impresora-tinta-o-laser-coste-por-pagina/": {
+"d": "2026-10-02",
+"h": "c3281db76ab66b81"
+},
+"/decidir/incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar/": {
+"d": "2026-10-02",
+"h": "b390b1010e56be91"
+},
+"/decidir/indemnizacion-despido-objetivo-o-improcedente-neto/": {
+"d": "2026-10-08",
+"h": "27e949e29fd6ec14"
+},
+"/decidir/irpf-alquilar-vivienda-rendimiento-neto/": {
+"d": "2026-10-08",
+"h": "8fd3c30d66afea15"
+},
+"/decidir/jubilacion-activa-o-dejar-de-trabajar/": {
+"d": "2026-10-08",
+"h": "7174ce2450a4074a"
+},
+"/decidir/jubilacion-anticipada-o-demorada/": {
+"d": "2026-10-08",
+"h": "25124f9b5d481f1c"
+},
+"/decidir/jubilarse-en-2026-o-en-2027-edad-y-pension/": {
+"d": "2026-10-08",
+"h": "2d1d6490f70af888"
+},
+"/decidir/kilometraje-y-dietas-exentas-irpf/": {
+"d": "2026-10-03",
+"h": "3768a3fbc84e5caa"
+},
+"/decidir/loteria-navidad-premio-neto-hacienda/": {
+"d": "2026-10-03",
+"h": "5b8c5df57b357a70"
+},
+"/decidir/luz-fija-o-indexada/": {
+"d": "2026-10-08",
+"h": "7227adc3cdbef93f"
+},
+"/decidir/marca-blanca-o-marca-ahorro-anual/": {
+"d": "2026-10-08",
+"h": "ba67a8f47a5752cb"
+},
+"/decidir/movil-reacondicionado-o-nuevo/": {
+"d": "2026-10-08",
+"h": "6ecb4bde0c1690d6"
+},
+"/decidir/mudanza-empresa-o-furgoneta/": {
+"d": "2026-10-03",
+"h": "4b802b6bc3acf35b"
+},
+"/decidir/navidad-cuanto-gastar-sin-endeudarte/": {
+"d": "2026-10-02",
+"h": "1dd5f26adb75b80e"
+},
+"/decidir/nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad/": {
+"d": "2026-10-03",
+"h": "87a4f266c7ca47d6"
+},
+"/decidir/obligado-a-declarar-renta-dos-pagadores/": {
+"d": "2026-10-02",
+"h": "e36287c5974d6353"
+},
+"/decidir/paga-extra-navidad-cuanto-cobro-neto/": {
+"d": "2026-10-02",
+"h": "0985c718564a91a9"
+},
+"/decidir/pagas-extra-prorrateadas-o-14-pagas/": {
+"d": "2026-10-03",
+"h": "faf5a69ad7db6a48"
+},
+"/decidir/paro-autonomos-cese-actividad-cuanto-cobro/": {
+"d": "2026-10-02",
+"h": "d0be4a86f514de83"
+},
+"/decidir/pc-sobremesa-o-portatil-coste-a-5-anos/": {
+"d": "2026-10-03",
+"h": "f9ad8d342a7323d5"
+},
+"/decidir/pension-viudedad-cuanto-cobro/": {
+"d": "2026-10-02",
+"h": "ccdd7cba9900c2ca"
+},
+"/decidir/permiso-nacimiento-cuanto-cobro-y-como-repartir/": {
+"d": "2026-10-02",
+"h": "adec0b0482d088ec"
+},
+"/decidir/placas-solares-merece-la-pena/": {
+"d": "2026-10-08",
+"h": "768d4a0b6ba4a1c4"
+},
+"/decidir/plan-pensiones-o-fondo-indexado/": {
+"d": "2026-10-07",
+"h": "9ef945b62f60b9ef"
+},
+"/decidir/portatil-o-movil-comprar-renting-o-financiar/": {
+"d": "2026-10-08",
+"h": "579a93bcc44d4f0c"
+},
+"/decidir/potencia-contratada-luz-bajar-compensa/": {
+"d": "2026-10-08",
+"h": "b271b448cffbda42"
+},
+"/decidir/punto-de-carga-casa-con-o-sin-placas/": {
+"d": "2026-10-07",
+"h": "8845228704cc3d2b"
+},
+"/decidir/radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta/": {
+"d": "2026-10-08",
+"h": "5178a9447cfca01d"
+},
+"/decidir/reformar-o-mudarse/": {
+"d": "2026-10-07",
+"h": "4e79578e435eff15"
+},
+"/decidir/renovar-contrato-alquiler-o-firmar-nuevo-reduccion-irpf/": {
+"d": "2026-10-08",
+"h": "c7aff494f2380d1b"
+},
+"/decidir/reparar-o-comprar-electrodomestico/": {
+"d": "2026-10-07",
+"h": "d69e3294b65547ef"
+},
+"/decidir/rescate-plan-pensiones-capital-o-renta/": {
+"d": "2026-10-02",
+"h": "c953a59b0d2590dd"
+},
+"/decidir/residencia-o-cuidador-a-domicilio/": {
+"d": "2026-10-07",
+"h": "cae4ca3af04921fb"
+},
+"/decidir/retencion-irpf-nomina-subir-o-no/": {
+"d": "2026-10-07",
+"h": "f03c8311bfadae3b"
+},
+"/decidir/retribucion-flexible-me-conviene/": {
+"d": "2026-10-02",
+"h": "6effb5322e5099f3"
+},
+"/decidir/secadora-o-tendedero-coste-por-lavado/": {
+"d": "2026-10-07",
+"h": "e4dfc78753940c6d"
+},
+"/decidir/seguro-hogar-con-o-sin-franquicia/": {
+"d": "2026-10-02",
+"h": "f2d93457251bf1e5"
+},
+"/decidir/seguro-mascota-merece-la-pena/": {
+"d": "2026-10-08",
+"h": "ce741dc9e13677d9"
+},
+"/decidir/seguro-salud-privado-merece-la-pena/": {
+"d": "2026-10-08",
+"h": "fc643835d316a30f"
+},
+"/decidir/seguro-todo-riesgo-o-terceros/": {
+"d": "2026-10-08",
+"h": "50c0e50b7f6a58a8"
+},
+"/decidir/seguro-vida-hipoteca-banco-o-externo/": {
+"d": "2026-10-02",
+"h": "1dcb1a78bb98e555"
+},
+"/decidir/subrogar-hipoteca-merece-la-pena/": {
+"d": "2026-10-08",
+"h": "54ea45e3261d6c35"
+},
+"/decidir/subsidio-desempleo-cuanto-cobro-y-cuanto-dura/": {
+"d": "2026-10-02",
+"h": "804048b5c49939d2"
+},
+"/decidir/sueldo-bruto-a-neto-2026/": {
+"d": "2026-10-08",
+"h": "95ef96cccaae7787"
+},
+"/decidir/suscripciones-cuanto-gasto-al-ano/": {
+"d": "2026-10-08",
+"h": "d14fa62095e38b3a"
+},
+"/decidir/teletrabajo-o-oficina-coste-real/": {
+"d": "2026-10-08",
+"h": "9261d3d5bb41d8fc"
+},
+"/decidir/termo-electrico-o-calentador-gas-o-aerotermia-agua/": {
+"d": "2026-10-08",
+"h": "e0f3234f028201a7"
+},
+"/decidir/traspasar-fondo-o-reembolsar-irpf/": {
+"d": "2026-10-07",
+"h": "04fb81a8071ba429"
+},
+"/decidir/tren-avion-o-coche/": {
+"d": "2026-10-07",
+"h": "77e0f29802221dc0"
+},
+"/decidir/universidad-publica-o-privada-o-master/": {
+"d": "2026-10-07",
+"h": "851177491a9a9510"
+},
+"/decidir/venta-vivienda-plusvalia-irpf-exencion/": {
+"d": "2026-10-08",
+"h": "f13f58c0197645d0"
+},
+"/decidir/vivienda-vacia-o-alquilarla-irpf/": {
+"d": "2026-10-07",
+"h": "f5e306e3a07f7448"
+},
+"/decidir/vivir-cerca-del-trabajo-o-mas-barato-lejos/": {
+"d": "2026-10-03",
+"h": "4bbe0c2aaddeea84"
+},
+"/energia/": {
+"d": "2026-10-08",
+"h": "0e3f6ca891039de4"
+},
+"/guias/": {
+"d": "2026-10-08",
+"h": "e171ed3e1c4d0ff1"
+},
+"/guias/ahorrar-factura-luz-potencia-horas-valle-tarifa/": {
+"d": "2026-10-08",
+"h": "7ae2338847158f2e"
+},
+"/guias/amortizacion-anticipada-comisiones/": {
+"d": "2026-10-08",
+"h": "cb6e35beb2efd9e1"
+},
+"/guias/antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos/": {
+"d": "2026-10-07",
+"h": "e791b0afffc28941"
+},
+"/guias/autonomo-2026-cuota-regularizacion-modulos/": {
+"d": "2026-10-07",
+"h": "5ab3ca1bed6cbb5e"
+},
+"/guias/base-liquidable-tramos-irpf-2026/": {
+"d": "2026-10-07",
+"h": "896104eb1b7e74f2"
+},
+"/guias/black-friday-y-navidad-sin-deudas/": {
+"d": "2026-10-08",
+"h": "93575163a9d8706c"
+},
+"/guias/cambio-de-hora-octubre-horas-valle-luz/": {
+"d": "2026-10-08",
+"h": "c7d63692842b421b"
+},
+"/guias/checklist-casa-antes-del-invierno/": {
+"d": "2026-10-07",
+"h": "b165e9908a24a9de"
+},
+"/guias/clausulas-contrato-alquiler/": {
+"d": "2026-10-08",
+"h": "162e5f95f5971a67"
+},
+"/guias/cuanto-cuesta-tener-coche/": {
+"d": "2026-10-07",
+"h": "7a18c51364d57501"
+},
+"/guias/cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora/": {
+"d": "2026-10-07",
+"h": "0f710fa392493989"
+},
+"/guias/euribor-hipoteca/": {
+"d": "2026-10-08",
+"h": "b28d14fab5541321"
+},
+"/guias/loteria-navidad-hacienda-decimos-compartidos-penas/": {
+"d": "2026-10-07",
+"h": "f9c7627a3af54744"
+},
+"/guias/me-han-despedido-indemnizacion-paro-plazos/": {
+"d": "2026-10-07",
+"h": "6a9c17581039ed0d"
+},
+"/guias/paga-extra-diciembre-neto-retencion/": {
+"d": "2026-10-07",
+"h": "cf55c5327b350fdd"
+},
+"/guias/renta-2027-ejercicio-2026-paso-a-paso/": {
+"d": "2026-10-07",
+"h": "74769d3a309649e8"
+},
+"/guias/revisa-tu-contrato-de-alquiler-checklist/": {
+"d": "2026-10-08",
+"h": "51e0738a0ac78a2c"
+},
+"/guias/subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas/": {
+"d": "2026-10-07",
+"h": "df4cf4f3e1ebcaf0"
+},
+"/guias/tu-casa-en-invierno-que-mirar-primero/": {
+"d": "2026-10-07",
+"h": "f8d71ec8328c263a"
+},
+"/hipoteca/": {
+"d": "2026-10-08",
+"h": "a9e054161a93ff98"
+},
+"/impuestos/": {
+"d": "2026-10-08",
+"h": "6262474bb43b45d2"
+},
+"/inserta/": {
+"d": "2026-10-06",
+"h": "e5b97b039c09d310"
+},
+"/noticias/": {
+"d": "2026-10-08",
+"h": "d11b9048138f70a6"
+},
+"/noticias/2026/09/euribor-sube-2026-09/": {
+"d": "2026-10-03",
+"h": "9ee6800ce0c02217"
+},
+"/noticias/2026/10/": {
+"d": "2026-10-08",
+"h": "bfb7700c547a92d3"
+},
+"/noticias/2026/10/cambio-base-autonomo-31-octubre/": {
+"d": "2026-10-03",
+"h": "743256d6fc69fb39"
+},
+"/noticias/2026/10/casero-sube-alquiler-octubre-que-dice-la-ley/": {
+"d": "2026-10-07",
+"h": "f09af0175b35feea"
+},
+"/noticias/2026/10/consolidado-reversion-rdl-26-2026/": {
+"d": "2026-10-07",
+"h": "324005b3202bc87b"
+},
+"/noticias/2026/10/contrato-alquiler-desde-8-octubre-gastos-fianza-garantias/": {
+"d": "2026-10-07",
+"h": "a6ecee66946e1f92"
+},
+"/noticias/2026/10/decide-14-octubre-ipc-irav-carburantes/": {
+"d": "2026-10-07",
+"h": "ac48a2d52a35e6bc"
+},
+"/noticias/2026/10/derogados-rdl-26-27-2026-alquiler-irpf/": {
+"d": "2026-10-07",
+"h": "899f7c54f9b044ec"
+},
+"/noticias/2026/10/disolucion-cortes-rdl-25-2026-que-cambia/": {
+"d": "2026-10-06",
+"h": "89eac00122f7fbeb"
+},
+"/noticias/2026/10/gasolina-diesel-precio-medio-7-octubre/": {
+"d": "2026-10-07",
+"h": "58a7a499518f1909"
+},
+"/noticias/2026/10/irav-ipc-septiembre-14-octubre/": {
+"d": "2026-10-07",
+"h": "1748db211912e95c"
+},
+"/noticias/2026/10/modelos-3t-plazo-20-octubre/": {
+"d": "2026-10-03",
+"h": "95a76fd56c779176"
+},
+"/noticias/2026/10/paro-registrado-septiembre-2026/": {
+"d": "2026-10-03",
+"h": "e5b25eeedd7907d7"
+},
+"/noticias/2026/10/precio-luz-jueves-8-octubre/": {
+"d": "2026-10-08",
+"h": "05886936c1173375"
+},
+"/noticias/2026/10/rdl-25-2026-gasolina-gas-butano-luz/": {
+"d": "2026-10-03",
+"h": "de3ceb555a30d2a5"
+},
+"/noticias/2026/10/rdl-28-29-2026-alquiler-vivienda/": {
+"d": "2026-10-07",
+"h": "3a3c7c780492308f"
+},
+"/noticias/2026/10/resumen-2026-10-03/": {
+"d": "2026-10-03",
+"h": "1984d1b88aebefe1"
+},
+"/noticias/2026/10/resumen-2026-10-05/": {
+"d": "2026-10-07",
+"h": "a739a5f8a596c54f"
+},
+"/noticias/2026/10/resumen-2026-10-07/": {
+"d": "2026-10-07",
+"h": "ef2bc2a6651c946d"
+},
+"/noticias/2026/10/semana-2026-10-05/": {
+"d": "2026-10-07",
+"h": "e6aca636dbeb7631"
+},
+"/noticias/2026/10/tur-gas-octubre-2026/": {
+"d": "2026-10-03",
+"h": "d96620aa9774c367"
+},
+"/noticias/resumen/": {
+"d": "2026-10-07",
+"h": "f3f9838ff316e3fd"
+},
+"/plan/alquilar-vivienda/": {
+"d": "2026-10-02",
+"h": "2b579a5fb9fa2606"
+},
+"/plan/autonomo/": {
+"d": "2026-10-02",
+"h": "0ffec03addddc3ea"
+},
+"/plan/compra-vivienda/": {
+"d": "2026-10-02",
+"h": "96d3e9881d3e318b"
+},
+"/plan/despido/": {
+"d": "2026-10-02",
+"h": "b4415abb64c551b4"
+},
+"/politica-editorial/": {
+"d": "2026-10-03",
+"h": "8816c5c00a6532e8"
+},
+"/politica-ia/": {
+"d": "2026-10-01",
+"h": "0b1fa6d08fdd9f07"
+},
+"/privacidad/": {
+"d": "2026-10-08",
+"h": "7c6386ce6e69cc7e"
+},
+"/que-cambia-1-enero-2027/": {
+"d": "2026-10-08",
+"h": "237b4f995c7cdfe2"
+},
+"/tablas-2026/": {
+"d": "2026-10-08",
+"h": "f37a99861ea1086c"
+},
+"/tablas-2026/cuota-autonomos-tramos/": {
+"d": "2026-10-08",
+"h": "7cdcc3c4fa1c488f"
+},
+"/tablas-2026/itp-ajd-comunidades/": {
+"d": "2026-10-08",
+"h": "f86ce1a2ed23ce02"
+},
+"/tablas-2026/smi-iprem-paro-pensiones/": {
+"d": "2026-10-08",
+"h": "7e1236572131cf4d"
+},
+"/tablas-2026/trabajo-prestaciones/": {
+"d": "2026-10-08",
+"h": "875551b7b13ea23c"
+},
+"/tablas-2026/tramos-irpf-comunidades/": {
+"d": "2026-10-08",
+"h": "a94fbb83e09b146b"
+},
+"/todas/": {
+"d": "2026-10-08",
+"h": "0ecc4b36257dcd43"
+}
+}

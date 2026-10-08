@@ -35,6 +35,11 @@ def disc_crawl():
     import inspect_all
     r = inspect_all.summary(d)
     return r["conocidas"], r["rastreadas"]
+def crawled_unrequested():
+    """OPT3.3: URLs rastreadas por Google que NO están en journal/indexacion-pedidas.txt (rastreo orgánico, no provocado por nuestras peticiones)."""
+    d = json.load(open(os.path.join(ROOT, "journal/inspeccion.json")))["resultados"]
+    ped = {l.strip() for l in open(os.path.join(ROOT, "journal/indexacion-pedidas.txt"), encoding="utf-8") if l.strip() and not l.startswith("#")}
+    return sum(1 for u, v in d.items() if v.get("ultimo_rastreo") and u.replace(BASE, "") not in ped)
 def gsc():
     q = gauth.post(f"https://www.googleapis.com/webmasters/v3/sites/sc-domain:{host}/searchAnalytics/query", tok,
         {"startDate": str(now.date() - datetime.timedelta(days=7)), "endDate": str(now.date())})
@@ -80,6 +85,7 @@ n_pub = safe(noticias_pub); n_nk = safe(noticias_known)
 gn = safe(gsc_noticias) if tok != ND else (ND, ND)
 noticias_cell = f"{n_pub} pub · {n_nk} conoc. · {gn[0]} clics · {gn[1]} impr."
 n_known = safe(known)
+rnp = safe(crawled_unrequested)
 dc = safe(disc_crawl) if n_known != ND else (ND, ND)
 g = safe(gsc) if tok != ND else (ND,) * 3
 sess = safe(ga_tot) if tok != ND and pid else (ND, ND)
@@ -90,8 +96,8 @@ HEAD = f"""# KPIs de tráfico (PLAN-TRAFICO) · una fila por ejecución (`python
 **Regla de lectura.** Éxito de la semana 2 (16-oct-2026): **≥ 50 URLs conocidas/indexadas por Google** (con 12 URLs de muestra, «Conocidas» ≥ 12 de 12 y el sitemap procesado en Search Console equivale a ese umbral; hasta entonces, la tendencia de «Conocidas/12» es la señal) **y primeras impresiones** (Impr. 7d > 0). Si el 15-oct «Conocidas» sigue en 0: revisar propiedad y plan B.
 Tendencia ↑ ↓ = compara «Conocidas», «Impr.» y «Sesiones» con la fila anterior (en ese orden). n/d = la API falló. Eventos 7 d: share_click / calc_used / result_view (res) / calc_error (err) / calendar_add / asistente_paso / asistente_resultado (0 si aún no existen; res y err desde UX1.4, y solo cuentan tráfico de entremuchos.com). «Sesiones» incluye tráfico propio (no separable).
 
-| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | res | err | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. | Noticias (publicadas · conocidas/URL /noticias/ · GSC 7d) | Descubiertas | Rastreadas |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Fecha (UTC) | URLs sitemap | Conocidas /12 | Clics 7d | Impr. 7d | Pos. | Sesiones 7d | Usuarios 7d | share | calc | res | err | cal | as_paso | as_res | Top 5 páginas (vistas) | Tend. | Noticias (publicadas · conocidas/URL /noticias/ · GSC 7d) | Descubiertas | Rastreadas | Rastreadas no pedidas |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 """
 lines = open(OUT, encoding="utf-8").read().split("\n") if os.path.exists(OUT) else []
 rows = [l for l in lines if re.match(r"\| \d{4}-\d\d-\d\d ", l)]
@@ -101,6 +107,7 @@ def _res_err(l):  # filas anteriores a UX1.5 (16 celdas): res y err = «n/d» tr
     return l if len(c) >= 18 else "| " + " | ".join(c[:10] + ["n/d", "n/d"] + c[10:]) + " |"
 rows = [_res_err(l) for l in rows]
 rows = [l if len(l.strip()[1:-1].split(" | ")) >= 20 else l + " n/d | n/d |" for l in rows]  # OPT2.5: filas anteriores a «Descubiertas» y «Rastreadas»
+rows = [l if len(l.strip()[1:-1].split(" | ")) >= 21 else l + " n/d |" for l in rows]  # OPT3.3: filas anteriores a «Rastreadas no pedidas»
 if any(l.startswith(f"| {stamp} ") for l in rows): print(f"Ya hay fila para {stamp}; no se duplica."); sys.exit(0)
 def arrow(a, b):
     try: return "↑" if float(a) > float(b) else "↓" if float(a) < float(b) else "="
@@ -110,7 +117,7 @@ if rows:
     c = [x.strip() for x in rows[-1].strip("|").split("|")]
     tend = "".join(arrow(a, b) for a, b in zip(cur, [c[2], c[4], c[6]]))
 else: tend = "inicio"
-row = f"| {stamp} | {n_sm} | {n_known} | {g[0]} | {g[1]} | {g[2]} | {sess[0]} | {sess[1]} | " + " | ".join(str(e) for e in ev) + f" | {top} | {tend} | {noticias_cell} | {dc[0]} | {dc[1]} |"
+row = f"| {stamp} | {n_sm} | {n_known} | {g[0]} | {g[1]} | {g[2]} | {sess[0]} | {sess[1]} | " + " | ".join(str(e) for e in ev) + f" | {top} | {tend} | {noticias_cell} | {dc[0]} | {dc[1]} | {rnp} |"
 print(row)
 if "--dry" not in sys.argv:
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
