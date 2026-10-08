@@ -41,3 +41,6 @@ Pega en la sesión de Claude del navegador el texto de `journal/PEDIR-A-ANDONI-I
 
 ## Titular legal (c84, cumplimiento LSSI art. 10 / RGPD art. 13.1.a) — cuando puedas, sin urgencia
 El verificador legal pide identificar al responsable de la web con nombre (o razón social), NIF y domicilio/contacto en las páginas de privacidad/aviso legal; hoy solo pone «Editor independiente (Madrid)». Dime qué datos quieres publicar (o si prefieres crear una sociedad/usar la de Lavarte) y lo meto en data/site.json → owner. Mientras no haya monetización, el riesgo es bajo, pero conviene antes de AdSense/afiliación.
+
+## Paquete de datos para Zenodo y datos.gob.es (c97) — opcional, ayuda a conseguir enlaces
+Listo en journal/paquete-datos/ (ver LEEME-ANDONI.md): ZIP de CSV, README y fichas. Necesita: tu nombre como autor (hoy marcador [NOMBRE A COMPLETAR POR ANDONI]), crear cuenta en Zenodo y datos.gob.es, subirlo y pasarme los enlaces. Cautela: condiciones de reutilización de REData (luz), INE y MITECO sin verificar; si dudas, quitar luz y carburantes del ZIP.

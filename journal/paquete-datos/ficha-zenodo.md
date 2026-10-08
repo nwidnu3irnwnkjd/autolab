@@ -1,0 +1,13 @@
+# Ficha Zenodo (copiar y pegar en "New upload")
+- Resource type: Dataset
+- Title: Series de referencia para decidir: Euríbor, hipotecas, carburantes, luz y alquiler (España)
+- Publication date: fecha de la subida
+- Creators: [NOMBRE A COMPLETAR POR ANDONI] (Editor independiente, Madrid). Afiliación: Editor independiente (Madrid)
+- Description: Series públicas en CSV usadas por https://entremuchos.com/datos/: Euríbor a 12 meses (media mensual, 24 meses), tipo de interés medio de nuevas hipotecas de vivienda en España (24 meses), precios medios diarios de gasolina 95 y gasóleo (6 días), PVPC medio diario (6 días) e IRAV/IPC del alquiler (agosto 2026). Cada fila incluye fecha, valor, unidad, fuente y URL de la fuente. Fuentes: Banco Central Europeo, INE, Red Eléctrica de España, MITECO. Los datos originales pertenecen a sus fuentes; la licencia CC BY 4.0 se aplica al tratamiento y la estructura. Las series diarias son cortas (inicio del archivo: octubre de 2026). Idioma: español.
+- Language: Spanish
+- Keywords: Euríbor; hipotecas; precio de la luz; PVPC; carburantes; IRAV; alquiler; España; datos abiertos
+- License: Creative Commons Attribution 4.0 International (CC-BY-4.0)
+- Related/alternate identifier: https://entremuchos.com/datos/ (relation: "is described by" / "is supplement to")
+- Version: 2026-10-07
+- Files: ZIP del paquete (README.md + carpeta csv/)
+- Funding / conferencia: dejar vacío
