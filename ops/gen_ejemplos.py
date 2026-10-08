@@ -421,6 +421,75 @@ def ej_km_dietas(i, r):
     return (f"{num(i['km'])} km a {eur(i['pagokm'], 2)}/km con un coche de {eur(i['costekm'], 2)}/km, {eur(i['peajes'])} de peajes, {i['diasSin']} días de dieta sin pernocta y {i['diasCon']} con pernocta a {eur(i['dieta'], 2)} y tipo del {pct(i['tipo'], 0)}",
             f + (k.replace("te deja -", "te hace perder ").replace("te deja", "te deja") if r["netoCoche"] >= 0 else f"; el coche te cuesta {eur(r['costeCoche'])} y te hace perder {eur(abs(r['netoCoche']), 2)} netos" if i["km"] else "") + ".")
 
+# ---------- Casos típicos, tanda 6 (ocio, hogar, compras, energía, coche): entradas de calcs/<slug>.test.json ----------
+def ej_academia(i, r):
+    n = ["la academia presencial", "el curso online", "la inmersión"][r["mejor"]]
+    return (f"{num(i['horas'])} horas de aprendizaje, academia a {eur(i['acad'], 2)}/h más {eur(i['desp'], 2)}/h de desplazamiento y {pct(i['desc'], 0)} de descuento, online a {eur(i['onl'], 2)}/h con una eficacia del {pct(i['ef'], 0)} y inmersión a {eur(i['inm'])} por semana",
+            f"la academia costaría {eur(r['costeAcad'])}, el online {eur(r['costeOnl'])} ({num(r['horasOnl'])} horas hasta igualar el aprendizaje) y la inmersión {eur(r['costeInm'])}: sale más barato {n}, {eur(r['ahorro'])} menos que la siguiente opción.")
+def ej_perro(i, r):
+    n = "adoptar" if r["ganador"] == 0 else "comprar"
+    s = f", seguro de {eur(i['seguro'])} al año" if i["seguro"] else ""
+    return (f"perro con {eur(i['pienso'])} al mes de pienso, {eur(i['vet'])} al año de veterinario{s}, {eur(i['iniciales'])} de gastos iniciales, adopción de {eur(i['adopcion'])} frente a compra de {eur(i['compra'])}, durante {i['anos']} años",
+            f"el gasto fijo es de {eur(r['anual'])} al año ({eur(r['mensual'], 2)} al mes); en {i['anos']} años adoptar cuesta {eur(r['totalAdopcion'])} y comprar {eur(r['totalCompra'])}: sale más barato {n} por {eur(abs(r['diferencia']))}; la diferencia viene solo de la cuota de adopción frente al precio de compra.")
+def ej_bici(i, r):
+    n = ["seguir en coche", "el transporte público", "la bici eléctrica"][r["barato"]]
+    return (f"{num(i['kmdia'])} km al día durante {i['dias']} días al año, coche a {eur(i['kmcoche'], 3)}/km, abono de {eur(i['abono'])} al mes y bici de {eur(i['bici'])} con {i['vida']} años de vida",
+            f"el coche costaría {eur(r['cocheAnual'], 2)} al año, el abono {eur(r['abonoAnual'], 2)} y la bici {eur(r['biciAnual'], 2)}: sale más barato {n}.")
+def ej_calef(i, r):
+    n = ["el gas", "la aerotermia", "la calefacción eléctrica"][r["ganador"]]
+    return (f"vivienda de {num(i['sup'])} m² con demanda de {num(i['demanda'])} kWh/m² al año durante {i['anos']} años, gas a {num(i['pgas'], 2)} €/kWh, electricidad a {num(i['pelec'], 2)} €/kWh, SCOP de {num(i['scop'], 1)} y ayuda a la aerotermia de {eur(i['ayuda'])}",
+            f"a {i['anos']} años el gas costaría {eur(r['costeGas'])}, la aerotermia {eur(r['costeAero'])} y la eléctrica {eur(r['costeElec'])}: sale más barato {n}, {eur(r['diferencia'])} menos que la siguiente.")
+def ej_operadora(i, r):
+    n = {0: "cambiarte ya, pagando la penalización", 1: "esperar a que acabe la permanencia", 2: "quedarte con tu operadora"}[r["ganador"]]
+    return (f"cuota actual de {eur(i['act'])} al mes frente a una oferta de {eur(i['promo'])} durante {i['promoM']} meses y {eur(i['nueva'])} después, {i['perm']} meses de permanencia con {eur(i['penal'])} de penalización, {eur(i['alta'])} de alta y horizonte de {i['horiz']} meses",
+            f"quedarte costaría {eur(r['costeQuedarse'])}, cambiarte ya {eur(r['costeCambiar'])} y esperar a que acabe la permanencia {eur(r['costeEsperar'])}: sale mejor {n}.")
+def ej_electro(i, r):
+    f = (f"el aparato nuevo ahorra {eur(r['ahorroAnual'], 2)} al año de luz y en {i['anos']} años deja un saldo de {eur(r['saldo'])}: compensa cambiarlo." if r["compensa"]
+         else f"el aparato nuevo ahorra {eur(r['ahorroAnual'], 2)} al año de luz y en {i['anos']} años deja un saldo de {eur(r['saldo'])}: no compensa cambiarlo")
+    if not r["compensa"] and r["minKwh"]: f += f"; compensaría si ahorrara al menos {num(r['minKwh'])} kWh al año."
+    elif not r["compensa"]: f += "."
+    return (f"aparato actual de {num(i['act'])} kWh al año frente a uno nuevo de {num(i['nue'])} kWh que cuesta {eur(i['coste'])}, reventa de {eur(i['reventa'])}, luz a {eur(i['luz'], 2)}/kWh y {i['anos']} años de horizonte", f)
+def ej_ventanas(i, r):
+    f = (f"con {eur(r['neto'])} netos de obra y {eur(r['ahorroAnual1'], 2)} de ahorro el primer año, en {i['anos']} años acumulas {eur(r['ahorroAcum'])} y quedas con un saldo de {eur(r['saldoAcum'])}: " +
+         ("compensa" if r["compensa"] else f"no compensa; haría falta ahorrar al menos un {pct(r['minPct'])} de la factura"))
+    return (f"gasto de {eur(i['gasto'])} al año en climatización, ahorro esperado del {pct(i['ahorro'], 0)}, obra de {eur(i['coste'])}, ayudas de {eur(i['ayuda'])}, subida de la energía del {pct(i['subida'], 0)} anual y {i['anos']} años de horizonte", f + ".")
+def ej_coche2(i, r):
+    n = "a particular" if r["ganador"] == 0 else "en concesionario"
+    return (f"coche a {eur(i['precioPart'])} de particular o a {eur(i['precioConc'])} en concesionario, avería grave de {eur(i['averia'])} con un {pct(i['prob'], 0)} de probabilidad, garantía del {pct(i['cobertura'], 0)}, transferencia de {eur(i['trasp'])} y revisión previa de {eur(i['revision'])}",
+            f"a particular costaría {eur(r['costePart'])} y en concesionario {eur(r['costeConc'])}: sale más barato comprar {n} por {eur(abs(r['diferencia']))}, con estas hipótesis de avería.")
+def ej_comedor(i, r):
+    n = "el comedor" if r["ganador"] == 0 else "el tupper"
+    t = f", contando tu hora a {eur(i['valorHora'])}" if i["valorHora"] else ""
+    d = f", con {pct(i['desc'], 0)} de descuento en el menú" if i["desc"] else ""
+    return (f"menú de {eur(i['menu'])} al día, {i['dias']} días de comedor, {i['hijos']} {'hijo' if i['hijos'] == 1 else 'hijos'}{d}, comida casera a {eur(i['compra'])} al día y {i['minutos']} minutos de preparación{t}",
+            f"el comedor costaría {eur(r['comedor'])} al curso y el tupper {eur(r['tupper'])}: sale más barato {n} por {eur(abs(r['diferencia']))}; el tupper compensa si el menú cuesta más de {eur(r['menuEq'], 2)} al día.")
+def ej_herram(i, r):
+    n = "comprar" if r["ganador"] == 0 else "alquilar"
+    return (f"herramienta de {eur(i['precio'])} frente a alquilarla a {eur(i['alq'])} por uso, {i['usos']} {'uso' if i['usos'] == 1 else 'usos'} al año durante {i['anios']} años, reventa del {pct(i['reventa'], 0)}, {eur(i['mant'])} de mantenimiento y {eur(i['alm'])} de almacenamiento al año",
+            f"comprar costaría {eur(r['pvCompra'])} y alquilar {eur(r['pvAlquiler'])} en {i['anios']} años: sale más barato {n} por {eur(abs(r['diferencia']))}; comprar compensa a partir de unos {num(r['usosEqAnio'], 1)} usos al año.")
+def ej_trastero(i, r):
+    n = "comprar" if r["ganador"] == 0 else "alquilar"
+    eq = f" y comprar empieza a ganar en el año {r['anioEq']}" if r["ganador"] == 0 else f"; comprar solo empezaría a ganar en el año {r['anioEq']}"
+    return (f"trastero de {eur(i['precio'])} con {pct(i['gastosPct'], 0)} de gastos y {eur(i['costes'])} al año de comunidad e IBI, frente a un alquiler de {eur(i['alq'])} al mes con subida del {pct(i['subida'], 0)} anual, a {i['anios']} años",
+            f"comprar costaría {eur(r['pvCompra'])} netos y alquilar {eur(r['pvAlquiler'])}: sale más barato {n} por {eur(abs(r['diferencia']))}{eq}. Alquilar compensa si cuesta menos de {eur(r['alqEq'], 2)} al mes.")
+def ej_fibra(i, r):
+    n = "el pack" if r["mejor"] == 0 else "contratar por separado"
+    return (f"pack a {eur(i['packPromo'])} durante {i['promoMeses']} meses y {eur(i['packTras'])} después, frente a {eur(i['suelto'])} al mes por separado, {eur(i['unico'])} de coste único, permanencia de {i['permanencia']} meses y horizonte de {i['horizonte']} meses",
+            f"el pack costaría {eur(r['costePack'], 2)} y por separado {eur(r['costeSuelto'], 2)}: sale más barato {n} por {eur(abs(r['ventaja']), 2)} a {i['horizonte']} meses.")
+def ej_garaje(i, r):
+    n = ["comprar la plaza", "alquilarla", "aparcar en la calle"][r["mejor"]]
+    return (f"plaza de {eur(i['precio'])} con {pct(i['gastosPct'], 0)} de gastos y {eur(i['costes'])} al año, alquiler de {eur(i['alq'])} al mes, calle a {eur(i['calle'])} al mes con {eur(i['multas'])} al año de multas, a {i['anios']} años",
+            f"comprar costaría {eur(r['costeCompra'])}, alquilar {eur(r['costeAlquiler'])} y la calle {eur(r['costeCalle'])}: sale más barato {n}, {eur(r['ahorro'])} menos que la siguiente opción.")
+def ej_impresora(i, r):
+    n = ["la de cartuchos", "la de depósito", "la láser"][r["ganador"]]
+    return (f"{num(i['pagMes'])} páginas al mes durante {i['anios']} años, impresora de cartuchos de {eur(i['pT'])} con {eur(i['cT'], 2)} por página, de depósito de {eur(i['pD'])} con {eur(i['cD'], 2)} por página y láser de {eur(i['pL'])} con {eur(i['cL'], 2)} por página",
+            f"a {i['anios']} años la de cartuchos costaría {eur(r['totTinta'], 2)}, la de depósito {eur(r['totDeposito'], 2)} y la láser {eur(r['totLaser'], 2)}: sale más barata {n}.")
+def ej_marca(i, r):
+    f = {0: "compensa el cambio: supera tu mínimo de ahorro", 1: "queda por debajo de tu mínimo de ahorro y no compensa el esfuerzo", 3: "al no cambiar nada no hay ahorro"}[r["ganador"]]
+    return (f"gasto de {eur(i['gasto'])} a la semana, {pct(i['pct'], 0)} de la cesta cambiable, {pct(i['dif'], 0)} de diferencia de precio, {pct(i['excl'], 0)} de lo cambiable que no cambiarías y mínimo de {eur(i['minimo'])} al año",
+            f"ahorrarías {eur(r['ahorroAnual'], 2)} al año ({eur(r['ahorroMes'], 2)} al mes): {f}.")
+
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -561,6 +630,21 @@ CASOS = {
     "mudanza-empresa-o-furgoneta": (ej_mudanza, T("mudanza-empresa-o-furgoneta", 0, 1, 3)),
     "gasolinera-low-cost-compensa-desviarse": (ej_gasolinera, T("gasolinera-low-cost-compensa-desviarse", 0, 1, 4)),
     "kilometraje-y-dietas-exentas-irpf": (ej_km_dietas, T("kilometraje-y-dietas-exentas-irpf", 0, 2, 3)),
+    "academia-idiomas-presencial-online-o-intensivo": (ej_academia, T("academia-idiomas-presencial-online-o-intensivo", 0, 1)),
+    "adoptar-o-comprar-perro-coste-anual": (ej_perro, T("adoptar-o-comprar-perro-coste-anual", 0, 1, 2)),
+    "bici-electrica-o-transporte-publico": (ej_bici, T("bici-electrica-o-transporte-publico", 0, 1)),
+    "calefaccion-gas-aerotermia-electrica": (ej_calef, T("calefaccion-gas-aerotermia-electrica", 0, 1)),
+    "cambiar-de-operadora-compensa-permanencia": (ej_operadora, T("cambiar-de-operadora-compensa-permanencia", 0, 1, 2)),
+    "cambiar-electrodomestico-antiguo-merece-la-pena": (ej_electro, T("cambiar-electrodomestico-antiguo-merece-la-pena", 0, 1)),
+    "cambiar-ventanas-aislamiento-merece-la-pena": (ej_ventanas, T("cambiar-ventanas-aislamiento-merece-la-pena", 0, 1)),
+    "coche-segunda-mano-particular-o-concesionario": (ej_coche2, T("coche-segunda-mano-particular-o-concesionario", 0, 1)),
+    "comedor-escolar-o-tupper": (ej_comedor, T("comedor-escolar-o-tupper", 0, 1)),
+    "comprar-o-alquilar-herramienta": (ej_herram, T("comprar-o-alquilar-herramienta", 0, 1)),
+    "comprar-o-alquilar-trastero": (ej_trastero, T("comprar-o-alquilar-trastero", 0, 1)),
+    "fibra-y-movil-juntos-o-por-separado": (ej_fibra, T("fibra-y-movil-juntos-o-por-separado", 0, 1)),
+    "garaje-comprar-alquilar-o-aparcar-en-la-calle": (ej_garaje, T("garaje-comprar-alquilar-o-aparcar-en-la-calle", 0, 1, 2)),
+    "impresora-tinta-o-laser-coste-por-pagina": (ej_impresora, T("impresora-tinta-o-laser-coste-por-pagina", 0, 1, 2)),
+    "marca-blanca-o-marca-ahorro-anual": (ej_marca, T("marca-blanca-o-marca-ahorro-anual", 0, 1)),
 }
 
 def generar_casos(fecha):

@@ -6067,6 +6067,1037 @@
      "texto": "todo queda exento (1.100,00 €) y no tributa nada; el coche te cuesta 1.360 € y te hace perder 560,00 € netos."
     }
    ]
+  },
+  "academia-idiomas-presencial-online-o-intensivo": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "horas": 200,
+      "hs": 4,
+      "acad": 15,
+      "desp": 2,
+      "desc": 10,
+      "onl": 8,
+      "inm": 900,
+      "ef": 80
+     },
+     "resultado": {
+      "acadHora": 15.5,
+      "costeAcad": 3100,
+      "costeOnl": 2000,
+      "costeInm": 9000,
+      "horasOnl": 250,
+      "semanasInm": 10,
+      "mesesAcad": 11.5385,
+      "mesesOnl": 14.4231,
+      "mesesInm": 2.3077,
+      "horaAprOnl": 10,
+      "horaInm": 45,
+      "efEquilibrio": 51.6129,
+      "inmEquilibrio": 200,
+      "mejor": 1,
+      "ahorro": 1100,
+      "minimo": 2000
+     },
+     "titulo": "200 horas de aprendizaje, academia a 15,00 €/h más 2,00 €/h de desplazamiento y 10 % de descuento, online a 8,00 €/h con una eficacia del 80 % y inmersión a 900 € por semana",
+     "texto": "la academia costaría 3.100 €, el online 2.000 € (250 horas hasta igualar el aprendizaje) y la inmersión 9.000 €: sale más barato el curso online, 1.100 € menos que la siguiente opción."
+    },
+    {
+     "inputs": {
+      "horas": 200,
+      "hs": 4,
+      "acad": 15,
+      "desp": 2,
+      "desc": 10,
+      "onl": 20,
+      "inm": 900,
+      "ef": 80
+     },
+     "resultado": {
+      "acadHora": 15.5,
+      "costeAcad": 3100,
+      "costeOnl": 5000,
+      "costeInm": 9000,
+      "horasOnl": 250,
+      "semanasInm": 10,
+      "mesesAcad": 11.5385,
+      "mesesOnl": 14.4231,
+      "mesesInm": 2.3077,
+      "horaAprOnl": 25,
+      "horaInm": 45,
+      "efEquilibrio": 129.0323,
+      "inmEquilibrio": 310,
+      "mejor": 0,
+      "ahorro": 1900,
+      "minimo": 3100
+     },
+     "titulo": "200 horas de aprendizaje, academia a 15,00 €/h más 2,00 €/h de desplazamiento y 10 % de descuento, online a 20,00 €/h con una eficacia del 80 % y inmersión a 900 € por semana",
+     "texto": "la academia costaría 3.100 €, el online 5.000 € (250 horas hasta igualar el aprendizaje) y la inmersión 9.000 €: sale más barato la academia presencial, 1.900 € menos que la siguiente opción."
+    }
+   ]
+  },
+  "adoptar-o-comprar-perro-coste-anual": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "pienso": 40,
+      "vet": 250,
+      "seguro": 0,
+      "iniciales": 250,
+      "adopcion": 200,
+      "compra": 800,
+      "anos": 12
+     },
+     "resultado": {
+      "anual": 730,
+      "mensual": 60.8333,
+      "ano1Adopcion": 1180,
+      "ano1Compra": 1780,
+      "totalAdopcion": 9210,
+      "totalCompra": 9810,
+      "diferencia": 600,
+      "mensualMedioAdopcion": 63.9583,
+      "mensualMedioCompra": 68.125,
+      "mesesDif": 9.863,
+      "pesoSeguro": 0,
+      "pesoEntradaAdopcion": 2.1716,
+      "pesoEntradaCompra": 8.1549,
+      "ganador": 0
+     },
+     "titulo": "perro con 40 € al mes de pienso, 250 € al año de veterinario, 250 € de gastos iniciales, adopción de 200 € frente a compra de 800 €, durante 12 años",
+     "texto": "el gasto fijo es de 730 € al año (60,83 € al mes); en 12 años adoptar cuesta 9.210 € y comprar 9.810 €: sale más barato adoptar por 600 €; la diferencia viene solo de la cuota de adopción frente al precio de compra."
+    },
+    {
+     "inputs": {
+      "pienso": 40,
+      "vet": 250,
+      "seguro": 300,
+      "iniciales": 250,
+      "adopcion": 200,
+      "compra": 800,
+      "anos": 12
+     },
+     "resultado": {
+      "anual": 1030,
+      "mensual": 85.8333,
+      "ano1Adopcion": 1480,
+      "ano1Compra": 2080,
+      "totalAdopcion": 12810,
+      "totalCompra": 13410,
+      "diferencia": 600,
+      "mensualMedioAdopcion": 88.9583,
+      "mensualMedioCompra": 93.125,
+      "mesesDif": 6.9903,
+      "pesoSeguro": 29.1262,
+      "pesoEntradaAdopcion": 1.5613,
+      "pesoEntradaCompra": 5.9657,
+      "ganador": 0
+     },
+     "titulo": "perro con 40 € al mes de pienso, 250 € al año de veterinario, seguro de 300 € al año, 250 € de gastos iniciales, adopción de 200 € frente a compra de 800 €, durante 12 años",
+     "texto": "el gasto fijo es de 1.030 € al año (85,83 € al mes); en 12 años adoptar cuesta 12.810 € y comprar 13.410 €: sale más barato adoptar por 600 €; la diferencia viene solo de la cuota de adopción frente al precio de compra."
+    },
+    {
+     "inputs": {
+      "pienso": 40,
+      "vet": 250,
+      "seguro": 0,
+      "iniciales": 250,
+      "adopcion": 500,
+      "compra": 300,
+      "anos": 12
+     },
+     "resultado": {
+      "anual": 730,
+      "mensual": 60.8333,
+      "ano1Adopcion": 1480,
+      "ano1Compra": 1280,
+      "totalAdopcion": 9510,
+      "totalCompra": 9310,
+      "diferencia": -200,
+      "mensualMedioAdopcion": 66.0417,
+      "mensualMedioCompra": 64.6528,
+      "mesesDif": 3.2877,
+      "pesoSeguro": 0,
+      "pesoEntradaAdopcion": 5.2576,
+      "pesoEntradaCompra": 3.2223,
+      "ganador": 1
+     },
+     "titulo": "perro con 40 € al mes de pienso, 250 € al año de veterinario, 250 € de gastos iniciales, adopción de 500 € frente a compra de 300 €, durante 12 años",
+     "texto": "el gasto fijo es de 730 € al año (60,83 € al mes); en 12 años adoptar cuesta 9.510 € y comprar 9.310 €: sale más barato comprar por 200 €; la diferencia viene solo de la cuota de adopción frente al precio de compra."
+    }
+   ]
+  },
+  "bici-electrica-o-transporte-publico": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "kmdia": 10,
+      "dias": 220,
+      "abono": 40,
+      "kmcoche": 0.199,
+      "bici": 1800,
+      "vida": 6,
+      "mant": 0.023,
+      "seguro": 60
+     },
+     "resultado": {
+      "km": 2200,
+      "cocheAnual": 437.8,
+      "abonoAnual": 480,
+      "biciAnual": 410.6,
+      "ahorroVsCoche": 27.2,
+      "ahorroVsAbono": 69.4,
+      "paybackCoche": 5.5012,
+      "paybackAbono": 4.8728,
+      "kmMinCoche": 2045.4545,
+      "abonoMinMes": 34.2167,
+      "barato": 2
+     },
+     "titulo": "10 km al día durante 220 días al año, coche a 0,199 €/km, abono de 40 € al mes y bici de 1.800 € con 6 años de vida",
+     "texto": "el coche costaría 437,80 € al año, el abono 480,00 € y la bici 410,60 €: sale más barato la bici eléctrica."
+    },
+    {
+     "inputs": {
+      "kmdia": 25,
+      "dias": 230,
+      "abono": 40,
+      "kmcoche": 0.199,
+      "bici": 1800,
+      "vida": 6,
+      "mant": 0.023,
+      "seguro": 60
+     },
+     "resultado": {
+      "km": 5750,
+      "cocheAnual": 1144.25,
+      "abonoAnual": 480,
+      "biciAnual": 492.25,
+      "ahorroVsCoche": 652,
+      "ahorroVsAbono": -12.25,
+      "paybackCoche": 1.8908,
+      "paybackAbono": 6.2554,
+      "kmMinCoche": 2045.4545,
+      "abonoMinMes": 41.0208,
+      "barato": 1
+     },
+     "titulo": "25 km al día durante 230 días al año, coche a 0,199 €/km, abono de 40 € al mes y bici de 1.800 € con 6 años de vida",
+     "texto": "el coche costaría 1.144,25 € al año, el abono 480,00 € y la bici 492,25 €: sale más barato el transporte público."
+    }
+   ]
+  },
+  "calefaccion-gas-aerotermia-electrica": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "sup": 80,
+      "demanda": 75,
+      "anos": 10,
+      "instGas": 3500,
+      "instAero": 9000,
+      "instElec": 2500,
+      "pgas": 0.11,
+      "pelec": 0.17,
+      "rendGas": 0.92,
+      "scop": 3.2,
+      "rendElec": 1,
+      "mantGas": 150,
+      "mantAero": 120,
+      "mantElec": 0,
+      "ayuda": 0,
+      "fijoGas": 90,
+      "fijoAero": 0,
+      "fijoElec": 0,
+      "aisl": 1
+     },
+     "resultado": {
+      "demandaKwh": 6000,
+      "costeGas": 13073.913,
+      "costeAero": 13387.5,
+      "costeElec": 12700.0,
+      "anualGas": 957.3913,
+      "anualAero": 438.75,
+      "anualElec": 1020.0,
+      "energiaGas": 717.3913,
+      "energiaAero": 318.75,
+      "energiaElec": 1020.0,
+      "m2Gas": 11.9674,
+      "m2Aero": 5.4844,
+      "m2Elec": 12.75,
+      "ganador": 2,
+      "segundo": 0,
+      "diferencia": 373.913,
+      "ahorroAnualAeroVsGas": 518.6413,
+      "extraInstalacionAero": 5500,
+      "anosAmortizacionAero": 10.6046
+     },
+     "titulo": "vivienda de 80 m² con demanda de 75 kWh/m² al año durante 10 años, gas a 0,11 €/kWh, electricidad a 0,17 €/kWh, SCOP de 3,2 y ayuda a la aerotermia de 0 €",
+     "texto": "a 10 años el gas costaría 13.074 €, la aerotermia 13.388 € y la eléctrica 12.700 €: sale más barato la calefacción eléctrica, 374 € menos que la siguiente."
+    },
+    {
+     "inputs": {
+      "sup": 120,
+      "demanda": 100,
+      "anos": 15,
+      "instGas": 3500,
+      "instAero": 9000,
+      "instElec": 2500,
+      "pgas": 0.09,
+      "pelec": 0.2,
+      "rendGas": 0.92,
+      "scop": 3.5,
+      "rendElec": 1,
+      "mantGas": 150,
+      "mantAero": 120,
+      "mantElec": 0,
+      "ayuda": 3000,
+      "fijoGas": 90,
+      "fijoAero": 0,
+      "fijoElec": 0,
+      "aisl": 1.4
+     },
+     "resultado": {
+      "demandaKwh": 16800,
+      "costeGas": 31752.1739,
+      "costeAero": 22200,
+      "costeElec": 52900,
+      "anualGas": 1883.4783,
+      "anualAero": 1080,
+      "anualElec": 3360,
+      "energiaGas": 1643.4783,
+      "energiaAero": 960,
+      "energiaElec": 3360,
+      "m2Gas": 15.6957,
+      "m2Aero": 9,
+      "m2Elec": 28,
+      "ganador": 1,
+      "segundo": 0,
+      "diferencia": 9552.1739,
+      "ahorroAnualAeroVsGas": 803.4783,
+      "extraInstalacionAero": 2500,
+      "anosAmortizacionAero": 3.1115
+     },
+     "titulo": "vivienda de 120 m² con demanda de 100 kWh/m² al año durante 15 años, gas a 0,09 €/kWh, electricidad a 0,20 €/kWh, SCOP de 3,5 y ayuda a la aerotermia de 3.000 €",
+     "texto": "a 15 años el gas costaría 31.752 €, la aerotermia 22.200 € y la eléctrica 52.900 €: sale más barato la aerotermia, 9.552 € menos que la siguiente."
+    }
+   ]
+  },
+  "cambiar-de-operadora-compensa-permanencia": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "act": 70,
+      "nueva": 45,
+      "promoM": 6,
+      "promo": 30,
+      "perm": 8,
+      "penal": 100,
+      "alta": 50,
+      "horiz": 24
+     },
+     "resultado": {
+      "costeQuedarse": 1680,
+      "costeCambiar": 1140,
+      "costeEsperar": 1240,
+      "ahorroCambiar": 540,
+      "ahorroEsperar": 440,
+      "mesEq": 4,
+      "penalMax": 640,
+      "penalMaxEsperar": 200,
+      "ganador": 0
+     },
+     "titulo": "cuota actual de 70 € al mes frente a una oferta de 30 € durante 6 meses y 45 € después, 8 meses de permanencia con 100 € de penalización, 50 € de alta y horizonte de 24 meses",
+     "texto": "quedarte costaría 1.680 €, cambiarte ya 1.140 € y esperar a que acabe la permanencia 1.240 €: sale mejor cambiarte ya, pagando la penalización."
+    },
+    {
+     "inputs": {
+      "act": 70,
+      "nueva": 68,
+      "promoM": 0,
+      "promo": 68,
+      "perm": 8,
+      "penal": 100,
+      "alta": 50,
+      "horiz": 24
+     },
+     "resultado": {
+      "costeQuedarse": 1680,
+      "costeCambiar": 1782,
+      "costeEsperar": 1698,
+      "ahorroCambiar": -102,
+      "ahorroEsperar": -18,
+      "mesEq": 75,
+      "penalMax": -2,
+      "penalMaxEsperar": 16,
+      "ganador": 2
+     },
+     "titulo": "cuota actual de 70 € al mes frente a una oferta de 68 € durante 0 meses y 68 € después, 8 meses de permanencia con 100 € de penalización, 50 € de alta y horizonte de 24 meses",
+     "texto": "quedarte costaría 1.680 €, cambiarte ya 1.782 € y esperar a que acabe la permanencia 1.698 €: sale mejor quedarte con tu operadora."
+    },
+    {
+     "inputs": {
+      "act": 70,
+      "nueva": 45,
+      "promoM": 6,
+      "promo": 30,
+      "perm": 8,
+      "penal": 300,
+      "alta": 50,
+      "horiz": 12
+     },
+     "resultado": {
+      "costeQuedarse": 840,
+      "costeCambiar": 800,
+      "costeEsperar": 730,
+      "ahorroCambiar": 40,
+      "ahorroEsperar": 110,
+      "mesEq": 11,
+      "penalMax": 340,
+      "penalMaxEsperar": 230,
+      "ganador": 1
+     },
+     "titulo": "cuota actual de 70 € al mes frente a una oferta de 30 € durante 6 meses y 45 € después, 8 meses de permanencia con 300 € de penalización, 50 € de alta y horizonte de 12 meses",
+     "texto": "quedarte costaría 840 €, cambiarte ya 800 € y esperar a que acabe la permanencia 730 €: sale mejor esperar a que acabe la permanencia."
+    }
+   ]
+  },
+  "cambiar-electrodomestico-antiguo-merece-la-pena": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "act": 300,
+      "nue": 170,
+      "coste": 650,
+      "reventa": 0,
+      "luz": 0.23,
+      "anos": 10,
+      "resta": 5
+     },
+     "resultado": {
+      "ahorroKwh": 130,
+      "ahorroAnual": 29.9,
+      "neto": 650,
+      "anosAmort": 21.7391,
+      "kwhEvitados": 1300,
+      "ahorroAcum": 299,
+      "saldo": -351,
+      "costeAnualizado": 65,
+      "ventajaAnual": -35.1,
+      "ventajaAdelantar": -175.5,
+      "minKwh": 282.6087,
+      "compensa": 0
+     },
+     "titulo": "aparato actual de 300 kWh al año frente a uno nuevo de 170 kWh que cuesta 650 €, reventa de 0 €, luz a 0,23 €/kWh y 10 años de horizonte",
+     "texto": "el aparato nuevo ahorra 29,90 € al año de luz y en 10 años deja un saldo de -351 €: no compensa cambiarlo; compensaría si ahorrara al menos 283 kWh al año."
+    },
+    {
+     "inputs": {
+      "act": 450,
+      "nue": 200,
+      "coste": 700,
+      "reventa": 100,
+      "luz": 0.27,
+      "anos": 10,
+      "resta": 5
+     },
+     "resultado": {
+      "ahorroKwh": 250,
+      "ahorroAnual": 67.5,
+      "neto": 600,
+      "anosAmort": 8.8889,
+      "kwhEvitados": 2500,
+      "ahorroAcum": 675,
+      "saldo": 75,
+      "costeAnualizado": 60,
+      "ventajaAnual": 7.5,
+      "ventajaAdelantar": 37.5,
+      "minKwh": 222.2222,
+      "compensa": 1
+     },
+     "titulo": "aparato actual de 450 kWh al año frente a uno nuevo de 200 kWh que cuesta 700 €, reventa de 100 €, luz a 0,27 €/kWh y 10 años de horizonte",
+     "texto": "el aparato nuevo ahorra 67,50 € al año de luz y en 10 años deja un saldo de 75 €: compensa cambiarlo."
+    }
+   ]
+  },
+  "cambiar-ventanas-aislamiento-merece-la-pena": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "gasto": 800,
+      "ahorro": 20,
+      "coste": 6000,
+      "ayuda": 0,
+      "anos": 15,
+      "subida": 2,
+      "tasa": 3
+     },
+     "resultado": {
+      "neto": 6000,
+      "ahorroAnual1": 160,
+      "anosSimple": 37.5,
+      "anosAmort": 28.2578,
+      "anosDesc": 48.1757,
+      "ahorroAcum": 2766.9467,
+      "saldoAcum": -3233.0533,
+      "van": -3821.7868,
+      "minPct": 43.3691,
+      "minPctVan": 55.091,
+      "compensa": 0,
+      "compensaVan": 0
+     },
+     "titulo": "gasto de 800 € al año en climatización, ahorro esperado del 20 %, obra de 6.000 €, ayudas de 0 €, subida de la energía del 2 % anual y 15 años de horizonte",
+     "texto": "con 6.000 € netos de obra y 160,00 € de ahorro el primer año, en 15 años acumulas 2.767 € y quedas con un saldo de -3.233 €: no compensa; haría falta ahorrar al menos un 43,37 % de la factura."
+    },
+    {
+     "inputs": {
+      "gasto": 800,
+      "ahorro": 20,
+      "coste": 0,
+      "ayuda": 0,
+      "anos": 15,
+      "subida": 2,
+      "tasa": 3
+     },
+     "resultado": {
+      "neto": 0,
+      "ahorroAnual1": 160,
+      "anosSimple": 0,
+      "anosAmort": 0,
+      "anosDesc": 0,
+      "ahorroAcum": 2766.9467,
+      "saldoAcum": 2766.9467,
+      "van": 2178.2132,
+      "minPct": 0,
+      "minPctVan": 0,
+      "compensa": 1,
+      "compensaVan": 1
+     },
+     "titulo": "gasto de 800 € al año en climatización, ahorro esperado del 20 %, obra de 0 €, ayudas de 0 €, subida de la energía del 2 % anual y 15 años de horizonte",
+     "texto": "con 0 € netos de obra y 160,00 € de ahorro el primer año, en 15 años acumulas 2.767 € y quedas con un saldo de 2.767 €: compensa."
+    }
+   ]
+  },
+  "coche-segunda-mano-particular-o-concesionario": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "precioPart": 12000,
+      "precioConc": 13500,
+      "reparPrev": 400,
+      "averia": 1500,
+      "prob": 20,
+      "cobertura": 50,
+      "trasp": 300,
+      "revision": 100
+     },
+     "resultado": {
+      "costePart": 13100,
+      "costeConc": 14050,
+      "diferencia": -950,
+      "prima": 1500,
+      "primaEquilibrio": 550,
+      "riesgo": 300,
+      "cubierto": 150,
+      "probEquilibrio": 146.6667,
+      "ganador": 0
+     },
+     "titulo": "coche a 12.000 € de particular o a 13.500 € en concesionario, avería grave de 1.500 € con un 20 % de probabilidad, garantía del 50 %, transferencia de 300 € y revisión previa de 100 €",
+     "texto": "a particular costaría 13.100 € y en concesionario 14.050 €: sale más barato comprar a particular por 950 €, con estas hipótesis de avería."
+    },
+    {
+     "inputs": {
+      "precioPart": 12000,
+      "precioConc": 12500,
+      "reparPrev": 400,
+      "averia": 3000,
+      "prob": 40,
+      "cobertura": 50,
+      "trasp": 300,
+      "revision": 100
+     },
+     "resultado": {
+      "costePart": 14000,
+      "costeConc": 13500,
+      "diferencia": 500,
+      "prima": 500,
+      "primaEquilibrio": 1000,
+      "riesgo": 1200,
+      "cubierto": 600,
+      "probEquilibrio": 6.6667,
+      "ganador": 1
+     },
+     "titulo": "coche a 12.000 € de particular o a 12.500 € en concesionario, avería grave de 3.000 € con un 40 % de probabilidad, garantía del 50 %, transferencia de 300 € y revisión previa de 100 €",
+     "texto": "a particular costaría 14.000 € y en concesionario 13.500 €: sale más barato comprar en concesionario por 500 €, con estas hipótesis de avería."
+    }
+   ]
+  },
+  "comedor-escolar-o-tupper": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "menu": 6,
+      "dias": 170,
+      "desc": 0,
+      "hijos": 1,
+      "compra": 3,
+      "minutos": 20,
+      "valorHora": 0,
+      "material": 30
+     },
+     "resultado": {
+      "comedor": 1020,
+      "comedorDia": 6,
+      "tupper": 540,
+      "tupperDia": 3.1765,
+      "compra": 510,
+      "tiempo": 0,
+      "horas": 56.6667,
+      "diferencia": 480,
+      "menuEq": 3.1765,
+      "ganador": 1
+     },
+     "titulo": "menú de 6 € al día, 170 días de comedor, 1 hijo, comida casera a 3 € al día y 20 minutos de preparación",
+     "texto": "el comedor costaría 1.020 € al curso y el tupper 540 €: sale más barato el tupper por 480 €; el tupper compensa si el menú cuesta más de 3,18 € al día."
+    },
+    {
+     "inputs": {
+      "menu": 6,
+      "dias": 170,
+      "desc": 0,
+      "hijos": 1,
+      "compra": 3,
+      "minutos": 20,
+      "valorHora": 10,
+      "material": 30
+     },
+     "resultado": {
+      "comedor": 1020,
+      "comedorDia": 6,
+      "tupper": 1106.6667,
+      "tupperDia": 6.5098,
+      "compra": 510,
+      "tiempo": 566.6667,
+      "horas": 56.6667,
+      "diferencia": -86.6667,
+      "menuEq": 6.5098,
+      "ganador": 0
+     },
+     "titulo": "menú de 6 € al día, 170 días de comedor, 1 hijo, comida casera a 3 € al día y 20 minutos de preparación, contando tu hora a 10 €",
+     "texto": "el comedor costaría 1.020 € al curso y el tupper 1.107 €: sale más barato el comedor por 87 €; el tupper compensa si el menú cuesta más de 6,51 € al día."
+    }
+   ]
+  },
+  "comprar-o-alquilar-herramienta": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "precio": 400,
+      "alq": 45,
+      "usos": 3,
+      "anios": 8,
+      "reventa": 25,
+      "mant": 10,
+      "alm": 15,
+      "tasa": 0
+     },
+     "resultado": {
+      "pvCompra": 500,
+      "pvAlquiler": 1080,
+      "diferencia": 580,
+      "reventaEur": 100,
+      "costeUsoCompra": 20.8333,
+      "usosEqAnio": 1.3889,
+      "usosEqTotal": 11.1111,
+      "payback": 2.7273,
+      "ahorroAnualNeto": 110,
+      "ganador": 0
+     },
+     "titulo": "herramienta de 400 € frente a alquilarla a 45 € por uso, 3 usos al año durante 8 años, reventa del 25 %, 10 € de mantenimiento y 15 € de almacenamiento al año",
+     "texto": "comprar costaría 500 € y alquilar 1.080 € en 8 años: sale más barato comprar por 580 €; comprar compensa a partir de unos 1,4 usos al año."
+    },
+    {
+     "inputs": {
+      "precio": 400,
+      "alq": 45,
+      "usos": 1,
+      "anios": 8,
+      "reventa": 25,
+      "mant": 10,
+      "alm": 15,
+      "tasa": 0
+     },
+     "resultado": {
+      "pvCompra": 500,
+      "pvAlquiler": 360,
+      "diferencia": -140,
+      "reventaEur": 100,
+      "costeUsoCompra": 62.5,
+      "usosEqAnio": 1.3889,
+      "usosEqTotal": 11.1111,
+      "payback": 15,
+      "ahorroAnualNeto": 20,
+      "ganador": 1
+     },
+     "titulo": "herramienta de 400 € frente a alquilarla a 45 € por uso, 1 uso al año durante 8 años, reventa del 25 %, 10 € de mantenimiento y 15 € de almacenamiento al año",
+     "texto": "comprar costaría 500 € y alquilar 360 € en 8 años: sale más barato alquilar por 140 €; comprar compensa a partir de unos 1,4 usos al año."
+    }
+   ]
+  },
+  "comprar-o-alquilar-trastero": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "precio": 9000,
+      "gastosPct": 10,
+      "costes": 250,
+      "alq": 70,
+      "subida": 3,
+      "anios": 10,
+      "reval": 1,
+      "tasa": 2
+     },
+     "resultado": {
+      "pvCompra": 3990.0723,
+      "pvAlquiler": 8608.2794,
+      "diferencia": 4618.2071,
+      "valorResidual": 9941.5991,
+      "desembolso": 9900,
+      "anioEq": 2,
+      "alqEq": 32.4461,
+      "ganador": 0
+     },
+     "titulo": "trastero de 9.000 € con 10 % de gastos y 250 € al año de comunidad e IBI, frente a un alquiler de 70 € al mes con subida del 3 % anual, a 10 años",
+     "texto": "comprar costaría 3.990 € netos y alquilar 8.608 €: sale más barato comprar por 4.618 € y comprar empieza a ganar en el año 2. Alquilar compensa si cuesta menos de 32,45 € al mes."
+    },
+    {
+     "inputs": {
+      "precio": 9000,
+      "gastosPct": 10,
+      "costes": 250,
+      "alq": 30,
+      "subida": 3,
+      "anios": 10,
+      "reval": 1,
+      "tasa": 2
+     },
+     "resultado": {
+      "pvCompra": 3990.0723,
+      "pvAlquiler": 3689.2626,
+      "diferencia": -300.8097,
+      "valorResidual": 9941.5991,
+      "desembolso": 9900,
+      "anioEq": 13,
+      "alqEq": 32.4461,
+      "ganador": 1
+     },
+     "titulo": "trastero de 9.000 € con 10 % de gastos y 250 € al año de comunidad e IBI, frente a un alquiler de 30 € al mes con subida del 3 % anual, a 10 años",
+     "texto": "comprar costaría 3.990 € netos y alquilar 3.689 €: sale más barato alquilar por 301 €; comprar solo empezaría a ganar en el año 13. Alquilar compensa si cuesta menos de 32,45 € al mes."
+    }
+   ]
+  },
+  "fibra-y-movil-juntos-o-por-separado": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "packPromo": 50,
+      "promoMeses": 12,
+      "packTras": 65,
+      "suelto": 58,
+      "permanencia": 12,
+      "unico": 40,
+      "horizonte": 36,
+      "subida": 0
+     },
+     "resultado": {
+      "costePack": 2200,
+      "costeSuelto": 2088,
+      "medioPack": 61.1111,
+      "medioSuelto": 58,
+      "ventaja": -112,
+      "ventaja12": 56,
+      "ventaja24": -28,
+      "ventaja36": -112,
+      "mesRecupera": 5,
+      "mesAgota": 21,
+      "mesCaro": 13,
+      "ventajaMax": 56,
+      "mesVentajaMax": 12,
+      "exposicion": 0,
+      "mesesAtrapado": 0,
+      "permanenciaMayorQueHorizonte": 0,
+      "mejor": 1
+     },
+     "titulo": "pack a 50 € durante 12 meses y 65 € después, frente a 58 € al mes por separado, 40 € de coste único, permanencia de 12 meses y horizonte de 36 meses",
+     "texto": "el pack costaría 2.200,00 € y por separado 2.088,00 €: sale más barato contratar por separado por 112,00 € a 36 meses."
+    },
+    {
+     "inputs": {
+      "packPromo": 50,
+      "promoMeses": 12,
+      "packTras": 55,
+      "suelto": 58,
+      "permanencia": 12,
+      "unico": 40,
+      "horizonte": 24,
+      "subida": 3
+     },
+     "resultado": {
+      "costePack": 1319.8,
+      "costeSuelto": 1412.88,
+      "medioPack": 54.9917,
+      "medioSuelto": 58.87,
+      "ventaja": 93.08,
+      "ventaja12": 56,
+      "ventaja24": 93.08,
+      "ventaja36": 131.2724,
+      "mesRecupera": 5,
+      "mesAgota": 0,
+      "mesCaro": 0,
+      "ventajaMax": 93.08,
+      "mesVentajaMax": 24,
+      "exposicion": 0,
+      "mesesAtrapado": 0,
+      "permanenciaMayorQueHorizonte": 0,
+      "mejor": 0
+     },
+     "titulo": "pack a 50 € durante 12 meses y 55 € después, frente a 58 € al mes por separado, 40 € de coste único, permanencia de 12 meses y horizonte de 24 meses",
+     "texto": "el pack costaría 1.319,80 € y por separado 1.412,88 €: sale más barato el pack por 93,08 € a 24 meses."
+    }
+   ]
+  },
+  "garaje-comprar-alquilar-o-aparcar-en-la-calle": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "precio": 15000,
+      "gastosPct": 10,
+      "costes": 300,
+      "alq": 80,
+      "calle": 40,
+      "multas": 120,
+      "anios": 10,
+      "tasa": 3
+     },
+     "resultado": {
+      "costeCompra": 7897.6521,
+      "costeAlquiler": 8188.9947,
+      "costeCalle": 5118.1217,
+      "desembolso": 16500,
+      "mejor": 2,
+      "ahorro": 2779.5304,
+      "minimo": 5118.1217,
+      "anioEq": -1,
+      "alqEq": 77.1538,
+      "calleEq": 67.1538,
+      "ganador": 2
+     },
+     "titulo": "plaza de 15.000 € con 10 % de gastos y 300 € al año, alquiler de 80 € al mes, calle a 40 € al mes con 120 € al año de multas, a 10 años",
+     "texto": "comprar costaría 7.898 €, alquilar 8.189 € y la calle 5.118 €: sale más barato aparcar en la calle, 2.780 € menos que la siguiente opción."
+    },
+    {
+     "inputs": {
+      "precio": 15000,
+      "gastosPct": 10,
+      "costes": 300,
+      "alq": 40,
+      "calle": 150,
+      "multas": 0,
+      "anios": 10,
+      "tasa": 3
+     },
+     "resultado": {
+      "costeCompra": 7897.6521,
+      "costeAlquiler": 4094.4974,
+      "costeCalle": 15354.3651,
+      "desembolso": 16500,
+      "mejor": 1,
+      "ahorro": 3803.1548,
+      "minimo": 4094.4974,
+      "anioEq": -1,
+      "alqEq": 77.1538,
+      "calleEq": 77.1538,
+      "ganador": 1
+     },
+     "titulo": "plaza de 15.000 € con 10 % de gastos y 300 € al año, alquiler de 40 € al mes, calle a 150 € al mes con 0 € al año de multas, a 10 años",
+     "texto": "comprar costaría 7.898 €, alquilar 4.094 € y la calle 15.354 €: sale más barato alquilarla, 3.803 € menos que la siguiente opción."
+    },
+    {
+     "inputs": {
+      "precio": 15000,
+      "gastosPct": 10,
+      "costes": 300,
+      "alq": 150,
+      "calle": 150,
+      "multas": 300,
+      "anios": 10,
+      "tasa": 3
+     },
+     "resultado": {
+      "costeCompra": 7897.6521,
+      "costeAlquiler": 15354.3651,
+      "costeCalle": 17913.426,
+      "desembolso": 16500,
+      "mejor": 0,
+      "ahorro": 7456.713,
+      "minimo": 7897.6521,
+      "anioEq": 2,
+      "alqEq": 77.1538,
+      "calleEq": 52.1538,
+      "ganador": 0
+     },
+     "titulo": "plaza de 15.000 € con 10 % de gastos y 300 € al año, alquiler de 150 € al mes, calle a 150 € al mes con 300 € al año de multas, a 10 años",
+     "texto": "comprar costaría 7.898 €, alquilar 15.354 € y la calle 17.913 €: sale más barato comprar la plaza, 7.457 € menos que la siguiente opción."
+    }
+   ]
+  },
+  "impresora-tinta-o-laser-coste-por-pagina": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "pagMes": 40,
+      "anios": 3,
+      "pT": 60,
+      "cT": 0.07,
+      "pD": 200,
+      "cD": 0.01,
+      "pL": 150,
+      "cL": 0.03
+     },
+     "resultado": {
+      "paginas": 1440,
+      "totTinta": 160.8,
+      "totDeposito": 214.4,
+      "totLaser": 193.2,
+      "pagTinta": 0.1117,
+      "pagDeposito": 0.1489,
+      "pagLaser": 0.1342,
+      "eqTintaLaser": 62.5,
+      "eqTintaDeposito": 64.8148,
+      "eqDepositoLaser": 69.4444,
+      "ganador": 0
+     },
+     "titulo": "40 páginas al mes durante 3 años, impresora de cartuchos de 60 € con 0,07 € por página, de depósito de 200 € con 0,01 € por página y láser de 150 € con 0,03 € por página",
+     "texto": "a 3 años la de cartuchos costaría 160,80 €, la de depósito 214,40 € y la láser 193,20 €: sale más barata la de cartuchos."
+    },
+    {
+     "inputs": {
+      "pagMes": 150,
+      "anios": 3,
+      "pT": 60,
+      "cT": 0.07,
+      "pD": 200,
+      "cD": 0.01,
+      "pL": 150,
+      "cL": 0.03
+     },
+     "resultado": {
+      "paginas": 5400,
+      "totTinta": 438.0,
+      "totDeposito": 254,
+      "totLaser": 312,
+      "pagTinta": 0.0811,
+      "pagDeposito": 0.047,
+      "pagLaser": 0.0578,
+      "eqTintaLaser": 62.5,
+      "eqTintaDeposito": 64.8148,
+      "eqDepositoLaser": 69.4444,
+      "ganador": 1
+     },
+     "titulo": "150 páginas al mes durante 3 años, impresora de cartuchos de 60 € con 0,07 € por página, de depósito de 200 € con 0,01 € por página y láser de 150 € con 0,03 € por página",
+     "texto": "a 3 años la de cartuchos costaría 438,00 €, la de depósito 254,00 € y la láser 312,00 €: sale más barata la de depósito."
+    },
+    {
+     "inputs": {
+      "pagMes": 100,
+      "anios": 3,
+      "pT": 60,
+      "cT": 0.07,
+      "pD": 400,
+      "cD": 0.01,
+      "pL": 150,
+      "cL": 0.03
+     },
+     "resultado": {
+      "paginas": 3600,
+      "totTinta": 312,
+      "totDeposito": 436,
+      "totLaser": 258,
+      "pagTinta": 0.0867,
+      "pagDeposito": 0.1211,
+      "pagLaser": 0.0717,
+      "eqTintaLaser": 62.5,
+      "eqTintaDeposito": 157.4074,
+      "eqDepositoLaser": 347.2222,
+      "ganador": 2
+     },
+     "titulo": "100 páginas al mes durante 3 años, impresora de cartuchos de 60 € con 0,07 € por página, de depósito de 400 € con 0,01 € por página y láser de 150 € con 0,03 € por página",
+     "texto": "a 3 años la de cartuchos costaría 312,00 €, la de depósito 436,00 € y la láser 258,00 €: sale más barata la láser."
+    }
+   ]
+  },
+  "marca-blanca-o-marca-ahorro-anual": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "gasto": 120,
+      "pct": 40,
+      "dif": 25,
+      "excl": 20,
+      "personas": 3,
+      "meses": 12,
+      "minimo": 100
+     },
+     "resultado": {
+      "gastoAnual": 6240,
+      "baseCambio": 1996.8,
+      "ahorroAnual": 499.2,
+      "ahorroMes": 41.6,
+      "pctGasto": 8,
+      "porPersona": 166.4,
+      "difEquilibrio": 5.008,
+      "ganador": 0
+     },
+     "titulo": "gasto de 120 € a la semana, 40 % de la cesta cambiable, 25 % de diferencia de precio, 20 % de lo cambiable que no cambiarías y mínimo de 100 € al año",
+     "texto": "ahorrarías 499,20 € al año (41,60 € al mes): compensa el cambio: supera tu mínimo de ahorro."
+    },
+    {
+     "inputs": {
+      "gasto": 120,
+      "pct": 40,
+      "dif": 3,
+      "excl": 20,
+      "personas": 3,
+      "meses": 12,
+      "minimo": 100
+     },
+     "resultado": {
+      "gastoAnual": 6240,
+      "baseCambio": 1996.8,
+      "ahorroAnual": 59.904,
+      "ahorroMes": 4.992,
+      "pctGasto": 0.96,
+      "porPersona": 19.968,
+      "difEquilibrio": 5.008,
+      "ganador": 1
+     },
+     "titulo": "gasto de 120 € a la semana, 40 % de la cesta cambiable, 3 % de diferencia de precio, 20 % de lo cambiable que no cambiarías y mínimo de 100 € al año",
+     "texto": "ahorrarías 59,90 € al año (4,99 € al mes): queda por debajo de tu mínimo de ahorro y no compensa el esfuerzo."
+    }
+   ]
   }
  }
 }

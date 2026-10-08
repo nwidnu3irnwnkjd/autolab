@@ -3821,12 +3821,12 @@
     }
   },
   "alquiler_irpf_2026": {
-    "fuente": "Ley 35/2006 del IRPF, arts. 22, 23.1, 23.2 y disposición transitoria 38.ª en la redacción de 1/1/2024 por la Ley 12/2023 (leída en el consolidado del BOE, que desde el 5/10/2026 refleja la reversión: la última versión del bloque es la de BOE-A-2026-20526 y rige la redacción anterior, Ley 12/2023 / BOE-A-2023-12203; comprobado en la API del BOE el 6/10/2026); el RDL 26/2026 (BOE-A-2026-20266) estuvo en vigor del 1 al 2/10/2026 y fue derogado por Resolución del Congreso de 2/10/2026 (BOE-A-2026-20526), que deja sin efecto sus modificaciones de la LIRPF; Reglamento del IRPF arts. 13 y 14 (versión 1/4/2007); Ley 12/2023 (en vigor 26/5/2023); Ley 29/1994 art. 17.6",
+    "fuente": "Ley 35/2006 del IRPF, arts. 22, 23.1, 23.2 y disposición transitoria 38.ª en la redacción de 1/1/2024 por la Ley 12/2023 (leída en el consolidado del BOE: desde el 7-10-2026 la última versión del art. 23 y de la DT 38.ª es la del Real Decreto-ley 29/2026, BOE-A-2026-20823, vigente desde el 8-10-2026 y pendiente de convalidación; por la DT 38.ª, a contratos firmados entre el 26/5/2023 y el 1/12/2026 se les aplica el art. 23.2 vigente a 31/12/2025, Ley 12/2023, que es el calculado; comprobado en la API del BOE el 8/10/2026); el RDL 26/2026 (BOE-A-2026-20266) estuvo en vigor del 1 al 2/10/2026 y fue derogado por Resolución del Congreso de 2/10/2026 (BOE-A-2026-20526), que deja sin efecto sus modificaciones de la LIRPF; Reglamento del IRPF arts. 13 y 14 (versión 1/4/2007); Ley 12/2023 (en vigor 26/5/2023); Ley 29/1994 art. 17.6",
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764",
     "url_reglamento": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-6820",
     "url_rdl": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20526",
     "url_lau": "https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003",
-    "consulta": "consultado el 2/10/2026 y comprobado el 6/10/2026 (reversión ya reflejada en el consolidado)",
+    "consulta": "consultado el 2/10/2026 y releído el 8/10/2026 (última versión: RDL 29/2026, BOE-A-2026-20823)",
     "confianza": "B",
     "amortizacion_pct": 3,
     "reduccion_anterior_mayo_2023": 60,
@@ -3836,7 +3836,7 @@
     "reduccion_zona_tensionada_rebaja": 90,
     "rebaja_minima_pct": 5,
     "fecha_ley_12_2023": "2023-05-26",
-    "nota": "RDL 26/2026 derogado (BOE-A-2026-20526, 2/10/2026); se aplica el art. 23.2 de la Ley 12/2023 para todo contrato desde el 26/5/2023. El consolidado del BOE refleja desde el 5-oct-2026 la reversión; rige la redacción anterior (Ley 12/2023 / BOE-A-2023-12203), comprobado el 6/10/2026. Los importes de renta, gastos, valores y tipo son EJEMPLOS editables, no datos oficiales.",
+    "nota": "RDL 26/2026 derogado (BOE-A-2026-20526, 2/10/2026); se aplica el art. 23.2 vigente a 31/12/2025 (Ley 12/2023) a los contratos firmados entre el 26/5/2023 y el 1/12/2026 (DT 38.ª, RDL 29/2026, BOE-A-2026-20823, pendiente de convalidación); los firmados después rigen por el nuevo art. 23.2, no modelado. Comprobado el 8/10/2026. Los importes de renta, gastos, valores y tipo son EJEMPLOS editables, no datos oficiales.",
     "supuestos": {
       "contrato": "b50",
       "renta": 800,
