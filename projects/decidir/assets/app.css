@@ -89,12 +89,12 @@ button.tap,.btn.tap{animation:em-tap .5s var(--out)}
 .result{margin-top:24px}
 .em-res{border-top:1px solid var(--line);padding-top:24px;animation:em-in .25s var(--ease) both}
 @keyframes em-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.em-verdict{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:var(--r-sm);border:1px solid var(--ok-line);background:var(--ok-bg);color:var(--ok);font-size:var(--t-md);font-weight:600;line-height:1.4;margin:0 0 20px}
+.em-verdict{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:var(--r-sm);border:1px solid var(--ok-line);background:var(--ok-bg);color:var(--ok);font-size:var(--t-md);font-weight:500;line-height:1.4;margin:0 0 20px}
 .em-verdict svg{flex:none;width:26px;height:26px;margin-top:1px}
-.em-verdict p{margin:0;color:var(--fg)}
+.em-verdict p{margin:0;color:var(--fg)}.em-verdict b{font-weight:700}
 .em-verdict.warn{border-color:var(--warn-line);background:var(--warn-bg);color:var(--warn)}
 .em-verdict.info{border-color:var(--info-line);background:var(--info-bg);color:var(--info)}
-.em-big{margin:0 0 22px}
+.em-res{display:flex;flex-direction:column}.em-res>*{min-width:0}.em-big{margin:0 0 22px;order:-1}
 .em-big .num{display:block;font-size:var(--t-xxl);font-weight:800;letter-spacing:-.035em;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--fg)}
 .em-big .lbl{display:block;color:var(--muted);font-size:var(--t-sm);margin-top:6px}
 .em-tone-ok .em-big .num{color:var(--ok)}.em-tone-warn .em-big .num{color:var(--warn)}
@@ -226,7 +226,7 @@ ul.cards p{margin:8px 0 0;font-size:var(--t-sm);color:var(--muted);line-height:1
 .site-f p{margin:0;font-size:13px;line-height:1.55}
 
 /* Botón secundario, resultado compartible, catálogo y 404 */
-.btn2{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin:0;padding:10px 16px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--fg);font:600 var(--t-sm)/1 var(--font);cursor:pointer;text-decoration:none;transition:border-color .15s,background .15s}
+.btn2{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;margin:0;padding:10px 16px;border:1.5px solid var(--line);border-radius:var(--r-sm);background:var(--surface);color:var(--fg);font:600 var(--t-sm)/1.3 var(--font);text-wrap:balance;cursor:pointer;text-decoration:none;transition:border-color .15s,background .15s}
 .btn2:hover{filter:none;border-color:var(--accent);background:var(--accent-soft)}
 .btn2 svg{width:18px;height:18px;flex:none}
 .em-share{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
@@ -297,7 +297,7 @@ article.guide table{background:var(--surface);border:1px solid var(--card-border
 article.guide th,article.guide td{padding:11px 12px}
 article.guide thead th{background:var(--surface-2)}
 article.guide tbody tr:last-child td,article.guide tbody tr:last-child th{border-bottom:0}
-article.guide td:not(:first-child),article.guide th:not(:first-child){text-align:right}
+article.guide td.n,article.guide th.n{text-align:right}
 article.guide tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
 /* Veredicto: destello cuando cambia el ganador */
 .em-verdict{position:relative;overflow:hidden}
@@ -479,7 +479,7 @@ main:focus{outline:none}
   .ph{padding:14px 16px}
   .ph-i{width:64px;height:48px}
   .ph h1{margin:10px 0 6px;font-size:28px}
-  .ph .lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:var(--t-base);line-height:1.45}
+  .ph .lead{font-size:var(--t-base);line-height:1.45}
   .calc{margin-top:16px;padding:16px}
   main.in{padding-top:16px}
 }

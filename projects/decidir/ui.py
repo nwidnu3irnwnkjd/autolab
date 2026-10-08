@@ -100,7 +100,7 @@ def head_extra():
               'd.innerHTML=\'<p>Usamos Google Analytics para medir visitas, solo si aceptas. <a href="/cookies/">Más información</a></p><button type="button" data-v="1">Aceptar</button><button type="button" data-v="0">Rechazar</button>\';'
               'd.onclick=function(e){var b=e.target.closest("button");if(!b)return;try{localStorage.setItem(K,b.dataset.v+"|"+T())}catch(x){}'
               'if(b.dataset.v==="1")G();else X();d.remove()};document.body.appendChild(d)}'
-              'var st=document.createElement("style");st.textContent="#ckb{position:fixed;left:0;right:0;bottom:0;z-index:99;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px 16px;background:#fff;color:#1a1d29;border-top:1px solid #c9ccd8;font:14px/1.4 system-ui,sans-serif}#ckb p{margin:0;flex:1 1 260px}#ckb a{color:inherit;text-decoration:underline}#ckb button{font:inherit;font-weight:600;padding:7px 16px;border-radius:8px;border:1px solid #1a1d29;background:transparent;color:inherit;cursor:pointer}@media (prefers-color-scheme:dark){#ckb{background:#161a26;color:#eceff7;border-color:#3a4054}#ckb button{border-color:#eceff7}}";document.head.appendChild(st);'
+              'var st=document.createElement("style");st.textContent="#ckb{position:fixed;left:0;right:0;bottom:0;z-index:99;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px 16px;background:#fff;color:#1a1d29;border-top:1px solid #c9ccd8;font:14px/1.4 system-ui,sans-serif}#ckb p{margin:0;flex:1 1 260px}#ckb a{color:inherit;text-decoration:underline}#ckb button{font:inherit;font-weight:600;padding:7px 16px;border-radius:8px;border:1px solid #1a1d29;background:transparent;color:inherit;cursor:pointer}@media (prefers-color-scheme:dark){#ckb{background:#161a26;color:#eceff7;border-color:#3a4054}#ckb button{border-color:#eceff7}}html:has(#ckb){scroll-padding-bottom:150px}body:has(#ckb){padding-bottom:140px}";document.head.appendChild(st);'
               'document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-ck]");if(a&&(P||L)){e.preventDefault();B()}});'
               'document.addEventListener("DOMContentLoaded",function(){if((P||L)&&v!=="1"&&v!=="0")B()})')
         out.append('<script>(function(){' + host_js + gt + bn + '})()</script>')
@@ -139,10 +139,34 @@ def calc_form(c):
         return (f'<div><label for="{i["id"]}">{short}</label>{h}'
             + (f'<select id="{i["id"]}"{d}>' + "".join(f'<option value="{o["v"]}">{o["t"]}</option>' for o in i["options"]) + "</select>"
                if i.get("type") == "select" else
-               f'<input id="{i["id"]}" type="text" inputmode="decimal" autocomplete="off" data-n value="{i["default"]}" min="{i.get("min",0)}"' + f'{d}>')
+               f'<input id="{i["id"]}" type="text" inputmode="decimal" autocomplete="off" data-n{" data-dec" if float(i.get("step",1) or 1) < 1 else ""} value="{i["default"]}" min="{i.get("min",0)}"' + f'{d}>')
             + "</div>")
     inputs = "".join(one(i) for i in c["inputs"])
     return f"""<div class="calc">
 <form id="f" onsubmit="return false"><div class="grid">{inputs}</div><button id="go" type="button">Calcular con mis números</button></form>
 <div class="result" id="r"></div>
 </div>"""
+
+
+_NUMC = re.compile(r"^[\s<>/a-z]*[-+~≈]?\s*\d[\d.,\s]*(?:%|€|\s*(?:€|%|años?|meses|días|h|km|kg|l|m2|m²|kWh)\b)?[^a-záéíóúñ]*$", re.I)
+def mark_num(h):
+    """Tablas: marca `.n` (texto a la derecha) en las columnas cuyas celdas son todas cifras; el resto queda a la izquierda."""
+    def tb(m):
+        t = m.group(0); rows = re.findall(r"<tr>(.*?)</tr>", t, re.S)
+        if not rows: return t
+        cells = [re.findall(r"<(t[dh])([^>]*)>(.*?)</t[dh]>", r, re.S) for r in rows]
+        ncol = max(len(c) for c in cells); num = set()
+        for j in range(ncol):
+            vals = [re.sub(r"<[^>]+>", "", c[j][2]).strip() for c in cells if len(c) > j and c[j][0] == "td"]
+            if vals and all(_NUMC.match(v) for v in vals if v): num.add(j)
+        out = []
+        for c, r in zip(cells, rows):
+            k = [0]
+            def cell(mm):
+                j = k[0]; k[0] += 1
+                if j in num and (mm.group(1) == "td" or j > 0): return f'<{mm.group(1)}{mm.group(2)} class="n">'
+                return mm.group(0)
+            out.append(re.sub(r"<(t[dh])([^>]*)>", cell, r))
+        for r, o in zip(rows, out): t = t.replace(r, o, 1)
+        return t
+    return re.sub(r"<table.*?</table>", tb, h, flags=re.S)

@@ -47,19 +47,19 @@ def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, note
         for c in sorted(lst, key=lambda x: x["h1"].lower()):
             lis.append(_li(f'/decidir/{c["slug"]}/', c["h1"], _short(c["description"])))
             items.append((c["h1"], f'/decidir/{c["slug"]}/'))
-        secs.append(f'<section class="grp"><h2>{e(name)} ({len(lst)}){hl}</h2><ul class="guides">{"".join(lis)}</ul></section>')
+        secs.append(f'<section class="grp" style="contain-intrinsic-size:auto {len(lst)*195+60}px"><h2>{e(name)} ({len(lst)}){hl}</h2><ul class="guides">{"".join(lis)}</ul></section>')
     if guides:
         lis = []
         for g in guides:
             lis.append(_li(f'/guias/{g["slug"]}/', g["h1"], _short(g["description"]), "guia"))
             items.append((g["h1"], f'/guias/{g["slug"]}/'))
-        secs.append(f'<section class="grp"><h2>Guías ({len(guides)})</h2><ul class="guides">{"".join(lis)}</ul></section>')
+        secs.append(f'<section class="grp" style="contain-intrinsic-size:auto {len(guides)*195+60}px"><h2>Guías ({len(guides)})</h2><ul class="guides">{"".join(lis)}</ul></section>')
     lis = [_li(tablas_path, "Tablas 2026: IRPF, autónomos, ITP, pensiones y trabajo", "Índice de las tablas oficiales con fuente y CSV.", "tablas datos oficiales")]
     items.append(("Tablas 2026", tablas_path))
     for p in tablas_pages:
         lis.append(_li(f'{tablas_path}{p["slug"]}/', p["h1"], _short(p["description"]), "tablas datos oficiales"))
         items.append((p["h1"], f'{tablas_path}{p["slug"]}/'))
-    secs.append(f'<section class="grp"><h2>Tablas 2026 ({len(tablas_pages)})</h2><ul class="guides">{"".join(lis)}</ul></section>')
+    secs.append(f'<section class="grp" style="contain-intrinsic-size:auto {(len(lis))*195+60}px"><h2>Tablas 2026 ({len(tablas_pages)})</h2><ul class="guides">{"".join(lis)}</ul></section>')
     extra = [("/barometro/", "Barómetro de hipoteca, coche y ahorro", "Datos propios del mes con su fecha."),
              ("/calendario/", "Calendario de decisiones", "Fechas que mueven una decisión de dinero en España, con fuente oficial.")]
     extra.append(("/inserta/", "Inserta una calculadora en tu web", "Widget gratis con crédito y enlace, con código para copiar."))  # embed.py (Diseñador)
@@ -68,7 +68,7 @@ def page(calcs, guides, tablas_mod, tablas_pages, tablas_path, active_hubs, note
     for k, h in active_hubs.items(): extra.append((h["path"], h["h1"], _short(h["description"])))
     lis = "".join(_li(p, n, d, "calendario barometro mapa tema") for p, n, d in extra)
     for p, n, d in extra: items.append((n, p))
-    secs.append(f'<section class="grp"><h2>Calendario, Barómetro y mapas por tema</h2><ul class="guides">{lis}</ul></section>')
+    secs.append(f'<section class="grp" style="contain-intrinsic-size:auto {len(extra)*195+60}px"><h2>Calendario, Barómetro y mapas por tema</h2><ul class="guides">{lis}</ul></section>')
     total = len(items)
     mod = seo.lastmod("directorio.py", extra=[g["modified"] for g in guides] + [tablas_mod])
     pub = seo.published("directorio.py")

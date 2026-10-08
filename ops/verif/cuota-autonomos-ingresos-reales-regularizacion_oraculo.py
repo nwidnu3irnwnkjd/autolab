@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Oraculo independiente (Constructor fiscal, 2026-10-02) para cuota-autonomos-ingresos-reales-regularizacion. Escrito desde la norma ANTES del .js.
 INTERPRETACION (BOE consolidado consultado el 2/10/2026; LGSS art. 308.1.a y c; RDL 13/2022 DT 1.a; RDL 3/2026 art. 3.4 y 3.5 (convalidado, BOE-A-2026-4668);
-Orden PJC/297/2026 art. 18; Reglamento General de Cotizacion (RD 2064/1995) arts. 43 bis y 46 en la redaccion del RD 504/2022 y del RD 665/2024):
+Orden PJC/297/2026 art. 18; Reglamento General de Cotizacion (RD 2064/1995) arts. 45.1 (redaccion RDL 13/2022, art. 5.1; el 43 bis esta derogado) y 46 en la redaccion del RD 504/2022 y del RD 665/2024):
 1. Tramo: rendimiento neto mensual = rendimiento (neto antes de restar la cuota de autonomos) x 0,93 (deduccion 7 % de gastos genericos, LGSS 308.1.c.2.a). Tabla 2026 = tabla 2025 (RDL 3/2026 art. 3.4), bases max. de tramos 11-12 = 5.101,20.
    Reducida: <=670 (T1), >670 y <=900 (T2), >900 y <1.166,70 (T3). General: >=1.166,70 y <=1.300 (T4 = general 1) ... >6.000 (T15 = general 12).
-2. Base elegida (DT 1.a RDL 13/2022 ap. 2): entre la base minima del tramo del rendimiento PREVISTO y la base maxima del regimen (5.101,20). Se puede cambiar hasta 6 veces al ano (RGC 43 bis); se modela 1 cambio: nueva base durante los ultimos m meses.
+2. Base elegida (DT 1.a RDL 13/2022 ap. 2): entre la base minima del tramo del rendimiento PREVISTO y la base maxima del regimen (5.101,20). Se puede cambiar hasta 6 veces al ano (RGC art. 45.1, redaccion RDL 13/2022 art. 5.1; el 43 bis esta derogado); se modela 1 cambio: nueva base durante los ultimos m meses.
 3. Cuota mensual = base x 31,5 % (28,30 CC + 1,30 CP + 0,90 cese, obligatorio por LGSS 327.1 + 0,10 FP + 0,90 MEI; Orden art. 18.2 y 37).
 4. Regularizacion (LGSS 308.1.c.3.a-4.a; RGC 46.2): base real = rendimiento real x 0,93 repartido en los meses de alta; tramo real; base provisional media del ano.
    Si media < base minima del tramo real: se reclama N x (min - media) x 31,5 %. Si media > base maxima del tramo real: se devuelve N x (media - max) x 31,5 %. Si esta entre ambas: no hay regularizacion.

@@ -141,12 +141,16 @@ def fecha_es(iso):
     meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
     y, m, d = iso.split("-"); return f"{int(d)} de {meses[int(m) - 1]} de {y}"
 
+def _cta(h1):
+    t = re.split(r"[:?]", h1)[0].strip() if len(h1) > 50 else ""
+    return f"Calcula el tuyo: {t}" if t and len(t) > 12 else "Calcula el tuyo"
+
 def guide_page(g, calcs, card, base):
     rel = [c for s in g.get("calcs", []) for c in calcs if c["slug"] == s]
     calc_block = ('<h2>Calcúlalo con tus números</h2><ul class="cards">' + "".join(card(c) for c in rel) + "</ul>") if rel else ""
-    body_html = g["body"]
+    import ui as _ui; body_html = _ui.mark_num(g["body"])
     if rel:  # CTA a la calculadora relacionada justo bajo la respuesta corta
-        cta = f'\n<p><a class="btn2" data-ev="guide_to_calc" href="/decidir/{rel[0]["slug"]}/">Calcula el tuyo: {rel[0]["h1"]} →</a></p>'
+        cta = f'\n<p><a class="btn2" data-ev="guide_to_calc" href="/decidir/{rel[0]["slug"]}/">{_cta(rel[0]["h1"])} →</a></p>'
         body_html = re.sub(r'(<p class="lead">.*?</p>)', lambda m: m.group(1) + cta, body_html, count=1, flags=re.S)
     body = f"""<article class="guide">
 <p class="kicker"><a href="/guias/">Guías</a></p>

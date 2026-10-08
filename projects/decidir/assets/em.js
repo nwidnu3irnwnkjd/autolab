@@ -188,7 +188,7 @@
       if (i._d !== undefined || !i.hasAttribute("data-n")) return;
       i._d = i.getAttribute("aria-describedby") || "";
       Object.defineProperty(i, "value", { configurable: true,
-        get: function () { var s = VD.get.call(i); if (!i._u) return s; s = s.replace(/\s/g, ""); return s.indexOf(",") > -1 ? s.replace(/\./g, "").replace(",", ".") : /^-?[1-9]\d{0,2}(\.\d{3})+$/.test(s) ? s.replace(/\./g, "") : s; },
+        get: function () { var s = VD.get.call(i); if (!i._u) return s; s = s.replace(/\s/g, ""); return s.indexOf(",") > -1 ? s.replace(/\./g, "").replace(",", ".") : !i.hasAttribute("data-dec") && /^-?[1-9]\d{0,2}(\.\d{3})+$/.test(s) ? s.replace(/\./g, "") : s; },
         set: function (v) { i._u = 0; VD.set.call(i, v); } });
       i.addEventListener("input", function (e) { if (e.isTrusted) i._u = 1; });
       i.addEventListener("blur", function () { var s = i.value; if (i._u && /^-?\d+(\.\d+)?$/.test(s)) VD.set.call(i, num(s, (s.split(".")[1] || "").length).replace(/^(-?)(\d+)$/, "$1$2")); });

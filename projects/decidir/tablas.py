@@ -463,7 +463,7 @@ def page(slug, T, calcs, card, modified, author):
 <p class="kicker"><a href="{INDEX}">Tablas 2026</a> · Datos oficiales verificados</p>
 <h1>{e(p["h1"])}</h1>
 {_byline(D, modified, author)}
-{p["body"](D)}
+{__import__("ui").mark_num(p["body"](D))}
 
 <h2>Calcúlalo con tus números</h2>
 <ul class="cards">{"".join(card(c) for c in rel)}</ul>

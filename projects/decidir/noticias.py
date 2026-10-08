@@ -134,6 +134,11 @@ def _kick_rel(n):
     d = next((x for x in news if x.get("tipo") == "resumen-dia" and x["published"] == n["published"]), None)
     return f' · <a href="{d["path"]}">Resumen del día</a>' if d else ""
 
+def _cta_news(n, rel):
+    if not rel or n.get("tipo") in RESUMENES: return ""
+    c = rel[0]
+    return f'<p><a class="btn2" data-ev="news_to_calc" href="/decidir/{c["slug"]}/">Calcula el tuyo →</a></p>\n'
+
 def piece_page(n, calcs, card, base, today=None, tema=None):
     """(body, jsonld, tema_og). El cuerpo del archivo ya trae sus 4 bloques; aquí van byline, fuentes, corrección y calculadoras."""
     today = _today(today)
@@ -150,7 +155,7 @@ def piece_page(n, calcs, card, base, today=None, tema=None):
 <p class="kicker"><a href="{PATH}">Noticias</a> · <a href="/noticias/{n["y"]}/{n["m"]}/">{_mes_es(n["y"], n["m"])}</a> · {e(tipo_es(n))}{_kick_rel(n)}</p>
 <h1>{n["h1"]}</h1>
 <p class="byline note">Por <a href="/como-funciona/">{seo.AUTHOR}</a> · Publicado el <time datetime="{n["published"]}">{_fe(n["published"])}</time>{upd}</p>
-{cad}{n["body"]}
+{cad}{_cta_news(n, rel)}{n["body"]}
 {_ics(n)}<h2>Fuentes</h2><ul class="fuentes">{fu}</ul>
 <p class="note">Si ves un error, escríbenos a <a href="mailto:hola@entremuchos.com">hola@entremuchos.com</a>: lo corregimos y lo dejamos anotado con su fecha (<a href="{POLITICA}">política editorial</a>). ¿Nos lees en Google? Puedes <a href="https://www.google.com/preferences/source?q=entremuchos.com" rel="noopener">añádenos como fuente preferida en Google</a>.</p>
 <p class="disclaimer">Información orientativa, no constituye asesoramiento financiero, fiscal ni legal. La fuente oficial manda sobre este texto. Lee <a href="/como-funciona/">cómo trabajamos</a> y nuestra <a href="/politica-ia/">política de uso de IA</a>.</p>
