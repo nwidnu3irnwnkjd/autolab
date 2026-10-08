@@ -314,6 +314,48 @@ def ej_cuota_aut(i, r):
         f = f"pagas {eur(r['pagado'], 2)} y la definitiva es la misma: no hay regularización."
     return (f"rendimiento previsto de {eur(i['prev'], 2)}/mes, real de {eur(i['real'], 2)}/mes y base elegida de {eur(i['base'], 2)}/mes durante {i['meses']} meses", f)
 
+# ---------- Casos típicos, tanda 4 (hogar, ahorro, coche, trabajo) ----------
+def ej_amortizar(i, r):
+    c = f", con {pct(i['comision'], 1)} de comisión" if i["comision"] else ""
+    return (f"hipoteca de {eur(i['capital'])} al {pct(i['tipo'], 1)} a {i['meses'] // 12} años y {eur(i['extra'])} de amortización anticipada{c}",
+            f"reduciendo la cuota bajaría de {eur(r['cuota0'], 2)} a {eur(r['cuotaA'], 2)} al mes y ahorrarías {eur(r['ahorroA'])} en intereses; reduciendo el plazo mantienes {eur(r['cuotaB'], 2)}, terminas {r['mesesMenos']} meses antes y ahorras {eur(r['ahorroB'])}: " + ("reducir plazo ahorra más intereses." if r["ahorroB"] > r["ahorroA"] else "reducir cuota ahorra más intereses."))
+def ej_gimnasio(i, r):
+    w = {0: "el gimnasio", 1: "entrenar en casa"}.get(r["ganador"])
+    return (f"gimnasio de {eur(i['cuota'])} al mes con {eur(i['matricula'])} de matrícula y {eur(i['desp'], 2)} de desplazamiento por sesión, {i['sg']} sesiones a la semana en el gimnasio o {i['sc']} en casa, equipo de {eur(i['equipo'])} que revenderías por {eur(i['reventa'])}, a {i['meses']} meses",
+            f"el gimnasio costaría {eur(r['costeGim'])} ({eur(r['cpsGim'], 2)} por sesión) y entrenar en casa {eur(r['costeCasa'])} ({eur(r['cpsCasa'], 2)} por sesión)" + (f": sale más barato por sesión {w}." if w else "."))
+def ej_coche_propio(i, r):
+    n = ["el coche propio", "el carsharing", "el taxi/VTC"][r["barato"]]
+    return (f"{i['viajes']} viajes al mes de {i['kmviaje']} km, {eur(i['fijos'])} de gastos fijos y {eur(i['deprec'])} de depreciación anuales del coche, {eur(i['kmcoche'], 2)}/km de coste variable, carsharing a {eur(i['cskm'], 2)}/km con {eur(i['cscuota'])} de cuota mensual y taxi/VTC a {eur(i['vtckm'], 2)}/km",
+            f"para {num(r['km'])} km al año, el coche propio costaría {eur(r['propio'])}, el carsharing {eur(r['carsharing'])} y el taxi/VTC {eur(r['vtc'])}: lo más barato es {n}.")
+def ej_caldera(i, r):
+    w = {0: "reparar", 1: "cambiar la caldera"}.get(r["ganador"], "cualquiera de las dos")
+    return (f"reparación de {eur(i['repar'])} o caldera nueva de {eur(i['nueva'])}, {num(i['consumo'])} kWh de gas al año, rendimientos del {pct(i['rendAct'] * 100, 0)} y el {pct(i['rendNueva'] * 100, 0)}, {i['vida']} años de vida útil",
+            f"reparar costaría {eur(r['anualReparar'])} al año y cambiar {eur(r['anualCambiar'])}: sale más barato {w}" + (f" por {eur(abs(r['diferencia']))} al año; cambiar compensaría desde unos {eur(r['equilibrio'])} de reparación." if r["ganador"] == 1 else f" por {eur(abs(r['diferencia']))} al año." if r["ganador"] == 0 else "."))
+def ej_secadora(i, r):
+    v = f", valorando tu hora a {eur(i['valorHora'])}" if i["valorHora"] else ", sin valorar tu tiempo"
+    return (f"{i['coladas']} coladas a la semana durante {i['semanas']} semanas, secadora de {eur(i['compra'])} que dura {i['vida']} años y gasta {num(i['kwh'], 1)} kWh por ciclo a {eur(i['precio'], 2)}/kWh, {i['minutos']} minutos de tendido por colada{v}",
+            f"la secadora costaría {eur(r['totalSecadora'])} al año y el tendedero {eur(r['totalTendedero'])}: sale más barato " + ("el tendedero" if r["ganador"] == 1 else "la secadora" if r["ganador"] == 0 else "tendedero, casi igual") + f" por {eur(abs(r['diferencia']))} al año; la secadora compensaría si tu hora vale más de {eur(r['valorEq'], 2)}.")
+def ej_suscrip(i, r):
+    return (f"tres suscripciones de {eur(i['p1'])}, {eur(i['p2'])} y {eur(i['p3'])} al mes con {i['h1']}, {i['h2']} y {i['h3']} horas de uso, {pct(i['dto'], 0)} de descuento por pago anual y cancelables tras {i['meses']} meses",
+            f"gastas {eur(r['gastoAnual'])} al año ({eur(r['mediaHora'], 2)} por hora de uso de media); la menos aprovechada es la nº {r['mayorCoste'] + 1}, y si cancelas las poco usadas y pagas el resto al año ahorrarías {eur(r['ahorroTotal'])} y quedarías en {eur(r['gastoTras'])}.")
+def ej_hip_entrada(i, r):
+    w = ["aportar más entrada", "conservar los ahorros", "cualquiera de las dos"][r["tipo"]]
+    return (f"hipoteca de {eur(i['capital'])} al {pct(i['tin'], 2)} a {i['plazo']} años, {eur(i['extra'])} de ahorros que podrías aportar de entrada, rentabilidad del {pct(i['rent'], 1)} y horizonte de {i['anos']} años",
+            f"con la entrada extra la cuota sería de {eur(r['cuotaA'], 2)} y sin ella {eur(r['cuotaB'], 2)}; a {i['anos']} años conviene {w}" + (f" por {eur(abs(r['dif']))}" if r["tipo"] != 2 else "") + f", y ambas se igualan con una rentabilidad del {pct(r['rentEq'], 1)}.")
+def ej_excedencia(i, r):
+    g = r["ganador"]
+    return (f"neto de {eur(i['neto'])} al mes, reducción de jornada del {i['red']} % (pierdes un {i['perdida'] or i['red']} % del neto), {eur(i['cuidados'])} al mes de cuidados que te ahorras y {i['dur']} " + ("mes" if i["dur"] == 1 else "meses"),
+            f"la reducción te costaría {eur(r['costeMesRed'])} al mes ({eur(r['costeTotalRed'])} en total) y la excedencia {eur(r['costeMesExc'])} al mes ({eur(r['costeTotalExc'])} en total): " + ("la reducción de jornada sale mucho más barata." if r["costeTotalRed"] < r["costeTotalExc"] else "la excedencia sale más barata."))
+def ej_movil(i, r):
+    n = "el nuevo" if r["mejor"] == 0 else "el reacondicionado"
+    return (f"móvil nuevo de {eur(i['pnuevo'])} que dura {i['vidaN']} años o reacondicionado de {eur(i['prec'])} que dura {i['vidaR']}, {i['prob']} % de probabilidad de avería con {eur(i['rep'])} de reparación y {i['reventa']} % de reventa",
+            f"el nuevo cuesta {eur(r['anoNuevo'], 2)} al año y el reacondicionado {eur(r['anoReac'], 2)}: sale más barato {n} por {eur(abs(r['diferenciaAno']), 2)} al año" + (f"; el nuevo solo compensaría si costara {eur(r['precioEquilibrio'])} o menos." if r["mejor"] == 1 else "."))
+def ej_deposito(i, r):
+    n = {"dep": "el depósito", "letras": "comprar Letras del Tesoro", "fondo": "el fondo monetario"}.get(r["ganador"], "ninguno claramente")
+    return (f"{eur(i['importe'])} a {i['plazo']} meses: depósito al {pct(i['tin'], 2)}, Letras al {pct(i['letras'], 3)} y fondo monetario con {pct(i['rentFondo'], 1)} de rentabilidad y {pct(i['comFondo'], 1)} de comisión, " + (f"con {eur(i['otras'])} de otras rentas" if i["otras"] else "sin otras rentas"),
+            f"netos de impuestos, el depósito te dejaría {eur(r['netoDep'], 2)}, las Letras {eur(r['netoLet'], 2)} y el fondo {eur(r['netoFon'], 2)}: sale mejor {n}" + (f" por {eur(r['diferencia'], 2)} sobre la segunda opción." if r["ganador"] != "empate" else "."))
+
+
 CASOS = {
     "cuanto-cobro-de-paro-prestacion-desempleo": (ej_paro, [
         {"base": 1200, "extras": "si", "hijos": 0, "jornada": 100, "dias": 720},
@@ -432,6 +474,16 @@ CASOS = {
     "cuanto-cuesta-un-bebe-el-primer-ano": (ej_bebe, T("cuanto-cuesta-un-bebe-el-primer-ano", 0, 2, 4)),
     "venta-vivienda-plusvalia-irpf-exencion": (ej_venta, T("venta-vivienda-plusvalia-irpf-exencion", 0, 3, 5)),
     "cuota-autonomos-ingresos-reales-regularizacion": (ej_cuota_aut, T("cuota-autonomos-ingresos-reales-regularizacion", 0, 1, 2)),
+    "amortizar-plazo-o-cuota": (ej_amortizar, T("amortizar-plazo-o-cuota", 0)),
+    "gimnasio-o-entrenar-en-casa": (ej_gimnasio, T("gimnasio-o-entrenar-en-casa", 0, 1)),
+    "coche-propio-o-carsharing-o-vtc": (ej_coche_propio, T("coche-propio-o-carsharing-o-vtc", 0, 1)),
+    "caldera-reparar-o-cambiar": (ej_caldera, T("caldera-reparar-o-cambiar", 0, 1, 2)),
+    "secadora-o-tendedero-coste-por-lavado": (ej_secadora, T("secadora-o-tendedero-coste-por-lavado", 0, 1)),
+    "suscripciones-cuanto-gasto-al-ano": (ej_suscrip, T("suscripciones-cuanto-gasto-al-ano", 0, 2)),
+    "hipoteca-mas-entrada-o-conservar-ahorros": (ej_hip_entrada, T("hipoteca-mas-entrada-o-conservar-ahorros", 0, 1)),
+    "excedencia-o-reduccion-jornada": (ej_excedencia, T("excedencia-o-reduccion-jornada", 0, 1)),
+    "movil-reacondicionado-o-nuevo": (ej_movil, T("movil-reacondicionado-o-nuevo", 0, 1)),
+    "deposito-letras-o-fondo-monetario": (ej_deposito, T("deposito-letras-o-fondo-monetario", 0, 3)),
 }
 
 def generar_casos(fecha):

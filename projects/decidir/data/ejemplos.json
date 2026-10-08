@@ -4233,6 +4233,667 @@
      "texto": "pagas 6.327,72 € y la definitiva es la misma: no hay regularización."
     }
    ]
+  },
+  "amortizar-plazo-o-cuota": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "capital": 120000,
+      "tipo": 3.0,
+      "meses": 240,
+      "extra": 10000,
+      "comision": 0
+     },
+     "resultado": {
+      "cuota0": 665.5171,
+      "intBase": 39724.1082,
+      "cuotaA": 610.0574,
+      "mesesA": 240,
+      "intA": 36413.7658,
+      "ahorroA": 3310.3423,
+      "aliviomes": 55.4598,
+      "cuotaB": 665.5171,
+      "mesesB": 214,
+      "intB": 32090.4134,
+      "ahorroB": 7633.6948,
+      "mesesMenos": 26,
+      "comision": 0
+     },
+     "titulo": "hipoteca de 120.000 € al 3,0 % a 20 años y 10.000 € de amortización anticipada",
+     "texto": "reduciendo la cuota bajaría de 665,52 € a 610,06 € al mes y ahorrarías 3.310 € en intereses; reduciendo el plazo mantienes 665,52 €, terminas 26 meses antes y ahorras 7.634 €: reducir plazo ahorra más intereses."
+    }
+   ]
+  },
+  "gimnasio-o-entrenar-en-casa": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "cuota": 30,
+      "matricula": 20,
+      "desp": 1,
+      "sg": 3,
+      "sc": 3,
+      "equipo": 800,
+      "reventa": 200,
+      "meses": 24
+     },
+     "resultado": {
+      "semanas": 104,
+      "costeGim": 1052,
+      "costeCasa": 600,
+      "sesGim": 312,
+      "sesCasa": 312,
+      "cpsGim": 3.3718,
+      "cpsCasa": 1.9231,
+      "eqGim": 7.7083,
+      "eqCasa": 1.711,
+      "diferencia": 452,
+      "ganador": 1
+     },
+     "titulo": "gimnasio de 30 € al mes con 20 € de matrícula y 1,00 € de desplazamiento por sesión, 3 sesiones a la semana en el gimnasio o 3 en casa, equipo de 800 € que revenderías por 200 €, a 24 meses",
+     "texto": "el gimnasio costaría 1.052 € (3,37 € por sesión) y entrenar en casa 600 € (1,92 € por sesión): sale más barato por sesión entrenar en casa."
+    },
+    {
+     "inputs": {
+      "cuota": 30,
+      "matricula": 20,
+      "desp": 1,
+      "sg": 3,
+      "sc": 1,
+      "equipo": 3000,
+      "reventa": 500,
+      "meses": 24
+     },
+     "resultado": {
+      "semanas": 104,
+      "costeGim": 1052,
+      "costeCasa": 2500,
+      "sesGim": 312,
+      "sesCasa": 104,
+      "cpsGim": 3.3718,
+      "cpsCasa": 24.0385,
+      "eqGim": 0.3088,
+      "eqCasa": 7.1293,
+      "diferencia": -1448,
+      "ganador": 0
+     },
+     "titulo": "gimnasio de 30 € al mes con 20 € de matrícula y 1,00 € de desplazamiento por sesión, 3 sesiones a la semana en el gimnasio o 1 en casa, equipo de 3.000 € que revenderías por 500 €, a 24 meses",
+     "texto": "el gimnasio costaría 1.052 € (3,37 € por sesión) y entrenar en casa 2.500 € (24,04 € por sesión): sale más barato por sesión el gimnasio."
+    }
+   ]
+  },
+  "coche-propio-o-carsharing-o-vtc": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "viajes": 30,
+      "kmviaje": 15,
+      "fijos": 1200,
+      "deprec": 1500,
+      "kmcoche": 0.17,
+      "cskm": 0.45,
+      "cscuota": 5,
+      "vtckm": 1.2
+     },
+     "resultado": {
+      "km": 5400,
+      "propio": 3618,
+      "carsharing": 2490,
+      "vtc": 6480,
+      "propioKm": 0.67,
+      "carsharingKm": 0.4611,
+      "vtcKm": 1.2,
+      "barato": 1,
+      "tipoCS": 2,
+      "kmCS": 9428.5714,
+      "tipoVTC": 2,
+      "kmVTC": 2621.3592,
+      "viajesCS": 52.381,
+      "viajesVTC": 14.5631
+     },
+     "titulo": "30 viajes al mes de 15 km, 1.200 € de gastos fijos y 1.500 € de depreciación anuales del coche, 0,17 €/km de coste variable, carsharing a 0,45 €/km con 5 € de cuota mensual y taxi/VTC a 1,20 €/km",
+     "texto": "para 5.400 km al año, el coche propio costaría 3.618 €, el carsharing 2.490 € y el taxi/VTC 6.480 €: lo más barato es el carsharing."
+    },
+    {
+     "inputs": {
+      "viajes": 70,
+      "kmviaje": 20,
+      "fijos": 1200,
+      "deprec": 1500,
+      "kmcoche": 0.17,
+      "cskm": 0.45,
+      "cscuota": 5,
+      "vtckm": 1.2
+     },
+     "resultado": {
+      "km": 16800,
+      "propio": 5556,
+      "carsharing": 7620,
+      "vtc": 20160,
+      "propioKm": 0.3307,
+      "carsharingKm": 0.4536,
+      "vtcKm": 1.2,
+      "barato": 0,
+      "tipoCS": 2,
+      "kmCS": 9428.5714,
+      "tipoVTC": 2,
+      "kmVTC": 2621.3592,
+      "viajesCS": 39.2857,
+      "viajesVTC": 10.9223
+     },
+     "titulo": "70 viajes al mes de 20 km, 1.200 € de gastos fijos y 1.500 € de depreciación anuales del coche, 0,17 €/km de coste variable, carsharing a 0,45 €/km con 5 € de cuota mensual y taxi/VTC a 1,20 €/km",
+     "texto": "para 16.800 km al año, el coche propio costaría 5.556 €, el carsharing 7.620 € y el taxi/VTC 20.160 €: lo más barato es el coche propio."
+    }
+   ]
+  },
+  "caldera-reparar-o-cambiar": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "repar": 450,
+      "nueva": 2500,
+      "ayuda": 0,
+      "consumo": 8000,
+      "rendAct": 0.81,
+      "rendNueva": 0.92,
+      "pgas": 0.064,
+      "vida": 5
+     },
+     "resultado": {
+      "neta": 2500,
+      "gasActual": 512,
+      "gasNuevo": 450.7826,
+      "ahorroGas": 61.2174,
+      "reserva": 45,
+      "anualReparar": 647,
+      "anualCambiar": 617.4493,
+      "diferencia": 29.5507,
+      "ganador": 1,
+      "amortVsRep": 19.3,
+      "amortGas": 40.8381,
+      "equilibrio": 351.4976
+     },
+     "titulo": "reparación de 450 € o caldera nueva de 2.500 €, 8.000 kWh de gas al año, rendimientos del 81 % y el 92 %, 5 años de vida útil",
+     "texto": "reparar costaría 647 € al año y cambiar 617 €: sale más barato cambiar la caldera por 30 € al año; cambiar compensaría desde unos 351 € de reparación."
+    },
+    {
+     "inputs": {
+      "repar": 900,
+      "nueva": 2500,
+      "ayuda": 0,
+      "consumo": 15000,
+      "rendAct": 0.81,
+      "rendNueva": 0.92,
+      "pgas": 0.064,
+      "vida": 5
+     },
+     "resultado": {
+      "neta": 2500,
+      "gasActual": 960,
+      "gasNuevo": 845.2174,
+      "ahorroGas": 114.7826,
+      "reserva": 90,
+      "anualReparar": 1230,
+      "anualCambiar": 1011.8841,
+      "diferencia": 218.1159,
+      "ganador": 1,
+      "amortVsRep": 7.8132,
+      "amortGas": 21.7803,
+      "equilibrio": 172.9469
+     },
+     "titulo": "reparación de 900 € o caldera nueva de 2.500 €, 15.000 kWh de gas al año, rendimientos del 81 % y el 92 %, 5 años de vida útil",
+     "texto": "reparar costaría 1.230 € al año y cambiar 1.012 €: sale más barato cambiar la caldera por 218 € al año; cambiar compensaría desde unos 173 € de reparación."
+    },
+    {
+     "inputs": {
+      "repar": 80,
+      "nueva": 2500,
+      "ayuda": 0,
+      "consumo": 8000,
+      "rendAct": 0.81,
+      "rendNueva": 0.92,
+      "pgas": 0.064,
+      "vida": 8
+     },
+     "resultado": {
+      "neta": 2500,
+      "gasActual": 512,
+      "gasNuevo": 450.7826,
+      "ahorroGas": 61.2174,
+      "reserva": 8,
+      "anualReparar": 530,
+      "anualCambiar": 617.4493,
+      "diferencia": -87.4493,
+      "ganador": 0,
+      "amortVsRep": 34.9623,
+      "amortGas": 40.8381,
+      "equilibrio": 468.6634
+     },
+     "titulo": "reparación de 80 € o caldera nueva de 2.500 €, 8.000 kWh de gas al año, rendimientos del 81 % y el 92 %, 8 años de vida útil",
+     "texto": "reparar costaría 530 € al año y cambiar 617 €: sale más barato reparar por 87 € al año."
+    }
+   ]
+  },
+  "secadora-o-tendedero-coste-por-lavado": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "coladas": 4,
+      "semanas": 40,
+      "kwh": 2.0,
+      "precio": 0.2,
+      "minutos": 15,
+      "valorHora": 0,
+      "compra": 450,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "ciclo": 0.5087,
+      "coladasAno": 160,
+      "kwhAno": 320,
+      "energiaAno": 81.3993,
+      "horasAno": 40,
+      "tiempoAno": 0,
+      "totalSecadora": 1263.9927,
+      "totalTendedero": 0,
+      "diferencia": -1263.9927,
+      "valorEq": 3.16,
+      "coladasEq": -1,
+      "ganador": 1
+     },
+     "titulo": "4 coladas a la semana durante 40 semanas, secadora de 450 € que dura 10 años y gasta 2,0 kWh por ciclo a 0,20 €/kWh, 15 minutos de tendido por colada, sin valorar tu tiempo",
+     "texto": "la secadora costaría 1.264 € al año y el tendedero 0 €: sale más barato el tendedero por 1.264 € al año; la secadora compensaría si tu hora vale más de 3,16 €."
+    },
+    {
+     "inputs": {
+      "coladas": 4,
+      "semanas": 40,
+      "kwh": 2.0,
+      "precio": 0.2,
+      "minutos": 15,
+      "valorHora": 15,
+      "compra": 450,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "ciclo": 0.5087,
+      "coladasAno": 160,
+      "kwhAno": 320,
+      "energiaAno": 81.3993,
+      "horasAno": 40,
+      "tiempoAno": 600,
+      "totalSecadora": 1263.9927,
+      "totalTendedero": 6000,
+      "diferencia": 4736.0073,
+      "valorEq": 3.16,
+      "coladasEq": 0.3471,
+      "ganador": 0
+     },
+     "titulo": "4 coladas a la semana durante 40 semanas, secadora de 450 € que dura 10 años y gasta 2,0 kWh por ciclo a 0,20 €/kWh, 15 minutos de tendido por colada, valorando tu hora a 15 €",
+     "texto": "la secadora costaría 1.264 € al año y el tendedero 6.000 €: sale más barato la secadora por 4.736 € al año; la secadora compensaría si tu hora vale más de 3,16 €."
+    }
+   ]
+  },
+  "suscripciones-cuanto-gasto-al-ano": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "p1": 30,
+      "h1": 20,
+      "p2": 15,
+      "h2": 40,
+      "p3": 45,
+      "h3": 6,
+      "dto": 15,
+      "meses": 5
+     },
+     "resultado": {
+      "gastoAnual": 1080,
+      "gastoPagoAnual": 918,
+      "horasMes": 66,
+      "mediaHora": 1.3636,
+      "horaG1": 1.5,
+      "horaG2": 0.375,
+      "horaG3": 7.5,
+      "mayorCoste": 2,
+      "nCandidatas": 2,
+      "ahorroCandidatas": 525,
+      "ahorroMantenidas": 27,
+      "ahorroTotal": 552,
+      "gastoTras": 528,
+      "descuentoAnual": 162
+     },
+     "titulo": "tres suscripciones de 30 €, 15 € y 45 € al mes con 20, 40 y 6 horas de uso, 15 % de descuento por pago anual y cancelables tras 5 meses",
+     "texto": "gastas 1.080 € al año (1,36 € por hora de uso de media); la menos aprovechada es la nº 3, y si cancelas las poco usadas y pagas el resto al año ahorrarías 552 € y quedarías en 528 €."
+    },
+    {
+     "inputs": {
+      "p1": 30,
+      "h1": 20,
+      "p2": 15,
+      "h2": 40,
+      "p3": 45,
+      "h3": 0,
+      "dto": 15,
+      "meses": 5
+     },
+     "resultado": {
+      "gastoAnual": 1080,
+      "gastoPagoAnual": 918,
+      "horasMes": 60,
+      "mediaHora": 1.5,
+      "horaG1": 1.5,
+      "horaG2": 0.375,
+      "horaG3": -1,
+      "mayorCoste": 0,
+      "nCandidatas": 1,
+      "ahorroCandidatas": 540,
+      "ahorroMantenidas": 81,
+      "ahorroTotal": 621,
+      "gastoTras": 459,
+      "descuentoAnual": 162
+     },
+     "titulo": "tres suscripciones de 30 €, 15 € y 45 € al mes con 20, 40 y 0 horas de uso, 15 % de descuento por pago anual y cancelables tras 5 meses",
+     "texto": "gastas 1.080 € al año (1,50 € por hora de uso de media); la menos aprovechada es la nº 1, y si cancelas las poco usadas y pagas el resto al año ahorrarías 621 € y quedarías en 459 €."
+    }
+   ]
+  },
+  "hipoteca-mas-entrada-o-conservar-ahorros": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "capital": 150000,
+      "extra": 30000,
+      "tin": 2.76,
+      "baja": 0,
+      "plazo": 25,
+      "anos": 10,
+      "rent": 2
+     },
+     "resultado": {
+      "capitalA": 120000,
+      "cuotaA": 554.1875,
+      "cuotaB": 692.7344,
+      "ahorroCuota": 138.5469,
+      "saldoA": 81606.4607,
+      "saldoB": 102008.0759,
+      "ahorroA": 18370.8746,
+      "valorAhorro": 36569.8326,
+      "patrimonioA": -63235.5861,
+      "patrimonioB": -65438.2433,
+      "dif": 2202.6572,
+      "interesesA": 28108.9618,
+      "interesesB": 35136.2022,
+      "rentEq": 2.7952,
+      "mesEq": 0,
+      "tipo": 0,
+      "cubreCuotas": 43.3066
+     },
+     "titulo": "hipoteca de 150.000 € al 2,76 % a 25 años, 30.000 € de ahorros que podrías aportar de entrada, rentabilidad del 2,0 % y horizonte de 10 años",
+     "texto": "con la entrada extra la cuota sería de 554,19 € y sin ella 692,73 €; a 10 años conviene aportar más entrada por 2.203 €, y ambas se igualan con una rentabilidad del 2,8 %."
+    },
+    {
+     "inputs": {
+      "capital": 150000,
+      "extra": 30000,
+      "tin": 2.76,
+      "baja": 0,
+      "plazo": 25,
+      "anos": 10,
+      "rent": 5
+     },
+     "resultado": {
+      "capitalA": 120000,
+      "cuotaA": 554.1875,
+      "cuotaB": 692.7344,
+      "ahorroCuota": 138.5469,
+      "saldoA": 81606.4607,
+      "saldoB": 102008.0759,
+      "ahorroA": 21386.534,
+      "valorAhorro": 48866.8388,
+      "patrimonioA": -60219.9268,
+      "patrimonioB": -53141.2371,
+      "dif": -7078.6897,
+      "interesesA": 28108.9618,
+      "interesesB": 35136.2022,
+      "rentEq": 2.7952,
+      "mesEq": 0,
+      "tipo": 1,
+      "cubreCuotas": 43.3066
+     },
+     "titulo": "hipoteca de 150.000 € al 2,76 % a 25 años, 30.000 € de ahorros que podrías aportar de entrada, rentabilidad del 5,0 % y horizonte de 10 años",
+     "texto": "con la entrada extra la cuota sería de 554,19 € y sin ella 692,73 €; a 10 años conviene conservar los ahorros por 7.079 €, y ambas se igualan con una rentabilidad del 2,8 %."
+    }
+   ]
+  },
+  "excedencia-o-reduccion-jornada": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "neto": 1800,
+      "red": 30,
+      "perdida": 0,
+      "dur": 12,
+      "ayudas": 0,
+      "cuidados": 400,
+      "cotRed": 0,
+      "cotExc": 100
+     },
+     "resultado": {
+      "perdidaMesRed": 540,
+      "ahorroCuidadosRed": 120,
+      "costeMesRed": 420,
+      "costeMesExc": 1400,
+      "costeTotalRed": 5040,
+      "costeTotalExc": 16800,
+      "equilibrioCuidadosRed": 1800,
+      "equilibrioCuidadosExc": 1800,
+      "costePor10Red": 140,
+      "costePor10Exc": 140,
+      "mesesCotRed": 3.6,
+      "mesesCotExc": 12,
+      "cobertura": 22.2222,
+      "pctPerdidaRed": 30,
+      "ganador": 0
+     },
+     "titulo": "neto de 1.800 € al mes, reducción de jornada del 30 % (pierdes un 30 % del neto), 400 € al mes de cuidados que te ahorras y 12 meses",
+     "texto": "la reducción te costaría 420 € al mes (5.040 € en total) y la excedencia 1.400 € al mes (16.800 € en total): la reducción de jornada sale mucho más barata."
+    },
+    {
+     "inputs": {
+      "neto": 1800,
+      "red": 30,
+      "perdida": 24,
+      "dur": 12,
+      "ayudas": 0,
+      "cuidados": 400,
+      "cotRed": 0,
+      "cotExc": 100
+     },
+     "resultado": {
+      "perdidaMesRed": 432,
+      "ahorroCuidadosRed": 120,
+      "costeMesRed": 312,
+      "costeMesExc": 1400,
+      "costeTotalRed": 3744,
+      "costeTotalExc": 16800,
+      "equilibrioCuidadosRed": 1440,
+      "equilibrioCuidadosExc": 1800,
+      "costePor10Red": 104,
+      "costePor10Exc": 140,
+      "mesesCotRed": 3.6,
+      "mesesCotExc": 12,
+      "cobertura": 22.2222,
+      "pctPerdidaRed": 24,
+      "ganador": 0
+     },
+     "titulo": "neto de 1.800 € al mes, reducción de jornada del 30 % (pierdes un 24 % del neto), 400 € al mes de cuidados que te ahorras y 12 meses",
+     "texto": "la reducción te costaría 312 € al mes (3.744 € en total) y la excedencia 1.400 € al mes (16.800 € en total): la reducción de jornada sale mucho más barata."
+    }
+   ]
+  },
+  "movil-reacondicionado-o-nuevo": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "pnuevo": 800,
+      "prec": 450,
+      "vidaN": 5,
+      "vidaR": 3,
+      "garR": 1,
+      "prob": 15,
+      "rep": 150,
+      "reventa": 15
+     },
+     "resultado": {
+      "tcoNuevo": 725,
+      "tcoReac": 427.5,
+      "anoNuevo": 145,
+      "anoReac": 142.5,
+      "riesgoNuevo": 45,
+      "riesgoReac": 45,
+      "residualNuevo": 120,
+      "residualReac": 67.5,
+      "diferenciaAno": 2.5,
+      "mejor": 1,
+      "precioEquilibrio": 458.8235,
+      "desdeAnos": 6
+     },
+     "titulo": "móvil nuevo de 800 € que dura 5 años o reacondicionado de 450 € que dura 3, 15 % de probabilidad de avería con 150 € de reparación y 15 % de reventa",
+     "texto": "el nuevo cuesta 145,00 € al año y el reacondicionado 142,50 €: sale más barato el reacondicionado por 2,50 € al año; el nuevo solo compensaría si costara 459 € o menos."
+    },
+    {
+     "inputs": {
+      "pnuevo": 800,
+      "prec": 450,
+      "vidaN": 5,
+      "vidaR": 3,
+      "garR": 1,
+      "prob": 15,
+      "rep": 0,
+      "reventa": 15
+     },
+     "resultado": {
+      "tcoNuevo": 680,
+      "tcoReac": 382.5,
+      "anoNuevo": 136,
+      "anoReac": 127.5,
+      "riesgoNuevo": 0,
+      "riesgoReac": 0,
+      "residualNuevo": 120,
+      "residualReac": 67.5,
+      "diferenciaAno": 8.5,
+      "mejor": 1,
+      "precioEquilibrio": 480,
+      "desdeAnos": 6
+     },
+     "titulo": "móvil nuevo de 800 € que dura 5 años o reacondicionado de 450 € que dura 3, 15 % de probabilidad de avería con 0 € de reparación y 15 % de reventa",
+     "texto": "el nuevo cuesta 136,00 € al año y el reacondicionado 127,50 €: sale más barato el reacondicionado por 8,50 € al año; el nuevo solo compensaría si costara 480 € o menos."
+    }
+   ]
+  },
+  "deposito-letras-o-fondo-monetario": {
+   "fecha": "2026-10-08",
+   "casos": [
+    {
+     "inputs": {
+      "importe": 20000,
+      "plazo": 9,
+      "tin": 2.5,
+      "letras": 2.776,
+      "rentFondo": 2.4,
+      "comFondo": 0.2,
+      "otras": 0,
+      "ambito": "comun",
+      "diasLetra": 266
+     },
+     "resultado": {
+      "invalido": 0,
+      "plazo": 9,
+      "diasLetra": 266,
+      "gDep": 375,
+      "gLet": 410.2311,
+      "gFon": 329.1007,
+      "taxDep": 71.25,
+      "taxLet": 77.9439,
+      "taxFon": 62.5291,
+      "netoDep": 303.75,
+      "netoLet": 332.2872,
+      "netoFon": 266.5716,
+      "retDep": 71.25,
+      "retLet": 0,
+      "retFon": 62.5291,
+      "taeDep": 2.0301,
+      "taeLet": 2.2868,
+      "taeFon": 1.7811,
+      "ganador": "letras",
+      "rentFondoEquilibrio": 2.9442,
+      "tinEquilibrioLetras": 2.7349,
+      "marginal": 19,
+      "excedeFgd": 0,
+      "hayDatos": 1,
+      "segundo": "dep",
+      "tercero": "fondo",
+      "diferencia": 28.5372
+     },
+     "titulo": "20.000 € a 9 meses: depósito al 2,50 %, Letras al 2,776 % y fondo monetario con 2,4 % de rentabilidad y 0,2 % de comisión, sin otras rentas",
+     "texto": "netos de impuestos, el depósito te dejaría 303,75 €, las Letras 332,29 € y el fondo 266,57 €: sale mejor comprar Letras del Tesoro por 28,54 € sobre la segunda opción."
+    },
+    {
+     "inputs": {
+      "importe": 20000,
+      "plazo": 12,
+      "tin": 3.0,
+      "letras": 2.8,
+      "rentFondo": 2.0,
+      "comFondo": 0.3,
+      "otras": 6000,
+      "ambito": "comun"
+     },
+     "resultado": {
+      "invalido": 0,
+      "plazo": 12,
+      "diasLetra": 365,
+      "gDep": 600,
+      "gLet": 567.7778,
+      "gFon": 340.0,
+      "taxDep": 126,
+      "taxLet": 119.2333,
+      "taxFon": 71.4,
+      "netoDep": 474,
+      "netoLet": 448.5444,
+      "netoFon": 268.6,
+      "retDep": 114,
+      "retLet": 0,
+      "retFon": 64.6,
+      "taeDep": 2.37,
+      "taeLet": 2.2427,
+      "taeFon": 1.343,
+      "ganador": "dep",
+      "rentFondoEquilibrio": 3.3,
+      "tinEquilibrioLetras": 2.8389,
+      "marginal": 21,
+      "excedeFgd": 0,
+      "hayDatos": 1,
+      "segundo": "letras",
+      "tercero": "fondo",
+      "diferencia": 25.4556
+     },
+     "titulo": "20.000 € a 12 meses: depósito al 3,00 %, Letras al 2,800 % y fondo monetario con 2,0 % de rentabilidad y 0,3 % de comisión, con 6.000 € de otras rentas",
+     "texto": "netos de impuestos, el depósito te dejaría 474,00 €, las Letras 448,54 € y el fondo 268,60 €: sale mejor el depósito por 25,46 € sobre la segunda opción."
+    }
+   ]
   }
  }
 }

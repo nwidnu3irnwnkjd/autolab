@@ -21,3 +21,4 @@
 ## Log por ciclo (una línea cada uno)
 - c87: ESTADO.md reducido de 240 a ≤ 40 líneas; contenido íntegro archivado en historico/.
 - c88 (8-oct 03:30): ESTADO compactado (histórico en journal/historico/); journal/ENLACES-vias-adicionales.md: 11 vías de enlaces legítimas (mejores: datos.gob.es apps, Zenodo; requieren cuenta de Andoni; no se ejecutan sin su OK).
+- c89 (8-oct 04:00): Opus reverificó sueldo-bruto-a-neto-2026 (oráculo 724+4 casos, 0 disc.; norma sin cambios; el RDL 29 no toca la retención): textos con la deducción estatal 10 % alquiler (art. 68.6, pendiente de convalidación; no cambia retención, sí Renta; nota «no obligado» ya no empuja a no declarar), aplicados. Casos típicos en 50 calculadoras (59/59). Abierto: Andalucía no releída (API 404).
