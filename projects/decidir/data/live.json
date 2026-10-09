@@ -4,7 +4,7 @@
    "anterior": 1.8938,
    "anterior_fecha": "2026-10-08",
    "extra": {
-    "detalle": "Media simple de 10786 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10790 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-09",
    "fecha_dato": "2026-10-09",
@@ -43,14 +43,14 @@
     ],
     [
      "2026-10-09",
-     1.8941
+     1.8935
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8941,
-   "variacion_abs": 0.0003,
-   "variacion_pct": 0.02
+   "valor": 1.8935,
+   "variacion_abs": -0.0003,
+   "variacion_pct": -0.02
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -181,7 +181,7 @@
    "anterior": 1.7963,
    "anterior_fecha": "2026-10-08",
    "extra": {
-    "detalle": "Media simple de 10423 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10427 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
    "fecha_consulta": "2026-10-09",
    "fecha_dato": "2026-10-09",
@@ -220,14 +220,14 @@
     ],
     [
      "2026-10-09",
-     1.7962
+     1.7948
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.7962,
-   "variacion_abs": -0.0001,
-   "variacion_pct": -0.01
+   "valor": 1.7948,
+   "variacion_abs": -0.0015,
+   "variacion_pct": -0.08
   },
   "luz_pvpc": {
    "anterior": 0.18335,
@@ -296,8 +296,8 @@
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 20.1,
-    "max_semana": 26.3,
+    "max_hoy": 21.0,
+    "max_semana": 27.3,
     "min_hoy": 6.2,
     "min_semana": 6.2
    },
@@ -338,14 +338,14 @@
     ],
     [
      "2026-10-09",
-     6.5
+     14.4
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 6.5,
-   "variacion_abs": -5.9,
-   "variacion_pct": -47.58
+   "valor": 14.4,
+   "variacion_abs": 2.0,
+   "variacion_pct": 16.13
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
