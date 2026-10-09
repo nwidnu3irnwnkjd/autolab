@@ -4,7 +4,7 @@
    "anterior": 1.8938,
    "anterior_fecha": "2026-10-08",
    "extra": {
-    "detalle": "Media simple de 10790 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10780 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
    "fecha_consulta": "2026-10-09",
    "fecha_dato": "2026-10-09",
@@ -220,14 +220,14 @@
     ],
     [
      "2026-10-09",
-     1.7948
+     1.7947
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.7948,
-   "variacion_abs": -0.0015,
-   "variacion_pct": -0.08
+   "valor": 1.7947,
+   "variacion_abs": -0.0016,
+   "variacion_pct": -0.09
   },
   "luz_pvpc": {
    "anterior": 0.18335,
@@ -338,14 +338,14 @@
     ],
     [
      "2026-10-09",
-     14.4
+     13.4
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 14.4,
-   "variacion_abs": 2.0,
-   "variacion_pct": 16.13
+   "valor": 13.4,
+   "variacion_abs": 1.0,
+   "variacion_pct": 8.06
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
