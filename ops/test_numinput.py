@@ -25,6 +25,10 @@ for (raw, dec, exp), got in zip(CASES, json.loads(r.stdout.strip())):
     if got != exp: fails.append(f"normalización «{raw}» ({'data-dec' if dec else 'entero'}) → {got!r}, esperado {exp!r}")
 # 2) y 3) HTML
 n = 0; avisos = []
+# Campos con default de 2 decimales y step >= 1 (euros enteros) SIN data-dec a propósito: ui.py solo pone data-dec con step<1.
+# Con data-dec, «5.101» (miles escrito a la española) se leería como 5,101; sin él se lee 5101. El default 205.88 / 5101.2 no
+# tiene 3 decimales, así que no se confunde con miles. No se cambia el HTML ni el resultado.
+SIN_DEC_OK = {"capitalizar-paro-o-cobrarlo/cuota", "nomina-2027-cuanto-sube-la-cotizacion-mei-solidaridad/base27"}
 cd = os.path.join(P, "calcs")
 for f in sorted(os.listdir(cd)):
     if not f.endswith(".json") or f.endswith(".test.json"): continue
@@ -41,6 +45,7 @@ for f in sorted(os.listdir(cd)):
         v = re.search(r'value="([^"]*)"', t).group(1)
         if re.search(r"\.\d", v) and not dec:
             if re.match(r"^-?[1-9]\d{0,2}(\.\d{3})+$", v): fails.append(f"{slug}/{i['id']}: default {v} sin data-dec se leería como miles")
+            elif f"{slug}/{i['id']}" in SIN_DEC_OK: pass
             else: avisos.append(f"{slug}/{i['id']}: default decimal {v} sin data-dec (inocuo hoy: no tiene 3 decimales)")
 print(f"{'✗' if fails else 'OK'} test_numinput: {len(CASES)} casos de normalización, {n} campos revisados")
 for x in avisos: print("  aviso:", x)
