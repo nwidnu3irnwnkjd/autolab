@@ -7098,6 +7098,959 @@
      "texto": "ahorrarías 59,90 € al año (4,99 € al mes): queda por debajo de tu mínimo de ahorro y no compensa el esfuerzo."
     }
    ]
+  },
+  "equipaje-y-asiento-avion-coste-real": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "lc": 40,
+      "normal": 80,
+      "maleta": 30,
+      "nmal": 1,
+      "nincl": 1,
+      "extras": 15,
+      "pax": 2,
+      "tray": 2
+     },
+     "resultado": {
+      "totalLC": 340,
+      "totalNormal": 320,
+      "porPasajeroLC": 170,
+      "porPasajeroNormal": 160,
+      "porTrayectoLC": 85,
+      "porTrayectoNormal": 80,
+      "diferencia": 20,
+      "ganador": 1,
+      "nEq": 1,
+      "extraEq": 10
+     },
+     "titulo": "2 pasajeros, 2 trayectos, low cost de 40 € frente a tarifa normal de 80 €, 1 maleta(s) facturada(s) de 30 € (1 incluida(s) en la normal) y 15 € de extras",
+     "texto": "la low cost sale por 340 € en total (170 € por pasajero) y la normal por 320 € (160 €): sale más barata la tarifa normal por 20 €."
+    },
+    {
+     "inputs": {
+      "lc": 40,
+      "normal": 80,
+      "maleta": 30,
+      "nmal": 0,
+      "nincl": 1,
+      "extras": 15,
+      "pax": 2,
+      "tray": 2
+     },
+     "resultado": {
+      "totalLC": 220,
+      "totalNormal": 320,
+      "porPasajeroLC": 110,
+      "porPasajeroNormal": 160,
+      "porTrayectoLC": 55,
+      "porTrayectoNormal": 80,
+      "diferencia": -100,
+      "ganador": 0,
+      "nEq": 1,
+      "extraEq": 40
+     },
+     "titulo": "2 pasajeros, 2 trayectos, low cost de 40 € frente a tarifa normal de 80 €, 0 maleta(s) facturada(s) de 30 € (1 incluida(s) en la normal) y 15 € de extras",
+     "texto": "la low cost sale por 220 € en total (110 € por pasajero) y la normal por 320 € (160 €): sale más barata la low cost por 100 €."
+    }
+   ]
+  },
+  "navidad-cuanto-gastar-sin-endeudarte": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "ingresos": 2200,
+      "gastos": 1500,
+      "ahorro": 200,
+      "fondo": 4000,
+      "mesesFondo": 3,
+      "gasto": 600,
+      "meses": 3,
+      "tin": 18
+     },
+     "resultado": {
+      "margen": 500,
+      "presupuesto": 1500,
+      "colchon": 4500,
+      "exceso": 0,
+      "faltaFondo": 500,
+      "ahorroNecesario": 200,
+      "falta": 0,
+      "sobra": 900,
+      "int3": 18.0893,
+      "int6": 31.8908,
+      "int12": 60.0959,
+      "cuota12": 55.008,
+      "intFalta12": 0,
+      "ganador": 0
+     },
+     "titulo": "ingresos de 2.200 €, gastos fijos de 1.500 €, ahorro de 200 €/mes, fondo de 4.000 €, gasto navideño de 600 € con 3 meses de antelación y crédito al 18 % TIN",
+     "texto": "tu presupuesto sin crédito es de 1.500 € y necesitarías apartar 200 € al mes: el gasto cabe en tu margen sin endeudarte; financiarlo a 12 cuotas costaría 60,10 € de intereses (55,01 €/mes)."
+    },
+    {
+     "inputs": {
+      "ingresos": 2200,
+      "gastos": 1500,
+      "ahorro": 200,
+      "fondo": 4000,
+      "mesesFondo": 3,
+      "gasto": 2000,
+      "meses": 3,
+      "tin": 18
+     },
+     "resultado": {
+      "margen": 500,
+      "presupuesto": 1500,
+      "colchon": 4500,
+      "exceso": 0,
+      "faltaFondo": 500,
+      "ahorroNecesario": 666.6667,
+      "falta": 500,
+      "sobra": 0,
+      "int3": 60.2978,
+      "int6": 106.3026,
+      "int12": 200.3198,
+      "cuota12": 183.36,
+      "intFalta12": 50.08,
+      "ganador": 2
+     },
+     "titulo": "ingresos de 2.200 €, gastos fijos de 1.500 €, ahorro de 200 €/mes, fondo de 4.000 €, gasto navideño de 2.000 € con 3 meses de antelación y crédito al 18 % TIN",
+     "texto": "tu presupuesto sin crédito es de 1.500 € y necesitarías apartar 667 € al mes: el gasto no cabe sin endeudarte o tocar el colchón del fondo; financiarlo a 12 cuotas costaría 200,32 € de intereses (183,36 €/mes)."
+    }
+   ]
+  },
+  "pc-sobremesa-o-portatil-coste-a-5-anos": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "precioSob": 700,
+      "precioPort": 900,
+      "extraSob": 250,
+      "repPort": 100,
+      "anios": 5,
+      "horas": 4,
+      "precioKwh": 0.2,
+      "resid": 0
+     },
+     "resultado": {
+      "kwhSob": 1095,
+      "kwhPort": 292,
+      "energiaSob": 278.5381,
+      "energiaPort": 74.2768,
+      "totalSob": 1228.5381,
+      "totalPort": 1074.2768,
+      "anualSob": 245.7076,
+      "anualPort": 214.8554,
+      "diferencia": 154.2613,
+      "precioPortEq": 1054.2613,
+      "extraSobEq": 95.7387,
+      "precioEf": 0.2544,
+      "ganador": 1
+     },
+     "titulo": "sobremesa de 700 € (más 250 € de periféricos) frente a portátil de 900 € (más 100 € de reparaciones), 5 años, 4 h al día",
+     "texto": "el sobremesa cuesta 1.229 € en total (246 €/año) y el portátil 1.074 € (215 €/año), con 279 € y 74 € de electricidad: sale más barato el portátil por 154 €."
+    },
+    {
+     "inputs": {
+      "precioSob": 700,
+      "precioPort": 1300,
+      "extraSob": 150,
+      "repPort": 100,
+      "anios": 5,
+      "horas": 4,
+      "precioKwh": 0.2,
+      "resid": 0
+     },
+     "resultado": {
+      "kwhSob": 1095,
+      "kwhPort": 292,
+      "energiaSob": 278.5381,
+      "energiaPort": 74.2768,
+      "totalSob": 1128.5381,
+      "totalPort": 1474.2768,
+      "anualSob": 225.7076,
+      "anualPort": 294.8554,
+      "diferencia": -345.7387,
+      "precioPortEq": 954.2613,
+      "extraSobEq": 495.7387,
+      "precioEf": 0.2544,
+      "ganador": 0
+     },
+     "titulo": "sobremesa de 700 € (más 150 € de periféricos) frente a portátil de 1.300 € (más 100 € de reparaciones), 5 años, 4 h al día",
+     "texto": "el sobremesa cuesta 1.129 € en total (226 €/año) y el portátil 1.474 € (295 €/año), con 279 € y 74 € de electricidad: sale más barato el sobremesa por 346 €."
+    }
+   ]
+  },
+  "portatil-o-movil-comprar-renting-o-financiar": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "precio": 900,
+      "descuento": 5,
+      "tin": 9,
+      "comision": 0,
+      "meses": 12,
+      "renting": 45,
+      "reventa": 20,
+      "vida": 4
+     },
+     "resultado": {
+      "costeContado": 675,
+      "costeFinanciar": 764.4759,
+      "costeRenting": 2160,
+      "anoContado": 168.75,
+      "anoFinanciar": 191.119,
+      "anoRenting": 540,
+      "cuota": 78.7063,
+      "comision": 0,
+      "sobrecosteFinanciar": 89.4759,
+      "interesesYComision": 44.4759,
+      "tae": 9.3807,
+      "taeConDescuento": 20.4903,
+      "cuotaRentingEquilibrio": 14.0625,
+      "mejor": 0,
+      "diferenciaSegundo": 89.4759
+     },
+     "titulo": "equipo de 900 €, 5 % de descuento al contado, financiación al 9 % TIN a 12 meses, renting de 45 €/mes, reventa del 20 % y 4 años de uso",
+     "texto": "el coste neto es de 675 € al contado, 764 € financiando y 2.160 € con renting: sale más barato pagar al contado por 89 € respecto a la siguiente opción."
+    },
+    {
+     "inputs": {
+      "precio": 900,
+      "descuento": 5,
+      "tin": 9,
+      "comision": 0,
+      "meses": 12,
+      "renting": 10,
+      "reventa": 20,
+      "vida": 4
+     },
+     "resultado": {
+      "costeContado": 675,
+      "costeFinanciar": 764.4759,
+      "costeRenting": 480,
+      "anoContado": 168.75,
+      "anoFinanciar": 191.119,
+      "anoRenting": 120,
+      "cuota": 78.7063,
+      "comision": 0,
+      "sobrecosteFinanciar": 89.4759,
+      "interesesYComision": 44.4759,
+      "tae": 9.3807,
+      "taeConDescuento": 20.4903,
+      "cuotaRentingEquilibrio": 14.0625,
+      "mejor": 2,
+      "diferenciaSegundo": 195
+     },
+     "titulo": "equipo de 900 €, 5 % de descuento al contado, financiación al 9 % TIN a 12 meses, renting de 10 €/mes, reventa del 20 % y 4 años de uso",
+     "texto": "el coste neto es de 675 € al contado, 764 € financiando y 480 € con renting: sale más barato el renting por 195 € respecto a la siguiente opción."
+    }
+   ]
+  },
+  "punto-de-carga-casa-con-o-sin-placas": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "km": 15000,
+      "cons": 17,
+      "pctCasa": 80,
+      "coste": 1200,
+      "pelec": 0.1812,
+      "ppub": 0.45,
+      "pctPlacas": 40,
+      "pgas": 1.8323
+     },
+     "resultado": {
+      "kwhAnual": 2550,
+      "kwhCasa": 2040,
+      "precioCasaCon": 0.1443,
+      "costePublica": 1147.5,
+      "costeSin": 599.148,
+      "costeCon": 523.934,
+      "costeGasolina": 1786.4925,
+      "ahorroSin": 548.352,
+      "ahorroCon": 623.566,
+      "paybackSin": 2.1884,
+      "paybackCon": 1.9244,
+      "kmMin": 2886.6231,
+      "ahorroVsGasolina": 1262.5585,
+      "instalar": 1
+     },
+     "titulo": "15.000 km al año, 17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 €, con placas que cubren el 40 % de la carga en casa",
+     "texto": "cargar en casa cuesta 524 € al año frente a 1.148 € en carga pública: el punto se amortiza en 1,9 años y compensa instalarlo; frente a la gasolina ahorras unos 1.263 € al año."
+    },
+    {
+     "inputs": {
+      "km": 15000,
+      "cons": 17,
+      "pctCasa": 80,
+      "coste": 1200,
+      "pelec": 0.1812,
+      "ppub": 0.45,
+      "pctPlacas": 0,
+      "pgas": 1.8323
+     },
+     "resultado": {
+      "kwhAnual": 2550,
+      "kwhCasa": 2040,
+      "precioCasaCon": 0.1812,
+      "costePublica": 1147.5,
+      "costeSin": 599.148,
+      "costeCon": 599.148,
+      "costeGasolina": 1786.4925,
+      "ahorroSin": 548.352,
+      "ahorroCon": 548.352,
+      "paybackSin": 2.1884,
+      "paybackCon": 2.1884,
+      "kmMin": 3282.563,
+      "ahorroVsGasolina": 1187.3445,
+      "instalar": 1
+     },
+     "titulo": "15.000 km al año, 17 kWh/100 km, 80 % de la carga en casa, punto de 1.200 €, sin placas",
+     "texto": "cargar en casa cuesta 599 € al año frente a 1.148 € en carga pública: el punto se amortiza en 2,2 años y compensa instalarlo; frente a la gasolina ahorras unos 1.187 € al año."
+    }
+   ]
+  },
+  "radiador-aceite-calefactor-o-bomba-calor-cuanto-gasta": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "potencia": 1.0,
+      "aisl": 1.0,
+      "horas": 6,
+      "dias": 120,
+      "precio": 0.2,
+      "cop": 3.0,
+      "compraExtra": 600,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwR": 1,
+      "kwB": 0.3333,
+      "horaR": 0.2544,
+      "horaB": 0.0848,
+      "diaR": 1.5262,
+      "diaB": 0.5087,
+      "mesR": 45.7871,
+      "mesB": 15.2624,
+      "anoR": 183.1484,
+      "anoB": 61.0495,
+      "kwhAnoR": 720,
+      "kwhAnoB": 240,
+      "ahorroAnual": 122.0989,
+      "totalR": 1831.4836,
+      "totalB": 1210.4945,
+      "diferencia": 620.9891,
+      "aniosAmort": 4.914,
+      "diasEq": 58.9686,
+      "ganador": 1
+     },
+     "titulo": "radiador de 1,0 kW, 6 h al día durante 120 días, aislamiento medio, bomba de calor con COP 3,0 y 600 € más de compra, vida de 10 años",
+     "texto": "el radiador gasta 183 € al año (0,25 € por hora) y la bomba de calor 61 €: ahorra 122 € al año, se amortiza en 4,9 años y en 10 años compensa por 621 €."
+    },
+    {
+     "inputs": {
+      "potencia": 1.0,
+      "aisl": 1.0,
+      "horas": 6,
+      "dias": 120,
+      "precio": 0.2,
+      "cop": 3.0,
+      "compraExtra": 3000,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwR": 1,
+      "kwB": 0.3333,
+      "horaR": 0.2544,
+      "horaB": 0.0848,
+      "diaR": 1.5262,
+      "diaB": 0.5087,
+      "mesR": 45.7871,
+      "mesB": 15.2624,
+      "anoR": 183.1484,
+      "anoB": 61.0495,
+      "kwhAnoR": 720,
+      "kwhAnoB": 240,
+      "ahorroAnual": 122.0989,
+      "totalR": 1831.4836,
+      "totalB": 3610.4945,
+      "diferencia": -1779.0109,
+      "aniosAmort": 24.5702,
+      "diasEq": 294.8429,
+      "ganador": 0
+     },
+     "titulo": "radiador de 1,0 kW, 6 h al día durante 120 días, aislamiento medio, bomba de calor con COP 3,0 y 3.000 € más de compra, vida de 10 años",
+     "texto": "el radiador gasta 183 € al año (0,25 € por hora) y la bomba de calor 61 €: ahorra 122 € al año, tardaría 24,6 años en amortizarse, más que su vida útil, y en 10 años sale 1.779 € peor."
+    }
+   ]
+  },
+  "reparar-o-comprar-electrodomestico": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "vida": 11.5,
+      "edad": 8,
+      "reparacion": 150,
+      "nuevo": 430,
+      "garantia": 6,
+      "prob": 25,
+      "dkwh": 0,
+      "precio": 0.23
+     },
+     "resultado": {
+      "vidaRestante": 3.5,
+      "horizonteRep": 3.5,
+      "costeEsperadoAveria": 28.125,
+      "energiaExtraAnual": 0,
+      "anualReparar": 50.8929,
+      "anualNuevo": 37.3913,
+      "diferenciaAnual": 13.5016,
+      "ganador": "comprar",
+      "equilibrioReparacion": 110.2059,
+      "equilibrioPctNuevo": 25.6293,
+      "regla50": 1,
+      "ratioReparacion": 0.3488
+     },
+     "titulo": "aparato de 8 años con vida media de 11,5, reparación de 150 € frente a uno nuevo de 430 €, garantía de 6 meses y 25 % de probabilidad de otra avería",
+     "texto": "reparar cuesta unos 50,89 € al año y comprar 37,39 €: sale mejor comprar uno nuevo por 13,50 € al año; la reparación pesa un 35 % del precio de uno nuevo."
+    },
+    {
+     "inputs": {
+      "vida": 12,
+      "edad": 2,
+      "reparacion": 250,
+      "nuevo": 600,
+      "garantia": 12,
+      "prob": 10,
+      "dkwh": 0,
+      "precio": 0.23
+     },
+     "resultado": {
+      "vidaRestante": 10,
+      "horizonteRep": 10,
+      "costeEsperadoAveria": 12.5,
+      "energiaExtraAnual": 0,
+      "anualReparar": 26.25,
+      "anualNuevo": 50,
+      "diferenciaAnual": -23.75,
+      "ganador": "reparar",
+      "equilibrioReparacion": 476.1905,
+      "equilibrioPctNuevo": 79.3651,
+      "regla50": 1,
+      "ratioReparacion": 0.4167
+     },
+     "titulo": "aparato de 2 años con vida media de 12,0, reparación de 250 € frente a uno nuevo de 600 €, garantía de 12 meses y 10 % de probabilidad de otra avería",
+     "texto": "reparar cuesta unos 26,25 € al año y comprar 50,00 €: sale mejor reparar por 23,75 € al año; la reparación pesa un 42 % del precio de uno nuevo."
+    }
+   ]
+  },
+  "seguro-mascota-merece-la-pena": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "prima": 300,
+      "franq": 100,
+      "limite": 3000,
+      "carencia": 2,
+      "prob": 10,
+      "coste": 1500,
+      "horizonte": 10
+     },
+     "resultado": {
+      "cobertura": 1400,
+      "bolsillo": 100,
+      "esperadoSin": 150,
+      "esperadoCon": 310,
+      "ahorroEsperado": -160,
+      "esperadoSinTotal": 1500,
+      "esperadoConTotal": 3100,
+      "ahorroTotal": -1600,
+      "probEquilibrio": 21.4286,
+      "anoConEventoSin": 1500,
+      "anoConEventoCon": 400,
+      "mesesHucha": 60,
+      "huchaFinal": 3000,
+      "golpeMes1Con": 1500,
+      "golpeMes1Hucha": 1475,
+      "mesCubierto": 3,
+      "golpeCubiertoCon": 100,
+      "golpeCubiertoHucha": 1425,
+      "gastoAno1Con": 175,
+      "mejor": 1
+     },
+     "titulo": "seguro de 300 € al año con franquicia de 100 € y límite de 3.000 €, 10 % de probabilidad anual de un gasto de 1.500 €, a 10 años",
+     "texto": "el gasto esperado en 10 años es de 3.100 € con seguro y 1.500 € sin él: sale más barato sin seguro; el seguro compensa en esperanza si la probabilidad anual supera el 21,4 %."
+    },
+    {
+     "inputs": {
+      "prima": 300,
+      "franq": 100,
+      "limite": 3000,
+      "carencia": 2,
+      "prob": 25,
+      "coste": 1500,
+      "horizonte": 10
+     },
+     "resultado": {
+      "cobertura": 1400,
+      "bolsillo": 100,
+      "esperadoSin": 375,
+      "esperadoCon": 325,
+      "ahorroEsperado": 50,
+      "esperadoSinTotal": 3750,
+      "esperadoConTotal": 3250,
+      "ahorroTotal": 500,
+      "probEquilibrio": 21.4286,
+      "anoConEventoSin": 1500,
+      "anoConEventoCon": 400,
+      "mesesHucha": 60,
+      "huchaFinal": 3000,
+      "golpeMes1Con": 1500,
+      "golpeMes1Hucha": 1475,
+      "mesCubierto": 3,
+      "golpeCubiertoCon": 100,
+      "golpeCubiertoHucha": 1425,
+      "gastoAno1Con": 175,
+      "mejor": 0
+     },
+     "titulo": "seguro de 300 € al año con franquicia de 100 € y límite de 3.000 €, 25 % de probabilidad anual de un gasto de 1.500 €, a 10 años",
+     "texto": "el gasto esperado en 10 años es de 3.250 € con seguro y 3.750 € sin él: sale más barato con seguro; el seguro compensa en esperanza si la probabilidad anual supera el 21,4 %."
+    }
+   ]
+  },
+  "seguro-vida-hipoteca-banco-o-externo": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "capital": 150000,
+      "plazo": 25,
+      "tin": 2.76,
+      "bonif": 0.5,
+      "primaBanco": 450,
+      "primaExt": 250,
+      "horizonte": 25,
+      "evol": 1
+     },
+     "resultado": {
+      "H": 25,
+      "cuotaBanco": 692.7344,
+      "cuotaExt": 731.767,
+      "interesesBanco": 57820.3158,
+      "interesesExt": 69530.0908,
+      "primasBanco": 6490.0403,
+      "primasExt": 3668.6179,
+      "costeBanco": 64310.3561,
+      "costeExt": 73198.7088,
+      "diferencia": 8888.3526,
+      "extraIntereses": 11709.775,
+      "extraPrimas": 2821.4224,
+      "ahorroCuotaMes": 39.0326,
+      "bonifMin": 0.124,
+      "mejor": 0
+     },
+     "titulo": "hipoteca de 150.000 € a 25 años al 2,76 % con 0,5 puntos de bonificación por el seguro del banco (450 €/año) frente a una póliza externa de 250 €/año",
+     "texto": "el coste total es de 64.310 € con el banco y 73.199 € con la externa: sale más barata la opción del banco por 8.888 €; la póliza externa sale mejor si la bonificación del banco es inferior a 0,12 puntos."
+    },
+    {
+     "inputs": {
+      "capital": 150000,
+      "plazo": 25,
+      "tin": 2.76,
+      "bonif": 0.1,
+      "primaBanco": 450,
+      "primaExt": 250,
+      "horizonte": 25,
+      "evol": 1
+     },
+     "resultado": {
+      "H": 25,
+      "cuotaBanco": 692.7344,
+      "cuotaExt": 700.4426,
+      "interesesBanco": 57820.3158,
+      "interesesExt": 60132.785,
+      "primasBanco": 6490.0403,
+      "primasExt": 3618.2339,
+      "costeBanco": 64310.3561,
+      "costeExt": 63751.0189,
+      "diferencia": -559.3372,
+      "extraIntereses": 2312.4692,
+      "extraPrimas": 2871.8064,
+      "ahorroCuotaMes": 7.7082,
+      "bonifMin": 0.124,
+      "mejor": 1
+     },
+     "titulo": "hipoteca de 150.000 € a 25 años al 2,76 % con 0,1 puntos de bonificación por el seguro del banco (450 €/año) frente a una póliza externa de 250 €/año",
+     "texto": "el coste total es de 64.310 € con el banco y 63.751 € con la externa: sale más barata la póliza externa por 559 €; la póliza externa sale mejor si la bonificación del banco es inferior a 0,12 puntos."
+    }
+   ]
+  },
+  "termo-electrico-o-calentador-gas-o-aerotermia-agua": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "personas": 3,
+      "precioLuz": 0.2,
+      "precioGas": 0.064,
+      "fijoGas": 0,
+      "compraTermo": 300,
+      "compraGas": 500,
+      "compraAero": 2000,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhUtil": 2292.273,
+      "kwhTermo": 2546.97,
+      "kwhGas": 2865.3412,
+      "kwhAero": 818.6689,
+      "costeTermo": 647.8797,
+      "costeGas": 183.3818,
+      "costeAero": 208.247,
+      "totalTermo": 6778.797,
+      "totalGas": 2333.8184,
+      "totalAero": 4082.4705,
+      "segundo": 1748.6521,
+      "aniosGas": 0.4306,
+      "aniosAero": 3.8669,
+      "personasGas": 0.1292,
+      "personasAero": 1.1601,
+      "ganador": 1
+     },
+     "titulo": "3 personas, luz a 0,20 €/kWh sin impuestos y gas a 0,064 €/kWh, compras de 300 €, 500 € y 2.000 €, vida de 10 años",
+     "texto": "a 10 años cuestan 6.779 € el termo, 2.334 € el gas y 4.082 € la aerotermia (compra incluida): sale más barato el calentador de gas, 1.749 € por debajo del siguiente."
+    },
+    {
+     "inputs": {
+      "personas": 3,
+      "precioLuz": 0.2,
+      "precioGas": 0.064,
+      "fijoGas": 300,
+      "compraTermo": 300,
+      "compraGas": 500,
+      "compraAero": 2000,
+      "vida": 10
+     },
+     "resultado": {
+      "precioEf": 0.2544,
+      "kwhUtil": 2292.273,
+      "kwhTermo": 2546.97,
+      "kwhGas": 2865.3412,
+      "kwhAero": 818.6689,
+      "costeTermo": 647.8797,
+      "costeGas": 483.3818,
+      "costeAero": 208.247,
+      "totalTermo": 6778.797,
+      "totalGas": 5333.8184,
+      "totalAero": 4082.4705,
+      "segundo": 1251.3479,
+      "aniosGas": 1.2158,
+      "aniosAero": 3.8669,
+      "personasGas": 0.3647,
+      "personasAero": 1.1601,
+      "ganador": 2
+     },
+     "titulo": "3 personas, luz a 0,20 €/kWh sin impuestos y gas a 0,064 €/kWh, término fijo de gas de 300 €/año, compras de 300 €, 500 € y 2.000 €, vida de 10 años",
+     "texto": "a 10 años cuestan 6.779 € el termo, 5.334 € el gas y 4.082 € la aerotermia (compra incluida): sale más barato la aerotermia, 1.251 € por debajo del siguiente."
+    }
+   ]
+  },
+  "universidad-publica-o-privada-o-master": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "anos": 4,
+      "matpub": 1000,
+      "matpriv": 8000,
+      "vida": 0,
+      "ayuda": 0,
+      "dsal": 2000,
+      "ntrab": 10,
+      "tasa": 0
+     },
+     "resultado": {
+      "matPub": 4000,
+      "matPriv": 32000,
+      "extra": 0,
+      "sobrecoste": 28000,
+      "pvSobrecoste": 28000,
+      "van": -8000,
+      "dsalMin": 2800,
+      "anosAmortizar": 14,
+      "mejor": 0,
+      "gananciaBruta": 20000
+     },
+     "titulo": "4 años de estudios, matrícula de 1.000 €/año en la pública y 8.000 €/año en la privada, 2.000 €/año de diferencia de salario esperada durante 10 años",
+     "texto": "la privada cuesta 28.000 € más y, con esa diferencia de salario, el balance es de -8.000 €: no compensa; para amortizarla necesitarías al menos 2.800 € más de salario al año y la recuperas en 14 años."
+    },
+    {
+     "inputs": {
+      "anos": 4,
+      "matpub": 1000,
+      "matpriv": 8000,
+      "vida": 0,
+      "ayuda": 0,
+      "dsal": 4000,
+      "ntrab": 10,
+      "tasa": 0
+     },
+     "resultado": {
+      "matPub": 4000,
+      "matPriv": 32000,
+      "extra": 0,
+      "sobrecoste": 28000,
+      "pvSobrecoste": 28000,
+      "van": 12000,
+      "dsalMin": 2800,
+      "anosAmortizar": 7,
+      "mejor": 1,
+      "gananciaBruta": 40000
+     },
+     "titulo": "4 años de estudios, matrícula de 1.000 €/año en la pública y 8.000 €/año en la privada, 4.000 €/año de diferencia de salario esperada durante 10 años",
+     "texto": "la privada cuesta 28.000 € más y, con esa diferencia de salario, el balance es de 12.000 €: compensa; para amortizarla necesitarías al menos 2.800 € más de salario al año y la recuperas en 7 años."
+    }
+   ]
+  },
+  "vivir-cerca-del-trabajo-o-mas-barato-lejos": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "alq_cerca": 1000,
+      "alq_lejos": 750,
+      "km": 22,
+      "min": 30,
+      "cpk": 0.2,
+      "abono": 0,
+      "dias": 220,
+      "vh": 0
+     },
+     "resultado": {
+      "ahorroAlquiler": 3000,
+      "kmCoste": 1936,
+      "abonoAnual": 0,
+      "desplaz": 1936,
+      "horas": 220,
+      "tiempoVal": 0,
+      "extra": 1936,
+      "neto": 1064,
+      "netoSin": 1064,
+      "costeCerca": 12000,
+      "costeLejos": 10936,
+      "tipo": 0,
+      "vhEq": 4.8364,
+      "alqEq": 911.3333,
+      "kmEq": 34.0909
+     },
+     "titulo": "alquiler de 1.000 € cerca frente a 750 € lejos, 22 km y 30 min extra por trayecto, 0,20 €/km, 220 días al año, sin valorar el tiempo",
+     "texto": "vivir lejos ahorra 3.000 € de alquiler al año pero suma 1.936 € de desplazamiento: compensa vivir lejos (neto de 1.064 € al año)."
+    },
+    {
+     "inputs": {
+      "alq_cerca": 1000,
+      "alq_lejos": 750,
+      "km": 22,
+      "min": 30,
+      "cpk": 0.2,
+      "abono": 0,
+      "dias": 220,
+      "vh": 12
+     },
+     "resultado": {
+      "ahorroAlquiler": 3000,
+      "kmCoste": 1936,
+      "abonoAnual": 0,
+      "desplaz": 1936,
+      "horas": 220,
+      "tiempoVal": 2640,
+      "extra": 4576,
+      "neto": -1576,
+      "netoSin": 1064,
+      "costeCerca": 12000,
+      "costeLejos": 13576,
+      "tipo": 1,
+      "vhEq": 4.8364,
+      "alqEq": 1131.3333,
+      "kmEq": 14.4231
+     },
+     "titulo": "alquiler de 1.000 € cerca frente a 750 € lejos, 22 km y 30 min extra por trayecto, 0,20 €/km, 220 días al año, tiempo valorado a 12 €/h",
+     "texto": "vivir lejos ahorra 3.000 € de alquiler al año pero suma 4.576 € de desplazamiento y tiempo: compensa vivir cerca (neto de -1.576 € al año)."
+    }
+   ]
+  },
+  "residencia-o-cuidador-a-domicilio": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "resi": 2500,
+      "horas": 6,
+      "costeh": 12,
+      "cotiz": 30,
+      "adapt": 6000,
+      "anios": 5,
+      "fam": 400,
+      "ayudas": 0
+     },
+     "resultado": {
+      "cuidadorMes": 2847.0,
+      "adaptMes": 100,
+      "costeResi": 2500,
+      "costeDom": 3347.0,
+      "costeDomEfectivo": 2947.0,
+      "diferencia": -847.0,
+      "horasEquilibrio": 4.215,
+      "ganador": 1
+     },
+     "titulo": "residencia de 2.500 €/mes frente a 6 h diarias de cuidador a 12 €/h con 30 % de cotización, 6.000 € de adaptación en 5 años y 400 €/mes de cuidado familiar",
+     "texto": "el domicilio cuesta 2.947 € al mes y la residencia 2.500 €: sale más barata la residencia por 847 € al mes; con más de 4,2 horas diarias de cuidador, la residencia pasa a salir más barata."
+    },
+    {
+     "inputs": {
+      "resi": 2500,
+      "horas": 2,
+      "costeh": 12,
+      "cotiz": 30,
+      "adapt": 6000,
+      "anios": 5,
+      "fam": 0,
+      "ayudas": 0
+     },
+     "resultado": {
+      "cuidadorMes": 949.0,
+      "adaptMes": 100,
+      "costeResi": 2500,
+      "costeDom": 1049,
+      "costeDomEfectivo": 1049,
+      "diferencia": 1451,
+      "horasEquilibrio": 5.058,
+      "ganador": 0
+     },
+     "titulo": "residencia de 2.500 €/mes frente a 2 h diarias de cuidador a 12 €/h con 30 % de cotización, 6.000 € de adaptación en 5 años y 0 €/mes de cuidado familiar",
+     "texto": "el domicilio cuesta 1.049 € al mes y la residencia 2.500 €: sale más barata el cuidador a domicilio por 1.451 € al mes; con más de 5,1 horas diarias de cuidador, la residencia pasa a salir más barata."
+    }
+   ]
+  },
+  "hotel-o-apartamento-viaje-en-grupo": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "personas": 6,
+      "noches": 5,
+      "habs": 3,
+      "precioHab": 110,
+      "precioApto": 190,
+      "limpieza": 90,
+      "comerFuera": 35,
+      "cocinar": 14
+     },
+     "resultado": {
+      "totalHotel": 2700,
+      "totalApto": 1460,
+      "ppnHotel": 90,
+      "ppnApto": 48.6667,
+      "diferencia": 1240,
+      "nochesEq": 0.3383,
+      "personasEq": -1,
+      "ganador": 1
+     },
+     "titulo": "6 personas, 5 noches, 3 habitación(es) de hotel a 110 € frente a apartamento de 190 €/noche más 90 € de limpieza, comida fuera a 35 € y cocinando a 14 € por persona y día",
+     "texto": "el hotel suma 2.700 € y el apartamento 1.460 €: sale más barato el apartamento por 1.240 € (90,00 € frente a 48,67 € por persona y noche)."
+    },
+    {
+     "inputs": {
+      "personas": 2,
+      "noches": 5,
+      "habs": 1,
+      "precioHab": 100,
+      "precioApto": 190,
+      "limpieza": 90,
+      "comerFuera": 35,
+      "cocinar": 14
+     },
+     "resultado": {
+      "totalHotel": 850,
+      "totalApto": 1180,
+      "ppnHotel": 85,
+      "ppnApto": 118,
+      "diferencia": -330,
+      "nochesEq": -1,
+      "personasEq": 5.1429,
+      "ganador": 0
+     },
+     "titulo": "2 personas, 5 noches, 1 habitación(es) de hotel a 100 € frente a apartamento de 190 €/noche más 90 € de limpieza, comida fuera a 35 € y cocinando a 14 € por persona y día",
+     "texto": "el hotel suma 850 € y el apartamento 1.180 €: sale más barato el hotel por 330 € (85,00 € frente a 118,00 € por persona y noche)."
+    }
+   ]
+  },
+  "curso-online-bootcamp-o-fp-coste-y-retorno": {
+   "fecha": "2026-10-09",
+   "casos": [
+    {
+     "inputs": {
+      "matricula": 6000,
+      "beca": 0,
+      "meses": 6,
+      "sueldo": 1500,
+      "renuncia": 50,
+      "busqueda": 3,
+      "subida": 500,
+      "anios": 5
+     },
+     "resultado": {
+      "costeMatricula": 6000,
+      "costeTiempo": 4500,
+      "costeTotal": 10500,
+      "mesesRecuperar": 21,
+      "mesesDesdeInicio": 30,
+      "mesesGana": 51,
+      "valor": 15000,
+      "subidaMin": 205.8824,
+      "ganador": 0
+     },
+     "titulo": "curso de 6.000 € y 6 meses, sueldo de 1.500 €/mes del que renuncias al 50 %, 3 meses de búsqueda, subida de 500 €/mes y horizonte de 5 años",
+     "texto": "el coste total es de 10.500 € y el balance a 5 años de 15.000 €: compensa; recuperarías la inversión en 21 meses de cobrar la subida y necesitarías al menos 206 € más al mes para que compense."
+    },
+    {
+     "inputs": {
+      "matricula": 6000,
+      "beca": 0,
+      "meses": 6,
+      "sueldo": 1500,
+      "renuncia": 50,
+      "busqueda": 3,
+      "subida": 120,
+      "anios": 5
+     },
+     "resultado": {
+      "costeMatricula": 6000,
+      "costeTiempo": 4500,
+      "costeTotal": 10500,
+      "mesesRecuperar": 87.5,
+      "mesesDesdeInicio": 96.5,
+      "mesesGana": 51,
+      "valor": -4380,
+      "subidaMin": 205.8824,
+      "ganador": 1
+     },
+     "titulo": "curso de 6.000 € y 6 meses, sueldo de 1.500 €/mes del que renuncias al 50 %, 3 meses de búsqueda, subida de 120 €/mes y horizonte de 5 años",
+     "texto": "el coste total es de 10.500 € y el balance a 5 años de -4.380 €: no compensa; recuperarías la inversión en 88 meses de cobrar la subida y necesitarías al menos 206 € más al mes para que compense."
+    }
+   ]
   }
  }
 }
