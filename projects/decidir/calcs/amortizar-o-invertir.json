@@ -3,7 +3,7 @@
   "title": "¿Amortizar hipoteca o invertir? Calculadora 2026",
   "description": "Si inviertes al 4 %, ganas 4.014 € más que amortizando; solo compensa si rinde más de un 3,54 % (ejemplo). Calcula con tus números.",
   "h1": "Amortizar hipoteca o invertir: ¿qué te deja más dinero?",
-  "lead": "Amortizar equivale a una inversión sin riesgo que rinde el tipo de tu hipoteca. Calcula si invertir esa cantidad puede superarlo de forma realista, con impuestos y sin garantías.",
+  "lead": "Amortizar la hipoteca suele compensar si la rentabilidad neta que esperas de invertir, ya con impuestos, no supera el tipo de tu hipoteca; si lo supera con holgura y toleras el riesgo, invertir puede ganar, pero sin garantías. Amortizar equivale a una inversión sin riesgo que rinde ese tipo. Calcula si invertir esa cantidad puede superarlo de forma realista.",
   "veredicto": "Amortizar equivale a invertir sin riesgo al tipo de tu hipoteca: solo compensa invertir si esperas una rentabilidad neta claramente superior a ese tipo y aceptas el riesgo de que no llegue.",
   "tema": "hipoteca",
   "inputs": [

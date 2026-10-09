@@ -61,15 +61,15 @@
   "faqs": [
     [
       "¿Cuánto se cobra de paro con una base de 1.500 euros?",
-      "Con una base reguladora de 1.500 € al mes, la prestación es el 70 % durante los 180 primeros días, 1.050 € al mes, y el 60 % desde el día 181, 900 € al mes. Ambas cifras están por encima del mínimo (560 € sin hijos) y por debajo del máximo (1.225 € sin hijos), así que ninguno de los dos límites te afecta. Son importes brutos: de ellos se descuentan la cotización a la Seguridad Social y la retención del IRPF, que esta calculadora no incluye."
+      "Con base de 1.500 €, el 70 % los 180 primeros días son 1.050 € al mes y el 60 % desde el día 181, 900 €, dentro de mínimo y máximo. Son brutos: se descuentan cotización e IRPF."
     ],
     [
       "¿Cuál es el máximo y el mínimo de paro en 2026?",
-      "Según el art. 270.3 de la LGSS el máximo es el 175 % del IPREM mensual sin hijos a cargo, el 200 % con 1 hijo y el 225 % con 2 o más, y el mínimo es el 80 % sin hijos y el 107 % con hijos. El IPREM de 2026 es de 600 € al mes y la ley lo incrementa en una sexta parte (700 €), con lo que el máximo es de 1.225, 1.400 y 1.575 € al mes y el mínimo de 560 € sin hijos y 749 € con hijos, que coincide con la tabla del SEPE de 2026."
+      "Según el art. 270.3 LGSS, el máximo es el 175 % del IPREM sin hijos, 200 % con 1 y 225 % con 2 o más; el mínimo, 80 % y 107 %. En 2026: máximos de 1.225, 1.400 y 1.575 € al mes; mínimos de 560 y 749 €."
     ],
     [
       "¿Cuántos días de paro me corresponden según lo que he cotizado?",
-      "Depende de los días cotizados, y no usados ya en una prestación anterior (art. 269.2), en los seis años anteriores a la situación legal de desempleo (art. 269.1 de la LGSS): de 360 a 539 días cotizados corresponden 120 días de prestación, de 540 a 719, 180 días, de 720 a 899, 240 días, y así sucesivamente, 60 días más cada 180 días cotizados, hasta 720 días de prestación con 2.160 días cotizados o más. Con menos de 360 días no hay prestación contributiva, aunque puede haber subsidio."
+      "Depende de los días cotizados, y no usados antes, en los seis años anteriores (art. 269 LGSS): 360 a 539 dan 120 días; 540 a 719, 180; 720 a 899, 240, y así 60 más cada 180 cotizados, hasta 720. Con menos de 360, no hay paro (quizá subsidio)."
     ],
     [
       "¿Por qué baja el paro a partir del día 181?",
@@ -77,7 +77,7 @@
     ],
     [
       "¿Cuánto cobro de paro si trabajaba a tiempo parcial?",
-      "El 70 % y el 60 % se aplican a tu base reguladora, que ya refleja el salario parcial, pero el máximo y el mínimo se calculan con el IPREM según la media de horas trabajadas en los últimos 180 días (art. 270.3). La calculadora los reduce en proporción a tu porcentaje de jornada: con un 50 % de jornada el mínimo sin hijos pasa de 560 a 280 € y el máximo de 1.225 a 612,50 € al mes. Si cambiaste de jornada en esos 180 días, usa el porcentaje medio."
+      "El 70 % y el 60 % se aplican a tu base reguladora, que ya refleja el sueldo parcial, pero máximo y mínimo se reducen según la jornada (art. 270.3): con un 50 %, el mínimo sin hijos pasa de 560 a 280 € y el máximo a 612,50 €."
     ]
   ],
   "sources": "Modelo propio. Ley General de la Seguridad Social (RDL 8/2015), texto consolidado a 31/07/2026 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724): art. 269.1 (escala de duración según los días cotizados en los seis años anteriores), art. 270.1 (base reguladora: promedio de la base de cotización por desempleo de los últimos 180 días, sin horas extra), 270.2 (70 % los 180 primeros días y 60 % desde el día 181), 270.3 (máximo del 175, 200 y 225 % y mínimo del 107 y 80 % del IPREM mensual vigente incrementado en una sexta parte; con tiempo parcial, según las horas trabajadas) y art. 147.1 (la base de cotización incluye el prorrateo de las pagas extraordinarias). IPREM 2026: 600 € al mes, máximo de 1.225, 1.400 y 1.575 € y mínimo de 560 y 749 €, según la página de cuantías anuales del SEPE (https://www.sepe.es/HomeSepe/en/prestaciones-desempleo/Cuantias-anuales.html). Hipótesis no oficiales y editables: base de cotización de 1.500 €, sin hijos, jornada completa y 720 días cotizados. El mes se computa en 30 días. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."

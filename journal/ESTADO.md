@@ -36,3 +36,4 @@
 - 9-oct: Bing día 2 enviado (10/10; cuota 80/100). Google día 2 se pide el 10-oct (cuota Search Console ~10/día, hoy gastada).
 - c100 (9-oct 17:00): Opus reverificó incapacidad permanente y viudedad (733+730 casos, 0 disc.; RD 241/2026 coincide): textos con complemento brecha de género no incluido, extinción por nuevo matrimonio con excepciones (art. 223.2), complemento por mínimos como diferencia hasta 9.442 €; aplicado. Preparado el 14-oct: journal/PREP-14-OCT.md (inventario IRAV/IPC, procedimiento, plantillas). test_numinput: excepciones documentadas.
 - c101 (9-oct 17:40): Casos típicos en 92 calculadoras (101/101 coinciden); quedan 11 sin ellos.
+- c103 (9-oct 20:40): Editor pasada 9 (15 calculadoras de prestaciones/ahorro/hipoteca); un revisor restauró 27 FAQs y 3 leads donde el recorte a ≤50 palabras quitaba condiciones legales; regla añadida a editor-calidad.md. Quedan ~25 calculadoras de impuestos con FAQs largas (no tocar sin Verificador).

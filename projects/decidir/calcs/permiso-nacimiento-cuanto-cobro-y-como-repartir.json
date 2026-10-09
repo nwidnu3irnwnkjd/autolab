@@ -95,7 +95,7 @@
     ],
     [
       "¿Cómo se reparten las 19 semanas entre los dos progenitores?",
-      "No se reparten: cada progenitor tiene sus 19 semanas (nacimientos desde el 31-7-2025), y el derecho es individual e intransferible (art. 48.4 del Estatuto de los Trabajadores). De ellas, 6 son obligatorias, seguidas y a jornada completa tras el parto; 11 se disfrutan a voluntad, por semanas, hasta que el hijo cumple 12 meses, y 2 hasta los 8 años. Las 6 obligatorias de los dos coinciden, inmediatamente después del parto; las voluntarias, a la vez o una detrás de otra: la prestación es la misma. El derecho no se transfiere, salvo fallecimiento de un progenitor, en que el otro puede usar lo que reste. Lo que sí podéis decidir es cuántas semanas toma cada uno: si uno de los dos gana más de 5.101,20 € al mes y el otro menos, y la empresa no completa la diferencia, pierdes menos dinero si el que gana más toma menos semanas."
+      "No se reparten: desde el 31-7-2025 cada progenitor tiene 19 semanas individuales e intransferibles (art. 48.4 ET): 6 obligatorias, 11 voluntarias hasta los 12 meses y 2 hasta los 8 años. Si uno gana más de 5.101,20 € y la empresa no completa, pierdes menos si ese toma menos semanas."
     ],
     [
       "¿Hay que pagar IRPF por la prestación de nacimiento?",
@@ -103,11 +103,11 @@
     ],
     [
       "¿Cuántas semanas tienen las familias monoparentales, el parto múltiple o un hijo con discapacidad?",
-      "Una familia con un único progenitor tiene 32 semanas (6 obligatorias, 22 hasta los 12 meses y 4 hasta los 8 años). Se suma 1 semana por progenitor por cada hijo además del primero y 1 más si el hijo tiene discapacidad; si hay un único progenitor, disfruta las ampliaciones completas, es decir, 2 semanas por cada una (art. 48.4 y 48.6 del Estatuto de los Trabajadores). Las 19 semanas valen para nacimientos desde el 31-7-2025; si el hijo nació entre el 2-8-2024 y el 30-7-2025, tenías 16 semanas más las 2 (4) hasta los 8 años, que se pueden pedir desde el 1-1-2026 y son las únicas que hoy quedan (RDL 9/2025, disposición transitoria única)."
+      "Monoparental: 32 semanas (6 obligatorias, 22 hasta los 12 meses y 4 hasta los 8 años). Se suma 1 semana por hijo adicional y 1 si hay discapacidad; un progenitor único, el doble (art. 48.4 y 48.6 ET). Valen para nacimientos desde el 31-7-2025."
     ],
     [
       "¿Qué cotización necesito para cobrar la prestación por nacimiento?",
-      "Tienes que estar de alta o en situación asimilada al empezar cada periodo de descanso y acreditar cotización según tu edad el día del parto: con menos de 21 años, ninguna; entre 21 y 25, 90 días en los últimos 7 años o 180 días en toda tu vida laboral; con 26 o más, 180 días en los últimos 7 años o 360 días en toda tu vida laboral (art. 178 de la LGSS). Si no los reúnes, puede corresponder una prestación no contributiva por una cuantía de IPREM durante las 6 semanas obligatorias (art. 182), que esta herramienta no calcula."
+      "Estar de alta o asimilada y acreditar cotización según tu edad el día del parto: con menos de 21 años, ninguna; de 21 a 25, 90 días en 7 años o 180 en total; con 26 o más, 180 en 7 años o 360 en total (art. 178 LGSS)."
     ]
   ],
   "sources": "Modelo propio. Estatuto de los Trabajadores (RDL 2/2015), art. 48.4 y 48.6 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a48), redacción del Real Decreto-ley 9/2025 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-15741), convalidado por Resolución de 9-9-2025 (BOE-A-2025-17999). Ley General de la Seguridad Social (RDL 8/2015), arts. 177 a 179 y 182 (https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a179), art. 178.4 (alta, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a178), art. 180 (trabajo durante el descanso, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a180) y art. 248.1.b (tiempo parcial, no modelado, https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724#a248). Ley 35/2006 del IRPF, art. 7.h (https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764#a7). Orden PJC/297/2026, art. 2.1: base máxima de cotización de 5.101,20 € al mes en 2026 (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-7296). Seguridad Social: información sobre la prestación por nacimiento y cuidado de menor (https://www.seg-social.es). Hipótesis no oficiales y editables: sueldos de 3.200 € y 2.400 € al mes, 19 semanas cada uno, sin complemento de empresa. Consultado el 2/10/2026. Información orientativa, no asesoramiento laboral, fiscal ni financiero."

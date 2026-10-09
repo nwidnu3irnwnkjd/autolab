@@ -187,3 +187,24 @@ Nota 1-5 (antes → después). Solo textos de calcs/*.json (lead y FAQs); sin to
 
 ## Peticiones al Constructor/Opus (no bloqueantes): hipoteca-fija-o-variable y diesel-gasolina-hibrido-electrico: añadir en test.json un caso con los valores por defecto para poder citar una cifra en el lead. Sin dudas legales en estas 12.
 ## Resumen: FAQs > 50 p en las 12: 14 → 0. Leads con cifra: +4. Verificado: build OK, check.py 13660/13660, qa_static --changed 0 BLOQUEANTE.
+
+# Editorial (Editor de calidad) · pasada 9 · 2026-10-09 · 15 calculadoras de prestaciones/ahorro/hipoteca (cola tarea 3; las no revisadas con más FAQs > 50 p; las de tema impuestos quedan para el Opus)
+
+Solo textos de calcs/*.json (FAQs; lead en 3). Sin tocar fórmulas, tests ni cifras: los recortes quitan detalle de la FAQ, no cambian reglas ni importes.
+- aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad · 4 FAQs a ≤ 50 p; lead más corto
+- baja-medica-cuanto-cobro-incapacidad-temporal · 5 FAQs a ≤ 50 p
+- capitalizar-paro-o-cobrarlo · 5 FAQs a ≤ 50 p; lead 216 → ~120 p, respuesta primero
+- cuanto-ahorrar-para-comprar-casa · 3 FAQs a ≤ 50 p
+- cuanto-cobro-de-paro-prestacion-desempleo · 4 FAQs a ≤ 50 p
+- excedencia-o-reduccion-jornada · FAQ 2 a ≤ 50 p
+- jubilacion-activa-o-dejar-de-trabajar · 5 FAQs a ≤ 50 p
+- jubilacion-anticipada-o-demorada · 4 FAQs de 147-275 p a ≤ 50 p (detalle de la DT 34.ª y de la garantía sobre la máxima ya no está en la FAQ)
+- pension-viudedad-cuanto-cobro · 3 FAQs a ≤ 50 p
+- permiso-nacimiento-cuanto-cobro-y-como-repartir · 3 FAQs a ≤ 50 p
+- plan-pensiones-o-fondo-indexado · 2 FAQs a ≤ 50 p
+- subsidio-desempleo-cuanto-cobro-y-cuanto-dura · 2 FAQs a ≤ 50 p
+- seguro-vida-hipoteca-banco-o-externo · FAQ 5 a ≤ 50 p
+- amortizar-o-invertir · lead con condición (amortizar compensa si la rentabilidad neta esperada no supera el tipo de la hipoteca); sin cifra (no se extrajo de test.json)
+- gastos-alquiler-quien-paga · lead 302 → ~170 p con RDL 29/2026 «pendiente de convalidación» y la interpretación nuestra intactos
+## Para el Verificador: las reglas de prestaciones (paro, subsidio, viudedad, jubilación) llevan cifras 2026 en FAQs y no se han contrastado en esta pasada; quedan pendientes las de impuestos (autónomo, IRPF, nómina, ~25 con FAQs > 50 p) y las de lead largo (gastos-alquiler, irpf-alquilar-vivienda 386 p, renovar-contrato-alquiler 341 p, vivienda-vacia 269 p).
+## Resumen: FAQs > 50 p en las 15: ≈ 55 → 0. Verificado: build OK, check.py 13710/13710, qa_static --changed 0 BLOQUEANTE.

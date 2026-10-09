@@ -16,3 +16,6 @@ Objetivo: más clic y más citas en buscadores e IA con lo que ya está publicad
 - Peticiones en ops/requests.md (`[Editor -> Constructor]` textos; `[Editor -> Estratega]` title/description/clusters), máx. 1 por calculadora con todos sus cambios, redactados listos para pegar.
 - journal/editorial.md: 1 línea por calculadora revisada (`slug · puntos 1-5 ok/no · petición`).
 - Informe: ≤ 3 líneas. Métricas: % de calculadoras con los 5 puntos «ok» (línea base en la 1.ª pasada → ≥ 90 % en 3 días); peticiones editoriales resueltas en ≤ 2 ciclos; cuando haya impresiones, CTR medio de las páginas revisadas frente a las no revisadas.
+
+## Regla c103 (FAQs legales)
+Recortar una FAQ a ≤ 50 palabras NO puede quitar condiciones, plazos, excepciones ni requisitos de una norma (cotización, prestaciones, jubilación, permisos): en la pasada 9 hubo que restaurar 27 FAQs y 3 leads. Si no cabe en 50 palabras con la condición clave, se deja más larga o se parte; la exactitud manda sobre la longitud. Tras una pasada sobre temas legales, un revisor compara `git diff` antes de cerrar el ciclo.
