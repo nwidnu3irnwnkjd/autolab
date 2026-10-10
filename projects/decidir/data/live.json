@@ -1,13 +1,13 @@
 {
  "datos": {
   "diesel": {
-   "anterior": 1.8938,
-   "anterior_fecha": "2026-10-08",
+   "anterior": 1.8935,
+   "anterior_fecha": "2026-10-09",
    "extra": {
-    "detalle": "Media simple de 10780 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
+    "detalle": "Media simple de 10782 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasóleo A (diésel)"
    },
-   "fecha_consulta": "2026-10-09",
-   "fecha_dato": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
+   "fecha_dato": "2026-10-10",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
@@ -44,13 +44,17 @@
     [
      "2026-10-09",
      1.8935
+    ],
+    [
+     "2026-10-10",
+     1.8971
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.8935,
-   "variacion_abs": -0.0003,
-   "variacion_pct": -0.02
+   "valor": 1.8971,
+   "variacion_abs": 0.0036,
+   "variacion_pct": 0.19
   },
   "euribor12m": {
    "anterior": 2.954,
@@ -158,7 +162,7 @@
      ]
     ]
    },
-   "fecha_consulta": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
    "fecha_dato": "2026-09-30",
    "fuente": {
     "nombre": "Banco Central Europeo (Data Portal, serie Euribor 1 año, vía Refinitiv)",
@@ -178,13 +182,13 @@
    "variacion_pct": 9.92
   },
   "gasolina95": {
-   "anterior": 1.7963,
-   "anterior_fecha": "2026-10-08",
+   "anterior": 1.7947,
+   "anterior_fecha": "2026-10-09",
    "extra": {
-    "detalle": "Media simple de 10427 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
+    "detalle": "Media simple de 10429 estaciones de servicio de la Península y Baleares (excluye Canarias, Ceuta y Melilla), Gasolina 95 E5"
    },
-   "fecha_consulta": "2026-10-09",
-   "fecha_dato": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
+   "fecha_dato": "2026-10-10",
    "fuente": {
     "nombre": "Geoportal de gasolineras, Ministerio para la Transición Ecológica (MITECO)",
     "url": "https://geoportalgasolineras.es/"
@@ -221,29 +225,33 @@
     [
      "2026-10-09",
      1.7947
+    ],
+    [
+     "2026-10-10",
+     1.7957
     ]
    ],
    "ok": true,
    "unidad": "€/l",
-   "valor": 1.7947,
-   "variacion_abs": -0.0016,
-   "variacion_pct": -0.09
+   "valor": 1.7957,
+   "variacion_abs": 0.001,
+   "variacion_pct": 0.06
   },
   "luz_pvpc": {
-   "anterior": 0.18335,
-   "anterior_fecha": "2026-10-08",
+   "anterior": 0.18782,
+   "anterior_fecha": "2026-10-09",
    "extra": {
     "detalle": "PVPC (precio de la energía por hora), media de las 24 horas del día",
-    "dias_mes": 9,
-    "hora_barata": 14,
+    "dias_mes": 10,
+    "hora_barata": 13,
     "hora_cara": 20,
-    "media_mes": 0.19915,
+    "media_mes": 0.19476,
     "mes": "2026-10",
-    "precio_hora_barata": 0.05144,
-    "precio_hora_cara": 0.35048
+    "precio_hora_barata": -0.00207,
+    "precio_hora_cara": 0.28446
    },
-   "fecha_consulta": "2026-10-09",
-   "fecha_dato": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
+   "fecha_dato": "2026-10-10",
    "fuente": {
     "nombre": "Red Eléctrica de España (REData)",
     "url": "https://www.ree.es/es/datos/mercados/precios-mercados-tiempo-real"
@@ -280,29 +288,33 @@
     [
      "2026-10-09",
      0.18782
+    ],
+    [
+     "2026-10-10",
+     0.15527
     ]
    ],
    "manana": null,
    "ok": true,
    "unidad": "€/kWh",
-   "valor": 0.18782,
-   "variacion_abs": 0.00447,
-   "variacion_pct": 2.44
+   "valor": 0.15527,
+   "variacion_abs": -0.03255,
+   "variacion_pct": -17.33
   },
   "madrid_tiempo": {
-   "anterior": 12.4,
-   "anterior_fecha": "2026-10-08",
+   "anterior": 13.4,
+   "anterior_fecha": "2026-10-09",
    "extra": {
     "ciudad": "Madrid",
     "detalle": "Temperatura actual en Madrid y previsión de los próximos 7 días",
     "dias_prevision": 7,
-    "max_hoy": 21.0,
-    "max_semana": 27.3,
-    "min_hoy": 6.2,
-    "min_semana": 6.2
+    "max_hoy": 23.8,
+    "max_semana": 27.2,
+    "min_hoy": 9.0,
+    "min_semana": 9.0
    },
-   "fecha_consulta": "2026-10-09",
-   "fecha_dato": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
+   "fecha_dato": "2026-10-10",
    "fuente": {
     "nombre": "Open-Meteo (CC BY 4.0)",
     "url": "https://open-meteo.com/"
@@ -339,13 +351,17 @@
     [
      "2026-10-09",
      13.4
+    ],
+    [
+     "2026-10-10",
+     9.4
     ]
    ],
    "ok": true,
    "unidad": "°C",
-   "valor": 13.4,
-   "variacion_abs": 1.0,
-   "variacion_pct": 8.06
+   "valor": 9.4,
+   "variacion_abs": -4.0,
+   "variacion_pct": -29.85
   },
   "tipo_hipoteca_fija": {
    "anterior": 2.66,
@@ -453,7 +469,7 @@
      ]
     ]
    },
-   "fecha_consulta": "2026-10-09",
+   "fecha_consulta": "2026-10-10",
    "fecha_dato": "2026-08-31",
    "frecuencia": "mensual; el dato del mes M se publica a primeros de M+2 (edad normal hasta ~35 d)",
    "fuente": {
@@ -475,6 +491,6 @@
   }
  },
  "esquema": 1,
- "generado": "2026-10-09",
+ "generado": "2026-10-10",
  "nota": "Datos públicos sin clave; cada dato lleva su fecha y fuente. Generado por ops/refresh_data.py"
 }

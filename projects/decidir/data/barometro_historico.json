@@ -3,14 +3,14 @@
  "meses": [
   {
    "mes": "2026-10",
-   "fecha_datos": "2026-10-09",
+   "fecha_datos": "2026-10-10",
    "euribor_12m": 3.247,
    "tipo_fijo_referencia": 2.76,
    "euribor_equilibrio": 1.859,
    "coche_ganador_15000km": "Híbrido",
    "coche_eur_km_ganador": 0.3715,
-   "diesel_eur_l": 1.893,
-   "gasolina_eur_l": 1.795,
+   "diesel_eur_l": 1.897,
+   "gasolina_eur_l": 1.796,
    "rentabilidad_equilibrio_hipoteca_3pct_plazo": 3.539
   }
  ]
