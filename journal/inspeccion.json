@@ -1,6 +1,6 @@
 {
- "ts": 1791525656.807828,
- "fecha": "2026-10-09 06:00Z",
+ "ts": 1791614047.4407501,
+ "fecha": "2026-10-10 06:34Z",
  "resultados": {
   "https://entremuchos.com/": {
    "estado": "Enviada e indexada",
@@ -18,12 +18,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/barometro/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:55:14Z"
   },
   "https://entremuchos.com/calendario/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -38,12 +38,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/contacto/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/cookies/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -53,9 +53,9 @@
    "ultimo_rastreo": "2026-10-07T16:47:01Z"
   },
   "https://entremuchos.com/datos/euribor-hoy/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:53:38Z"
   },
   "https://entremuchos.com/datos/irav-ipc-alquiler/": {
    "estado": "Enviada e indexada",
@@ -68,17 +68,17 @@
    "ultimo_rastreo": "2026-10-07T16:48:34Z"
   },
   "https://entremuchos.com/decidir/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:55:08Z"
   },
   "https://entremuchos.com/decidir/academia-idiomas-presencial-online-o-intensivo/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/aceptar-trabajo-cobrando-paro-o-subsidio-compatibilidad/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -88,7 +88,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/adoptar-o-comprar-perro-coste-anual/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -98,9 +98,9 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/alquilar-o-comprar/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:57:12Z"
   },
   "https://entremuchos.com/decidir/amortizar-o-invertir/": {
    "estado": "Google no reconoce esta URL",
@@ -123,7 +123,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/autonomo-o-sociedad-limitada/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -153,7 +153,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/cambiar-electrodomestico-antiguo-merece-la-pena/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -163,7 +163,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/capitalizar-paro-o-cobrarlo/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -198,22 +198,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/compensar-perdidas-ganancias-irpf-antes-fin-de-ano/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
-  },
-  "https://entremuchos.com/decidir/comprar-coche-o-renting/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
-  },
-  "https://entremuchos.com/decidir/comprar-o-alquilar-herramienta/": {
    "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
-  "https://entremuchos.com/decidir/comprar-o-alquilar-trastero/": {
+  "https://entremuchos.com/decidir/comprar-coche-o-renting/": {
+   "estado": "Google no reconoce esta URL",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/decidir/comprar-o-alquilar-herramienta/": {
    "estado": "Descubierta: actualmente sin indexar",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/decidir/comprar-o-alquilar-trastero/": {
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -223,14 +223,14 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/cuanto-ahorrar-para-comprar-casa/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/cuanto-cobro-de-paro-prestacion-desempleo/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:59:05Z"
   },
   "https://entremuchos.com/decidir/cuanto-cuesta-un-bebe-el-primer-ano/": {
    "estado": "Google no reconoce esta URL",
@@ -243,22 +243,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/curso-online-bootcamp-o-fp-coste-y-retorno/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
-  },
-  "https://entremuchos.com/decidir/declaracion-conjunta-o-individual/": {
    "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
-  "https://entremuchos.com/decidir/deduccion-maternidad-familia-numerosa/": {
+  "https://entremuchos.com/decidir/declaracion-conjunta-o-individual/": {
    "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
+  "https://entremuchos.com/decidir/deduccion-maternidad-familia-numerosa/": {
+   "estado": "Google no reconoce esta URL",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
   "https://entremuchos.com/decidir/deposito-letras-o-fondo-monetario/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -273,22 +273,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/empleada-hogar-cuanto-cuesta-contratar-cotizacion/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
-  },
-  "https://entremuchos.com/decidir/equipaje-y-asiento-avion-coste-real/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
-  },
-  "https://entremuchos.com/decidir/excedencia-o-reduccion-jornada/": {
    "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
-  "https://entremuchos.com/decidir/fianza-y-garantias-adicionales-alquiler/": {
+  "https://entremuchos.com/decidir/equipaje-y-asiento-avion-coste-real/": {
+   "estado": "Google no reconoce esta URL",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/decidir/excedencia-o-reduccion-jornada/": {
    "estado": "Descubierta: actualmente sin indexar",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/decidir/fianza-y-garantias-adicionales-alquiler/": {
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -298,7 +298,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/finiquito-baja-voluntaria-vacaciones-preaviso/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -328,7 +328,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/gimnasio-o-entrenar-en-casa/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -338,9 +338,9 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/hipoteca-20-25-o-30-anos-cuota-vs-intereses/": {
-   "estado": "Descubierta: actualmente sin indexar",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:59:05Z"
   },
   "https://entremuchos.com/decidir/hipoteca-bonificada-o-sin-vinculaciones/": {
    "estado": "Google no reconoce esta URL",
@@ -353,7 +353,7 @@
    "ultimo_rastreo": "2026-10-07T16:57:47Z"
   },
   "https://entremuchos.com/decidir/hipoteca-mas-entrada-o-conservar-ahorros/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -368,22 +368,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/impresora-tinta-o-laser-coste-por-pagina/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/incapacidad-permanente-cuanto-cobro-y-si-puedo-trabajar/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/indemnizacion-despido-objetivo-o-improcedente-neto/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/irpf-alquilar-vivienda-rendimiento-neto/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -408,9 +408,9 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/loteria-navidad-premio-neto-hacienda/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T07:01:29Z"
   },
   "https://entremuchos.com/decidir/luz-fija-o-indexada/": {
    "estado": "Google no reconoce esta URL",
@@ -418,17 +418,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/marca-blanca-o-marca-ahorro-anual/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/movil-reacondicionado-o-nuevo/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/mudanza-empresa-o-furgoneta/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -448,17 +448,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/paga-extra-navidad-cuanto-cobro-neto/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T07:00:34Z"
   },
   "https://entremuchos.com/decidir/pagas-extra-prorrateadas-o-14-pagas/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/paro-autonomos-cese-actividad-cuanto-cobro/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -468,7 +468,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/pension-viudedad-cuanto-cobro/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -478,7 +478,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/placas-solares-merece-la-pena/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -488,12 +488,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/portatil-o-movil-comprar-renting-o-financiar/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/potencia-contratada-luz-bajar-compensa/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -508,7 +508,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/reformar-o-mudarse/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -543,17 +543,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/secadora-o-tendedero-coste-por-lavado/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/seguro-hogar-con-o-sin-franquicia/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/seguro-mascota-merece-la-pena/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -568,12 +568,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/seguro-vida-hipoteca-banco-o-externo/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/subrogar-hipoteca-merece-la-pena/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -588,7 +588,7 @@
    "ultimo_rastreo": "2026-10-07T16:48:31Z"
   },
   "https://entremuchos.com/decidir/suscripciones-cuanto-gasto-al-ano/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -598,22 +598,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/termo-electrico-o-calentador-gas-o-aerotermia-agua/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/traspasar-fondo-o-reembolsar-irpf/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/tren-avion-o-coche/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/universidad-publica-o-privada-o-master/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -623,12 +623,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/vivienda-vacia-o-alquilarla-irpf/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/decidir/vivir-cerca-del-trabajo-o-mas-barato-lejos/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -643,17 +643,17 @@
    "ultimo_rastreo": "2026-10-07T16:52:43Z"
   },
   "https://entremuchos.com/guias/ahorrar-factura-luz-potencia-horas-valle-tarifa/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/amortizacion-anticipada-comisiones/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/antes-fin-de-ano-dinero-plan-pensiones-perdidas-donativos/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -668,12 +668,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/black-friday-y-navidad-sin-deudas/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/cambio-de-hora-octubre-horas-valle-luz/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -683,7 +683,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/clausulas-contrato-alquiler/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -693,7 +693,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -703,7 +703,7 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/loteria-navidad-hacienda-decimos-compartidos-penas/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -713,22 +713,22 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/paga-extra-diciembre-neto-retencion/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/renta-2027-ejercicio-2026-paso-a-paso/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/revisa-tu-contrato-de-alquiler-checklist/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/guias/subir-sueldo-neto-nomina-retribucion-flexible-retencion-dietas/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -743,12 +743,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/impuestos/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/inserta/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -788,12 +788,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/decide-14-octubre-ipc-irav-carburantes/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/derogados-rdl-26-27-2026-alquiler-irpf/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -808,12 +808,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/irav-ipc-septiembre-14-octubre/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/modelos-3t-plazo-20-octubre/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -823,6 +823,11 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/precio-luz-jueves-8-octubre/": {
+   "estado": "Google no reconoce esta URL",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/noticias/2026/10/precio-luz-viernes-9-octubre/": {
    "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
@@ -853,6 +858,11 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/noticias/2026/10/semana-2026-10-05/": {
+   "estado": "Descubierta: actualmente sin indexar",
+   "veredicto": "NEUTRAL",
+   "ultimo_rastreo": ""
+  },
+  "https://entremuchos.com/noticias/2026/10/semana-2026-10-09/": {
    "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
@@ -868,17 +878,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/plan/alquilar-vivienda/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/plan/autonomo/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/plan/compra-vivienda/": {
-   "estado": "Descubierta: actualmente sin indexar",
+   "estado": "Google no reconoce esta URL",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -888,12 +898,12 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/politica-editorial/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/politica-ia/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -903,17 +913,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/que-cambia-1-enero-2027/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:57:07Z"
   },
   "https://entremuchos.com/tablas-2026/": {
-   "estado": "Google no reconoce esta URL",
-   "veredicto": "NEUTRAL",
-   "ultimo_rastreo": ""
+   "estado": "Enviada e indexada",
+   "veredicto": "PASS",
+   "ultimo_rastreo": "2026-10-09T06:55:08Z"
   },
   "https://entremuchos.com/tablas-2026/cuota-autonomos-tramos/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
@@ -923,17 +933,17 @@
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/tablas-2026/smi-iprem-paro-pensiones/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/tablas-2026/trabajo-prestaciones/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },
   "https://entremuchos.com/tablas-2026/tramos-irpf-comunidades/": {
-   "estado": "Google no reconoce esta URL",
+   "estado": "Descubierta: actualmente sin indexar",
    "veredicto": "NEUTRAL",
    "ultimo_rastreo": ""
   },

@@ -112,3 +112,4 @@ fecha-hora | 5h % | semanal % | extra EUR | nota
 2026-10-09T15:33Z | 52 | 36 | 0.55 | ciclo 101 cierre: constructor; peticiones abiertas: 23; páginas: 305
 2026-10-09T18:21Z | 2 | 36 | 0.55 | ciclo 103 cierre: editor-calidad,revisor; peticiones abiertas: 23; páginas: 305
 2026-10-10T06:12Z | 2 | 38 | 0.55 | ciclo 104 cierre: vigilante; peticiones abiertas: 23; páginas: 305
+2026-10-10T07:46Z | 17 | 41 | 0.55 | ciclo 105 cierre: redactor; peticiones abiertas: 23; páginas: 306

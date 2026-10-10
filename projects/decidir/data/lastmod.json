@@ -1,7 +1,7 @@
 {
 "/": {
 "d": "2026-10-10",
-"h": "a5575112b9e982cd"
+"h": "80454377fc2a0512"
 },
 "/ahorro/": {
 "d": "2026-10-08",
@@ -13,7 +13,7 @@
 },
 "/barometro/": {
 "d": "2026-10-10",
-"h": "1a0e1ab3a097047c"
+"h": "5b338d1e816e61f5"
 },
 "/calendario/": {
 "d": "2026-10-10",
@@ -21,7 +21,7 @@
 },
 "/coche/": {
 "d": "2026-10-10",
-"h": "577469d3e3fc1405"
+"h": "d6cc14cd83b57128"
 },
 "/como-funciona/": {
 "d": "2026-10-03",
@@ -36,8 +36,8 @@
 "h": "c0b8f72dea460a78"
 },
 "/datos/": {
-"d": "2026-10-09",
-"h": "f41fc4e0f9d82ff7"
+"d": "2026-10-10",
+"h": "619fceb728071a5b"
 },
 "/datos/euribor-hoy/": {
 "d": "2026-09-30",
@@ -48,8 +48,8 @@
 "h": "ad001d78a8a39d73"
 },
 "/datos/precio-luz-hoy/": {
-"d": "2026-10-09",
-"h": "df84b9b88b7c0cc2"
+"d": "2026-10-10",
+"h": "e3ce8b14acc4d2a1"
 },
 "/decidir/": {
 "d": "2026-10-08",
@@ -112,16 +112,16 @@
 "h": "c69317bb2b5a36e5"
 },
 "/decidir/calefaccion-gas-aerotermia-electrica/": {
-"d": "2026-10-09",
-"h": "340d6d08028e0b0a"
+"d": "2026-10-10",
+"h": "86aa46b96967b7e7"
 },
 "/decidir/cambiar-de-operadora-compensa-permanencia/": {
 "d": "2026-10-08",
 "h": "6fe8fdee195bce91"
 },
 "/decidir/cambiar-electrodomestico-antiguo-merece-la-pena/": {
-"d": "2026-10-09",
-"h": "fee0a6bde4278046"
+"d": "2026-10-10",
+"h": "37575b5fb053bd40"
 },
 "/decidir/cambiar-ventanas-aislamiento-merece-la-pena/": {
 "d": "2026-10-07",
@@ -208,8 +208,8 @@
 "h": "d6f3475b738a2a69"
 },
 "/decidir/diesel-gasolina-hibrido-electrico/": {
-"d": "2026-10-09",
-"h": "0d7082ef7cdd2b61"
+"d": "2026-10-10",
+"h": "a5b262a7fa04fbe0"
 },
 "/decidir/donativos-irpf-cuanto-desgrava-y-cuanto-donar/": {
 "d": "2026-10-02",
@@ -328,8 +328,8 @@
 "h": "5b8c5df57b357a70"
 },
 "/decidir/luz-fija-o-indexada/": {
-"d": "2026-10-09",
-"h": "45785685e01b74c4"
+"d": "2026-10-10",
+"h": "20045e530ecb9c62"
 },
 "/decidir/marca-blanca-o-marca-ahorro-anual/": {
 "d": "2026-10-08",
@@ -412,8 +412,8 @@
 "h": "c7aff494f2380d1b"
 },
 "/decidir/reparar-o-comprar-electrodomestico/": {
-"d": "2026-10-09",
-"h": "65cec90fbec9f28c"
+"d": "2026-10-10",
+"h": "881dbee73ad860a9"
 },
 "/decidir/rescate-plan-pensiones-capital-o-renta/": {
 "d": "2026-10-02",
@@ -504,8 +504,8 @@
 "h": "4bbe0c2aaddeea84"
 },
 "/energia/": {
-"d": "2026-10-09",
-"h": "26b90b8fbcaf9c9b"
+"d": "2026-10-10",
+"h": "325892243ba98098"
 },
 "/guias/": {
 "d": "2026-10-08",
@@ -528,40 +528,40 @@
 "h": "5ab3ca1bed6cbb5e"
 },
 "/guias/base-liquidable-tramos-irpf-2026/": {
-"d": "2026-10-09",
-"h": "c8d57ddaa0eee81c"
+"d": "2026-10-10",
+"h": "2e15950c4e893275"
 },
 "/guias/black-friday-y-navidad-sin-deudas/": {
-"d": "2026-10-09",
-"h": "4ff9e31ccdb54558"
+"d": "2026-10-10",
+"h": "e1953d35906aae13"
 },
 "/guias/cambio-de-hora-octubre-horas-valle-luz/": {
 "d": "2026-10-08",
 "h": "c7d63692842b421b"
 },
 "/guias/checklist-casa-antes-del-invierno/": {
-"d": "2026-10-09",
-"h": "196aec8f61dfde19"
+"d": "2026-10-10",
+"h": "7d7762f4e6e5c3ea"
 },
 "/guias/clausulas-contrato-alquiler/": {
 "d": "2026-10-08",
 "h": "162e5f95f5971a67"
 },
 "/guias/cuanto-cuesta-tener-coche/": {
-"d": "2026-10-09",
-"h": "6a23bd4b063a92aa"
+"d": "2026-10-10",
+"h": "849b4c679e82e644"
 },
 "/guias/cuanto-gasta-cada-aparato-invierno-radiador-termo-secadora/": {
-"d": "2026-10-09",
-"h": "a49e6e21d84616d4"
+"d": "2026-10-10",
+"h": "379ca8eeb67eebd8"
 },
 "/guias/euribor-hipoteca/": {
-"d": "2026-10-09",
-"h": "70e4f626016e3c97"
+"d": "2026-10-10",
+"h": "b4128bbccd09ca5a"
 },
 "/guias/loteria-navidad-hacienda-decimos-compartidos-penas/": {
-"d": "2026-10-09",
-"h": "7cdc7bda16c0a01c"
+"d": "2026-10-10",
+"h": "d733124660f64dfe"
 },
 "/guias/me-han-despedido-indemnizacion-paro-plazos/": {
 "d": "2026-10-07",
@@ -572,8 +572,8 @@
 "h": "cf55c5327b350fdd"
 },
 "/guias/renta-2027-ejercicio-2026-paso-a-paso/": {
-"d": "2026-10-09",
-"h": "a625c930e517b085"
+"d": "2026-10-10",
+"h": "0986465afbad3608"
 },
 "/guias/revisa-tu-contrato-de-alquiler-checklist/": {
 "d": "2026-10-08",
@@ -584,8 +584,8 @@
 "h": "df4cf4f3e1ebcaf0"
 },
 "/guias/tu-casa-en-invierno-que-mirar-primero/": {
-"d": "2026-10-09",
-"h": "842a5449cfa8432e"
+"d": "2026-10-10",
+"h": "bb8477576f1c2382"
 },
 "/hipoteca/": {
 "d": "2026-10-08",
@@ -601,15 +601,15 @@
 },
 "/noticias/": {
 "d": "2026-10-10",
-"h": "e23d900fb8091e56"
+"h": "4f47f749d204bae5"
 },
 "/noticias/2026/09/euribor-sube-2026-09/": {
 "d": "2026-10-03",
 "h": "9ee6800ce0c02217"
 },
 "/noticias/2026/10/": {
-"d": "2026-10-09",
-"h": "49cf0830bb5c94bc"
+"d": "2026-10-10",
+"h": "0cdc09c683c230e6"
 },
 "/noticias/2026/10/cambio-base-autonomo-31-octubre/": {
 "d": "2026-10-03",
@@ -658,6 +658,10 @@
 "/noticias/2026/10/precio-luz-jueves-8-octubre/": {
 "d": "2026-10-10",
 "h": "aa0f47009c911731"
+},
+"/noticias/2026/10/precio-luz-sabado-10-octubre/": {
+"d": "2026-10-10",
+"h": "fc213cde182df22b"
 },
 "/noticias/2026/10/precio-luz-viernes-9-octubre/": {
 "d": "2026-10-08",
@@ -756,7 +760,7 @@
 "h": "a94fbb83e09b146b"
 },
 "/todas/": {
-"d": "2026-10-09",
-"h": "f2b5e616e6432b20"
+"d": "2026-10-10",
+"h": "95c67ae69af7c0e5"
 }
 }
