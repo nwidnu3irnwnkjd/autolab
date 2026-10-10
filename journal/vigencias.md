@@ -108,3 +108,6 @@ Presupuesto: no leídos los consolidados de RDL 3/2026 y las «Resto». Siguient
 
 ## Pasada 9 · 2026-10-09 (Vigilante, sumario BOE núm. 251, secciones I y III leídas enteras)
 - Sin hechos que afecten a cifras o normas publicadas: ningún RDL 25/28/29-2026 convalidado/derogado, sin órdenes de cotización, sin AEAT/SEPE/Energía/Vivienda, sin correcciones relevantes. Leídos BOE-A-2026-20977 (RD 809/2026, subvenciones electorales; ninguna calc), -21081 (Catastro, modelo de representación; sin cifras) y -21085 (convenio de estaciones de servicio; no usado). Sin peticiones abiertas. Pendiente: resolución del Congreso sobre RDL 25/2026 sigue sin sesión (Cortes disueltas).
+
+## Pasada 10 · 2026-10-10 (Vigilante, sumario BOE núm. 252, secciones I y III leídas enteras)
+- Sin hechos que afecten a cifras o normas publicadas: ningún RDL 25/28/29-2026 convalidado/derogado, sin órdenes de cotización, sin AEAT/SEPE/Energía/Vivienda, sin IRAV/IPC, sin correcciones relevantes (solo BOE-A-2026-21100, Univ. Alicante). Leído BOE-A-2026-21099 (PVP de tabaco, Comisionado; ninguna calc lo usa). Resto: convenios, directrices de Protección Civil, cambios del euro BdE. Sin peticiones abiertas. Pendiente: resolución del Congreso sobre RDL 25/2026 sigue sin sesión (Cortes disueltas).

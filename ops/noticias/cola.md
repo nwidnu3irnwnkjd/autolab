@@ -85,3 +85,4 @@ Reglas: más de una pieza al día y también fines de semana si hay hechos; sin 
 - [x] 2026-10-03 · resumen-dia · «Lo que importa hoy» del 3-oct · https://www.boe.es/boe/dias/2026/10/03/ · varias · alta → projects/decidir/content/noticias/2026-10-03-resumen-2026-10-03.html
 
 - Nota 3-oct: corregida la pieza TUR (deuda al abandonar la TUR, Cn 3,574741 vs 5,626153); el explicador TUR queda parcialmente cubierto por la pieza RDL 25/2026 y la corrección.
+- [x] 2026-10-10 · sin-novedades · BOE 10-oct sin novedades para la web (núm. 252, secciones I y III leídas; BOE-A-2026-21099 PVP tabaco leído, sin calc que lo use) · https://www.boe.es/boe/dias/2026/10/10/ · ninguna · sin alta
